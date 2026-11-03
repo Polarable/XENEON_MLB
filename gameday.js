@@ -118,8 +118,8 @@ const Gameday = (pk) => {
   /* ================= Strike zone, pitcher's view ================= */
   // A telephoto camera far behind the mound (like the TV center-field shot): little perspective, real paths.
   const PLATE_Y = 17 / 12, CAM_Y = 400;
-  function camera(w, h, pxFt, cz) {
-    const F = pxFt * (CAM_Y - PLATE_Y), cx = w / 2;
+  function camera(w, h, pxFt, cz, shift = 0) {
+    const F = pxFt * (CAM_Y - PLATE_Y), cx = w / 2 + shift;
     // Pitcher's view: the catcher's left is our right, so x is mirrored.
     return (x, y, z) => { const d = CAM_Y - y; return [cx - (x * F) / d, cz - ((z - 2.5) * F) / d, F / d]; };
   }
@@ -151,20 +151,23 @@ const Gameday = (pk) => {
 
   // Draw the zone, batter and plate. Returns the projection so pitches can be drawn on top.
   function scene(ctx, w, h, ab, pxFt, cz) {
-    const P = camera(w, h, pxFt, cz);
+    // Batter: righties stand on our right from the pitcher's side, lefties on our left.
+    // The zone sits a little off-center so the batter fits beside it.
+    const side = ab?.matchup?.batSide?.code || "R";
+    const P = camera(w, h, pxFt, cz, (side === "L" ? 1 : -1) * 1.0 * pxFt);
     ctx.clearRect(0, 0, w, h);
     const ps = pitchesOf(ab);
     const top = ps.find((p) => p.pitchData?.strikeZoneTop)?.pitchData.strikeZoneTop || 3.4;
     const bot = ps.find((p) => p.pitchData?.strikeZoneBottom)?.pitchData.strikeZoneBottom || 1.6;
-    // Batter: righties stand on our right from the pitcher's side, lefties on our left. Partly out of frame, like Real.
-    const side = ab?.matchup?.batSide?.code || "R";
     const img = batterImg("#3a4157");
     if (img) {
       const bh = 6.3 * pxFt, bw = bh * (img.width / img.height);
       const [, footY] = P(0, PLATE_Y, 0);
-      const edge = w / 2 + 0.95 * pxFt;          // inner edge of the figure, just past the plate's corner
+      const [plateX] = P(0, PLATE_Y, 0);
+      const edge = 0.95 * pxFt;                  // inner edge of the figure, just past the plate's corner
       ctx.save();
-      if (side === "L") { ctx.translate(w, 0); ctx.scale(-1, 1); }
+      ctx.translate(plateX, 0);
+      if (side === "L") ctx.scale(-1, 1);
       ctx.drawImage(img, edge, footY - bh, bw, bh);
       ctx.restore();
     }
@@ -215,7 +218,7 @@ const Gameday = (pk) => {
     const ctx = canvas.getContext("2d");
     const w = canvas.width / 2, h = canvas.height / 2;
     ctx.setTransform(2, 0, 0, 2, 0, 0);
-    const P = scene(ctx, w, h, ab, 62, h * 0.47);
+    const P = scene(ctx, w, h, ab, 40, h - 112);
     pitchesOf(ab).forEach((p, i, a) => ballAt(ctx, P, p, i, 1, { trail: false, alpha: i === a.length - 1 ? 1 : 0.85 }));
   }
 
@@ -227,7 +230,7 @@ const Gameday = (pk) => {
   let zAb = null, zKey = "", anim = null, raf = 0;
   function frame(now) {
     const ps = pitchesOf(zAb);
-    const P = scene(sctx, SW, SH, zAb, 92, 300);
+    const P = scene(sctx, SW, SH, zAb, 74, 236);
     const animating = anim && anim.i < anim.list.length;
     const cur = animating ? anim.list[anim.i] : -1;
     ps.forEach((p, i) => { if (!animating || i < cur) ballAt(sctx, P, p, i, 1, { trail: i === ps.length - 1, alpha: i === ps.length - 1 ? 1 : 0.8 }); });
@@ -383,9 +386,9 @@ const Gameday = (pk) => {
           <div class="ln muted">${esc(short(m.pitcher?.fullName))} · ${esc(pitLine(lines[i].pit))}</div></div>
       </div>
       <div class="pc-body">
-        <div class="pc-pitches">${pitchRows(p, 6) || `<div class="muted">${esc(r.description || "")}</div>`}</div>
-        <canvas class="mini" data-ab="${ab.atBatIndex}" width="440" height="520"></canvas>
+        <div class="pc-pitches">${pitchRows(p, 5) || `<div class="muted">${esc(r.description || "")}</div>`}</div>
       </div>
+      <canvas class="mini" data-ab="${ab.atBatIndex}" width="440" height="520"></canvas>
       ${tb.length ? `<div class="pc-tb">${tb.map((t) => `<span>${esc(t)}</span>`).join("")}</div>` : ""}
     </div>`;
   }
