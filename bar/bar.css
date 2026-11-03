@@ -22,9 +22,11 @@ img { display: block; }
 .tn { font-variant-numeric: tabular-nums; }
 
 /* ---------------- The bar ---------------- */
-#bar { position: fixed; left: 0; right: 0; bottom: 0; height: var(--bar-h); display: flex; align-items: center; gap: 10px;
+#bar { position: fixed; left: 0; right: 0; bottom: 4px; height: calc(var(--bar-h) - 8px); display: flex; align-items: center; gap: 10px;
   padding: 0 10px 0 8px; border-radius: 6px; overflow: hidden; }
+#bar { transition: background .15s; }
 #bar:hover { background: var(--hover); }
+body.open #bar { background: var(--hover); }
 body.solid #bar { background: var(--card); }
 body.solid #bar:hover { background: var(--card-2); }
 #bar .mono { flex: none; height: 26px; width: auto; filter: var(--mono); opacity: .95; }

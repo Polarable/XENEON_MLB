@@ -2,7 +2,7 @@
 // @id              shutout-taskbar
 // @name            SHUTOUT taskbar scorebug
 // @description     Live MLB scorebug with big-play callouts and baseball news at the left end of the taskbar, where the weather sits
-// @version         1.1.0
+// @version         1.2.0
 // @author          polarable
 // @github          https://github.com/Polarable
 // @homepage        https://polarable.github.io/XENEON_MLB/m/
@@ -56,10 +56,11 @@ Width, the gap from the left edge, the height of the open view and your team can
 - panelHeight: 540
   $name: Height of the open view
   $description: Pixels at 100% scale
-- background: acrylic
+- background: transparent
   $name: Background
-  $description: Acrylic lets the taskbar show through. Use solid if the bar looks black or blank.
+  $description: Transparent sits the bar right on the taskbar. Try acrylic, then solid, if it looks black or blank. Turn the mod off and on after changing this.
   $options:
+  - transparent: Transparent
   - acrylic: Acrylic
   - solid: Solid
 - hideFullscreen: true
@@ -860,10 +861,14 @@ static void DestroyWebView() {
 // The widget window
 // ---------------------------------------------------------------------------------------------
 static void ApplyBackdrop(HWND h) {
-    // Rounded corners and, on 22H2 and later, the acrylic material behind the transparent page.
-    DWORD round = 2;  // DWMWCP_ROUND
+    // Transparent: no frame, corners or border at all; the page draws everything it needs.
+    // Acrylic: rounded corners and the acrylic material (22H2 and later) behind the page.
+    bool clear = g_set.background == L"transparent";
+    DWORD round = clear ? 1 /* DWMWCP_DONOTROUND */ : 2 /* DWMWCP_ROUND */;
     DwmSetWindowAttribute(h, 33 /* DWMWA_WINDOW_CORNER_PREFERENCE */, &round, sizeof(round));
-    if (g_set.background != L"solid") {
+    DWORD noBorder = 0xFFFFFFFE;  // DWMWA_COLOR_NONE
+    if (clear) DwmSetWindowAttribute(h, 34 /* DWMWA_BORDER_COLOR */, &noBorder, sizeof(noBorder));
+    if (g_set.background == L"acrylic") {
         MARGINS m{-1, -1, -1, -1};
         DwmExtendFrameIntoClientArea(h, &m);
         DWORD backdrop = 3;  // DWMSBT_TRANSIENTWINDOW (acrylic)
@@ -880,6 +885,7 @@ static LRESULT CALLBACK WndProc(HWND h, UINT msg, WPARAM wp, LPARAM lp) {
     case WM_SIZE: ResizeWebView(); return 0;
     case WM_MOUSEACTIVATE: return MA_NOACTIVATE;   // clicking the bar never steals focus from your app
     case WM_ERASEBKGND: {
+        if (g_set.background == L"transparent") return 1;   // nothing to paint: the window has no surface of its own
         // Black is see-through when the frame is extended (acrylic); solid mode paints the taskbar color.
         RECT rc; GetClientRect(h, &rc);
         HBRUSH b = CreateSolidBrush(g_set.background == L"solid" ? RGB(32, 32, 32) : RGB(0, 0, 0));
@@ -944,7 +950,9 @@ static DWORD WINAPI WidgetThread(LPVOID) {
     wc.lpszClassName = L"ShutoutTaskbarWidget";
     wc.hCursor = LoadCursorW(nullptr, MAKEINTRESOURCEW(32512) /* IDC_ARROW */);
     RegisterClassW(&wc);
-    g_hwnd = CreateWindowExW(WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE, wc.lpszClassName, L"SHUTOUT",
+    // No redirection bitmap: the window itself draws nothing, so the page's transparent parts show the taskbar.
+    DWORD ex = WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE | (g_set.background == L"transparent" ? WS_EX_NOREDIRECTIONBITMAP : 0);
+    g_hwnd = CreateWindowExW(ex, wc.lpszClassName, L"SHUTOUT",
                              WS_POPUP | WS_CLIPCHILDREN, 0, 0, 100, 48, tb /* owned by the taskbar: stays above it */, nullptr, wc.hInstance, nullptr);
     if (!g_hwnd) { Wh_Log(L"CreateWindow failed: %lu", GetLastError()); CoUninitialize(); return 0; }
     ApplyBackdrop(g_hwnd);
