@@ -20,6 +20,59 @@ nav .tab:not(.on):active { color: var(--text-2); }
 .seg button { height: 46px; padding: 0 22px; border: 0; border-radius: 999px; background: none; color: var(--text-3);
   font: 500 19px "Inter Tight", sans-serif; cursor: pointer; white-space: nowrap; }
 .seg button.on { background: rgba(255,255,255,.12); color: var(--text); }
+.seg button:disabled, .datebar button:disabled { color: var(--text-4); opacity: .55; cursor: default; }
+.datebar .date { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 0 10px; }
+.cal-ic { width: 20px; height: 20px; fill: none; stroke: var(--text-3); stroke-width: 1.6; stroke-linecap: round; }
+
+/* Popovers (calendar, settings) share the team picker's look. */
+.pop { position: absolute; top: 108px; z-index: 12; display: none; padding: 24px; border-radius: 16px;
+  background: rgba(18,18,18,.97); border: 1px solid var(--line-2); box-shadow: 0 24px 80px rgba(0,0,0,.85); }
+.pop.open { display: block; animation: pop .18s var(--ease); }
+
+/* Calendar */
+#cal { width: 640px; }
+.cal-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; height: 34px; }
+.cal-title { font-size: 26px; font-weight: 600; letter-spacing: -.4px; }
+.cal-phase { font-size: 16px; color: var(--text-3); white-space: nowrap; }
+.cal-months { display: flex; gap: 6px; margin-top: 16px; }
+.cal-months button { flex: 1; height: 40px; border: 0; border-radius: 999px; background: none; color: var(--text-3);
+  font: 500 16px "Inter Tight", sans-serif; cursor: pointer; }
+.cal-months button.on { background: rgba(255,255,255,.12); color: var(--text); }
+.cal-wk, .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+.cal-wk { margin-top: 14px; height: 30px; align-items: center; }
+.cal-wk span { text-align: center; font-size: 14px; font-weight: 500; color: var(--text-4); }
+.cal-grid { row-gap: 4px; }
+.cd { position: relative; height: 58px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 12px;
+  background: none; font: 500 21px "Inter Tight", sans-serif; font-variant-numeric: tabular-nums; color: rgba(255,255,255,.16); }
+.cd.g { color: var(--text); cursor: pointer; transition: background .15s var(--ease); }
+.cd.g:active { background: rgba(255,255,255,.08); }
+.cd.today { box-shadow: inset 0 0 0 1px var(--line-2); }
+.cd.sel { background: #fff; color: #000; font-weight: 600; }
+.cd i { position: absolute; bottom: 8px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: rgb(var(--fav-rgb, 255,255,255)); }
+.cd.sel i { background: #000; }
+#cal { --fav-rgb: 255,255,255; }
+.cal-foot { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 15px; color: var(--text-3); }
+.cal-foot i { width: 6px; height: 6px; border-radius: 50%; background: rgb(var(--fav-rgb)); }
+
+/* Settings */
+#settings-btn { width: 44px; height: 44px; margin: 0 -8px 0 16px; display: flex; align-items: center; justify-content: center;
+  border: 0; border-radius: 50%; background: none; cursor: pointer; transition: background .15s var(--ease); }
+#settings-btn svg { width: 24px; height: 24px; fill: none; stroke: var(--text-3); stroke-width: 1.7; stroke-linecap: round; }
+#settings-btn.on { background: rgba(255,255,255,.08); }
+#settings-btn.on svg { stroke: var(--text); }
+#settings { right: 40px; width: 960px; }
+.set-head { display: flex; align-items: center; justify-content: space-between; height: 40px; }
+.set-title { font-size: 24px; font-weight: 600; letter-spacing: -.3px; }
+.set-none { height: 36px; padding: 0 16px; border: 1px solid var(--line-2); border-radius: 999px; background: none; color: var(--text-3);
+  font: 500 15px "Inter Tight", sans-serif; cursor: pointer; }
+.set-none.on { color: var(--text); border-color: rgba(255,255,255,.4); }
+.set-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 16px; }
+.set-grid button { display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 12px; border: 1px solid transparent; border-radius: 10px;
+  background: var(--surface-2); color: var(--text-2); font: 500 16px "Inter Tight", sans-serif; cursor: pointer; text-align: left; }
+.set-grid button img { width: 28px; height: 28px; flex: none; }
+.set-grid button span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.set-grid button.on { background: #262626; color: var(--text); border-color: rgba(var(--fav-rgb), .7); }
+.set-note { margin-top: 16px; font-size: 15px; color: var(--text-3); }
 
 .muted { color: var(--text-3); }
 .pos { color: #5fd38a; } .neg { color: #f06a6a; }
@@ -37,6 +90,8 @@ nav .tab:not(.on):active { color: var(--text-2); }
   background: var(--surface); border: 1px solid var(--line); cursor: pointer; opacity: 0;
   animation: card-in .45s var(--ease) forwards var(--delay, 0ms); transition: transform .15s var(--ease); }
 .gcard:active { transform: scale(.98); }
+/* Favorite team: a quiet tint of its color on the border. */
+.gcard.fav:not(.live) { border-color: rgba(var(--fav-rgb), .5); background: #141414; }
 /* Live games get the same team-color ring as the news cards. */
 .gcard.live { border: 3px solid transparent; padding: 20px 24px 18px;
   background: linear-gradient(var(--surface), var(--surface)) padding-box,
