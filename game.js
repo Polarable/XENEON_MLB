@@ -5,6 +5,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
   let feed = null;
   let timer = 0;
   const gday = Gameday(pk);
+  const lastRuns = {};
 
   async function fetchFeed() {
     return api(`/api/v1.1/game/${pk}/feed/live`, { ttl: 2_000 });
@@ -69,7 +70,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
         ${dec.loser ? `<div><b>L</b>${pName(dec.loser)}${pitchRec(dec.loser)}</div>` : ""}
         ${dec.save ? `<div><b>SV</b>${pName(dec.save)}${saveRec(dec.save)}</div>` : ""}</div>`;
     } else if (phase === "live") {
-      lower = gday.field(ls);
+      lower = `<div class="g-field-slot"></div>`;
     } else {
       const pp = gd.probablePitchers || {};
       lower = `<div class="g-dec"><div><b>${esc(teamMeta(teams.away).abbr)}</b>${pp.away ? pName(pp.away) : "TBD"}</div>
@@ -181,6 +182,14 @@ Sheet.register("game", async (root, { pk }, alive) => {
     const home = teamMeta(gd.teams.home);
     root.innerHTML = `<div class="g-left ${phase}" style="${vars(home)}">${scoreboard(gd, ld)}</div>
       <div class="g-right" style="${vars(home)}"><div class="g-tabs">${seg(views, view)}</div><div class="g-main">${right}</div></div>`;
+    const fs = root.querySelector(".g-field-slot");
+    if (fs) gday.field(fs, feed);
+    // Score changes pop.
+    ["away", "home"].forEach((k, i) => {
+      const r = ld.linescore?.teams?.[k]?.runs ?? 0;
+      if (lastRuns[k] != null && r !== lastRuns[k]) root.querySelectorAll(".g-runs")[i]?.classList.add("bump");
+      lastRuns[k] = r;
+    });
     root.querySelectorAll(".vscroll").forEach((e) => dragScroll(e, "y"));
     root.querySelectorAll(".hscroll").forEach((e) => dragScroll(e, "x"));
     [...root.querySelectorAll(".vscroll,.hscroll")].forEach((e, i) => { if (keep[i]) { e.scrollTop = keep[i][0]; e.scrollLeft = keep[i][1]; } });

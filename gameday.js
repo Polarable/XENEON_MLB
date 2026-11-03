@@ -159,7 +159,7 @@ const Gameday = (pk) => {
     const ps = pitchesOf(ab);
     const top = ps.find((p) => p.pitchData?.strikeZoneTop)?.pitchData.strikeZoneTop || 3.4;
     const bot = ps.find((p) => p.pitchData?.strikeZoneBottom)?.pitchData.strikeZoneBottom || 1.6;
-    const img = batterImg("#3a4157");
+    const img = batterImg("#3d3d40");
     if (img) {
       const bh = 6.3 * pxFt, bw = bh * (img.width / img.height);
       const [, footY] = P(0, PLATE_Y, 0);
@@ -173,10 +173,10 @@ const Gameday = (pk) => {
     }
     // Plate (seen from the mound: flat edge toward us).
     const pl = [[-0.708, 0], [0.708, 0], [0.708, 0.5], [0, 1.2], [-0.708, 0.5]].map(([x, d]) => P(x, PLATE_Y + d * 0.35, 0));
-    ctx.fillStyle = "#3a4157"; ctx.beginPath(); pl.forEach(([a, b], i) => (i ? ctx.lineTo(a, b) : ctx.moveTo(a, b))); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#3d3d40"; ctx.beginPath(); pl.forEach(([a, b], i) => (i ? ctx.lineTo(a, b) : ctx.moveTo(a, b))); ctx.closePath(); ctx.fill();
     // Zone: shaded with fine vertical lines, a 3x3 grid, and a crisp outline.
     const [x1, y1] = P(0.708, PLATE_Y, top), [x2, y2] = P(-0.708, PLATE_Y, bot);
-    ctx.fillStyle = "rgba(120,130,160,.16)"; ctx.fillRect(x1, y1, x2 - x1, y2 - y1);
+    ctx.fillStyle = "rgba(255,255,255,.07)"; ctx.fillRect(x1, y1, x2 - x1, y2 - y1);
     ctx.strokeStyle = "rgba(255,255,255,.05)"; ctx.lineWidth = 1;
     for (let x = x1 + 4; x < x2; x += 5) { ctx.beginPath(); ctx.moveTo(x, y1); ctx.lineTo(x, y2); ctx.stroke(); }
     ctx.strokeStyle = "rgba(255,255,255,.12)";
@@ -279,7 +279,8 @@ const Gameday = (pk) => {
         if (/walk/.test(t)) b.bb++;
         if (/strikeout/.test(t)) b.k++;
         b.rbi += r.rbi || 0;
-        const pc = (pit[p.matchup?.pitcher?.id] ||= { outs: 0, k: 0, r: 0, h: 0, bb: 0 });
+        const pc = (pit[p.matchup?.pitcher?.id] ||= { outs: 0, k: 0, r: 0, h: 0, bb: 0, p: 0 });
+        pc.p += pitchesOf(p).length;
         const after = p.count?.outs ?? outs;
         pc.outs += Math.max(0, after - outs); outs = after;
         if (/strikeout/.test(t)) pc.k++;
@@ -287,17 +288,47 @@ const Gameday = (pk) => {
         if (/walk/.test(t)) pc.bb++;
         pc.r += (p.runners || []).filter((x) => x.movement?.end === "score").length;
       }
-      return { bat: { ...(bat[p.matchup?.batter?.id] || { ab: 0, h: 0, rbi: 0 }) }, pit: { ...(pit[p.matchup?.pitcher?.id] || { outs: 0, k: 0, r: 0, h: 0 }) } };
+      return { bat: { ...(bat[p.matchup?.batter?.id] || { ab: 0, h: 0, rbi: 0 }) }, pit: { ...(pit[p.matchup?.pitcher?.id] || { outs: 0, k: 0, r: 0, h: 0, p: 0 }) } };
     });
   }
   const batLine = (b) => [`${b.h}/${b.ab}`, b.hr && `${b.hr > 1 ? `${b.hr} ` : ""}hr`, b.rbi && `${b.rbi} rbi`, b.bb && `${b.bb} bb`, b.k && `${b.k} k`].filter(Boolean).join(", ");
-  const pitLine = (q) => [`${Math.floor(q.outs / 3)}.${q.outs % 3} ip`, `${q.h || 0} h`, `${q.k} k`, `${q.r} r`].join(", ");
+  const pitLine = (q) => [`${Math.floor(q.outs / 3)}.${q.outs % 3} ip`, `${q.h || 0} h`, q.r ? `${q.r} r` : "", `${q.k} k`, q.p ? `${q.p} p` : ""].filter(Boolean).join(", ");
+
+  /* ================= Challenges and reviews ================= */
+  // ABS ball/strike challenges (batter, pitcher or catcher taps the helmet or cap; 2 per team, kept when they win)
+  // come through as reviewType "MJ" or as "Is Challenge: Batter - Challenge Overturned" text on the pitch.
+  // Everything else is a replay review: a manager's challenge (challengeTeamId set) or one the umpires start.
+  const ABS_TXT = /Is Challenge: (\w+) - Challenge (Confirmed|Overturned)/i;
+  function reviewsOf(p) {
+    const out = [], seen = new Set();
+    const add = (rd, idx, txt) => {
+      const m = txt ? ABS_TXT.exec(txt) : null;
+      if (!rd && !m) return;
+      const abs = !!m || rd?.reviewType === "MJ";
+      const key = `${abs}:${idx}`;
+      if (seen.has(key)) return; seen.add(key);
+      const team = rd?.challengeTeamId ? teamById[rd.challengeTeamId] : null;
+      out.push({ abs, idx, inProgress: !!rd?.inProgress, overturned: m ? /overturned/i.test(m[2]) : !!rd?.isOverturned,
+        who: m ? m[1] : rd?.player?.fullName ? short(rd.player.fullName) : "", team: team?.abbr || "", manager: !abs && !!rd?.challengeTeamId });
+    };
+    const evs = p.playEvents || [];
+    let pi = -1;
+    evs.forEach((e) => { if (e.isPitch) pi++; add(e.reviewDetails, e.isPitch ? pi : -1, e.details?.description); });
+    (p.runners || []).forEach((r) => add(r.reviewDetails, -1));
+    add(p.reviewDetails, p.reviewDetails?.reviewType === "MJ" ? pitchesOf(p).length - 1 : -1);
+    return out;
+  }
+  const reviewText = (rv) => rv.abs
+    ? `ABS challenge${rv.who ? ` by ${/^(batter|pitcher|catcher|fielder)$/i.test(rv.who) ? rv.who.toLowerCase() : rv.who}` : ""}`
+    : rv.manager ? `${rv.team ? `${rv.team} ` : ""}manager challenge` : "Umpire review";
+  const reviewPill = (rv) => `<span class="rv ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">${esc(reviewText(rv))} · ${rv.inProgress ? "under review" : rv.overturned ? "overturned" : "call stands"}</span>`;
 
   /* ================= Headlines ================= */
   const RISP = (p) => (p.runners || []).some((r) => /2B|3B/.test(r.movement?.originBase || ""));
   function isImpact(p) {
     const r = p.result || {}, ab = p.about || {};
     if (ab.isScoringPlay) return true;
+    if (reviewsOf(p).some((rv) => rv.overturned)) return true;
     if (/home_run|triple|double$|double_play|triple_play|caught_stealing/.test(r.eventType || "")) return true;
     if (/strikeout/.test(r.eventType || "") && (RISP(p) || p.count?.outs === 3)) return true;
     const h = (p.playEvents || []).map((e) => e.hitData).filter(Boolean).pop();
@@ -354,9 +385,12 @@ const Gameday = (pk) => {
   const ago = (iso) => { const m = Math.round((Date.now() - Date.parse(iso)) / 60000); return !iso || isNaN(m) ? "" : m < 1 ? "now" : m < 60 ? `${m}m` : m < 1440 ? `${Math.round(m / 60)}h` : ""; };
 
   function pitchRows(ab, limit = 99) {
+    const rvs = reviewsOf(ab).filter((rv) => rv.abs);
     return pitchesOf(ab).map((e, i) => {
       const d = e.details || {}, pd = e.pitchData || {};
-      return `<div class="pr"><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(d.description || d.call?.description || "")}</b>
+      const rv = rvs.find((x) => x.idx === i);
+      const desc = String(d.description || d.call?.description || "").replace(ABS_TXT, "").replace(/[\s-]+$/, "") || d.call?.description || "";
+      return `<div class="pr"><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(desc)}${rv ? ` <em class="abs ${rv.overturned ? "won" : "lost"}">ABS ${rv.overturned ? "overturned" : "confirmed"}</em>` : ""}</b>
         <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div></div>`;
     }).reverse().slice(0, limit).join("");
   }
@@ -372,7 +406,8 @@ const Gameday = (pk) => {
     const tag = situation(p, before[i], isLast);
     const outs = p.count?.outs ?? 0;
     const tb = tidbits(p);
-    return `<div class="pc ${isImpact(p) ? "impact" : ""} ${sel === ab.atBatIndex ? "on" : ""}" data-ab="${ab.atBatIndex}" role="button" style="${vars(batTeam)}">
+    const rvs = reviewsOf(p);
+    return `<div class="pc ${isImpact(p) ? "impact" : ""}" data-ab="${ab.atBatIndex}" role="button" style="${vars(batTeam)}">
       <div class="pc-top">
         <span class="sc">${logoImg(teamMeta(teams.away))}${a1}-${h1}${logoImg(teamMeta(teams.home))}</span>
         <span>${ab.halfInning === "top" ? "Top" : "Bot"} ${ab.inning} · ${outs} out${outs === 1 ? "" : "s"}${ago(ab.endTime) ? ` · ${ago(ab.endTime)}` : ""}</span>
@@ -385,11 +420,11 @@ const Gameday = (pk) => {
           <div class="ln"><b>${esc(short(m.batter?.fullName))}</b> · ${esc(batLine(lines[i].bat))}</div>
           <div class="ln muted">${esc(short(m.pitcher?.fullName))} · ${esc(pitLine(lines[i].pit))}</div></div>
       </div>
-      <div class="pc-body">
-        <div class="pc-pitches">${pitchRows(p, 5) || `<div class="muted">${esc(r.description || "")}</div>`}</div>
-      </div>
-      <canvas class="mini" data-ab="${ab.atBatIndex}" width="440" height="520"></canvas>
-      ${tb.length ? `<div class="pc-tb">${tb.map((t) => `<span>${esc(t)}</span>`).join("")}</div>` : ""}
+      ${tb.length || rvs.length ? `<div class="pc-tb">${rvs.map(reviewPill).join("")}${tb.map((t) => `<div>${esc(t)}</div>`).join("")}</div>` : ""}
+      <div class="pc-more"><div class="pc-in">
+        <div class="pc-pitches">${pitchRows(p) || `<div class="muted">${esc(r.description || "")}</div>`}</div>
+        <canvas class="mini" data-ab="${ab.atBatIndex}" width="440" height="520"></canvas>
+      </div></div>
     </div>`;
   }
 
@@ -411,6 +446,9 @@ const Gameday = (pk) => {
 
   // Render cards into a container, reusing card elements whose content hasn't changed (keeps minis drawn).
   const cardCache = new Map();
+  const opened = new Set();          // cards expanded to show their pitches (Real keeps cards compact until tapped)
+  const seenCards = new Set();       // cards already shown once, so only new plays slide in
+  const firstPaint = new Set();      // the first render of a list doesn't animate
   function renderCards(box, f, mode) {
     const ctx = context(f);
     const list = pickPlays(ctx, mode);
@@ -420,7 +458,7 @@ const Gameday = (pk) => {
     list.forEach((p, k) => {
       if (mode === "gameday" && k === 3) { const s = document.createElement("div"); s.className = "pc-sep"; s.textContent = "Key plays"; nodes.push(s); }
       const c = clipFor(p, ctx.plays);
-      const key = `${mode}:${p.about.atBatIndex}:${pitchesOf(p).length}:${c?.id || ""}:${sel === p.about.atBatIndex}:${ago(p.about.endTime)}`;
+      const key = `${mode}:${p.about.atBatIndex}:${pitchesOf(p).length}:${c?.id || ""}:${ago(p.about.endTime)}:${reviewsOf(p).map((x) => `${x.inProgress}${x.overturned}`).join()}`;
       let el = cardCache.get(key);
       if (!el) {
         const t = document.createElement("div");
@@ -429,11 +467,19 @@ const Gameday = (pk) => {
         cardCache.set(key, el);
         const cv = el.querySelector("canvas.mini");
         if (cv) paintMini(cv, p);
+        const ab = p.about.atBatIndex;
+        if (!seenCards.has(`${mode}:${ab}`)) {
+          seenCards.add(`${mode}:${ab}`);
+          if (!firstPaint.has(mode)) { el.classList.add("enter"); el.addEventListener("animationend", () => el.classList.remove("enter"), { once: true }); }
+        }
       }
+      el.classList.toggle("open", opened.has(p.about.atBatIndex));
+      el.classList.toggle("on", sel === p.about.atBatIndex);
       nodes.push(el);
     });
     if (cardCache.size > 600) cardCache.clear();
     box.replaceChildren(...nodes);
+    firstPaint.add(mode);
   }
 
   /* ================= Now batting panel ================= */
@@ -465,11 +511,8 @@ const Gameday = (pk) => {
           <div><b>${esc(m.pitcher?.fullName || "")}</b><span>${esc(pitLine(ln.pit))}</span></div></div>
       </div>`;
     $(".gd-seq").innerHTML = pitchRows(cur) || `<div class="muted pad">First pitch coming up</div>`;
-    // On deck and in the hole (live only), like the top of Real's feed.
-    const o = f.liveData?.linescore?.offense || {};
-    const nxt = (pp, lbl) => pp ? `<div class="nx lnk" data-player="${pp.id}"><span>${lbl}</span><img src="${headshot(pp.id, 100)}" alt="" onerror="this.style.visibility='hidden'">
-      <b>${esc(short(pp.fullName))}</b><em>${esc(sAvg(pp.id) || "")}</em></div>` : "";
-    $(".gd-now-foot").innerHTML = showingLive ? `${nxt(o.onDeck, "On deck")}${nxt(o.inHole, "In the hole")}` : "";
+    // Challenges and reviews on this at-bat (a live one pulses while the call is being checked).
+    $(".gd-now-foot").innerHTML = reviewsOf(cur).map(reviewPill).join("");
     setZone(cur);
   }
 
@@ -487,7 +530,9 @@ const Gameday = (pk) => {
     const pc = e.target.closest(".pc");
     if (film && !pc) { play(clips.find((c) => c.id === film.dataset.clip), true); return true; }
     if (pc) {
-      sel = +pc.dataset.ab;
+      const ab = +pc.dataset.ab;
+      if (opened.has(ab) && sel === ab) opened.delete(ab); else opened.add(ab);
+      sel = ab;
       const c = pc.querySelector("[data-clip]");
       if (c) play(clips.find((x) => x.id === c.dataset.clip), true);
       zKey = "";
@@ -499,28 +544,73 @@ const Gameday = (pk) => {
   }
   root.addEventListener("click", (e) => { if (onClick(e)) e.stopPropagation(); });
 
-  /* ================= Live field for the left panel ================= */
-  function field(ls) {
-    const o = ls.offense || {}, d = ls.defense || {};
-    const person = (r, cls, w = 160) => r ? `<div class="fr-run ${cls} lnk" data-player="${r.id}"><img src="${headshot(r.id, w)}" alt="" onerror="this.style.visibility='hidden'"><span>${esc(lastName(r.fullName))}</span></div>` : "";
-    const base = (on, cls) => `<i class="fb ${cls} ${on ? "on" : ""}"></i>`;
-    const dots = (n, max, cls) => Array.from({ length: max }, (_, i) => `<i class="${i < n ? `on ${cls}` : ""}"></i>`).join("");
-    return `<div class="g-field">
-      <div class="fd">
-        <svg viewBox="0 0 380 280" class="fd-lines"><path d="M190 250 L320 136 L190 22 L60 136 Z"/><circle cx="190" cy="136" r="15"/></svg>
-        ${base(o.first, "b1")}${base(o.second, "b2")}${base(o.third, "b3")}<i class="fb home"></i>
-        ${person(o.first, "r1")}${person(o.second, "r2")}${person(o.third, "r3")}${person(o.batter, "rh")}
-        ${d.pitcher ? `<div class="fr-mound lnk" data-player="${d.pitcher.id}"><img src="${headshot(d.pitcher.id, 120)}" alt="" onerror="this.style.visibility='hidden'"></div>` : ""}
-      </div>
-      <div class="bso">
-        <div><b>B</b>${dots(ls.balls ?? 0, 4, "ball")}</div>
-        <div><b>S</b>${dots(ls.strikes ?? 0, 3, "strike")}</div>
-        <div><b>O</b>${dots(ls.outs ?? 0, 3, "out")}</div>
-      </div></div>`;
+  /* ================= Live field for the left panel (Real-style) ================= */
+  // Three bases like Real's; a runner's photo fills his base. The element persists between refreshes so
+  // runners slide from base to base, scorers slide home, and the count dots fade in and out.
+  const fieldEl = document.createElement("div");
+  fieldEl.className = "g-field";
+  fieldEl.innerHTML = `<div class="fd"><i class="fb b3"></i><i class="fb b2"></i><i class="fb b1"></i></div>
+    <div class="bso">${[["B", 4, "ball"], ["S", 3, "strike"], ["O", 3, "out"]].map(([l, n, c]) => `<div data-k="${c}"><b>${l}</b>${"<i></i>".repeat(n)}</div>`).join("")}</div>
+    <div class="g-next"></div><div class="g-chal"></div>`;
+  const BASE_POS = { first: [192, 130], second: [126, 64], third: [60, 130], home: [126, 196] };
+  const runnerEls = new Map();   // player id -> element
+  let lastRuns = null;
+  function updateField(f) {
+    const ls = f.liveData?.linescore || {};
+    const o = ls.offense || {};
+    const runs = (ls.teams?.away?.runs || 0) + (ls.teams?.home?.runs || 0);
+    const scored = lastRuns != null && runs > lastRuns;
+    lastRuns = runs;
+    const fd = fieldEl.querySelector(".fd");
+    const now = new Map();
+    ["first", "second", "third"].forEach((b) => { if (o[b]?.id) now.set(o[b].id, b); });
+    // Runners who left: slide home if runs scored, otherwise just fade.
+    runnerEls.forEach((el, id) => {
+      if (now.has(id)) return;
+      runnerEls.delete(id);
+      if (scored) { const [x, y] = BASE_POS.home; el.style.left = `${x}px`; el.style.top = `${y}px`; }
+      el.classList.add("gone");
+      setTimeout(() => el.remove(), 900);
+    });
+    now.forEach((b, id) => {
+      let el = runnerEls.get(id);
+      if (!el) {
+        el = document.createElement("div");
+        el.className = "fr-run lnk"; el.dataset.player = id;
+        el.innerHTML = `<img src="${headshot(id, 160)}" alt="" onerror="this.style.visibility='hidden'">`;
+        // New runners come up the line from home plate.
+        const [hx, hy] = BASE_POS.home; el.style.left = `${hx}px`; el.style.top = `${hy}px`; el.classList.add("gone");
+        fd.appendChild(el); runnerEls.set(id, el);
+        el.getBoundingClientRect();
+        el.classList.remove("gone");
+      }
+      const [x, y] = BASE_POS[b]; el.style.left = `${x}px`; el.style.top = `${y}px`;
+    });
+    const counts = { ball: ls.balls ?? 0, strike: ls.strikes ?? 0, out: ls.outs ?? 0 };
+    fieldEl.querySelectorAll(".bso [data-k]").forEach((row) => row.querySelectorAll("i").forEach((d, i) => d.classList.toggle("on", i < counts[row.dataset.k])));
+    // On deck and in the hole, side by side.
+    const box = f.liveData?.boxscore?.teams || {};
+    const avg = (id) => (box.away?.players?.[`ID${id}`] || box.home?.players?.[`ID${id}`])?.seasonStats?.batting?.avg || "";
+    const nx = (pp, lbl) => pp ? `<div class="nx lnk" data-player="${pp.id}"><img src="${headshot(pp.id, 100)}" alt="" onerror="this.style.visibility='hidden'">
+      <div><span>${lbl}</span><b>${esc(short(pp.fullName))}</b><em>${esc(avg(pp.id))}</em></div></div>` : "";
+    const nextHtml = `${nx(o.onDeck, "On deck")}${nx(o.inHole, "In the hole")}`;
+    const nextEl = fieldEl.querySelector(".g-next");
+    if (nextEl.dataset.h !== nextHtml) { nextEl.dataset.h = nextHtml; nextEl.innerHTML = nextHtml; nextEl.classList.remove("swap"); nextEl.getBoundingClientRect(); nextEl.classList.add("swap"); }
+    // Challenges left: ABS (players) and replay (manager).
+    const gd = f.gameData || {};
+    const pips = (n, max) => Array.from({ length: max }, (_, i) => `<i class="${i < n ? "on" : ""}"></i>`).join("");
+    const row = (k) => {
+      const abs = gd.absChallenges?.[k], rv = gd.review?.[k];
+      if (!abs && !rv) return "";
+      return `<div><b>${esc(teamMeta(gd.teams[k]).abbr)}</b>${abs ? `<span>ABS</span>${pips(abs.remaining ?? 0, Math.max(2, abs.remaining ?? 0))}` : ""}${rv ? `<span>Review</span>${pips(rv.remaining ?? 0, Math.max(1, (rv.used ?? 0) + (rv.remaining ?? 0)))}` : ""}</div>`;
+    };
+    fieldEl.querySelector(".g-chal").innerHTML = gd.absChallenges?.hasChallenges || gd.review?.hasChallenges ? `${row("away")}${row("home")}` : "";
   }
 
   return {
-    update, field, onClick, renderCards,
+    update, onClick, renderCards,
+    // The left panel's live field: game.js puts this element in its slot after each render.
+    field(slot, f) { slot.replaceWith(fieldEl); updateField(f); },
     mount(slot, f) { slot.appendChild(root); drawClips(); update(f); },
     async start(isLive) {
       const changed = await loadClips();

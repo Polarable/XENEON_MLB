@@ -142,6 +142,7 @@ const Scores = (() => {
     return [...list].sort((a, b) => (anyLive ? rank[a.phase] - rank[b.phase] : 0) || String(a.start).localeCompare(String(b.start)));
   }
 
+  const prevScores = {};
   function draw(list, teamMode) {
     const box = el();
     const ctxKey = teamMode ? `team:${selected}` : `day:${day}`;
@@ -156,7 +157,13 @@ const Scores = (() => {
       return;
     }
     const keepScroll = box.scrollLeft;
-    box.innerHTML = `<div class="ggrid">${list.map((g, i) => card(g, i, teamMode)).join("")}</div>`;
+    box.innerHTML = `<div class="ggrid ${first ? "" : "settled"}">${list.map((g, i) => card(g, i, teamMode)).join("")}</div>`;
+    // Refreshes don't replay the entrance; a changed score pops instead.
+    if (!first) list.forEach((g) => ["away", "home"].forEach((k, j) => {
+      const was = prevScores[`${g.pk}:${k}`];
+      if (was != null && was !== g[k].score) box.querySelectorAll(`.gcard[data-pk="${g.pk}"] .sc`)[j]?.classList.add("bump");
+    }));
+    list.forEach((g) => { prevScores[`${g.pk}:away`] = g.away.score; prevScores[`${g.pk}:home`] = g.home.score; });
     if (first) {
       box.dataset.ctx = ctxKey;
       if (teamMode) {
