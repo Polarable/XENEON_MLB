@@ -4,8 +4,8 @@
 //           on deck / in the hole underneath.
 //   middle: the feed: Real-style play cards (photo, distance + direction headline, batter and
 //           pitcher game lines, pitch list next to a mini strike zone, tidbits).
-//   right:  a Video list with every play; tapping one opens its Baseball Savant video in a browser tab.
-// Tapping a card shows that at-bat on the left. Every pitch also links to its Savant video. Also renders the live field
+// Tapping a card shows that at-bat on the left. Every pitch (and each card's Video button) opens its
+// Baseball Savant video in a browser tab. Also renders the live field
 // (runners' photos on the bases, big ball/strike/out dots) for the game page's left panel.
 //
 // The batter silhouette (img/batter-hd.png) is cut from the reference image the user supplied (pitcher's view, right-handed stance).
@@ -34,14 +34,9 @@ const Gameday = (pk) => {
       </div>
       <div class="gd-now-foot"></div>
     </div>
-    <div class="gd-feed vscroll"></div>
-    <div class="gd-vcol">
-      <div class="gd-vhead">Video<span>Every play opens on Baseball Savant</span></div>
-      <div class="gd-vids vscroll"></div>
-    </div>`;
+    <div class="gd-feed vscroll"></div>`;
   const $ = (s) => root.querySelector(s);
   dragScroll($(".gd-feed"), "y");
-  dragScroll($(".gd-vids"), "y");
 
   /* ================= Video (Baseball Savant) ================= */
   // Savant has a video for every pitch, keyed by the pitch's Statcast playId. The widget can't play
@@ -50,27 +45,6 @@ const Gameday = (pk) => {
   const lastPitchId = (p) => { const ps = pitchesOf(p); for (let i = ps.length - 1; i >= 0; i--) if (ps[i].playId) return ps[i].playId; return null; };
   const PLAY_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>`;
   const vidLink = (id, inner, cls = "") => `<a class="${cls}" href="${savant(id)}" target="_blank" rel="noopener" data-savant>${inner}</a>`;
-  // Batter's action photo as the thumbnail (falls back to his headshot).
-  const actionPhoto = (id) => `https://img.mlbstatic.com/mlb-photos/image/upload/w_480,q_auto:good/v1/people/${id}/action/hero/current`;
-
-  let vidsKey = "";
-  function drawVids(f) {
-    const plays = playsOf(f).filter((p) => p.about?.isComplete && lastPitchId(p));
-    const key = plays.map((p) => p.about.atBatIndex).join();
-    if (key === vidsKey) return;
-    vidsKey = key;
-    const teams = f.gameData?.teams || {};
-    $(".gd-vids").innerHTML = plays.slice().reverse().map((p) => {
-      const ab = p.about, m = p.matchup || {};
-      const team = teamMeta(ab.halfInning === "top" ? teams.away : teams.home);
-      return vidLink(lastPitchId(p), `
-        <div class="th" style="${vars(team)}"><img src="${actionPhoto(m.batter?.id)}" alt="" loading="lazy"
-          onerror="if(this.classList.contains('hs'))this.style.visibility='hidden';else{this.classList.add('hs');this.src='${headshot(m.batter?.id, 240)}'}">
-          <span class="ply">${PLAY_ICON}</span><span class="inn">${ab.halfInning === "top" ? "Top" : "Bot"} ${ab.inning}</span></div>
-        <div class="tt">${esc(title(p))}</div>
-        <div class="st muted">${esc(short(m.batter?.fullName))} vs ${esc(short(m.pitcher?.fullName))}</div>`, `gd-vid ${isImpact(p) ? "impact" : ""}`);
-    }).join("") || `<div class="gd-noclips muted">Videos show up here as plays finish</div>`;
-  }
 
   /* ================= Strike zone, pitcher's view ================= */
   // A telephoto camera far behind the mound (like the TV center-field shot): little perspective, real paths.
@@ -377,7 +351,7 @@ const Gameday = (pk) => {
       const d = e.details || {};
       if (!e.isPitch) {
         const txt = d.description || d.event || "";
-        if (NOTE_RX.test(txt)) rows.push(`<div class="pr-note">${esc(txt.replace(/\s+/g, " ").trim())}</div>`);
+        if (NOTE_RX.test(txt)) { const t = esc(txt.replace(/\s+/g, " ").trim()); rows.push(e.playId ? vidLink(e.playId, `${t}${PLAY_ICON}`, "pr-note") : `<div class="pr-note">${t}</div>`); }
         return;
       }
       i++;
@@ -391,8 +365,9 @@ const Gameday = (pk) => {
         else if (rv.overturned) { call = d.isBall ? "Ball" : d.isStrike ? "Called Strike" : flip(orig); if (call === orig) call = flip(orig); state = "Overturned"; }
         else state = "Upheld";
       }
-      rows.push(`<div class="pr"><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(call)}${state ? ` <em class="abs ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">– ${state}</em>` : ""}</b>
-        <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div>${e.playId ? vidLink(e.playId, PLAY_ICON, "pv") : ""}</div>`);
+      const tag = e.playId ? "a" : "div";
+      rows.push(`<${tag} class="pr"${e.playId ? ` href="${savant(e.playId)}" target="_blank" rel="noopener" data-savant` : ""}><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(call)}${state ? ` <em class="abs ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">– ${state}</em>` : ""}</b>
+        <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div>${e.playId ? `<span class="pv">${PLAY_ICON}</span>` : ""}</${tag}>`);
     });
     return rows.reverse().slice(0, limit).join("");
   }
@@ -540,7 +515,6 @@ const Gameday = (pk) => {
     feed = f;
     drawNow(f);
     renderCards($(".gd-feed"), f, "gameday");
-    drawVids(f);
   }
 
   // Taps on cards (here or in the Scoring / All plays tabs) and the Follow live button.
