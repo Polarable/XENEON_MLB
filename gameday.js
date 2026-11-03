@@ -190,13 +190,27 @@ const Gameday = (pk) => {
     const pt = path(p);
     const col = COLOR[callOf(p.details)];
     if (trail && u > 0) {
-      const N = 36;
-      for (let k = 1; k <= N; k++) {
-        const ua = (u * (k - 1)) / N, ub = (u * k) / N;
-        const [ax, ay, as] = P(...pt.at(ua)), [bx, by] = P(...pt.at(ub));
-        ctx.strokeStyle = col; ctx.globalAlpha = (k / N) * 0.6 * alpha; ctx.lineWidth = Math.max(1, 0.2 * as * (k / N));
-        ctx.lineCap = "butt"; ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+      // One smooth streak: a tapered ribbon along the path that fades in toward the ball
+      // (drawing it as stacked segments left visible beads where they overlapped).
+      const N = 48, pts = [];
+      for (let k = 0; k <= N; k++) {
+        const [px, py, ps] = P(...pt.at((u * k) / N));
+        pts.push([px, py, Math.max(0.3, 0.121 * ps * 1.15 * 0.85) * Math.pow(k / N, 1.4)]);
       }
+      const L = [], R = [];
+      pts.forEach(([px, py, hw], k) => {
+        const [qx, qy] = pts[Math.min(N, k + 1)], [ox, oy] = pts[Math.max(0, k - 1)];
+        let dx = qx - ox, dy = qy - oy; const len = Math.hypot(dx, dy) || 1; dx /= len; dy /= len;
+        L.push([px - dy * hw, py + dx * hw]); R.push([px + dy * hw, py - dx * hw]);
+      });
+      const [tx, ty] = pts[0], [hx, hy] = pts[N];
+      const g = ctx.createLinearGradient(tx, ty, hx, hy);
+      const n = parseInt(col.slice(1), 16), rgb = `${n >> 16 & 255},${n >> 8 & 255},${n & 255}`;
+      g.addColorStop(0, `rgba(${rgb},0)`); g.addColorStop(1, `rgba(${rgb},${0.6 * alpha})`);
+      ctx.fillStyle = g; ctx.beginPath();
+      L.forEach(([x0, y0], i) => (i ? ctx.lineTo(x0, y0) : ctx.moveTo(x0, y0)));
+      for (let i = R.length - 1; i >= 0; i--) ctx.lineTo(R[i][0], R[i][1]);
+      ctx.closePath(); ctx.fill();
     }
     const [x, y, sc] = P(...pt.at(u));
     const r = Math.max(3, 0.121 * sc * 1.15);
