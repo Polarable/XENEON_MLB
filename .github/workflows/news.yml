@@ -36,7 +36,7 @@ jobs:
       - name: Stamp build id (busts iCUE's cache; not committed)
         run: |
           BUILD=$(git log -1 --format=%h -- . ':!news.json' ':!img' ':!logos')
-          sed -i "s/__BUILD__/$BUILD/g" index.html
+          sed -i "s/__BUILD__/$BUILD/g" index.html m/index.html
           echo "{\"build\":\"$BUILD\"}" > version.json
           cat version.json
       - uses: actions/configure-pages@v5
