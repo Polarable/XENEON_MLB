@@ -236,14 +236,16 @@ body.closing #panel { animation: panelOut .2s cubic-bezier(.4,0,1,1) both; }
 .mr b { font-size: 12.5px; font-weight: 600; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .mr em { font-style: normal; font-size: 11px; color: var(--fg-3); }
 
-/* News slide: headline scrolls when long; second line = team, age, then the story's first sentence */
-.nw .hd { display: block; overflow: hidden; text-overflow: clip; }
-.nw .hd:not(.long) { text-overflow: ellipsis; }
-.nw .hd .mq { display: inline-block; white-space: nowrap; }
-.nw .hd.long .mq { animation: mq 12s linear infinite; }
-@keyframes mq { 0%, 18% { transform: none; } 50%, 68% { transform: translateX(var(--mq)); } 100% { transform: none; } }
-.nw .mt b { font-weight: 600; color: var(--fg-2, rgba(255,255,255,.7)); flex: none; }
-.nw .mt i { font-style: normal; flex: none; }
+/* News slide: headline slides when long; second line = logo, team, age */
+.nw { flex: 1; }
+.nw .hd { display: block; overflow: hidden; text-overflow: ellipsis; }
+.nw .hd.long { text-overflow: clip; }
+.nw .hd .mq { display: inline-block; white-space: nowrap; will-change: transform; }
+.nw .mt b { font-weight: 600; color: var(--fg-2); }
 .nw .mt b + i::before { content: "·"; margin-right: 5px; }
-.nw .mt em { font-style: normal; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--fg-2, rgba(255,255,255,.62)); }
-.nw .mt em::before { content: "·"; margin-right: 5px; color: var(--fg-3); }
+.nw .mt i { font-style: normal; }
+/* Carousel position: small dots at the end of the meta line, the current story as a short pill */
+.nw .tx { flex: 1; }
+.nw .mt .dots { position: static; display: flex; align-items: center; gap: 3px; margin-left: auto; padding-left: 10px; flex: none; }
+.dots i { width: 4px; height: 4px; border-radius: 2px; background: var(--fg-3); opacity: .55; transition: width .3s var(--ease), opacity .3s; }
+.dots i.on { width: 10px; opacity: 1; background: var(--fg-2); }
