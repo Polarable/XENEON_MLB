@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T18:00:46.229Z",
+ "updated": "2026-11-03T18:04:52.728Z",
  "articles": [
   {
    "title": "Red Sox Trade Eduardo Rivera To Cardinals",
@@ -46,7 +46,10 @@
    "title": "Rockies Return RJ Petit To Tigers",
    "link": "https://www.mlbtraderumors.com/2026/11/rockies-return-rj-petit-to-tigers.html",
    "date": "2026-11-03T17:07:54.000Z",
-   "teams": [],
+   "teams": [
+    "COL",
+    "DET"
+   ],
    "body": [
     "The Rockies have returned 2025 Rule 5 pick RJ Petit to the Tigers, per a team announcement. The right-hander missed the entire 2026 campaign while recovering from Tommy John surgery."
    ],
@@ -9591,56 +9594,6 @@
    "players": []
   },
   {
-   "title": "Tigers To Part Ways With Two Coaches",
-   "link": "https://www.mlbtraderumors.com/2026/09/tigers-to-part-ways-with-two-coaches.html",
-   "date": "2026-09-29T16:33:21.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers are expected to make two coaching changes involving the major league staff. Assistant pitching coach Juan Nieves and first base coach Anthony Sanders will not be back with the club, reports Cody Stavenhagen and Ken Rosenthal of The Athletic.",
-    "Nieves has been with the Tigers since 2021. He’s worked under pitching coach Chris Fetter for the duration of his tenure with Detroit. Nieves has ample experience on big-league staffs, including as bullpen coach with the White Sox from 2008 to 2012 and as pitching coach for the Red Sox from 2013 to 2015. Nieves spent three seasons as the Marlins’ pitching coach before joining the Tigers organization.",
-    "Detroit ranked sixth in ERA this year. A half season from Tarik Skubal certainly boosted those numbers, but the team also got solid production from unheralded names like Drew Anderson and Keider Montero. Troy Melton took a step forward in his first full season in the majors. Jackson Jobe seemed to make good on his big prospect pedigree in a nine-start stint with the club to close the season.",
-    "The Tigers’ bullpen was generally solid, outside of a down season for Kyle Finnegan and a major injury to Will Vest. The team will have a decision to make on closer Kenley Jansen. The veteran has a $12MM club option for 2027.",
-    "Sanders spent one season with the Tigers. He previously served as first base coach for the Orioles from 2020 to 2025. Detroit will enter 2027 with two new base coaches. Third base coach Joey Cora was let go in July. Billy Boyer stepped into his role to close the season."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/09/AnthonySanders-1024x683.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Drew Anderson",
-     623454
-    ],
-    [
-     "Keider Montero",
-     672456
-    ],
-    [
-     "Troy Melton",
-     675512
-    ],
-    [
-     "Jackson Jobe",
-     695549
-    ],
-    [
-     "Kyle Finnegan",
-     640448
-    ],
-    [
-     "Will Vest",
-     676684
-    ],
-    [
-     "Kenley Jansen",
-     445276
-    ]
-   ]
-  },
-  {
    "title": "Rangers’ Chris Young On Offseason, Seager, Jung",
    "link": "https://www.mlbtraderumors.com/2026/09/rangers-chris-young-on-offseason-seager-jung.html",
    "date": "2026-09-29T04:25:52.000Z",
@@ -10407,35 +10360,6 @@
     [
      "Vimael Machin",
      605353
-    ]
-   ]
-  },
-  {
-   "title": "Rockies Select Vimael Machin, Place Willi Castro On 10-Day Injured List",
-   "link": "https://www.mlbtraderumors.com/2026/09/rockies-to-select-vimael-machin-place-willi-castro-on-injured-list.html",
-   "date": "2026-09-05T22:20:07.000Z",
-   "teams": [
-    "COL"
-   ],
-   "body": [
-    "5:20PM: Machin’s contract selection has been officially announced, and Castro was placed on the 10-day IL (retroactive to September 2) due to what the team termed as left heel inflammation. To create a 40-man roster spot, Tyler Freeman was outrighted to Triple-A (more on this transaction here).",
-    "5:06PM: The Rockies will be selecting the contract of infielder Vimael Machin prior to their game with the Cardinals. The Denver Gazette’s Kevin Henry was the first to report that Machin had a locker in Colorado’s clubhouse, and MLB.com’s Thomas Harding reports that Willi Castro is being placed on the injured list in the corresponding roster move. A 40-man roster move will also be required, unless Castro is being placed on the 60-day IL instead of the 10-day IL.",
-    "A season-ending placement for Castro may not be out of the question since Harding writes that Castro is dealing with plantar fasciitis in his left foot, as well as a sore right knee. Castro hasn’t played since Monday, and given how little time is left in the regular season, the last-place Rockies might just opt to shut Castro down.",
-    "If this is indeed it for Castro’s 2026 campaign, he’ll finish with a.260/.331/.417 slash line and a career-best 15 home runs over 477 plate appearances. This translates to a modest 95 wRC+ when factoring in Castro’s favorable home environment at Coors Field, plus some good batted-ball luck in the form of a.336 BABIP."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2025/08/vimael-machin-orioles-1024x683.jpg",
-   "players": [
-    [
-     "Vimael Machin",
-     605353
-    ],
-    [
-     "Willi Castro",
-     650489
-    ],
-    [
-     "Tyler Freeman",
-     671289
     ]
    ]
   }
