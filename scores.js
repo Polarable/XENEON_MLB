@@ -233,6 +233,8 @@ const Scores = (() => {
     }
     const today = etYmd();
     const rel = [["Yesterday", shiftYmd(today, -1)], ["Today", today], ["Tomorrow", shiftYmd(today, 1)]];
+    // In the offseason, "Latest" jumps straight back to the season's last game (the World Series finale).
+    if (Season.info?.phase === "offseason" && dates.length) rel.push(["Latest", dates[dates.length - 1]]);
     const known = dates.length > 0;
     const can = (ymd) => !known || dateSet.has(ymd);
     const yr = day && day.slice(0, 4) !== today.slice(0, 4);
