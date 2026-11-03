@@ -7,6 +7,9 @@ const { TEAMS } = require("../teams.js");
 
 const DIR = path.join(__dirname, "..", "logos");
 const force = process.argv.includes("--force");
+// Hand-edited for the black background (user's picks): Astros star and Cubs "C" without the roundel,
+// Mets and Marlins with a white fill instead of navy/black. Never overwrite these.
+const CUSTOM = new Set(["HOU", "CHC", "NYM", "MIA"]);
 const variants = (id) => [
   `https://www.mlbstatic.com/team-logos/team-cap-on-dark/${id}.svg`,
   `https://www.mlbstatic.com/team-logos/team-primary-on-dark/${id}.svg`,
@@ -17,7 +20,7 @@ const variants = (id) => [
   fs.mkdirSync(DIR, { recursive: true });
   for (const t of TEAMS) {
     const out = path.join(DIR, `${t.abbr}.svg`);
-    if (!force && fs.existsSync(out)) continue;
+    if (CUSTOM.has(t.abbr) || (!force && fs.existsSync(out))) continue;
     let saved = false;
     for (const url of variants(t.id)) {
       try {

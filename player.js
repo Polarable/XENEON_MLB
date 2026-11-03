@@ -1,6 +1,6 @@
 // Player page, modeled on a Baseball Reference player page: photo and bio, a summary of this
 // season and career, then year-by-year standard batting/pitching and this season's game log.
-Sheet.register("player", async (root, { id }, alive) => {
+Sheet.register("player", async (root, { id }, alive, state = {}) => {
   const [pd, sd] = await Promise.all([
     apiTry([`/api/v1/people/${id}?hydrate=currentTeam,draft,rosterEntries`, `/api/v1/people/${id}`], { ttl: 3600_000 }),
     apiTry([`/api/v1/people/${id}/stats?stats=yearByYear,career&group=hitting,pitching&sportId=1`,
@@ -20,7 +20,7 @@ Sheet.register("player", async (root, { id }, alive) => {
   const groups = [];
   if (isPitcher || isTwoWay) { if (hasPit) groups.push("pitching"); if (hasBat) groups.push("hitting"); }
   else { if (hasBat) groups.push("hitting"); if (hasPit) groups.push("pitching"); }
-  let tab = groups[0] || "hitting";
+  let tab = state.tab && (state.tab === "log" || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
 
   const team = p.currentTeam ? teamMeta(p.currentTeam) : null;
   root.setAttribute("style", team ? vars(team) : "");
@@ -156,7 +156,7 @@ Sheet.register("player", async (root, { id }, alive) => {
   }
   root.querySelector(".p-tabs").onclick = (e) => {
     const b = e.target.closest("[data-v]"); if (!b) return;
-    tab = b.dataset.v; draw();
+    tab = state.tab = b.dataset.v; draw();
   };
   draw();
 });

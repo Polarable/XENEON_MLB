@@ -85,15 +85,18 @@ const PIT_COLS = [
   { h: "SO9", k: "strikeoutsPer9Inn", f: (r) => rate(r.strikeoutsPer9Inn) }, { h: "SO/W", k: "strikeoutWalkRatio", f: (r) => rate(r.strikeoutWalkRatio) },
 ];
 
-Sheet.register("team", async (root, { id }, alive) => {
-  const season = Standings.season();
+Sheet.register("team", async (root, { id }, alive, state = {}) => {
+  // Any past season can be picked (state.season sticks to this page, so Back returns to the same year).
+  const latest = Standings.season();
+  const season = state.season || latest;
+  const past = season < latest;
   const t = teamById[id] || { id, abbr: "", name: "" };
   let tab = load("team-tab") || "roster";
-  let rosterType = load("roster-type") || (/-(1[1-2]|0[1-2])-/.test(etYmd()) ? "40Man" : "active");
+  let rosterType = past ? "fullSeason" : load("roster-type") || (/-(1[1-2]|0[1-2])-/.test(etYmd()) ? "40Man" : "active");
 
   const [info, rec, coaches] = await Promise.all([
     api(`/api/v1/teams/${id}`, { ttl: 86_400_000 }).catch(() => ({})),
-    Standings.recordFor(id).catch(() => null),
+    past ? pastRecord(id, season).catch(() => null) : Standings.recordFor(id).catch(() => null),
     api(`/api/v1/teams/${id}/coaches?season=${season}`, { ttl: 86_400_000 }).catch(() => ({})),
   ]);
   if (!alive()) return;
@@ -101,7 +104,7 @@ Sheet.register("team", async (root, { id }, alive) => {
   const mgr = (coaches.roster || []).find((c) => /^manager$/i.test(c.job || ""));
   const ord = (n) => n + (["th", "st", "nd", "rd"][(n % 100 > 10 && n % 100 < 14) ? 0 : n % 10] || "th");
   const facts = [
-    rec && `<b>Record:</b> ${rec.wins}-${rec.losses} (${esc(rec.winningPercentage)}), ${ord(+rec.divisionRank)} in ${esc(rec.div.name)}`,
+    rec && `<b>Record:</b> ${rec.wins}-${rec.losses} (${esc(rec.winningPercentage)})${+rec.divisionRank && rec.div?.name ? `, ${ord(+rec.divisionRank)} in ${esc(rec.div.name)}` : ""}`,
     mgr && `<b>Manager:</b> ${esc(mgr.person.fullName)}`,
     team.venue?.name && `<b>Ballpark:</b> ${esc(team.venue.name)}`,
   ].filter(Boolean);
@@ -119,42 +122,43 @@ Sheet.register("team", async (root, { id }, alive) => {
       <div class="t-tabs">${seg([["roster", "Roster"], ["batting", "Batting"], ["pitching", "Pitching"], ["schedule", "Schedule"]], tab)}</div>
     </div>
     <div class="t-sub"></div>
+    <div class="t-season"><button data-y="-1" ${season <= (+team.firstYearOfPlay || 1876) ? "disabled" : ""} aria-label="Previous season">‹</button>
+      <span>${season}</span><button data-y="1" ${past ? "" : "disabled"} aria-label="Next season">›</button></div>
     <div class="t-body vscroll"><div class="s-loading">Loading…</div></div>`;
   const body = root.querySelector(".t-body");
   const sub = root.querySelector(".t-sub");
+  root.querySelector(".t-season").onclick = (e) => {
+    const b = e.target.closest("[data-y]"); if (!b || b.disabled) return;
+    state.season = Math.min(latest, season + +b.dataset.y);
+    Sheet.refresh();
+  };
   dragScroll(body, "y");
 
   async function drawRoster() {
-    sub.innerHTML = seg([["40Man", "40-man"], ["active", "Active"], ["fullSeason", "Everyone this season"]], rosterType, "data-r");
+    sub.innerHTML = seg([["40Man", "40-man"], ["active", "Active"], ["fullSeason", past ? "Everyone that season" : "Everyone this season"]], rosterType, "data-r");
     const data = await api(`/api/v1/teams/${id}/roster?rosterType=${rosterType}&season=${season}`, { ttl: 600_000 });
     const roster = data.roster || [];
     const people = await peopleById(roster.map((r) => r.person.id));
     if (!alive()) return;
+    // Photo cards that fill the width, grouped pitchers, catchers, infielders, outfielders, then DH, by jersey number.
     const groups = [["Pitcher", "Pitchers"], ["Two-Way Player", "Two-way players"], ["Catcher", "Catchers"], ["Infielder", "Infielders"], ["Outfielder", "Outfielders"], ["Hitter", "Designated hitters"]];
-    const rows = [];
-    for (const [type, label] of groups) {
-      const g = roster.filter((r) => (r.position?.type || "") === type)
-        .sort((a, b) => (+a.jerseyNumber || 999) - (+b.jerseyNumber || 999));
-      if (!g.length) continue;
-      rows.push({ __section: `${label} (${g.length})` });
-      g.forEach((r) => rows.push({ r, p: people[r.person.id] || r.person, __attrs: `data-player="${r.person.id}" role="button"` }));
-    }
-    const other = roster.filter((r) => !groups.some(([g]) => g === r.position?.type));
-    if (other.length) { rows.push({ __section: "Other" }); other.forEach((r) => rows.push({ r, p: people[r.person.id] || r.person, __attrs: `data-player="${r.person.id}" role="button"` })); }
-    const cols = [
-      { h: "Uni", sv: (x) => +x.r.jerseyNumber || null, asc: true, f: (x) => esc(x.r.jerseyNumber || "") },
-      { h: "Name", cls: "name", sv: (x) => x.p.lastName || x.p.fullName, asc: true, f: (x) => `<span class="lnk">${esc(x.p.fullName)}</span>` },
-      { h: "Pos", sv: (x) => x.r.position?.abbreviation, asc: true, f: (x) => esc(x.r.position?.abbreviation || "") },
-      { h: "Status", cls: "left", sv: (x) => x.r.status?.description, asc: true, f: (x) => `<span class="${x.r.status?.code === "A" ? "muted" : "flag"}">${esc(x.r.status?.description || "")}</span>` },
-      { h: "Age", sv: (x) => x.p.currentAge, asc: true, f: (x) => num(x.p.currentAge ?? ageToday(x.p.birthDate)) },
-      { h: "B", f: (x) => esc(x.p.batSide?.code || "") }, { h: "T", f: (x) => esc(x.p.pitchHand?.code || "") },
-      { h: "Ht", sv: (x) => x.p.height && (+x.p.height.split("'")[0] * 12 + parseInt(x.p.height.split("'")[1])), f: (x) => esc(heightBR(x.p.height)) },
-      { h: "Wt", sv: (x) => x.p.weight, f: (x) => num(x.p.weight) },
-      { h: "DoB", sv: (x) => x.p.birthDate, asc: true, f: (x) => esc(shortDate(x.p.birthDate)) },
-      { h: "Birthplace", cls: "left", sv: (x) => birthplace(x.p), asc: true, f: (x) => esc(birthplace(x.p)) },
-      { h: "MLB debut", sv: (x) => x.p.mlbDebutDate, asc: true, f: (x) => (x.p.mlbDebutDate ? esc(shortDate(x.p.mlbDebutDate)) : `<span class="muted">Not yet</span>`) },
-    ];
-    sortableTable(body, cols, rows, { cls: "roster" });
+    const byNum = (a, b) => (+a.jerseyNumber || 999) - (+b.jerseyNumber || 999);
+    const sections = groups.map(([type, label]) => [label, roster.filter((r) => (r.position?.type || "") === type).sort(byNum)]);
+    sections.push(["Other", roster.filter((r) => !groups.some(([g]) => g === r.position?.type)).sort(byNum)]);
+    const card = (r) => {
+      const p = people[r.person.id] || r.person;
+      const pos = r.position?.abbreviation === "P" ? `${p.pitchHand?.code === "L" ? "LHP" : "RHP"}` : r.position?.abbreviation || "";
+      const age = p.currentAge ?? ageToday(p.birthDate);
+      const bt = p.batSide?.code && p.pitchHand?.code ? `B/T ${p.batSide.code}/${p.pitchHand.code}` : "";
+      const st = r.status?.code && r.status.code !== "A" ? `<div class="rc-st">${esc(r.status.description || "")}</div>` : "";
+      return `<div class="rcard" data-player="${r.person.id}" role="button">
+        <img src="${headshot(r.person.id, 104)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="rc-id"><div class="rc-nm">${esc(p.fullName || "")}</div>
+          <div class="rc-ln">${[r.jerseyNumber ? `#${esc(r.jerseyNumber)}` : "", esc(pos), age ? `${age}` : "", bt].filter(Boolean).join(" · ")}</div>${st}</div></div>`;
+    };
+    body.innerHTML = sections.filter(([, g]) => g.length).map(([label, g]) =>
+      `<div class="rsec"><div class="rsec-h">${esc(label)} <span>${g.length}</span></div><div class="rgrid">${g.map(card).join("")}</div></div>`).join("")
+      || `<div class="s-loading">No players on this roster</div>`;
   }
 
   async function drawStats(group) {
@@ -251,6 +255,16 @@ Sheet.register("team", async (root, { id }, alive) => {
   };
   await draw();
 });
+
+// A team's final record in a past season, shaped like Standings.recordFor's.
+async function pastRecord(id, season) {
+  const data = await api(`/api/v1/standings?leagueId=103,104&season=${season}&standingsTypes=regularSeason`, { ttl: 86_400_000 });
+  for (const r of data.records || []) {
+    const tr = (r.teamRecords || []).find((x) => x.team?.id === id);
+    if (tr) return { ...tr, clinchIndicator: tr.clinchIndicator || "x", div: DIVISIONS.find((d) => d.id === r.division?.id) || { name: r.division?.name || "" } };
+  }
+  return null;
+}
 
 function pythag(r) {
   const rs = r.runsScored, ra = r.runsAllowed, g = r.wins + r.losses;

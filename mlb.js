@@ -111,9 +111,11 @@ function teamMeta(t = {}) {
 }
 const fullTeamName = (t) => (t && t.locationName ? `${t.locationName} ${t.teamName}` : (t && t.name) || "");
 
-// Player photos (MLB's transparent cut-outs, with MLB's generic silhouette as the fallback).
+// Player photos: MLB's transparent "silo" cut-outs (the Baseball Savant ones the old SHUTOUT app used),
+// with MLB's generic silo as the fallback. Asked for at about 3x the size they're shown so they stay sharp
+// at any zoom; PNG keeps the transparency.
 const headshot = (id, w = 360) =>
-  `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_${w},q_auto:best/v1/people/${id}/headshot/67/current`;
+  `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:silo:current.png/w_${Math.min(1024, Math.round(w * 3 / 2))},q_auto:best,f_png/v1/people/${id}/headshot/silo/current`;
 
 // Number formatting in the Baseball Reference style: rates without the leading zero, blanks for missing.
 const dash = "";

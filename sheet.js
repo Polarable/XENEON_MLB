@@ -15,14 +15,15 @@ const Sheet = (() => {
     const top = stack[stack.length - 1];
     if (!top) { r.classList.remove("open"); r.querySelector(".s-body").innerHTML = ""; return; }
     r.classList.add("open");
-    r.querySelector(".s-back").style.display = stack.length > 1 ? "" : "none";
+    // Back is always there: on the first page it closes the sheet and returns to the tabs.
     const body = r.querySelector(".s-body");
     body.innerHTML = `<div class="s-loading">Loading…</div>`;
     body.className = `s-body page-${top.type}`;
     const my = ++token;
     const alive = () => my === token;
     try {
-      const c = await pages[top.type](body, top.args, alive);
+      // top.state lives on the stack entry, so a page can remember things (like its open tab) for when Back returns to it.
+      const c = await pages[top.type](body, top.args, alive, top.state);
       if (alive()) cleanup = typeof c === "function" ? c : null;
       else if (typeof c === "function") c();
     } catch (e) {
@@ -35,7 +36,7 @@ const Sheet = (() => {
     // Don't stack the same page twice in a row.
     const top = stack[stack.length - 1];
     if (top && top.type === type && JSON.stringify(top.args) === JSON.stringify(args)) return;
-    stack.push({ type, args });
+    stack.push({ type, args, state: {} });
     show();
   }
   function back() { stack.pop(); show(); }
@@ -54,7 +55,7 @@ const Sheet = (() => {
     });
   }
 
-  return { register, open, back, close, init, isOpen: () => stack.length > 0 };
+  return { register, open, back, close, init, refresh: show, isOpen: () => stack.length > 0 };
 })();
 
 // Segmented control helper used by the pages: returns html; clicks are wired by the caller.

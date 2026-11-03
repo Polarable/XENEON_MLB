@@ -8,9 +8,9 @@
 // Tapping a card shows that at-bat on the left and plays its clip. Also renders the live field
 // (runners' photos on the bases, big ball/strike/out dots) for the game page's left panel.
 //
-// The batter silhouette (img/batter.png) is cut from the reference image the user supplied (pitcher's view, right-handed stance).
+// The batter silhouette (img/batter-hd.png) is cut from the reference image the user supplied (pitcher's view, right-handed stance).
 const BATTER_IMG = new Image();
-BATTER_IMG.src = "img/batter.png";
+BATTER_IMG.src = "img/batter-hd.png";   // 3x the original cut, edges re-smoothed so it stays sharp at full size
 
 const Gameday = (pk) => {
   let feed = null;
@@ -174,12 +174,10 @@ const Gameday = (pk) => {
     // Plate (seen from the mound: flat edge toward us).
     const pl = [[-0.708, 0], [0.708, 0], [0.708, 0.5], [0, 1.2], [-0.708, 0.5]].map(([x, d]) => P(x, PLATE_Y + d * 0.35, 0));
     ctx.fillStyle = "#3d3d40"; ctx.beginPath(); pl.forEach(([a, b], i) => (i ? ctx.lineTo(a, b) : ctx.moveTo(a, b))); ctx.closePath(); ctx.fill();
-    // Zone: shaded with fine vertical lines, a 3x3 grid, and a crisp outline.
+    // Zone: a flat light fill, a 3x3 grid and a crisp outline (no hatching: it shimmered when scaled).
     const [x1, y1] = P(0.708, PLATE_Y, top), [x2, y2] = P(-0.708, PLATE_Y, bot);
-    ctx.fillStyle = "rgba(255,255,255,.07)"; ctx.fillRect(x1, y1, x2 - x1, y2 - y1);
-    ctx.strokeStyle = "rgba(255,255,255,.05)"; ctx.lineWidth = 1;
-    for (let x = x1 + 4; x < x2; x += 5) { ctx.beginPath(); ctx.moveTo(x, y1); ctx.lineTo(x, y2); ctx.stroke(); }
-    ctx.strokeStyle = "rgba(255,255,255,.12)";
+    ctx.fillStyle = "rgba(255,255,255,.06)"; ctx.fillRect(x1, y1, x2 - x1, y2 - y1);
+    ctx.strokeStyle = "rgba(255,255,255,.14)"; ctx.lineWidth = 1;
     for (let i = 1; i < 3; i++) {
       ctx.beginPath(); ctx.moveTo(x1 + (x2 - x1) * i / 3, y1); ctx.lineTo(x1 + (x2 - x1) * i / 3, y2); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(x1, y1 + (y2 - y1) * i / 3); ctx.lineTo(x2, y1 + (y2 - y1) * i / 3); ctx.stroke();
@@ -192,20 +190,32 @@ const Gameday = (pk) => {
     const pt = path(p);
     const col = COLOR[callOf(p.details)];
     if (trail && u > 0) {
-      const N = 36;
-      for (let k = 1; k <= N; k++) {
-        const ua = (u * (k - 1)) / N, ub = (u * k) / N;
-        const [ax, ay, as] = P(...pt.at(ua)), [bx, by] = P(...pt.at(ub));
-        ctx.strokeStyle = col; ctx.globalAlpha = (k / N) * 0.6 * alpha; ctx.lineWidth = Math.max(1, 0.2 * as * (k / N));
-        ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+      // One smooth streak: a tapered ribbon along the path that fades in toward the ball
+      // (drawing it as stacked segments left visible beads where they overlapped).
+      const N = 48, pts = [];
+      for (let k = 0; k <= N; k++) {
+        const [px, py, ps] = P(...pt.at((u * k) / N));
+        pts.push([px, py, Math.max(0.3, 0.121 * ps * 1.15 * 0.85) * Math.pow(k / N, 1.4)]);
       }
+      const L = [], R = [];
+      pts.forEach(([px, py, hw], k) => {
+        const [qx, qy] = pts[Math.min(N, k + 1)], [ox, oy] = pts[Math.max(0, k - 1)];
+        let dx = qx - ox, dy = qy - oy; const len = Math.hypot(dx, dy) || 1; dx /= len; dy /= len;
+        L.push([px - dy * hw, py + dx * hw]); R.push([px + dy * hw, py - dx * hw]);
+      });
+      const [tx, ty] = pts[0], [hx, hy] = pts[N];
+      const g = ctx.createLinearGradient(tx, ty, hx, hy);
+      const n = parseInt(col.slice(1), 16), rgb = `${n >> 16 & 255},${n >> 8 & 255},${n & 255}`;
+      g.addColorStop(0, `rgba(${rgb},0)`); g.addColorStop(1, `rgba(${rgb},${0.6 * alpha})`);
+      ctx.fillStyle = g; ctx.beginPath();
+      L.forEach(([x0, y0], i) => (i ? ctx.lineTo(x0, y0) : ctx.moveTo(x0, y0)));
+      for (let i = R.length - 1; i >= 0; i--) ctx.lineTo(R[i][0], R[i][1]);
+      ctx.closePath(); ctx.fill();
     }
     const [x, y, sc] = P(...pt.at(u));
     const r = Math.max(3, 0.121 * sc * 1.15);
     ctx.globalAlpha = alpha;
-    ctx.shadowColor = col; ctx.shadowBlur = u >= 1 ? 10 : 18;
     ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
-    ctx.shadowBlur = 0;
     if (label && u >= 1) {
       ctx.fillStyle = "#fff"; ctx.font = `700 ${Math.round(r * 1.1)}px "Inter Tight", sans-serif`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
       ctx.fillText(String(idx + 1), x, y + 1);
@@ -215,9 +225,13 @@ const Gameday = (pk) => {
 
   // Static mini zone for a play card (final pitch locations, like Real's cards).
   function paintMini(canvas, ab) {
+    // Logical size 220x260, shown at 170x201 (views.css): draw at exactly the screen's pixel count,
+    // since the browser's downscale of a bigger canvas is what made these look soft.
+    const w = 220, h = 260;
+    const k = Math.max(0.5, (170 / w) * (typeof scale === "number" && scale > 0 ? scale : 1) * (window.devicePixelRatio || 1));
+    canvas.width = Math.round(w * k); canvas.height = Math.round(h * k);
     const ctx = canvas.getContext("2d");
-    const w = canvas.width / 2, h = canvas.height / 2;
-    ctx.setTransform(2, 0, 0, 2, 0, 0);
+    ctx.setTransform(canvas.width / w, 0, 0, canvas.height / h, 0, 0);
     const P = scene(ctx, w, h, ab, 40, h - 112);
     pitchesOf(ab).forEach((p, i, a) => ballAt(ctx, P, p, i, 1, { trail: false, alpha: i === a.length - 1 ? 1 : 0.85 }));
   }
@@ -226,7 +240,18 @@ const Gameday = (pk) => {
   const stage = $(".gd-stage canvas");
   const sctx = stage.getContext("2d");
   const SW = 420, SH = 520;
-  sctx.setTransform(2, 0, 0, 2, 0, 0);
+  // Match the canvas's pixels to the screen's (box size x zoom x devicePixelRatio) so nothing is resampled.
+  function sizeStage() {
+    const r = stage.getBoundingClientRect();
+    const fit = r.width && r.height ? Math.min(r.width / SW, r.height / SH) : 1;
+    const k = Math.min(6, Math.max(0.5, fit * (window.devicePixelRatio || 1)));
+    const w = Math.round(SW * k), h = Math.round(SH * k);
+    if (stage.width !== w || stage.height !== h) { stage.width = w; stage.height = h; }
+    sctx.setTransform(w / SW, 0, 0, h / SH, 0, 0);
+    if (zAb) frame(performance.now());
+  }
+  if (window.ResizeObserver) new ResizeObserver(() => sizeStage()).observe(stage);
+  requestAnimationFrame(sizeStage);
   let zAb = null, zKey = "", anim = null, raf = 0;
   function frame(now) {
     const ps = pitchesOf(zAb);
