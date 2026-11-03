@@ -69,11 +69,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
         ${dec.loser ? `<div><b>L</b>${pName(dec.loser)}${pitchRec(dec.loser)}</div>` : ""}
         ${dec.save ? `<div><b>SV</b>${pName(dec.save)}${saveRec(dec.save)}</div>` : ""}</div>`;
     } else if (phase === "live") {
-      const o = ls.offense || {}, d = ls.defense || {};
-      lower = `<div class="g-live">${Scores.bases(o)}<div class="g-count">${Scores.outsDots(ls.outs)}
-        <span>${ls.balls ?? 0}-${ls.strikes ?? 0}, ${ls.outs ?? 0} out${ls.outs === 1 ? "" : "s"}</span></div></div>
-        <div class="g-dec">${d.pitcher ? `<div><b>P</b>${pName(d.pitcher)}</div>` : ""}${o.batter ? `<div><b>AB</b>${pName(o.batter)}</div>` : ""}
-        ${o.onDeck ? `<div><b>Due</b>${pName(o.onDeck)}</div>` : ""}</div>`;
+      lower = gday.field(ls);
     } else {
       const pp = gd.probablePitchers || {};
       lower = `<div class="g-dec"><div><b>${esc(teamMeta(teams.away).abbr)}</b>${pp.away ? pName(pp.away) : "TBD"}</div>
@@ -86,8 +82,8 @@ Sheet.register("game", async (root, { pk }, alive) => {
 
     return `<div class="g-status ${phase}">${phase === "live" ? `<i class="dot"></i>` : ""}${esc(status)}${series}</div>
       <div class="g-sub">${esc(phase === "preview" ? "" : longDate(dateYmd))}${seriesNote ? ` · ${esc(seriesNote)}` : ""}</div>
-      ${side("away")}${side("home")}${linescore}${lower}
-      <div class="g-facts">${facts.map(esc).join(" · ")}</div>`;
+      ${side("away")}${side("home")}${phase === "live" ? `${lower}${linescore}` : `${linescore}${lower}
+      <div class="g-facts">${facts.map(esc).join(" · ")}</div>`}`;
   }
 
   const boxPlayer = (id) => {
@@ -171,28 +167,6 @@ Sheet.register("game", async (root, { pk }, alive) => {
     return `<div class="box-cols">${col("away")}${col("home")}</div>`;
   }
 
-  // ---- Plays: scoring summary, or every play by half-inning ----
-  function playsView(ld, scoringOnly, newestFirst) {
-    const all = ld.plays?.allPlays || [];
-    const list = scoringOnly ? (ld.plays?.scoringPlays || []).map((i) => all[i]).filter(Boolean) : all.filter((p) => p.result?.description);
-    if (!list.length) return `<div class="s-loading">${scoringOnly ? "No runs scored yet" : "No plays yet"}</div>`;
-    const teams = feed.gameData.teams;
-    const groups = [];
-    for (const p of list) {
-      const k = `${p.about.halfInning}${p.about.inning}`;
-      if (!groups.length || groups[groups.length - 1].k !== k) groups.push({ k, half: p.about.halfInning, inn: p.about.inning, plays: [] });
-      groups[groups.length - 1].plays.push(p);
-    }
-    const ord = (n) => n + (["th", "st", "nd", "rd"][(n % 100 > 10 && n % 100 < 14) ? 0 : n % 10] || "th");
-    return `<div class="plays hscroll">${(newestFirst ? groups.reverse() : groups).map((g) => {
-      const bat = teamMeta(g.half === "top" ? teams.away : teams.home);
-      return `<div class="pgroup"><div class="ph">${logoImg(bat)}${g.half === "top" ? "Top" : "Bottom"} ${ord(g.inn)}</div>
-        ${(newestFirst ? g.plays.slice().reverse() : g.plays).map((p) => `<div class="play ${p.about.isScoringPlay ? "scoring" : ""}">
-          <div class="pd">${esc(p.result.description)}</div>
-          <div class="pm">${p.about.isScoringPlay || scoringOnly ? `<b>${esc(teamMeta(teams.away).abbr)} ${p.result.awayScore}, ${esc(teamMeta(teams.home).abbr)} ${p.result.homeScore}</b> · ` : ""}${p.count ? `${p.count.outs} out` : ""}</div></div>`).join("")}</div>`;
-    }).join("")}</div>`;
-  }
-
   // ---- Render ----
   function render() {
     const gd = feed.gameData, ld = feed.liveData || {};
@@ -201,15 +175,20 @@ Sheet.register("game", async (root, { pk }, alive) => {
     // Live games open on Gameday; finished games on the box score (or whatever was picked last).
     if (!view) view = phase === "live" ? "gameday" : load("game-view") || "box";
     if (!views.some(([v]) => v === view)) view = views[0][0];
-    const right = view === "box" ? boxView(ld) : view === "gameday" ? gday.html(feed) : playsView(ld, view === "scoring", phase === "live");
+    const right = view === "box" ? boxView(ld) : view === "gameday" ? gday.html(feed)
+      : `<div class="pc-grid vscroll">${gday.cards(feed, view === "scoring" ? "scoring" : "all")}</div>`;
     const keep = [...root.querySelectorAll(".vscroll,.hscroll")].map((e) => [e.scrollTop, e.scrollLeft]);
     const home = teamMeta(gd.teams.home);
-    root.innerHTML = `<div class="g-left" style="${vars(home)}">${scoreboard(gd, ld)}</div>
+    root.innerHTML = `<div class="g-left ${phase}" style="${vars(home)}">${scoreboard(gd, ld)}</div>
       <div class="g-right" style="${vars(home)}"><div class="g-tabs">${seg(views, view)}</div><div class="g-main">${right}</div></div>`;
     root.querySelectorAll(".vscroll").forEach((e) => dragScroll(e, "y"));
     root.querySelectorAll(".hscroll").forEach((e) => dragScroll(e, "x"));
     [...root.querySelectorAll(".vscroll,.hscroll")].forEach((e, i) => { if (keep[i]) { e.scrollTop = keep[i][0]; e.scrollLeft = keep[i][1]; } });
-    if (view === "gameday") gday.mount(root, feed, render);
+    if (view === "gameday") gday.mount(root, feed);
+    // Tapping a play anywhere shows its at-bat (pitches + clip) on Gameday.
+    root.querySelector(".g-main").onclick = (e) => {
+      gday.onClick(e, render, view === "gameday" ? null : () => { view = "gameday"; render(); });
+    };
     root.querySelector(".g-tabs").onclick = (e) => {
       const b = e.target.closest("[data-v]"); if (!b) return;
       view = b.dataset.v; save("game-view", view); render();
