@@ -361,7 +361,8 @@ table.linescore.tight { font-size: 16px; }
 .pc-top .sc { display: flex; align-items: center; gap: 6px; color: var(--text); font-size: 15px; font-variant-numeric: tabular-nums; }
 .pc-top .sc img { width: 20px; height: 20px; }
 .pc-top .tag { padding: 2px 9px; border-radius: 999px; background: rgba(255,255,255,.09); color: var(--text); }
-.pc-top .film { margin-left: auto; padding: 3px 10px; border-radius: 999px; color: #fff; background: rgba(var(--tc-rgb), .25); border: 1px solid rgba(var(--tc-rgb), .6); }
+.pc-top .film { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; color: #fff; }
+.pc-top .film svg { width: 16px; height: 16px; fill: currentColor; }
 .pc-head { display: flex; gap: 14px; align-items: center; margin-top: 8px; min-width: 0; }
 .pc-pic { position: relative; flex: none; width: 64px; height: 64px; }
 .pc-pic img:first-child { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: top; background: var(--slate-2); }
