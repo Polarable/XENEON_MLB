@@ -345,7 +345,7 @@ table.linescore.tight { font-size: 16px; }
 .pr i { flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
   font-style: normal; font-size: 12px; font-weight: 700; color: #fff; }
 .pr b { display: block; font-size: 15px; font-weight: 600; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pr span { display: block; font-size: 13px; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pr > div > span { display: block; font-size: 13px; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pr > div { min-width: 0; }
 
 /* Play cards: compact like Real's feed; tap to open the pitch list and zone */
@@ -530,3 +530,74 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
 .p-hl-row svg { width: 14px; height: 14px; flex: none; fill: currentColor; opacity: .7; }
 .p-hl-row .t { flex: 1; min-width: 0; font-size: 16px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .p-hl-row em { font-style: normal; font-size: 13px; color: var(--text-3); flex: none; }
+
+/* Settings: on/off rows */
+.set-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+.set-tog { display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 10px 14px; border: 0; border-radius: 10px;
+  background: var(--surface-2); color: var(--text); font: 500 17px "Inter Tight", sans-serif; text-align: left; cursor: pointer; }
+.set-tog .sw { position: relative; flex: none; width: 46px; height: 28px; border-radius: 999px; background: rgba(255,255,255,.16); transition: background .2s var(--ease); }
+.set-tog .sw i { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; transition: transform .2s var(--ease); }
+.set-tog.on .sw { background: #3a9d5d; }
+.set-tog.on .sw i { transform: translateX(18px); }
+.set-tog .tl b { display: block; font-weight: 600; }
+.set-tog .tl em { display: block; margin-top: 2px; font-style: normal; font-size: 15px; color: var(--text-3); }
+
+/* Large text (Settings): lifts the small print to at least 14px, most of it to 16-17px. */
+#stage.big .cal-wk span { font-size: 17px; }
+#stage.big .cal-foot { font-size: 17px; }
+#stage.big table.standings sup { font-size: 16px; }
+#stage.big table.linescore tr:first-child td { font-size: 17px; }
+#stage.big .play .pm { font-size: 17px; }
+#stage.big .p-bio { font-size: 17px; }
+#stage.big .p-news-h { font-size: 16px; }
+#stage.big .pn-kick { font-size: 16px; }
+#stage.big .p-news p { font-size: 17px; }
+#stage.big .pn-more { font-size: 17px; }
+#stage.big .pn-more em { font-size: 16px; }
+#stage.big .p-nonews { font-size: 17px; }
+#stage.big .page-player .stats th { font-size: 17px; }
+#stage.big .nh-top { font-size: 17px; }
+#stage.big .nh-mu .who span { font-size: 17px; }
+#stage.big .gd-seq .pad { font-size: 17px; }
+#stage.big .rv { font-size: 16px; }
+#stage.big .pr em.abs { font-size: 14px; }
+#stage.big .pr b { font-size: 17px; }
+#stage.big .pr > div > span { font-size: 16px; }
+#stage.big .pc-top { font-size: 17px; }
+#stage.big .pc-top .sc { font-size: 17px; }
+#stage.big .pc .ln { font-size: 17px; }
+#stage.big .pc .ln.muted { font-size: 17px; }
+#stage.big .pc-tb { font-size: 17px; }
+#stage.big .pc-sep { font-size: 16px; }
+#stage.big .wp-head small { font-size: 14px; }
+#stage.big .wp-box .wt { font-size: 14px; }
+#stage.big .pr-note { font-size: 16px; }
+#stage.big .nh-top .gstat { font-size: 17px; }
+#stage.big .nx-top span { font-size: 16px; }
+#stage.big .nx-top em { font-size: 16px; }
+#stage.big .nx-stats small { font-size: 14px; }
+#stage.big .rc-st { font-size: 17px; }
+#stage.big .sv-col h4 { font-size: 17px; }
+#stage.big .sv-in.s-loading { font-size: 17px; }
+#stage.big .sv-empty { font-size: 17px; }
+#stage.big .sv-pr .lb { font-size: 17px; }
+#stage.big .sv-key { font-size: 16px; }
+#stage.big .sv-cells span { font-size: 16px; }
+#stage.big .sv-tab { font-size: 17px; }
+#stage.big .sv-tab th { font-size: 15px; }
+#stage.big .p-hl-row em { font-size: 16px; }
+#stage.big .bh { font-size: 17px; }
+#stage.big .bt .sd { font-size: 17px; }
+#stage.big .champ .cl { font-size: 17px; }
+
+/* Pitch speed in its own right-hand column, so it is never cut off */
+.pr > div { flex: 1; }
+.pr .mph { flex: none; align-self: center; margin-left: 10px; font-size: 17px; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pr .mph small { margin-left: 3px; font-size: 13px; font-weight: 500; color: var(--text-3); }
+.pr .mph + .pv { margin-left: 4px; }
+#stage.big .pr .mph { font-size: 19px; } #stage.big .pr .mph small { font-size: 15px; }
+
+/* Batter vs pitcher, under the matchup in Gameday */
+.nh-vs { min-height: 22px; margin-top: 8px; font-size: 16px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nh-vs .k { margin-right: 10px; color: var(--text-3); font-weight: 600; }
+#stage.big .nh-vs { font-size: 18px; }

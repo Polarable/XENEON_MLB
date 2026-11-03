@@ -53,13 +53,14 @@
       <div class="kicker"></div>
       <h2></h2>
       <div class="r-body"></div>
-      <div class="r-foot"><a class="r-link" target="_blank" rel="noopener">Read on MLB Trade Rumors</a></div>
+      <div class="r-foot"><a class="r-link" target="_blank" rel="noopener">Read on MLB Trade Rumors</a><span class="r-step"><button data-step="-1" aria-label="Previous story">‹</button><span class="r-pos"></span><button data-step="1" aria-label="Next story">›</button></span></div>
     </div>
     <button class="r-close" aria-label="Close">×</button>
   </div>
   <div id="picker" role="menu"></div>
 </div>
 
+<script>const IS_MOBILE = true;</script>
 <script src="teams.js?v=__BUILD__"></script>
 <script src="mlb.js?v=__BUILD__"></script>
 <script>
@@ -157,8 +158,14 @@
   });
 
   // ---- Reader ----
+  const READER_SWIPE_ZONE = "#reader";
+  let readerIdx = -1;
   function openReader(a) {
     if (!a) return;
+    readerIdx = list.indexOf(a);
+    const r0 = document.getElementById("reader");
+    r0.querySelector(".r-pos").textContent = readerIdx >= 0 ? `${readerIdx + 1} of ${list.length}` : "";
+    r0.querySelectorAll("[data-step]").forEach((b) => { b.disabled = readerIdx < 0 || !list[readerIdx + +b.dataset.step]; });
     const t = byAbbr[selected] || byAbbr[a.teams[0]] || LEAGUE;
     const r = document.getElementById("reader");
     const photo = r.querySelector(".r-photo");
@@ -172,14 +179,47 @@
       : `<p style="color:var(--text-3)">No preview for this story yet. It will appear after the next news update.</p>`;
     r.querySelector(".r-link").href = a.link;
     r.scrollTop = 0;
+    // Opening a story is a step in the history, so swipe-back / Android Back closes it.
+    if (!r.classList.contains("open") && !history.state?.reader) history.pushState({ reader: 1 }, "");
     r.classList.add("open");
     document.body.classList.add("locked");
   }
-  function closeReader() {
+  function hideReader() {
     document.getElementById("reader").classList.remove("open");
     if (!Sheet.isOpen()) document.body.classList.remove("locked");
   }
+  function closeReader() {
+    if (!document.getElementById("reader").classList.contains("open")) return;
+    if (history.state?.reader) history.back(); else hideReader();
+  }
   document.querySelector("#reader .r-close").onclick = closeReader;
+  // Previous / next story: the arrows in the footer, or a sideways swipe (on the photo on the Xeneon,
+  // where the text itself scrolls sideways; anywhere on the phone).
+  function stepReader(d) {
+    const a = list[readerIdx + d]; if (!a) return;
+    const r = document.getElementById("reader");
+    r.classList.remove("slide-l", "slide-r"); void r.offsetWidth;
+    openReader(a);
+    r.classList.add(d > 0 ? "slide-l" : "slide-r");
+  }
+  document.querySelector("#reader .r-step").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-step]"); if (b && !b.disabled) stepReader(+b.dataset.step);
+  });
+  (() => {
+    const zone = document.querySelector(READER_SWIPE_ZONE);
+    // Touch events, since a touch that starts a scroll cancels its pointer events.
+    let sx = 0, sy = 0, on = false;
+    const start = (x, y) => { sx = x; sy = y; on = true; };
+    const end = (x, y) => {
+      if (!on) return; on = false;
+      const dx = x - sx, dy = y - sy;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) stepReader(dx < 0 ? 1 : -1);
+    };
+    zone.addEventListener("touchstart", (e) => start(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+    zone.addEventListener("touchend", (e) => end(e.changedTouches[0].clientX, e.changedTouches[0].clientY), { passive: true });
+    zone.addEventListener("pointerdown", (e) => { if (e.pointerType === "mouse") start(e.clientX, e.clientY); });
+    zone.addEventListener("pointerup", (e) => { if (e.pointerType === "mouse") end(e.clientX, e.clientY); });
+  })();
   // A player's name opens his page; Back from there returns to the story.
   document.getElementById("reader").addEventListener("click", (e) => {
     const n = e.target.closest("[data-player]"); if (!n) return;
@@ -231,8 +271,7 @@
   }
   document.getElementById("m-tabs").onclick = (e) => {
     const el = e.target.closest("[data-tab]"); if (!el) return;
-    if (Sheet.isOpen()) Sheet.close();
-    closeReader();
+    if (Sheet.isOpen()) { Sheet.close(); hideReader(); } else closeReader();
     // Tapping the tab you're on scrolls back to the top.
     if (el.dataset.tab === activeTab) { scrollTo({ top: 0, behavior: "smooth" }); return; }
     setTab(el.dataset.tab);
@@ -271,6 +310,54 @@
       setUpdated("news", "Couldn't load news");
     }
   }
+
+  // Back gesture: the sheet keeps its pages in the history (sheet.js); this handles the story reader.
+  Sheet.useHistory();
+  addEventListener("popstate", (e) => {
+    const r = document.getElementById("reader");
+    if (!e.state?.reader) { if (r.classList.contains("open")) hideReader(); }
+    // A leftover story step (the story was closed another way): skip past it.
+    else if (!r.classList.contains("open") && !Sheet.isOpen()) history.back();
+  });
+
+  /* ---- Pull to refresh: drag down from the top of a tab (or a page) ---- */
+  (() => {
+    const ind = document.createElement("div");
+    ind.id = "ptr";
+    ind.innerHTML = `<svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5"/></svg>`;
+    document.body.appendChild(ind);
+    const PULL = 80;
+    let y0 = null, dy = 0, busy = false;
+    const scroller = () => Sheet.isOpen() ? document.querySelector("#sheet .s-body") : null;
+    const atTop = () => { const el = scroller(); return el ? el.scrollTop <= 0 : scrollY <= 0; };
+    const show = (d) => {
+      const p = Math.min(1, d / PULL);
+      ind.style.opacity = p;
+      ind.style.transform = `translateY(${-40 + Math.min(d, PULL * 1.3) * .8}px) rotate(${p * 270}deg)`;
+    };
+    addEventListener("touchstart", (e) => {
+      if (busy || e.touches.length > 1 || document.getElementById("reader").classList.contains("open")) { y0 = null; return; }
+      if (document.querySelector(".pop.open, #picker.open")) { y0 = null; return; }
+      y0 = atTop() ? e.touches[0].clientY : null; dy = 0;
+    }, { passive: true });
+    addEventListener("touchmove", (e) => {
+      if (y0 == null) return;
+      dy = e.touches[0].clientY - y0;
+      if (dy > 0 && atTop()) show(dy); else { dy = 0; show(0); }
+    }, { passive: true });
+    addEventListener("touchend", async () => {
+      if (y0 == null) return;
+      y0 = null;
+      if (dy < PULL) { ind.style.transition = "opacity .2s, transform .2s"; show(0); setTimeout(() => (ind.style.transition = ""), 220); return; }
+      busy = true; ind.classList.add("spin");
+      try {
+        if (Sheet.isOpen()) await Sheet.refresh();
+        else if (activeTab === "news") await refresh();
+        else VIEWS[activeTab]?.show();
+      } catch (e) {}
+      setTimeout(() => { ind.classList.remove("spin"); show(0); busy = false; }, 600);
+    }, { passive: true });
+  })();
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
   Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init();
