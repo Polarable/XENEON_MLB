@@ -46,15 +46,21 @@
   #picker-btn img { width: 28px; height: 28px; display: block; }
   #picker-btn .chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
     transform: translateY(-3px) rotate(45deg); margin-left: 2px; opacity: .6; }
-  #updated { margin-left: auto; font-size: 18px; font-weight: 500; color: var(--text-3); }
+  /* Brand corner: logo, wordmark, then the last-updated time. */
+  #brand { margin-left: auto; display: flex; align-items: center; height: 56px; }
+  #brand img { height: 40px; width: auto; display: block; opacity: .92; }
+  #brand .name { margin-left: 14px; font-size: 20px; font-weight: 700; letter-spacing: .22em; line-height: 1; color: var(--text);
+    margin-right: -.22em; /* cancel the trailing letter-spacing so the gaps look even */ }
+  #brand .sep { width: 1px; height: 24px; margin: 0 20px; background: var(--line-2); }
+  #updated { font-size: 18px; font-weight: 500; line-height: 1; color: var(--text-3); font-variant-numeric: tabular-nums; }
 
   /* Card row: cards are laid out by script so the leftmost one can grow into the headliner as you scroll. */
-  #row { position: absolute; top: 100px; left: 0; right: 0; height: 568px; overflow: hidden; touch-action: none; cursor: grab;
+  #row { position: absolute; top: 100px; left: 0; right: 0; height: 620px; overflow: hidden; touch-action: none; cursor: grab;
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%);
             mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%); }
   #row.dragging { cursor: grabbing; }
 
-  .card { position: absolute; top: 24px; left: 0; width: 520px; height: 520px; border-radius: var(--radius); --w: 0;
+  .card { position: absolute; top: 24px; left: 0; width: 556px; height: 556px; border-radius: var(--radius); --w: 0;
     color: inherit; overflow: hidden; isolation: isolate; cursor: pointer;
     opacity: 0;
     transition: transform .15s var(--ease); }
@@ -148,7 +154,12 @@
       <span class="tab" title="Coming soon">Standings</span>
     </nav>
     <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button>
-    <div id="updated"></div>
+    <div id="brand">
+      <img src="brand/shutout-logo.png" alt="">
+      <span class="name">SHUTOUT</span>
+      <span class="sep"></span>
+      <span id="updated"></span>
+    </div>
   </header>
   <div id="row"></div>
   <div id="scrim"></div>
@@ -234,7 +245,7 @@
   /* ---- Continuous scroll ----
      pos is a fractional card index: 0 = first story is the headliner, 1.5 = halfway between the 2nd and 3rd.
      The card at floor(pos) shrinks from double width as the next one grows, so whatever is leftmost is the headliner. */
-  const LEFT = 40, GAP = 24, BASE = 520, HERO = 1064, PX_PER_CARD = 620;
+  const LEFT = 40, GAP = 24, BASE = 556, HERO = 1136, PX_PER_CARD = 660;
   let list = [], cardEls = [], pos = 0, vel = 0, raf = 0, drag = null, moved = 0;
   const clampPos = (p) => Math.max(0, Math.min(Math.max(0, list.length - 1), p));
 
@@ -368,7 +379,7 @@
     try {
       const data = await (await fetch(`news.json?t=${Date.now()}`, { cache: "no-store" })).json();
       document.getElementById("updated").textContent =
-        `MLB Trade Rumors · updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+        `Updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
       // Only rebuild the row when the stories changed, so a refresh doesn't yank the user back to the start.
       const key = (data.articles || []).map((a) => a.link).join("|");
       articles = data.articles || [];
