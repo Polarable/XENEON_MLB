@@ -15,7 +15,19 @@ const Settings = (() => {
         <button class="set-none ${favAbbr ? "" : "on"}" data-fav="">None</button></div>
       <div class="set-grid">${teams.map((t) =>
         `<button data-fav="${t.abbr}" class="${t.abbr === favAbbr ? "on" : ""}" style="--fav-rgb:${rgb(t.bright)}">${logoImg(t)}<span>${esc(t.name)}</span></button>`).join("")}</div>
-      <div class="set-note">Their games lead the Scores tab and are marked on the calendar.</div>`;
+      <div class="set-note">Their games lead the Scores tab and are marked on the calendar.</div>
+      <div class="set-diag"><div class="set-stripes" style="--px:${1 / ((typeof scale === "number" && scale > 0 ? scale : 1) * (window.devicePixelRatio || 1))}px" title="1-pixel stripes: crisp lines here mean the screen shows the page pixel for pixel"></div>
+        <div>${diag()}</div></div>`;
+  }
+  // What the page actually gets from iCUE, for tracking down blurry rendering. If the stripes look
+  // gray instead of crisp lines, the page is being drawn smaller and stretched up by the host.
+  function diag() {
+    const dpr = window.devicePixelRatio || 1;
+    const ua = (navigator.userAgent.match(/(Chrome|QtWebEngine|Edg)\/[\d.]+/g) || []).join(" ");
+    const st = document.getElementById("stage");
+    const zoomed = st && st.style.zoom ? `zoom ${(+st.style.zoom).toFixed(3)}` : st && st.style.transform ? `transform ${st.style.transform}` : "no scaling";
+    return `Window ${innerWidth}×${innerHeight} · pixel ratio ${+dpr.toFixed(3)} · screen ${screen.width}×${screen.height} · ` +
+      `${zoomed} · ${Math.round(innerWidth * dpr)}×${Math.round(innerHeight * dpr)} device px · build ${typeof BUILD === "string" ? BUILD : "?"} · ${ua}`;
   }
   function open(on) {
     box().classList.toggle("open", on);
