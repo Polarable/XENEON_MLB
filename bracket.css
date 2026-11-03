@@ -1,0 +1,47 @@
+/* ---------- Standings: playoff bracket (bracket.js) ---------- */
+#standings-body.brmode { padding: 10px 40px 0; }
+.bwrap { position: relative; height: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr 1.22fr 1fr 1fr 1fr; gap: 0 60px; }
+.bcol { position: relative; z-index: 1; display: flex; flex-direction: column; min-width: 0; }
+.bch { height: 34px; font-size: 18px; font-weight: 600; color: var(--text-3); text-align: center; white-space: nowrap; }
+.bcb { flex: 1; display: flex; flex-direction: column; justify-content: space-around; padding-bottom: 24px; }
+.bcol:nth-child(3) .bcb, .bcol:nth-child(4) .bcb, .bcol:nth-child(5) .bcb { justify-content: center; gap: 28px; }
+
+/* Series card */
+.bc { padding: 10px 6px 6px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); cursor: pointer;
+  transition: transform .15s var(--ease), border-color .3s var(--ease); }
+.bc:active { transform: scale(.98); }
+.bc.pend { background: transparent; border-style: dashed; border-color: var(--line-2); cursor: default; }
+.bc.pend:active { transform: none; }
+.bh { display: flex; justify-content: space-between; align-items: center; height: 24px; padding: 0 12px 4px; font-size: 15px; font-weight: 600; color: var(--text-3); white-space: nowrap; }
+.bh .st { font-weight: 500; color: var(--text-2); font-variant-numeric: tabular-nums; overflow: hidden; text-overflow: ellipsis; }
+.bh .dot { width: 8px; height: 8px; margin-right: 8px; }
+
+.bt { display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 12px; border-radius: 10px; transition: opacity .3s var(--ease); }
+.bt .sd { width: 14px; font-size: 15px; font-weight: 600; color: var(--text-3); text-align: right; font-variant-numeric: tabular-nums; }
+.bt img { width: 34px; height: 34px; flex: none; }
+.bt .lg-ph { width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px dashed var(--line-2); }
+.bt .nm { flex: 1; min-width: 0; font-size: 22px; font-weight: 600; letter-spacing: -.2px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bt .w { font-size: 26px; font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.bt.won .w { color: var(--text); }
+.bt.out .nm, .bt.out .w { color: var(--text-4); }
+.bt.out img { opacity: .4; }
+.bt.tbd .nm { color: var(--text-4); font-weight: 500; }
+.bt.mine { background: rgba(var(--tc-rgb), .14); box-shadow: inset 4px 0 0 var(--tc); }
+
+/* World Series: a little larger, with the champion underneath. */
+.bc.ws .bh { font-size: 17px; color: var(--text-2); }
+.bc.ws .bt { height: 64px; }
+.bc.ws .bt img, .bc.ws .bt .lg-ph { width: 44px; height: 44px; }
+.bc.ws .bt .nm { font-size: 26px; }
+.bc.ws .bt .w { font-size: 32px; }
+.champ { display: flex; align-items: center; gap: 18px; padding: 16px 20px; border-radius: var(--radius);
+  background: linear-gradient(90deg, rgba(var(--tc-rgb), .16), rgba(var(--tc-rgb), .04)); border: 1px solid rgba(var(--tc-rgb), .35);
+  animation: fade .4s var(--ease); }
+.champ img { width: 56px; height: 56px; }
+.champ .cl { font-size: 15px; font-weight: 600; color: var(--text-3); }
+.champ .cn { font-size: 26px; font-weight: 700; letter-spacing: -.3px; margin-top: 2px; }
+
+/* Connector lines */
+.blines { position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; overflow: visible; }
+.blines path { fill: none; stroke: rgba(255,255,255,.14); stroke-width: 2; stroke-linejoin: round; }
+.blines path.lit { stroke: rgba(255,255,255,.42); }
