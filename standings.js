@@ -1,4 +1,4 @@
-// Standings tab: the six divisions (AL on top, NL below) or the wild card races.
+// Standings tab: the six divisions (AL on top, NL below), the wild card races, or the playoff bracket (bracket.js).
 // Tap any team to open its team page.
 const Standings = (() => {
   let mode = "div";
@@ -66,6 +66,12 @@ const Standings = (() => {
   function draw() {
     if (!records) return;
     const box = el();
+    if (mode !== "br") Bracket.stop();
+    if (mode === "br") {
+      box.className = "brmode";
+      Bracket.render(box, season);
+      return;
+    }
     if (mode === "wc") {
       const byLg = { AL: [], NL: [] };
       DIVISIONS.forEach((d) => (records[d.id] || []).forEach((r) => byLg[d.lg].push({ ...r, __div: d.id })));
@@ -83,7 +89,8 @@ const Standings = (() => {
   function ctx() {
     document.getElementById("ctx").innerHTML = `<div class="seg">
       <button data-m="div" class="${mode === "div" ? "on" : ""}">Divisions</button>
-      <button data-m="wc" class="${mode === "wc" ? "on" : ""}">Wild card</button></div>
+      <button data-m="wc" class="${mode === "wc" ? "on" : ""}">Wild card</button>
+      <button data-m="br" class="${mode === "br" ? "on" : ""}">Bracket</button></div>
       <span class="ctx-label">${season}</span>`;
   }
 
@@ -119,7 +126,7 @@ const Standings = (() => {
   return {
     init,
     show() { ctx(); draw(); refresh(); },
-    hide() { clearTimeout(timer); },
+    hide() { clearTimeout(timer); Bracket.stop(); },
     teamChanged() { draw(); },
     // Used by the team page and the rosters grid.
     async recordFor(teamId) {
