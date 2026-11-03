@@ -96,12 +96,35 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     drawHighlights();
   }
 
+  // ---- Stat hero: this season and career, MLB.com style ----
+  const HERO = {
+    hitting: [["AVG", (r) => rate(r.avg)], ["HR", (r) => num(r.homeRuns)], ["RBI", (r) => num(r.rbi)], ["H", (r) => num(r.hits)], ["SB", (r) => num(r.stolenBases)], ["OPS", (r) => rate(r.ops)]],
+    pitching: [["W-L", (r) => `${r.wins ?? 0}-${r.losses ?? 0}`], ["ERA", (r) => rate(r.era)], ["SO", (r) => num(r.strikeOuts)], ["IP", (r) => num(r.inningsPitched)], ["WHIP", (r) => rate(r.whip)], [(r) => (+r.saves ? "SV" : "G"), (r) => num(+r.saves ? r.saves : r.gamesPitched ?? r.gamesPlayed)]],
+  };
+  function statHero() {
+    const g = groups[0];
+    if (!g) return "";
+    const ys = years[g];
+    const last = ys.length ? ys[ys.length - 1].season : null;
+    const seasonRows = ys.filter((x) => x.season === last);
+    const cur = (seasonRows.find((x) => !x.team) || seasonRows[0])?.stat;
+    const car = career[g];
+    const row = (label, st) => st ? `<div class="ph-row"><span class="ph-l">${esc(label)}</span>${HERO[g].map(([h, f]) =>
+      `<span class="ph-c"><em>${esc(typeof h === "function" ? h(st) : h)}</em><b>${f(st)}</b></span>`).join("")}</div>` : "";
+    return `<div class="p-hero">${row(last || "", cur)}${row("Career", car)}</div>`;
+  }
+  // MLB.com's action banner when there is one; without it the page keeps the round headshot.
+  const banner = `https://img.mlbstatic.com/mlb-photos/image/upload/t_16x9/t_w2208/v1/people/${id}/action/hero/current`;
+
   root.innerHTML = `<div class="p-left">
+      <div class="p-banner"><img src="${banner}" alt="" referrerpolicy="no-referrer" onload="this.closest('.s-body')?.classList.add('has-banner')" onerror="this.parentNode.remove()"></div>
       <div class="p-top"><div class="p-photo"><img src="${headshot(id, 360)}" alt="" onerror="this.remove()"></div>
         <div class="p-id"><h1>${esc(p.fullName)}</h1>
           ${team ? `<div class="p-team lnk" data-team="${team.id}">${logoImg(team)}${esc(fullTeamName(p.currentTeam) || team.name)}</div>` : ""}
           <div class="p-num">${p.primaryNumber ? `#${esc(p.primaryNumber)} · ` : ""}${esc(p.primaryPosition?.abbreviation || "")}${p.active === false ? " · Retired" : ""}</div>
-          ${statusLine()}</div></div>
+          ${statusLine()}
+          ${typeof IS_MOBILE !== "undefined" && IS_MOBILE ? `<a class="p-cb" href="career/?mlbam=${id}&name=${encodeURIComponent(p.fullName || "")}&type=${groups[0] === "pitching" ? "pitcher" : "batter"}">Open in Career Builder</a>` : ""}</div></div>
+      ${statHero()}
       <div class="p-bio">${bio.map((b) => `<div>${b}</div>`).join("")}</div>
       <div class="p-sum"></div>
     </div>
@@ -138,6 +161,36 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     { h: "Tm", k: "tm", asc: true, cls: "left", f: (r) => (r.tmId ? `<span class="lnk tmc" data-team="${r.tmId}">${logoImg(teamById[r.tmId] || {})}${esc(r.tm)}</span>` : esc(r.tm || "")) },
     { h: "Lg", k: "lg", asc: true },
   ];
+
+  // Phone: one card per season (newest first) instead of a wide table; multi-team years show each club.
+  const CARD = {
+    hitting: [["G", "gamesPlayed"], ["AB", "atBats"], ["H", "hits"], ["HR", "homeRuns"], ["RBI", "rbi"], ["SB", "stolenBases"], ["BB", "baseOnBalls"], ["SO", "strikeOuts"]],
+    pitching: [["G", (r) => r.gamesPitched ?? r.gamesPlayed], ["GS", "gamesStarted"], ["IP", "inningsPitched"], ["SO", "strikeOuts"], ["BB", "baseOnBalls"], ["H", "hits"], ["HR", "homeRuns"], ["SV", "saves"]],
+  };
+  const SLASH = {
+    hitting: [["AVG", "avg"], ["OBP", "obp"], ["SLG", "slg"], ["OPS", "ops"]],
+    pitching: [["W-L", (r) => `${r.wins ?? 0}-${r.losses ?? 0}`], ["ERA", "era"], ["WHIP", "whip"], ["K/9", "strikeoutsPer9Inn"]],
+  };
+  const val = (r, k) => (typeof k === "function" ? k(r) : r[k]);
+  function yearCards(group, rows) {
+    const one = (r, title, sub, cls = "") => `<div class="yc ${cls}">
+        <div class="yc-h"><b>${title}</b>${sub}</div>
+        <div class="yc-slash">${SLASH[group].map(([h, k]) => `<span><em>${h}</em><b>${/^[\d.]+$/.test(String(val(r, k) ?? "")) && String(val(r, k)).includes(".") ? rate(val(r, k)) : num(val(r, k))}</b></span>`).join("")}</div>
+        <div class="yc-grid">${CARD[group].map(([h, k]) => `<span><em>${h}</em>${num(val(r, k))}</span>`).join("")}</div></div>`;
+    const seasons = {};
+    rows.forEach((r) => (seasons[r.season] = seasons[r.season] || []).push(r));
+    const car = career[group];
+    const html = Object.keys(seasons).sort().reverse().map((yr) => {
+      const list = seasons[yr];
+      const top = list.find((r) => r.__cls === "multi") || list[0];
+      const clubs = list.filter((r) => r.tmId);
+      const sub = `<span class="yc-tm">${clubs.map((r) => `<span class="lnk" data-team="${r.tmId}">${logoImg(teamById[r.tmId] || {})}${esc(r.tm)}</span>`).join("")}<i>Age ${esc(top.age ?? "")}</i></span>`;
+      const parts = list.length > 1 ? `<div class="yc-parts">${clubs.map((r) => `<div><span class="lnk" data-team="${r.tmId}">${logoImg(teamById[r.tmId] || {})}${esc(r.tm)}</span>
+          ${SLASH[group].slice(0, 2).concat(CARD[group].slice(2, 4)).map(([h, k]) => `<span><em>${h}</em>${num(val(r, k))}</span>`).join("")}</div>`).join("")}</div>` : "";
+      return one(top, esc(yr), sub).replace(/<\/div>$/, `${parts}</div>`);
+    }).join("");
+    return `<div class="ycards">${car ? one(car, "Career", `<span class="yc-tm"><i>${new Set(years[group].map((x) => x.season)).size} seasons</i></span>`, "car") : ""}${html}</div>`;
+  }
 
   async function gameLog() {
     const season = currentSeason();
@@ -186,6 +239,7 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     if (tab === "log") { body.innerHTML = `<div class="s-loading">Loading…</div>`; gameLog().catch(() => { body.innerHTML = `<div class="s-loading">No game log available</div>`; }); return; }
     if (!groups.length) { body.innerHTML = `<div class="s-loading">No major league stats yet</div>`; return; }
     const rows = yearRows(tab);
+    if (typeof IS_MOBILE !== "undefined" && IS_MOBILE) { body.innerHTML = yearCards(tab, rows); return; }
     const cols = [...lead, ...(tab === "hitting" ? BAT_COLS : PIT_COLS)];
     const car = career[tab];
     sortableTable(body, cols, rows, { cls: tab === "hitting" ? "bat yby" : "pit yby", foot: car ? [{ ...car, season: `${new Set(years[tab].map((s) => s.season)).size} Yrs`, age: "", tm: "", lg: "", __cls: "tot" }] : [] });

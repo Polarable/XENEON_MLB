@@ -38,10 +38,27 @@ const Sheet = (() => {
     const top = stack[stack.length - 1];
     if (top && top.type === type && JSON.stringify(top.args) === JSON.stringify(args)) return;
     stack.push({ type, args, state: {}, onBack });
+    if (hist) history.pushState({ sheet: stack.length }, "");
     show();
   }
-  function back() { const top = stack.pop(); show(); top?.onBack?.(); }
-  function close() { stack.length = 0; show(); }
+  function pop(runOnBack = true) { const top = stack.pop(); show(); if (runOnBack) top?.onBack?.(); }
+  // With history on (the phone app), Back and Close go through the browser history, so the iOS edge swipe
+  // and Android's Back button do the same thing as the on-screen buttons.
+  let hist = false, closing = false;
+  const inHist = () => hist && (history.state?.sheet || 0) > 0;
+  function back() { if (inHist()) history.back(); else pop(); }
+  function close() {
+    if (inHist()) { closing = true; history.go(-Math.min(stack.length, history.state.sheet)); }
+    else { stack.length = 0; show(); }
+  }
+  function useHistory() {
+    hist = true;
+    addEventListener("popstate", (e) => {
+      const d = e.state?.sheet || 0;
+      while (stack.length > d) pop(!closing);
+      closing = false;
+    });
+  }
 
   function init() {
     root().querySelector(".s-back").onclick = back;
@@ -56,7 +73,7 @@ const Sheet = (() => {
     });
   }
 
-  return { register, open, back, close, init, refresh: show, isOpen: () => stack.length > 0 };
+  return { register, open, back, close, init, useHistory, refresh: show, isOpen: () => stack.length > 0, depth: () => stack.length };
 })();
 
 // Segmented control helper used by the pages: returns html; clicks are wired by the caller.

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHUTOUT taskbar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="bar.css?v=__BUILD__" rel="stylesheet">
+</head>
+<body>
+  <!-- Expanded view: grows upward from the taskbar when the bar is clicked -->
+  <section id="panel" aria-hidden="true">
+    <div class="pn-top">
+      <div class="seg" id="modes"></div>
+      <button class="ic" id="gear" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg></button>
+      <button class="ic" id="close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6" transform="rotate(180 12 12)"/></svg></button>
+    </div>
+    <div id="pbody"></div>
+  </section>
+
+  <!-- The bar itself: always the height of the taskbar -->
+  <div id="bar">
+    <img class="mono" src="../brand/shutout-logo.png" alt="SHUTOUT">
+    <div id="content"></div>
+    <div id="callout"><div class="co-in"><b></b><span></span></div></div>
+  </div>
+
+<script>const BUILD = "__BUILD__";</script>
+<script src="../teams.js?v=__BUILD__"></script>
+<script src="bar.js?v=__BUILD__"></script>
+</body>
+</html>

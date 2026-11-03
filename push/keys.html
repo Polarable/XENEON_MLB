@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alert keys · SHUTOUT</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #000; color: #fff; font: 16px/1.5 "Inter Tight", system-ui, sans-serif; padding: 40px 20px; }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 30px; letter-spacing: -.6px; margin: 0 0 8px; } p { color: rgba(255,255,255,.62); margin: 0 0 24px; }
+  label { display: block; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.62); margin: 22px 0 8px; }
+  .row { display: flex; gap: 8px; }
+  input { flex: 1; min-width: 0; height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: #111; color: #fff; font: 14px ui-monospace, monospace; }
+  button { height: 46px; padding: 0 18px; border-radius: 999px; border: 0; background: #fff; color: #000; font: 600 15px "Inter Tight", sans-serif; cursor: pointer; }
+  button.ghost { background: #1c1c1c; color: #fff; }
+</style></head>
+<body><main>
+  <h1>Alert keys</h1>
+  <p>These two keys let your Cloudflare Worker sign push alerts. They're made here in your browser and never sent anywhere. Generate once, then paste them into the Worker's variables.</p>
+  <button id="gen">Generate keys</button>
+  <label>VAPID_PUBLIC (a plain text variable)</label>
+  <div class="row"><input id="pub" readonly><button class="ghost" data-copy="pub">Copy</button></div>
+  <label>VAPID_PRIVATE (add as a Secret)</label>
+  <div class="row"><input id="priv" readonly><button class="ghost" data-copy="priv">Copy</button></div>
+</main>
+<script>
+  const b64u = (b) => btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  document.getElementById("gen").onclick = async () => {
+    const k = await crypto.subtle.generateKey({ name: "ECDSA", namedCurve: "P-256" }, true, ["sign", "verify"]);
+    document.getElementById("pub").value = b64u(await crypto.subtle.exportKey("raw", k.publicKey));
+    document.getElementById("priv").value = (await crypto.subtle.exportKey("jwk", k.privateKey)).d;
+  };
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-copy]"); if (!b) return;
+    navigator.clipboard.writeText(document.getElementById(b.dataset.copy).value); b.textContent = "Copied"; setTimeout(() => (b.textContent = "Copy"), 1200);
+  });
+</script></body></html>

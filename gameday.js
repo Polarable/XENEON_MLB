@@ -367,7 +367,7 @@ const Gameday = (pk) => {
       }
       const tag = e.playId ? "a" : "div";
       rows.push(`<${tag} class="pr"${e.playId ? ` href="${savant(e.playId)}" target="_blank" rel="noopener" data-savant data-pid="${esc(e.playId)}"` : ""}><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(call)}${state ? ` <em class="abs ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">– ${state}</em>` : ""}</b>
-        <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div>${e.playId ? `<span class="pv">${PLAY_ICON}</span>` : ""}</${tag}>`);
+        <span>${esc(d.type?.description || "")}</span></div>${pd.startSpeed ? `<span class="mph">${pd.startSpeed.toFixed(1)}<small>mph</small></span>` : ""}${e.playId ? `<span class="pv">${PLAY_ICON}</span>` : ""}</${tag}>`);
     });
     return rows.reverse().slice(0, limit).join("");
   }
@@ -478,6 +478,48 @@ const Gameday = (pk) => {
     }
     return st.reason && !d.includes(st.reason) ? `${d}: ${st.reason}` : d;
   }
+  /* ================= Batter vs pitcher (career) ================= */
+  // The Stats API's vsPlayer split, cached per pair; the line fills in when it arrives.
+  const vsCache = new Map();
+  function vsText(st, pitcher) {
+    if (st === undefined || st === null) return "";
+    const last = esc(lastName(pitcher?.fullName || "") || "him");
+    if (!st || !(+st.plateAppearances || +st.atBats)) return `<span class="k">vs ${last}</span>First career meeting`;
+    const bits = [`${st.hits ?? 0}-for-${st.atBats ?? 0}`];
+    if (+st.homeRuns) bits.push(`${st.homeRuns} HR`);
+    if (+st.doubles) bits.push(`${st.doubles} 2B`);
+    if (+st.baseOnBalls) bits.push(`${st.baseOnBalls} BB`);
+    if (+st.strikeOuts) bits.push(`${st.strikeOuts} K`);
+    if (st.ops && +st.atBats >= 5) bits.push(`${st.ops} OPS`);
+    return `<span class="k">Career vs ${last}</span>${bits.join(" · ")}`;
+  }
+  function vsStat(data) {
+    const groups = data?.stats || [];
+    const total = groups.find((g) => /vsPlayerTotal/i.test(g.type?.displayName || ""))?.splits?.[0]?.stat;
+    if (total) return total;
+    // No total block: add the season rows up.
+    const rows = groups.filter((g) => /vsPlayer/i.test(g.type?.displayName || "")).flatMap((g) => g.splits || []).map((x) => x.stat || {});
+    if (!rows.length) return false;
+    const sum = {};
+    for (const r of rows) for (const k of ["plateAppearances", "atBats", "hits", "doubles", "homeRuns", "baseOnBalls", "strikeOuts"]) sum[k] = (sum[k] || 0) + (+r[k] || 0);
+    return sum;
+  }
+  function vsLine(bid, pitcher) {
+    const pid = pitcher?.id;
+    if (!bid || !pid) return "";
+    const k = `${bid}:${pid}`;
+    if (!vsCache.has(k)) {
+      vsCache.set(k, null);
+      api(`/api/v1/people/${bid}/stats?stats=vsPlayer&opposingPlayerId=${pid}&group=hitting&sportId=1`, { ttl: 6 * 3600_000 })
+        .then((d) => vsStat(d)).catch(() => false)
+        .then((st) => {
+          vsCache.set(k, st);
+          document.querySelectorAll(`.nh-vs[data-k="${k}"]`).forEach((el) => { el.innerHTML = vsText(st, pitcher); });
+        });
+    }
+    return `<div class="nh-vs" data-k="${k}">${vsText(vsCache.get(k), pitcher)}</div>`;
+  }
+
   function drawNow(f) {
     const ctx = context(f);
     const cur = currentAb(f);
@@ -504,7 +546,7 @@ const Gameday = (pk) => {
           <div><b>${esc(m.batter?.fullName || "")}</b><span>${esc(batLine(ln.bat))}${sAvg(m.batter?.id) ? ` · ${esc(sAvg(m.batter?.id))}` : ""} · bats ${m.batSide?.code === "L" ? "left" : "right"}</span></div></div>
         <div class="who p lnk" data-player="${m.pitcher?.id}"><img src="${headshot(m.pitcher?.id, 120)}" alt="" onerror="this.style.visibility='hidden'">
           <div><b>${esc(m.pitcher?.fullName || "")}</b><span>${esc(todayPit(m.pitcher?.id) || pitLine(ln.pit))}</span></div></div>
-      </div>`;
+      </div>${vsLine(m.batter?.id, m.pitcher)}`;
     $(".gd-seq").innerHTML = pitchRows(cur) || `<div class="muted pad">First pitch coming up</div>`;
     // Challenges and reviews on this at-bat (a live one pulses while the call is being checked).
     $(".gd-now-foot").innerHTML = reviewsOf(cur).map(reviewPill).join("");
