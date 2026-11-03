@@ -354,3 +354,14 @@ table.mt-div td, table.mt-div td.tm { height: 46px; padding: 0 5px; } table.mt-d
 #livebar .bases { width: 30px; height: 22px; }
 #livebar .outs i { width: 6px; height: 6px; }
 body.has-livebar #m-main { padding-bottom: calc(var(--tabs-h) + var(--safe-b) + 80px); }
+
+/* Search */
+#search-btn { width: 38px; height: 38px; margin: 0; flex: none; } #search-btn svg { width: 22px; height: 22px; }
+#search { position: fixed; left: 10px !important; right: 10px; top: calc(var(--safe-t) + var(--top-h) + 4px); width: auto; z-index: 46; padding: 12px;
+  max-height: calc(100vh - var(--safe-t) - var(--top-h) - 20px); overflow-y: auto; }
+.s-head { height: 48px; gap: 10px; padding: 0 8px 0 12px; } .s-head svg { width: 20px; height: 20px; }
+.s-in { height: 44px; font-size: 17px; } .s-clear { width: 32px; height: 32px; font-size: 20px; }
+.s-cols { margin-top: 8px; }
+.s-results { height: auto; grid-template-columns: 1fr; grid-auto-rows: 48px; gap: 2px; }
+.sr { height: 48px; font-size: 16px; padding: 0 6px; gap: 10px; } .sr img { width: 28px; height: 28px; } .sr .sub { font-size: 12px; } .sr .st-ic { width: 28px; }
+.sr-hint { font-size: 15px; padding: 10px 6px; }

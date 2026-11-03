@@ -687,3 +687,32 @@ table.mt-div tr.mine td { background: rgba(var(--tc-rgb), .08); color: var(--tex
 /* Make room for the live bar: drop the wordmark, the updated time and the season label while it shows. */
 body.has-livebar #brand .name, body.has-livebar #brand .sep, body.has-livebar header #updated, body.has-livebar header #ctx .ctx-label { display: none; }
 #picker-btn { flex: none; white-space: nowrap; }
+
+/* Search */
+#search-btn { width: 44px; height: 44px; margin: 0 -4px 0 16px; display: flex; align-items: center; justify-content: center;
+  border: 0; border-radius: 50%; background: none; cursor: pointer; }
+#search-btn svg { width: 24px; height: 24px; fill: none; stroke: var(--text-3); stroke-width: 1.8; stroke-linecap: round; }
+#search-btn.on { background: rgba(255,255,255,.08); } #search-btn.on svg { stroke: var(--text); }
+#search { right: 40px; width: 1560px; }
+.s-head { display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 12px 0 18px; border-radius: 12px; background: var(--surface-2); }
+.s-head svg { width: 26px; height: 26px; flex: none; fill: none; stroke: var(--text-3); stroke-width: 1.8; stroke-linecap: round; }
+.s-in { flex: 1; min-width: 0; height: 60px; border: 0; outline: 0; background: none; color: var(--text); font: 500 26px "Inter Tight", sans-serif; }
+.s-in::placeholder { color: var(--text-4); }
+.s-in::-webkit-search-cancel-button { display: none; }
+.s-clear { width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255,255,255,.08); color: var(--text-2); font: 400 26px/1 "Inter Tight", sans-serif; cursor: pointer; }
+.s-cols { display: flex; gap: 24px; margin-top: 16px; }
+.s-results { flex: 1; min-width: 0; height: 432px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 54px; gap: 4px 12px; align-content: start; }
+.sr { display: flex; align-items: center; gap: 12px; min-width: 0; height: 54px; padding: 0 12px; border: 0; border-radius: 10px; background: none; color: var(--text);
+  font: 500 19px "Inter Tight", sans-serif; text-align: left; cursor: pointer; }
+.sr:active { background: rgba(255,255,255,.08); }
+.sr img { width: 34px; height: 34px; flex: none; }
+.sr img.hs { border-radius: 50%; background: #1c1c1c; object-fit: cover; object-position: top; }
+.sr .st-ic { width: 34px; flex: none; text-align: center; color: var(--text-3); }
+.sr .nm { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sr .sub { flex: none; font-size: 15px; color: var(--text-3); }
+.sr-hint { grid-column: 1 / -1; padding: 14px 12px; font-size: 19px; color: var(--text-3); }
+.kb { flex: none; display: flex; flex-direction: column; gap: 8px; }
+.kr { display: flex; justify-content: center; gap: 8px; }
+.kb button { width: 64px; height: 96px; border: 0; border-radius: 10px; background: var(--surface-2); color: var(--text); font: 600 24px "Inter Tight", sans-serif; cursor: pointer; }
+.kb button.wide { width: 216px; font-size: 20px; }
+.kb button:active { background: #333; }

@@ -217,6 +217,7 @@
 <script src="game.js?v=__BUILD__"></script>
 <script src="myteam.js?v=__BUILD__"></script>
 <script src="livebar.js?v=__BUILD__"></script>
+<script src="search.js?v=__BUILD__"></script>
 <script src="idle.js?v=__BUILD__"></script>
 <script>
   const REFRESH_MS = 5 * 60 * 1000;   // re-read news.json every 5 minutes
@@ -518,7 +519,7 @@
   }
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
-  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); LiveBar.init(); Idle.init();
+  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); LiveBar.init(); Search.init(); Idle.init();
   setTab(load("tab") || "news");
 
   /* Self-update: iCUE's web view holds on to old copies of the page, so a deploy could go unseen for days.
