@@ -15,20 +15,15 @@ jobs:
         run: |
           mkdir -p logo-candidates && cd logo-candidates
           get() { curl -sSfL -A "Mozilla/5.0 (logo comparison)" -m 30 -o "$1" "$2" && echo "ok $1 <- $2" || { rm -f "$1"; echo "miss $1 <- $2"; }; }
-          for pair in HOU:117:hou CHC:112:chc NYM:121:nym MIA:146:mia; do
-            IFS=: read A ID E <<< "$pair"
-            for v in team-cap-on-light team-cap-on-dark team-primary-on-light team-primary-on-dark team-alternate-on-dark team-alternate-on-light team-wordmark-on-dark team-wordmark-on-light; do
-              get "$A-mlb-$v.svg" "https://www.mlbstatic.com/team-logos/$v/$ID.svg"
-            done
-            get "$A-mlb-default.svg" "https://www.mlbstatic.com/team-logos/$ID.svg"
-            get "$A-espn-500.png" "https://a.espncdn.com/i/teamlogos/mlb/500/$E.png"
-            get "$A-espn-500-dark.png" "https://a.espncdn.com/i/teamlogos/mlb/500-dark/$E.png"
+          W="https://commons.wikimedia.org/wiki/Special:FilePath"
+          for n in Houston_Astros_cap_logo.svg Houston_Astros_Insignia.svg Houston_Astros_Cap_Insignia.svg Houston_Astros_star_logo.svg Chicago_Cubs_Cap_Insignia.svg NLC-CHC-Insignia.png Chicago_Cubs_Insignia.svg; do
+            get "W-$n" "$W/$n"
           done
-          for q in "Houston Astros cap insignia" "Houston Astros logo star" "Chicago Cubs cap insignia" "Chicago Cubs C logo" "New York Mets cap insignia" "Miami Marlins cap insignia"; do
-            curl -sS -A "Mozilla/5.0 (logo comparison)" "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=$(echo "$q" | sed 's/ /+/g')" >> wiki-search.jsonl; echo >> wiki-search.jsonl
+          for q in "Astros insignia" "Astros star H" "Houston Astros svg" "Cubs insignia svg"; do
+            curl -sS -A "Mozilla/5.0 (logo comparison)" "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=15&format=json&srsearch=$(echo "$q" | sed 's/ /+/g')" >> wiki-search2.jsonl; echo >> wiki-search2.jsonl
           done
           ls -la
       - name: Commit
         run: |
           git config user.name "logo-bot"; git config user.email "logo-bot@users.noreply.github.com"
-          git add logo-candidates && git commit -m "Logo candidates [skip ci]" && git push
+          git add logo-candidates && git commit -m "Logo candidates 2 [skip ci]" && git push
