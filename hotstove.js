@@ -52,16 +52,23 @@ const HotStove = (() => {
   // ---- Free agents ----
   async function freeAgents() {
     const season = Season.info?.season || currentSeason();
-    const [fa, roster] = await Promise.all([
+    const end = etYmd();
+    const [fa, roster, tx] = await Promise.all([
       api(`/api/v1/people/freeAgents?season=${season}`, { ttl: 15 * 60_000 }),
       api(`/api/v1/sports/1/players?season=${season}&fields=people,id`, { ttl: 6 * 3600_000 }).catch(() => ({ people: [] })),
+      api(`/api/v1/transactions?sportId=1&startDate=${season}-09-15&endDate=${end}`, { ttl: 15 * 60_000 }).catch(() => ({ transactions: [] })),
     ]);
+    // MLB's free agent list keeps players whose club or player option was picked up, and shows their own team
+    // as the "new" team, which reads like a signing. Those players never hit the market: drop them.
+    const kept = new Set((tx.transactions || []).filter((x) => /option/i.test(x.description || "") && /exercise|picked up|accepted/i.test(x.description || ""))
+      .map((x) => x.person?.id).filter(Boolean));
     // Only players who were in the majors this season (the full list includes thousands of minor leaguers).
     const mlb = new Set((roster.people || []).map((p) => p.id));
     const t = picked();
     return (fa.freeAgents || [])
       .filter((x) => !mlb.size || mlb.has(x.player?.id))
       .filter((x) => !/minor league/i.test(x.notes || ""))
+      .filter((x) => !kept.has(x.player?.id))
       .filter((x) => !t || x.originalTeam?.id === t.id || x.newTeam?.id === t.id)
       .map((x) => ({ ...x, signed: !!x.newTeam?.id }))
       .sort((a, b) => b.signed - a.signed || (b.signed ? String(b.dateSigned || b.dateDeclared).localeCompare(String(a.dateSigned || a.dateDeclared)) : 0)
@@ -77,7 +84,7 @@ const HotStove = (() => {
         return `<div class="hs-p lnk" data-player="${x.player?.id}">
           <img class="hs-hs" src="${headshot(x.player?.id, 120)}" alt="" onerror="this.style.visibility='hidden'">
           <div class="hs-nm"><b>${esc(x.player?.fullName || "")}</b><span>${esc(x.position?.abbreviation || "")}${from ? ` · ${esc(from.name)}` : ""}</span></div>
-          ${to ? `<span class="hs-st signed">${logoImg(to)}Signed</span>` : `<span class="hs-st">Available</span>`}</div>`;
+          ${to ? `<span class="hs-st signed">${logoImg(to)}${to.id === from?.id ? "Re-signed" : "Signed"}</span>` : `<span class="hs-st">Available</span>`}</div>`;
       }).join("")}</div>`;
   }
 

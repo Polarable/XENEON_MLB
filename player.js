@@ -110,22 +110,37 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
       `<span class="ph-c"><em>${esc(typeof h === "function" ? h(st) : h)}</em><b>${f(st)}</b></span>`).join("")}</div>` : "";
     return `<div class="p-hero">${row(last || "", cur)}${row("Career", car)}</div>`;
   }
-  // MLB.com's action banner when there is one; without it the page keeps the round headshot.
-  const banner = `https://img.mlbstatic.com/mlb-photos/image/upload/t_16x9/t_w2208/v1/people/${id}/action/hero/current`;
+  // Banner like the Career Builder: MLB.com's action photos in order, and a team-color wash when none exist.
+  const banners = [
+    `https://img.mlbstatic.com/mlb-photos/image/upload/t_16x9/t_w2208/v1/people/${id}/action/hero/current`,
+    `https://img.mlbstatic.com/mlb-photos/image/upload/w_1800,q_auto:best/v1/people/${id}/action/hero/current`,
+    `https://midfield.mlbstatic.com/v1/people/${id}/spots/1200`,
+    `https://img.mlbstatic.com/mlb-photos/image/upload/w_1800,q_auto:best/v1/people/${id}/action/1/current`,
+  ];
 
   root.innerHTML = `<div class="p-left">
-      <div class="p-banner"><img src="${banner}" alt="" referrerpolicy="no-referrer" onload="this.closest('.s-body')?.classList.add('has-banner')" onerror="this.parentNode.remove()"></div>
+      <div class="p-banner plain" style="--tc:${team?.color || "#333"}"><img alt="" referrerpolicy="no-referrer"></div>
       <div class="p-top"><div class="p-photo"><img src="${headshot(id, 360)}" alt="" onerror="this.remove()"></div>
         <div class="p-id"><h1><span class="fn">${esc((p.fullName || "").split(" ")[0])}</span> <span class="ln">${esc((p.fullName || "").split(" ").slice(1).join(" "))}</span></h1>
           ${team ? `<div class="p-team lnk" data-team="${team.id}">${logoImg(team)}${esc(fullTeamName(p.currentTeam) || team.name)}</div>` : ""}
           <div class="p-num">${p.primaryNumber ? `#${esc(p.primaryNumber)} · ` : ""}${esc(p.primaryPosition?.abbreviation || "")}${p.active === false ? " · Retired" : ""}</div>
-          ${statusLine()}
-          ${typeof IS_MOBILE !== "undefined" && IS_MOBILE ? `<a class="p-cb" href="career/?mlbam=${id}&name=${encodeURIComponent(p.fullName || "")}&type=${groups[0] === "pitching" ? "pitcher" : "batter"}">Open in Career Builder</a>` : ""}</div></div>
+          ${statusLine()}</div></div>
       ${statHero()}
       <div class="p-bio">${bio.map((b) => `<div>${b}</div>`).join("")}</div>
+      ${typeof IS_MOBILE !== "undefined" && IS_MOBILE ? `<a class="p-cb" href="career/?mlbam=${id}&name=${encodeURIComponent(p.fullName || "")}&type=${groups[0] === "pitching" ? "pitcher" : "batter"}">
+        <span><b>Career Builder</b><em>Build a career card for ${esc(p.fullName || "")}</em></span><i aria-hidden="true">›</i></a>` : ""}
       <div class="p-sum"></div>
     </div>
     <div class="p-right"><div class="p-tabs"></div><div class="p-body vscroll"></div></div>`;
+  {
+    const box = root.querySelector(".p-banner"), img = box.querySelector("img");
+    const phone = typeof IS_MOBILE !== "undefined" && IS_MOBILE;
+    if (phone) root.classList.add("has-banner");          // the phone always shows the banner (photo or team wash)
+    let k = 0;
+    img.onload = () => { if (!box.isConnected) return; if (img.naturalWidth > 400) { box.classList.remove("plain"); root.classList.add("has-banner"); } else img.onerror(); };
+    img.onerror = () => { if (!box.isConnected) return; if (++k < banners.length) img.src = banners[k]; else { img.remove(); box.classList.add("plain"); if (!phone) box.remove(); } };
+    img.src = banners[0];
+  }
   const body = root.querySelector(".p-body");
   dragScroll(body, "y");
   drawStory();

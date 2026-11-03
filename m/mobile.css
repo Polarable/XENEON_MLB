@@ -543,3 +543,13 @@ body.compact .gcard:not(.live) .foot { display: none; }
   #m-tabs .tab:active { background: rgba(255,255,255,.18); }
 }
 body.compact .gcard.live, body.compact .gcard.fav { margin: 3px 0; }
+
+/* Banner always present: action photo when MLB has one, otherwise a team-color wash */
+.page-player .p-banner.plain { background: linear-gradient(120deg, color-mix(in srgb, var(--tc) 95%, #000) 0%, color-mix(in srgb, var(--tc) 45%, #000) 45%, #000 100%); }
+.page-player .p-banner.plain img { display: none; }
+/* Career Builder: a quiet row under the bio instead of a pill in the header */
+.p-cb { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: auto; margin: 18px 0 4px; padding: 14px 16px;
+  border: 0; border-radius: 14px; background: #141414; color: var(--text); text-decoration: none; }
+.p-cb span { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.p-cb b { font-size: 16px; font-weight: 600; } .p-cb em { font-style: normal; font-size: 13px; color: var(--text-3); }
+.p-cb i { font-style: normal; font-size: 24px; color: var(--text-3); }
