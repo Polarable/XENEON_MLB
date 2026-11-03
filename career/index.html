@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Career Builder · SHUTOUT</title>
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="../m/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  /* SHUTOUT look: black, Inter Tight, quiet surfaces, white as the accent. Same selectors as the original tool. */
+  :root{
+    --bg:#000; --bg-side:#0d0d0d; --bg-bar:#111; --bg-input:#161616; --bg-hover:rgba(255,255,255,.04); --bg-active:rgba(255,255,255,.10);
+    --bg-list:#141414; --border:rgba(255,255,255,.08); --border-hi:rgba(255,255,255,.4);
+    --text:rgba(255,255,255,.82); --text-bright:#fff; --dim:rgba(255,255,255,.5); --dimmer:rgba(255,255,255,.3);
+    --accent:#fff; --accent-2:#fff; --green:#7fdc9f; --red:#f06a6a; --yellow:#ffd25a; --purple:#c586c0; --orange:#ffb35a;
+    --font:"Inter Tight","Inter",system-ui,sans-serif; --radius:14px; --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;font-weight:400;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  ::selection{background:rgba(255,255,255,.2);color:#fff;}
+  button,input,textarea{font-family:inherit;}
+  .glass,.glass-strong{background:transparent;border:0;}
+
+  /* Top bar */
+  header{display:flex;align-items:center;gap:16px;height:72px;padding:0 32px;border-bottom:1px solid var(--border);}
+  header .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;}
+  header .brand img{height:30px;width:auto;}
+  header .brand span{font-size:15px;font-weight:700;letter-spacing:.22em;}
+  header .title{margin-left:6px;padding-left:18px;border-left:1px solid var(--border);font-size:22px;font-weight:600;letter-spacing:-.3px;color:#fff;}
+  header .back{margin-left:auto;display:flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;}
+  header .back:hover{color:#fff;background:rgba(255,255,255,.06);}
+  .container{padding:0 0 48px;max-width:1760px;margin:0 auto;}
+
+  /* Player search */
+  .bref-bar{display:flex;padding:20px 32px 0;border:0;background:none;position:relative;z-index:80;}
+  .bref-body{display:flex;flex:1;align-items:center;gap:18px;flex-wrap:wrap;}
+  .bref-input-wrap{flex:1 1 360px;max-width:640px;position:relative;}
+  .bref-bar input{width:100%;height:52px;padding:0 18px 0 48px;border-radius:999px;background:#111;border:1px solid rgba(255,255,255,.12);color:#fff;font-size:17px;box-shadow:none;}
+  .bref-bar input:focus{outline:none;border-color:rgba(255,255,255,.4);}
+  .bref-bar input::placeholder{color:var(--dimmer);}
+  .bref-search-icon{position:absolute;left:18px;top:50%;width:18px;height:18px;transform:translateY(-50%);color:var(--dim);pointer-events:none;}
+  .bref-bar .status{color:var(--dim);font-size:14px;}
+
+  /* Hero: banner photo behind the name, like the player pages */
+  .player-hero{position:relative;overflow:hidden;margin:20px 32px 0;border-radius:var(--radius);border:1px solid var(--border);min-height:220px;background:#0d0d0d;}
+  .player-hero.has-banner{background:#000;}
+  .player-banner{display:none;position:absolute;inset:0;z-index:0;overflow:hidden;background:#111;}
+  .player-banner.show{display:block;}
+  .player-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;}
+  .player-banner::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,#000 0%,rgba(0,0,0,.85) 30%,rgba(0,0,0,.35) 65%,rgba(0,0,0,.1) 100%);}
+  .row-1{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:stretch;flex-wrap:wrap;min-height:220px;}
+  .player-block{display:flex;align-items:center;min-width:320px;flex:1 1 420px;padding:24px 28px;gap:24px;}
+  .avatar{width:150px;height:150px;flex:0 0 150px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dim);cursor:pointer;overflow:hidden;
+    font-size:12px;font-weight:600;letter-spacing:.06em;background:#1c1c1c;border:1px solid rgba(255,255,255,.08);position:relative;}
+  .avatar:hover{color:#fff;}
+  .avatar img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
+  .avatar::after{display:none;}
+  .id-col{display:flex;flex-direction:column;justify-content:center;gap:16px;flex:1;min-width:0;}
+  .player-name{min-width:240px;min-height:56px;padding:2px 10px;margin:0 -10px;border-radius:10px;border:1px solid transparent;color:#fff;
+    font-size:52px;line-height:1.05;letter-spacing:-1.4px;outline:none;caret-color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 2px 18px rgba(0,0,0,.5);}
+  .player-name:focus{border-color:rgba(255,255,255,.3);background:rgba(0,0,0,.4);}
+  .player-name:empty::before{content:attr(data-placeholder);color:var(--dimmer);font-weight:500;}
+  .player-name .pn-first{font-weight:400;color:rgba(255,255,255,.85);}
+  .player-name .pn-rest{font-weight:600;color:#fff;}
+  .player-name .pn-part{position:relative;display:inline-block;white-space:nowrap;}
+  .player-name .pn-part .pn-ghost{visibility:hidden;pointer-events:none;font-weight:600;}
+  .player-name .pn-part .pn-from,.player-name .pn-part .pn-to{position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none;}
+  .player-name .pn-rest .pn-ghost,.player-name .pn-rest .pn-to{font-weight:600;color:#fff;}
+  .player-name .pn-rest .pn-from{font-weight:400;color:#fff;}
+  .player-name.settling .pn-rest .pn-from{animation:pnWeightOut .85s cubic-bezier(.22,1,.36,1) both;}
+  .player-name.settling .pn-rest .pn-to{animation:pnWeightIn .85s cubic-bezier(.22,1,.36,1) both;}
+  @keyframes pnWeightOut{0%{opacity:1;}35%{opacity:.55;}100%{opacity:0;}}
+  @keyframes pnWeightIn{0%{opacity:0;}35%{opacity:.55;}100%{opacity:1;}}
+  body.edit-locked .player-name{pointer-events:none;caret-color:transparent;border-color:transparent!important;background:transparent!important;}
+
+  /* Batting / Pitching: the app's segmented pill */
+  .mode-toggle{position:relative;display:inline-flex;width:fit-content;height:48px;padding:4px;gap:4px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.35);}
+  .mode-toggle button{position:relative;z-index:1;height:38px;padding:0 20px;border:0;border-radius:999px;background:none;color:var(--dim);font-size:16px;font-weight:500;cursor:pointer;}
+  .mode-toggle button:hover{color:#fff;}
+  .mode-toggle button.active{background:rgba(255,255,255,.14);color:#fff;}
+  .mode-toggle button::after{display:none;}
+  .mode-ink{display:none;}
+
+  /* Actions: round icon buttons */
+  .actions{position:relative;display:flex;align-items:center;gap:8px;align-self:flex-start;margin:24px 24px 0 auto;z-index:5;padding:0;background:none;border:0;}
+  .actions > button,.actions .flyout-wrap > .flyout-trigger{width:48px;height:48px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;
+    border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.45);color:var(--text);cursor:pointer;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+  .actions > button:hover,.actions .flyout-trigger:hover{background:rgba(255,255,255,.12);color:#fff;}
+  .actions > button.warn:hover{background:rgba(240,106,106,.16);color:var(--red);border-color:rgba(240,106,106,.4);}
+  .actions svg{width:18px;height:18px;display:block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .actions svg .fill{fill:currentColor;stroke:none;}
+  .edit-lock-btn.is-locked{color:var(--yellow);border-color:rgba(255,210,90,.45)!important;background:rgba(255,210,90,.1)!important;}
+  .flyout-trigger.is-open{color:#fff;background:rgba(255,255,255,.16)!important;}
+
+  /* Popovers */
+  .flyout-wrap{position:relative;display:flex;}
+  .flyout,.overlay-panel,.bref-results-portal{background:rgba(18,18,18,.97);border:1px solid rgba(255,255,255,.14);border-radius:14px;color:var(--text);box-shadow:0 24px 80px rgba(0,0,0,.85);}
+  .flyout{display:none;position:fixed;z-index:5000;min-width:220px;padding:6px;overflow:hidden;}
+  #baselineBar.flyout{min-width:260px;}
+  .flyout.open{display:block;animation:pop .18s var(--ease);}
+  @keyframes pop{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+  .flyout-head,.overlay-div,.awards-panel-head{padding:10px 12px 8px;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--dim);background:none;border:0;}
+  .overlay-div{position:sticky;top:0;z-index:1;background:rgba(18,18,18,.98);}
+  .flyout-body{padding:6px 12px 12px;display:flex;flex-direction:column;gap:12px;}
+  .flyout-body label{color:var(--dim);font-size:13px;font-weight:500;display:flex;flex-direction:column;gap:6px;}
+  .flyout-body input{background:#1c1c1c;border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#fff;width:100%;padding:10px 12px;font-size:15px;}
+  .flyout-body input:focus{outline:none;border-color:rgba(255,255,255,.4);}
+  .flyout-item{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:10px 12px;border:0;border-radius:10px;background:none;color:var(--text);font-size:15px;font-weight:500;text-align:left;cursor:pointer;}
+  .flyout-item:hover{background:rgba(255,255,255,.07);color:#fff;}
+  .flyout-item.active{background:rgba(255,255,255,.12);color:#fff;box-shadow:none;}
+  .flyout-item.active .ab,.flyout-item.active svg{color:#fff;opacity:1;}
+  .flyout-item svg{width:16px;height:16px;flex:0 0 16px;opacity:.8;stroke:currentColor;fill:none;stroke-width:1.5;}
+  .flyout-item .item-main{display:flex;align-items:center;gap:12px;min-width:0;}
+  .flyout-list,.overlay-list{max-height:380px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#333 transparent;}
+
+  th:nth-child(3){text-align:left;padding-left:12px;}
+  .hint{margin:16px 32px 0;color:var(--dimmer);font-size:13px;line-height:1.5;padding:0;border:0;background:none;}
+
+  /* The table: the app's stat tables */
+  .table-shell{margin:12px 32px 0;border-radius:var(--radius);border:1px solid var(--border);background:#0a0a0a;overflow:hidden;}
+  .table-wrap{overflow-x:auto;scrollbar-width:thin;scrollbar-color:#333 transparent;}
+  .table-wrap::-webkit-scrollbar{height:10px;} .table-wrap::-webkit-scrollbar-thumb{background:#333;border-radius:5px;}
+  table{border-collapse:collapse;width:100%;min-width:1600px;white-space:nowrap;}
+  th,td{padding:0 8px;height:40px;text-align:right;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px;}
+  th{height:44px;color:var(--dim);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;border-bottom:1px solid var(--border);position:sticky;top:0;background:#0a0a0a;cursor:help;}
+  th:first-child,td:first-child{text-align:left;padding-left:18px;}
+  th:last-child,td:last-child{padding-right:18px;}
+  tbody tr:hover td{background:rgba(255,255,255,.03);}
+  td.calc{color:var(--dim);box-shadow:none;}
+  td.calc.flash{color:#fff;}
+  td input{background:none;border:0;border-radius:6px;color:#fff;width:100%;min-width:40px;padding:4px 6px;text-align:right;font-size:15px;box-shadow:none;}
+  td input.txt{text-align:left;}
+  td input:focus{outline:none;background:rgba(255,255,255,.1);}
+  td input::placeholder{color:var(--dimmer);}
+  td input.jump,.cell-trigger.jump{background:rgba(255,255,255,.1);}
+  tr.newrow td{background:rgba(79,195,122,.06);}
+  tr.partial-row td,tr.partial-row td input,tr.partial-row .cell-trigger{color:var(--dim);}
+  tbody tr:not(.partial-row):not(.notes-row) td,tbody tr:not(.partial-row):not(.notes-row) td input{color:#fff;font-weight:400;}
+  tr.total-row td{color:#fff;font-weight:600;background:rgba(255,255,255,.03);border-top:1px solid var(--border);}
+  tr.total-row td:first-child{color:var(--dim);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;}
+  tr.career-row td{color:#fff;font-weight:700;border-top:1px solid rgba(255,255,255,.3);background:#151515;height:48px;}
+  tr.career-row td:first-child{font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;color:#fff;}
+  td input.nav,td .cell-trigger.nav{box-shadow:none;outline:none;border-bottom:1px solid transparent;}
+  body:not(.edit-locked) td input.nav,body:not(.edit-locked) td .cell-trigger.nav,body:not(.edit-locked) .notes-row input{border-bottom:1px solid rgba(255,255,255,.12);}
+  td input.nav:focus,td .cell-trigger.nav:focus{background:rgba(255,255,255,.1);outline:none;border-bottom-color:#fff;}
+  body.edit-locked td input.nav,body.edit-locked td .cell-trigger.nav,body.edit-locked .notes-row input{background:transparent!important;outline:none!important;border-bottom-color:transparent!important;}
+  body.edit-locked td input,body.edit-locked .cell-trigger,body.edit-locked .notes-row input{pointer-events:none;caret-color:transparent;}
+  body.edit-locked .avatar{pointer-events:none;}
+  body.edit-locked .row-actions{opacity:.35;pointer-events:none;}
+  th[data-tip]{cursor:help;position:relative;}
+  th[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:calc(100% + 4px);min-width:140px;max-width:260px;padding:8px 10px;z-index:50;pointer-events:none;
+    background:#1c1c1c;border:1px solid rgba(255,255,255,.14);border-radius:10px;color:var(--text);font-size:13px;font-weight:400;text-transform:none;white-space:normal;line-height:1.4;text-align:left;}
+  .notes-row td{padding:10px 18px;height:auto;}
+  .notes-row input{background:#141414;border:1px solid rgba(255,255,255,.08);color:var(--text);width:100%;text-align:left;font-size:14px;padding:8px 12px;border-radius:10px;}
+  .notes-row input:focus{outline:none;border-color:rgba(255,255,255,.35);color:#fff;}
+  .notes-row input::placeholder{color:var(--dimmer);text-transform:none;letter-spacing:0;font-size:13px;}
+  .row-actions{display:flex;gap:12px;justify-content:flex-end;}
+  .icon-btn{background:none;border:0;color:var(--dimmer);cursor:pointer;font-size:14px;padding:0;}
+  .icon-btn:hover{color:#fff;}
+  .legend{display:none!important;}
+
+  .toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,12px);background:#1c1c1c;border:1px solid rgba(255,255,255,.14);color:#fff;padding:10px 18px;font-size:14px;font-weight:500;
+    letter-spacing:0;text-transform:none;border-radius:999px;z-index:6000;box-shadow:0 12px 40px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .28s ease,transform .28s cubic-bezier(.22,1,.36,1);}
+  .toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto;}
+  .toast.lock-on{border-color:rgba(255,210,90,.5);} .toast.lock-off{border-color:rgba(127,220,159,.5);}
+
+  .cell-trigger{background:none;border:0;color:#fff;font-size:15px;cursor:pointer;padding:2px 4px;width:100%;min-width:52px;border-radius:6px;text-align:inherit;}
+  .cell-trigger:hover{background:rgba(255,255,255,.06);}
+  .cell-trigger:focus{outline:none;background:rgba(255,255,255,.1);}
+  .cell-trigger.empty{color:var(--dimmer);}
+  .team-cell{display:inline-flex;align-items:center;gap:8px;justify-content:flex-start;text-align:left;min-width:64px;}
+  .team-logo{width:22px;height:22px;object-fit:contain;flex:0 0 22px;background:none;border:0;padding:0;filter:none;}
+  .overlay-panel.team-panel{min-width:300px;max-width:min(380px,calc(100vw - 24px));}
+  .overlay-opt .team-logo{width:24px;height:24px;flex:0 0 24px;}
+  .overlay-opt .opt-main{display:flex;align-items:center;gap:10px;min-width:0;}
+  .overlay-opt .opt-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .overlay-panel{position:fixed;z-index:400;min-width:220px;display:none;pointer-events:none;overflow:hidden;padding:6px;}
+  .overlay-panel.open{display:block;pointer-events:auto;animation:pop .16s var(--ease);}
+  .overlay-search,.flyout-search{width:100%;margin-bottom:4px;background:#1c1c1c;border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#fff;font-size:15px;padding:10px 12px;}
+  .overlay-search:focus,.flyout-search:focus{outline:none;border-color:rgba(255,255,255,.35);}
+  .overlay-search::placeholder,.flyout-search::placeholder{color:var(--dimmer);text-transform:none;letter-spacing:0;font-size:14px;}
+  .overlay-opt{padding:9px 12px;border-radius:10px;color:var(--text);cursor:pointer;font-size:15px;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .overlay-opt:hover{color:#fff;background:rgba(255,255,255,.07);}
+  .overlay-opt.active{color:#fff;background:rgba(255,255,255,.13);box-shadow:none;}
+  .overlay-opt.active .ab{color:#fff;}
+  .overlay-opt .ab{color:var(--dim);font-size:13px;}
+  .overlay-opt.custom{border-top:1px solid var(--border);border-radius:0 0 10px 10px;}
+  .overlay-opt.check{justify-content:flex-start;gap:10px;}
+  .overlay-opt.check .box{width:16px;height:16px;border:1.5px solid var(--dim);display:inline-block;position:relative;flex:0 0 auto;border-radius:5px;}
+  .overlay-opt.check.on{color:#fff;background:rgba(255,255,255,.1);box-shadow:none;}
+  .overlay-opt.check.on .box{background:#fff;border-color:#fff;}
+  .overlay-opt.check.on .box::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(45deg);}
+  .overlay-opt.check.on .num{color:#fff;} .overlay-opt.check .num{color:#fff;min-width:20px;}
+  .awards-td{min-width:96px;max-width:160px;}
+  .awards-pill{text-align:left;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text);}
+  .awards-pill:not(.empty){color:var(--yellow);}
+  .awards-panel{padding:0;overflow:hidden;}
+  .awards-chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;max-height:160px;overflow-y:auto;}
+  .award-chip{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(255,210,90,.12);border:0;color:var(--yellow);}
+  .awards-empty{font-size:13px;color:var(--dimmer);}
+  .awards-edit{display:block;width:100%;resize:vertical;min-height:72px;background:#111;border:0;border-top:1px solid var(--border);color:#fff;font-size:14px;padding:10px 12px;}
+  .awards-edit:focus{outline:none;}
+  .awards-panel-actions{display:flex;justify-content:flex-end;padding:8px;border-top:1px solid var(--border);background:none;}
+  .awards-save{background:#fff;border:0;color:#000;font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;padding:8px 16px;border-radius:999px;cursor:pointer;}
+  .awards-save:hover{background:#e6e6e6;}
+  tr.aura td{background:rgba(255,210,90,.05);}
+
+  .bref-results-portal{position:fixed;z-index:9999;max-height:460px;overflow:auto;display:none;min-width:360px;max-width:min(560px,calc(100vw - 24px));padding:6px;}
+  .bref-results-portal.open{display:block;animation:pop .16s var(--ease);}
+  .bref-results-portal .hit{padding:8px 10px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:12px;border:0;color:var(--text);font-size:15px;font-weight:500;}
+  .bref-results-portal .hit:hover,.bref-results-portal .hit.active{background:rgba(255,255,255,.09);color:#fff;}
+  .bref-results-portal .hit.active .meta,.bref-results-portal .hit.active .hit-pos{color:var(--dim);}
+  .bref-results-portal .hit-shot{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center top;background:#1c1c1c;flex:0 0 42px;border:0;}
+  .bref-results-portal .hit-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;}
+  .bref-results-portal .hit-name{font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .bref-results-portal .meta{color:var(--dim);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .bref-results-portal .hit-pos{flex:none;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--dim);min-width:2.5em;text-align:right;}
+  .bref-results-portal .hit-empty{padding:14px;color:var(--dim);font-size:14px;line-height:1.45;}
+  .bref-results{display:none!important;}
+
+  .suggest-panel{min-width:240px;max-width:min(320px,calc(100vw - 16px));padding:6px;z-index:4500;}
+  .suggest-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:9px 12px;border:0;border-radius:10px;background:none;color:var(--text);font:inherit;font-size:14px;text-align:left;cursor:pointer;}
+  .suggest-opt:hover{background:rgba(255,255,255,.07);color:#fff;}
+  .suggest-opt .sg-label{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .suggest-opt .sg-name{font-weight:600;color:#fff;}
+  .suggest-opt .sg-meta{font-size:12px;color:var(--dim);}
+  .suggest-opt .sg-val{font-weight:700;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .suggest-empty{padding:12px;color:var(--dim);font-size:13px;line-height:1.4;}
+
+  /* Phone: the table scrolls sideways; everything above stacks */
+  @media (max-width: 760px){
+    header{height:auto;min-height:60px;padding:calc(env(safe-area-inset-top,0px) + 8px) 16px 8px;gap:10px;}
+    header .brand span{display:none;} header .title{font-size:19px;padding-left:12px;margin-left:0;}
+    header .back{height:36px;padding:0 14px;font-size:14px;}
+    .bref-bar{padding:14px 14px 0;} .bref-bar input{height:48px;font-size:16px;}
+    .bref-bar .status{font-size:13px;padding:0 6px;}
+    .player-hero{margin:14px 14px 0;min-height:0;}
+    /* Banner sits on top as a photo strip, the name and controls below it */
+    .player-banner{bottom:auto;height:200px;}
+    .player-banner::after{background:linear-gradient(to bottom,rgba(0,0,0,0) 30%,#0d0d0d 100%);}
+    .player-hero.has-banner .player-block{padding-top:130px;}
+    .player-hero.has-banner{background:#0d0d0d;}
+    .row-1{flex-direction:column;min-height:0;}
+    .player-block{padding:18px;gap:16px;min-width:0;flex:none;}
+    .avatar{width:84px;height:84px;flex-basis:84px;}
+    .player-name{font-size:32px;min-width:0;min-height:40px;letter-spacing:-.8px;}
+    .mode-toggle{height:42px;} .mode-toggle button{height:32px;padding:0 14px;font-size:14px;}
+    .actions{margin:0 18px 18px;align-self:flex-start;}
+    .actions > button,.actions .flyout-wrap > .flyout-trigger{width:44px;height:44px;}
+    .hint{display:none;}
+    .table-shell{margin:12px 0 0;border-radius:0;border-left:0;border-right:0;}
+    th,td{height:44px;font-size:15px;}
+    th:first-child,td:first-child{position:sticky;left:0;z-index:2;background:#0a0a0a;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="../m/" aria-label="SHUTOUT"><img src="../brand/shutout-logo.png" alt=""><span>SHUTOUT</span></a>
+  <span class="title">Career Builder</span>
+  <a class="back" href="../m/">Back to the app</a>
+</header>
+<div class="container">
+  <div class="bref-bar glass-strong" id="brefBar">
+    <div class="bref-body">
+      <div class="bref-input-wrap">
+        <svg class="bref-search-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input id="brefSearch" placeholder="Search players — name or last name…" autocomplete="off" spellcheck="false" />
+      </div>
+      <span class="status" id="brefStatus">Type a name to import batting &amp; pitching careers</span>
+    </div>
+  </div>
+  <div class="player-hero" id="playerHero">
+    <div class="player-banner" id="playerBanner" aria-hidden="true">
+      <img id="playerBannerImg" alt="" referrerpolicy="no-referrer">
+    </div>
+    <div class="row-1">
+      <div class="player-block">
+        <div class="avatar" id="avatar" onclick="document.getElementById('imgInput').click()">Add photo</div>
+        <input type="file" id="imgInput" accept="image/*" style="display:none" onchange="loadImage(this)">
+        <div class="id-col">
+          <div class="player-name" id="playerName" contenteditable="true" role="textbox" aria-label="Player name" data-placeholder="Player name" data-value="" spellcheck="false"></div>
+          <div class="mode-toggle" id="modeToggle">
+            <button type="button" id="modeBat" class="active" onclick="setMode('bat')">Batting</button>
+            <button type="button" id="modePit" onclick="setMode('pit')">Pitching</button>
+            <span class="mode-ink" id="modeInk" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+      <div class="actions" id="actionsBar">
+        <div class="flyout-wrap" id="baselineWrap">
+          <button type="button" class="flyout-trigger baselines-btn" id="baselinesBtn" title="Baselines" aria-label="Baselines" aria-haspopup="true" aria-expanded="false" onclick="toggleBaselinesFlyout(event)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12"/><circle class="fill" cx="5" cy="4" r="1.4"/><circle class="fill" cx="11" cy="8" r="1.4"/><circle class="fill" cx="7" cy="12" r="1.4"/></svg>
+          </button>
+          <div class="flyout" id="baselineBar" role="dialog" aria-label="League baselines"></div>
+        </div>
+        <button type="button" class="edit-lock-btn" id="editLockBtn" title="Lock edit" aria-label="Lock edit" onclick="toggleEditLock()"></button>
+        <button type="button" title="Add season" aria-label="Add season" onclick="addSeason()">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg>
+        </button>
+        <div class="flyout-wrap" id="ioWrap">
+          <button type="button" class="flyout-trigger io-btn" id="ioBtn" title="Save / export" aria-label="Save / export" aria-haspopup="true" aria-expanded="false" onclick="toggleIoMenu(event)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h8l2 2v10H3V2z"/><path d="M5 2v4h6V2M8 8v5M5.5 11.5 8 14l2.5-2.5"/></svg>
+          </button>
+          <div class="flyout" id="ioMenu" role="menu">
+            <div class="flyout-head">Save / export</div>
+            <button type="button" class="flyout-item" role="menuitem" onclick="runIoAction(saveData)">
+              <span class="item-main"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h8l2 2v10H3V2z"/><path d="M5 2v4h6V2M5 14v-5h6v5"/></svg>Save JSON</span>
+            </button>
+            <button type="button" class="flyout-item" role="menuitem" onclick="runIoAction(loadData)">
+              <span class="item-main"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10v3h12v-3M8 2v8M5 7l3 3 3-3"/></svg>Load JSON</span>
+            </button>
+            <button type="button" class="flyout-item" role="menuitem" onclick="runIoAction(exportCSV)">
+              <span class="item-main"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h6l3 3v9H4V2z"/><path d="M10 2v3h3M5.5 10h5M5.5 7.5h5M5.5 12.5h3"/></svg>Export CSV</span>
+            </button>
+            <button type="button" class="flyout-item" role="menuitem" onclick="runIoAction(exportPNG)">
+              <span class="item-main"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="10"/><circle class="fill" cx="6" cy="7" r="1.2"/><path d="M2 11l3.5-3.5L9 11l2-2 3 3"/></svg>Export PNG</span>
+            </button>
+          </div>
+        </div>
+        <button type="button" class="warn" title="Clear" aria-label="Clear" onclick="clearAll()">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4h10M6 4V3h4v1M5 4l.5 9h5L11 4"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="hint" id="hint">Nav: [Enter] or [Tab] moves forward. Toggle Unlock edit to change cells · multi-team partials are dimmed · season TOTAL is normal weight · Career is bold · hover headers for definitions.</div>
+  <div id="captureArea" class="table-shell glass">
+    <div class="table-wrap">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="legend glass" id="legend"></div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+/* ===== YEAR-AWARE MLB TEAMS (Stats API, 1900+) ===== */
+const MLB_DIVISION_ORDER=['AL East','AL Central','AL West','NL East','NL Central','NL West','AL','NL','Other'];
+const MLB_TEAMS=[
+  {abbr:'BAL',name:'Baltimore Orioles',league:'AL',division:'AL East',id:110},
+  {abbr:'BOS',name:'Boston Red Sox',league:'AL',division:'AL East',id:111},
+  {abbr:'NYY',name:'New York Yankees',league:'AL',division:'AL East',id:147},
+  {abbr:'TB',name:'Tampa Bay Rays',league:'AL',division:'AL East',id:139},
+  {abbr:'TOR',name:'Toronto Blue Jays',league:'AL',division:'AL East',id:141},
+  {abbr:'CWS',name:'Chicago White Sox',league:'AL',division:'AL Central',id:145},
+  {abbr:'CLE',name:'Cleveland Guardians',league:'AL',division:'AL Central',id:114},
+  {abbr:'DET',name:'Detroit Tigers',league:'AL',division:'AL Central',id:116},
+  {abbr:'KC',name:'Kansas City Royals',league:'AL',division:'AL Central',id:118},
+  {abbr:'MIN',name:'Minnesota Twins',league:'AL',division:'AL Central',id:142},
+  {abbr:'HOU',name:'Houston Astros',league:'AL',division:'AL West',id:117},
+  {abbr:'LAA',name:'Los Angeles Angels',league:'AL',division:'AL West',id:108},
+  {abbr:'ATH',name:'Athletics',league:'AL',division:'AL West',id:133},
+  {abbr:'SEA',name:'Seattle Mariners',league:'AL',division:'AL West',id:136},
+  {abbr:'TEX',name:'Texas Rangers',league:'AL',division:'AL West',id:140},
+  {abbr:'ATL',name:'Atlanta Braves',league:'NL',division:'NL East',id:144},
+  {abbr:'MIA',name:'Miami Marlins',league:'NL',division:'NL East',id:146},
+  {abbr:'NYM',name:'New York Mets',league:'NL',division:'NL East',id:121},
+  {abbr:'PHI',name:'Philadelphia Phillies',league:'NL',division:'NL East',id:143},
+  {abbr:'WSH',name:'Washington Nationals',league:'NL',division:'NL East',id:120},
+  {abbr:'CHC',name:'Chicago Cubs',league:'NL',division:'NL Central',id:112},
+  {abbr:'CIN',name:'Cincinnati Reds',league:'NL',division:'NL Central',id:113},
+  {abbr:'MIL',name:'Milwaukee Brewers',league:'NL',division:'NL Central',id:158},
+  {abbr:'PIT',name:'Pittsburgh Pirates',league:'NL',division:'NL Central',id:134},
+  {abbr:'STL',name:'St. Louis Cardinals',league:'NL',division:'NL Central',id:138},
+  {abbr:'ARI',name:'Arizona Diamondbacks',league:'NL',division:'NL West',id:109},
+  {abbr:'COL',name:'Colorado Rockies',league:'NL',division:'NL West',id:115},
+  {abbr:'LAD',name:'Los Angeles Dodgers',league:'NL',division:'NL West',id:119},
+  {abbr:'SD',name:'San Diego Padres',league:'NL',division:'NL West',id:135},
+  {abbr:'SF',name:'San Francisco Giants',league:'NL',division:'NL West',id:137},
+];
+/* Soft aliases for matching only — do not rewrite historical display abbrs. */
+const TEAM_ALIASES={
+  AZ:'ARI',ARZ:'ARI',OAK:'ATH',WAS:'WSH',WSN:'WSH',CHW:'CWS',ANA:'LAA',CAL:'LAA',
+  FLA:'MIA',FLO:'MIA',TBD:'TB',TBR:'TB',KCR:'KC',KAN:'KC',SDP:'SD',SDG:'SD',SFG:'SF',SFO:'SF',
+  MON:'WSH',NYG:'SF',BRO:'LAD',BSN:'ATL',MLN:'ATL',SLB:'BAL',PHA:'ATH',KCA:'ATH',SEP:'MIL',WSA:'TEX'
+};
+const teamsBySeason=new Map(); // year -> [{abbr,name,league,division,id}]
+const teamsBySeasonPromise=new Map();
+function normalizeTeamAbbr(abbr){
+  const a=String(abbr||'').toUpperCase().replace(/[^A-Z]/g,'');
+  return TEAM_ALIASES[a]||a;
+}
+function teamMeta(abbr, year){
+  const a=String(abbr||'').toUpperCase().replace(/[^A-Z]/g,'');
+  const y=parseInt(year,10);
+  if(y>=1900 && teamsBySeason.has(y)){
+    const list=teamsBySeason.get(y);
+    let hit=list.find(t=>t.abbr===a);
+    if(hit) return hit;
+    // Soft-match via franchise id so OAK/MON/FLA resolve in-season
+    const soft=normalizeTeamAbbr(a);
+    hit=list.find(t=>t.abbr===soft || normalizeTeamAbbr(t.abbr)===soft);
+    if(hit) return hit;
+    const modern=MLB_TEAMS.find(t=>t.abbr===soft || t.abbr===a);
+    if(modern) hit=list.find(t=>t.id===modern.id);
+    if(hit) return hit;
+  }
+  return MLB_TEAMS.find(t=>t.abbr===a || t.abbr===normalizeTeamAbbr(a))||null;
+}
+function clampSeasonYear(year){
+  const y=parseInt(year,10);
+  if(!Number.isFinite(y)) return new Date().getFullYear();
+  return Math.max(1900, Math.min(y, new Date().getFullYear()+1));
+}
+function leagueFromApiTeam(t){
+  const lg=t.league||{};
+  if(lg.abbreviation==='AL'||lg.abbreviation==='NL') return lg.abbreviation;
+  if(lg.id===103) return 'AL';
+  if(lg.id===104) return 'NL';
+  const name=String(lg.name||'').toLowerCase();
+  if(name.includes('american')) return 'AL';
+  if(name.includes('national')) return 'NL';
+  const div=String((t.division&&t.division.name)||'');
+  if(/^American/i.test(div)) return 'AL';
+  if(/^National/i.test(div)) return 'NL';
+  return '';
+}
+function divisionFromApiTeam(t, league){
+  const raw=String((t.division&&t.division.name)||'').trim();
+  if(!raw) return league||'Other';
+  // "American League Central" -> "AL Central"
+  let m=raw.match(/^(American|National)\s+League\s+(East|Central|West)$/i);
+  if(m) return (m[1].toLowerCase().startsWith('a')?'AL':'NL')+' '+m[2][0].toUpperCase()+m[2].slice(1).toLowerCase();
+  m=raw.match(/^(AL|NL)\s+(East|Central|West)$/i);
+  if(m) return m[1].toUpperCase()+' '+m[2][0].toUpperCase()+m[2].slice(1).toLowerCase();
+  if(/east|central|west/i.test(raw) && (league==='AL'||league==='NL')){
+    const part=(raw.match(/east|central|west/i)||[])[0];
+    if(part) return league+' '+part[0].toUpperCase()+part.slice(1).toLowerCase();
+  }
+  return league||raw||'Other';
+}
+function mapApiTeam(t){
+  const league=leagueFromApiTeam(t);
+  const abbr=String(t.abbreviation||'').toUpperCase().replace(/[^A-Z]/g,'');
+  return {
+    id:t.id,
+    abbr:abbr||resolveTeamAbbr(t),
+    name:t.name||t.teamName||abbr,
+    league,
+    division:divisionFromApiTeam(t, league),
+    season:t.season
+  };
+}
+async function fetchTeamsForSeason(year){
+  const y=clampSeasonYear(year);
+  if(teamsBySeason.has(y)) return teamsBySeason.get(y);
+  if(teamsBySeasonPromise.has(y)) return teamsBySeasonPromise.get(y);
+  const p=(async()=>{
+    try{
+      const res=await fetch(`https://statsapi.mlb.com/api/v1/teams?sportId=1&season=${y}`);
+      if(!res.ok) throw new Error('teams '+res.status);
+      const json=await res.json();
+      const list=(json.teams||[]).map(mapApiTeam).filter(t=>t.abbr && t.id);
+      list.sort((a,b)=>{
+        const da=MLB_DIVISION_ORDER.indexOf(a.division);
+        const db=MLB_DIVISION_ORDER.indexOf(b.division);
+        const ia=da<0?99:da, ib=db<0?99:db;
+        if(ia!==ib) return ia-ib;
+        return a.name.localeCompare(b.name);
+      });
+      teamsBySeason.set(y, list);
+      return list;
+    }catch(err){
+      console.warn('Season teams fetch failed', y, err);
+      // Fallback: current 30 with year-adjusted league for HOU/MIL
+      const fallback=MLB_TEAMS.map(t=>{
+        let league=t.league, division=t.division;
+        if(t.abbr==='HOU' && y<=2012){ league='NL'; division='NL Central'; }
+        if(t.abbr==='MIL' && y<=1997){ league='AL'; division='AL Central'; }
+        return {...t, league, division, season:y};
+      });
+      teamsBySeason.set(y, fallback);
+      return fallback;
+    }finally{
+      teamsBySeasonPromise.delete(y);
+    }
+  })();
+  teamsBySeasonPromise.set(y, p);
+  return p;
+}
+function teamLogoUrlById(id){
+  if(!id) return '';
+  // Colored hat symbol (not primary crest / not flag plate)
+  return `https://www.mlbstatic.com/team-logos/team-cap-on-light/${id}.svg`;
+}
+function teamCapLogoDarkUrl(id){
+  if(!id) return '';
+  return `https://www.mlbstatic.com/team-logos/team-cap-on-dark/${id}.svg`;
+}
+let MLB_HISTORICAL_LOGOS=null; // teamId -> [{from,to,url,slug}]  (transparent cap symbols)
+let historicalLogosPromise=null;
+function loadHistoricalLogos(){
+  if(MLB_HISTORICAL_LOGOS) return Promise.resolve(MLB_HISTORICAL_LOGOS);
+  if(historicalLogosPromise) return historicalLogosPromise;
+  // Cache-bust: logos are re-stripped periodically; avoid sticky flag-mat PNGs
+  historicalLogosPromise=fetch('./data/mlb-historical-logos.json?v=11')
+    .then(r=>{ if(!r.ok) throw new Error('logo index '+r.status); return r.json(); })
+    .then(json=>{ MLB_HISTORICAL_LOGOS=json||{}; return MLB_HISTORICAL_LOGOS; })
+    .catch(err=>{ console.warn('Historical logos failed to load', err); MLB_HISTORICAL_LOGOS={}; return MLB_HISTORICAL_LOGOS; });
+  return historicalLogosPromise;
+}
+function historicalLogoUrl(id, year){
+  if(!id || !MLB_HISTORICAL_LOGOS) return '';
+  const eras=MLB_HISTORICAL_LOGOS[String(id)]||MLB_HISTORICAL_LOGOS[id];
+  if(!eras||!eras.length) return '';
+  const y=parseInt(year,10);
+  const yy=Number.isFinite(y)?y:new Date().getFullYear();
+  const span=(e)=>Math.max(0, Math.min(e.to, 2035) - e.from);
+  const hits=eras.filter(e=>yy>=e.from && yy<=e.to);
+  let url='';
+  if(hits.length){
+    // Prefer primary home mark (longest-running era), not short alternate/special caps
+    hits.sort((a,b)=> (span(b)-span(a)) || (b.from-a.from));
+    url=hits[0].url||'';
+  } else {
+    const prior=eras.filter(e=>e.from<=yy).sort((a,b)=>b.from-a.from)[0];
+    if(prior) url=prior.url||'';
+  }
+  if(!url) return '';
+  return url.includes('?') ? url : `${url}?v=11`;
+}
+function teamLogoImg(abbr, cls, opts){
+  const year=opts&&opts.year;
+  const id=(opts&&opts.id) || (teamMeta(abbr, year)||{}).id;
+  if(!id) return '';
+  const hist=historicalLogoUrl(id, year);
+  const capLight=teamLogoUrlById(id);
+  const capDark=teamCapLogoDarkUrl(id);
+  // Historical PNGs first; modern fallback prefers on-dark (this UI is dark)
+  const src=hist||capDark||capLight;
+  const fb1=hist?(capDark||capLight):capLight;
+  const fb2=hist?capLight:'';
+  const klass=`${cls||'team-logo'}${hist?' hist':''}`;
+  return `<img class="${klass}" src="${src}" alt="" loading="lazy" referrerpolicy="no-referrer" data-fallback="${fb1}" data-fallback2="${fb2}" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;delete this.dataset.fallback;}else if(this.dataset.fallback2){this.src=this.dataset.fallback2;delete this.dataset.fallback2;}else this.remove()">`;
+}
+function teamLabelHtml(abbr, opts){
+  const emptyLabel=(opts&&opts.empty)||'--';
+  const a=String(abbr||'').trim();
+  if(!a || isAggregateTeam(a)) return `<span class="team-cell">${emptyLabel}</span>`;
+  const show=a.toUpperCase();
+  const safe=String(show).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return `<span class="team-cell">${teamLogoImg(show, null, opts)}<span>${safe}</span></span>`;
+}
+function teamLeague(abbr, year){
+  const y=parseInt(year,10);
+  const meta=teamMeta(abbr, y);
+  if(meta&&meta.league) return meta.league;
+  const t=String(abbr||'').toUpperCase().replace(/[^A-Z]/g,'');
+  const soft=normalizeTeamAbbr(t);
+  if(soft==='HOU'||t==='HOU') return (y&&y<=2012)?'NL':'AL';
+  if(soft==='MIL'||t==='MIL') return (y&&y<=1997)?'AL':'NL';
+  const found=MLB_TEAMS.find(x=>x.abbr===soft);
+  return found?found.league:'';
+}
+function isAggregateTeam(team){
+  const t=String(team||'').trim().toLowerCase();
+  if(!t || t==='--' || t==='—' || t==='-') return true;
+  return t==='tot' || t==='total' || t==='mlb' || /^\d+tm$/.test(t) || /^[2-9]tm$/.test(t) || t.includes('teams');
+}
+function isRealTeamAbbr(team){
+  const t=String(team||'').toUpperCase().replace(/[^A-Z]/g,'');
+  if(!t || isAggregateTeam(t)) return false;
+  return /^[A-Z]{2,3}$/.test(t);
+}
+const MLB_TEAM_ID_TO_ABBR={
+  108:'LAA',109:'ARI',110:'BAL',111:'BOS',112:'CHC',113:'CIN',114:'CLE',115:'COL',116:'DET',
+  117:'HOU',118:'KC',119:'LAD',120:'WSH',121:'NYM',133:'ATH',134:'PIT',135:'SD',136:'SEA',
+  137:'SF',138:'STL',139:'TB',140:'TEX',141:'TOR',142:'MIN',143:'PHI',144:'ATL',145:'CWS',
+  146:'MIA',147:'NYY',158:'MIL'
+};
+/** Era-correct abbreviation when Stats API only gives franchise id. */
+function historicalAbbrForTeamId(id, season){
+  const y=Number(season)||9999;
+  const tid=Number(id);
+  if(tid===120) return y<2005?'MON':'WSH';
+  if(tid===133){
+    if(y<=1954) return 'PHA';
+    if(y<=1967) return 'KC';
+    if(y<2025) return 'OAK';
+    return 'ATH';
+  }
+  if(tid===146) return y<2012?'FLA':'MIA';
+  if(tid===139) return y<2008?'TBD':'TB';
+  if(tid===108) return y<1997?'CAL':(y<2005?'ANA':'LAA');
+  if(tid===144) return y<1953?'BSN':(y<1966?'MLN':'ATL');
+  if(tid===119) return y<1958?'BRO':'LAD';
+  if(tid===137) return y<1958?'NYG':'SF';
+  if(tid===110 && y<=1953) return 'SLB';
+  if(tid===158 && y===1969) return 'SEP'; // Seattle Pilots → Brewers
+  if(tid===142 && y>=1901 && y<=1960) return 'WSH'; // original Senators → Twins
+  if(tid===140 && y>=1961 && y<=1971) return 'WSH'; // expansion Senators → Rangers
+  return MLB_TEAM_ID_TO_ABBR[tid]||'';
+}
+function resolveTeamAbbr(team, season){
+  if(!team) return '';
+  // Prefer season abbreviation as-is when the API supplies one (MON, OAK, FLA, BRO, …)
+  if(team.abbreviation){
+    const raw=String(team.abbreviation).toUpperCase().replace(/[^A-Z]/g,'');
+    if(raw) return raw;
+  }
+  // yearByYear splits often only include team id + name — use era map first
+  if(team.id){
+    const hist=historicalAbbrForTeamId(team.id, season);
+    if(hist) return hist;
+  }
+  const y=clampSeasonYear(season);
+  if(team.id && teamsBySeason.has(y)){
+    const hit=teamsBySeason.get(y).find(t=>t.id===team.id);
+    if(hit?.abbr) return hit.abbr;
+  }
+  const code=String(team.teamCode||team.fileCode||'').toUpperCase();
+  if(code==='CHA') return 'CWS';
+  if(code==='CHN') return 'CHC';
+  if(code==='KCA') return 'KC';
+  if(code==='SDN') return 'SD';
+  if(code==='SFN') return 'SF';
+  if(code==='TBA') return Number(season)<2008?'TBD':'TB';
+  if(code==='WAS' || code==='MON') return Number(season)<2005?'MON':'WSH';
+  if(code==='OAK') return Number(season)<2025?'OAK':'ATH';
+  if(code==='FLO' || code==='FLA') return Number(season)<2012?'FLA':'MIA';
+  if(code.length>=2 && code.length<=3) return code;
+  return '';
+}
+function resolveLeagueAbbr(league, teamAbbr, season){
+  if(league && league.abbreviation) return league.abbreviation;
+  if(league && league.id===103) return 'AL';
+  if(league && league.id===104) return 'NL';
+  const name=String((league&&league.name)||'').toLowerCase();
+  if(name.includes('national')) return 'NL';
+  if(name.includes('american')) return 'AL';
+  return teamLeague(teamAbbr, season)||'';
+}
+
+
+/* ===== POSITIONS (scorekeeping numbers) ===== */
+const POSITIONS=[
+ ['1','P'],['2','C'],['3','1B'],['4','2B'],['5','3B'],
+ ['6','SS'],['7','LF'],['8','CF'],['9','RF'],['DH','DH'],
+];
+function posDisplay(arr){ return (arr&&arr.length)?arr.join('/'):''; }
+
+/* ===== BASELINES ===== */
+const BASELINES={
+ bat:[
+    {k:'lgOBP', label:'LG OBP', def:0.320},
+    {k:'lgSLG', label:'LG SLG', def:0.400},
+    {k:'lgROBA',label:'LG rOBA',def:0.320},
+    {k:'warNoise',label:'WAR ±',def:0.15},
+ ],
+ pit:[
+    {k:'lgERA', label:'LG ERA', def:4.00},
+    {k:'lgFIPc',label:'FIP C',  def:3.10},
+    {k:'warNoise',label:'WAR ±',def:0.15},
+ ]
+};
+
+/* ===== COLUMN DEFINITIONS =====
+   input=text field | team=team dropdown | pos=positions multiselect | else=calc(dim) */
+const BAT_COLS=[
+ {k:'age',label:'Age',input:true,tip:'Age'},
+ {k:'team',label:'Tm',input:true,team:true,tip:'Team'},
+ {k:'lg',label:'Lg',tip:'League (auto from team)'},
+ {k:'WAR',label:'WAR',tip:'Wins Above Replacement (est. + wiggle)'},
+ {k:'G',label:'G',input:true,tip:'Games'},
+ {k:'PA',label:'PA',input:true,tip:'Plate Appearances'},
+ {k:'AB',label:'AB',tip:'PA - BB - HBP - SH - SF'},
+ {k:'R',label:'R',input:true,tip:'Runs'},
+ {k:'H',label:'H',input:true,tip:'Hits'},
+ {k:'2B',label:'2B',input:true,tip:'Doubles'},
+ {k:'3B',label:'3B',input:true,tip:'Triples'},
+ {k:'HR',label:'HR',input:true,tip:'Home Runs'},
+ {k:'RBI',label:'RBI',input:true,tip:'Runs Batted In'},
+ {k:'SB',label:'SB',input:true,tip:'Stolen Bases'},
+ {k:'CS',label:'CS',input:true,tip:'Caught Stealing'},
+ {k:'BB',label:'BB',input:true,tip:'Walks'},
+ {k:'SO',label:'SO',input:true,tip:'Strikeouts'},
+ {k:'BA',label:'BA',tip:'H / AB'},
+ {k:'OBP',label:'OBP',tip:'(H+BB+HBP)/(AB+BB+HBP+SF)'},
+ {k:'SLG',label:'SLG',tip:'TB / AB'},
+ {k:'OPS',label:'OPS',tip:'OBP + SLG'},
+ {k:'OPS+',label:'OPS+',tip:'100*(OBP/lgOBP + SLG/lgSLG - 1)'},
+ {k:'rOBA',label:'rOBA',tip:'Weighted on-base (approx)'},
+ {k:'Rbat+',label:'Rbat+',tip:'Batting index (100=avg)'},
+ {k:'TB',label:'TB',tip:'Total Bases'},
+ {k:'GIDP',label:'GIDP',input:true,tip:'Grounded into DP'},
+ {k:'HBP',label:'HBP',input:true,tip:'Hit By Pitch'},
+ {k:'SH',label:'SH',input:true,tip:'Sac Hits'},
+ {k:'SF',label:'SF',input:true,tip:'Sac Flies'},
+ {k:'IBB',label:'IBB',input:true,tip:'Intentional Walks'},
+ {k:'Pos',label:'Pos',pos:true,tip:'Positions (numbers)'},
+ {k:'Awards',label:'Awards',input:true,txt:true,tip:'Awards'},
+];
+
+const PIT_COLS=[
+ {k:'age',label:'Age',input:true,tip:'Age'},
+ {k:'team',label:'Tm',input:true,team:true,tip:'Team'},
+ {k:'lg',label:'Lg',tip:'League (auto from team)'},
+ {k:'WAR',label:'WAR',tip:'Wins Above Replacement (est. + wiggle)'},
+ {k:'W',label:'W',input:true,tip:'Wins'},
+ {k:'L',label:'L',input:true,tip:'Losses'},
+ {k:'WLpct',label:'W-L%',tip:'W/(W+L)'},
+ {k:'ERA',label:'ERA',tip:'9*ER/IP'},
+ {k:'G',label:'G',input:true,tip:'Games'},
+ {k:'GS',label:'GS',input:true,tip:'Games Started'},
+ {k:'GF',label:'GF',input:true,tip:'Games Finished'},
+ {k:'CG',label:'CG',input:true,tip:'Complete Games'},
+ {k:'SHO',label:'SHO',input:true,tip:'Shutouts'},
+ {k:'SV',label:'SV',input:true,tip:'Saves'},
+ {k:'IP',label:'IP',input:true,tip:'Innings (.1=1 out, .2=2 outs)'},
+ {k:'H',label:'H',input:true,tip:'Hits Allowed'},
+ {k:'R',label:'R',input:true,tip:'Runs'},
+ {k:'ER',label:'ER',input:true,tip:'Earned Runs'},
+ {k:'HR',label:'HR',input:true,tip:'HR Allowed'},
+ {k:'BB',label:'BB',input:true,tip:'Walks'},
+ {k:'IBB',label:'IBB',input:true,tip:'Intentional Walks'},
+ {k:'SO',label:'SO',input:true,tip:'Strikeouts'},
+ {k:'HBP',label:'HBP',input:true,tip:'Hit Batters'},
+ {k:'BK',label:'BK',input:true,tip:'Balks'},
+ {k:'WP',label:'WP',input:true,tip:'Wild Pitches'},
+ {k:'ERA+',label:'ERA+',tip:'100*lgERA/ERA'},
+ {k:'FIP',label:'FIP',tip:'(13HR+3(BB+HBP)-2SO)/IP + const'},
+ {k:'WHIP',label:'WHIP',tip:'(H+BB)/IP'},
+ {k:'H9',label:'H9',tip:'Hits/9'},
+ {k:'HR9',label:'HR9',tip:'HR/9'},
+ {k:'BB9',label:'BB9',tip:'BB/9'},
+ {k:'SO9',label:'SO9',tip:'SO/9'},
+ {k:'SO/BB',label:'SO/BB',tip:'K/BB ratio'},
+ {k:'Awards',label:'Awards',input:true,txt:true,tip:'Awards'},
+];
+
+const BAT_SUM=['G','PA','R','H','2B','3B','HR','RBI','SB','CS','BB','SO','GIDP','HBP','SH','SF','IBB'];
+const PIT_SUM=['W','L','G','GS','GF','CG','SHO','SV','H','R','ER','HR','BB','IBB','SO','HBP','BK','WP'];
+</script>
+<script>
+/* ===== STATE ===== */
+let mode='bat';
+let editLocked=false;
+let playerBirthDate=null;
+let baseVals={};
+let data={bat:{rows:[],notes:''},pit:{rows:[],notes:''}};
+let playerImg='';
+
+function escapeHtml(s){
+  return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function parsePlayerName(raw){
+  const parts=String(raw||'').trim().split(/\s+/).filter(Boolean);
+  if(!parts.length) return {first:'',rest:''};
+  if(parts.length===1) return {first:parts[0],rest:''};
+  return {first:parts[0],rest:parts.slice(1).join(' ')};
+}
+function normalizePlayerName(raw){
+  return String(raw||'').replace(/\s+/g,' ').trim();
+}
+function getPlayerName(){
+  const el=document.getElementById('playerName');
+  if(!el) return '';
+  if(Object.prototype.hasOwnProperty.call(el.dataset,'value')) return normalizePlayerName(el.dataset.value);
+  return normalizePlayerName(el.textContent||'');
+}
+function namePartHtml(text, kind, animate){
+  const safe=escapeHtml(text);
+  if(kind==='first' || !animate) return `<span class="pn-${kind}">${safe}</span>`;
+  return `<span class="pn-part pn-${kind}"><span class="pn-ghost">${safe}</span><span class="pn-from">${safe}</span><span class="pn-to">${safe}</span></span>`;
+}
+function renderPlayerName(name, animate){
+  const el=document.getElementById('playerName');
+  if(!el) return;
+  const n=normalizePlayerName(name);
+  el.dataset.value=n;
+  const {first,rest}=parsePlayerName(n);
+  el.classList.remove('settling');
+  if(!first){ el.innerHTML=''; return; }
+  if(!rest) el.innerHTML=namePartHtml(first,'first',!!animate);
+  else el.innerHTML=`${namePartHtml(first,'first',!!animate)} ${namePartHtml(rest,'rest',!!animate)}`;
+  if(animate){
+    void el.offsetWidth;
+    el.classList.add('settling');
+    clearTimeout(el._settleTimer);
+    el._settleTimer=setTimeout(()=>{
+      el.classList.remove('settling');
+      // Collapse to final single-weight markup after the ease finishes
+      if(el.dataset.value===n) renderPlayerName(n, false);
+    },900);
+  }
+}
+function setPlayerName(name){ renderPlayerName(name, true); }
+function syncPlayerNameFromDom(reformat){
+  const el=document.getElementById('playerName');
+  if(!el) return;
+  const n=normalizePlayerName(el.textContent||'');
+  el.dataset.value=n;
+  if(reformat) renderPlayerName(n, true);
+  autosave();
+}
+function bindPlayerName(){
+  const el=document.getElementById('playerName');
+  if(!el || el.dataset.bound) return;
+  el.dataset.bound='1';
+  el.addEventListener('focus',()=>{
+    if(editLocked) return;
+    const n=getPlayerName();
+    el.classList.remove('settling');
+    el.textContent=n;
+  });
+  el.addEventListener('input',()=>{
+    el.dataset.value=normalizePlayerName(el.textContent||'');
+    autosave();
+  });
+  el.addEventListener('blur',()=>syncPlayerNameFromDom(true));
+  el.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){ e.preventDefault(); el.blur(); }
+  });
+  el.addEventListener('paste',e=>{
+    e.preventDefault();
+    const text=(e.clipboardData||window.clipboardData).getData('text')||'';
+    document.execCommand('insertText', false, text.replace(/\s+/g,' ').trim());
+  });
+}
+
+function positionFlyout(trigger, menu){
+  if(!trigger||!menu) return;
+  const r=trigger.getBoundingClientRect();
+  menu.style.top=(r.bottom+4)+'px';
+  menu.style.right=Math.max(8, window.innerWidth-r.right)+'px';
+  menu.style.left='auto';
+}
+function closeBaselinesFlyout(){
+  const menu=document.getElementById('baselineBar');
+  const btn=document.getElementById('baselinesBtn');
+  if(menu) menu.classList.remove('open');
+  if(btn){ btn.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); }
+}
+function toggleBaselinesFlyout(e){
+  if(e) e.stopPropagation();
+  const menu=document.getElementById('baselineBar');
+  const btn=document.getElementById('baselinesBtn');
+  if(!menu||!btn) return;
+  const open=!menu.classList.contains('open');
+  closeIoMenu();
+  menu.classList.toggle('open', open);
+  btn.classList.toggle('is-open', open);
+  btn.setAttribute('aria-expanded', open?'true':'false');
+  if(open) positionFlyout(btn, menu);
+}
+
+const ICON_LOCK=`<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7.5" width="10" height="6.5"/><path d="M5.5 7.5V5a2.5 2.5 0 0 1 5 0v2.5"/></svg>`;
+const ICON_UNLOCK=`<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7.5" width="10" height="6.5"/><path d="M5.5 7.5V6.2"/><path d="M10.5 7.5V4.6A2.6 2.6 0 0 0 6.2 2.7"/></svg>`;
+function setEditLocked(on){
+  editLocked=!!on;
+  document.body.classList.toggle('edit-locked', editLocked);
+  const btn=document.getElementById('editLockBtn');
+  if(btn){
+    btn.innerHTML=editLocked?ICON_LOCK:ICON_UNLOCK;
+    btn.title=editLocked?'Unlock edit':'Lock edit';
+    btn.setAttribute('aria-label', btn.title);
+    btn.classList.toggle('is-locked', editLocked);
+  }
+  const nameEl=document.getElementById('playerName');
+  if(nameEl) nameEl.contentEditable=editLocked?'false':'true';
+  document.querySelectorAll('#tbody input, .notes-row input').forEach(el=>{
+    if(editLocked) el.setAttribute('readonly','readonly');
+    else el.removeAttribute('readonly');
+  });
+}
+function toggleEditLock(){
+  setEditLocked(!editLocked);
+  toast(editLocked?'EDIT LOCKED':'EDIT UNLOCKED', editLocked?'lock-on':'lock-off');
+}
+
+function closeIoMenu(){
+  const menu=document.getElementById('ioMenu');
+  const btn=document.getElementById('ioBtn');
+  if(menu) menu.classList.remove('open');
+  if(btn){ btn.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); }
+}
+function toggleIoMenu(e){
+  if(e) e.stopPropagation();
+  const menu=document.getElementById('ioMenu');
+  const btn=document.getElementById('ioBtn');
+  if(!menu||!btn) return;
+  const open=!menu.classList.contains('open');
+  closeBaselinesFlyout();
+  menu.classList.toggle('open', open);
+  btn.classList.toggle('is-open', open);
+  btn.setAttribute('aria-expanded', open?'true':'false');
+  if(open) positionFlyout(btn, menu);
+}
+function runIoAction(fn){
+  closeIoMenu();
+  if(typeof fn==='function') fn();
+}
+document.addEventListener('mousedown',e=>{
+  if(!e.target.closest?.('#ioWrap')) closeIoMenu();
+  if(!e.target.closest?.('#baselineWrap')) closeBaselinesFlyout();
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){ closeIoMenu(); closeBaselinesFlyout(); }
+});
+
+function syncModeInk(animate){
+  const toggle=document.getElementById('modeToggle');
+  const ink=document.getElementById('modeInk');
+  const active=toggle?.querySelector('button.active');
+  if(!toggle||!ink||!active) return;
+  const toRect={left:active.offsetLeft, width:active.offsetWidth};
+  const fromRect=ink._lastRect||toRect;
+  ink._lastRect=toRect;
+  if(animate===false || (fromRect.left===toRect.left && fromRect.width===toRect.width)){
+    ink.style.left=toRect.left+'px';
+    ink.style.width=toRect.width+'px';
+    return;
+  }
+  if(ink._anim) ink._anim.cancel();
+  const midLeft=fromRect.left+(toRect.left-fromRect.left)*.5;
+  const midWidth=Math.min(fromRect.width,toRect.width)*.55;
+  ink._anim=ink.animate([
+    {left:fromRect.left+'px', width:fromRect.width+'px'},
+    {left:midLeft+'px', width:midWidth+'px', offset:.5},
+    {left:toRect.left+'px', width:toRect.width+'px'}
+  ],{duration:320, easing:'cubic-bezier(.22,1,.36,1)', fill:'forwards'});
+  ink._anim.onfinish=()=>{
+    ink.style.left=toRect.left+'px';
+    ink.style.width=toRect.width+'px';
+  };
+}
+function setModeButtons(m){
+  document.getElementById('modeBat')?.classList.toggle('active', m==='bat');
+  document.getElementById('modePit')?.classList.toggle('active', m==='pit');
+  syncModeInk();
+}
+
+function ageOnJuly1(birthDate, season){
+  if(!birthDate || !season) return '';
+  const b=new Date(birthDate);
+  if(Number.isNaN(+b)) return '';
+  const mid=new Date(`${season}-07-01T12:00:00Z`);
+  let age=mid.getUTCFullYear()-b.getUTCFullYear();
+  const m=mid.getUTCMonth()-b.getUTCMonth();
+  if(m<0 || (m===0 && mid.getUTCDate()<b.getUTCDate())) age-=1;
+  return age>0 && age<60 ? age : '';
+}
+
+function cols(){ return mode==='bat'?BAT_COLS:PIT_COLS; }
+function sumKeys(){ return mode==='bat'?BAT_SUM:PIT_SUM; }
+function num(v){ let n=parseFloat(v); return isNaN(n)?0:n; }
+
+/* ---- IP thirds ---- */
+function ipToOuts(ip){ let w=Math.trunc(ip); let f=Math.round((ip-w)*10); return w*3+f; }
+function outsToIp(o){ let w=Math.trunc(o/3); let r=o%3; return w+r/10; }
+function ipDecimal(ip){ return Math.trunc(ip)+(Math.round((ip-Math.trunc(ip))*10))/3; }
+
+/* ---- Seeded noise (stable per row) ---- */
+function seededNoise(seedStr,amount){
+  let h=2166136261;
+  for(let i=0;i<seedStr.length;i++){ h^=seedStr.charCodeAt(i); h=Math.imul(h,16777619); }
+  const r=((h>>>0)%10000)/10000*2-1;
+  return r*amount;
+}
+function rowSeed(r){
+  return (mode==='bat')
+    ? [r.PA,r.H,r['2B'],r['3B'],r.HR,r.BB,r.SO,r.SB].join('|')
+    : [r.IP,r.ER,r.H,r.BB,r.SO,r.HR,r.W,r.L].join('|');
+}
+
+/* ===== BATTING ===== */
+function calcBat(r,applyNoise){
+  const PA=num(r.PA),H=num(r.H),d=num(r['2B']),t=num(r['3B']),hr=num(r.HR),
+        BB=num(r.BB),HBP=num(r.HBP),SH=num(r.SH),SF=num(r.SF);
+  const AB=Math.max(0,PA-BB-HBP-SH-SF);
+  const s=Math.max(0,H-d-t-hr); const TB=s+2*d+3*t+4*hr;
+  const BA=AB?H/AB:0;
+  const obDen=AB+BB+HBP+SF;
+  const OBP=obDen?(H+BB+HBP)/obDen:0;
+  const SLG=AB?TB/AB:0;
+  const OPS=OBP+SLG;
+  const lgOBP=baseVals.lgOBP,lgSLG=baseVals.lgSLG;
+  const OPSplus=(lgOBP&&lgSLG)?Math.round(100*(OBP/lgOBP+SLG/lgSLG-1)):0;
+  const wDen=AB+BB+SF+HBP;
+  const rOBA=wDen?(0.69*BB+0.72*HBP+0.89*s+1.27*d+1.62*t+2.10*hr)/wDen:0;
+  const Rbatplus=baseVals.lgROBA?Math.round(100*(rOBA/baseVals.lgROBA)):0;
+  const Rbat=baseVals.lgROBA?((rOBA-baseVals.lgROBA)/1.15*PA):0;
+  const replRuns=PA*0.03;
+  const baseRun=num(r.SB)*0.2-num(r.CS)*0.4;
+  let WAR=(Rbat+replRuns+baseRun)/10;
+  if(applyNoise && WAR!==0) WAR+=seededNoise(rowSeed(r)+'b',baseVals.warNoise||0);
+  return {AB,TB,BA,OBP,SLG,OPS,'OPS+':OPSplus,rOBA,'Rbat+':Rbatplus,WAR:Math.round(WAR*10)/10};
+}
+
+/* ===== PITCHING ===== */
+function calcPit(r,applyNoise){
+  const ip=num(r.IP),ipR=ipDecimal(ip);
+  const ER=num(r.ER),H=num(r.H),BB=num(r.BB),HR=num(r.HR),SO=num(r.SO),
+        HBP=num(r.HBP),W=num(r.W),L=num(r.L);
+  const ERA=ipR?9*ER/ipR:0;
+  const WHIP=ipR?(H+BB)/ipR:0;
+  const H9=ipR?9*H/ipR:0,HR9=ipR?9*HR/ipR:0,BB9=ipR?9*BB/ipR:0,SO9=ipR?9*SO/ipR:0;
+  const SOBB=BB?SO/BB:(SO?Infinity:0);
+  const WLd=W+L,WLpct=WLd?W/WLd:0;
+  const ERAplus=(baseVals.lgERA&&ERA)?Math.round(100*baseVals.lgERA/ERA):0;
+  const FIP=ipR?((13*HR+3*(BB+HBP)-2*SO)/ipR)+(baseVals.lgFIPc||3.10):0;
+  const replRA=(baseVals.lgERA||4.0)*1.28;
+  const runsSaved=ipR?((replRA-ERA)/9*ipR):0;
+  let WAR=runsSaved/10;
+  if(applyNoise && WAR!==0) WAR+=seededNoise(rowSeed(r)+'p',baseVals.warNoise||0);
+  return {WLpct,ERA,'ERA+':ERAplus,FIP,WHIP,H9,HR9,BB9,SO9,'SO/BB':SOBB,WAR:Math.round(WAR*10)/10};
+}
+
+function calcRow(r,applyNoise){ return mode==='bat'?calcBat(r,applyNoise):calcPit(r,applyNoise); }
+
+/* ===== FORMAT ===== */
+function fmt(k,v){
+  if(v===Infinity) return '\u221E';
+  if(['BA','OBP','SLG','OPS','rOBA','WLpct'].includes(k)) return (v||0).toFixed(3).replace(/^0\./,'.');
+  if(['ERA','FIP','WHIP','H9','HR9','BB9','SO9','SO/BB'].includes(k)) return (v||0).toFixed(2);
+  if(k==='WAR') return (v||0).toFixed(1);
+  if(k==='IP'){ let w=Math.trunc(v); let f=Math.round((v-w)*10); return w+'.'+f; }
+  if(['OPS+','ERA+','Rbat+'].includes(k)) return v?Math.round(v):'';
+  return (v||v===0)?v:'';
+}
+
+/* ===== SEASON GROUPS ===== */
+/** Group by season year (not just consecutive rows) so career totals never double-count. */
+function seasonGroups(){
+  const rows=data[mode].rows;
+  const map=new Map();
+  const order=[];
+  rows.forEach((r,i)=>{
+    const key=String(r.season||'');
+    if(!map.has(key)){ map.set(key,{season:r.season,items:[]}); order.push(key); }
+    map.get(key).items.push({r,i});
+  });
+  return order
+    .map(k=>map.get(k))
+    .sort((a,b)=>Number(a.season||0)-Number(b.season||0));
+}
+
+/* ===== SUM ROWS ===== */
+function sumRows(items){
+  const out={}; sumKeys().forEach(k=>out[k]=0);
+  let outs=0,war=0;
+  items.forEach(({r})=>{
+    sumKeys().forEach(k=>out[k]+=num(r[k]));
+    if(mode==='pit') outs+=ipToOuts(num(r.IP));
+    war+=num(calcRow(r,true).WAR);
+  });
+  if(mode==='pit') out.IP=outsToIp(outs);
+  const c=calcRow(out,false);
+  return {...out,...c,WAR:Math.round(war*10)/10};
+}
+</script>
+<script>
+/* ===== TOAST ===== */
+let toastTimer;
+function toast(msg, accentClass){
+  const t=document.getElementById('toast');
+  t.classList.remove('show','lock-on','lock-off');
+  if(accentClass) t.classList.add(accentClass);
+  t.textContent=msg;
+  void t.offsetWidth;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show','lock-on','lock-off'),1800);
+}
+
+/* ===== FLOATING OVERLAY SYSTEM ===== */
+let activeOverlay=null;
+function closeOverlay(){
+  if(activeOverlay){
+    const el=activeOverlay.el;
+    el.classList.remove('open');
+    if(el&&el.parentNode) el.parentNode.removeChild(el);
+    activeOverlay=null;
+  }
+}
+document.addEventListener('mousedown',e=>{
+  if(!activeOverlay) return;
+  if(e.target.closest('.overlay-panel') || e.target.closest('.cell-trigger')) return;
+  // Keep suggest open while interacting with its bound input
+  if(activeOverlay.kind==='suggest' && activeOverlay.trigger && (e.target===activeOverlay.trigger || activeOverlay.trigger.contains?.(e.target))) return;
+  closeOverlay();
+});
+window.addEventListener('scroll', e => {
+  if (activeOverlay && !e.target.closest?.('.overlay-panel')) {
+    closeOverlay();
+  }
+}, true);
+function positionPanel(panel,trigger,preferAbove){
+  const r=trigger.getBoundingClientRect();
+  panel.style.left=r.left+'px';
+  const gap=4;
+  if(preferAbove){
+    panel.style.top=Math.max(8, r.top-gap)+'px';
+    panel.style.transform='translateY(-100%)';
+    panel.style.transformOrigin='bottom left';
+  }else{
+    panel.style.top=(r.bottom+gap)+'px';
+    panel.style.transform='';
+    panel.style.transformOrigin='top left';
+  }
+  requestAnimationFrame(()=>{
+    const ph=panel.offsetHeight;
+    const pw=panel.offsetWidth;
+    if(preferAbove){
+      if(r.top-gap-ph<8){
+        panel.style.top=(r.bottom+gap)+'px';
+        panel.style.transform='';
+        panel.style.transformOrigin='top left';
+      }
+    }else if(r.bottom+gap+ph>window.innerHeight-10){
+      panel.style.top=Math.max(10,r.top-gap-ph)+'px';
+      panel.style.transform='';
+      panel.style.transformOrigin='bottom left';
+    }
+    if(r.left+pw>window.innerWidth-10) panel.style.left=Math.max(10,window.innerWidth-10-pw)+'px';
+  });
+}
+
+/* ===== TEAM DROPDOWN (searchable, by league/division) ===== */
+function teamSelect(r,i){
+  const val=r.team||'';
+  return `<td><button type="button" class="cell-trigger nav${val?'':' empty'}" data-i="${i}" data-k="team"
+    onclick="openTeamPanel(${i},this)">${teamLabelHtml(val,{year:r.season,id:r.teamId})}</button></td>`;
+}
+async function openTeamPanel(i,trigger){
+  closeOverlay();
+  const row=data[mode].rows[i];
+  const year=clampSeasonYear(row.season);
+  await Promise.all([loadHistoricalLogos(), fetchTeamsForSeason(year).catch(()=>[])]);
+  const panel=document.createElement('div');
+  panel.className='overlay-panel team-panel';
+  const cur=String(row.team||'').toUpperCase().replace(/[^A-Z]/g,'');
+  panel.innerHTML=`<div class="flyout-head">Teams · ${year}</div>
+    <input class="overlay-search" placeholder="Search team">
+    <div class="overlay-list"><div class="suggest-empty">Loading ${year} clubs…</div></div>`;
+  document.body.appendChild(panel);
+  const listEl=panel.querySelector('.overlay-list');
+  const search=panel.querySelector('.overlay-search');
+  positionPanel(panel,trigger);
+  requestAnimationFrame(()=>panel.classList.add('open'));
+  activeOverlay={el:panel,i,trigger};
+  const teams=await fetchTeamsForSeason(year);
+  if(activeOverlay&&activeOverlay.el!==panel) return;
+  function build(filter){
+    const f=(filter||'').toLowerCase().trim();
+    let html='';
+    const used=new Set();
+    MLB_DIVISION_ORDER.forEach(div=>{
+      const matches=teams.filter(t=>{
+        if(t.division!==div) return false;
+        if(!f) return true;
+        return t.abbr.toLowerCase().includes(f)||t.name.toLowerCase().includes(f)||t.division.toLowerCase().includes(f)||(t.league||'').toLowerCase()===f;
+      });
+      if(!matches.length) return;
+      html+=`<div class="overlay-div">${div}</div>`;
+      html+=matches.map(t=>{
+        used.add(t.id);
+        const active=t.abbr===cur || (row.teamId&&t.id===row.teamId);
+        return `<div class="overlay-opt${active?' active':''}" onclick="chooseTeam(${i},'${t.abbr}',${t.id})">
+          <span class="opt-main">${teamLogoImg(t.abbr,null,{id:t.id,year})}<span class="opt-name">${escapeHtml(t.name)}</span></span>
+          <span class="ab">${t.abbr}</span>
+        </div>`;
+      }).join('');
+    });
+    const orphans=teams.filter(t=>!used.has(t.id));
+    if(orphans.length){
+      html+=`<div class="overlay-div">Other</div>`;
+      html+=orphans.map(t=>{
+        const active=t.abbr===cur || (row.teamId&&t.id===row.teamId);
+        return `<div class="overlay-opt${active?' active':''}" onclick="chooseTeam(${i},'${t.abbr}',${t.id})">
+          <span class="opt-main">${teamLogoImg(t.abbr,null,{id:t.id,year})}<span class="opt-name">${escapeHtml(t.name)}</span></span>
+          <span class="ab">${t.abbr}</span>
+        </div>`;
+      }).join('');
+    }
+    if(!html) html=`<div class="suggest-empty">No clubs found for ${year}</div>`;
+    html+=`<div class="overlay-opt custom" onclick="chooseTeamCustom(${i})">+ Custom team</div>`;
+    listEl.innerHTML=html;
+  }
+  build('');
+  search.oninput=()=>build(search.value);
+  search.onkeydown=e=>{ if(e.key==='Escape') closeOverlay(); };
+  setTimeout(()=>search.focus(),30);
+}
+function chooseTeam(i,abbr,teamId){
+  const row=data[mode].rows[i];
+  row.team=abbr;
+  if(teamId) row.teamId=teamId;
+  else delete row.teamId;
+  const lg=teamLeague(abbr, row.season); if(lg) row.lg=lg;
+  closeOverlay(); refreshTeamCell(i); autosave();
+}
+function chooseTeamCustom(i){
+  closeOverlay();
+  const c=prompt('Custom team abbreviation:');
+  if(c!==null){
+    data[mode].rows[i].team=String(c||'').trim().toUpperCase();
+    delete data[mode].rows[i].teamId;
+  }
+  refreshTeamCell(i); autosave();
+}
+function refreshTeamCell(i){
+  const row=data[mode].rows[i];
+  const btn=document.querySelector(`.cell-trigger[data-i="${i}"][data-k="team"]`);
+  const v=row.team||'';
+  if(btn){ btn.innerHTML=teamLabelHtml(v,{year:row.season,id:row.teamId}); btn.classList.toggle('empty',!v); }
+  const lgCell=document.querySelector(`td.calc[data-i="${i}"][data-k="lg"]`);
+  if(lgCell){ lgCell.textContent=row.lg||''; flash(lgCell); }
+  refreshCalcCells();
+}
+
+/* ===== POSITIONS (checkbox overlay) ===== */
+function posCell(r,i){
+  const arr=Array.isArray(r.Pos)?r.Pos:[]; const disp=posDisplay(arr);
+  return `<td style="text-align:right"><button type="button" class="cell-trigger nav${disp?'':' empty'}"
+    data-i="${i}" data-k="Pos" style="text-align:right" onclick="openPosPanel(${i},this)">${disp||'--'}</button></td>`;
+}
+function openPosPanel(i,trigger){
+  closeOverlay();
+  const panel=document.createElement('div');
+  panel.className='overlay-panel'; panel.style.minWidth='150px';
+  const arr=Array.isArray(data[mode].rows[i].Pos)?data[mode].rows[i].Pos:[];
+  panel.innerHTML=POSITIONS.map(p=>
+    `<div class="overlay-opt check${arr.includes(p[0])?' on':''}"
+      onclick="togglePosVal(${i},'${p[0]}',this)"><span class="box"></span><span class="num">${p[0]}</span><span>${p[1]}</span></div>`).join('');
+  document.body.appendChild(panel);
+  positionPanel(panel,trigger);
+  requestAnimationFrame(()=>panel.classList.add('open'));
+  activeOverlay={el:panel,i,trigger};
+}
+function togglePosVal(i,code,optEl){
+  let arr=Array.isArray(data[mode].rows[i].Pos)?[...data[mode].rows[i].Pos]:[];
+  const on=!arr.includes(code);
+  if(on) arr.push(code); else arr=arr.filter(x=>x!==code);
+  arr.sort((a,b)=>POSITIONS.findIndex(p=>p[0]===a)-POSITIONS.findIndex(p=>p[0]===b));
+  data[mode].rows[i].Pos=arr;
+  if(optEl) optEl.classList.toggle('on',on);
+  const btn=document.querySelector(`.cell-trigger[data-i="${i}"][data-k="Pos"]`);
+  if(btn){ const d=posDisplay(arr); btn.textContent=d||'--'; btn.classList.toggle('empty',!d); }
+  autosave();
+}
+
+/* ===== RENDER ===== */
+function render(){ renderBaselines(); renderHead(); renderBody(); }
+function structuralRender(){ renderBody(); }
+function renderBaselines(){
+  const bar=document.getElementById('baselineBar');
+  if(!bar) return;
+  let html='<div class="flyout-head">League baselines</div><div class="flyout-body">';
+  BASELINES[mode].forEach(b=>{
+    if(baseVals[b.k]===undefined) baseVals[b.k]=b.def;
+    const step=b.k==='warNoise'?0.05:0.001;
+    html+=`<label>${b.label}<input type="number" step="${step}" value="${baseVals[b.k]}"
+      onchange="baseVals['${b.k}']=parseFloat(this.value);refreshCalcCells();autosave();"></label>`;
+  });
+  html+='</div>';
+  bar.innerHTML=html;
+}
+function renderHead(){
+  let h='<tr><th data-tip="Season year">Season</th>';
+  cols().forEach(c=>h+=`<th data-tip="${String(c.tip||c.label).replace(/"/g,'&quot;')}">${c.label}</th>`);
+  h+='<th></th></tr>';
+  document.getElementById('thead').innerHTML=h;
+}
+function parseAwards(raw){
+  return String(raw||'').split(/\s*,\s*/).map(s=>s.trim()).filter(Boolean);
+}
+function awardsCell(r,i){
+  const parts=parseAwards(r.Awards);
+  const empty=!parts.length;
+  const preview=empty?'—'
+    :(parts.length<=2?parts.join(', '):`${parts.slice(0,2).join(', ')} +${parts.length-2}`);
+  return `<td class="awards-td"><button type="button" class="cell-trigger awards-pill${empty?' empty':''} nav"
+    data-i="${i}" data-k="Awards" onclick="openAwardsPanel(${i},this)"
+    title="${escapeHtml(parts.join(', '))}">${escapeHtml(preview)}</button></td>`;
+}
+function openAwardsPanel(i,trigger){
+  closeOverlay();
+  const r=data[mode].rows[i];
+  const raw=String(r.Awards||'');
+  const parts=parseAwards(raw);
+  const panel=document.createElement('div');
+  panel.className='overlay-panel awards-panel';
+  panel.style.minWidth='280px';
+  panel.style.maxWidth='min(420px, calc(100vw - 24px))';
+  panel.innerHTML=`<div class="flyout-head">Awards · ${escapeHtml(r.season||'')}</div>
+    <div class="awards-chips">${parts.length
+      ? parts.map(p=>`<span class="award-chip">${escapeHtml(p)}</span>`).join('')
+      : '<span class="awards-empty">No awards</span>'}</div>
+    <textarea class="awards-edit" rows="3" placeholder="Comma-separated awards">${escapeHtml(raw)}</textarea>
+    <div class="awards-panel-actions"><button type="button" class="awards-save">Save</button></div>`;
+  document.body.appendChild(panel);
+  const ta=panel.querySelector('.awards-edit');
+  panel.querySelector('.awards-save').onclick=()=>{
+    data[mode].rows[i].Awards=ta.value.trim();
+    closeOverlay();
+    refreshAwardsCell(i);
+    autosave();
+  };
+  ta.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){ e.preventDefault(); closeOverlay(); }
+    if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){ e.preventDefault(); panel.querySelector('.awards-save').click(); }
+  });
+  positionPanel(panel,trigger);
+  requestAnimationFrame(()=>panel.classList.add('open'));
+  setTimeout(()=>{ ta.focus(); ta.setSelectionRange(ta.value.length,ta.value.length); },30);
+  activeOverlay={el:panel,i,trigger};
+}
+function refreshAwardsCell(i){
+  const btn=document.querySelector(`.cell-trigger[data-i="${i}"][data-k="Awards"]`);
+  if(!btn){ renderBody(); return; }
+  const parts=parseAwards(data[mode].rows[i].Awards);
+  const empty=!parts.length;
+  btn.classList.toggle('empty',empty);
+  btn.title=parts.join(', ');
+  btn.textContent=empty?'—'
+    :(parts.length<=2?parts.join(', '):`${parts.slice(0,2).join(', ')} +${parts.length-2}`);
+}
+function inputCell(r,i,c){
+  if(c.team) return teamSelect(r,i);
+  if(c.pos) return posCell(r,i);
+  if(c.k==='Awards') return awardsCell(r,i);
+  const val=r[c.k]!==undefined?r[c.k]:'';
+  const cls=(c.txt?'txt ':'')+'nav';
+  const ro=editLocked?' readonly tabindex="-1"':'';
+  const suggest=(!editLocked && SUGGEST_KEYS.has(c.k))
+    ? ` onfocus="openStatSuggest(${i},'${c.k}',this)" onblur="scheduleCloseSuggest(event)"`
+    : '';
+  return `<td><input class="${cls}" data-i="${i}" data-k="${c.k}"${ro}
+    value="${(''+val).replace(/"/g,'&quot;')}" oninput="upd(${i},'${c.k}',this.value)"${suggest}></td>`;
+}
+function renderBody(){
+  const tb=document.getElementById('tbody');
+  const rows=data[mode].rows;
+  let html=''; const groups=seasonGroups();
+  const ro=editLocked?' readonly tabindex="-1"':'';
+  groups.forEach(g=>{
+    g.items.forEach(({r,i})=>{
+      const partialCls=g.items.length>1?' partial-row':'';
+      html+=`<tr class="${partialCls.trim()}" data-row="${i}"><td><input class="txt nav" data-i="${i}" data-k="season" style="width:56px"${ro}
+        value="${(r.season||'').replace(/"/g,'&quot;')}" oninput="upd(${i},'season',this.value)"></td>`;
+      cols().forEach(c=>{
+        if(c.k==='Awards' && g.items.length>1) html+='<td></td>';
+        else if(c.input||c.team||c.pos) html+=inputCell(r,i,c);
+        else html+=`<td class="calc" data-i="${i}" data-k="${c.k}"></td>`;
+      });
+      html+=`<td><div class="row-actions">
+        <button class="icon-btn" title="Add team to season" onclick="splitSeason(${i})">+</button>
+        <button class="icon-btn" title="Delete" onclick="delRow(${i})">&times;</button></div></td></tr>`;
+    });
+    if(g.items.length>1){
+      html+=`<tr class="total-row" data-total="${g.season}"><td>${g.season} TOTAL</td>`;
+      cols().forEach(c=>{
+        if(c.k==='team') html+=`<td>${g.items.length}TM</td>`;
+        else if(['lg','age','Pos'].includes(c.k)) html+='<td></td>';
+        else if(c.k==='Awards'){
+          const awIdx=g.items.findIndex(x=>String(x.r.Awards||'').trim());
+          html+= awIdx>=0 ? awardsCell(g.items[awIdx].r, g.items[awIdx].i) : '<td></td>';
+        }
+        else html+=`<td data-tk="${c.k}"></td>`;
+      });
+      html+='<td></td></tr>';
+    }
+  });
+  if(rows.length){
+    html+=`<tr class="career-row"><td>Career</td>`;
+    cols().forEach(c=>{
+      if(['team','lg','age','Pos','Awards'].includes(c.k)) html+='<td></td>';
+      else html+=`<td data-ck="${c.k}"></td>`;
+    });
+    html+='<td></td></tr>';
+  }
+  html+=`<tr class="notes-row"><td colspan="${cols().length+2}">
+    <input placeholder="Notes"${ro} value="${(data[mode].notes||'').replace(/"/g,'&quot;')}"
+    oninput="data[mode].notes=this.value;autosave()"></td></tr>`;
+  tb.innerHTML=html || `<tr><td colspan="${cols().length+2}" style="padding:24px 0;color:var(--dim)">NO SEASONS &mdash; ADD ONE ABOVE</td></tr>`;
+  refreshCalcCells(); attachNav();
+  if(editLocked) setEditLocked(true);
+}
+
+/* ===== LIVE CALC (no rebuild -> focus stays) ===== */
+function refreshCalcCells(){
+  const rows=data[mode].rows;
+  rows.forEach((r,i)=>{
+    const calc=calcRow(r,true);
+    document.querySelectorAll(`td.calc[data-i="${i}"]`).forEach(td=>{
+      const k=td.getAttribute('data-k');
+      const nv=(k==='lg')?(r.lg||''):fmt(k,calc[k]);
+      if(td.textContent!==nv){ td.textContent=nv; flash(td); }
+    });
+  });
+  seasonGroups().forEach(g=>{
+    if(g.items.length>1){
+      const tot=sumRows(g.items);
+      const tr=document.querySelector(`tr.total-row[data-total="${CSS.escape(g.season)}"]`);
+      if(tr) tr.querySelectorAll('td[data-tk]').forEach(td=>{
+        td.textContent=fmt(td.getAttribute('data-tk'),tot[td.getAttribute('data-tk')]);
+      });
+    }
+  });
+  if(rows.length){
+    // One aggregate per season — multi-team years counted once via TOTAL, not doubled
+    const seasonItems=seasonGroups().map(g=>g.items.length===1?g.items[0]:{r:sumRows(g.items),i:-1});
+    const car=sumRows(seasonItems);
+    document.querySelectorAll('tr.career-row td[data-ck]').forEach(td=>{
+      td.textContent=fmt(td.getAttribute('data-ck'),car[td.getAttribute('data-ck')]);
+    });
+  }
+}
+function flash(td){ /* no animation */ }
+
+/* ===== NAV (Enter/Tab -> next; auto-add at end) ===== */
+function attachNav(){
+  [...document.querySelectorAll('.nav')].forEach(el=>{
+    el.onkeydown=(e)=>{
+      if(e.key==='Enter'||(e.key==='Tab'&&!e.shiftKey)){ e.preventDefault(); goNext(el); }
+      else if(e.key==='Tab'&&e.shiftKey){ e.preventDefault(); goPrev(el); }
+    };
+  });
+}
+function navList(){ return [...document.querySelectorAll('.nav')]; }
+function goNext(el){
+  const list=navList(); const idx=list.indexOf(el);
+  if(idx<list.length-1) focusEl(list[idx+1]); else addSeason();
+}
+function goPrev(el){ const list=navList(); const idx=list.indexOf(el); if(idx>0) focusEl(list[idx-1]); }
+function focusEl(el){
+  el.focus(); if(el.select){try{el.select();}catch(e){}}
+}
+
+/* ===== STAT SUGGEST POPUPS ===== */
+const SUGGEST_KEYS=new Set(['PA','BB','SO','IP']);
+let suggestCloseTimer=null;
+function scheduleCloseSuggest(e){
+  const next=e&&e.relatedTarget;
+  if(next && next.closest && next.closest('.suggest-panel')) return;
+  clearTimeout(suggestCloseTimer);
+  suggestCloseTimer=setTimeout(()=>{
+    if(activeOverlay && activeOverlay.kind==='suggest') closeOverlay();
+  },160);
+}
+function buildPaSuggestions(g){
+  const G=Math.max(0, Math.round(num(g)||0));
+  if(!G) return [];
+  return [
+    {name:'Bench', meta:`~1.2 PA/G · ${G} G`, value:Math.round(G*1.2)},
+    {name:'Platoon', meta:`~2.5 PA/G · ${G} G`, value:Math.round(G*2.5)},
+    {name:'Everyday', meta:`~3.9 PA/G · ${G} G`, value:Math.round(G*3.9)},
+    {name:'Ironman', meta:`~4.2 PA/G · ${G} G`, value:Math.round(G*4.2)},
+  ];
+}
+function buildRateSuggestions(pa, kind, unit='PA'){
+  const PA=Math.max(0, Math.round(num(pa)||0));
+  if(!PA) return [];
+  const rates=kind==='BB'
+    ? [0.05,0.07,0.085,0.10,0.12,0.15]
+    : [0.12,0.16,0.20,0.25,0.30,0.35];
+  const labels=kind==='BB'
+    ? ['Patient','Average','Above avg','Patient+','Elite eye','Walk machine']
+    : ['Contact','League-ish','Swing-miss','High K','Extreme','Whiff city'];
+  return rates.map((pct,idx)=>{
+    const pctLabel=(pct*100).toFixed(pct*100%1?1:0)+'%';
+    return {
+      name:pctLabel+' '+kind,
+      meta:`${labels[idx]||''} · ${pctLabel} of ${PA} ${unit}`.replace(/^ · /,''),
+      value:Math.round(PA*pct),
+      pct
+    };
+  });
+}
+function formatIpSuggest(outs){
+  const whole=Math.floor(outs/3);
+  const rem=outs%3;
+  return Number(`${whole}.${rem}`);
+}
+function buildIpSuggestions(g, gs){
+  const G=Math.max(0, Math.round(num(g)||0));
+  const GS=Math.max(0, Math.min(G, Math.round(num(gs)||0)));
+  const relief=Math.max(0, G-GS);
+  if(!G && !GS) return [];
+  const opts=[];
+  if(GS===0){
+    opts.push({name:'Reliever', meta:`~1.0 IP/G · ${G} G`, value:formatIpSuggest(Math.round(G*1.0*3))});
+    opts.push({name:'High-leverage', meta:`~0.85 IP/G · ${G} G`, value:formatIpSuggest(Math.round(G*0.85*3))});
+    opts.push({name:'Long relief', meta:`~1.4 IP/G · ${G} G`, value:formatIpSuggest(Math.round(G*1.4*3))});
+  }else if(GS>=G*0.75){
+    opts.push({name:'Starter', meta:`~6.0 IP/GS · ${GS} GS`, value:formatIpSuggest(Math.round(GS*6.0*3))});
+    opts.push({name:'Workhorse', meta:`~6.8 IP/GS · ${GS} GS`, value:formatIpSuggest(Math.round(GS*6.8*3))});
+    opts.push({name:'Short starts', meta:`~5.2 IP/GS · ${GS} GS`, value:formatIpSuggest(Math.round(GS*5.2*3))});
+  }else{
+    const swingOuts=Math.round(GS*5.0*3 + relief*1.2*3);
+    const starterish=Math.round(GS*5.8*3 + relief*1.0*3);
+    const swingHeavy=Math.round(GS*4.5*3 + relief*1.5*3);
+    opts.push({name:'Swingman', meta:`${GS} GS + ${relief} relief`, value:formatIpSuggest(swingOuts)});
+    opts.push({name:'Spot starter', meta:`heavier starts`, value:formatIpSuggest(starterish)});
+    opts.push({name:'Swing + long', meta:`more relief innings`, value:formatIpSuggest(swingHeavy)});
+  }
+  return opts;
+}
+function openStatSuggest(i,key,trigger,rebuildOnly){
+  if(editLocked) return;
+  if(!SUGGEST_KEYS.has(key)) return;
+  if(mode==='bat' && key==='IP') return;
+  if(mode==='pit' && key==='PA') return;
+  // pitching BB/SO still use PA? No — use batters faced approx via IP*3.3 or show % of (approx BF). Use G-based? User asked BB/SO % — for pitchers typically K% and BB% of BF.
+  clearTimeout(suggestCloseTimer);
+  const row=data[mode].rows[i];
+  let items=[], head='';
+  if(key==='PA'){
+    head='Plate appearances';
+    items=buildPaSuggestions(row.G);
+  }else if(key==='BB'||key==='SO'){
+    if(mode==='bat'){
+      head=key==='BB'?'BB% of PA':'SO% of PA';
+      items=buildRateSuggestions(row.PA, key, 'PA');
+    }else{
+      // Pitchers: % of approx batters faced (~3.3 per IP)
+      const ipR=ipDecimal(num(row.IP)||0);
+      let bf=Math.max(0, Math.round(ipR*3.3));
+      if(!bf && num(row.G)) bf=Math.round(num(row.G)*3.5); // rough before IP entered
+      head=key==='BB'?`BB% · ~${bf||'—'} BF`:`SO% · ~${bf||'—'} BF`;
+      items=buildRateSuggestions(bf||0, key, 'BF');
+    }
+  }else if(key==='IP'){
+    head='Innings pitched';
+    items=buildIpSuggestions(row.G, row.GS);
+  }
+  if(rebuildOnly && activeOverlay && activeOverlay.kind==='suggest' && activeOverlay.el){
+    const list=activeOverlay.el.querySelector('.overlay-list');
+    const title=activeOverlay.el.querySelector('.flyout-head');
+    if(title) title.textContent=head;
+    if(list) list.innerHTML=suggestListHtml(i,key,items);
+    return;
+  }
+  closeOverlay();
+  const panel=document.createElement('div');
+  panel.className='overlay-panel suggest-panel';
+  panel.innerHTML=`<div class="flyout-head">${head}</div><div class="overlay-list">${suggestListHtml(i,key,items)}</div>`;
+  document.body.appendChild(panel);
+  positionPanel(panel, trigger, true);
+  requestAnimationFrame(()=>panel.classList.add('open'));
+  activeOverlay={el:panel,i,trigger,kind:'suggest',key};
+}
+function suggestListHtml(i,key,items){
+  if(!items.length){
+    if(key==='PA') return `<div class="suggest-empty">Enter games (G) to see bench / platoon / everyday PA.</div>`;
+    if(key==='IP') return `<div class="suggest-empty">Enter G and GS to see reliever / swingman / starter IP.</div>`;
+    return `<div class="suggest-empty">${mode==='bat'?'Enter PA':'Enter IP'} to see rate suggestions.</div>`;
+  }
+  return items.map(it=>`<button type="button" class="suggest-opt" onmousedown="event.preventDefault()" onclick="applyStatSuggest(${i},'${key}',${JSON.stringify(it.value)})">
+    <span class="sg-label"><span class="sg-name">${escapeHtml(it.name)}</span><span class="sg-meta">${escapeHtml(it.meta||'')}</span></span>
+    <span class="sg-val">${escapeHtml(String(it.value))}</span>
+  </button>`).join('');
+}
+function applyStatSuggest(i,key,value){
+  data[mode].rows[i][key]=value;
+  const inp=document.querySelector(`input.nav[data-i="${i}"][data-k="${key}"]`);
+  if(inp) inp.value=value;
+  closeOverlay();
+  refreshCalcCells();
+  autosave();
+  if(inp) focusEl(inp);
+}
+
+/* ===== ACTIONS ===== */
+function upd(i,k,v){
+  data[mode].rows[i][k]=v;
+  if(k==='season'||k==='team'){
+    const row=data[mode].rows[i];
+    if(row.team) row.lg=teamLeague(row.team, row.season)||row.lg||'';
+    if(k==='season'){
+      // Prefetch clubs for new year; clear stale teamId if abbr no longer maps
+      const y=clampSeasonYear(row.season);
+      fetchTeamsForSeason(y).then(list=>{
+        if(!row.team) return;
+        const hit=list.find(t=>t.abbr===String(row.team).toUpperCase() || t.id===row.teamId);
+        if(hit){ row.teamId=hit.id; row.lg=hit.league||row.lg; }
+        refreshTeamCell(i);
+      });
+    }
+  }
+  if(activeOverlay && activeOverlay.kind==='suggest' && activeOverlay.i===i){
+    const deps={PA:['G'],BB:['PA','IP','G'],SO:['PA','IP','G'],IP:['G','GS']};
+    if((deps[activeOverlay.key]||[]).includes(k) && activeOverlay.trigger){
+      openStatSuggest(i, activeOverlay.key, activeOverlay.trigger, true);
+    }
+  }
+  refreshCalcCells(); autosave();
+}
+
+function addSeason(){
+  const rows=data[mode].rows;
+  const lastYr=rows.length?parseInt(rows[rows.length-1].season)||2024:2024;
+  rows.push({season:String(lastYr+1)});
+  structuralRender();
+  const newIdx=rows.length-1;
+  const firstInp=document.querySelector(`[data-i="${newIdx}"]`);
+  if(firstInp) focusEl(firstInp);
+  autosave();
+}
+
+function splitSeason(i){
+  const rows=data[mode].rows;
+  const currentSeason=rows[i].season||'';
+  rows.splice(i+1, 0, {season: currentSeason});
+  structuralRender();
+  const nextInp=document.querySelector(`[data-i="${i+1}"]`);
+  if(nextInp) focusEl(nextInp);
+  autosave();
+}
+
+function delRow(i){
+  data[mode].rows.splice(i,1);
+  structuralRender();
+  autosave();
+}
+
+function setMode(m){
+  if(mode===m) return;
+  mode=m;
+  setModeButtons(mode);
+  render();
+  autosave();
+}
+
+function loadImage(input){
+  if(input.files && input.files[0]){
+    const reader=new FileReader();
+    reader.onload=e=>{
+      playerImg=e.target.result;
+      document.getElementById('avatar').innerHTML=`<img src="${playerImg}" alt="avatar">`;
+      autosave();
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+/* ===== SAVE / LOAD / EXPORT ===== */
+function autosave(){
+  const payload={
+    playerName: getPlayerName(),
+    mode,
+    baseVals,
+    data,
+    playerImg
+  };
+  localStorage.setItem('shutout_engine_data', JSON.stringify(payload));
+}
+
+function saveData(){
+  autosave();
+  const payload=localStorage.getItem('shutout_engine_data');
+  const blob=new Blob([payload], {type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`${getPlayerName()||'career'}_stats.json`;
+  a.click();
+  toast('DATA SAVED');
+}
+
+function loadData(){
+  const input=document.createElement('input');
+  input.type='file';
+  input.accept='application/json';
+  input.onchange=e=>{
+    const file=e.target.files[0];
+    if(!file) return;
+    const reader=new FileReader();
+    reader.onload=evt=>{
+      try{
+        const parsed=JSON.parse(evt.target.result);
+        if(parsed.data) data=parsed.data;
+        if(parsed.baseVals) baseVals=parsed.baseVals;
+        if(parsed.playerName!==undefined) setPlayerName(parsed.playerName);
+        if(parsed.playerImg!==undefined){
+          playerImg=parsed.playerImg;
+          document.getElementById('avatar').innerHTML=playerImg?`<img src="${playerImg}">`:'Add photo';
+        }
+        if(parsed.mode) mode=parsed.mode;
+        setModeButtons(mode);
+        render();
+        toast('DATA LOADED');
+      }catch(err){
+        toast('INVALID FILE');
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+function exportCSV(){
+  const activeCols=cols();
+  let csv='Season,'+activeCols.map(c=>`"${c.label}"`).join(',')+'\n';
+  data[mode].rows.forEach((r,i)=>{
+    const cVal=calcRow(r,true);
+    let row=[`"${r.season||''}"`];
+    activeCols.forEach(c=>{
+      if(c.input||c.team||c.pos){
+        let val=r[c.k];
+        if(Array.isArray(val)) val=posDisplay(val);
+        row.push(`"${val||''}"`);
+      } else {
+        row.push(`"${fmt(c.k, cVal[c.k])}"`);
+      }
+    });
+    csv+=row.join(',')+'\n';
+  });
+  const blob=new Blob([csv], {type:'text/csv'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`${getPlayerName()||'career'}_${mode}.csv`;
+  a.click();
+  toast('CSV EXPORTED');
+}
+
+function exportPNG(){
+  toast('GENERATING PNG...');
+  const target=document.getElementById('captureArea');
+  html2canvas(target, {backgroundColor:'#0a0a0a'}).then(canvas=>{
+    const a=document.createElement('a');
+    a.href=canvas.toDataURL('image/png');
+    a.download=`${getPlayerName()||'career'}_${mode}.png`;
+    a.click();
+    toast('PNG EXPORTED');
+  });
+}
+
+function clearAll(){
+  if(confirm('Clear all stats and player data?')){
+    data={bat:{rows:[],notes:''},pit:{rows:[],notes:''}};
+    setPlayerName('');
+    playerImg='';
+    playerBirthDate=null;
+    document.getElementById('avatar').innerHTML='Add photo';
+    setPlayerBanner(null);
+    setEditLocked(false);
+    render();
+    autosave();
+    toast('CLEARED');
+  }
+}
+
+function renderLegend(){ /* glossary removed — hover column headers */ }
+
+/* ===== BASEBALL-REFERENCE LOOKUP ===== */
+const API_ORIGIN = '';
+let brefHits = [];
+let brefSelected = null;
+let brefActiveIdx = 0;
+let brefPortal = null;
+
+function apiUrl(path){
+  return `${API_ORIGIN}/api${path}`;
+}
+
+/** Same-origin FastAPI StatsAPI proxy (unwraps `{ stale, data }`). */
+function statsApiUrl(pathAndQuery){
+  const path = pathAndQuery.startsWith('/') ? pathAndQuery : `/${pathAndQuery}`;
+  const host = (typeof location !== 'undefined' && location.hostname) || '';
+  if(/^(localhost|127\.0\.0\.1)$/i.test(host)) return `/api/stats${path}`;
+  return `https://statsapi.mlb.com${path}`;
+}
+
+async function statsApiFetch(pathAndQuery){
+  const path = pathAndQuery.startsWith('/') ? pathAndQuery : `/${pathAndQuery}`;
+  const primary = statsApiUrl(path);
+  const direct = `https://statsapi.mlb.com${path}`;
+  let res = await fetch(primary, { headers: { Accept: 'application/json' } });
+  if(res.status === 406 || res.status === 429 || res.status >= 500){
+    await new Promise(r => setTimeout(r, 200));
+    res = await fetch(primary, { headers: { Accept: 'application/json' } });
+  }
+  if(res.ok && /\/api\/stats\//.test(primary)){
+    try{
+      const payload = await res.json();
+      const data = (payload && typeof payload === 'object' && 'data' in payload) ? payload.data : payload;
+      return new Response(JSON.stringify(data ?? null), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }catch(_){
+      return res;
+    }
+  }
+  if(!res.ok && primary !== direct){
+    res = await fetch(direct, { headers: { Accept: 'application/json' } });
+  }
+  return res;
+}
+
+function mapMlbPerson(person, type){
+  const mid = person.id;
+  const first = person.useName || person.firstName || '';
+  const last = person.useLastName || person.lastName || '';
+  const debut = person.mlbDebutDate ? Number(String(person.mlbDebutDate).slice(0, 4)) : null;
+  const lastYear = person.lastPlayedDate ? Number(String(person.lastPlayedDate).slice(0, 4)) : null;
+  const abbrev = (person.primaryPosition || {}).abbreviation || '';
+  const posType = ((person.primaryPosition || {}).type || '').toLowerCase();
+  const teamName = (person.currentTeam && person.currentTeam.name) || '';
+  const teamAbbr = (person.currentTeam && person.currentTeam.abbreviation) || '';
+  return {
+    mlbam_id: mid,
+    name: person.fullName || `${first} ${last}`.trim(),
+    first_name: first,
+    last_name: last,
+    bbref_id: '',
+    mlb_debut: debut,
+    mlb_last: person.active ? null : (lastYear || debut),
+    player_type: type || ((posType === 'pitcher' || abbrev === 'P') ? 'pitcher' : 'batter'),
+    headshot_url: mid ? mlbStudioHeadshotSafe(mid) : '',
+    position: abbrev || null,
+    team: teamAbbr || teamName || '',
+    active: !!person.active,
+    _pitcher: posType === 'pitcher' || abbrev === 'P' || abbrev === 'TWP',
+  };
+}
+
+/** Known birth-name / nickname redirects the MLB search API won't resolve alone. */
+const PLAYER_SEARCH_ALIASES={
+  'mike stanton':'Giancarlo Stanton',
+  'michael stanton':'Giancarlo Stanton',
+  'gio urshela':'Giovanny Urshela',
+  'kike hernandez':'Enrique Hernández',
+  'kiké hernandez':'Enrique Hernández',
+  'kike hernández':'Enrique Hernández',
+  'vj beede':'Tyler Beede',
+};
+
+function stripSearchAccents(s){
+  try{ return String(s||'').normalize('NFD').replace(/\p{M}/gu,''); }
+  catch(_){ return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+}
+
+function playerSearchVariants(raw){
+  const q=String(raw||'').trim().replace(/\s+/g,' ');
+  if(!q) return [];
+  const lower=q.toLowerCase();
+  const out=[];
+  const add=v=>{
+    const t=String(v||'').trim().replace(/\s+/g,' ');
+    if(t && !out.some(x=>x.toLowerCase()===t.toLowerCase())) out.push(t);
+  };
+  add(q);
+  add(stripSearchAccents(q));
+  if(PLAYER_SEARCH_ALIASES[lower]) add(PLAYER_SEARCH_ALIASES[lower]);
+  const aliasKey=stripSearchAccents(lower);
+  if(PLAYER_SEARCH_ALIASES[aliasKey]) add(PLAYER_SEARCH_ALIASES[aliasKey]);
+
+  const parts=q.split(/\s+/).filter(Boolean);
+  if(parts.length>=2){
+    add(parts[parts.length-1]); // last name
+    add(parts[0]); // first name
+    add(`${parts[parts.length-1]} ${parts[0]}`); // Last First
+    // Drop middle initials: "Giancarlo A Stanton" → "Giancarlo Stanton"
+    if(parts.length>=3) add(`${parts[0]} ${parts[parts.length-1]}`);
+  }
+  // "Stanton, Giancarlo"
+  if(q.includes(',')){
+    const [a,b]=q.split(',').map(s=>s.trim()).filter(Boolean);
+    if(a&&b){ add(`${b} ${a}`); add(a); }
+  }
+  return out.slice(0, 8);
+}
+
+async function mlbPeopleSearchOnce(nameQuery){
+  const path=`/api/v1/people/search?names=${encodeURIComponent(nameQuery)}`;
+  // Prefer direct MLB (CORS *) — proxy can be down or empty-cache oddities on localhost
+  const urls=[
+    `https://statsapi.mlb.com${path}`,
+    statsApiUrl(path),
+    statsApiUrl(`${path}&sportIds=1`),
+  ];
+  const seenUrl=new Set();
+  for(const url of urls){
+    if(seenUrl.has(url)) continue;
+    seenUrl.add(url);
+    try{
+      let res=await fetch(url, { headers:{ Accept:'application/json' } });
+      if(!res.ok) continue;
+      let body=await res.json();
+      if(body && typeof body==='object' && 'data' in body) body=body.data;
+      const people=(body && body.people) || [];
+      if(people.length) return people;
+    }catch(_){}
+  }
+  return [];
+}
+
+function rankPlayerHits(hits, query){
+  const q=stripSearchAccents(String(query||'').toLowerCase()).trim();
+  const tokens=q.split(/\s+/).filter(Boolean);
+  const lastTok=tokens[tokens.length-1]||q;
+  const aliasTarget=PLAYER_SEARCH_ALIASES[q] || PLAYER_SEARCH_ALIASES[stripSearchAccents(q)];
+  const aliasName=aliasTarget ? stripSearchAccents(aliasTarget.toLowerCase()) : '';
+  const score=p=>{
+    const name=stripSearchAccents(String(p.name||'').toLowerCase());
+    const last=stripSearchAccents(String(p.last_name||'').toLowerCase());
+    const first=stripSearchAccents(String(p.first_name||'').toLowerCase());
+    let s=0;
+    if(aliasName && name===aliasName) s+=260;
+    if(name===q) s+=200;
+    if(last===lastTok) s+=120;
+    if(last.startsWith(lastTok)) s+=80;
+    if(name.startsWith(q)) s+=70;
+    if(name.includes(q)) s+=40;
+    if(tokens[0] && first.startsWith(tokens[0])) s+=25;
+    if(p.active) s+=30;
+    if(p.mlb_debut) s+=Math.min(20, Math.max(0, (p.mlb_debut-1900)/10));
+    // Soft preference for current sheet mode, never hide the other side
+    if(mode==='pit' && p._pitcher) s+=8;
+    if(mode==='bat' && !p._pitcher) s+=8;
+    return s;
+  };
+  return [...hits].sort((a,b)=>score(b)-score(a) || String(a.name).localeCompare(String(b.name)));
+}
+
+/** Direct MLB Stats API search — works without the Python backend (CORS *). */
+async function searchMlbDirect(q, type){
+  const variants=playerSearchVariants(q);
+  const seen=new Set();
+  const people=[];
+  const qParts=String(q||'').trim().split(/\s+/).filter(Boolean);
+  for(let vi=0; vi<variants.length; vi++){
+    const variant=variants[vi];
+    const batch=await mlbPeopleSearchOnce(variant);
+    for(const person of batch){
+      const id=person && person.id;
+      if(!id || seen.has(id)) continue;
+      seen.add(id);
+      people.push(person);
+    }
+    // Full-name / alias first hits are enough — skip extra last-name sweeps
+    if(people.length && vi===0 && (qParts.length>=2 || PLAYER_SEARCH_ALIASES[String(q).trim().toLowerCase()])) break;
+    if(people.length>=18) break;
+  }
+  // Alias queries: still pull the canonical name if the birth-name search only returned others
+  const alias=PLAYER_SEARCH_ALIASES[String(q).trim().toLowerCase()] || PLAYER_SEARCH_ALIASES[stripSearchAccents(String(q).trim().toLowerCase())];
+  if(alias && !people.some(p=>String(p.fullName||'').toLowerCase()===alias.toLowerCase())){
+    for(const person of await mlbPeopleSearchOnce(alias)){
+      const id=person && person.id;
+      if(!id || seen.has(id)) continue;
+      seen.add(id);
+      people.push(person);
+    }
+  }
+  if(!people.length) return [];
+  return rankPlayerHits(people.map(person=>mapMlbPerson(person, type)), q).slice(0, 15);
+}
+
+async function searchPlayersBackend(q, type){
+  try{
+    const res=await fetch(apiUrl(`/players/search?q=${encodeURIComponent(q)}&type=${type||'batter'}`));
+    const payload=await res.json().catch(()=>({}));
+    if(!res.ok) return [];
+    if(Array.isArray(payload)) return payload;
+    if(Array.isArray(payload?.players)) return payload.players;
+    if(Array.isArray(payload?.results)) return payload.results;
+  }catch(_){}
+  return [];
+}
+
+/** Direct MLB year-by-year career — backup when /api/players/bref-career is down. */
+async function fetchMlbAwards(mlbamId){
+  try{
+    const res=await statsApiFetch(`/api/v1/people/${mlbamId}/awards`);
+    if(!res.ok) return {};
+    const awards=(await res.json()).awards||[];
+    const byYear={};
+    const short=(name)=>{
+      const n=String(name||'');
+      if(/Most Valuable Player/i.test(n)) return 'MVP';
+      if(/Cy Young/i.test(n)) return 'CYA';
+      if(/Gold Glove/i.test(n)) return 'GG';
+      if(/Silver Slugger/i.test(n)) return 'SS';
+      if(/Rookie of the Year/i.test(n)) return 'ROY';
+      if(/Hank Aaron/i.test(n)) return 'HAA';
+      if(/Reliever of the Year|Mariano Rivera/i.test(n)) return 'REL';
+      if(/All-Star/i.test(n)) return 'AS';
+      if(/World Series MVP/i.test(n)) return 'WS MVP';
+      if(/LCS MVP|Championship Series MVP/i.test(n)) return 'LCS MVP';
+      return n.replace(/\s+(Award|Trophy).*$/i,'').slice(0,18);
+    };
+    for(const a of awards){
+      const season=String(a.season||(a.date||'').slice(0,4)||'');
+      if(!season) continue;
+      const label=short(a.name||a.awardName||'');
+      if(!label) continue;
+      if(!byYear[season]) byYear[season]=[];
+      if(!byYear[season].includes(label)) byYear[season].push(label);
+    }
+    return byYear;
+  }catch(_){ return {}; }
+}
+
+async function fetchSavantCareerSplits(mlbamId, group){
+  const host = (typeof location !== 'undefined' && location.hostname) || '';
+  // Only a local dev server has the Savant proxy; the hosted site goes straight to the Stats API.
+  if(!/^(localhost|127\.0\.0\.1)$/i.test(host)) return [];
+  const url = `/api/statcast/savant-player/${mlbamId}`;
+  const res = await fetch(url);
+  if(!res.ok) return [];
+  const html = await res.text();
+  const tableId = group === 'pitching' ? 'pitchingStandard' : 'hittingStandard';
+  const marker = `id="${tableId}"`;
+  const start = html.indexOf(marker);
+  if(start < 0) return [];
+  const from = html.indexOf('<table', start);
+  const end = html.indexOf('</table>', from);
+  if(from < 0 || end < 0) return [];
+  const table = html.slice(from, end + 8);
+  const headers = [...table.matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi)].map(m => {
+    const spans = [...m[1].matchAll(/<span[^>]*>([\s\S]*?)<\/span>/gi)].map(s => s[1].replace(/<[^>]+>/g,'').trim());
+    return (spans[spans.length-1] || m[1].replace(/<[^>]+>/g,'').trim()).toUpperCase();
+  });
+  const col = (name) => headers.findIndex(h => h === name || h.startsWith(name));
+  const iSeason = col('SEASON'), iTm = col('TM'), iLg = col('LG'), iG = col('G');
+  const iPa = col('PA'), iAb = col('AB'), iR = col('R'), iH = col('H');
+  const i2b = col('2B'), i3b = col('3B'), iHr = col('HR'), iRbi = col('RBI');
+  const iBb = col('BB'), iSo = col('SO'), iSb = col('SB'), iCs = col('CS'), iHbp = col('HBP');
+  const iAvg = col('AVG'), iObp = col('OBP'), iSlg = col('SLG'), iOps = col('OPS');
+  const iW = col('W'), iL = col('L'), iIp = col('IP'), iEr = col('ER'), iEra = col('ERA'), iWhip = col('WHIP'), iGs = col('GS');
+  const cell = (td) => {
+    const spans = [...td.matchAll(/<span[^>]*>([\s\S]*?)<\/span>/gi)].map(s => s[1].replace(/<[^>]+>/g,'').trim());
+    return spans.length ? spans[spans.length-1] : td.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+  };
+  const rows = [...table.matchAll(/<tr[^>]*class="[^"]*default-table-row[^"]*"[^>]*>([\s\S]*?)<\/tr>/gi)];
+  const out = [];
+  for(const row of rows){
+    const cells = [...row[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map(m => cell(m[1]));
+    const season = (iSeason >= 0 ? cells[iSeason] : '') || '';
+    if(!/^\d{4}$/.test(season)) continue;
+    const teamRaw = ((iTm >= 0 ? cells[iTm] : '') || '').trim();
+    if (/team/i.test(teamRaw) || /^\d+\s*tm/i.test(teamRaw)) continue;
+    const teamAbbr = teamRaw.toUpperCase().replace(/[^A-Z]/g,'');
+    if(!teamAbbr || teamAbbr.length > 3 || /^(TM|TOT|MLB|TEAM|TEAMS|TEA)$/.test(teamAbbr)) continue;
+    const num = (idx) => { if(idx < 0) return 0; const n = Number(cells[idx]); return Number.isFinite(n) ? n : 0; };
+    const str = (idx) => idx >= 0 ? (cells[idx] || '') : '';
+    const isPitch = iEra >= 0 || iIp >= 0;
+    const stat = isPitch ? {
+      gamesPlayed: num(iG), gamesStarted: num(iGs), wins: num(iW), losses: num(iL),
+      inningsPitched: str(iIp) || '0', earnedRuns: num(iEr), strikeOuts: num(iSo),
+      baseOnBalls: num(iBb), era: str(iEra) || '—', whip: str(iWhip) || '—',
+    } : {
+      gamesPlayed: num(iG), plateAppearances: num(iPa), atBats: num(iAb), runs: num(iR),
+      hits: num(iH), doubles: num(i2b), triples: num(i3b), homeRuns: num(iHr), rbi: num(iRbi),
+      baseOnBalls: num(iBb), strikeOuts: num(iSo), stolenBases: num(iSb), caughtStealing: num(iCs),
+      hitByPitch: num(iHbp), avg: str(iAvg) || '—', obp: str(iObp) || '—', slg: str(iSlg) || '—', ops: str(iOps) || '—',
+    };
+    out.push({
+      season,
+      team: { abbreviation: teamAbbr },
+      league: { abbreviation: (iLg >= 0 ? cells[iLg] : '') || undefined },
+      sport: { abbreviation: 'MLB' },
+      stat,
+    });
+  }
+  return out.sort((a,b)=>Number(a.season||0)-Number(b.season||0));
+}
+
+async function fetchMlbYearSplits(mlbamId, group){
+  // Overlap Savant (full career) with recent StatsAPI seasons so failures aren't sequential
+  const year = new Date().getFullYear();
+  const recentP = (async () => {
+    const out = [];
+    await Promise.all([year, year-1, year-2].map(async (y) => {
+      const res = await statsApiFetch(`/api/v1/people/${mlbamId}/stats?stats=season&group=${group}&season=${y}`);
+      if(!res.ok) return;
+      const splits = ((await res.json()).stats || [{}])[0].splits || [];
+      for(const s of splits) out.push({ ...s, season: s.season || String(y) });
+    }));
+    return out.sort((a,b)=>Number(a.season||0)-Number(b.season||0));
+  })();
+  const savantP = fetchSavantCareerSplits(mlbamId, group).catch(()=>[]);
+
+  try{
+    const savant = await savantP;
+    if(savant.length) return savant;
+  }catch(_){}
+
+  const hydrateRes = await statsApiFetch(
+    `/api/v1/people/${mlbamId}?hydrate=stats(group=[${group}],type=[yearByYear])`
+  );
+  if(hydrateRes.ok){
+    const person = ((await hydrateRes.json()).people || [])[0];
+    const blocks = person?.stats || [];
+    for(const block of blocks){
+      const label = `${block?.type?.displayName || ''} ${block?.group?.displayName || ''}`;
+      if(blocks.length > 1 && !/year.?by.?year/i.test(label)) continue;
+      if(block?.splits?.length) return block.splits;
+    }
+    if(blocks[0]?.splits?.length) return blocks[0].splits;
+  }
+
+  return recentP;
+}
+
+async function fetchMlbCareerDirect(mlbamId, type, displayName){
+  const group = type === 'pitcher' ? 'pitching' : 'hitting';
+  let name = displayName || `MLBAM ${mlbamId}`;
+  let birthDate = playerBirthDate;
+  try {
+    const pr = await statsApiFetch(`/api/v1/people/${mlbamId}`);
+    if(pr.ok){
+      const people = (await pr.json()).people || [];
+      if(people[0]?.fullName) name = people[0].fullName;
+      if(people[0]?.birthDate){
+        birthDate = people[0].birthDate;
+        playerBirthDate = birthDate;
+      }
+    }
+  } catch(_){}
+
+  const splits = await fetchMlbYearSplits(mlbamId, group);
+  if(!splits.length) throw new Error('MLB.com career lookup failed');
+  // Prefetch season rosters so logos / teamMeta resolve for historical abbrs
+  const seasonYears=[...new Set(splits.map(s=>clampSeasonYear(s.season)).filter(Boolean))];
+  await Promise.all(seasonYears.map(y=>fetchTeamsForSeason(y).catch(()=>[])));
+  const seasons = [];
+  for(const split of splits){
+    const sport = (split.sport || {}).abbreviation || 'MLB';
+    if(sport && sport !== 'MLB') continue;
+    const season = split.season;
+    if(!season) continue;
+    const team = resolveTeamAbbr(split.team, season) || '';
+    if(!isRealTeamAbbr(team)) continue;
+    const lg = resolveLeagueAbbr(split.league, team, season);
+    const stat = split.stat || {};
+    const age = ageOnJuly1(birthDate, season);
+    const teamId = (split.team && split.team.id) ? split.team.id : (teamMeta(team, season)||{}).id;
+    const base = { season, team, lg, ...(teamId?{teamId}:{}) , ...(age!=='' ? { age } : {}) };
+    if(type === 'batter'){
+      seasons.push({
+        ...base,
+        G: Number(stat.gamesPlayed||0)||0,
+        PA: Number(stat.plateAppearances||0)||0,
+        AB: Number(stat.atBats||0)||0,
+        R: Number(stat.runs||0)||0,
+        H: Number(stat.hits||0)||0,
+        '2B': Number(stat.doubles||0)||0,
+        '3B': Number(stat.triples||0)||0,
+        HR: Number(stat.homeRuns||0)||0,
+        RBI: Number(stat.rbi||0)||0,
+        SB: Number(stat.stolenBases||0)||0,
+        CS: Number(stat.caughtStealing||0)||0,
+        BB: Number(stat.baseOnBalls||0)||0,
+        SO: Number(stat.strikeOuts||0)||0,
+        HBP: Number(stat.hitByPitch||0)||0,
+        SF: Number(stat.sacFlies||0)||0,
+        SH: Number(stat.sacBunts||0)||0,
+        GIDP: Number(stat.groundIntoDoublePlay||0)||0,
+        IBB: Number(stat.intentionalWalks||0)||0,
+      });
+  } else {
+      seasons.push({
+        ...base,
+        W: Number(stat.wins||0)||0,
+        L: Number(stat.losses||0)||0,
+        G: Number(stat.gamesPlayed||0)||0,
+        GS: Number(stat.gamesStarted||0)||0,
+        GF: Number(stat.gamesFinished||0)||0,
+        CG: Number(stat.completeGames||0)||0,
+        SHO: Number(stat.shutouts||0)||0,
+        SV: Number(stat.saves||0)||0,
+        IP: stat.inningsPitched || 0,
+        H: Number(stat.hits||0)||0,
+        R: Number(stat.runs||0)||0,
+        ER: Number(stat.earnedRuns||0)||0,
+        HR: Number(stat.homeRuns||0)||0,
+        BB: Number(stat.baseOnBalls||0)||0,
+        IBB: Number(stat.intentionalWalks||0)||0,
+        SO: Number(stat.strikeOuts||0)||0,
+        HBP: Number(stat.hitBatsmen||stat.hitByPitch||0)||0,
+        BK: Number(stat.balks||0)||0,
+        WP: Number(stat.wildPitches||0)||0,
+      });
+    }
+  }
+  if(!seasons.length) throw new Error('No MLB.com seasons returned');
+  return {
+    bbref_id: '',
+    name,
+    player_type: type,
+    url: `https://www.mlb.com/player/${mlbamId}`,
+    seasons,
+    source: 'mlb-statsapi',
+  };
+}
+
+async function fetchCareerPayload(type){
+  // Prefer MLB Stats API (reliable) before BBRef backend
+  if(brefSelected.mlbam_id){
+    try {
+      const mlb = await fetchMlbCareerDirect(brefSelected.mlbam_id, type, brefSelected.name);
+      if(mlb?.seasons?.length) return mlb;
+    } catch(_){}
+  }
+  try {
+    const params=new URLSearchParams({type});
+    if(brefSelected.bbref_id) params.set('bbref_id', brefSelected.bbref_id);
+    if(brefSelected.mlbam_id) params.set('mlbam_id', String(brefSelected.mlbam_id));
+    const res=await fetch(apiUrl(`/players/bref-career?${params}`));
+    const body=await res.json().catch(()=>({}));
+    if(res.ok && body.seasons?.length) return body;
+  } catch(_){}
+  return null;
+}
+
+/** Keep era-correct abbreviations (MON, OAK, FLA…) — do not modernize. */
+function cleanTeamAbbr(team){
+  return String(team||'').trim().toUpperCase().replace(/[^A-Z]/g,'');
+}
+function seasonImportRows(seasons){
+  const byYear=new Map();
+  for(const s of seasons||[]){
+    const year=String(s.season||'');
+    if(!year) continue;
+    const team=cleanTeamAbbr(s.team);
+    if(!isRealTeamAbbr(team)) continue;
+    const list=byYear.get(year)||[];
+    list.push({...s, team});
+    byYear.set(year,list);
+  }
+  const out=[];
+  for(const year of [...byYear.keys()].sort((a,b)=>Number(a)-Number(b))){
+    const list=byYear.get(year);
+    if(list.length===1){ out.push(list[0]); continue; }
+    // Drop any row that is exactly the sum of the other team splits (combined duplicate)
+    const kept=list.filter(s=>{
+      const others=list.filter(o=>o!==s);
+      if(others.length<1) return true;
+      const sumG=others.reduce((a,o)=>a+(Number(o.G)||0),0);
+      const g=Number(s.G)||0;
+      if(sumG>0 && g===sumG) return false;
+      const sumPA=others.reduce((a,o)=>a+(Number(o.PA)||0),0);
+      const pa=Number(s.PA)||0;
+      if(sumPA>0 && pa===sumPA) return false;
+      return true;
+    });
+    out.push(...(kept.length?kept:list).sort((a,b)=>(Number(b.G)||0)-(Number(a.G)||0)));
+  }
+  return out;
+}
+
+function seasonsToRows(payload, modeKey, awardsByYear){
+  const sumK = modeKey==='bat' ? BAT_SUM : PIT_SUM;
+  const rows=[];
+  const awardsUsed=new Set();
+  for(const s of seasonImportRows(payload?.seasons||[])){
+    const row={season:String(s.season||'')};
+    Object.keys(s).forEach(k=>{
+      if(k==='season') return;
+      if(s[k]===null||s[k]===undefined||s[k]==='') return;
+      row[k]=s[k];
+    });
+    sumK.forEach(k=>{ if(row[k]===undefined||row[k]===null||row[k]==='') row[k]=0; });
+    if(modeKey==='bat'){
+      ['CS','GIDP','HBP','SH','SF','IBB'].forEach(k=>{ if(row[k]===undefined||row[k]===null||row[k]==='') row[k]=0; });
+    } else {
+      ['GF','CG','SHO','R','IBB','HBP','BK','WP'].forEach(k=>{ if(row[k]===undefined||row[k]===null||row[k]==='') row[k]=0; });
+    }
+    row.team = cleanTeamAbbr(row.team) || '';
+    if(!row.teamId){
+      const meta=teamMeta(row.team, row.season);
+      if(meta?.id) row.teamId=meta.id;
+    }
+    row.lg = row.lg || teamLeague(row.team, row.season) || '';
+    if((row.age===undefined||row.age===null||row.age==='') && playerBirthDate){
+      const a=ageOnJuly1(playerBirthDate, row.season);
+      if(a!=='') row.age=a;
+    }
+    const awards = awardsByYear?.[row.season];
+    if(awards?.length && !awardsUsed.has(row.season)){
+      row.Awards = awards.join(', ');
+      awardsUsed.add(row.season);
+    } else {
+      row.Awards = '';
+    }
+    rows.push(row);
+  }
+  return rows;
+}
+
+function mlbStudioHeadshot(mlbamId){
+  // No generic fallback in the URL — missing photos should 404 so we can use BBRef
+  return `https://img.mlbstatic.com/mlb-photos/image/upload/w_512,q_auto:best,f_png/v1/people/${mlbamId}/headshot/silo/current`;
+}
+function mlbStudioHeadshotSafe(mlbamId){
+  return `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:silo:current.png/w_512,q_auto:best,f_png/v1/people/${mlbamId}/headshot/silo/current`;
+}
+function setAvatarWithFallback(urls){
+  const el=document.getElementById('avatar');
+  if(!el) return;
+  const list=(urls||[]).filter(Boolean);
+  let i=0;
+  const tryNext=()=>{
+    if(i>=list.length){
+      playerImg='';
+      el.innerHTML='Add photo';
+      return;
+    }
+    const url=list[i++];
+    const img=new Image();
+    img.referrerPolicy='no-referrer';
+    img.onload=()=>{
+      // Reject near-empty / broken loads
+      if(img.naturalWidth<20 || img.naturalHeight<20){ tryNext(); return; }
+      playerImg=url;
+      el.innerHTML=`<img src="${url}" alt="avatar" referrerpolicy="no-referrer">`;
+    };
+    img.onerror=tryNext;
+    img.src=url;
+  };
+  tryNext();
+}
+async function resolveBrefHeadshot(bbrefId, mlbamId){
+  const params=new URLSearchParams();
+  if(bbrefId) params.set('bbref_id', bbrefId);
+  if(mlbamId) params.set('mlbam_id', String(mlbamId));
+  if(!params.toString()) return '';
+  try{
+    const res=await fetch(apiUrl(`/players/bref-headshot?${params}`));
+    if(!res.ok) return '';
+    const body=await res.json();
+    return body.headshot_url||'';
+  }catch(_){ return ''; }
+}
+async function applyImportedPlayerPhoto(batPayload, pitPayload){
+  const mid=brefSelected?.mlbam_id || null;
+  const bbref=batPayload?.bbref_id || pitPayload?.bbref_id || brefSelected?.bbref_id || '';
+  // Only treat real BBRef portrait URLs as headshots — MLB studio URLs on search hits
+  // used to short-circuit this and skip the BBRef fetch (then the generic silo "won").
+  const isBrefPhoto=u=>/baseball-reference\.com/i.test(String(u||''));
+  let brefShot=[batPayload?.headshot_url, pitPayload?.headshot_url, brefSelected?.headshot_url]
+    .find(isBrefPhoto) || '';
+  if(!brefShot && (bbref || mid)){
+    brefShot=await resolveBrefHeadshot(bbref, mid);
+  }
+  const urls=[];
+  if(mid){
+    urls.push(mlbStudioHeadshot(mid));
+    urls.push(`https://midfield.mlbstatic.com/v1/people/${mid}/spots/120`);
+  }
+  if(brefShot) urls.push(brefShot);
+  // Generic silo last — only after BBRef, so retired/no-photo players get a real portrait
+  if(mid) urls.push(mlbStudioHeadshotSafe(mid));
+  setAvatarWithFallback(urls);
+}
+async function attachTeamIdsForRows(rows){
+  const years=[...new Set((rows||[]).map(r=>clampSeasonYear(r.season)))];
+  await Promise.all(years.map(y=>fetchTeamsForSeason(y).catch(()=>[])));
+  (rows||[]).forEach(r=>{
+    if(!r.team) return;
+    const meta=teamMeta(r.team, r.season);
+    if(meta?.id) r.teamId=meta.id;
+    if(!r.lg) r.lg=teamLeague(r.team, r.season)||r.lg||'';
+  });
+}
+function mlbActionBanner(mlbamId){
+  return `https://img.mlbstatic.com/mlb-photos/image/upload/t_16x9/t_w2208/v1/people/${mlbamId}/action/hero/current`;
+}
+const DEFAULT_BANNER='https://midfield.mlbstatic.com/v1/people/0/spots/1200';
+function showDefaultBanner(){
+  const wrap=document.getElementById('playerBanner');
+  const img=document.getElementById('playerBannerImg');
+  const hero=document.getElementById('playerHero');
+  if(!wrap||!img) return;
+  img.onerror=null;
+  img.onload=null;
+  img.src=DEFAULT_BANNER;
+  img.alt='';
+  wrap.classList.add('show');
+  wrap.setAttribute('aria-hidden','false');
+  hero?.classList.add('has-banner');
+}
+function setPlayerBanner(mlbamId){
+  const wrap=document.getElementById('playerBanner');
+  const img=document.getElementById('playerBannerImg');
+  const hero=document.getElementById('playerHero');
+  if(!wrap||!img) return;
+  if(!mlbamId){
+    showDefaultBanner();
+    return;
+  }
+  const urls=[
+    `https://img.mlbstatic.com/mlb-photos/image/upload/t_16x9/t_w2208/v1/people/${mlbamId}/action/hero/current`,
+    `https://img.mlbstatic.com/mlb-photos/image/upload/w_1800,q_auto:best/v1/people/${mlbamId}/action/hero/current`,
+    `https://midfield.mlbstatic.com/v1/people/${mlbamId}/spots/1200`,
+    `https://img.mlbstatic.com/mlb-photos/image/upload/w_1800,q_auto:best/v1/people/${mlbamId}/action/1/current`,
+  ];
+  let i=0;
+  const tryNext=()=>{
+    if(i>=urls.length){
+      showDefaultBanner();
+      return;
+    }
+    img.onerror=()=>{ i+=1; tryNext(); };
+    img.onload=()=>{
+      wrap.classList.add('show');
+      wrap.setAttribute('aria-hidden','false');
+      hero?.classList.add('has-banner');
+    };
+    img.src=urls[i];
+  };
+  tryNext();
+  img.alt='';
+}
+
+
+function expandBrefBar(){ /* search strip is always visible */ }
+function toggleBrefBar(){ /* no-op — kept for any leftover callers */ }
+
+function setBrefStatus(msg){
+  const el=document.getElementById('brefStatus');
+  if(el) el.textContent=msg;
+}
+
+function ensureBrefPortal(){
+  if(brefPortal && document.body.contains(brefPortal)) return brefPortal;
+  brefPortal = document.createElement('div');
+  brefPortal.id = 'brefResultsPortal';
+  brefPortal.className = 'bref-results-portal';
+  document.body.appendChild(brefPortal);
+  return brefPortal;
+}
+
+function positionBrefPortal(){
+  const portal = ensureBrefPortal();
+  const input = document.getElementById('brefSearch');
+  if(!input) return;
+  const r = input.getBoundingClientRect();
+  portal.style.left = `${Math.max(12, r.left)}px`;
+  portal.style.top = `${r.bottom + 6}px`;
+  portal.style.width = `${Math.max(r.width, 360)}px`;
+}
+
+function closeBrefResults(){
+  const portal = ensureBrefPortal();
+  portal.classList.remove('open');
+  portal.innerHTML = '';
+}
+
+function hitYearsLabel(p){
+  const from=p.mlb_debut || '?';
+  const to=p.active ? 'present' : (p.mlb_last || '?');
+  return `${from}–${to}`;
+}
+
+function openBrefResults(html){
+  const portal = ensureBrefPortal();
+  positionBrefPortal();
+  portal.innerHTML = html;
+  portal.classList.add('open');
+  portal.querySelectorAll('.hit[data-i]').forEach(el => {
+    el.addEventListener('mousedown', e => {
+      e.preventDefault();
+      selectBrefHit(Number(el.getAttribute('data-i')));
+    });
+  });
+}
+
+function escapeHtml(s){
+  return String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderBrefHits(hits){
+  if(!hits.length){
+    openBrefResults('<div class="hit-empty">No players found. Try a last name (e.g. Stanton) or full name.</div>');
+    return;
+  }
+  openBrefResults(hits.map((p,i)=>{
+    const shot=p.headshot_url || (p.mlbam_id ? mlbStudioHeadshotSafe(p.mlbam_id) : '');
+    const meta=[p.team, hitYearsLabel(p)].filter(Boolean).join(' · ');
+    return `<div class="hit${i===0?' active':''}" data-i="${i}">
+      ${shot?`<img class="hit-shot" src="${escapeHtml(shot)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity=.25">`:''}
+      <div class="hit-body">
+        <span class="hit-name">${escapeHtml(p.name)}</span>
+        <span class="meta">${escapeHtml(meta)}</span>
+      </div>
+      <span class="hit-pos">${escapeHtml(p.position||(p._pitcher?'P':''))}</span>
+    </div>`;
+  }).join(''));
+}
+
+let brefDebounceTimer=null;
+let brefSearchToken=0;
+
+async function searchBrefPlayers(){
+  const q=(document.getElementById('brefSearch').value||'').trim();
+  if(q.length<2){
+    closeBrefResults();
+    setBrefStatus('Type a name to import batting & pitching careers');
+    return;
+  }
+  const token=++brefSearchToken;
+  setBrefStatus('Searching…');
+  brefActiveIdx=0;
+  openBrefResults('<div class="hit-empty">Searching MLB…</div>');
+  try{
+    const type=mode==='bat'?'batter':'pitcher';
+    let hits = [];
+    try { hits = await searchMlbDirect(q, type); } catch(_){}
+    if(!hits.length){
+      const backend = await searchPlayersBackend(q, type);
+      hits = rankPlayerHits(backend.map(p=>({
+        ...p,
+        _pitcher: p.player_type==='pitcher' || p.position==='P',
+        active: !!p.active,
+      })), q).slice(0, 15);
+    }
+    if(token!==brefSearchToken) return;
+    brefHits=hits;
+    renderBrefHits(brefHits);
+    if(!brefHits.length){
+      setBrefStatus('No matches — try last name only');
+      return;
+    }
+    setBrefStatus(`${brefHits.length} match${brefHits.length===1?'':'es'} — click or press Enter`);
+  }catch(e){
+    if(token!==brefSearchToken) return;
+    setBrefStatus(e.message||'Search failed');
+    openBrefResults(`<div class="hit-empty">${escapeHtml(e.message||'Search failed')}</div>`);
+  }
+}
+
+function selectBrefHit(i){
+  brefSelected=brefHits[i]||null;
+  brefActiveIdx=i;
+  if(!brefSelected) return;
+  document.getElementById('brefSearch').value=brefSelected.name;
+  closeBrefResults();
+  if(!brefSelected.bbref_id && !brefSelected.mlbam_id){
+    setBrefStatus('Selected player has no lookup ids');
+    return;
+  }
+  void importSelectedBref();
+}
+
+async function importSelectedBref(){
+  if(!brefSelected||(!brefSelected.bbref_id && !brefSelected.mlbam_id)){
+    setBrefStatus('Search and select a player first');
+    return;
+  }
+  setBrefStatus(`Loading ${brefSelected.name}'s career (hitting + pitching)…`);
+  try{
+    const awardsByYear = brefSelected.mlbam_id ? await fetchMlbAwards(brefSelected.mlbam_id) : {};
+    const [batPayload, pitPayload] = await Promise.all([
+      fetchCareerPayload('batter').catch(()=>null),
+      fetchCareerPayload('pitcher').catch(()=>null),
+    ]);
+    if(!batPayload?.seasons?.length && !pitPayload?.seasons?.length){
+      throw new Error('No seasons returned');
+    }
+    applyBrefCareerDual(batPayload, pitPayload, awardsByYear);
+    const nBat = batPayload?.seasons?.length || 0;
+    const nPit = pitPayload?.seasons?.length || 0;
+    const via = (batPayload||pitPayload)?.source==='mlb-statsapi' ? 'MLB.com' : 'Baseball-Reference';
+    setBrefStatus(`Imported bat ${nBat} / pit ${nPit} season rows via ${via}`);
+    toast(via==='MLB.com' ? 'CAREER LOADED VIA MLB.COM' : 'BBREF CAREER LOADED');
+  }catch(e){
+    setBrefStatus(e.message||'Import failed');
+    toast('IMPORT FAILED');
+  }
+}
+
+function uniqueSeasonCount(rows){
+  return new Set((rows||[]).map(r=>String(r.season||'')).filter(Boolean)).size;
+}
+
+function pickModeBySeasonVolume(batRows, pitRows){
+  const batN=uniqueSeasonCount(batRows);
+  const pitN=uniqueSeasonCount(pitRows);
+  if(pitN>batN) return 'pit';
+  if(batN>pitN) return 'bat';
+  // Tie: prefer more rows, then batting
+  const batR=(batRows||[]).length;
+  const pitR=(pitRows||[]).length;
+  if(pitR>batR) return 'pit';
+  return 'bat';
+}
+
+function applyBrefCareerDual(batPayload, pitPayload, awardsByYear){
+  const name = batPayload?.name || pitPayload?.name || brefSelected?.name || '';
+  setPlayerName(name);
+  const yearSet=new Set();
+  [...(batPayload?.seasons||[]), ...(pitPayload?.seasons||[])].forEach(s=>{
+    if(s?.season) yearSet.add(clampSeasonYear(s.season));
+  });
+  const mid = brefSelected?.mlbam_id;
+  setEditLocked(true);
+  Promise.all([...yearSet].map(y=>fetchTeamsForSeason(y).catch(()=>[])))
+    .then(()=>{
+      data.bat.rows = seasonsToRows(batPayload, 'bat', awardsByYear || {});
+      data.pit.rows = seasonsToRows(pitPayload, 'pit', awardsByYear || {});
+      mode = pickModeBySeasonVolume(data.bat.rows, data.pit.rows);
+      setModeButtons(mode);
+      return Promise.all([
+        attachTeamIdsForRows(data.bat.rows),
+        attachTeamIdsForRows(data.pit.rows),
+        applyImportedPlayerPhoto(batPayload, pitPayload),
+      ]);
+    })
+    .finally(()=>{
+      setPlayerBanner(mid || null);
+      render();
+      autosave();
+    });
+}
+
+function applyBrefCareer(payload){
+  applyBrefCareerDual(
+    payload?.player_type==='pitcher' ? null : payload,
+    payload?.player_type==='pitcher' ? payload : null,
+    {}
+  );
+}
+
+document.getElementById('brefSearch')?.addEventListener('focus',()=>{
+  if(brefHits.length) renderBrefHits(brefHits);
+});
+document.getElementById('brefSearch')?.addEventListener('input',()=>{
+  brefSelected=null;
+  clearTimeout(brefDebounceTimer);
+  const q=(document.getElementById('brefSearch').value||'').trim();
+  if(q.length<2){ closeBrefResults(); setBrefStatus('Type a name to import batting & pitching careers'); return; }
+  brefDebounceTimer=setTimeout(searchBrefPlayers, 200);
+});
+document.getElementById('brefSearch')?.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    e.preventDefault();
+    if(ensureBrefPortal().classList.contains('open') && brefHits.length){
+      selectBrefHit(brefActiveIdx);
+    } else {
+      clearTimeout(brefDebounceTimer);
+      searchBrefPlayers();
+    }
+  } else if(e.key==='ArrowDown' && brefHits.length){
+    e.preventDefault();
+    brefActiveIdx=Math.min(brefHits.length-1, brefActiveIdx+1);
+    ensureBrefPortal().querySelectorAll('.hit').forEach((el,i)=>el.classList.toggle('active', i===brefActiveIdx));
+  } else if(e.key==='ArrowUp' && brefHits.length){
+    e.preventDefault();
+    brefActiveIdx=Math.max(0, brefActiveIdx-1);
+    ensureBrefPortal().querySelectorAll('.hit').forEach((el,i)=>el.classList.toggle('active', i===brefActiveIdx));
+  } else if(e.key==='Escape'){
+    closeBrefResults();
+  }
+});
+window.addEventListener('resize', ()=>{ if(ensureBrefPortal().classList.contains('open')) positionBrefPortal(); });
+window.addEventListener('scroll', ()=>{ if(ensureBrefPortal().classList.contains('open')) positionBrefPortal(); }, true);
+document.addEventListener('click',e=>{
+  const bar=document.getElementById('brefBar');
+  const portal=ensureBrefPortal();
+  if(bar && !bar.contains(e.target) && !portal.contains(e.target)) closeBrefResults();
+});
+
+/* ===== INIT ===== */
+(function init(){
+  bindPlayerName();
+  const saved=localStorage.getItem('shutout_engine_data');
+  if(saved){
+    try{
+      const parsed=JSON.parse(saved);
+      if(parsed.data) data=parsed.data;
+      if(parsed.baseVals) baseVals=parsed.baseVals;
+      if(parsed.playerName) setPlayerName(parsed.playerName);
+      if(parsed.playerImg){
+        playerImg=parsed.playerImg;
+        document.getElementById('avatar').innerHTML=`<img src="${playerImg}">`;
+      }
+      if(parsed.mode) mode=parsed.mode;
+    }catch(e){}
+  }
+  setModeButtons(mode);
+  const hasImportedRows = !!(data.bat.rows.length || data.pit.rows.length);
+  setEditLocked(hasImportedRows);
+  showDefaultBanner();
+  render();
+  requestAnimationFrame(()=>syncModeInk(false));
+  fetchTeamsForSeason(new Date().getFullYear());
+  loadHistoricalLogos().then(()=>{
+    // Re-render team logos once era index is ready
+    (data[mode]?.rows||[]).forEach((_,i)=>refreshTeamCell(i));
+  });
+  window.addEventListener('resize', ()=>{
+    syncModeInk(false);
+    const bMenu=document.getElementById('baselineBar');
+    const bBtn=document.getElementById('baselinesBtn');
+    if(bMenu?.classList.contains('open')) positionFlyout(bBtn, bMenu);
+    const ioMenu=document.getElementById('ioMenu');
+    const ioBtn=document.getElementById('ioBtn');
+    if(ioMenu?.classList.contains('open')) positionFlyout(ioBtn, ioMenu);
+  });
+
+  // Import handoff from Players encyclopedia (query + sessionStorage)
+  try {
+    const params = new URLSearchParams(location.search);
+    let mid = Number(params.get('mlbam') || params.get('id') || 0);
+    let name = params.get('name') || '';
+    let type = params.get('type') || '';
+    if(!mid){
+      const raw = sessionStorage.getItem('shutout-career-import');
+      if(raw){
+        const handoff = JSON.parse(raw);
+        mid = Number(handoff.mlbam_id || handoff.id || 0);
+        name = handoff.name || name;
+        type = handoff.type || type;
+        sessionStorage.removeItem('shutout-career-import');
+      }
+    }
+    if(mid){
+      // Mode is chosen after import by which side has more seasons
+      brefSelected = {
+        mlbam_id: mid,
+        name: name || `Player ${mid}`,
+        bbref_id: '',
+        player_type: (type === 'pitcher' || type === 'pit') ? 'pitcher' : 'batter',
+        headshot_url: mlbStudioHeadshot(mid),
+      };
+      document.getElementById('brefSearch').value = brefSelected.name;
+      setBrefStatus(`Importing ${brefSelected.name}…`);
+      void importSelectedBref();
+    }
+  } catch(_){}
+})();
+</script>
+</body>
+</html>

@@ -45,6 +45,7 @@
     <button class="tab" data-tab="scores"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M7.2 5.6c1.6 1.8 2.4 4 2.4 6.4s-.8 4.6-2.4 6.4M16.8 5.6c-1.6 1.8-2.4 4-2.4 6.4s.8 4.6 2.4 6.4"/></svg>Scores</button>
     <button class="tab" data-tab="standings"><svg viewBox="0 0 24 24"><path d="M5 19.5V11M12 19.5V5M19 19.5v-6"/></svg>Standings</button>
     <button class="tab" data-tab="rosters"><svg viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="16.8" cy="9.5" r="2.5"/><path d="M15.6 14.2c2.6-.3 4.5 1.3 5 4.3"/></svg>Rosters</button>
+      <a class="tab desk" href="career/"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M9 9.5v10M3.5 14.5h17"/></svg>Career Builder</a>
   </nav>
   <div id="sheet"><div class="s-body"></div>
     <div class="s-nav"><button class="s-back">‹ Back</button><button class="s-close" aria-label="Close">×</button></div></div>
@@ -376,7 +377,17 @@
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
   Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); LiveBar.init(); Search.init(); HotStove.init();
-  setTab(load("tab") || "news");
+  // Deep links from the taskbar widget, notifications and shortcuts: ?tab=scores, ?game=PK, ?player=ID, ?team=ID
+  const qs = new URLSearchParams(location.search);
+  setTab(["myteam", "news", "scores", "standings", "rosters"].includes(qs.get("tab")) ? qs.get("tab") : load("tab") || "news");
+  if (+qs.get("game")) Sheet.open("game", { pk: +qs.get("game") });
+  else if (+qs.get("player")) Sheet.open("player", { id: +qs.get("player") });
+  else if (+qs.get("team")) Sheet.open("team", { id: +qs.get("team") });
+  if (/[?&](game|player|team|tab)=/.test(location.search)) history.replaceState(history.state, "", location.pathname);
+
+  // The service worker makes the app installable and carries push alerts. It never caches pages,
+  // so updates still arrive through the version check below.
+  if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => {});
 
   // Coming back to the app after a while: refresh news right away.
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { refresh(); checkVersion(); } });

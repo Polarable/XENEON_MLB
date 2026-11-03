@@ -122,7 +122,8 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
         <div class="p-id"><h1>${esc(p.fullName)}</h1>
           ${team ? `<div class="p-team lnk" data-team="${team.id}">${logoImg(team)}${esc(fullTeamName(p.currentTeam) || team.name)}</div>` : ""}
           <div class="p-num">${p.primaryNumber ? `#${esc(p.primaryNumber)} · ` : ""}${esc(p.primaryPosition?.abbreviation || "")}${p.active === false ? " · Retired" : ""}</div>
-          ${statusLine()}</div></div>
+          ${statusLine()}
+          ${typeof IS_MOBILE !== "undefined" && IS_MOBILE ? `<a class="p-cb" href="career/?mlbam=${id}&name=${encodeURIComponent(p.fullName || "")}&type=${groups[0] === "pitching" ? "pitcher" : "batter"}">Open in Career Builder</a>` : ""}</div></div>
       ${statHero()}
       <div class="p-bio">${bio.map((b) => `<div>${b}</div>`).join("")}</div>
       <div class="p-sum"></div>

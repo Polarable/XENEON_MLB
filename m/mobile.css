@@ -422,3 +422,63 @@ body.compact .gcard:not(.live) .foot { display: none; }
 .yc-parts > div { display: grid; grid-template-columns: 90px repeat(4, 1fr); align-items: center; height: 40px; font-size: 16px; color: var(--text-3); }
 .yc-parts .lnk { display: inline-flex; align-items: center; gap: 6px; color: var(--text-2); font-weight: 600; } .yc-parts img { width: 20px; height: 20px; }
 .yc-parts span { display: flex; gap: 6px; align-items: baseline; } .yc-parts em { font-style: normal; font-size: 12px; }
+
+/* Player page link out to the Career Builder */
+.p-cb { display: inline-flex; align-items: center; height: 34px; margin-top: 10px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18); color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; background: rgba(0,0,0,.35); }
+
+.set-link { display: flex; flex-direction: column; gap: 3px; margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: var(--surface-2); color: var(--text); text-decoration: none; }
+.set-link b { font-size: 16px; font-weight: 600; } .set-link em { font-style: normal; font-size: 13px; color: var(--text-3); }
+#m-tabs .tab.desk { display: none; text-decoration: none; }
+
+/* ---------- Desktop app: sidebar on the left, one centered column, pages as a panel ---------- */
+@media (min-width: 1024px) {
+  :root { --mz: .86; --side-w: 236px; --col: 1180px; --top-h: 64px; }
+  html, body { -webkit-user-select: text; user-select: text; }
+  ::-webkit-scrollbar { display: block; width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 5px; }
+  #m-top { padding: 10px 28px 10px 24px; border-bottom: 1px solid var(--line); }
+  .m-brand img { height: 32px; }
+  #m-tabs { top: var(--top-h); bottom: 0; right: auto; width: var(--side-w); flex-direction: column; gap: 4px; padding: 18px 12px;
+    border-top: 0; border-right: 1px solid var(--line); background: #000; }
+  #m-tabs .tab { flex: none; flex-direction: row; justify-content: flex-start; gap: 14px; height: 46px; padding: 0 14px; border-radius: 12px;
+    font-size: 15px; font-weight: 500; color: var(--text-2); }
+  #m-tabs .tab:hover { background: rgba(255,255,255,.05); color: var(--text); }
+  #m-tabs .tab.on { background: rgba(255,255,255,.09); color: var(--text); }
+  #m-tabs .tab svg, #m-tabs .tab .mt-tab-logo img { width: 22px; height: 22px; }
+  #m-tabs .tab.desk { display: flex; margin-top: auto; }
+  #m-head, #ctx, #m-main { margin-left: var(--side-w); }
+  #m-head, #ctx, #m-main > .view { max-width: var(--col); margin-right: auto; }
+  #m-head, #ctx { padding-left: 40px; padding-right: 40px; }
+  #m-head { padding-top: 26px; }
+  #ctx { padding-left: calc(40px / var(--mz)); }
+  #m-main { padding: 0 24px 60px; }
+  body.has-livebar #m-main { padding-bottom: 110px; }
+  #glow { left: var(--side-w); }
+
+  /* News: big lead story beside a column of rows, then a grid */
+  #m-news { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 4px 16px 0; }
+  #m-news > .mcard.hero { grid-column: 1 / -1; aspect-ratio: auto; height: 460px; max-height: none; }
+  #m-news > .mcard.hero h2 { font-size: 36px; max-width: 900px; }
+  #m-news > .mcard.hero .preview { font-size: 17px; max-width: 900px; }
+  #m-news > :not(.mcard) { grid-column: 1 / -1; }
+  .mcard { cursor: pointer; }
+  .mcard:hover { transform: translateY(-2px); }
+
+  /* Pages open as a panel beside the sidebar */
+  #sheet { left: var(--side-w); background: #000; border-left: 1px solid var(--line); }
+  #sheet .s-nav { padding: 14px 24px; }
+  #sheet .s-body > * { max-width: calc(var(--col) / var(--mz)); margin-left: auto; margin-right: auto; }
+
+  /* The story reader as a centered column over a dimmed app */
+  #reader { left: var(--side-w); background: rgba(0,0,0,.92); }
+  #reader .r-photo, #reader .r-main { max-width: 860px; margin-left: auto; margin-right: auto; }
+  #reader .r-photo { height: 440px; border-radius: 0 0 18px 18px; overflow: hidden; }
+  #reader h2 { font-size: 40px; }
+  #reader .r-body { font-size: 18px; }
+  #reader .r-close { right: 28px; top: 14px; }
+
+  #livebar { left: calc(var(--side-w) + 24px); right: auto; width: min(720px, calc(100vw - var(--side-w) - 48px)); bottom: 20px; }
+  #picker { left: auto; right: 24px; width: 640px; }
+  #ptr { display: none !important; }
+}
