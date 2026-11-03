@@ -56,12 +56,12 @@
   #updated { font-size: 18px; font-weight: 500; line-height: 1; color: var(--text-3); font-variant-numeric: tabular-nums; }
 
   /* Card row: cards are laid out by script so the leftmost one can grow into the headliner as you scroll. */
-  #row { position: absolute; top: 0; left: 0; right: 0; height: 620px; overflow: hidden; touch-action: none; cursor: grab;
+  #row { position: absolute; top: -16px; left: 0; right: 0; height: 636px; overflow: hidden; touch-action: none; cursor: grab;
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%);
             mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%); }
   #row.dragging { cursor: grabbing; }
 
-  .card { position: absolute; top: 24px; left: 0; width: 556px; height: 556px; border-radius: var(--radius); --w: 0;
+  .card { position: absolute; top: 24px; left: 0; width: 592px; height: 592px; border-radius: var(--radius); --w: 0;
     color: inherit; overflow: hidden; isolation: isolate; cursor: pointer;
     opacity: 0;
     transition: transform .15s var(--ease); }
@@ -94,12 +94,12 @@
   .new { padding: 2px 8px; border-radius: 6px; background: rgba(255,255,255,.12); color: var(--text);
     font-size: 14px; font-weight: 600; letter-spacing: 1px; }
   /* --w runs 0 (regular card) to 1 (headliner) and scales the headline and the preview text in between. */
-  .card h2 { font-size: calc(36px + 18px * var(--w)); font-weight: 600; line-height: calc(1.14 - .08 * var(--w));
+  .card h2 { font-size: calc(38px + 22px * var(--w)); font-weight: 600; line-height: calc(1.14 - .08 * var(--w));
     letter-spacing: calc(-0.6px - 0.6px * var(--w)); max-width: 940px;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-  .card .preview { max-width: 900px; margin-top: calc(16px * var(--w)); max-height: calc(100px * var(--w)); opacity: calc(var(--w) * 1.4 - .4);
-    font-size: 22px; line-height: 1.45; color: var(--text-2); overflow: hidden;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+  .card .preview { max-width: 900px; margin-top: calc(16px * var(--w)); max-height: calc(132px * var(--w)); opacity: calc(var(--w) * 1.4 - .4);
+    font-size: 23px; line-height: 1.45; color: var(--text-2); overflow: hidden;
+    display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
   .card .read { margin-left: auto; color: var(--text-3); font-size: 17px; opacity: var(--w); }
 
   /* Reader: tap a card to read its preview without leaving the widget. */
@@ -261,7 +261,7 @@
   /* ---- Continuous scroll ----
      pos is a fractional card index: 0 = first story is the headliner, 1.5 = halfway between the 2nd and 3rd.
      The card at floor(pos) shrinks from double width as the next one grows, so whatever is leftmost is the headliner. */
-  const LEFT = 40, GAP = 24, BASE = 556, HERO = 1136, PX_PER_CARD = 660;
+  const LEFT = 40, GAP = 24, BASE = 592, HERO = 1208, PX_PER_CARD = 700;
   let list = [], cardEls = [], pos = 0, vel = 0, raf = 0, drag = null, moved = 0;
   const clampPos = (p) => Math.max(0, Math.min(Math.max(0, list.length - 1), p));
 
