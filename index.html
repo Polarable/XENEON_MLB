@@ -36,14 +36,14 @@
 
   /* Header: tab words, team picker, source line. */
   header { position: absolute; top: 36px; left: 40px; right: 40px; height: 56px; display: flex; align-items: center; gap: 44px; }
-  nav { display: flex; align-items: baseline; gap: 32px; }
-  nav .tab { font-size: 44px; font-weight: 600; letter-spacing: -1px; line-height: 1; color: var(--text-4); }
+  nav { display: flex; align-items: center; gap: 32px; height: 56px; }
+  nav .tab { font-size: 44px; font-weight: 600; letter-spacing: -1px; line-height: 56px; color: var(--text-4); }
   nav .tab.on { color: var(--text); }
   #picker-btn { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 22px 0 16px; border-radius: 999px;
     background: rgba(255,255,255,.06); border: 1px solid var(--line-2); color: var(--text);
     font: 500 20px "Inter Tight", sans-serif; cursor: pointer; }
-  #picker-label { display: flex; align-items: center; gap: 10px; }
-  #picker-btn img { width: 26px; height: 26px; }
+  #picker-label { display: flex; align-items: center; gap: 10px; line-height: 1; }
+  #picker-btn img { width: 28px; height: 28px; display: block; }
   #picker-btn .chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
     transform: translateY(-3px) rotate(45deg); margin-left: 2px; opacity: .6; }
   #updated { margin-left: auto; font-size: 18px; font-weight: 500; color: var(--text-3); }
@@ -57,9 +57,17 @@
   #row::-webkit-scrollbar { display: none; }
 
   .card { position: relative; flex: 0 0 520px; height: 520px; border-radius: var(--radius); scroll-snap-align: start;
-    border: 1px solid var(--line); color: inherit; text-decoration: none; overflow: hidden; isolation: isolate; background: var(--surface);
-    opacity: 0; animation: card-in .5s var(--ease) forwards; animation-delay: var(--delay, 0ms);
+    color: inherit; text-decoration: none; overflow: hidden; isolation: isolate;
+    opacity: 0;
     transition: transform .15s var(--ease); }
+  /* Team-color ring: a slowly turning gradient border with a soft glow in the same color. */
+  @property --ring { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+  .card { border: 3px solid transparent;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                conic-gradient(from var(--ring), var(--tc), rgba(var(--tc-rgb), .25) 22%, var(--primary) 40%, var(--tc) 55%, rgba(var(--tc-rgb), .25) 78%, var(--tc)) border-box;
+    box-shadow: 0 0 36px rgba(var(--tc-rgb), .32), 0 14px 40px rgba(0,0,0,.6);
+    animation: card-in .5s var(--ease) forwards var(--delay, 0ms), ring 14s linear infinite; }
+  @keyframes ring { to { --ring: 360deg; } }
   .card.hero { flex-basis: 1064px; }
   .card:active { transform: scale(.98); }
   @keyframes card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
@@ -76,7 +84,7 @@
 
   .card .text { position: absolute; left: 32px; right: 32px; bottom: 30px; }
   .card .kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 19px; font-weight: 500; color: var(--text-2); }
-  .card .kicker::before { content: ""; width: 4px; height: 20px; border-radius: 2px; background: var(--tc); }
+  .card .kicker img { width: 30px; height: 30px; display: block; filter: drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
   .card .kicker .team { color: var(--text); font-weight: 600; }
   .card .kicker .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--text-3); }
   .card .new { padding: 2px 8px; border-radius: 6px; background: rgba(255,255,255,.12); color: var(--text);
@@ -143,7 +151,7 @@
   function save(k, v) { try { localStorage.setItem(k, v); } catch {} }
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return `${n >> 16 & 255}, ${n >> 8 & 255}, ${n & 255}`; };
-  const vars = (t) => `--tc:${t.bright};--tc-rgb:${rgb(t.bright)}`;
+  const vars = (t) => `--tc:${t.bright};--tc-rgb:${rgb(t.bright)};--primary:${t.color}`;
 
   // Scale the 2560x720 stage to fit the iframe.
   function fit() {
@@ -189,7 +197,7 @@
       ${a.image ? `<img class="photo" src="${esc(a.image)}" alt="" onload="this.classList.add('on')" onerror="this.remove()">` : ""}
       <div class="shade"></div>
       <div class="text">
-        <div class="kicker"><span class="team">${esc(t.name)}</span><span class="sep"></span><span class="age" data-d="${esc(a.date)}">${ago(a.date)}</span>${isNew ? `<span class="new">NEW</span>` : ""}</div>
+        <div class="kicker">${logoImg(t)}<span class="team">${esc(t.name)}</span><span class="sep"></span><span class="age" data-d="${esc(a.date)}">${ago(a.date)}</span>${isNew ? `<span class="new">NEW</span>` : ""}</div>
         <h2>${esc(a.title)}</h2>
       </div></a>`;
   }
