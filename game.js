@@ -175,8 +175,8 @@ Sheet.register("game", async (root, { pk }, alive) => {
     // Live games open on Gameday; finished games on the box score (or whatever was picked last).
     if (!view) view = phase === "live" ? "gameday" : load("game-view") || "box";
     if (!views.some(([v]) => v === view)) view = views[0][0];
-    const right = view === "box" ? boxView(ld) : view === "gameday" ? gday.html(feed)
-      : `<div class="pc-grid vscroll">${gday.cards(feed, view === "scoring" ? "scoring" : "all")}</div>`;
+    const right = view === "box" ? boxView(ld) : view === "gameday" ? `<div class="gd-slot"></div>`
+      : `<div class="pc-grid vscroll"></div>`;
     const keep = [...root.querySelectorAll(".vscroll,.hscroll")].map((e) => [e.scrollTop, e.scrollLeft]);
     const home = teamMeta(gd.teams.home);
     root.innerHTML = `<div class="g-left ${phase}" style="${vars(home)}">${scoreboard(gd, ld)}</div>
@@ -184,10 +184,11 @@ Sheet.register("game", async (root, { pk }, alive) => {
     root.querySelectorAll(".vscroll").forEach((e) => dragScroll(e, "y"));
     root.querySelectorAll(".hscroll").forEach((e) => dragScroll(e, "x"));
     [...root.querySelectorAll(".vscroll,.hscroll")].forEach((e, i) => { if (keep[i]) { e.scrollTop = keep[i][0]; e.scrollLeft = keep[i][1]; } });
-    if (view === "gameday") gday.mount(root, feed);
+    if (view === "gameday") gday.mount(root.querySelector(".gd-slot"), feed);
+    else if (view === "scoring" || view === "pbp") gday.renderCards(root.querySelector(".pc-grid"), feed, view === "scoring" ? "scoring" : "all");
     // Tapping a play anywhere shows its at-bat (pitches + clip) on Gameday.
     root.querySelector(".g-main").onclick = (e) => {
-      gday.onClick(e, render, view === "gameday" ? null : () => { view = "gameday"; render(); });
+      gday.onClick(e, () => { view = "gameday"; render(); });
     };
     root.querySelector(".g-tabs").onclick = (e) => {
       const b = e.target.closest("[data-v]"); if (!b) return;
@@ -198,7 +199,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
   feed = await fetchFeed();
   if (!alive()) return;
   render();
-  gday.start(() => alive() && render(), () => alive() && phaseOf(feed.gameData.status) === "live");
+  gday.start(() => alive() && phaseOf(feed.gameData.status) === "live");
 
   // Live games keep themselves current.
   const tick = async () => {
