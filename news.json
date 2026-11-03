@@ -1,6 +1,27 @@
 {
- "updated": "2026-11-03T17:20:33.291Z",
+ "updated": "2026-11-03T17:30:34.916Z",
  "articles": [
+  {
+   "title": "Red Sox Trade Eduardo Rivera To Cardinals",
+   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-to-trade-eduardo-rivera-to-cardinals.html",
+   "date": "2026-11-03T17:17:06.000Z",
+   "teams": [
+    "BOS",
+    "STL"
+   ],
+   "body": [
+    "11:17 am CT: The Red Sox have officially announced the move.",
+    "10:34 am CT: The Red Sox are sending left-hander Eduardo Rivera to the Cardinals, reports Andrew Parker of SoxProspects.com. Boston will receive right-hander Juan Garcia in return.",
+    "Rivera was designated for assignment on Monday as part of Boston’s 40-man roster adjustments. He’s had multiple solid seasons in the minors, but struggled in his first taste of the big leagues this past year. The Red Sox ultimately ran out of space for him on the roster. Rivera will get a shot with a Cardinals squad that has less certainty in the bullpen, particularly from the left side."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/EduardoRivera-1024x683.jpg",
+   "players": [
+    [
+     "Eduardo Rivera",
+     700842
+    ]
+   ]
+  },
   {
    "title": "Mariners Hire Jason Kanzler As Manager",
    "link": "https://www.mlbtraderumors.com/2026/11/mariners-to-hire-jason-kanzler-as-manager.html",
@@ -29,25 +50,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/RJPetit-1024x675.jpg",
    "players": []
-  },
-  {
-   "title": "Red Sox To Trade Eduardo Rivera To Cardinals",
-   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-to-trade-eduardo-rivera-to-cardinals.html",
-   "date": "2026-11-03T16:34:06.000Z",
-   "teams": [
-    "BOS",
-    "STL"
-   ],
-   "body": [
-    "The Red Sox are sending left-hander Eduardo Rivera to the Cardinals, reports Andrew Parker of SoxProspects.com. Boston will receive right-hander Juan Garcia in return."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/EduardoRivera-1024x683.jpg",
-   "players": [
-    [
-     "Eduardo Rivera",
-     700842
-    ]
-   ]
   },
   {
    "title": "Rangers Make Coaching, Front Office Changes",
