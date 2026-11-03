@@ -184,3 +184,21 @@ body.open #panel { display: flex; animation: grow .26s var(--ease); }
   .sb-pitch .ty { display: none; }
 }
 @media (max-width: 340px) { .sb-pitch .bot { display: none; } }
+
+/* Taskbar metrics: match the Windows 11 tray (Segoe UI Variable, 12px text, 24px icons) */
+body { font-family: "Segoe UI Variable Text", "Segoe UI Variable", "Segoe UI", "Inter Tight", system-ui, sans-serif; font-size: 12px; }
+#bar { padding: 0 8px 0 6px; gap: 9px; }
+#bar .mono { height: 22px; }
+.sb-teams { grid-template-columns: 16px auto auto; column-gap: 5px; row-gap: 0; }
+.sb-teams img { width: 16px; height: 16px; }
+.sb-teams .ab { font-size: 12px; font-weight: 600; }
+.sb-teams .sc { font-size: 12.5px; font-weight: 700; min-width: 14px; }
+.sb-inn b, .cnt .c { font-size: 12px; }
+.bases { width: 28px; height: 21px; }
+.outs i { width: 5px; height: 5px; }
+.sb-pitch .mph { font-size: 12.5px; }
+.sb-pitch .top, .sb-pitch .bot, .sb-pre span { font-size: 12px; }
+.sep { height: 22px; }
+.nw img { width: 18px; height: 18px; }
+.nw .hd { font-size: 12px; } .nw .mt { font-size: 11.5px; }
+#callout b { font-size: 14px; } #callout span { font-size: 12px; } #callout .co-in { padding-left: 36px; }
