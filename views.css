@@ -349,7 +349,18 @@ table.summary td.lbl { text-align: left; font-size: 16px; color: var(--text-3); 
 .g-runs.bump, .gcard .sc.bump { animation: bump .9s var(--ease); }
 @keyframes bump { 0% { transform: scale(1); } 30% { transform: scale(1.35); color: #ffd25a; text-shadow: 0 0 24px rgba(255,210,90,.7); } 100% { transform: scale(1); } }
 .g-runs, .gcard .sc { display: inline-block; transform-origin: right center; }
-.g-field { display: grid; grid-template-columns: 176px 1fr; grid-template-areas: "fd bso" "next next"; column-gap: 36px; margin-top: 16px; }
+.g-field { display: grid; grid-template-columns: 176px auto 1fr; grid-template-areas: "fd bso extra" "next next next"; column-gap: 36px; margin-top: 16px; }
+.g-extra { grid-area: extra; align-self: center; display: flex; flex-direction: column; gap: 14px; }
+.gx small { display: block; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--text-3); }
+.gx b { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.gx span { margin-left: 8px; font-size: 13px; color: var(--text-3); }
+.wpbar { margin-top: 6px; height: 4px; border-radius: 2px; background: var(--h); overflow: hidden; }
+.wpbar i { display: block; height: 100%; background: var(--a); transition: width .8s var(--ease); }
+.pr-note { margin: 4px 0; padding: 4px 10px; border-left: 2px solid rgba(255,210,90,.6); font-size: 13px; color: var(--text-2); animation: pr-in .35s var(--ease); }
+.nh-top .gstat { margin-left: auto; padding: 3px 10px; border-radius: 999px; background: rgba(255,210,90,.14); color: #ffd25a; font-size: 13px; white-space: nowrap; }
+.pr em.abs { margin-left: 2px; padding: 0; background: none !important; font-size: inherit; font-weight: 600; }
+.gd-seq .pr b { white-space: normal; }
+.pr em.abs.wait { color: #ffd25a; } 
 .fd { grid-area: fd; position: relative; width: 176px; height: 134px; }
 .fb { position: absolute; width: 58px; height: 58px; margin: -29px 0 0 -29px; transform: rotate(45deg); border-radius: 5px; background: #2b2b2e; }
 .fb.b1 { left: 134px; top: 88px; } .fb.b2 { left: 88px; top: 42px; } .fb.b3 { left: 42px; top: 88px; }

@@ -384,15 +384,35 @@ const Gameday = (pk) => {
   }
   const ago = (iso) => { const m = Math.round((Date.now() - Date.parse(iso)) / 60000); return !iso || isNaN(m) ? "" : m < 1 ? "now" : m < 60 ? `${m}m` : m < 1440 ? `${Math.round(m / 60)}h` : ""; };
 
+  // Game-flow notes that appear between pitches, like Real: challenges, reviews, delays, mound visits.
+  const NOTE_RX = /challenge|review|delay|injur|ejected|mound visit|pitching change|offensive substitution|defensive switch|pickoff|stolen base|caught stealing|wild pitch|passed ball|balk|timeout/i;
   function pitchRows(ab, limit = 99) {
     const rvs = reviewsOf(ab).filter((rv) => rv.abs);
-    return pitchesOf(ab).map((e, i) => {
-      const d = e.details || {}, pd = e.pitchData || {};
+    const flip = (t) => (/strike/i.test(t) ? "Ball" : /ball/i.test(t) ? "Called Strike" : t);
+    const rows = [];
+    let i = -1;
+    (ab?.playEvents || []).forEach((e) => {
+      const d = e.details || {};
+      if (!e.isPitch) {
+        const txt = d.description || d.event || "";
+        if (NOTE_RX.test(txt)) rows.push(`<div class="pr-note">${esc(txt.replace(/\s+/g, " ").trim())}</div>`);
+        return;
+      }
+      i++;
+      const pd = e.pitchData || {};
       const rv = rvs.find((x) => x.idx === i);
-      const desc = String(d.description || d.call?.description || "").replace(ABS_TXT, "").replace(/[\s-]+$/, "") || d.call?.description || "";
-      return `<div class="pr"><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(desc)}${rv ? ` <em class="abs ${rv.overturned ? "won" : "lost"}">ABS ${rv.overturned ? "overturned" : "confirmed"}</em>` : ""}</b>
-        <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div></div>`;
-    }).reverse().slice(0, limit).join("");
+      const orig = String(d.description || d.call?.description || "").replace(ABS_TXT, "").replace(/[\s-]+$/, "") || d.call?.description || "";
+      // ABS pitch: "Called Strike - In review", then "Ball - Overturned" or "Called Strike - Upheld".
+      let call = orig, state = "";
+      if (rv) {
+        if (rv.inProgress) state = "In review";
+        else if (rv.overturned) { call = d.isBall ? "Ball" : d.isStrike ? "Called Strike" : flip(orig); if (call === orig) call = flip(orig); state = "Overturned"; }
+        else state = "Upheld";
+      }
+      rows.push(`<div class="pr"><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(call)}${state ? ` <em class="abs ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">– ${state}</em>` : ""}</b>
+        <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div></div>`);
+    });
+    return rows.reverse().slice(0, limit).join("");
   }
 
   /* ================= Play cards ================= */
@@ -489,6 +509,18 @@ const Gameday = (pk) => {
     const live = phaseOf(f.gameData.status) === "live";
     return (live ? f.liveData?.plays?.currentPlay : null) || plays[plays.length - 1];
   }
+  // Game status worth flagging (manager challenge, umpire review, rain or injury delay...). Stays up while it lasts.
+  function gameStatus(f) {
+    const st = f.gameData?.status || {};
+    if (phaseOf(st) !== "live") return "";
+    const d = st.detailedState || "";
+    if (/^(in progress|warmup|live)$/i.test(d)) {
+      const live = (f.liveData?.plays?.currentPlay?.playEvents || []).filter((e) => !e.isPitch).pop();
+      const t = live?.details?.description || "";
+      return /challenge|review|delay/i.test(t) && (live.reviewDetails?.inProgress || /delay/i.test(t)) ? t : "";
+    }
+    return st.reason && !d.includes(st.reason) ? `${d}: ${st.reason}` : d;
+  }
   function drawNow(f) {
     const ctx = context(f);
     const cur = currentAb(f);
@@ -502,7 +534,7 @@ const Gameday = (pk) => {
     const boxP = (id) => { const t = f.liveData?.boxscore?.teams || {}; return t.away?.players?.[`ID${id}`] || t.home?.players?.[`ID${id}`]; };
     const sAvg = (id) => boxP(id)?.seasonStats?.batting?.avg;
     $(".gd-now-head").innerHTML = `
-      <div class="nh-top">${label}${!showingLive && cur.about?.isComplete ? `<span class="hl">${esc(title(cur))}</span>` : ""}
+      <div class="nh-top">${label}${!showingLive && cur.about?.isComplete ? `<span class="hl">${esc(title(cur))}</span>` : ""}${gameStatus(f) ? `<span class="gstat">${esc(gameStatus(f))}</span>` : ""}
         ${sel != null && live ? `<button class="gd-follow">Follow live</button>` : ""}</div>
       <div class="nh-mu">
         <div class="who lnk" data-player="${m.batter?.id}"><img src="${headshot(m.batter?.id, 160)}" alt="" onerror="this.style.visibility='hidden'">
@@ -551,7 +583,7 @@ const Gameday = (pk) => {
   fieldEl.className = "g-field";
   fieldEl.innerHTML = `<div class="fd"><i class="fb b3"></i><i class="fb b2"></i><i class="fb b1"></i></div>
     <div class="bso">${[["B", 4, "ball"], ["S", 3, "strike"], ["O", 3, "out"]].map(([l, n, c]) => `<div data-k="${c}"><b>${l}</b>${"<i></i>".repeat(n)}</div>`).join("")}</div>
-    <div class="g-next"></div>`;
+    <div class="g-extra"></div><div class="g-next"></div>`;
   const BASE_POS = { first: [134, 88], second: [88, 42], third: [42, 88], home: [88, 134] };
   const runnerEls = new Map();   // player id -> element
   let lastRuns = null;
@@ -588,6 +620,8 @@ const Gameday = (pk) => {
     });
     const counts = { ball: ls.balls ?? 0, strike: ls.strikes ?? 0, out: ls.outs ?? 0 };
     fieldEl.querySelectorAll(".bso [data-k]").forEach((row) => row.querySelectorAll("i").forEach((d, i) => d.classList.toggle("on", i < counts[row.dataset.k])));
+    // Beside the count: the pitcher's pitch count and each side's win probability.
+    drawExtra(f);
     // On deck and in the hole, side by side: today's line and the season slash line.
     const box = f.liveData?.boxscore?.teams || {};
     const bp = (id) => box.away?.players?.[`ID${id}`] || box.home?.players?.[`ID${id}`];
@@ -606,6 +640,35 @@ const Gameday = (pk) => {
     const nextHtml = `${nx(o.onDeck, "On deck")}${nx(o.inHole, "In the hole")}`;
     const nextEl = fieldEl.querySelector(".g-next");
     if (nextEl.dataset.h !== nextHtml) { nextEl.dataset.h = nextHtml; nextEl.innerHTML = nextHtml; nextEl.classList.remove("swap"); nextEl.getBoundingClientRect(); nextEl.classList.add("swap"); }
+  }
+
+  let wp = null, wpAt = -1;
+  async function loadWp(f) {
+    const n = (f.liveData?.plays?.allPlays || []).length;
+    if (n === wpAt) return;
+    wpAt = n;
+    try {
+      const list = await api(`/api/v1/game/${pk}/winProbability?fields=homeTeamWinProbability,awayTeamWinProbability,atBatIndex`, { ttl: 10_000 });
+      const last = (Array.isArray(list) ? list : []).filter((x) => x.homeTeamWinProbability != null).pop();
+      if (last) { wp = last; drawExtra(f, true); }
+    } catch {}
+  }
+  function drawExtra(f, fromWp = false) {
+    const ls = f.liveData?.linescore || {};
+    const pid = ls.defense?.pitcher?.id;
+    const box = f.liveData?.boxscore?.teams || {};
+    const p = box.away?.players?.[`ID${pid}`] || box.home?.players?.[`ID${pid}`];
+    const pc = p?.stats?.pitching?.numberOfPitches;
+    const strikes = p?.stats?.pitching?.strikes;
+    const teams = f.gameData?.teams || {};
+    const away = teamMeta(teams.away), home = teamMeta(teams.home);
+    const h = wp ? Math.round(wp.homeTeamWinProbability) : null;
+    const lead = h == null ? null : h >= 50 ? { t: home, v: h } : { t: away, v: 100 - h };
+    const el = fieldEl.querySelector(".g-extra");
+    el.innerHTML = `${pc != null ? `<div class="gx"><small>Pitches</small><b>${pc}</b>${strikes != null ? `<span>${strikes} strikes</span>` : ""}</div>` : ""}
+      ${lead ? `<div class="gx"><small>Win probability</small><b>${lead.v}%</b><span>${esc(lead.t.abbr)}</span>
+        <div class="wpbar" style="--a:${away.bright};--h:${home.bright}"><i style="width:${100 - h}%"></i></div></div>` : ""}`;
+    if (!fromWp) loadWp(f);
   }
 
   return {
