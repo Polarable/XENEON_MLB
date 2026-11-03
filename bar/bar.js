@@ -124,19 +124,29 @@ const Bar = (() => {
     const n = document.createElement("div"); n.className = "slide in"; n.innerHTML = html; box.appendChild(n);
     marquee(n);
   }
-  // A headline too long for the bar scrolls slowly to its end and back, so it can be read in full.
+  // A headline too long for the bar rests on its start, slides to its end, then fades back to the start.
   function marquee(root) {
     (document.fonts?.ready || Promise.resolve()).then(() => root.querySelectorAll(".hd").forEach((hd) => {
-      const m = hd.querySelector(".mq"); if (!m) return;
+      const m = hd.querySelector(".mq"); if (!m || !m.isConnected) return;
       const over = m.scrollWidth - hd.clientWidth;
       if (over <= 4) return;
-      const move = over / 32;                      // seconds at 32 px/s
       hd.classList.add("long");
-      dwell = Math.max(8000, (move * 2 + 5) * 1000);
-      m.style.setProperty("--mq", `${-over - 10}px`);
-      m.style.animationDuration = `${(move * 2 + 5).toFixed(1)}s`;
+      const hold = 2200, move = (over + 12) / 0.035, end = 1200, fade = 500;   // ms; slides at 35 px/s
+      const total = hold + move + end + fade * 2, x = `translateX(${-over - 12}px)`;
+      const at = (ms) => ms / total;
+      m.animate([
+        { transform: "none", opacity: 1, offset: 0 },
+        { transform: "none", opacity: 1, offset: at(hold) },
+        { transform: x, opacity: 1, offset: at(hold + move), easing: "linear" },
+        { transform: x, opacity: 1, offset: at(hold + move + end) },
+        { transform: x, opacity: 0, offset: at(hold + move + end + fade) },
+        { transform: "none", opacity: 0, offset: at(hold + move + end + fade) },
+        { transform: "none", opacity: 1, offset: 1 },
+      ], { duration: total, iterations: Infinity });
+      dwell = Math.max(8000, total);
     }));
   }
+
   function scorebug() {
     const g = pickGame();
     if (!g) return `<div class="sb-pre"><b>No ${esc(byAbbr[S.get("fav")]?.name || "")} game today</b><span>Click to pick another game</span></div>`;
@@ -165,12 +175,12 @@ const Bar = (() => {
     return [d.winner && `W ${last(d.winner.fullName)}`, d.loser && `L ${last(d.loser.fullName)}`, d.save && `SV ${last(d.save.fullName)}`].filter(Boolean).join(" · ") || "";
   }
   function newsList() { const m = effectiveMode(); const t = teamStories(); return m === "team" ? (t.length ? t : articles) : m === "latest" ? articles.slice(0, 1) : articles.slice(0, 8); }
-  function newsSlide(a) {
+  function newsSlide(a, dots = "") {
     if (!a) return `<div class="nw"><div class="tx"><span class="hd">No stories yet</span></div></div>`;
     const t = byAbbr[(a.teams || [])[0]];
-    // First sentence of the story, so the bar says what it's about, not just the headline.
-    const gist = String(a.body || "").replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s/)[0] || "";
-    return `<div class="nw"><div class="tx"><span class="hd"><span class="mq">${esc(a.title)}</span></span><span class="mt">${t ? logo(t) + `<b>${esc(t.name)}</b>` : ""}<i>${ago(a.date)}</i>${gist ? `<em>${esc(gist)}</em>` : ""}</span></div></div>`;
+    // Team logo + name + age; league-wide stories get the MLB logo.
+    const lg = t ? logo(t) + `<b>${esc(t.name)}</b>` : `<img src="https://www.mlbstatic.com/team-logos/league-on-dark/1.svg" alt="" onerror="this.remove()"><b>MLB</b>`;
+    return `<div class="nw"><div class="tx"><span class="hd"><span class="mq">${esc(a.title)}</span></span><span class="mt">${lg}<i>${ago(a.date)}</i>${dots}</span></div></div>`;
   }
   function drawBar(animate) {
     const m = effectiveMode();
@@ -178,7 +188,7 @@ const Bar = (() => {
     const list = newsList();
     if (newsIdx >= list.length) newsIdx = 0;
     const dots = m === "carousel" && list.length > 1 ? `<span class="dots">${list.map((_, i) => `<i class="${i === newsIdx ? "on" : ""}"></i>`).join("")}</span>` : "";
-    swap(newsSlide(list[newsIdx]) + dots, animate);
+    swap(newsSlide(list[newsIdx], dots), animate);
   }
   // Carousel: 8 s per story, or long enough for a scrolling headline to run once.
   setInterval(() => {
