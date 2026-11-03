@@ -202,7 +202,7 @@
   const NEW_MIN = 60;                 // stories younger than this get a NEW tag
   const LEAGUE = { abbr: "MLB", name: "MLB", color: "#c8102e", bright: "#e8283f" };
   // Logos live in logos/ (downloaded by scripts/fetch-logos.js); fall back to MLB's dark-background version online.
-  const logo = (t) => `logos/${t.abbr}.svg`;
+  const logo = (t) => `logos/${t.abbr}.svg?v=__BUILD__`;
   const logoFallback = (t) => `https://www.mlbstatic.com/team-logos/team-cap-on-dark/${t.id}.svg`;
   const logoImg = (t, cls = "") => t.id ? `<img class="${cls}" src="${logo(t)}" data-fb="${logoFallback(t)}" alt="" onerror="fb(this)">` : "";
   // Try the online logo if the local one is missing, then hide it.
@@ -219,14 +219,26 @@
   const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return `${n >> 16 & 255}, ${n >> 8 & 255}, ${n & 255}`; };
   const vars = (t) => `--tc:${t.bright};--tc-rgb:${rgb(t.bright)};--primary:${t.color}`;
 
-  // Scale the 2560x720 stage to fit the iframe.
+  // Scale the 2560x720 stage to fit the iframe. CSS zoom re-lays out and re-rasterizes the text at the
+  // final size, so it stays sharp; a transform scale would resample an already-drawn bitmap and blur it.
+  // `scale` is what the pointer and getBoundingClientRect math divides by (measured, so it matches the engine).
   let scale = 1;
+  const ZOOM = typeof CSS !== "undefined" && CSS.supports && CSS.supports("zoom", "2");
   function fit() {
-    const s = scale = Math.min(innerWidth / 2560, innerHeight / 720);
+    const s = Math.min(innerWidth / 2560, innerHeight / 720);
     const stage = document.getElementById("stage");
-    stage.style.transform = `scale(${s})`;
-    stage.style.left = `${(innerWidth - 2560 * s) / 2}px`;
-    stage.style.top = `${(innerHeight - 720 * s) / 2}px`;
+    const x = Math.round((innerWidth - 2560 * s) / 2), y = Math.round((innerHeight - 720 * s) / 2);
+    if (ZOOM && Math.abs(s - 1) > 0.001) {
+      stage.style.transform = "";
+      stage.style.zoom = s;
+      // A zoomed element's own left/top are zoomed too.
+      stage.style.left = `${x / s}px`; stage.style.top = `${y / s}px`;
+    } else {
+      stage.style.zoom = "";
+      stage.style.transform = Math.abs(s - 1) > 0.001 ? `scale(${s})` : "";
+      stage.style.left = `${x}px`; stage.style.top = `${y}px`;
+    }
+    scale = stage.getBoundingClientRect().width / 2560 || s;
   }
   addEventListener("resize", fit); fit();
 

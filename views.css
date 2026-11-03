@@ -470,3 +470,30 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
 .abs-pips i.on { background: #fff; border-color: #fff; }
 .ggrid.settled .gcard { animation: none; opacity: 1; }
 .ggrid.settled .gcard.live { animation: ring 14s linear infinite; }
+
+/* Player photos are transparent cut-outs: one neutral disc behind them, head kept in frame, no ring or glow. */
+.pp img, .p-photo img, .nh-mu .who img, .pc-pic img:first-child, .nx-top img, .fr-run img {
+  object-fit: cover; object-position: center top; background-color: #2a2a2d; border: 0; box-shadow: none; }
+.p-photo { background: #2a2a2d; }
+
+/* Team roster: full-width photo cards, grouped by position. */
+.page-team .rsec + .rsec { margin-top: 26px; }
+.rsec-h { font-size: 22px; font-weight: 600; margin: 0 4px 12px; }
+.rsec-h span { color: var(--text-3); font-weight: 500; margin-left: 6px; }
+.rgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(296px, 1fr)); gap: 12px; }
+.rcard { display: flex; align-items: center; gap: 16px; height: 108px; padding: 0 18px 0 14px; border-radius: 18px;
+  background: rgba(255,255,255,.05); cursor: pointer; transition: background .15s var(--ease), transform .15s var(--ease); }
+.rcard:active { transform: scale(.98); background: rgba(255,255,255,.09); }
+.rcard img { width: 80px; height: 80px; flex: none; border-radius: 50%; object-fit: cover; object-position: center top; background: #2a2a2d; }
+.rc-id { min-width: 0; }
+.rc-nm { font-size: 21px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rc-ln { margin-top: 4px; font-size: 16px; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rc-st { margin-top: 4px; font-size: 14px; font-weight: 600; color: #ffb35a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Team page season picker */
+.page-team .t-season { position: absolute; right: 40px; top: 164px; height: 56px; display: flex; align-items: center; gap: 6px;
+  padding: 4px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255,255,255,.04); }
+.t-season span { min-width: 80px; text-align: center; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.t-season button { width: 46px; height: 46px; border: 0; border-radius: 50%; background: none; color: var(--text); font: inherit; font-size: 30px; line-height: 1; cursor: pointer; }
+.t-season button:active { background: rgba(255,255,255,.12); }
+.t-season button:disabled { color: var(--text-4); opacity: .5; cursor: default; }
