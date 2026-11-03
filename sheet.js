@@ -23,6 +23,24 @@ const Sheet = (() => {
     return stack.length > 0;
   }
 
+  // Scroll positions: the page body plus any inner scrolling panels (desktop layouts scroll inside panels).
+  function scrollState() {
+    const body = root().querySelector(".s-body");
+    return { y: body.scrollTop, inner: [...body.querySelectorAll(".vscroll")].map((e) => e.scrollTop) };
+  }
+  function restoreScroll(st, alive) {
+    let stop = false;
+    root().querySelector(".s-body").addEventListener("touchstart", () => (stop = true), { once: true, passive: true });
+    const apply = () => {
+      if (!alive() || stop) return;
+      const body = root().querySelector(".s-body");
+      body.scrollTop = st.y;
+      body.querySelectorAll(".vscroll").forEach((e, i) => { if (st.inner[i]) e.scrollTop = st.inner[i]; });
+    };
+    // Pages fill in parts (roster after the header), so apply again once the rest has drawn.
+    apply(); requestAnimationFrame(apply); setTimeout(apply, 250); setTimeout(apply, 700);
+  }
+
   async function show() {
     remember();
     if (cleanup) { try { cleanup(); } catch {} cleanup = null; }
@@ -40,6 +58,7 @@ const Sheet = (() => {
       // top.state lives on the stack entry, so a page can remember things (like its open tab) for when Back returns to it.
       const c = await pages[top.type](body, top.args, alive, top.state);
       if (alive()) cleanup = typeof c === "function" ? c : null;
+      if (alive() && top.state.__scroll) restoreScroll(top.state.__scroll, alive);
       else if (typeof c === "function") c();
     } catch (e) {
       console.warn(e);
@@ -52,6 +71,8 @@ const Sheet = (() => {
     // Don't stack the same page twice in a row.
     const top = stack[stack.length - 1];
     if (top && top.type === type && JSON.stringify(top.args) === JSON.stringify(args)) return;
+    // Remember where the page underneath was scrolled, so Back lands in the same spot (e.g. halfway down a roster).
+    if (top) top.state.__scroll = scrollState();
     stack.push({ type, args, state: {}, onBack });
     if (hist) history.pushState({ sheet: stack.length }, "");
     show();
