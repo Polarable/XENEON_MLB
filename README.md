@@ -3,10 +3,10 @@
 A 2560×720 page for the iCUE iFrame widget on the Corsair Xeneon Edge.
 
 - `index.html`: the news page. Swipe the row and whichever story is leftmost grows into the double-wide headliner with a text preview; tap any story to read its opening paragraphs. It scales to fit the iFrame and remembers the team you pick.
-- **Scores** (`scores.js`): the day's games as cards (Final, live with bases/outs/count, or upcoming with probable pitchers); arrows jump between game days, and in the offseason it opens on the last day games were played. Pick a team to see its whole season instead. Refreshes every 20 seconds while games are live.
+- **Scores** (`scores.js`): the day's games as cards (Final, live with bases/outs/count, or upcoming with probable pitchers); arrows jump between game days, and in the offseason it opens on the last day games were played. Pick a team to see its whole season instead. Refreshes every 8 seconds while games are live.
 - **Standings** (`standings.js`): AL and NL divisions, or the wild card races.
 - **Rosters** (`team.js`): all 30 teams by division.
-- Tapping a game opens the game page (`game.js`): linescore, decisions and a Baseball Reference style box score, plus scoring plays and play-by-play; live games refresh every 15 seconds. Tapping a team opens its team page (`team.js`): 40-man/active roster, standard batting, standard pitching, and schedule & results. Tapping a player opens their player page (`player.js`): bio, year-by-year stats and this season's game log. Pages stack, so Back returns to where you were.
+- Tapping a game opens the game page (`game.js`): linescore, decisions and a Baseball Reference style box score, plus scoring plays and play-by-play; live games check for new pitches every 3 seconds. Tapping a team opens its team page (`team.js`): 40-man/active roster, standard batting, standard pitching, and schedule & results. Tapping a player opens their player page (`player.js`): bio, year-by-year stats and this season's game log. Pages stack, so Back returns to where you were.
 - `mlb.js` holds the shared MLB Stats API helpers, touch scrolling and tables; `views.css` styles all of the above.
 - Scores, standings and rosters read the MLB Stats API (statsapi.mlb.com) directly from the browser, so they stay live even if the scheduled news job runs late.
 - `teams.js`: the 30 teams (MLB ids, colors, MLB Trade Rumors feed names).

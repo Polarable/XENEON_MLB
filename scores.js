@@ -34,7 +34,7 @@ const Scores = (() => {
 
   async function loadDay(ymd) {
     const base = `/api/v1/schedule?sportId=1&date=${ymd}`;
-    const data = await apiTry([`${base}&hydrate=${HYDRATE}`, base], { ttl: 20_000 });
+    const data = await apiTry([`${base}&hydrate=${HYDRATE}`, base], { ttl: 4_000 });
     return (data.dates || []).flatMap((d) => d.games || []).map(norm);
   }
 
@@ -200,12 +200,12 @@ const Scores = (() => {
     schedule();
   }
 
-  // Refresh every 20s while games are live, every 5 minutes otherwise.
+  // Refresh every 8s while games are live (or about to start), every 5 minutes otherwise.
   function schedule() {
     clearTimeout(timer);
     if (activeTab !== "scores") return;
     const live = games.some((g) => g.phase === "live" || (g.phase === "preview" && Date.parse(g.start) - Date.now() < 15 * 60_000 && Date.parse(g.start) > Date.now() - 6 * 3600_000));
-    timer = setTimeout(refresh, live ? 20_000 : 300_000);
+    timer = setTimeout(refresh, live ? 8_000 : 300_000);
   }
 
   async function step(dir) {

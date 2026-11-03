@@ -1,12 +1,18 @@
 // Game page: scoreboard, linescore and decisions on the left; box score, scoring plays or
-// play-by-play on the right. Live games refresh every 15 seconds. Data: the MLB live feed.
+// play-by-play on the right. Live games check for updates every 3 seconds. Data: the MLB live feed.
 Sheet.register("game", async (root, { pk }, alive) => {
   let view = load("game-view") || "box";
   let feed = null;
   let timer = 0;
 
   async function fetchFeed() {
-    return api(`/api/v1.1/game/${pk}/feed/live`, { ttl: 10_000 });
+    return api(`/api/v1.1/game/${pk}/feed/live`, { ttl: 2_000 });
+  }
+  // A tiny request that only returns the feed's last-updated stamp, so we can check every few
+  // seconds and only download the full game when something actually happened.
+  async function stamp() {
+    const r = await fetch(`${API}/api/v1.1/game/${pk}/feed/live?fields=metaData,timeStamp`);
+    return (await r.json()).metaData?.timeStamp;
   }
 
   // ---- Left panel ----
@@ -214,12 +220,18 @@ Sheet.register("game", async (root, { pk }, alive) => {
   const tick = async () => {
     if (!alive()) return;
     try {
-      const f = await fetchFeed();
+      const ts = await stamp();
       if (!alive()) return;
-      if (f.metaData?.timeStamp !== feed.metaData?.timeStamp) { feed = f; render(); }
+      if (ts && ts !== feed.metaData?.timeStamp) {
+        const f = await fetchFeed();
+        if (!alive()) return;
+        feed = f; render();
+      }
     } catch {}
-    if (phaseOf(feed.gameData.status) !== "final") timer = setTimeout(tick, 15_000);
+    // Every 3 seconds while live, every 30 seconds before first pitch.
+    const ph = phaseOf(feed.gameData.status);
+    if (ph !== "final") timer = setTimeout(tick, ph === "live" ? 3_000 : 30_000);
   };
-  if (phaseOf(feed.gameData.status) !== "final") timer = setTimeout(tick, 15_000);
+  if (phaseOf(feed.gameData.status) !== "final") timer = setTimeout(tick, phaseOf(feed.gameData.status) === "live" ? 3_000 : 30_000);
   return () => clearTimeout(timer);
 });
