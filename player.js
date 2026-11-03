@@ -20,7 +20,7 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   const groups = [];
   if (isPitcher || isTwoWay) { if (hasPit) groups.push("pitching"); if (hasBat) groups.push("hitting"); }
   else { if (hasBat) groups.push("hitting"); if (hasPit) groups.push("pitching"); }
-  let tab = state.tab && (state.tab === "log" || (state.tab === "savant" && groups.length) || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
+  let tab = state.tab && (state.tab === "log" || state.tab === "highlights" || (state.tab === "savant" && groups.length) || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
 
   const team = p.currentTeam ? teamMeta(p.currentTeam) : null;
   root.setAttribute("style", team ? vars(team) : "");
@@ -72,28 +72,25 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   // ---- Highlights: his best and most fun moments this season, each opening on Savant ----
   let hlTimer = 0;
   async function drawHighlights() {
-    const box = root.querySelector(".p-hl");
-    if (!box) return;
+    const box = body;
+    if (tab !== "highlights") return;
     const season = currentSeason();
     const list = await Savant.highlights(id, { full: p.fullName, last: p.lastName || lastName(p.fullName || ""), isPitcher, season }).catch(() => []);
-    if (!alive() || !box.isConnected) return;
-    box.innerHTML = list.length ? `<div class="p-news-h">Highlights <span class="muted">${season}</span></div>
+    if (!alive() || tab !== "highlights") return;
+    box.innerHTML = list.length ? `<div class="p-news-h">${season} highlights</div>
       <div class="p-hl-list vscroll">${list.slice(0, 12).map((h, i) => `<a class="p-hl-row" href="${esc(h.url)}" target="_blank" rel="noopener" style="animation-delay:${i * 40}ms">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span class="t">${esc(h.title)}</span>
-        <em>${h.date ? esc(ymdLabel(h.date.slice(0, 10), { month: "short", day: "numeric" })) : ""}</em></a>`).join("")}</div>` : "";
-    const sc = box.querySelector(".p-hl-list");
-    if (sc) dragScroll(sc, "y");
+        <em>${h.date ? esc(ymdLabel(h.date.slice(0, 10), { month: "short", day: "numeric" })) : ""}</em></a>`).join("")}</div>` : `<div class="s-loading">No highlights from ${season} yet</div>`;
     // New plays keep coming during the season, so look again every few minutes.
     clearTimeout(hlTimer);
-    hlTimer = setTimeout(() => alive() && drawHighlights(), 5 * 60_000);
+    hlTimer = setTimeout(() => alive() && tab === "highlights" && drawHighlights(), 5 * 60_000);
   }
   let storyHits = [];
   function drawStory() {
     const all = typeof articles !== "undefined" ? articles : [];
     const rx = new RegExp(`\\b${(p.fullName || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
     storyHits = all.filter((a) => rx.test(`${a.title} ${(a.body || []).join(" ")}`));
-    root.querySelector(".p-sum").innerHTML = `${latestStory()}<div class="p-hl"></div>`;
-    drawHighlights();
+    root.querySelector(".p-sum").innerHTML = latestStory();
   }
 
   // ---- Stat hero: this season and career, MLB.com style ----
@@ -119,7 +116,7 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   root.innerHTML = `<div class="p-left">
       <div class="p-banner"><img src="${banner}" alt="" referrerpolicy="no-referrer" onload="this.closest('.s-body')?.classList.add('has-banner')" onerror="this.parentNode.remove()"></div>
       <div class="p-top"><div class="p-photo"><img src="${headshot(id, 360)}" alt="" onerror="this.remove()"></div>
-        <div class="p-id"><h1>${esc(p.fullName)}</h1>
+        <div class="p-id"><h1><span class="fn">${esc((p.fullName || "").split(" ")[0])}</span> <span class="ln">${esc((p.fullName || "").split(" ").slice(1).join(" "))}</span></h1>
           ${team ? `<div class="p-team lnk" data-team="${team.id}">${logoImg(team)}${esc(fullTeamName(p.currentTeam) || team.name)}</div>` : ""}
           <div class="p-num">${p.primaryNumber ? `#${esc(p.primaryNumber)} · ` : ""}${esc(p.primaryPosition?.abbreviation || "")}${p.active === false ? " · Retired" : ""}</div>
           ${statusLine()}
@@ -212,7 +209,42 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
       ? [...base, ...["plateAppearances:PA", "atBats:AB", "runs:R", "hits:H", "doubles:2B", "triples:3B", "homeRuns:HR", "rbi:RBI", "baseOnBalls:BB", "strikeOuts:SO", "stolenBases:SB", "hitByPitch:HBP"].map((x) => { const [k, h] = x.split(":"); return { h, k }; })]
       : [...base, { h: "Dec", f: (r) => (r.wins ? "W" : r.losses ? "L" : r.saves ? "S" : r.holds ? "H" : r.blownSaves ? "BS" : "") },
         ...["gamesStarted:GS", "inningsPitched:IP", "hits:H", "runs:R", "earnedRuns:ER", "baseOnBalls:BB", "strikeOuts:SO", "homeRuns:HR", "battersFaced:BF", "numberOfPitches:Pit", "strikes:Str"].map((x) => { const [k, h] = x.split(":"); return { h, k }; })];
+    if (typeof IS_MOBILE !== "undefined" && IS_MOBILE) { body.innerHTML = logCards(g, rows); return; }
     sortableTable(body, cols, rows, { cls: "glog" });
+  }
+
+  // Phone game log: one card per game, like the season cards.
+  function logCards(g, rows) {
+    const LINE = g === "hitting"
+      ? [["AB", "atBats"], ["R", "runs"], ["H", "hits"], ["HR", "homeRuns"], ["RBI", "rbi"], ["BB", "baseOnBalls"], ["SO", "strikeOuts"], ["SB", "stolenBases"]]
+      : [["IP", "inningsPitched"], ["H", "hits"], ["R", "runs"], ["ER", "earnedRuns"], ["BB", "baseOnBalls"], ["SO", "strikeOuts"], ["HR", "homeRuns"], ["Pit", "numberOfPitches"]];
+    const head = (r) => g === "hitting" ? `${r.hits ?? 0}-${r.atBats ?? 0}${+r.homeRuns ? `, ${r.homeRuns > 1 ? r.homeRuns + " " : ""}HR` : ""}${+r.rbi ? `, ${r.rbi} RBI` : ""}`
+      : `${r.inningsPitched ?? 0} IP, ${r.earnedRuns ?? 0} ER, ${r.strikeOuts ?? 0} K${r.wins ? " · W" : r.losses ? " · L" : r.saves ? " · SV" : ""}`;
+    return `<div class="ycards">${rows.map((r) => `<div class="yc gl" ${r.__attrs || ""}>
+        <div class="yc-h"><b class="gl-d">${esc(ymdLabel(r.date, { month: "short", day: "numeric" }))}</b>
+          <span class="yc-tm"><span>${r.home ? "vs" : "@"} ${logoImg(r.opp)}${esc(r.opp.abbr || "")}</span>${r.res ? `<i class="${r.res === "W" ? "pos" : "neg"}">${r.res}</i>` : ""}</span></div>
+        <div class="gl-line">${esc(head(r))}</div>
+        <div class="yc-grid">${LINE.map(([h, k]) => `<span><em>${h}</em>${num(r[k])}</span>`).join("")}</div></div>`).join("")}</div>`;
+  }
+
+  // Phone year by year: still a stat table, trimmed to the columns that matter and laid out for a narrow screen.
+  const CHART = {
+    hitting: [["G", "gamesPlayed"], ["PA", "plateAppearances"], ["H", "hits"], ["HR", "homeRuns"], ["RBI", "rbi"], ["SB", "stolenBases"], ["BB", "baseOnBalls"], ["SO", "strikeOuts"], ["AVG", "avg", 1], ["OBP", "obp", 1], ["SLG", "slg", 1], ["OPS", "ops", 1]],
+    pitching: [["W", "wins"], ["L", "losses"], ["ERA", "era", 1], ["G", (r) => r.gamesPitched ?? r.gamesPlayed], ["GS", "gamesStarted"], ["SV", "saves"], ["IP", "inningsPitched"], ["H", "hits"], ["BB", "baseOnBalls"], ["SO", "strikeOuts"], ["WHIP", "whip", 1], ["K/9", "strikeoutsPer9Inn"]],
+  };
+  function yearChart(group, rows) {
+    const cols = CHART[group];
+    const cell = (r, [, k, isRate]) => { const v = val(r, k); return `<td>${isRate ? rate(v) : num(v)}</td>`; };
+    const bySeason = {}; rows.forEach((r) => (bySeason[r.season] = bySeason[r.season] || []).push(r));
+    const ordered = Object.keys(bySeason).sort().reverse().flatMap((y) => bySeason[y]);   // newest first, each season's total before its clubs
+    const body = ordered.map((r) => `<tr class="${r.__cls || ""}">
+        <th>${r.__cls === "part" ? "" : esc(r.season)}</th>
+        <td class="tm">${r.tmId ? `<span class="lnk" data-team="${r.tmId}">${logoImg(teamById[r.tmId] || {})}${esc(r.tm)}</span>` : esc(r.tm || "")}</td>
+        ${cols.map((c) => cell(r, c)).join("")}</tr>`).join("");
+    const car = career[group];
+    const foot = car ? `<tr class="tot"><th>Career</th><td class="tm">${new Set(years[group].map((x) => x.season)).size} yrs</td>${cols.map((c) => cell(car, c)).join("")}</tr>` : "";
+    return `<div class="ychart"><table><thead><tr><th>Year</th><td class="tm">Team</td>${cols.map(([h]) => `<td>${h}</td>`).join("")}</tr></thead>
+      <tbody>${foot}${body}</tbody></table></div>`;
   }
 
   // ---- Savant: percentile rankings, spray chart / pitch movement, year by year ----
@@ -232,14 +264,15 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   }
 
   function draw() {
-    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"], ...(groups.length ? [["savant", "Savant"]] : [])];
+    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"], ...(groups.length ? [["savant", "Savant"]] : []), ["highlights", "Highlights"]];
     root.querySelector(".p-tabs").innerHTML = seg(tabs, tab);
     body.scrollTop = 0;
+    if (tab === "highlights") { body.innerHTML = `<div class="s-loading">Loading…</div>`; drawHighlights(); return; }
     if (tab === "savant") { savantTab(); return; }
     if (tab === "log") { body.innerHTML = `<div class="s-loading">Loading…</div>`; gameLog().catch(() => { body.innerHTML = `<div class="s-loading">No game log available</div>`; }); return; }
     if (!groups.length) { body.innerHTML = `<div class="s-loading">No major league stats yet</div>`; return; }
     const rows = yearRows(tab);
-    if (typeof IS_MOBILE !== "undefined" && IS_MOBILE) { body.innerHTML = yearCards(tab, rows); return; }
+    if (typeof IS_MOBILE !== "undefined" && IS_MOBILE) { body.innerHTML = yearChart(tab, rows); return; }
     const cols = [...lead, ...(tab === "hitting" ? BAT_COLS : PIT_COLS)];
     const car = career[tab];
     sortableTable(body, cols, rows, { cls: tab === "hitting" ? "bat yby" : "pit yby", foot: car ? [{ ...car, season: `${new Set(years[tab].map((s) => s.season)).size} Yrs`, age: "", tm: "", lg: "", __cls: "tot" }] : [] });

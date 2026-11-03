@@ -18,6 +18,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  // Installed on an iPhone with a notch or Dynamic Island: iOS sometimes reports a zero top safe area
+  // (after coming back from Safari or a video), which puts buttons under the clock. Keep a floor.
+  if (navigator.standalone && Math.max(screen.width, screen.height) >= 812) document.documentElement.classList.add("ios-notch");
+</script>
 <link href="views.css?v=__BUILD__" rel="stylesheet">
 <link href="bracket.css?v=__BUILD__" rel="stylesheet">
 <link href="m/mobile.css?v=__BUILD__" rel="stylesheet">
@@ -245,7 +250,7 @@
     // All teams, then the favorite, then everyone else A-Z.
     const opts = [{ abbr: "ALL" }, ...(f ? [f] : []), ...[...TEAMS].filter((t) => t !== f).sort((a, b) => a.abbr.localeCompare(b.abbr))];
     document.getElementById("picker").innerHTML = opts.map((t) =>
-      `<button data-t="${t.abbr}" class="${t === f ? "fav" : ""}">${t.id ? logoImg(t) : `<span class="all">⚾</span>`}${t.id ? t.abbr : "All"}</button>`).join("");
+      `<button data-t="${t.abbr}" class="${t === f ? "fav" : ""}">${t.id ? logoImg(t) : `<svg class="all" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>`}${t.id ? t.abbr : "All"}</button>`).join("");
   }
   function togglePicker(open) {
     document.getElementById("picker").classList.toggle("open", open);
@@ -387,6 +392,7 @@
   if (+qs.get("game")) Sheet.open("game", { pk: +qs.get("game") });
   else if (+qs.get("player")) Sheet.open("player", { id: +qs.get("player") });
   else if (+qs.get("team")) Sheet.open("team", { id: +qs.get("team") });
+  else if (!qs.get("tab") && !qs.get("story")) Sheet.restore();
   if (/[?&](game|player|team|tab|story)=/.test(location.search)) history.replaceState(history.state, "", location.pathname);
 
   // The service worker makes the app installable and carries push alerts. It never caches pages,

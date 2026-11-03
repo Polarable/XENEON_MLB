@@ -153,7 +153,7 @@ button { font-family: inherit; color: inherit; }
 #picker button { height: 72px; border: 1px solid transparent; border-radius: 12px; background: var(--surface-2);
   font: 600 13px "Inter Tight", sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
 #picker button img { width: 32px; height: 32px; }
-#picker button .all { font-size: 24px; line-height: 32px; }
+#picker button svg.all { width: 28px; height: 28px; }
 #picker button.on { background: #262626; border-color: rgba(255,255,255,.4); }
 #scrim { position: fixed; inset: 0; z-index: 45; display: none; background: rgba(0,0,0,.45); }
 #scrim.open { display: block; }
@@ -372,18 +372,23 @@ body.has-livebar #m-main { padding-bottom: calc(var(--tabs-h) + var(--safe-b) + 
 
 /* Compact scores (Settings, on by default): one slim row per game, like Real. Sizes are before the --mz zoom. */
 body.compact .ggrid { gap: 0; padding: 0 8px; }
-body.compact .gcard { min-height: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); column-gap: 18px; padding: 16px 22px;
+body.compact .gcard { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 112px; column-gap: 0; padding: 14px 18px 14px 20px;
   border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; box-shadow: none; }
 body.compact .gcard.live { background: rgba(255,71,71,.05); border-radius: 14px; border-bottom-color: transparent; }
 body.compact .gcard.fav:not(.live) { background: rgba(var(--fav-rgb), .06); border-radius: 14px; border-color: transparent; }
-body.compact .gcard .top { grid-column: 1; grid-row: 1 / span 2; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; height: auto; margin: 0; }
-body.compact .gcard .top .st { font-size: 20px; }
-body.compact .gcard .top .note { max-width: 100%; font-size: 15px; white-space: normal; }
-body.compact .gcard .tr { grid-column: 2; height: 46px; gap: 12px; }
-body.compact .gcard .tr img { width: 34px; height: 34px; }
-body.compact .gcard .tr .nm { font-size: 27px; }
-body.compact .gcard .tr .sc { font-size: 32px; }
-body.compact .gcard .foot { grid-column: 2; height: 36px; margin-top: 4px; padding-top: 6px; border-top: 0; font-size: 17px; }
+/* Teams and runs on the left, the status in a narrow column on the right */
+body.compact .gcard .tr { grid-column: 1; height: 44px; gap: 12px; padding-right: 18px; }
+body.compact .gcard > .tr:nth-child(2) { grid-row: 1; }
+body.compact .gcard > .tr:nth-child(3) { grid-row: 2; }
+body.compact .gcard .tr img { width: 32px; height: 32px; }
+body.compact .gcard .tr .nm { font-size: 25px; font-weight: 600; }
+body.compact .gcard .tr .rec { font-size: 15px; }
+body.compact .gcard .tr .sc { font-size: 29px; min-width: 34px; }
+body.compact .gcard .top { grid-column: 2; grid-row: 1 / span 2; flex-direction: column; align-items: flex-end; justify-content: center; gap: 3px;
+  height: auto; margin: 6px 0; padding-left: 14px; border-left: 1px solid var(--line); text-align: right; }
+body.compact .gcard .top .st { font-size: 18px; }
+body.compact .gcard .top .note { max-width: 100%; font-size: 14px; line-height: 1.25; white-space: normal; }
+body.compact .gcard .foot { grid-column: 1 / -1; grid-row: 3; height: 34px; margin-top: 4px; padding-top: 6px; border-top: 0; font-size: 16px; }
 body.compact .gcard:not(.live) .foot { display: none; }
 
 /* News: Moves and Free agents */
@@ -486,3 +491,55 @@ body.compact .gcard:not(.live) .foot { display: none; }
 }
 .al-head { margin-top: 22px; }
 .al-status { margin-top: 8px; }
+
+/* ---------- Round 3 ---------- */
+/* Player hero: Career Builder style, banner photo with the name over its dark side */
+.page-player .p-left { padding-top: 0 !important; }
+.p-banner { height: 280px; }
+.p-banner img { object-position: 62% 25%; }
+.p-banner::after { background: linear-gradient(to right, rgba(0,0,0,.92) 0%, rgba(0,0,0,.6) 38%, rgba(0,0,0,.05) 75%),
+  linear-gradient(to bottom, rgba(0,0,0,0) 45%, #000 100%); }
+.page-player.has-banner .p-top { padding-top: 150px; }
+.page-player.has-banner .p-photo { display: block; width: 104px; height: 104px; border: 2px solid rgba(255,255,255,.14); background: rgba(28,28,28,.8); }
+.p-id h1 { line-height: 1.04; }
+.p-id h1 .fn { font-weight: 400; color: rgba(255,255,255,.86); }
+.p-id h1 .ln { font-weight: 700; }
+/* Game log cards */
+.yc.gl { cursor: pointer; }
+.gl-d { font-size: 22px !important; }
+.yc.gl .yc-tm > span { display: inline-flex; align-items: center; gap: 6px; color: var(--text); }
+.yc.gl .yc-tm i { font-weight: 700; }
+.yc.gl .yc-tm i.pos { color: #7fdc9f; } .yc.gl .yc-tm i.neg { color: #f06a6a; }
+.gl-line { margin-top: 8px; font-size: 20px; font-weight: 600; }
+/* Year by year as a compact stat chart */
+.ychart { overflow-x: auto; margin: 0 -22px; padding: 0 22px 20px; -webkit-overflow-scrolling: touch; }
+.ychart table { border-collapse: separate; border-spacing: 0; font-size: 17px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ychart th, .ychart td { padding: 0 11px; height: 46px; text-align: right; border-bottom: 1px solid var(--line); }
+.ychart thead td, .ychart thead th { height: 38px; font-size: 13px; font-weight: 600; color: var(--text-3); }
+.ychart th { position: sticky; left: 0; z-index: 1; background: #000; text-align: left; font-weight: 600; padding-left: 0; min-width: 62px; }
+.ychart td.tm { text-align: left; }
+.ychart td.tm .lnk { display: inline-flex; align-items: center; gap: 6px; }
+.ychart td.tm img { width: 22px; height: 22px; }
+.ychart tr.part td { color: var(--text-3); font-size: 15px; height: 38px; }
+.ychart tr.multi td.tm { color: var(--text-2); }
+.ychart tr.tot th, .ychart tr.tot td { font-weight: 700; background: #111; border-bottom: 1px solid var(--line-2); }
+.ychart tr.tot th { background: #111; }
+:root.ios-notch { --safe-t: max(env(safe-area-inset-top, 0px), 50px); --safe-b: max(env(safe-area-inset-bottom, 0px), 26px); }
+
+/* No colored wash at the top of the page: the header is solid black */
+#glow { display: none; }
+#m-top { background: rgba(0,0,0,.86); }
+
+/* Bottom tabs: a floating liquid-glass pill (iOS style) */
+@media (max-width: 1023px) {
+  #m-tabs { left: 12px; right: 12px; bottom: max(calc(var(--safe-b) - 12px), 10px); padding: 4px; gap: 2px; border: 0; border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)), rgba(22,22,24,.52);
+    -webkit-backdrop-filter: blur(22px) saturate(1.9) brightness(1.08); backdrop-filter: blur(22px) saturate(1.9) brightness(1.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -1px 0 rgba(255,255,255,.05), inset 0 0 0 1px rgba(255,255,255,.07), 0 12px 32px rgba(0,0,0,.55); }
+  #m-tabs .tab { height: 56px; padding: 0; justify-content: center; gap: 2px; border-radius: 999px; font-size: 10.5px; font-weight: 600;
+    transition: background .25s var(--ease), color .2s var(--ease); }
+  #m-tabs .tab svg, #m-tabs .mt-tab-logo, #m-tabs .mt-tab-logo img { width: 23px; height: 23px; }
+  #m-tabs .tab.on { color: #fff; background: rgba(255,255,255,.13); box-shadow: inset 0 1px 0 rgba(255,255,255,.12); }
+  #m-tabs .tab:active { background: rgba(255,255,255,.18); }
+}
+body.compact .gcard.live, body.compact .gcard.fav { margin: 3px 0; }

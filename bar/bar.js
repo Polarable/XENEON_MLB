@@ -39,6 +39,7 @@ const Bar = (() => {
   const bases = (o = {}) => { const b = (on, cx, cy) => `<rect x="${cx - 5.5}" y="${cy - 5.5}" width="11" height="11" transform="rotate(45 ${cx} ${cy})" class="${on ? "on" : ""}"/>`;
     return `<svg class="bases" viewBox="0 0 46 34">${b(o.second, 23, 9)}${b(o.third, 11, 22)}${b(o.first, 35, 22)}</svg>`; };
   const outs = (n = 0) => `<span class="outs">${[0, 1, 2].map((i) => `<i class="${i < n ? "on" : ""}"></i>`).join("")}</span>`;
+  const hs = (id) => `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:silo:current.png/w_120,q_auto:best,f_png/v1/people/${id}/headshot/silo/current`;
   const callCls = (p) => p?.details?.isBall ? "b" : p?.details?.isInPlay ? "x" : "s";
 
   // ---------- data ----------
@@ -151,7 +152,7 @@ const Bar = (() => {
   function newsSlide(a) {
     if (!a) return `<div class="nw"><div class="tx"><span class="hd">No stories yet</span></div></div>`;
     const t = byAbbr[(a.teams || [])[0]];
-    return `<div class="nw">${t ? logo(t) : ""}<div class="tx"><span class="hd">${esc(a.title)}</span><span class="mt">${t ? esc(t.name) + " · " : ""}${ago(a.date)}</span></div></div>`;
+    return `<div class="nw"><div class="tx"><span class="hd">${esc(a.title)}</span><span class="mt">${t ? logo(t) + esc(t.name) + " · " : ""}${ago(a.date)}</span></div></div>`;
   }
   function drawBar(animate) {
     const m = effectiveMode();
@@ -168,15 +169,22 @@ const Bar = (() => {
   function expand(v) {
     view = v || (effectiveMode() === "game" ? "game" : "story");
     if (view === "story") { const l = newsList(); storyAt = Math.max(0, articles.indexOf(l[newsIdx] || articles[0])); }
+    clearTimeout(collapse.t); document.body.classList.remove("closing");
     send({ type: "size", h: PANEL_H + BAR_H + 8 });
     document.body.classList.add("open"); document.getElementById("panel").setAttribute("aria-hidden", "false");
     drawPanel(); tick();
   }
   function collapse() {
-    if (!document.body.classList.contains("open")) return;
-    document.body.classList.remove("open"); document.getElementById("panel").setAttribute("aria-hidden", "true");
-    send({ type: "size", h: BAR_H });
+    if (!document.body.classList.contains("open") || document.body.classList.contains("closing")) return;
+    // Play the close animation, then shrink the window back to the bar
+    document.body.classList.add("closing");
+    collapse.t = setTimeout(() => {
+      document.body.classList.remove("open", "closing"); document.getElementById("panel").setAttribute("aria-hidden", "true");
+      send({ type: "size", h: BAR_H });
+    }, 220);
   }
+  // The mod tells the page how wide the bar may be (it stops before the Start button); the open view can be wider.
+  function setBarWidth(px) { document.documentElement.style.setProperty("--bar-w", px > 0 ? px + "px" : "100%"); }
   function drawModes() {
     document.getElementById("modes").innerHTML = MODES.map(([k, l]) => `<button data-mode="${k}" class="${S.get("mode") === k ? "on" : ""}">${l}</button>`).join("");
     document.getElementById("gear").classList.toggle("on", view === "settings");
@@ -220,8 +228,9 @@ const Bar = (() => {
       const cp = f.liveData.plays.currentPlay || {};
       const bt = cp.matchup?.batter, pt = cp.matchup?.pitcher;
       html += `<div class="gv-sit">${bases(ls.offense)}<div class="cnt"><span class="c tn">${ls.balls ?? 0}-${ls.strikes ?? 0}</span>${outs(ls.outs)}</div>
-        <div class="mu">${bt ? `<div><em>AB</em><b class="lnk" data-player="${bt.id}">${esc(bt.fullName)}</b><span>${esc(line(f, bt.id, "batting"))}</span></div>` : ""}
-          ${pt ? `<div><em>P</em><b class="lnk" data-player="${pt.id}">${esc(pt.fullName)}</b><span>${esc(line(f, pt.id, "pitching"))}</span></div>` : ""}</div></div>`;
+        </div>
+        <div class="mus">${[[bt, "At bat", "batting"], [pt, "Pitching", "pitching"]].filter(([x]) => x).map(([x, l, k]) =>
+          `<div class="muc lnk" data-player="${x.id}"><img src="${hs(x.id)}" alt="" onerror="this.style.visibility='hidden'"><div><em>${l}</em><b>${esc(x.fullName)}</b><span>${esc(line(f, x.id, k))}</span></div></div>`).join("")}</div>`;
       const ps = (cp.playEvents || []).filter((e) => e.isPitch).reverse();
       if (ps.length) html += `<div class="h-lbl">This at-bat</div><ul class="pl">${ps.map((p, i) => `<li><span class="n ${callCls(p)}">${p.pitchNumber || ps.length - i}</span>
           <span class="d"><b>${esc(p.details?.call?.description || p.details?.description || "")}</b><span>${esc(p.details?.type?.description || "")}</span></span>
@@ -230,7 +239,7 @@ const Bar = (() => {
     if (f) {
       const done = f.liveData.plays.allPlays.filter((p) => p.about?.isComplete).slice(-6).reverse();
       if (done.length) html += `<div class="h-lbl">Recent plays</div><div class="plays">${done.map((p) =>
-        `<div class="play ${p.about.isScoringPlay ? "sc" : ""}"><i>${p.about.isTopInning ? "▲" : "▼"}${p.about.inning}</i><span>${esc(p.result.description || p.result.event || "")}</span></div>`).join("")}</div>`;
+        `<div class="play ${p.about.isScoringPlay ? "sc" : ""}">${p.matchup?.batter ? `<img src="${hs(p.matchup.batter.id)}" alt="" onerror="this.style.visibility='hidden'">` : ""}<i>${p.about.isTopInning ? "▲" : "▼"}${p.about.inning}</i><span>${esc(p.result.description || p.result.event || "")}</span></div>`).join("")}</div>`;
     }
     html += `<div class="foot"><button class="btn" data-open="m/?game=${g.gamePk}">Open in SHUTOUT</button></div>${pick}`;
     return html;
@@ -249,10 +258,13 @@ const Bar = (() => {
     // Player names become links to their pages in the app
     const names = (a.players || []).filter((p) => p[0] && p[1]).sort((x, y) => y[0].length - x[0].length);
     const link = (txt) => { let out = esc(txt); for (const [n, id] of names) out = out.split(esc(n)).join(`<span class="pn" data-player="${id}">${esc(n)}</span>`); return out; };
-    return `<article class="st"><div class="st-k">${t ? logo(t) + `<b>${esc(t.name)}</b> · ` : ""}${ago(a.date)}
+    const more = articles.slice(0, N).map((x, i) => [x, i]).filter(([, i]) => i !== storyAt).slice(0, 5);
+    const thumb = (x) => x.image ? `<img class="th" src="${esc(x.image)}" alt="" loading="lazy" onerror="this.remove()">` : `<span class="th none">${byAbbr[(x.teams || [])[0]] ? logo(byAbbr[(x.teams || [])[0]]) : ""}</span>`;
+    return `<article class="st">${a.image ? `<div class="st-hero"><img src="${esc(a.image)}" alt="" onerror="this.parentNode.remove()"></div>` : ""}<div class="st-k">${t ? logo(t) + `<b>${esc(t.name)}</b> · ` : ""}${ago(a.date)}
         <span class="st-nav"><button class="ic" data-story="-1" aria-label="Newer">‹</button>${storyAt + 1}/${N}<button class="ic" data-story="1" aria-label="Older">›</button></span></div>
       <h2>${esc(a.title)}</h2>${(a.body || []).slice(0, 8).map((p) => `<p>${link(p)}</p>`).join("")}
-      <div class="foot"><button class="btn" data-open="m/?story=${encodeURIComponent(a.link)}">Open in SHUTOUT</button><button class="btn ghost" data-ext="${esc(a.link)}">Read on MLB Trade Rumors</button></div></article>`;
+      <div class="foot"><button class="btn" data-open="m/?story=${encodeURIComponent(a.link)}">Open in SHUTOUT</button><button class="btn ghost" data-ext="${esc(a.link)}">Read on MLB Trade Rumors</button></div></article>
+      ${more.length ? `<div class="h-lbl">More stories</div><div class="more">${more.map(([x, i]) => `<button class="mr" data-goto="${i}">${thumb(x)}<span><b>${esc(x.title)}</b><em>${byAbbr[(x.teams || [])[0]] ? esc(byAbbr[(x.teams || [])[0]].name) + " · " : ""}${ago(x.date)}</em></span></button>`).join("")}</div>` : ""}`;
   }
 
   function settingsView() {
@@ -285,6 +297,7 @@ const Bar = (() => {
     if ((el = q("[data-player]"))) return openUrl(`m/?player=${el.dataset.player}`);
     if ((el = q("[data-open]"))) return openUrl(el.dataset.open);
     if ((el = q("[data-ext]"))) return host ? send({ type: "open", url: el.dataset.ext }) : window.open(el.dataset.ext, "_blank");
+    if ((el = q("[data-goto]"))) { storyAt = +el.dataset.goto; document.getElementById("pbody").scrollTop = 0; drawPanel(); return; }
     if ((el = q("[data-story]"))) { const N = Math.min(articles.length, 30); storyAt = (storyAt + +el.dataset.story + N) % N; document.getElementById("pbody").scrollTop = 0; drawPanel(); return; }
     if ((el = q("[data-fav]"))) { S.set("fav", el.dataset.fav); S.set("pin", null); feed = null; drawPanel(); drawBar(true); tick(); return; }
     if ((el = q("[data-tog]"))) { S.set(el.dataset.tog, !S.get(el.dataset.tog)); drawPanel(); }
@@ -306,7 +319,7 @@ const Bar = (() => {
   }
   // Live games refresh every 6 s; otherwise the loop idles along
   setInterval(() => { const g = pickGame(); if ((g && phase(g.status) === "live") || Date.now() - lastGames > 60e3) tick(); }, 6000);
-  send({ type: "size", h: BAR_H });
+  send({ type: "size", h: BAR_H, init: 1 });
   tick();
 
   // Self-update: reload when a new version of the site is out (only while collapsed)
@@ -320,5 +333,5 @@ const Bar = (() => {
   if (qs.get("bg") === "solid") document.body.classList.add("solid");
   if (!host) document.body.style.background = matchMedia("(prefers-color-scheme: light)").matches ? "#e9e9e9" : "#1c1c1c";
 
-  return { expand, collapse };
+  return { expand, collapse, setBarWidth };
 })();

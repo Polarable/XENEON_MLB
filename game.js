@@ -1,7 +1,7 @@
 // Game page: scoreboard, linescore and decisions on the left; box score, scoring plays or
 // play-by-play on the right. Live games check for updates every 3 seconds. Data: the MLB live feed.
-Sheet.register("game", async (root, { pk }, alive) => {
-  let view = null;            // chosen per game below
+Sheet.register("game", async (root, { pk }, alive, state = {}) => {
+  let view = state.view || null;   // chosen per game below; kept on the page so Back returns to the same tab
   let feed = null;
   let timer = 0;
   const gday = Gameday(pk);
@@ -96,6 +96,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
     return t.away?.players?.[`ID${id}`] || t.home?.players?.[`ID${id}`] || null;
   };
 
+  const hs = (id) => `<img class="bx-hs" src="${headshot(id, 120)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`;
   // ---- Box score (Baseball Reference layout: batting, notes, then pitching, per team) ----
   function batting(team) {
     const players = team.players || {};
@@ -110,7 +111,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
     const tot = team.teamStats?.batting || {};
     const cols = [
       { h: `${esc(teamMeta(team.team).name)}`, cls: "name", f: (r) => r.__tot ? "Team totals" :
-        `<span class="${r.sub ? "sub" : ""} lnk" data-player="${r.id}">${esc(r.note ? `${r.note}` : "")}${esc(r.name)}</span> <span class="ps">${esc(r.pos)}</span>` },
+        `${hs(r.id)}<span class="${r.sub ? "sub" : ""} lnk" data-player="${r.id}">${esc(r.note ? `${r.note}` : "")}${esc(r.name)}</span> <span class="ps">${esc(r.pos)}</span>` },
       { h: "AB", k: "atBats" }, { h: "R", k: "runs" }, { h: "H", k: "hits" }, { h: "RBI", k: "rbi" },
       { h: "BB", k: "baseOnBalls" }, { h: "SO", k: "strikeOuts" }, { h: "PA", k: "plateAppearances" },
       { h: "BA", f: (r) => rate(r.__tot ? tot.avg : r.seasonAvg), title: "Season batting average after this game" },
@@ -134,7 +135,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
     const tot = team.teamStats?.pitching || {};
     const cols = [
       { h: `${esc(teamMeta(team.team).name)} pitching`, cls: "name", f: (r) => r.__tot ? "Team totals" :
-        `<span class="lnk" data-player="${r.id}">${esc(r.name)}</span>${r.dec ? ` <span class="ps">${esc(r.dec)}</span>` : ""}` },
+        `${hs(r.id)}<span class="lnk" data-player="${r.id}">${esc(r.name)}</span>${r.dec ? ` <span class="ps">${esc(r.dec)}</span>` : ""}` },
       { h: "IP", k: "inningsPitched" }, { h: "H", k: "hits" }, { h: "R", k: "runs" }, { h: "ER", k: "earnedRuns" },
       { h: "BB", k: "baseOnBalls" }, { h: "SO", k: "strikeOuts" }, { h: "HR", k: "homeRuns" }, { h: "BF", k: "battersFaced" },
       { h: "Pit", k: "numberOfPitches" }, { h: "Str", k: "strikes" },
@@ -176,8 +177,8 @@ Sheet.register("game", async (root, { pk }, alive) => {
     const gd = feed.gameData, ld = feed.liveData || {};
     const phase = isPostponed(gd.status) ? "off" : phaseOf(gd.status);
     const views = phase === "preview" || phase === "off" ? [["box", "Lineups"]] : [["gameday", "Gameday"], ["box", "Box score"], ["scoring", "Scoring"], ["pbp", "All plays"]];
-    // Live games open on Gameday; finished games on the box score (or whatever was picked last).
-    if (!view) view = phase === "live" ? "gameday" : load("game-view") || "box";
+    // Live games open on Gameday; finished games on the box score.
+    if (!view) view = phase === "live" ? "gameday" : "box";
     if (!views.some(([v]) => v === view)) view = views[0][0];
     const right = view === "box" ? boxView(ld) : view === "gameday" ? `<div class="gd-slot"></div>`
       : `<div class="pc-grid vscroll"></div>`;
@@ -200,11 +201,11 @@ Sheet.register("game", async (root, { pk }, alive) => {
     else if (view === "scoring" || view === "pbp") gday.renderCards(root.querySelector(".pc-grid"), feed, view === "scoring" ? "scoring" : "all");
     // Tapping a play anywhere shows its at-bat (pitches + clip) on Gameday.
     root.querySelector(".g-main").onclick = (e) => {
-      gday.onClick(e, () => { view = "gameday"; render(); });
+      gday.onClick(e, () => { view = state.view = "gameday"; render(); });
     };
     root.querySelector(".g-tabs").onclick = (e) => {
       const b = e.target.closest("[data-v]"); if (!b) return;
-      view = b.dataset.v; save("game-view", view); render();
+      view = state.view = b.dataset.v; render();
     };
   }
 

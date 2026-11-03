@@ -607,7 +607,11 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
   background: rgba(255,255,255,.06); color: var(--text-2); font: 400 26px/1 "Inter Tight", sans-serif; cursor: pointer; }
 #picker-clear.on { display: block; }
 #picker button.fav { border-color: rgba(255,255,255,.18); }
-#picker button.fav::after { content: "My team"; font-size: 12px; font-weight: 500; color: var(--text-3); }
+#picker button { position: relative; }
+#picker button.fav::after { content: ""; position: absolute; top: 8px; right: 8px; width: 12px; height: 12px;
+  background: #ffd25a; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z'/%3E%3C/svg%3E") center/contain no-repeat; }
+#picker svg.all { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.6; opacity: .85; }
 
 /* My team tab */
 #myteam-body { position: absolute; inset: 0 0 0 0; overflow: hidden; }
@@ -770,3 +774,6 @@ body.has-livebar #brand .name, body.has-livebar #brand .sep, body.has-livebar he
 .ph-row:first-child .ph-c b { color: #fff; }
 .ph-row:last-child .ph-c b { color: var(--text-2); font-weight: 500; }
 #stage.big .ph-c em { font-size: 15px; } #stage.big .ph-l { font-size: 17px; }
+/* Box score headshots */
+.stats td.name .bx-hs { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: 50% 15%; background: #1a1a1a; vertical-align: middle; margin-right: 12px; }
+.stats tr.tot td.name .bx-hs { display: none; }

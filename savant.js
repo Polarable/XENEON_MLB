@@ -74,19 +74,31 @@ const Savant = (() => {
   function spray(rows) {
     const bb = rows.filter((r) => r.hc_x && r.hc_y && r.type === "X");
     if (!bb.length) return `<div class="sv-empty muted">No batted balls</div>`;
-    const W = 520, H = 470, S = 2.1, ox = W / 2, oy = H - 24;
+    const W = 520, H = 470, S = 2.4, ox = W / 2, oy = H - 24;
     const pt = (r) => [ox + (+r.hc_x - 125.42) * S, oy - (204 - +r.hc_y) * S];
     const col = (e) => (e === "home_run" ? "#d82929" : e === "triple" ? "#f2a33a" : e === "double" ? "#2f9be0" : e === "single" ? "#5cc38b" : "rgba(255,255,255,.28)");
-    // Field: foul lines, a 400 ft fence arc, infield diamond.
+    // Field drawn to scale: 330 ft lines, 375 ft gaps, 400 ft center, infield grass edge 95 ft from the rubber.
     const ft = (d) => (d / 2.5) * S;
-    const fence = (a) => [ox + Math.sin(a) * ft(395), oy - Math.cos(a) * ft(395)];
-    const [lx, ly] = fence(-Math.PI / 4), [rx, ry] = fence(Math.PI / 4), [cx, cy] = fence(0);
-    const inf = ft(90 / Math.SQRT2);
+    const at = (a, d) => [ox + Math.sin(a) * ft(d), oy - Math.cos(a) * ft(d)];
+    const P = (pts) => pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
+    const Q = Math.PI / 4, N = 36;
+    const wall = Array.from({ length: N + 1 }, (_, i) => { const a = -Q + (2 * Q * i) / N; return at(a, 330 + 70 * Math.pow(Math.cos(2 * a), 1.4)); });
+    const outfield = `${P([[ox, oy], ...wall])} Z`;
+    // Infield dirt: circle of 95 ft around the rubber, clipped to fair territory.
+    const mx = ox, my = oy - ft(60.5), r95 = ft(95);
+    const dirt = [];
+    for (let i = 0; i <= 90; i++) { const t = Math.PI + (Math.PI * i) / 90; const x = mx + Math.cos(t) * r95, y = my + Math.sin(t) * r95;
+      if (Math.abs(x - ox) <= oy - y) dirt.push([x, y]); }
+    const infield = `${P([[ox, oy], ...dirt])} Z`;
+    const b = ft(90 / Math.SQRT2);
+    const diamond = `M${ox} ${oy} l${b} ${-b} l${-b} ${-b} l${-b} ${b} Z`;
     const dots = bb.sort((a, b) => (a.events === "home_run") - (b.events === "home_run"))
       .map((r) => { const [x, y] = pt(r); return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.events === "home_run" ? 5 : 3.6}" fill="${col(r.events)}"/>`; }).join("");
     return `<svg class="sv-svg" viewBox="0 0 ${W} ${H}">
-      <path d="M${ox} ${oy} L${lx} ${ly} Q${cx} ${cy - (ly - cy) * 0.55} ${rx} ${ry} Z" fill="rgba(255,255,255,.035)" stroke="rgba(255,255,255,.18)"/>
-      <path d="M${ox} ${oy} l${-inf} ${-inf} l${inf} ${-inf} l${inf} ${inf} Z" fill="none" stroke="rgba(255,255,255,.18)"/>
+      <path d="${outfield}" fill="rgba(255,255,255,.035)" stroke="rgba(255,255,255,.2)" stroke-linejoin="round"/>
+      <path d="${infield}" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+      <path d="${diamond}" fill="none" stroke="rgba(255,255,255,.22)"/>
+      <circle cx="${mx}" cy="${my}" r="${ft(9).toFixed(1)}" fill="rgba(255,255,255,.06)"/>
       ${dots}</svg>
       <div class="sv-key">${[["Single", "single"], ["Double", "double"], ["Triple", "triple"], ["Home run", "home_run"], ["Out", "out"]]
         .map(([l, e]) => `<span><i style="background:${col(e)}"></i>${l}</span>`).join("")}</div>`;
