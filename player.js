@@ -20,7 +20,7 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   const groups = [];
   if (isPitcher || isTwoWay) { if (hasPit) groups.push("pitching"); if (hasBat) groups.push("hitting"); }
   else { if (hasBat) groups.push("hitting"); if (hasPit) groups.push("pitching"); }
-  let tab = state.tab && (state.tab === "log" || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
+  let tab = state.tab && (state.tab === "log" || (state.tab === "savant" && groups.length) || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
 
   const team = p.currentTeam ? teamMeta(p.currentTeam) : null;
   root.setAttribute("style", team ? vars(team) : "");
@@ -56,23 +56,44 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   function latestStory() {
     const last = p.lastName || lastName(p.fullName || "");
     const hits = storyHits;
-    if (!hits.length) return `<div class="p-news-h">Latest from MLB Trade Rumors</div><div class="p-nonews">No recent stories about ${esc(last)}.</div>`;
+    if (!hits.length) return "";
     // Up to two full story cards, then a line for a third if there is one.
     const cardFor = (a, i) => `<div class="p-news" role="button" data-story="${i}" style="animation-delay:${i * 60}ms">
         ${a.image ? `<div class="pn-img" style="background-image:url('${esc(a.image)}')"></div>` : ""}
         <div class="pn-txt"><div class="pn-kick">${a.teams?.[0] && byAbbr[a.teams[0]] ? `${logoImg(byAbbr[a.teams[0]])}${esc(byAbbr[a.teams[0]].name)} · ` : ""}${esc(ago(a.date))}</div>
           <h3>${esc(a.title)}</h3><p>${esc((a.body || [])[0] || "")}</p></div>
       </div>`;
+    // One story, then his highlights underneath (with no story, the highlights move up).
     return `<div class="p-news-h">Latest from MLB Trade Rumors</div>
-      ${hits.slice(0, 2).map(cardFor).join("")}
-      ${hits[2] ? `<div class="pn-more" role="button" data-story="2"><span>${esc(hits[2].title)}</span><em>${esc(ago(hits[2].date))}</em></div>` : ""}`;
+      ${cardFor(hits[0], 0)}
+      ${hits[1] ? `<div class="pn-more" role="button" data-story="1"><span>${esc(hits[1].title)}</span><em>${esc(ago(hits[1].date))}</em></div>` : ""}`;
+  }
+
+  // ---- Highlights: his best and most fun moments this season, each opening on Savant ----
+  let hlTimer = 0;
+  async function drawHighlights() {
+    const box = root.querySelector(".p-hl");
+    if (!box) return;
+    const season = currentSeason();
+    const list = await Savant.highlights(id, isPitcher, season).catch(() => []);
+    if (!alive() || !box.isConnected) return;
+    box.innerHTML = list.length ? `<div class="p-news-h">Highlights <span class="muted">${season}</span></div>
+      <div class="p-hl-list vscroll">${list.slice(0, 12).map((h, i) => `<a class="p-hl-row" href="${esc(h.url)}" target="_blank" rel="noopener" style="animation-delay:${i * 40}ms">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span class="t">${esc(h.title)}</span>
+        <em>${h.date ? esc(ymdLabel(h.date.slice(0, 10), { month: "short", day: "numeric" })) : ""}</em></a>`).join("")}</div>` : "";
+    const sc = box.querySelector(".p-hl-list");
+    if (sc) dragScroll(sc, "y");
+    // New plays keep coming during the season, so look again every few minutes.
+    clearTimeout(hlTimer);
+    hlTimer = setTimeout(() => alive() && drawHighlights(), 5 * 60_000);
   }
   let storyHits = [];
   function drawStory() {
     const all = typeof articles !== "undefined" ? articles : [];
     const rx = new RegExp(`\\b${(p.fullName || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
     storyHits = all.filter((a) => rx.test(`${a.title} ${(a.body || []).join(" ")}`));
-    root.querySelector(".p-sum").innerHTML = latestStory();
+    root.querySelector(".p-sum").innerHTML = `${latestStory()}<div class="p-hl"></div>`;
+    drawHighlights();
   }
 
   root.innerHTML = `<div class="p-left">
@@ -141,10 +162,27 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     sortableTable(body, cols, rows, { cls: "glog" });
   }
 
+  // ---- Savant: percentile rankings, spray chart / pitch movement, year by year ----
+  const svTypes = groups.map((g) => (g === "pitching" ? "pitcher" : "batter"));
+  function savantTab() {
+    const type = svTypes.includes(state.svType) ? state.svType : svTypes[0] || "batter";
+    const ys = [...new Set(years[type === "pitcher" ? "pitching" : "hitting"].map((s) => +s.season))];
+    Savant.render(body, { id, type, years: ys, year: state.svYear, alive: () => alive() && tab === "savant",
+      onYear: (y) => { state.svYear = y; savantTab(); } });
+    if (svTypes.length > 1) {
+      const sw = document.createElement("div");
+      sw.className = "sv-type";
+      sw.innerHTML = svTypes.map((t) => `<button data-st="${t}" class="${t === type ? "on" : ""}">${t === "pitcher" ? "Pitching" : "Batting"}</button>`).join("");
+      sw.onclick = (e) => { const b = e.target.closest("[data-st]"); if (b) { state.svType = b.dataset.st; savantTab(); } };
+      body.querySelector(".sv-years")?.before(sw);
+    }
+  }
+
   function draw() {
-    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"]];
+    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"], ...(groups.length ? [["savant", "Savant"]] : [])];
     root.querySelector(".p-tabs").innerHTML = seg(tabs, tab);
     body.scrollTop = 0;
+    if (tab === "savant") { savantTab(); return; }
     if (tab === "log") { body.innerHTML = `<div class="s-loading">Loading…</div>`; gameLog().catch(() => { body.innerHTML = `<div class="s-loading">No game log available</div>`; }); return; }
     if (!groups.length) { body.innerHTML = `<div class="s-loading">No major league stats yet</div>`; return; }
     const rows = yearRows(tab);
