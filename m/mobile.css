@@ -278,3 +278,8 @@ table.standings th, table.standings td { padding: 0 8px; }
 /* Shared segmented controls: let long rows scroll instead of squeezing. */
 .g-tabs, .p-tabs, .t-tabs, .page-team .t-sub { overflow-x: auto; }
 .g-tabs .seg, .p-tabs .seg, .t-tabs .seg, .t-sub .seg { flex: none; }
+
+/* Player names in a story link to their pages (newslinks.js) */
+#reader .plink { color: inherit; cursor: pointer; text-decoration: underline; text-decoration-color: rgba(255,255,255,.3);
+  text-decoration-thickness: 1px; text-underline-offset: .18em; }
+#reader .r-body .plink { color: #fff; }

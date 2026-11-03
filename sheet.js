@@ -32,14 +32,15 @@ const Sheet = (() => {
     }
   }
 
-  function open(type, args) {
+  // onBack (optional) runs when Back leaves this page, e.g. to reopen the news story it came from.
+  function open(type, args, onBack) {
     // Don't stack the same page twice in a row.
     const top = stack[stack.length - 1];
     if (top && top.type === type && JSON.stringify(top.args) === JSON.stringify(args)) return;
-    stack.push({ type, args, state: {} });
+    stack.push({ type, args, state: {}, onBack });
     show();
   }
-  function back() { stack.pop(); show(); }
+  function back() { const top = stack.pop(); show(); top?.onBack?.(); }
   function close() { stack.length = 0; show(); }
 
   function init() {
