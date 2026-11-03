@@ -39,22 +39,37 @@ Sheet.register("player", async (root, { id }, alive) => {
     p.lastPlayedDate && !p.active ? `<b>Last game:</b> ${esc(longDate(p.lastPlayedDate))}` : "",
   ].filter(Boolean);
 
-  // ---- Summary box: this season and career ----
+  // ---- Summary: big tiles for this season (career underneath), then a by-season trend ----
+  const seasonTotals = (group) => {
+    const by = {};
+    years[group].forEach((y) => { if (!by[y.season] || !y.team) by[y.season] = y; });
+    return Object.keys(by).sort().map((k) => ({ season: k, stat: by[k].stat }));
+  };
+  const RATE = ["avg", "obp", "slg", "ops", "era", "whip"];
+  const fmt = (st, k) => (st == null || st[k] == null ? "–" : RATE.includes(k) ? rate(st[k]) : num(st[k]));
   function summary(group) {
-    const ys = years[group];
-    const last = ys[ys.length - 1];
-    const lastYear = last?.season;
-    // Combine a season split across teams for the summary.
-    const seasonRow = lastYear ? (ys.filter((s) => s.season === lastYear && !s.team)[0] || ys.filter((s) => s.season === lastYear).slice(-1)[0]) : null;
+    const tot = seasonTotals(group);
+    const last = tot[tot.length - 1];
+    const car = career[group];
     const items = group === "hitting"
-      ? [["G", "gamesPlayed"], ["AB", "atBats"], ["H", "hits"], ["HR", "homeRuns"], ["BA", "avg"], ["R", "runs"], ["RBI", "rbi"], ["SB", "stolenBases"], ["OBP", "obp"], ["SLG", "slg"], ["OPS", "ops"]]
-      : [["W", "wins"], ["L", "losses"], ["ERA", "era"], ["G", "gamesPitched"], ["GS", "gamesStarted"], ["SV", "saves"], ["IP", "inningsPitched"], ["SO", "strikeOuts"], ["WHIP", "whip"]];
-    const multiTeam = seasonRow && !seasonRow.team && ys.filter((s) => s.season === lastYear).length > 1;
-    const seasonStat = seasonRow?.stat || (multiTeam ? null : null);
-    const cell = (st, k) => esc(st ? (["avg", "obp", "slg", "ops", "era", "whip"].includes(k) ? rate(st[k]) : num(st[k])) : "");
-    return `<table class="summary"><tr><th></th>${items.map(([h]) => `<th>${h}</th>`).join("")}</tr>
-      ${seasonStat ? `<tr><td class="lbl">${lastYear}</td>${items.map(([, k]) => `<td>${cell(seasonStat, k)}</td>`).join("")}</tr>` : ""}
-      ${career[group] ? `<tr><td class="lbl">Career</td>${items.map(([, k]) => `<td>${cell(career[group], k)}</td>`).join("")}</tr>` : ""}</table>`;
+      ? [["BA", "avg"], ["HR", "homeRuns"], ["RBI", "rbi"], ["OPS", "ops"], ["H", "hits"], ["SB", "stolenBases"]]
+      : [["W-L", null], ["ERA", "era"], ["SO", "strikeOuts"], ["WHIP", "whip"], ["IP", "inningsPitched"], ["SV", "saves"]];
+    const val = (st, k) => (k ? fmt(st, k) : st ? `${st.wins ?? 0}-${st.losses ?? 0}` : "–");
+    const tiles = `<div class="p-tiles-h"><span>${last ? `${last.season} season` : "Season"}</span></div>
+      <div class="p-tiles">${items.map(([h, k]) => `<div class="pt"><small>${h}</small><b>${esc(val(last?.stat, k))}</b><span>Career ${esc(val(car, k))}</span></div>`).join("")}</div>`;
+    // Trend: OPS (hitters) or ERA (pitchers) by season, ending this season.
+    const key = group === "hitting" ? "ops" : "era";
+    const pts = tot.slice(-16).map((t) => ({ y: t.season, v: parseFloat(t.stat?.[key]) })).filter((t) => !isNaN(t.v));
+    let trend = "";
+    if (pts.length > 1) {
+      const vs = pts.map((t) => t.v);
+      const hi = Math.max(...vs), lo = Math.min(...vs);
+      const floor = Math.max(0, lo - (hi - lo || hi * .2) * 0.8);   // start the bars above zero so year-to-year changes show
+      const hgt = (v) => 12 + ((v - floor) / (hi - floor || 1)) * 88;
+      trend = `<div class="p-trend"><div class="p-tiles-h"><span>${group === "hitting" ? "OPS" : "ERA"} by season</span></div>
+        <div class="bars">${pts.map((t, i) => `<div class="bar ${i === pts.length - 1 ? "now" : ""}" style="--hn:${(hgt(t.v) / 100).toFixed(3)};--d:${i * 30}ms"><em>${esc(key === "ops" ? t.v.toFixed(3).replace(/^0/, "") : t.v.toFixed(2))}</em><i></i><small>'${String(t.y).slice(2)}</small></div>`).join("")}</div></div>`;
+    }
+    return tiles + trend;
   }
 
   root.innerHTML = `<div class="p-left">
