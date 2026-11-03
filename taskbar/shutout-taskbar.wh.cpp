@@ -2,7 +2,7 @@
 // @id              shutout-taskbar
 // @name            SHUTOUT taskbar scorebug
 // @description     Live MLB scorebug with big-play callouts and baseball news at the left end of the taskbar, where the weather sits
-// @version         1.2.0
+// @version         1.3.0
 // @author          polarable
 // @github          https://github.com/Polarable
 // @homepage        https://polarable.github.io/XENEON_MLB/m/
@@ -542,6 +542,7 @@ static RECT g_lastTaskbar = {};
 static UINT g_lastDpi = 0;
 static bool g_hiddenForFullscreen = false;
 static std::wstring g_loadedUrl;
+static int g_lastCssBarW = -1;   // bar width last sent to the page
 
 static IID MakeIid(PCWSTR s) { IID iid{}; IIDFromString(s, &iid); return iid; }
 static const IID IID_Controller2 = MakeIid(L"{c979903e-d4ca-4228-92eb-47ee3fa96eab}");
@@ -649,11 +650,28 @@ static void Place() {
     int w = (int)(g_set.width * scale + 0.5);
     int start = StartButtonLeft(tb, !EqualRect(&r, &g_lastTaskbar));
     if (start > x) w = std::min(w, start - x - (int)(12 * scale));   // stop short of Start / search
-    if (g_expanded) w = std::max(w, (int)(420 * scale));              // the open view needs some room
     w = std::max(w, (int)(200 * scale));
+    int barW = w;                                                    // the bar itself never passes Start
+    if (g_expanded) w = std::max(w, (int)(440 * scale));             // the open view above the taskbar can be wider
     int h = g_expanded ? (int)(g_cssWant * scale + 0.5) : barH;
     int y = r.bottom - h;
+    // Tell the page how wide the bar is, so it stays clear of the Start button while the view is open.
+    int cssBarW = (int)(barW / scale + 0.5);
+    if (g_webview && cssBarW != g_lastCssBarW) {
+        g_lastCssBarW = cssBarW;
+        g_webview->ExecuteScript((L"window.Bar && Bar.setBarWidth(" + std::to_wstring(cssBarW) + L")").c_str(), nullptr);
+    }
     SetWindowPos(g_hwnd, HWND_TOPMOST, x, y, w, h, SWP_NOACTIVATE | SWP_SHOWWINDOW);
+    // While open, the window is only the panel plus the bar, so the Start button next to the bar keeps working.
+    if (g_expanded && w > barW) {
+        HRGN rgn = CreateRectRgn(0, 0, w, h - barH);
+        HRGN bar = CreateRectRgn(0, h - barH, barW, h);
+        CombineRgn(rgn, rgn, bar, RGN_OR);
+        DeleteObject(bar);
+        SetWindowRgn(g_hwnd, rgn, TRUE);   // the system owns rgn now
+    } else {
+        SetWindowRgn(g_hwnd, nullptr, TRUE);
+    }
     g_lastTaskbar = r;
     g_hiddenForFullscreen = false;
     ResizeWebView();
@@ -733,6 +751,7 @@ static void OnWebMessage(const std::wstring& msg) {
     std::wstring type = JsonString(msg, L"type");
     if (type == L"size") {
         int h = JsonInt(msg, L"h");
+        if (JsonInt(msg, L"init")) g_lastCssBarW = -1;   // a fresh page: send it the bar width again
         SetExpanded(h > g_cssBar + 2, h);
     } else if (type == L"open") {
         OpenUrl(JsonString(msg, L"url"));
