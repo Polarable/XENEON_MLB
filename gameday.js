@@ -569,7 +569,6 @@ const Gameday = (pk) => {
     if (film && !pc) { play(clips.find((c) => c.id === film.dataset.clip), true); return true; }
     if (pc) {
       const ab = +pc.dataset.ab;
-      if (opened.has(ab) && sel === ab) opened.delete(ab); else opened.add(ab);
       sel = ab;
       const c = pc.querySelector("[data-clip]");
       if (c) play(clips.find((x) => x.id === c.dataset.clip), true);

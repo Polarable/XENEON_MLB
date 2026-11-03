@@ -57,15 +57,15 @@ Sheet.register("player", async (root, { id }, alive) => {
     const last = p.lastName || lastName(p.fullName || "");
     const hits = storyHits;
     if (!hits.length) return `<div class="p-news-h">Latest from MLB Trade Rumors</div><div class="p-nonews">No recent stories about ${esc(last)}.</div>`;
-    const a = hits[0];
-    const when = ago(a.date);
-    return `<div class="p-news-h">Latest from MLB Trade Rumors</div>
-      <div class="p-news" role="button" data-story="0">
+    // Up to two full story cards, then a line for a third if there is one.
+    const cardFor = (a, i) => `<div class="p-news" role="button" data-story="${i}" style="animation-delay:${i * 60}ms">
         ${a.image ? `<div class="pn-img" style="background-image:url('${esc(a.image)}')"></div>` : ""}
-        <div class="pn-txt"><div class="pn-kick">${a.teams?.[0] && byAbbr[a.teams[0]] ? `${logoImg(byAbbr[a.teams[0]])}${esc(byAbbr[a.teams[0]].name)} · ` : ""}${esc(when)}</div>
+        <div class="pn-txt"><div class="pn-kick">${a.teams?.[0] && byAbbr[a.teams[0]] ? `${logoImg(byAbbr[a.teams[0]])}${esc(byAbbr[a.teams[0]].name)} · ` : ""}${esc(ago(a.date))}</div>
           <h3>${esc(a.title)}</h3><p>${esc((a.body || [])[0] || "")}</p></div>
-      </div>
-      ${hits.slice(1, 3).map((x, i) => `<div class="pn-more" role="button" data-story="${i + 1}"><span>${esc(x.title)}</span><em>${esc(ago(x.date))}</em></div>`).join("")}`;
+      </div>`;
+    return `<div class="p-news-h">Latest from MLB Trade Rumors</div>
+      ${hits.slice(0, 2).map(cardFor).join("")}
+      ${hits[2] ? `<div class="pn-more" role="button" data-story="2"><span>${esc(hits[2].title)}</span><em>${esc(ago(hits[2].date))}</em></div>` : ""}`;
   }
   let storyHits = [];
   function drawStory() {
