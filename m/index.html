@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Everything (scripts, logos, news.json, images) lives one folder up, shared with the Xeneon page. -->
+<base href="../">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SHUTOUT</title>
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SHUTOUT">
+<meta name="application-name" content="SHUTOUT">
+<link rel="manifest" href="m/manifest.webmanifest">
+<link rel="apple-touch-icon" href="m/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="m/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="views.css?v=__BUILD__" rel="stylesheet">
+<link href="bracket.css?v=__BUILD__" rel="stylesheet">
+<link href="m/mobile.css?v=__BUILD__" rel="stylesheet">
+</head>
+<body>
+<div id="stage">
+  <div id="glow"></div>
+  <header id="m-top">
+    <div class="m-brand"><img src="brand/shutout-logo.png" alt=""><span class="name">SHUTOUT</span></div>
+    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button>
+    <button id="settings-btn" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg></button>
+  </header>
+  <div id="m-head"><h1 id="m-title">News</h1><span id="updated"></span></div>
+  <div id="ctx"></div>
+  <main id="m-main">
+    <div class="view on" id="view-news"><div id="m-news"></div></div>
+    <div class="view" id="view-scores"><div id="scores-row"></div></div>
+    <div class="view" id="view-standings"><div id="standings-body"></div></div>
+    <div class="view" id="view-rosters"><div id="rosters-body"></div></div>
+  </main>
+  <nav id="m-tabs">
+    <button class="tab on" data-tab="news"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M7.5 9h9M7.5 12.5h9M7.5 16h5"/></svg>News</button>
+    <button class="tab" data-tab="scores"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M7.2 5.6c1.6 1.8 2.4 4 2.4 6.4s-.8 4.6-2.4 6.4M16.8 5.6c-1.6 1.8-2.4 4-2.4 6.4s.8 4.6 2.4 6.4"/></svg>Scores</button>
+    <button class="tab" data-tab="standings"><svg viewBox="0 0 24 24"><path d="M5 19.5V11M12 19.5V5M19 19.5v-6"/></svg>Standings</button>
+    <button class="tab" data-tab="rosters"><svg viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="16.8" cy="9.5" r="2.5"/><path d="M15.6 14.2c2.6-.3 4.5 1.3 5 4.3"/></svg>Rosters</button>
+  </nav>
+  <div id="sheet"><div class="s-body"></div>
+    <div class="s-nav"><button class="s-back">‹ Back</button><button class="s-close" aria-label="Close">×</button></div></div>
+  <div id="scrim"></div>
+  <div id="reader">
+    <div class="r-photo"></div>
+    <div class="r-main">
+      <div class="kicker"></div>
+      <h2></h2>
+      <div class="r-body"></div>
+      <div class="r-foot"><a class="r-link" target="_blank" rel="noopener">Read on MLB Trade Rumors</a></div>
+    </div>
+    <button class="r-close" aria-label="Close">×</button>
+  </div>
+  <div id="picker" role="menu"></div>
+</div>
+
+<script src="teams.js?v=__BUILD__"></script>
+<script src="mlb.js?v=__BUILD__"></script>
+<script>
+  // Phones scroll natively, so the Xeneon's drag-to-scroll (built for a touchscreen inside iCUE) is switched off here.
+  dragScroll = function () {};
+</script>
+<script src="sheet.js?v=__BUILD__"></script>
+<script src="settings.js?v=__BUILD__"></script>
+<script src="scores.js?v=__BUILD__"></script>
+<script src="standings.js?v=__BUILD__"></script>
+<script src="bracket.js?v=__BUILD__"></script>
+<script src="team.js?v=__BUILD__"></script>
+<script src="savant.js?v=__BUILD__"></script>
+<script src="player.js?v=__BUILD__"></script>
+<script src="gameday.js?v=__BUILD__"></script>
+<script src="game.js?v=__BUILD__"></script>
+<script>
+  /* Phone version of the widget. The tabs and pages are the same scripts the Xeneon page runs
+     (scores.js, game.js, gameday.js ...); this file only supplies the shell they expect (tabs, team picker,
+     news, reader) and mobile.css lays their output out in one column. */
+  const REFRESH_MS = 5 * 60 * 1000;
+  const NEW_MIN = 60;
+  const LEAGUE = { abbr: "MLB", name: "MLB", color: "#c8102e", bright: "#e8283f" };
+  const logo = (t) => `logos/${t.abbr}.svg?v=__BUILD__`;
+  const logoFallback = (t) => `https://www.mlbstatic.com/team-logos/team-cap-on-dark/${t.id}.svg`;
+  const logoImg = (t, cls = "") => t.id ? `<img class="${cls}" src="${logo(t)}" data-fb="${logoFallback(t)}" alt="" onerror="fb(this)">` : "";
+  function fb(img) { if (img.dataset.fb && !img.dataset.tried) { img.dataset.tried = 1; img.src = img.dataset.fb; } else img.remove(); }
+  const byAbbr = Object.fromEntries(TEAMS.map((t) => [t.abbr, t]));
+  let articles = [];
+  let lastKey = "";
+  // Phone settings are kept apart from the Xeneon's ("m-" keys), in case both run in one browser.
+  function load(k) { try { return localStorage.getItem(`m-${k}`); } catch { return null; } }
+  function save(k, v) { try { localStorage.setItem(`m-${k}`, v); } catch {} }
+  let selected = load("team") || "ALL";
+  if (selected !== "ALL" && !byAbbr[selected]) selected = "ALL";
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return `${n >> 16 & 255}, ${n >> 8 & 255}, ${n & 255}`; };
+  const vars = (t) => `--tc:${t.bright};--tc-rgb:${rgb(t.bright)};--primary:${t.color}`;
+
+  // The shared pages are drawn at desktop sizes and zoomed down (mobile.css, --mz). `scale` tells the
+  // shared scripts that zoom, so canvases render at the screen's real resolution and bracket lines line up.
+  let scale = 0.74;
+  function fit() {
+    scale = innerWidth >= 700 ? 0.9 : innerWidth < 360 ? 0.68 : 0.74;
+    document.documentElement.style.setProperty("--mz", scale);
+  }
+  addEventListener("resize", fit); fit();
+
+  const minutes = (iso) => Math.max(0, (Date.now() - new Date(iso)) / 60000);
+  function ago(iso) {
+    const m = minutes(iso);
+    if (m < 1) return "Just now";
+    if (m < 60) return `${Math.round(m)}m ago`;
+    if (m < 1440) return `${Math.round(m / 60)}h ago`;
+    return `${Math.round(m / 1440)}d ago`;
+  }
+
+  function applyTeamMode(team) {
+    const stage = document.getElementById("stage");
+    stage.classList.toggle("team", !!team);
+    if (team) stage.style.setProperty("--team-rgb", rgb(team.bright));
+    document.getElementById("picker-label").innerHTML = team ? `${logoImg(team)} ${esc(team.name)}` : "All teams";
+  }
+
+  const kicker = (a, t) => `${logoImg(t)}<span class="team">${esc(t.name)}</span><span class="sep"></span>` +
+    `<span class="age" data-d="${esc(a.date)}">${ago(a.date)}</span>${minutes(a.date) < NEW_MIN ? `<span class="new">NEW</span>` : ""}`;
+
+  /* ---- News: the newest story as a full-bleed headliner, then a list ---- */
+  let list = [];
+  function newsCard(a, t, i) {
+    const photo = a.image ? `<img class="photo" src="${esc(a.image)}" alt="" loading="${i < 4 ? "eager" : "lazy"}" onload="this.classList.add('on')" onerror="this.remove()">` : "";
+    if (i === 0) {
+      const preview = (a.body || [])[0] || "";
+      return `<article class="mcard hero" data-i="0" role="button" style="${vars(t)}">
+        <div class="fallback">${logoImg(t)}</div>${photo}<div class="shade"></div>
+        <div class="text"><div class="kicker">${kicker(a, t)}</div><h2>${esc(a.title)}</h2>
+          ${preview ? `<p class="preview">${esc(preview)}</p>` : ""}</div></article>`;
+    }
+    return `<article class="mcard row" data-i="${i}" role="button" style="${vars(t)};--delay:${Math.min(i, 10) * 30}ms">
+      <div class="thumb"><div class="fallback">${logoImg(t)}</div>${photo}</div>
+      <div class="text"><div class="kicker">${kicker(a, t)}</div><h3>${esc(a.title)}</h3></div></article>`;
+  }
+  function render() {
+    const team = byAbbr[selected];
+    applyTeamMode(team);
+    list = (team ? articles.filter((a) => a.teams.includes(team.abbr)) : articles).slice(0, 30);
+    document.getElementById("m-news").innerHTML = list.length
+      ? list.map((a, i) => newsCard(a, team || byAbbr[a.teams[0]] || LEAGUE, i)).join("")
+      : `<div class="empty">${team ? logoImg(team) : ""}<div>No recent news${team ? ` for the ${esc(team.name)}` : ""}</div></div>`;
+    document.querySelectorAll("#picker button").forEach((b) => b.classList.toggle("on", b.dataset.t === selected));
+  }
+  document.getElementById("m-news").addEventListener("click", (e) => {
+    const c = e.target.closest(".mcard"); if (c) openReader(list[+c.dataset.i]);
+  });
+
+  // ---- Reader ----
+  function openReader(a) {
+    if (!a) return;
+    const t = byAbbr[selected] || byAbbr[a.teams[0]] || LEAGUE;
+    const r = document.getElementById("reader");
+    const photo = r.querySelector(".r-photo");
+    photo.style.backgroundImage = a.image ? `url("${a.image.replace(/"/g, "%22")}")` : "";
+    photo.innerHTML = a.image ? "" : logoImg(t, "logo");
+    r.querySelector(".kicker").innerHTML = kicker(a, t);
+    r.querySelector("h2").textContent = a.title;
+    const body = a.body || [];
+    r.querySelector(".r-body").innerHTML = body.length
+      ? body.map((p) => `<p>${esc(p)}</p>`).join("")
+      : `<p style="color:var(--text-3)">No preview for this story yet. It will appear after the next news update.</p>`;
+    r.querySelector(".r-link").href = a.link;
+    r.scrollTop = 0;
+    r.classList.add("open");
+    document.body.classList.add("locked");
+  }
+  function closeReader() {
+    document.getElementById("reader").classList.remove("open");
+    if (!Sheet.isOpen()) document.body.classList.remove("locked");
+  }
+  document.querySelector("#reader .r-close").onclick = closeReader;
+
+  /* ---- Team picker ---- */
+  function buildPicker() {
+    const opts = [{ abbr: "ALL" }, ...[...TEAMS].sort((a, b) => a.abbr.localeCompare(b.abbr))];
+    document.getElementById("picker").innerHTML = opts.map((t) =>
+      `<button data-t="${t.abbr}">${t.id ? logoImg(t) : `<span class="all">⚾</span>`}${t.id ? t.abbr : "All"}</button>`).join("");
+  }
+  function togglePicker(open) {
+    document.getElementById("picker").classList.toggle("open", open);
+    document.getElementById("scrim").classList.toggle("open", open);
+  }
+  document.getElementById("picker-btn").onclick = () => togglePicker(!document.getElementById("picker").classList.contains("open"));
+  document.getElementById("scrim").onclick = () => togglePicker(false);
+  document.getElementById("picker").onclick = (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    selected = b.dataset.t; save("team", selected); togglePicker(false); render();
+    VIEWS[activeTab]?.teamChanged();
+  };
+
+  /* ---- Tabs ---- */
+  const VIEWS = { scores: Scores, standings: Standings, rosters: Rosters };
+  const TITLES = { news: "News", scores: "Scores", standings: "Standings", rosters: "Rosters" };
+  const updatedText = {};
+  let activeTab = "news";
+  function setUpdated(tab, text) {
+    updatedText[tab] = text;
+    if (tab === activeTab) document.getElementById("updated").textContent = text;
+  }
+  function setTab(t) {
+    if (!TITLES[t]) t = "news";
+    if (activeTab !== t) VIEWS[activeTab]?.hide();
+    const same = activeTab === t;
+    activeTab = t; save("tab", t);
+    document.querySelectorAll("#m-tabs .tab").forEach((el) => el.classList.toggle("on", el.dataset.tab === t));
+    document.querySelectorAll(".view").forEach((el) => el.classList.toggle("on", el.id === `view-${t}`));
+    document.getElementById("m-title").textContent = TITLES[t];
+    document.getElementById("ctx").innerHTML = "";
+    document.getElementById("updated").textContent = updatedText[t] || "";
+    togglePicker(false); Settings.close();
+    if (!same) scrollTo(0, 0);
+    if (t !== "news") VIEWS[t].show();
+  }
+  document.getElementById("m-tabs").onclick = (e) => {
+    const el = e.target.closest("[data-tab]"); if (!el) return;
+    if (Sheet.isOpen()) Sheet.close();
+    closeReader();
+    // Tapping the tab you're on scrolls back to the top.
+    if (el.dataset.tab === activeTab) { scrollTo({ top: 0, behavior: "smooth" }); return; }
+    setTab(el.dataset.tab);
+  };
+
+  // A team's season in Scores: land on its latest game (the Xeneon scrolls sideways to it).
+  new MutationObserver(() => {
+    if (activeTab !== "scores" || !byAbbr[selected]) return;
+    const grid = document.querySelector("#scores-row .ggrid:not(.settled)");
+    if (!grid || grid.dataset.landed) return;
+    grid.dataset.landed = 1;
+    const cards = [...grid.querySelectorAll(".gcard")];
+    const target = cards.find((c) => c.classList.contains("live")) || cards.filter((c) => c.classList.contains("final")).pop();
+    if (target) requestAnimationFrame(() => scrollTo(0, Math.max(0, target.getBoundingClientRect().top + scrollY - 180)));
+  }).observe(document.getElementById("scores-row"), { childList: true });
+
+  // The page behind a game/team/player page shouldn't scroll along with it.
+  new MutationObserver(() => {
+    const open = document.getElementById("sheet").classList.contains("open");
+    document.body.classList.toggle("locked", open || document.getElementById("reader").classList.contains("open"));
+    if (open) document.querySelector("#sheet .s-body").scrollTop = 0;
+  }).observe(document.getElementById("sheet"), { attributes: true, attributeFilter: ["class"] });
+  // Each new page in the stack starts at its top.
+  new MutationObserver(() => { document.querySelector("#sheet .s-body").scrollTop = 0; })
+    .observe(document.querySelector("#sheet .s-body"), { attributes: true, attributeFilter: ["class"] });
+
+  async function refresh() {
+    try {
+      const data = await (await fetch(`news.json?t=${Date.now()}`, { cache: "no-store" })).json();
+      setUpdated("news", `Updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`);
+      const key = (data.articles || []).map((a) => a.link).join("|");
+      articles = data.articles || [];
+      if (key !== lastKey) { lastKey = key; render(); }
+      else document.querySelectorAll(".age[data-d]").forEach((el) => { el.textContent = ago(el.dataset.d); });
+    } catch (e) {
+      setUpdated("news", "Couldn't load news");
+    }
+  }
+
+  buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
+  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init();
+  setTab(load("tab") || "news");
+
+  // Coming back to the app after a while: refresh news right away.
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) { refresh(); checkVersion(); } });
+
+  /* Self-update, like the Xeneon page: reload when a new deploy is out (not while a page is open). */
+  const BUILD = "__BUILD__";
+  async function checkVersion() {
+    if (BUILD.startsWith("__")) return;
+    try {
+      const v = await (await fetch(`version.json?t=${Date.now()}`, { cache: "no-store" })).json();
+      if (v.build && v.build !== BUILD && !Sheet.isOpen() && !document.getElementById("reader").classList.contains("open"))
+        location.replace(`${location.pathname}?v=${v.build}${location.hash}`);
+    } catch (e) {}
+  }
+  setInterval(checkVersion, 60 * 1000);
+</script>
+</body>
+</html>

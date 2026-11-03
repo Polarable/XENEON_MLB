@@ -18,6 +18,9 @@ A 2560×720 page for the iCUE iFrame widget on the Corsair Xeneon Edge.
 
 The browser can't read MLB Trade Rumors directly (its RSS has no thumbnails and is blocked cross-origin), so the fetcher builds `news.json` ahead of time and the page just reads it.
 
+## Phone version (`m/`)
+`https://<user>.github.io/<repo>/m/` is the same site laid out for a phone: news, scores (day buttons and calendar), Gameday, box scores, standings and bracket, rosters, team and player pages (with the Savant tab) and settings. `m/index.html` loads the very same scripts as the Xeneon page and `m/mobile.css` stacks their layouts into one column, so features added to the widget show up on the phone too. Nothing in `m/` is loaded by the Xeneon page. In Safari, Share → Add to Home Screen installs it as the "SHUTOUT" app (icon in `m/apple-touch-icon.png`, `m/manifest.webmanifest`), opening full screen.
+
 ## Setup
 1. Push these files to a GitHub repo.
 2. Settings → Pages → Source: **GitHub Actions**.
