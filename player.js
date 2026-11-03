@@ -2,7 +2,7 @@
 // season and career, then year-by-year standard batting/pitching and this season's game log.
 Sheet.register("player", async (root, { id }, alive) => {
   const [pd, sd] = await Promise.all([
-    apiTry([`/api/v1/people/${id}?hydrate=currentTeam,draft`, `/api/v1/people/${id}`], { ttl: 3600_000 }),
+    apiTry([`/api/v1/people/${id}?hydrate=currentTeam,draft,rosterEntries`, `/api/v1/people/${id}`], { ttl: 3600_000 }),
     apiTry([`/api/v1/people/${id}/stats?stats=yearByYear,career&group=hitting,pitching&sportId=1`,
       `/api/v1/people/${id}/stats?stats=yearByYear,career&group=hitting,pitching`], { ttl: 600_000 }).catch(() => ({ stats: [] })),
   ]);
@@ -39,50 +39,59 @@ Sheet.register("player", async (root, { id }, alive) => {
     p.lastPlayedDate && !p.active ? `<b>Last game:</b> ${esc(longDate(p.lastPlayedDate))}` : "",
   ].filter(Boolean);
 
-  // ---- Summary: big tiles for this season (career underneath), then a by-season trend ----
-  const seasonTotals = (group) => {
-    const by = {};
-    years[group].forEach((y) => { if (!by[y.season] || !y.team) by[y.season] = y; });
-    return Object.keys(by).sort().map((k) => ({ season: k, stat: by[k].stat }));
-  };
-  const RATE = ["avg", "obp", "slg", "ops", "era", "whip"];
-  const fmt = (st, k) => (st == null || st[k] == null ? "–" : RATE.includes(k) ? rate(st[k]) : num(st[k]));
-  function summary(group) {
-    const tot = seasonTotals(group);
-    const last = tot[tot.length - 1];
-    const car = career[group];
-    const items = group === "hitting"
-      ? [["BA", "avg"], ["HR", "homeRuns"], ["RBI", "rbi"], ["OPS", "ops"], ["H", "hits"], ["SB", "stolenBases"]]
-      : [["W-L", null], ["ERA", "era"], ["SO", "strikeOuts"], ["WHIP", "whip"], ["IP", "inningsPitched"], ["SV", "saves"]];
-    const val = (st, k) => (k ? fmt(st, k) : st ? `${st.wins ?? 0}-${st.losses ?? 0}` : "–");
-    const tiles = `<div class="p-tiles-h"><span>${last ? `${last.season} season` : "Season"}</span></div>
-      <div class="p-tiles">${items.map(([h, k]) => `<div class="pt"><small>${h}</small><b>${esc(val(last?.stat, k))}</b><span>Career ${esc(val(car, k))}</span></div>`).join("")}</div>`;
-    // Trend: OPS (hitters) or ERA (pitchers) by season, ending this season.
-    const key = group === "hitting" ? "ops" : "era";
-    const pts = tot.slice(-16).map((t) => ({ y: t.season, v: parseFloat(t.stat?.[key]) })).filter((t) => !isNaN(t.v));
-    let trend = "";
-    if (pts.length > 1) {
-      const vs = pts.map((t) => t.v);
-      const hi = Math.max(...vs), lo = Math.min(...vs);
-      const floor = Math.max(0, lo - (hi - lo || hi * .2) * 0.8);   // start the bars above zero so year-to-year changes show
-      const hgt = (v) => 12 + ((v - floor) / (hi - floor || 1)) * 88;
-      trend = `<div class="p-trend"><div class="p-tiles-h"><span>${group === "hitting" ? "OPS" : "ERA"} by season</span></div>
-        <div class="bars">${pts.map((t, i) => `<div class="bar ${i === pts.length - 1 ? "now" : ""}" style="--hn:${(hgt(t.v) / 100).toFixed(3)};--d:${i * 30}ms"><em>${esc(key === "ops" ? t.v.toFixed(3).replace(/^0/, "") : t.v.toFixed(2))}</em><i></i><small>'${String(t.y).slice(2)}</small></div>`).join("")}</div></div>`;
-    }
-    return tiles + trend;
+  // ---- Roster status (40-man, injured list, DFA...) from the latest roster entry ----
+  const entry = (p.rosterEntries || []).slice().sort((x, y) => String(x.startDate || "").localeCompare(String(y.startDate || ""))).filter((r) => !r.endDate || r.isActive).pop();
+  function statusLine() {
+    if (!entry) return "";
+    const code = entry.status?.code || "";
+    const d = entry.status?.description || "";
+    const tone = /^D\d|injur/i.test(`${code} ${d}`) ? "bad" : /^(DES|DFA)|design|release|waiv|outright/i.test(`${code} ${d}`) ? "warn" : code === "A" ? "ok" : "";
+    const parts = [code === "A" ? "Active roster" : d];
+    if (entry.isActiveFortyMan && code !== "A") parts.push("40-man");
+    else if (entry.isActiveFortyMan === false && code === "A") parts.push("not on 40-man");
+    return `<div class="p-status ${tone}">${esc(parts.filter(Boolean).join(" · "))}</div>`;
+  }
+
+  // ---- Latest MLB Trade Rumors story about him (from the widget's news feed) ----
+  function latestStory() {
+    const last = p.lastName || lastName(p.fullName || "");
+    const hits = storyHits;
+    if (!hits.length) return `<div class="p-news-h">Latest from MLB Trade Rumors</div><div class="p-nonews">No recent stories about ${esc(last)}.</div>`;
+    const a = hits[0];
+    const when = ago(a.date);
+    return `<div class="p-news-h">Latest from MLB Trade Rumors</div>
+      <div class="p-news" role="button" data-story="0">
+        ${a.image ? `<div class="pn-img" style="background-image:url('${esc(a.image)}')"></div>` : ""}
+        <div class="pn-txt"><div class="pn-kick">${a.teams?.[0] && byAbbr[a.teams[0]] ? `${logoImg(byAbbr[a.teams[0]])}${esc(byAbbr[a.teams[0]].name)} · ` : ""}${esc(when)}</div>
+          <h3>${esc(a.title)}</h3><p>${esc((a.body || [])[0] || "")}</p></div>
+      </div>
+      ${hits.slice(1, 3).map((x, i) => `<div class="pn-more" role="button" data-story="${i + 1}"><span>${esc(x.title)}</span><em>${esc(ago(x.date))}</em></div>`).join("")}`;
+  }
+  let storyHits = [];
+  function drawStory() {
+    const all = typeof articles !== "undefined" ? articles : [];
+    const rx = new RegExp(`\\b${(p.fullName || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+    storyHits = all.filter((a) => rx.test(`${a.title} ${(a.body || []).join(" ")}`));
+    root.querySelector(".p-sum").innerHTML = latestStory();
   }
 
   root.innerHTML = `<div class="p-left">
       <div class="p-top"><div class="p-photo"><img src="${headshot(id, 360)}" alt="" onerror="this.remove()"></div>
         <div class="p-id"><h1>${esc(p.fullName)}</h1>
           ${team ? `<div class="p-team lnk" data-team="${team.id}">${logoImg(team)}${esc(fullTeamName(p.currentTeam) || team.name)}</div>` : ""}
-          <div class="p-num">${p.primaryNumber ? `#${esc(p.primaryNumber)} · ` : ""}${esc(p.primaryPosition?.abbreviation || "")}${p.active === false ? " · Retired" : ""}</div></div></div>
+          <div class="p-num">${p.primaryNumber ? `#${esc(p.primaryNumber)} · ` : ""}${esc(p.primaryPosition?.abbreviation || "")}${p.active === false ? " · Retired" : ""}</div>
+          ${statusLine()}</div></div>
       <div class="p-bio">${bio.map((b) => `<div>${b}</div>`).join("")}</div>
       <div class="p-sum"></div>
     </div>
     <div class="p-right"><div class="p-tabs"></div><div class="p-body vscroll"></div></div>`;
   const body = root.querySelector(".p-body");
   dragScroll(body, "y");
+  drawStory();
+  root.querySelector(".p-sum").onclick = (e) => {
+    const s = e.target.closest("[data-story]");
+    if (s && typeof openReader === "function") openReader(storyHits[+s.dataset.story]);
+  };
 
   // ---- Tables ----
   function yearRows(group) {
@@ -105,7 +114,7 @@ Sheet.register("player", async (root, { id }, alive) => {
   const lead = [
     { h: "Season", k: "season", asc: true, cls: "left" },
     { h: "Age", k: "age", asc: true },
-    { h: "Tm", k: "tm", asc: true, f: (r) => (r.tmId ? `<span class="lnk" data-team="${r.tmId}">${esc(r.tm)}</span>` : esc(r.tm || "")) },
+    { h: "Tm", k: "tm", asc: true, cls: "left", f: (r) => (r.tmId ? `<span class="lnk tmc" data-team="${r.tmId}">${logoImg(teamById[r.tmId] || {})}${esc(r.tm)}</span>` : esc(r.tm || "")) },
     { h: "Lg", k: "lg", asc: true },
   ];
 
@@ -135,7 +144,6 @@ Sheet.register("player", async (root, { id }, alive) => {
   function draw() {
     const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"]];
     root.querySelector(".p-tabs").innerHTML = seg(tabs, tab);
-    root.querySelector(".p-sum").innerHTML = groups.length ? summary(tab === "log" ? groups[0] : tab) : "";
     body.scrollTop = 0;
     if (tab === "log") { body.innerHTML = `<div class="s-loading">Loading…</div>`; gameLog().catch(() => { body.innerHTML = `<div class="s-loading">No game log available</div>`; }); return; }
     if (!groups.length) { body.innerHTML = `<div class="s-loading">No major league stats yet</div>`; return; }

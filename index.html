@@ -103,7 +103,7 @@
   .card .read { margin-left: auto; color: var(--text-3); font-size: 17px; opacity: var(--w); }
 
   /* Reader: tap a card to read its preview without leaving the widget. */
-  #reader { position: absolute; inset: 0; z-index: 20; display: none; background: #000; }
+  #reader { position: absolute; inset: 0; z-index: 40; display: none; background: #000; }
   #reader.open { display: flex; animation: pop .22s var(--ease); }
   #reader .r-photo { position: relative; flex: 0 0 900px; height: 720px; background: var(--surface) center/cover no-repeat; }
   #reader .r-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, transparent 55%, #000); }
