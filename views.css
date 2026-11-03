@@ -350,12 +350,17 @@ table.summary td.lbl { text-align: left; font-size: 16px; color: var(--text-3); 
 @keyframes bump { 0% { transform: scale(1); } 30% { transform: scale(1.35); color: #ffd25a; text-shadow: 0 0 24px rgba(255,210,90,.7); } 100% { transform: scale(1); } }
 .g-runs, .gcard .sc { display: inline-block; transform-origin: right center; }
 .g-field { display: grid; grid-template-columns: 176px auto 1fr; grid-template-areas: "fd bso extra" "next next next"; column-gap: 36px; margin-top: 16px; }
-.g-extra { grid-area: extra; align-self: center; display: flex; flex-direction: column; gap: 14px; }
-.gx small { display: block; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--text-3); }
-.gx b { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.gx span { margin-left: 8px; font-size: 13px; color: var(--text-3); }
-.wpbar { margin-top: 6px; height: 4px; border-radius: 2px; background: var(--h); overflow: hidden; }
-.wpbar i { display: block; height: 100%; background: var(--a); transition: width .8s var(--ease); }
+.g-extra { grid-area: extra; align-self: center; min-width: 0; }
+.wp-head { display: flex; align-items: baseline; justify-content: space-between; }
+.wp-head small { font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--text-3); }
+.wp-head b { font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; transition: color .4s; }
+svg.wp { display: block; width: 100%; height: 96px; margin-top: 6px; overflow: visible; }
+svg.wp .mid { stroke: rgba(255,255,255,.18); stroke-width: 1; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.wp-box { position: relative; margin-top: 6px; }
+.wp-box svg.wp { margin-top: 0; }
+.wp-box .wt { position: absolute; left: 0; font-size: 11px; font-weight: 600; color: var(--text-3); pointer-events: none; }
+.wp-box .wt.top { top: -2px; } .wp-box .wt.bot { bottom: -2px; }
 .pr-note { margin: 4px 0; padding: 4px 10px; border-left: 2px solid rgba(255,210,90,.6); font-size: 13px; color: var(--text-2); animation: pr-in .35s var(--ease); }
 .nh-top .gstat { margin-left: auto; padding: 3px 10px; border-radius: 999px; background: rgba(255,210,90,.14); color: #ffd25a; font-size: 13px; white-space: nowrap; }
 .pr em.abs { margin-left: 2px; padding: 0; background: none !important; font-size: inherit; font-weight: 600; }

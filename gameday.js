@@ -533,6 +533,12 @@ const Gameday = (pk) => {
     const label = showingLive ? `<span class="live"><i class="dot"></i>Now batting</span>` : sel != null ? "Replay" : "Last at-bat";
     const boxP = (id) => { const t = f.liveData?.boxscore?.teams || {}; return t.away?.players?.[`ID${id}`] || t.home?.players?.[`ID${id}`]; };
     const sAvg = (id) => boxP(id)?.seasonStats?.batting?.avg;
+    // Live: the pitcher's line today from the box score (innings, hits, runs, strikeouts, pitch count).
+    const todayPit = (id) => {
+      const q = showingLive ? boxP(id)?.stats?.pitching : null;
+      if (!q || q.inningsPitched == null) return "";
+      return [`${q.inningsPitched} ip`, `${q.hits ?? 0} h`, q.runs ? `${q.runs} r` : "", `${q.strikeOuts ?? 0} k`, q.numberOfPitches != null ? `${q.numberOfPitches} p` : ""].filter(Boolean).join(", ");
+    };
     $(".gd-now-head").innerHTML = `
       <div class="nh-top">${label}${!showingLive && cur.about?.isComplete ? `<span class="hl">${esc(title(cur))}</span>` : ""}${gameStatus(f) ? `<span class="gstat">${esc(gameStatus(f))}</span>` : ""}
         ${sel != null && live ? `<button class="gd-follow">Follow live</button>` : ""}</div>
@@ -540,7 +546,7 @@ const Gameday = (pk) => {
         <div class="who lnk" data-player="${m.batter?.id}"><img src="${headshot(m.batter?.id, 160)}" alt="" onerror="this.style.visibility='hidden'">
           <div><b>${esc(m.batter?.fullName || "")}</b><span>${esc(batLine(ln.bat))}${sAvg(m.batter?.id) ? ` · ${esc(sAvg(m.batter?.id))}` : ""} · bats ${m.batSide?.code === "L" ? "left" : "right"}</span></div></div>
         <div class="who p lnk" data-player="${m.pitcher?.id}"><img src="${headshot(m.pitcher?.id, 120)}" alt="" onerror="this.style.visibility='hidden'">
-          <div><b>${esc(m.pitcher?.fullName || "")}</b><span>${esc(pitLine(ln.pit))}</span></div></div>
+          <div><b>${esc(m.pitcher?.fullName || "")}</b><span>${esc(todayPit(m.pitcher?.id) || pitLine(ln.pit))}</span></div></div>
       </div>`;
     $(".gd-seq").innerHTML = pitchRows(cur) || `<div class="muted pad">First pitch coming up</div>`;
     // Challenges and reviews on this at-bat (a live one pulses while the call is being checked).
@@ -642,32 +648,39 @@ const Gameday = (pk) => {
     if (nextEl.dataset.h !== nextHtml) { nextEl.dataset.h = nextHtml; nextEl.innerHTML = nextHtml; nextEl.classList.remove("swap"); nextEl.getBoundingClientRect(); nextEl.classList.add("swap"); }
   }
 
-  let wp = null, wpAt = -1;
+  // Win probability graph beside the count: home team above the midline, away below, in team colors.
+  let wpList = [], wpAt = -1;
   async function loadWp(f) {
     const n = (f.liveData?.plays?.allPlays || []).length;
     if (n === wpAt) return;
     wpAt = n;
     try {
-      const list = await api(`/api/v1/game/${pk}/winProbability?fields=homeTeamWinProbability,awayTeamWinProbability,atBatIndex`, { ttl: 10_000 });
-      const last = (Array.isArray(list) ? list : []).filter((x) => x.homeTeamWinProbability != null).pop();
-      if (last) { wp = last; drawExtra(f, true); }
+      const list = await api(`/api/v1/game/${pk}/winProbability?fields=homeTeamWinProbability,atBatIndex,about,inning`, { ttl: 10_000 });
+      wpList = (Array.isArray(list) ? list : []).filter((x) => x.homeTeamWinProbability != null);
+      drawExtra(f, true);
     } catch {}
   }
   function drawExtra(f, fromWp = false) {
-    const ls = f.liveData?.linescore || {};
-    const pid = ls.defense?.pitcher?.id;
-    const box = f.liveData?.boxscore?.teams || {};
-    const p = box.away?.players?.[`ID${pid}`] || box.home?.players?.[`ID${pid}`];
-    const pc = p?.stats?.pitching?.numberOfPitches;
-    const strikes = p?.stats?.pitching?.strikes;
+    const el = fieldEl.querySelector(".g-extra");
     const teams = f.gameData?.teams || {};
     const away = teamMeta(teams.away), home = teamMeta(teams.home);
-    const h = wp ? Math.round(wp.homeTeamWinProbability) : null;
-    const lead = h == null ? null : h >= 50 ? { t: home, v: h } : { t: away, v: 100 - h };
-    const el = fieldEl.querySelector(".g-extra");
-    el.innerHTML = `${pc != null ? `<div class="gx"><small>Pitches</small><b>${pc}</b>${strikes != null ? `<span>${strikes} strikes</span>` : ""}</div>` : ""}
-      ${lead ? `<div class="gx"><small>Win probability</small><b>${lead.v}%</b><span>${esc(lead.t.abbr)}</span>
-        <div class="wpbar" style="--a:${away.bright};--h:${home.bright}"><i style="width:${100 - h}%"></i></div></div>` : ""}`;
+    if (wpList.length > 1) {
+      const W = 200, H = 96, n = wpList.length;
+      const pts = wpList.map((x, i) => [(i / (n - 1)) * W, H - (x.homeTeamWinProbability / 100) * H]);
+      const line = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
+      const area = `${line} L${W} ${H / 2} L0 ${H / 2} Z`;
+      const h = Math.round(wpList[n - 1].homeTeamWinProbability);
+      const lead = h >= 50 ? { t: home, v: h } : { t: away, v: 100 - h };
+      el.innerHTML = `<div class="wp-head"><small>Win probability</small><b style="color:${lead.t.bright}">${esc(lead.t.abbr)} ${lead.v}%</b></div>
+        <div class="wp-box"><svg class="wp" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+          <defs><clipPath id="wpt${pk}"><rect x="0" y="0" width="${W}" height="${H / 2}"/></clipPath><clipPath id="wpb${pk}"><rect x="0" y="${H / 2}" width="${W}" height="${H / 2}"/></clipPath></defs>
+          <path d="${area}" fill="${home.bright}" opacity=".28" clip-path="url(#wpt${pk})"/>
+          <path d="${area}" fill="${away.bright}" opacity=".28" clip-path="url(#wpb${pk})"/>
+          <line x1="0" x2="${W}" y1="${H / 2}" y2="${H / 2}" class="mid"/>
+          <path d="${line}" class="ln" pathLength="1"/>
+          <circle cx="${pts[n - 1][0]}" cy="${pts[n - 1][1]}" r="3.5" fill="#fff"/>
+        </svg><span class="wt top">${esc(home.abbr)}</span><span class="wt bot">${esc(away.abbr)}</span></div>`;
+    }
     if (!fromWp) loadWp(f);
   }
 
