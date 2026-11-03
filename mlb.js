@@ -109,7 +109,9 @@ function teamMeta(t = {}) {
   const known = teamById[t.id];
   return known || { abbr: t.abbreviation || (t.name || "").slice(0, 3).toUpperCase(), name: t.teamName || t.name || "", id: t.id, color: "#444", bright: "#888" };
 }
-const fullTeamName = (t) => (t && t.locationName ? `${t.locationName} ${t.teamName}` : (t && t.name) || "");
+// The official full name ("Tampa Bay Rays", "Athletics"). locationName is the ballpark's city, which gives
+// "St. Petersburg Rays" and "Sacramento Athletics", so it is only a fallback.
+const fullTeamName = (t) => (t && t.name) || (t && t.locationName ? `${t.locationName} ${t.teamName}` : "");
 
 // Player photos: MLB's transparent "silo" cut-outs (the Baseball Savant ones the old SHUTOUT app used),
 // with MLB's generic silo as the fallback. Asked for at about 3x the size they're shown so they stay sharp
