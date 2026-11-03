@@ -4,8 +4,8 @@
 //           on deck / in the hole underneath.
 //   middle: the feed: Real-style play cards (photo, distance + direction headline, batter and
 //           pitcher game lines, pitch list next to a mini strike zone, tidbits).
-//   right:  MLB Film Room video and the game's clips.
-// Tapping a card shows that at-bat on the left and plays its clip. Also renders the live field
+//   right:  a Video list with every play; tapping one opens its Baseball Savant video in a browser tab.
+// Tapping a card shows that at-bat on the left. Every pitch also links to its Savant video. Also renders the live field
 // (runners' photos on the bases, big ball/strike/out dots) for the game page's left panel.
 //
 // The batter silhouette (img/batter-hd.png) is cut from the reference image the user supplied (pitcher's view, right-handed stance).
@@ -14,12 +14,7 @@ BATTER_IMG.src = "img/batter-hd.png";   // 3x the original cut, edges re-smoothe
 
 const Gameday = (pk) => {
   let feed = null;
-  let clips = [];             // newest last
-  let clipTimer = 0;
   let sel = null;             // atBatIndex the user tapped; null = follow the live at-bat
-  let playingId = null;
-  let userPicked = false;
-  let muted = true;
 
   const COLOR = { ball: "#4fc37a", strike: "#ef5b5b", inplay: "#4b8dff", other: "#9aa0a6" };
   const pitchesOf = (ab) => (ab?.playEvents || []).filter((e) => e.isPitch);
@@ -41,147 +36,40 @@ const Gameday = (pk) => {
     </div>
     <div class="gd-feed vscroll"></div>
     <div class="gd-vcol">
-      <div class="gd-video"><video playsinline muted autoplay preload="auto"></video>
-        <div class="gd-vempty"><div class="fr">Video</div><div>Clips show up here a few minutes after MLB posts them. Older games may not have any.</div></div>
-        <div class="gd-vcap"><span class="t"></span></div>
-        <button class="gd-mute" aria-label="Sound">Sound off</button></div>
-      <div class="gd-clips vscroll"></div>
+      <div class="gd-vhead">Video<span>Every play opens on Baseball Savant</span></div>
+      <div class="gd-vids vscroll"></div>
     </div>`;
   const $ = (s) => root.querySelector(s);
   dragScroll($(".gd-feed"), "y");
-  dragScroll($(".gd-clips"), "y");
-  const video = $("video");
-  const vbox = $(".gd-video");
-  $(".gd-mute").onclick = (e) => {
-    e.stopPropagation();
-    muted = !muted; video.muted = muted;
-    $(".gd-mute").textContent = muted ? "Sound off" : "Sound on";
-  };
+  dragScroll($(".gd-vids"), "y");
 
-  /* ================= Film Room ================= */
-  // Every playable file for a clip, best first: plain H.264 MP4s, then HLS. If one fails to load
-  // (a dead link, or a codec the iCUE browser lacks), the player moves on to the next.
-  function sources(item) {
-    const pbs = (item.playbacks || []).filter((p) => p.url && !/trickplay/i.test(p.name || ""));
-    const rank = (p) => (p.name === "mp4Avc" ? 0 : /_(1800|2500|1200)K/i.test(p.url) ? 1 : /\.mp4/i.test(p.url) ? 2 : /\.m3u8/i.test(p.url) ? 3 : 9);
-    return pbs.filter((p) => rank(p) < 9 && (rank(p) < 3 || video.canPlayType("application/vnd.apple.mpegurl")))
-      .sort((a, b) => rank(a) - rank(b)).map((p) => p.url).filter((u, i, a) => a.indexOf(u) === i);
-  }
-  function pickThumb(item) {
-    const cuts = item.image?.cuts || [];
-    return (cuts.find((c) => c.aspectRatio === "16:9" && c.width >= 320 && c.width <= 800) || cuts.find((c) => c.aspectRatio === "16:9") || cuts[0] || {}).src || "";
-  }
-  async function loadClips() {
-    try {
-      const [data, idx] = await Promise.all([api(`/api/v1/game/${pk}/content`, { ttl: 30_000 }), Clips.index()]);
-      const items = data.highlights?.highlights?.items || [];
-      const webm = idx.games?.[pk] || {};
-      // Our WebM copy first (it plays everywhere); MLB's own files only where the browser has H.264.
-      const urlsOf = (it) => { const w = webm[it.slug || it.id || it.title]?.f; return [...(w ? [w] : []), ...(Clips.h264 ? sources(it) : [])]; };
-      const next = items.filter((it) => (!it.type || it.type === "video") && urlsOf(it).length)
-        .filter((it) => !/condensed game|game recap|postgame|press conference/i.test(`${it.title} ${it.headline}`))
-        .map((it) => ({
-          id: it.slug || it.id || it.title, title: it.title || it.headline || "Highlight",
-          urls: urlsOf(it), thumb: pickThumb(it), date: it.date || "", dur: it.duration || "",
-          players: (it.keywordsAll || []).filter((k) => /player_id/i.test(k.type || "")).map((k) => +k.value),
-          // Statcast play ids this clip is tagged with (MLB uses the play id as the clip's guid).
-          tags: [it.guid, it.mediaPlaybackId, ...(it.keywordsAll || []).filter((k) => /play_?id|sv_id/i.test(k.type || "")).map((k) => k.value)]
-            .filter(Boolean).map((x) => String(x).toLowerCase()),
-          text: (it.playbacks || []).map((p) => p.url).join(" ").toLowerCase(),
-        }))
-        .sort((a, b) => String(a.date).localeCompare(String(b.date)));
-      const fresh = next.map((c) => c.id).join() !== clips.map((c) => c.id).join();
-      clips = next;
-      if (fresh) clipMap = null;
-      return fresh;
-    } catch { return false; }
-  }
+  /* ================= Video (Baseball Savant) ================= */
+  // Savant has a video for every pitch, keyed by the pitch's Statcast playId. The widget can't play
+  // them (iCUE's browser has no H.264), so a tap opens the Savant page in a real browser tab.
+  const savant = (id) => `https://baseballsavant.mlb.com/sporty-videos?playId=${encodeURIComponent(id)}`;
+  const lastPitchId = (p) => { const ps = pitchesOf(p); for (let i = ps.length - 1; i >= 0; i--) if (ps[i].playId) return ps[i].playId; return null; };
+  const PLAY_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>`;
+  const vidLink = (id, inner, cls = "") => `<a class="${cls}" href="${savant(id)}" target="_blank" rel="noopener" data-savant>${inner}</a>`;
+  // Batter's action photo as the thumbnail (falls back to his headshot).
+  const actionPhoto = (id) => `https://img.mlbstatic.com/mlb-photos/image/upload/w_480,q_auto:good/v1/people/${id}/action/hero/current`;
 
-  // Which play each clip shows. Each clip goes to exactly one play:
-  //  1. the play whose Statcast play id the clip is tagged with (exact);
-  //  2. otherwise the last play its batter finished before the clip was posted;
-  //  3. otherwise the last play by its pitcher before that.
-  let clipMap = null, clipMapFor = null;
-  function mapClips(plays) {
-    const key = `${plays.length}:${plays.filter((p) => p.about?.isComplete).length}`;
-    if (clipMap && clipMapFor === key) return clipMap;
-    const byPlayId = new Map();
-    plays.forEach((p) => (p.playEvents || []).forEach((e) => e.playId && byPlayId.set(String(e.playId).toLowerCase(), p)));
-    const done = plays.filter((p) => p.about?.isComplete);
-    const map = new Map();       // atBatIndex -> clip
-    const put = (p, c) => { const k = p.about.atBatIndex; if (!map.has(k)) map.set(k, c); };
-    const loose = [];
-    clips.forEach((c) => {
-      let p = c.tags.map((t) => byPlayId.get(t)).find(Boolean);
-      if (!p) for (const [id, q] of byPlayId) if (c.text.includes(id)) { p = q; break; }
-      if (p) put(p, c); else loose.push(c);
-    });
-    loose.forEach((c) => {
-      const t = Date.parse(c.date) || Infinity;
-      const before = done.filter((q) => (Date.parse(q.about?.endTime || "") || 0) <= t && !map.has(q.about.atBatIndex));
-      const last = (f) => { for (let i = before.length - 1; i >= 0; i--) if (f(before[i])) return before[i]; return null; };
-      const p = last((q) => c.players.includes(q.matchup?.batter?.id)) || last((q) => c.players.includes(q.matchup?.pitcher?.id));
-      if (p) put(p, c);
-    });
-    clipMap = map; clipMapFor = key;
-    return map;
-  }
-  function clipFor(p, plays) {
-    if (!clips.length || !p.about?.isComplete) return null;
-    return mapClips(plays).get(p.about.atBatIndex) || null;
-  }
-
-  // The <video> lives in a persistent element that the game page moves around on each refresh.
-  // Browsers pause a video when it leaves the page, so remember what should be playing and resume.
-  let wantPlay = false, srcIdx = 0, playing = null;
-  function load(c, i) {
-    srcIdx = i;
-    const url = c.urls[i];
-    video.dataset.src = url; video.src = url; video.poster = c.thumb;
-    video.load();
-  }
-  function resume() {
-    if (!wantPlay || !playing) return;
-    video.muted = muted;
-    video.play().catch(() => {});
-  }
-  video.addEventListener("error", () => {
-    if (!playing) return;
-    if (srcIdx + 1 < playing.urls.length) { load(playing, srcIdx + 1); resume(); return; }
-    // Nothing for this clip will play in this browser.
-    wantPlay = false;
-    vbox.classList.remove("has"); vbox.classList.add("err");
-    const h264 = video.canPlayType('video/mp4; codecs="avc1.42E01E"');
-    $(".gd-vempty").innerHTML = `<div class="fr">Video</div><div>This clip won't load right now. Try another one.</div>
-      <div class="muted" style="font-size:13px">error ${video.error?.code ?? "?"} · h264 ${h264 || "no"}</div>`;
-  });
-  video.addEventListener("ended", () => {
-    const i = clips.findIndex((c) => c.id === playingId);
-    if (!userPicked && i >= 0 && clips[i + 1]) play(clips[i + 1]); else wantPlay = false;
-  });
-  function play(c, user = false) {
-    if (!c) return;
-    if (user) userPicked = true;
-    playingId = c.id; playing = c; wantPlay = true;
-    vbox.classList.add("has"); vbox.classList.remove("err", "none");
-    if (!c.urls.includes(video.dataset.src)) load(c, 0);
-    else if (user || video.ended) video.currentTime = 0;
-    resume();
-    $(".gd-vcap .t").textContent = c.title;
-    root.querySelectorAll(".gd-clip").forEach((el) => el.classList.toggle("on", el.dataset.clip === c.id));
-  }
-  // A tapped play with no clip: say so instead of leaving another play's video up.
-  function noClip() {
-    userPicked = true; wantPlay = false; playingId = null; playing = null;
-    video.pause();
-    vbox.classList.remove("has", "err"); vbox.classList.add("none");
-    $(".gd-vempty").innerHTML = `<div class="fr">Video</div><div>No clip for this play yet. Video shows up a few minutes after MLB posts it.</div>`;
-    root.querySelectorAll(".gd-clip.on").forEach((el) => el.classList.remove("on"));
-  }
-  function drawClips() {
-    $(".gd-clips").innerHTML = clips.slice().reverse().map((c) => `<div class="gd-clip ${c.id === playingId ? "on" : ""}" data-clip="${esc(c.id)}" role="button">
-      <div class="th" style="background-image:url('${esc(c.thumb)}')"><span>${esc(c.dur.replace(/^00:/, ""))}</span></div><div class="tt">${esc(c.title)}</div></div>`).join("") ||
-      `<div class="gd-noclips muted">No video for this game yet</div>`;
+  let vidsKey = "";
+  function drawVids(f) {
+    const plays = playsOf(f).filter((p) => p.about?.isComplete && lastPitchId(p));
+    const key = plays.map((p) => p.about.atBatIndex).join();
+    if (key === vidsKey) return;
+    vidsKey = key;
+    const teams = f.gameData?.teams || {};
+    $(".gd-vids").innerHTML = plays.slice().reverse().map((p) => {
+      const ab = p.about, m = p.matchup || {};
+      const team = teamMeta(ab.halfInning === "top" ? teams.away : teams.home);
+      return vidLink(lastPitchId(p), `
+        <div class="th" style="${vars(team)}"><img src="${actionPhoto(m.batter?.id)}" alt="" loading="lazy"
+          onerror="if(this.classList.contains('hs'))this.style.visibility='hidden';else{this.classList.add('hs');this.src='${headshot(m.batter?.id, 240)}'}">
+          <span class="ply">${PLAY_ICON}</span><span class="inn">${ab.halfInning === "top" ? "Top" : "Bot"} ${ab.inning}</span></div>
+        <div class="tt">${esc(title(p))}</div>
+        <div class="st muted">${esc(short(m.batter?.fullName))} vs ${esc(short(m.pitcher?.fullName))}</div>`, `gd-vid ${isImpact(p) ? "impact" : ""}`);
+    }).join("") || `<div class="gd-noclips muted">Videos show up here as plays finish</div>`;
   }
 
   /* ================= Strike zone, pitcher's view ================= */
@@ -504,7 +392,7 @@ const Gameday = (pk) => {
         else state = "Upheld";
       }
       rows.push(`<div class="pr"><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(call)}${state ? ` <em class="abs ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">– ${state}</em>` : ""}</b>
-        <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div></div>`);
+        <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div>${e.playId ? vidLink(e.playId, PLAY_ICON, "pv") : ""}</div>`);
     });
     return rows.reverse().slice(0, limit).join("");
   }
@@ -514,7 +402,7 @@ const Gameday = (pk) => {
     const { plays, lines, before, teams, isLast } = ctx;
     const ab = p.about || {}, r = p.result || {}, m = p.matchup || {};
     const i = plays.indexOf(p);
-    const c = clipFor(p, plays);
+    const vid = ab.isComplete && lastPitchId(p);
     const batTeam = teamMeta(ab.halfInning === "top" ? teams.away : teams.home);
     const a1 = r.awayScore ?? before[i][0], h1 = r.homeScore ?? before[i][1];
     const tag = situation(p, before[i], isLast);
@@ -526,7 +414,7 @@ const Gameday = (pk) => {
         <span class="sc">${logoImg(teamMeta(teams.away))}${a1}-${h1}${logoImg(teamMeta(teams.home))}</span>
         <span>${ab.halfInning === "top" ? "Top" : "Bot"} ${ab.inning} · ${outs} out${outs === 1 ? "" : "s"}${ago(ab.endTime) ? ` · ${ago(ab.endTime)}` : ""}</span>
         ${tag ? `<span class="tag">${esc(tag)}</span>` : ""}
-        ${c ? `<span class="film" data-clip="${esc(c.id)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Video</span>` : ""}
+        ${vid ? vidLink(vid, `${PLAY_ICON}Video`, "film") : ""}
       </div>
       <div class="pc-head">
         <div class="pc-pic"><img src="${headshot(m.batter?.id, 160)}" alt="" onerror="this.style.visibility='hidden'">${logoImg(batTeam, "badge")}</div>
@@ -571,8 +459,7 @@ const Gameday = (pk) => {
     const nodes = [];
     list.forEach((p, k) => {
       if (mode === "gameday" && k === 3) { const s = document.createElement("div"); s.className = "pc-sep"; s.textContent = "Key plays"; nodes.push(s); }
-      const c = clipFor(p, ctx.plays);
-      const key = `${mode}:${p.about.atBatIndex}:${pitchesOf(p).length}:${c?.id || ""}:${ago(p.about.endTime)}:${reviewsOf(p).map((x) => `${x.inProgress}${x.overturned}`).join()}`;
+      const key = `${mode}:${p.about.atBatIndex}:${pitchesOf(p).length}:${ago(p.about.endTime)}:${reviewsOf(p).map((x) => `${x.inProgress}${x.overturned}`).join()}`;
       let el = cardCache.get(key);
       if (!el) {
         const t = document.createElement("div");
@@ -653,26 +540,18 @@ const Gameday = (pk) => {
     feed = f;
     drawNow(f);
     renderCards($(".gd-feed"), f, "gameday");
-    if (userPicked || !clips.length) return;
-    // Follow along: show the clip of the at-bat on the left when it has one, else the newest clip.
-    const plays = playsOf(f);
-    const shown = sel != null ? plays.find((p) => p.about?.atBatIndex === sel) : [...plays].reverse().find((p) => p.about?.isComplete);
-    const c = shown && clipFor(shown, plays);
-    if (c && c.id !== playingId) play(c);
-    else if (!playingId) play(clips[clips.length - 1]);
+    drawVids(f);
   }
 
-  // Taps on cards (here or in the Scoring / All plays tabs), clips and the Follow live button.
+  // Taps on cards (here or in the Scoring / All plays tabs) and the Follow live button.
+  // Video links are plain links to Savant: let the browser open them, and don't toggle the card.
   function onClick(e, goGameday) {
-    const film = e.target.closest("[data-clip]");
+    if (e.target.closest("[data-savant]")) return true;
     const pc = e.target.closest(".pc");
-    if (film && !pc) { play(clips.find((c) => c.id === film.dataset.clip), true); return true; }
     if (pc) {
-      const ab = +pc.dataset.ab, prevSel = sel;
+      const ab = +pc.dataset.ab;
       if (opened.has(ab) && sel === ab) opened.delete(ab); else opened.add(ab);
       sel = ab;
-      const c = clipFor(feed && playsOf(feed).find((p) => p.about?.atBatIndex === ab) || {}, feed ? playsOf(feed) : []);
-      if (c) play(c, true); else if (sel !== prevSel) noClip();
       zKey = "";
       goGameday ? goGameday() : update(feed);
       return true;
@@ -788,17 +667,8 @@ const Gameday = (pk) => {
     update, onClick, renderCards,
     // The left panel's live field: game.js puts this element in its slot after each render.
     field(slot, f) { slot.replaceWith(fieldEl); updateField(f); },
-    mount(slot, f) { slot.appendChild(root); drawClips(); update(f); resume(); },
-    async start(isLive) {
-      const changed = await loadClips();
-      if (changed) {
-        drawClips();
-        if (feed && !userPicked && (video.paused || video.ended)) update(feed);
-        if (feed && root.isConnected) renderCards($(".gd-feed"), feed, "gameday");
-      }
-      clearTimeout(clipTimer);
-      if (isLive()) clipTimer = setTimeout(() => this.start(isLive), 45_000);
-    },
-    stop() { clearTimeout(clipTimer); cancelAnimationFrame(raf); wantPlay = false; video.pause(); video.removeAttribute("src"); delete video.dataset.src; },
+    mount(slot, f) { slot.appendChild(root); update(f); },
+    start() {},
+    stop() { cancelAnimationFrame(raf); },
   };
 };
