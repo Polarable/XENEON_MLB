@@ -7,6 +7,8 @@ A 2560×720 page for the iCUE iFrame widget on the Corsair Xeneon Edge.
 - **Standings** (`standings.js`): AL and NL divisions, or the wild card races.
 - **Rosters** (`team.js`): all 30 teams by division.
 - Tapping a game opens the game page (`game.js`): linescore, decisions and a Baseball Reference style box score, plus scoring plays and play-by-play; live games check for new pitches every 3 seconds. Tapping a team opens its team page (`team.js`): 40-man/active roster, standard batting, standard pitching, and schedule & results. Tapping a player opens their player page (`player.js`): bio, year-by-year stats and this season's game log. Pages stack, so Back returns to where you were.
+- **Gameday** (`gameday.js`, the first view on a live game page): MLB Film Room clips playing in a large video panel (new highlights auto-play during live games, tap any clip or a play's Watch tag), a strike zone with every pitch of the current at-bat (pitch type, speed, call, exit velo/launch angle/distance on balls in play), and a play-by-play feed. Tap any play to see its pitches; Follow live returns to the current at-bat.
+- Game times are shown in the device's local time zone.
 - `mlb.js` holds the shared MLB Stats API helpers, touch scrolling and tables; `views.css` styles all of the above.
 - Scores, standings and rosters read the MLB Stats API (statsapi.mlb.com) directly from the browser, so they stay live even if the scheduled news job runs late.
 - `teams.js`: the 30 teams (MLB ids, colors, MLB Trade Rumors feed names).

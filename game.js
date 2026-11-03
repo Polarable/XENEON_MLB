@@ -1,9 +1,10 @@
 // Game page: scoreboard, linescore and decisions on the left; box score, scoring plays or
 // play-by-play on the right. Live games check for updates every 3 seconds. Data: the MLB live feed.
 Sheet.register("game", async (root, { pk }, alive) => {
-  let view = load("game-view") || "box";
+  let view = null;            // chosen per game below
   let feed = null;
   let timer = 0;
+  const gday = Gameday(pk);
 
   async function fetchFeed() {
     return api(`/api/v1.1/game/${pk}/feed/live`, { ttl: 2_000 });
@@ -196,16 +197,19 @@ Sheet.register("game", async (root, { pk }, alive) => {
   function render() {
     const gd = feed.gameData, ld = feed.liveData || {};
     const phase = isPostponed(gd.status) ? "off" : phaseOf(gd.status);
-    const views = phase === "preview" || phase === "off" ? [["box", "Lineups"]] : [["box", "Box score"], ["scoring", "Scoring"], ["pbp", "Play by play"]];
-    if (!views.some(([v]) => v === view)) view = "box";
-    const right = view === "box" ? boxView(ld) : playsView(ld, view === "scoring", phase === "live");
+    const views = phase === "preview" || phase === "off" ? [["box", "Lineups"]] : [["gameday", "Gameday"], ["box", "Box score"], ["scoring", "Scoring"], ["pbp", "All plays"]];
+    // Live games open on Gameday; finished games on the box score (or whatever was picked last).
+    if (!view) view = phase === "live" ? "gameday" : load("game-view") || "box";
+    if (!views.some(([v]) => v === view)) view = views[0][0];
+    const right = view === "box" ? boxView(ld) : view === "gameday" ? gday.html(feed) : playsView(ld, view === "scoring", phase === "live");
     const keep = [...root.querySelectorAll(".vscroll,.hscroll")].map((e) => [e.scrollTop, e.scrollLeft]);
     const home = teamMeta(gd.teams.home);
     root.innerHTML = `<div class="g-left" style="${vars(home)}">${scoreboard(gd, ld)}</div>
-      <div class="g-right"><div class="g-tabs">${seg(views, view)}</div><div class="g-main">${right}</div></div>`;
+      <div class="g-right" style="${vars(home)}"><div class="g-tabs">${seg(views, view)}</div><div class="g-main">${right}</div></div>`;
     root.querySelectorAll(".vscroll").forEach((e) => dragScroll(e, "y"));
     root.querySelectorAll(".hscroll").forEach((e) => dragScroll(e, "x"));
     [...root.querySelectorAll(".vscroll,.hscroll")].forEach((e, i) => { if (keep[i]) { e.scrollTop = keep[i][0]; e.scrollLeft = keep[i][1]; } });
+    if (view === "gameday") gday.mount(root, feed, render);
     root.querySelector(".g-tabs").onclick = (e) => {
       const b = e.target.closest("[data-v]"); if (!b) return;
       view = b.dataset.v; save("game-view", view); render();
@@ -215,6 +219,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
   feed = await fetchFeed();
   if (!alive()) return;
   render();
+  gday.start(() => alive() && render(), () => alive() && phaseOf(feed.gameData.status) === "live");
 
   // Live games keep themselves current.
   const tick = async () => {
@@ -233,5 +238,5 @@ Sheet.register("game", async (root, { pk }, alive) => {
     if (ph !== "final") timer = setTimeout(tick, ph === "live" ? 3_000 : 30_000);
   };
   if (phaseOf(feed.gameData.status) !== "final") timer = setTimeout(tick, phaseOf(feed.gameData.status) === "live" ? 3_000 : 30_000);
-  return () => clearTimeout(timer);
+  return () => { clearTimeout(timer); gday.stop(); };
 });

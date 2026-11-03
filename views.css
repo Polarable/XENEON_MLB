@@ -222,3 +222,75 @@ table.summary td.lbl { text-align: left; font-size: 16px; color: var(--text-3); 
 .page-player .stats th, .page-player .stats td { padding: 0 8px; }
 .page-player .stats td { font-size: 18px; height: 36px; }
 .page-player .stats th { font-size: 15px; }
+
+/* ---------- Gameday (game page): Film Room video, strike zone, play feed ---------- */
+.gd { position: absolute; inset: 0; display: grid; grid-template-columns: 760px 420px 1fr; gap: 36px; }
+.gd-col1 { display: flex; flex-direction: column; min-height: 0; }
+.gd-video { position: relative; width: 760px; height: 428px; border-radius: var(--radius); overflow: hidden; background: #0b0b0b;
+  border: 3px solid transparent;
+  background: linear-gradient(#0b0b0b, #0b0b0b) padding-box,
+              conic-gradient(from var(--ring), var(--tc, #888), rgba(var(--tc-rgb, 136,136,136), .25) 22%, var(--primary, #444) 40%, var(--tc, #888) 55%, rgba(var(--tc-rgb, 136,136,136), .25) 78%, var(--tc, #888)) border-box;
+  box-shadow: 0 0 34px rgba(var(--tc-rgb, 0,0,0), .3); animation: ring 14s linear infinite; }
+.gd-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; opacity: 0; transition: opacity .4s var(--ease); }
+.gd-video.has video { opacity: 1; }
+.gd-vempty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  padding: 0 90px; text-align: center; font-size: 20px; line-height: 1.45; color: var(--text-3); }
+.gd-vempty .fr { font-size: 30px; font-weight: 600; color: var(--text-2); letter-spacing: -.5px; }
+.gd-video.has .gd-vempty { display: none; }
+.gd-vcap { position: absolute; left: 0; right: 0; bottom: 0; padding: 50px 24px 18px; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,.85), transparent); font-size: 21px; font-weight: 600; opacity: 0; transition: opacity .3s; }
+.gd-video.has .gd-vcap { opacity: 1; }
+.gd-mute { position: absolute; top: 14px; right: 14px; height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line-2);
+  background: rgba(0,0,0,.6); color: #fff; font: 500 17px "Inter Tight", sans-serif; cursor: pointer; display: none; }
+.gd-video.has .gd-mute { display: block; }
+.gd-clips { margin-top: 16px; display: flex; gap: 16px; flex: 1; min-height: 0; }
+.gd-clip { flex: none; width: 178px; cursor: pointer; }
+.gd-clip .th { position: relative; height: 100px; border-radius: 10px; background: #151515 center/cover no-repeat; border: 2px solid transparent; }
+.gd-clip.on .th { border-color: var(--tc, #fff); }
+.gd-clip .th span { position: absolute; right: 6px; bottom: 6px; padding: 1px 7px; border-radius: 5px; background: rgba(0,0,0,.75); font-size: 13px; font-weight: 600; }
+.gd-clip .tt { margin-top: 6px; font-size: 14px; line-height: 1.3; color: var(--text-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.gd-noclips { font-size: 17px; padding-top: 8px; }
+
+.gd-col2 { display: flex; flex-direction: column; min-height: 0; }
+.gd-mu { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.gd-mu .who { display: flex; align-items: center; gap: 10px; }
+.gd-mu img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; background: var(--surface-2); }
+.gd-mu span { display: block; font-size: 13px; color: var(--text-3); font-weight: 600; }
+.gd-mu b { font-size: 21px; font-weight: 600; }
+.gd-count { display: flex; align-items: center; gap: 14px; margin-top: 10px; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.gd-count .muted { font-size: 17px; font-weight: 500; }
+.gd-follow { margin-left: auto; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255,255,255,.08);
+  color: #fff; font: 500 15px "Inter Tight", sans-serif; cursor: pointer; }
+.gd-zone { display: flex; justify-content: center; margin-top: 6px; }
+.zone { width: 280px; height: auto; overflow: visible; }
+.zone .sz { fill: rgba(255,255,255,.03); stroke: rgba(255,255,255,.7); stroke-width: 2; }
+.zone .grid line { stroke: rgba(255,255,255,.14); stroke-width: 1; }
+.zone .plate { fill: rgba(255,255,255,.18); }
+.zone .pt circle { stroke: #000; stroke-width: 1.5; }
+.zone .pt text { font: 700 15px "Inter Tight", sans-serif; text-anchor: middle; fill: #000; }
+.zone .ball circle { fill: #4fc37a; } .zone .strike circle { fill: #ef5b5b; } .zone .inplay circle { fill: #5b9cff; } .zone .other circle { fill: #aaa; }
+.zone .last circle { stroke: #fff; stroke-width: 3; }
+.gd-result { font-size: 16px; line-height: 1.35; color: var(--text-2); min-height: 22px; margin-top: 6px; }
+.gd-hit { margin-top: 4px; font-size: 15px; color: var(--text-3); } .gd-hit b { color: var(--text); }
+.gd-pitches { flex: 1; min-height: 0; margin-top: 8px; }
+.gd-pitch { display: flex; gap: 12px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.gd-pitch .n { flex: none; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: #000; }
+.gd-pitch .n.ball { background: #4fc37a; } .gd-pitch .n.strike { background: #ef5b5b; } .gd-pitch .n.inplay { background: #5b9cff; } .gd-pitch .n.other { background: #aaa; }
+.gd-pitch .pn { font-size: 16px; font-weight: 600; } .gd-pitch .mph { color: var(--text-3); font-weight: 500; }
+.gd-pitch .pc { font-size: 14px; color: var(--text-2); }
+
+.gd-col3 { min-height: 0; padding-bottom: 20px; }
+.gd-play { display: flex; gap: 14px; padding: 12px 12px; border-bottom: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
+.gd-play.on { background: rgba(255,255,255,.07); }
+.gd-play.scoring .ic { background: #ffd25a; color: #000; }
+.gd-play .ic { flex: none; width: 44px; height: 44px; border-radius: 10px; background: var(--surface-2); display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: var(--text-2); }
+.gd-play .bd { min-width: 0; }
+.gd-play .ev { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 600; }
+.gd-play .film { padding: 2px 10px; border-radius: 999px; background: rgba(var(--tc-rgb, 255,255,255), .2); border: 1px solid rgba(var(--tc-rgb, 255,255,255), .5);
+  font-size: 13px; font-weight: 600; color: #fff; }
+.gd-play .ds { margin-top: 3px; font-size: 15px; line-height: 1.35; color: var(--text-2); white-space: normal; }
+.gd-play .mt { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 13px; color: var(--text-3); }
+.gd-play .mt img { width: 18px; height: 18px; }
+.gd-play .mt b { color: var(--text-2); }
