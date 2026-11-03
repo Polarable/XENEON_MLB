@@ -750,3 +750,23 @@ body.has-livebar #brand .name, body.has-livebar #brand .sep, body.has-livebar he
 .hs-st { flex: none; display: flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; background: rgba(255,255,255,.07); font-size: 15px; font-weight: 600; color: var(--text-2); }
 .hs-st.signed { background: rgba(79,195,122,.14); color: #7fdc9f; } .hs-st img { width: 22px; height: 22px; }
 #news-alt .empty { position: static; padding-top: 120px; transform: none; }
+
+/* Player hero: MLB.com action banner behind the name, then this season and career */
+.p-banner { position: absolute; left: 0; right: 0; top: 0; height: 330px; overflow: hidden; z-index: 0; pointer-events: none; }
+.p-banner img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; opacity: 0; transition: opacity .5s var(--ease); }
+.has-banner .p-banner img { opacity: 1; }
+.p-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.25) 45%, #000 100%); }
+.page-player .p-left > :not(.p-banner) { position: relative; z-index: 1; }
+.page-player.has-banner .p-top { padding-top: 150px; }
+.page-player.has-banner .p-photo { display: none; }
+.page-player.has-banner .p-id h1 { font-size: 52px; text-shadow: 0 2px 18px rgba(0,0,0,.6); }
+.p-hero { margin-top: 16px; padding: 4px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ph-row { display: flex; align-items: center; height: 54px; }
+.ph-row + .ph-row { border-top: 1px solid var(--line); }
+.ph-l { width: 92px; flex: none; font-size: 16px; font-weight: 600; color: var(--text-3); }
+.ph-c { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; }
+.ph-c em { font-style: normal; font-size: 13px; font-weight: 600; color: var(--text-3); letter-spacing: .03em; }
+.ph-c b { font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.3px; }
+.ph-row:first-child .ph-c b { color: #fff; }
+.ph-row:last-child .ph-c b { color: var(--text-2); font-weight: 500; }
+#stage.big .ph-c em { font-size: 15px; } #stage.big .ph-l { font-size: 17px; }

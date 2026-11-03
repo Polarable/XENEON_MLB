@@ -396,3 +396,29 @@ body.compact .gcard:not(.live) .foot { display: none; }
 .hs-p { height: 60px; padding: 0 12px; gap: 10px; } .hs-hs { width: 40px; height: 40px; }
 .hs-nm b { font-size: 16px; } .hs-nm span { font-size: 12px; } .hs-st { font-size: 12px; padding: 3px 9px; } .hs-st img { width: 16px; height: 16px; }
 #news-alt .empty { padding-top: 60px; }
+
+/* Player hero on the phone */
+.page-player .p-left { position: relative; overflow: hidden; }
+.p-banner { height: 300px; }
+.page-player.has-banner .p-top { padding-top: 170px; }
+.ph-l { width: 74px; font-size: 14px; } .ph-c b { font-size: 21px; } .ph-c em { font-size: 12px; }
+
+/* Year-by-year as season cards */
+.ycards { display: flex; flex-direction: column; gap: 12px; padding-bottom: 20px; }
+.yc { padding: 16px 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.yc.car { background: #161616; border-color: var(--line-2); }
+.yc-h { display: flex; align-items: center; gap: 14px; }
+.yc-h > b { font-size: 26px; font-weight: 600; letter-spacing: -.4px; }
+.yc-tm { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; font-size: 17px; font-weight: 600; color: var(--text-2); }
+.yc-tm .lnk { display: inline-flex; align-items: center; gap: 6px; }
+.yc-tm img { width: 24px; height: 24px; }
+.yc-tm i { margin-left: auto; font-style: normal; font-size: 15px; font-weight: 500; color: var(--text-3); }
+.yc-slash { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 12px; }
+.yc-slash span, .yc-grid span { display: flex; flex-direction: column; }
+.yc-slash em, .yc-grid em { font-style: normal; font-size: 13px; font-weight: 600; color: var(--text-3); }
+.yc-slash b { font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.yc-grid { display: grid; grid-template-columns: repeat(8, 1fr); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 18px; font-variant-numeric: tabular-nums; color: var(--text-2); }
+.yc-parts { margin-top: 10px; padding-top: 6px; border-top: 1px solid var(--line); }
+.yc-parts > div { display: grid; grid-template-columns: 90px repeat(4, 1fr); align-items: center; height: 40px; font-size: 16px; color: var(--text-3); }
+.yc-parts .lnk { display: inline-flex; align-items: center; gap: 6px; color: var(--text-2); font-weight: 600; } .yc-parts img { width: 20px; height: 20px; }
+.yc-parts span { display: flex; gap: 6px; align-items: baseline; } .yc-parts em { font-style: normal; font-size: 12px; }
