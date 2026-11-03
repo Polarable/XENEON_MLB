@@ -2,7 +2,7 @@
 // @id              shutout-taskbar
 // @name            SHUTOUT taskbar scorebug
 // @description     Live MLB scorebug with big-play callouts and baseball news at the left end of the taskbar, where the weather sits
-// @version         1.0.0
+// @version         1.1.0
 // @author          polarable
 // @github          https://github.com/Polarable
 // @homepage        https://polarable.github.io/XENEON_MLB/m/
@@ -47,9 +47,9 @@ Width, the gap from the left edge, the height of the open view and your team can
 - team: HOU
   $name: Team
   $description: Team abbreviation (HOU, NYY, LAD...) the widget follows at first. You can change it in the widget too.
-- width: 560
-  $name: Width
-  $description: Width of the bar in pixels at 100% scale
+- width: 440
+  $name: Maximum width
+  $description: Widest the bar gets, in pixels at 100% scale. It also stops on its own just short of the Start button and search box.
 - offset: 12
   $name: Gap from the left edge
   $description: Pixels between the left end of the taskbar and the bar. Raise it if your taskbar icons are left aligned.
@@ -86,6 +86,7 @@ Width, the gap from the left edge, the height of the open view and your team can
 #include <functional>
 #include <atomic>
 #include <algorithm>
+#include <uiautomation.h>
 
 // ---------------------------------------------------------------------------------------------
 // The slice of WebView2.h (SDK 1.0.2903.40) this mod uses, copied exactly so the vtables match.
@@ -588,6 +589,37 @@ static bool FullscreenAppRunning() {
     return false;
 }
 
+// Left edge of the Start button (and the search box after it), found with UI Automation, so the bar
+// never covers them. Checked again every few seconds; 0 when it can't be found.
+static IUIAutomation* g_uia = nullptr;
+static int g_startLeft = 0;
+static DWORD g_startCheckedAt = 0;
+static int StartButtonLeft(HWND tb, bool force) {
+    if (!force && g_startCheckedAt && GetTickCount() - g_startCheckedAt < 5000) return g_startLeft;
+    g_startCheckedAt = GetTickCount();
+    if (!g_uia && FAILED(CoCreateInstance(CLSID_CUIAutomation, nullptr, CLSCTX_INPROC_SERVER, IID_IUIAutomation, (void**)&g_uia))) return g_startLeft = 0;
+    IUIAutomationElement* root = nullptr;
+    if (FAILED(g_uia->ElementFromHandle(tb, &root)) || !root) return g_startLeft = 0;
+    int left = 0;
+    const wchar_t* ids[] = {L"StartButton", L"SearchButton", L"SearchBoxButton"};
+    for (auto id : ids) {
+        VARIANT v; v.vt = VT_BSTR; v.bstrVal = SysAllocString(id);
+        IUIAutomationCondition* cond = nullptr;
+        IUIAutomationElement* el = nullptr;
+        if (SUCCEEDED(g_uia->CreatePropertyCondition(UIA_AutomationIdPropertyId, v, &cond)) && cond) {
+            if (SUCCEEDED(root->FindFirst(TreeScope_Descendants, cond, &el)) && el) {
+                RECT r{};
+                if (SUCCEEDED(el->get_CurrentBoundingRectangle(&r)) && r.right > r.left && (!left || r.left < left)) left = r.left;
+                el->Release();
+            }
+            cond->Release();
+        }
+        VariantClear(&v);
+    }
+    root->Release();
+    return g_startLeft = left;
+}
+
 static void ResizeWebView() {
     if (!g_controller || !g_hwnd) return;
     RECT rc; GetClientRect(g_hwnd, &rc);
@@ -612,9 +644,13 @@ static void Place() {
         g_cssBar = cssBar; g_lastDpi = dpi;
         PostMessageW(g_hwnd, WM_APP_RELOAD, 0, 0);
     }
-    int w = (int)(g_set.width * scale + 0.5);
-    int h = g_expanded ? (int)(g_cssWant * scale + 0.5) : barH;
     int x = r.left + (int)(g_set.offset * scale + 0.5);
+    int w = (int)(g_set.width * scale + 0.5);
+    int start = StartButtonLeft(tb, !EqualRect(&r, &g_lastTaskbar));
+    if (start > x) w = std::min(w, start - x - (int)(12 * scale));   // stop short of Start / search
+    if (g_expanded) w = std::max(w, (int)(420 * scale));              // the open view needs some room
+    w = std::max(w, (int)(200 * scale));
+    int h = g_expanded ? (int)(g_cssWant * scale + 0.5) : barH;
     int y = r.bottom - h;
     SetWindowPos(g_hwnd, HWND_TOPMOST, x, y, w, h, SWP_NOACTIVATE | SWP_SHOWWINDOW);
     g_lastTaskbar = r;
@@ -918,6 +954,7 @@ static DWORD WINAPI WidgetThread(LPVOID) {
 
     MSG m;
     while (GetMessageW(&m, nullptr, 0, 0) > 0) { TranslateMessage(&m); DispatchMessageW(&m); }
+    if (g_uia) { g_uia->Release(); g_uia = nullptr; }
     UnregisterClassW(wc.lpszClassName, wc.hInstance);
     CoUninitialize();
     return 0;
