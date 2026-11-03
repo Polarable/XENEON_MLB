@@ -1,0 +1,34 @@
+# Temporary: downloads candidate logo files for a few teams so they can be compared. Removed after use.
+name: Logo candidates
+on:
+  push:
+    branches: [claude/project-thread-452blc]
+    paths: [.github/workflows/logo-candidates.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          mkdir -p logo-candidates && cd logo-candidates
+          get() { curl -sSfL -A "Mozilla/5.0 (logo comparison)" -m 30 -o "$1" "$2" && echo "ok $1 <- $2" || { rm -f "$1"; echo "miss $1 <- $2"; }; }
+          for pair in HOU:117:hou CHC:112:chc NYM:121:nym MIA:146:mia; do
+            IFS=: read A ID E <<< "$pair"
+            for v in team-cap-on-light team-cap-on-dark team-primary-on-light team-primary-on-dark team-alternate-on-dark team-alternate-on-light team-wordmark-on-dark team-wordmark-on-light; do
+              get "$A-mlb-$v.svg" "https://www.mlbstatic.com/team-logos/$v/$ID.svg"
+            done
+            get "$A-mlb-default.svg" "https://www.mlbstatic.com/team-logos/$ID.svg"
+            get "$A-espn-500.png" "https://a.espncdn.com/i/teamlogos/mlb/500/$E.png"
+            get "$A-espn-500-dark.png" "https://a.espncdn.com/i/teamlogos/mlb/500-dark/$E.png"
+          done
+          for q in "Houston Astros cap insignia" "Houston Astros logo star" "Chicago Cubs cap insignia" "Chicago Cubs C logo" "New York Mets cap insignia" "Miami Marlins cap insignia"; do
+            curl -sS -A "Mozilla/5.0 (logo comparison)" "https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=$(echo "$q" | sed 's/ /+/g')" >> wiki-search.jsonl; echo >> wiki-search.jsonl
+          done
+          ls -la
+      - name: Commit
+        run: |
+          git config user.name "logo-bot"; git config user.email "logo-bot@users.noreply.github.com"
+          git add logo-candidates && git commit -m "Logo candidates [skip ci]" && git push
