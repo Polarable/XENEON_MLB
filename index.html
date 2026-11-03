@@ -219,6 +219,7 @@
 <script src="myteam.js?v=__BUILD__"></script>
 <script src="livebar.js?v=__BUILD__"></script>
 <script src="search.js?v=__BUILD__"></script>
+<script src="hotstove.js?v=__BUILD__"></script>
 <script src="idle.js?v=__BUILD__"></script>
 <script>
   const REFRESH_MS = 5 * 60 * 1000;   // re-read news.json every 5 minutes
@@ -469,13 +470,14 @@
   document.getElementById("picker-btn").onclick = () => togglePicker(!document.getElementById("picker").classList.contains("open"));
   document.getElementById("scrim").onclick = () => togglePicker(false);
   document.getElementById("picker-clear").onclick = () => {
-    selected = "ALL"; save("team", selected); render(); VIEWS[activeTab]?.teamChanged();
+    selected = "ALL"; save("team", selected); render(); VIEWS[activeTab]?.teamChanged(); if (activeTab === "news") HotStove.teamChanged();
   };
   document.addEventListener("favchange", () => { buildPicker(); render(); });
   document.getElementById("picker").onclick = (e) => {
     const b = e.target.closest("button"); if (!b) return;
     selected = b.dataset.t; save("team", selected); togglePicker(false); render();
     VIEWS[activeTab]?.teamChanged();
+    if (activeTab === "news") HotStove.teamChanged();
   };
 
   /* ---- Tabs ----
@@ -497,7 +499,7 @@
     document.getElementById("ctx").innerHTML = "";
     document.getElementById("updated").textContent = updatedText[t] || "";
     togglePicker(false);
-    if (t === "news") layout(); else VIEWS[t].show();
+    if (t === "news") HotStove.show(); else VIEWS[t].show();
   }
   document.querySelector("nav").onclick = (e) => {
     const el = e.target.closest("[data-tab]"); if (!el) return;
@@ -520,7 +522,7 @@
   }
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
-  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); LiveBar.init(); Search.init(); Idle.init();
+  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); LiveBar.init(); Search.init(); HotStove.init(); Idle.init();
   setTab(load("tab") || "news");
 
   /* Self-update: iCUE's web view holds on to old copies of the page, so a deploy could go unseen for days.

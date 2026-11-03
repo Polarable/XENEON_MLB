@@ -729,3 +729,24 @@ body.has-livebar #brand .name, body.has-livebar #brand .sep, body.has-livebar he
 .ld-r img.tl { width: 24px; height: 24px; flex: none; }
 .ld-r .v { min-width: 52px; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
 .ld-r:first-of-type .v { color: #fff; }
+
+/* News: Moves and Free agents */
+#news-alt { position: absolute; inset: 0; padding: 12px 40px 24px; overflow: hidden; }
+.hs-moves { column-width: 760px; column-gap: 40px; column-fill: auto; height: 100%; }
+.hs-day { break-after: avoid; padding: 14px 0 8px; font-size: 18px; font-weight: 600; color: var(--text-3); }
+.hs-day:first-child { padding-top: 0; }
+.hs-mv { display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); break-inside: avoid; }
+.hs-mv .tl { flex: none; width: 40px; cursor: pointer; } .hs-mv .tl img { width: 40px; height: 40px; }
+.hs-mv .ty { display: block; font-size: 15px; font-weight: 600; color: var(--text-3); }
+.hs-mv p { margin-top: 2px; font-size: 20px; line-height: 1.35; color: var(--text-2); }
+.hs-mv .plink { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); text-underline-offset: .18em; cursor: pointer; }
+.hs-sum { margin-bottom: 14px; font-size: 18px; color: var(--text-3); }
+.hs-fa { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 16px; }
+.hs-p { display: flex; align-items: center; gap: 14px; height: 76px; padding: 0 16px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+.hs-hs { width: 52px; height: 52px; flex: none; border-radius: 50%; background: #1c1c1c; object-fit: cover; object-position: top; }
+.hs-nm { flex: 1; min-width: 0; }
+.hs-nm b { display: block; font-size: 20px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hs-nm span { display: block; font-size: 15px; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hs-st { flex: none; display: flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; background: rgba(255,255,255,.07); font-size: 15px; font-weight: 600; color: var(--text-2); }
+.hs-st.signed { background: rgba(79,195,122,.14); color: #7fdc9f; } .hs-st img { width: 22px; height: 22px; }
+#news-alt .empty { position: static; padding-top: 120px; transform: none; }

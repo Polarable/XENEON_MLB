@@ -9,7 +9,7 @@ const Leaders = (() => {
   async function fetchGroup(cats, group, season, lg) {
     const data = await api(`/api/v1/stats/leaders?leaderCategories=${cats.map((c) => c[0]).join(",")}&season=${season}&statGroup=${group}&sportId=1&limit=5${LG[lg] || ""}`, { ttl: 30 * 60_000 });
     const by = {};
-    for (const l of data.leagueLeaders || []) if (!by[l.leaderCategory]) by[l.leaderCategory] = l.leaders || [];
+    for (const l of data.leagueLeaders || []) if (!by[l.leaderCategory] && (!l.statGroup || l.statGroup === group)) by[l.leaderCategory] = l.leaders || [];
     return cats.map(([k, label]) => ({ label, rows: by[k] || [] }));
   }
   function card({ label, rows }) {

@@ -24,7 +24,8 @@ const MyTeam = (() => {
     const season = Standings.season ? Standings.season() : currentSeason();
     const data = await api(`/api/v1/teams/${t.id}/leaders?leaderCategories=${cats.map((c) => c[0]).join(",")}&season=${season}&statGroup=${group}&limit=1`, { ttl: 3600_000 })
       .catch(() => ({}));
-    const by = Object.fromEntries((data.teamLeaders || []).map((l) => [l.leaderCategory, l.leaders?.[0]]));
+    // The endpoint answers each category for both stat groups (pitchers' "home runs" are allowed), so keep ours.
+    const by = Object.fromEntries((data.teamLeaders || []).filter((l) => !l.statGroup || l.statGroup === group).map((l) => [l.leaderCategory, l.leaders?.[0]]));
     return cats.map(([k, label]) => ({ label, lead: by[k] })).filter((x) => x.lead);
   }
 
