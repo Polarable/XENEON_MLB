@@ -369,3 +369,19 @@ body.has-livebar #m-main { padding-bottom: calc(var(--tabs-h) + var(--safe-b) + 
 /* League leaders: one card per row */
 .ld-grid { grid-template-columns: 1fr; grid-template-rows: none; height: auto; gap: 14px; }
 .ld-card { padding: 16px 18px 8px; }
+
+/* Compact scores (Settings, on by default): one slim row per game, like Real. Sizes are before the --mz zoom. */
+body.compact .ggrid { gap: 0; padding: 0 8px; }
+body.compact .gcard { min-height: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); column-gap: 18px; padding: 16px 22px;
+  border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; box-shadow: none; }
+body.compact .gcard.live { background: rgba(255,71,71,.05); border-radius: 14px; border-bottom-color: transparent; }
+body.compact .gcard.fav:not(.live) { background: rgba(var(--fav-rgb), .06); border-radius: 14px; border-color: transparent; }
+body.compact .gcard .top { grid-column: 1; grid-row: 1 / span 2; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; height: auto; margin: 0; }
+body.compact .gcard .top .st { font-size: 20px; }
+body.compact .gcard .top .note { max-width: 100%; font-size: 15px; white-space: normal; }
+body.compact .gcard .tr { grid-column: 2; height: 46px; gap: 12px; }
+body.compact .gcard .tr img { width: 34px; height: 34px; }
+body.compact .gcard .tr .nm { font-size: 27px; }
+body.compact .gcard .tr .sc { font-size: 32px; }
+body.compact .gcard .foot { grid-column: 2; height: 36px; margin-top: 4px; padding-top: 6px; border-top: 0; font-size: 17px; }
+body.compact .gcard:not(.live) .foot { display: none; }

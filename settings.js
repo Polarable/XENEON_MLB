@@ -10,7 +10,7 @@ const Settings = (() => {
   const set = (k, v) => { try { localStorage.setItem(key(k), v); } catch {} };
   let favAbbr = get("fav") ?? DEFAULT_FAV;   // "" means no favorite
   // On/off options. Missing means the default.
-  const DEFAULTS = { big: "0", idle: "1", takeover: "1", diag: "0" };
+  const DEFAULTS = { big: "0", idle: "1", takeover: "1", diag: "0", compact: "1" };
   const opt = (k) => (get(k) ?? DEFAULTS[k]) === "1";
   const team = (abbr) => TEAMS.find((t) => t.abbr === abbr) || null;
 
@@ -27,6 +27,7 @@ const Settings = (() => {
       <div class="set-note">Their games lead the Scores tab and are marked on the calendar.</div>
       <div class="set-opts">
         ${toggle("big", "Large text", "Bigger small print: pitch lists, stat lines, tables")}
+        ${MOBILE ? toggle("compact", "Compact scores", "One slim row per game") : ""}
         ${MOBILE ? "" : toggle("idle", "Return home when idle", "After 3 minutes untouched, close open pages")}
         ${MOBILE ? "" : toggle("takeover", `Show ${fav ? `the ${esc(fav.name)}` : "my team"} live`, "When they're playing and nobody's touching the screen, open their game")}
         ${MOBILE ? "" : toggle("diag", "Show display info", "Pixel check for sharpness")}
@@ -49,7 +50,10 @@ const Settings = (() => {
     document.getElementById("settings-btn").classList.toggle("on", on);
     if (on) draw();
   }
-  function applyText() { document.getElementById("stage")?.classList.toggle("big", opt("big")); }
+  function applyText() {
+    document.getElementById("stage")?.classList.toggle("big", opt("big"));
+    document.body.classList.toggle("compact", MOBILE && opt("compact"));
+  }
 
   function init() {
     const el = document.createElement("div");
