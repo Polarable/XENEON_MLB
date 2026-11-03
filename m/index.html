@@ -73,6 +73,7 @@
 <script src="bracket.js?v=__BUILD__"></script>
 <script src="team.js?v=__BUILD__"></script>
 <script src="savant.js?v=__BUILD__"></script>
+<script src="newslinks.js?v=__BUILD__"></script>
 <script src="player.js?v=__BUILD__"></script>
 <script src="gameday.js?v=__BUILD__"></script>
 <script src="game.js?v=__BUILD__"></script>
@@ -164,10 +165,10 @@
     photo.style.backgroundImage = a.image ? `url("${a.image.replace(/"/g, "%22")}")` : "";
     photo.innerHTML = a.image ? "" : logoImg(t, "logo");
     r.querySelector(".kicker").innerHTML = kicker(a, t);
-    r.querySelector("h2").textContent = a.title;
+    r.querySelector("h2").innerHTML = linkPlayers(a.title, a.players, esc);
     const body = a.body || [];
     r.querySelector(".r-body").innerHTML = body.length
-      ? body.map((p) => `<p>${esc(p)}</p>`).join("")
+      ? body.map((p) => `<p>${linkPlayers(p, a.players, esc)}</p>`).join("")
       : `<p style="color:var(--text-3)">No preview for this story yet. It will appear after the next news update.</p>`;
     r.querySelector(".r-link").href = a.link;
     r.scrollTop = 0;
@@ -179,6 +180,13 @@
     if (!Sheet.isOpen()) document.body.classList.remove("locked");
   }
   document.querySelector("#reader .r-close").onclick = closeReader;
+  // A player's name opens his page; Back from there returns to the story.
+  document.getElementById("reader").addEventListener("click", (e) => {
+    const n = e.target.closest("[data-player]"); if (!n) return;
+    const r = document.getElementById("reader");
+    r.classList.remove("open");
+    Sheet.open("player", { id: +n.dataset.player }, () => r.classList.add("open"));
+  });
 
   /* ---- Team picker ---- */
   function buildPicker() {
