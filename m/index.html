@@ -81,6 +81,7 @@
 <script src="gameday.js?v=__BUILD__"></script>
 <script src="game.js?v=__BUILD__"></script>
 <script src="myteam.js?v=__BUILD__"></script>
+<script src="livebar.js?v=__BUILD__"></script>
 <script>
   /* Phone version of the widget. The tabs and pages are the same scripts the Xeneon page runs
      (scores.js, game.js, gameday.js ...); this file only supplies the shell they expect (tabs, team picker,
@@ -269,7 +270,7 @@
     if (!TITLES[t]) t = "news";
     if (activeTab !== t) VIEWS[activeTab]?.hide();
     const same = activeTab === t;
-    activeTab = t; save("tab", t);
+    activeTab = t; save("tab", t); document.dispatchEvent(new CustomEvent("tabchange"));
     document.querySelectorAll("#m-tabs .tab").forEach((el) => el.classList.toggle("on", el.dataset.tab === t));
     document.querySelectorAll(".view").forEach((el) => el.classList.toggle("on", el.id === `view-${t}`));
     document.getElementById("m-title").textContent = t === "myteam" ? (Settings.fav()?.name || "My team") : TITLES[t];
@@ -370,7 +371,7 @@
   })();
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
-  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init();
+  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); LiveBar.init();
   setTab(load("tab") || "news");
 
   // Coming back to the app after a while: refresh news right away.

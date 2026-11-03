@@ -672,3 +672,18 @@ table.mt-div tr.mine td { background: rgba(var(--tc-rgb), .08); color: var(--tex
 .mt-story .ph img { width: 40px; height: 40px; background: none; }
 .mt-story b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 20px; font-weight: 600; line-height: 1.25; }
 .mt-story .muted { display: block; margin-top: 4px; font-size: 16px; }
+
+/* Live bar (favorite team's game) in the header */
+#livebar { display: none; margin-left: auto; align-items: center; gap: 14px; height: 56px; padding: 0 20px; border-radius: 999px;
+  border: 1px solid rgba(255,71,71,.35); background: rgba(255,71,71,.07); color: var(--text); font: 600 20px "Inter Tight", sans-serif;
+  cursor: pointer; white-space: nowrap; animation: fade .3s var(--ease); }
+#livebar.on { display: flex; }
+#livebar.on + #brand { margin-left: 28px; }
+#livebar .lb-t { display: flex; align-items: center; gap: 8px; }
+#livebar .lb-t img { width: 26px; height: 26px; }
+#livebar .lb-t em { font-style: normal; font-size: 24px; font-variant-numeric: tabular-nums; }
+#livebar .lb-i { color: var(--text-2); font-size: 17px; font-variant-numeric: tabular-nums; }
+#livebar .bases { width: 36px; height: 26px; }
+/* Make room for the live bar: drop the wordmark, the updated time and the season label while it shows. */
+body.has-livebar #brand .name, body.has-livebar #brand .sep, body.has-livebar header #updated, body.has-livebar header #ctx .ctx-label { display: none; }
+#picker-btn { flex: none; white-space: nowrap; }

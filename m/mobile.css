@@ -341,3 +341,16 @@ table.mt-div td, table.mt-div td.tm { height: 46px; padding: 0 5px; } table.mt-d
 #m-tabs .mt-tab-logo { display: flex; width: 25px; height: 25px; } #m-tabs .mt-tab-logo img { width: 25px; height: 25px; }
 #m-tabs .mt-tab-logo:empty { display: none; }
 #m-tabs .mt-tab-l { max-width: 64px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Live bar: just above the tab bar */
+#livebar { display: none; position: fixed; left: 10px; right: 10px; bottom: calc(var(--tabs-h) + var(--safe-b) + 18px); z-index: 31;
+  align-items: center; gap: 10px; height: 42px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,71,71,.35);
+  background: rgba(30,12,12,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); color: #fff; font: 600 15px "Inter Tight", sans-serif; }
+#livebar.on { display: flex; }
+#livebar .lb-t { display: flex; align-items: center; gap: 6px; }
+#livebar .lb-t img { width: 20px; height: 20px; }
+#livebar .lb-t em { font-style: normal; font-size: 17px; font-variant-numeric: tabular-nums; }
+#livebar .lb-i { margin-left: auto; color: var(--text-2); font-size: 13px; }
+#livebar .bases { width: 30px; height: 22px; }
+#livebar .outs i { width: 6px; height: 6px; }
+body.has-livebar #m-main { padding-bottom: calc(var(--tabs-h) + var(--safe-b) + 80px); }
