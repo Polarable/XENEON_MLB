@@ -1,6 +1,52 @@
 {
- "updated": "2026-11-03T21:00:36.229Z",
+ "updated": "2026-11-03T21:10:39.093Z",
  "articles": [
+  {
+   "title": "MLB Issues Latest Proposal To MLBPA; Union Swiftly Rejects",
+   "link": "https://www.mlbtraderumors.com/2026/11/mlb-proposal-salary-cap-2028-five-year-free-agency-million-league-minimum.html",
+   "date": "2026-11-03T21:08:59.000Z",
+   "teams": [],
+   "body": [
+    "Major League Baseball issued its latest proposal regarding a new collective bargaining agreement today. The key update is the league’s willingness to push the implementation of a salary cap/floor system from 2027 into the 2028 season, but the mere fact that the entire proposal is contingent on the implementation of a cap/floor system unsurprisingly resulted in a swift rebuke from the MLBPA.",
+    "The league’s bullet points on the matter sound appealing but are rather selectively framed. For instance, MLB’s press release proposes an increase to a $1MM league-minimum salary and a $15MM increase to the pre-arbitration bonus pool (plus an additional $10MM going into the pot over the life of the next agreement).",
+    "However, reading the actual document itself (link via The Athletic’s Evan Drellich) shows some key caveats. The supposed $1MM league minimum only applies to players with more than two years of big league service time. Since players reach arbitration at three years, that only applies to players with more than two and fewer than three years of service. The top 22% of those players already qualify for arbitration as “Super Two” players anyhow, so that $1MM minimum really only applies to 78% of the players with between two and three years of service."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/rob-manfred-commissioner-mlb-1024x683.jpg",
+   "players": []
+  },
+  {
+   "title": "Report: Orioles Open To Trade Offers On Majority Of Roster",
+   "link": "https://www.mlbtraderumors.com/2026/11/report-orioles-open-to-trade-offers-on-majority-of-roster.html",
+   "date": "2026-11-03T21:06:34.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles are going into the offseason with a very open mind, reports Andy Kostka of The Baltimore Banner. Per Kostka’s report, first baseman Pete Alonso is the only untouchable player on the roster. The O’s are open to offers on everyone else as they look to upgrade the rotation, the outfield and the catcher position.",
+    "It’s worth emphasizing that there’s a difference between actively trying to trade players and being open to offers, a distinction that Kostka clearly makes in his report. Still, it’s notable that the Baltimore front office is going into the offseason with the willingness to consider sweeping changes.",
+    "The openness is certainly understandable. The Orioles did a big tank job from 2018 to 2021, placing themselves as one of the worst clubs in baseball for that stretch in order to stockpile young talent. There was no draft lottery at that time, making that strategy more viable. They then won 101 games in 2023 with a young core featuring Gunnar Henderson, Kyle Bradish, Adley Rutschman and many others. It felt like a dynasty was brewing.",
+    "Instead, things have changed in more recent years, and not for the better. Many of the club’s planned core players have regressed or haven’t panned out. The team still snagged a Wild Card spot in 2024 but has finished below.500 in each of the past two seasons. After that slide, it seems the desire for change is there. Rutschman was surprisingly flipped to the Red Sox at the deadline. Perhaps more players who were once viewed as cornerstones in Baltimore will end up wearing different uniforms."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Gunnar_Henderson_Christian_Encarnacion_Strand_Coby_Mayo_Jackson_Holliday_Orioles-1024x683.jpg",
+   "players": [
+    [
+     "Pete Alonso",
+     624413
+    ],
+    [
+     "Gunnar Henderson",
+     683002
+    ],
+    [
+     "Kyle Bradish",
+     680694
+    ],
+    [
+     "Adley Rutschman",
+     668939
+    ]
+   ]
+  },
   {
    "title": "MLB Trade Rumors Free Agent Prediction Contest Now Open",
    "link": "https://www.mlbtraderumors.com/2026/11/mlb-trade-rumors-free-agent-prediction-contest-now-open.html",
@@ -6609,8 +6655,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/five-players-elect-free-agency.html",
    "date": "2026-10-17T14:09:13.000Z",
    "teams": [
-    "BAL",
     "COL",
+    "BAL",
     "NYM",
     "SEA"
    ],
