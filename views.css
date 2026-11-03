@@ -774,3 +774,6 @@ body.has-livebar #brand .name, body.has-livebar #brand .sep, body.has-livebar he
 .ph-row:first-child .ph-c b { color: #fff; }
 .ph-row:last-child .ph-c b { color: var(--text-2); font-weight: 500; }
 #stage.big .ph-c em { font-size: 15px; } #stage.big .ph-l { font-size: 17px; }
+/* Box score headshots */
+.stats td.name .bx-hs { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: 50% 15%; background: #1a1a1a; vertical-align: middle; margin-right: 12px; }
+.stats tr.tot td.name .bx-hs { display: none; }

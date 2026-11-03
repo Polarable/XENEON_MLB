@@ -9,7 +9,22 @@ const Sheet = (() => {
 
   function register(name, page) { pages[name] = page; }
 
+  // The phone app remembers its open pages, so coming back from a video (iOS may reload the app) lands where you were.
+  const KEEP = "sheet-stack";
+  function remember() {
+    if (!hist) return;
+    try { localStorage.setItem(KEEP, JSON.stringify({ t: Date.now(), s: stack.map(({ type, args, state }) => ({ type, args, state })) })); } catch {}
+  }
+  function restore(maxAgeMs = 30 * 60_000) {
+    let saved; try { saved = JSON.parse(localStorage.getItem(KEEP) || "null"); } catch {}
+    if (!saved?.s?.length || Date.now() - saved.t > maxAgeMs) return false;
+    saved.s.filter((e) => pages[e.type]).forEach((e) => { stack.push({ ...e, state: e.state || {} }); if (hist) history.pushState({ sheet: stack.length }, ""); });
+    if (stack.length) show();
+    return stack.length > 0;
+  }
+
   async function show() {
+    remember();
     if (cleanup) { try { cleanup(); } catch {} cleanup = null; }
     const r = root();
     const top = stack[stack.length - 1];
@@ -53,6 +68,9 @@ const Sheet = (() => {
   }
   function useHistory() {
     hist = true;
+    // Page state (open tab etc.) changes after show(), so save again whenever the app is left.
+    addEventListener("pagehide", remember);
+    document.addEventListener("visibilitychange", () => { if (document.hidden) remember(); });
     addEventListener("popstate", (e) => {
       const d = e.state?.sheet || 0;
       while (stack.length > d) pop(!closing);
@@ -73,7 +91,7 @@ const Sheet = (() => {
     });
   }
 
-  return { register, open, back, close, init, useHistory, refresh: show, isOpen: () => stack.length > 0, depth: () => stack.length };
+  return { register, open, back, close, init, useHistory, restore, refresh: show, isOpen: () => stack.length > 0, depth: () => stack.length };
 })();
 
 // Segmented control helper used by the pages: returns html; clicks are wired by the caller.

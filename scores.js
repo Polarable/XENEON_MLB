@@ -128,7 +128,11 @@ const Scores = (() => {
   function seriesNote(g, teamMode) {
     const parts = [];
     if (teamMode) parts.push(ymdLabel(g.date));
-    if (g.type && g.type !== "R" && g.series) parts.push(esc(g.series.shortDescription || g.desc || "") + (g.gameNo ? `, Gm ${g.gameNo}` : ""));
+    if (g.type && g.type !== "R" && g.series) {
+      // "World Series Game 5" already carries the number: show it once, as "World Series · Gm 5".
+      const name = String(g.series.shortDescription || g.desc || "").replace(/,?\s*(Game|Gm\.?)\s*\d+\s*$/i, "");
+      parts.push(esc(name) + (g.gameNo ? `${name ? " · " : ""}Gm ${g.gameNo}` : ""));
+    }
     if (g.dh) parts.push(`Game ${g.dh}`);
     return parts.join(" · ");
   }
