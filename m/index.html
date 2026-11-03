@@ -71,6 +71,8 @@
   dragScroll = function () {};
 </script>
 <script src="sheet.js?v=__BUILD__"></script>
+<script src="push-config.js?v=__BUILD__"></script>
+<script src="alerts.js?v=__BUILD__"></script>
 <script src="settings.js?v=__BUILD__"></script>
 <script src="scores.js?v=__BUILD__"></script>
 <script src="standings.js?v=__BUILD__"></script>
@@ -387,7 +389,7 @@
 
   // The service worker makes the app installable and carries push alerts. It never caches pages,
   // so updates still arrive through the version check below.
-  if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js", { scope: "./" }).then(() => Alerts.sync()).catch(() => {});
 
   // Coming back to the app after a while: refresh news right away.
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { refresh(); checkVersion(); } });

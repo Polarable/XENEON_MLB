@@ -32,6 +32,7 @@ const Settings = (() => {
         ${MOBILE ? "" : toggle("takeover", `Show ${fav ? `the ${esc(fav.name)}` : "my team"} live`, "When they're playing and nobody's touching the screen, open their game")}
         ${MOBILE ? "" : toggle("diag", "Show display info", "Pixel check for sharpness")}
       </div>
+      ${MOBILE && typeof Alerts !== "undefined" ? Alerts.html() : ""}
       ${MOBILE ? `<a class="set-link" href="career/"><b>Career Builder</b><em>Build and edit any player's career line, export as an image</em></a>` : ""}
       ${opt("diag") && !MOBILE ? `<div class="set-diag"><div class="set-stripes" style="--px:${1 / ((typeof scale === "number" && scale > 0 ? scale : 1) * (window.devicePixelRatio || 1))}px" title="1-pixel stripes: crisp lines here mean the screen shows the page pixel for pixel"></div>
         <div>${diag()}</div></div>` : ""}`;
@@ -62,6 +63,9 @@ const Settings = (() => {
     document.getElementById("stage").appendChild(el);
     document.getElementById("settings-btn").onclick = () => open(!el.classList.contains("open"));
     el.addEventListener("click", (e) => {
+      const al = e.target.closest("[data-al]");
+      if (al) { Alerts.toggle(al.dataset.al, draw); return; }
+      if (e.target.closest("[data-al-test]")) { Alerts.test(draw); return; }
       const o = e.target.closest("[data-opt]");
       if (o) { set(o.dataset.opt, opt(o.dataset.opt) ? "0" : "1"); applyText(); draw(); return; }
       const b = e.target.closest("[data-fav]"); if (!b) return;

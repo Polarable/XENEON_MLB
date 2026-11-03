@@ -480,5 +480,9 @@ body.compact .gcard:not(.live) .foot { display: none; }
 
   #livebar { left: calc(var(--side-w) + 24px); right: auto; width: min(720px, calc(100vw - var(--side-w) - 48px)); bottom: 20px; }
   #picker { left: auto; right: 24px; width: 640px; }
+  #settings { left: auto !important; right: 24px; width: 620px; }
+  #settings .set-grid { grid-template-columns: repeat(3, 1fr); }
   #ptr { display: none !important; }
 }
+.al-head { margin-top: 22px; }
+.al-status { margin-top: 8px; }
