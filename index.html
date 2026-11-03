@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Baseball News</title>
+<title>SHUTOUT Baseball</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="views.css" rel="stylesheet">
 <style>
   /* Design tokens: shared by every tab (news now, scores and standings later). */
   :root {
@@ -55,7 +56,7 @@
   #updated { font-size: 18px; font-weight: 500; line-height: 1; color: var(--text-3); font-variant-numeric: tabular-nums; }
 
   /* Card row: cards are laid out by script so the leftmost one can grow into the headliner as you scroll. */
-  #row { position: absolute; top: 100px; left: 0; right: 0; height: 620px; overflow: hidden; touch-action: none; cursor: grab;
+  #row { position: absolute; top: 0; left: 0; right: 0; height: 620px; overflow: hidden; touch-action: none; cursor: grab;
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%);
             mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%); }
   #row.dragging { cursor: grabbing; }
@@ -149,11 +150,13 @@
   <div id="glow"></div>
   <header>
     <nav>
-      <span class="tab on">News</span>
-      <span class="tab" title="Coming soon">Scores</span>
-      <span class="tab" title="Coming soon">Standings</span>
+      <span class="tab on" data-tab="news" role="button">News</span>
+      <span class="tab" data-tab="scores" role="button">Scores</span>
+      <span class="tab" data-tab="standings" role="button">Standings</span>
+      <span class="tab" data-tab="rosters" role="button">Rosters</span>
     </nav>
     <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button>
+    <div id="ctx"></div>
     <div id="brand">
       <img src="brand/shutout-logo.png" alt="">
       <span class="name">SHUTOUT</span>
@@ -161,7 +164,12 @@
       <span id="updated"></span>
     </div>
   </header>
-  <div id="row"></div>
+  <div class="view on" id="view-news"><div id="row"></div></div>
+  <div class="view" id="view-scores"><div id="scores-row"></div></div>
+  <div class="view" id="view-standings"><div id="standings-body"></div></div>
+  <div class="view" id="view-rosters"><div id="rosters-body"></div></div>
+  <div id="sheet"><div class="s-body"></div>
+    <div class="s-nav"><button class="s-back">‹ Back</button><button class="s-close" aria-label="Close">×</button></div></div>
   <div id="scrim"></div>
   <div id="reader">
     <div class="r-photo"></div>
@@ -177,6 +185,13 @@
 </div>
 
 <script src="teams.js"></script>
+<script src="mlb.js"></script>
+<script src="sheet.js"></script>
+<script src="scores.js"></script>
+<script src="standings.js"></script>
+<script src="team.js"></script>
+<script src="player.js"></script>
+<script src="game.js"></script>
 <script>
   const REFRESH_MS = 5 * 60 * 1000;   // re-read news.json every 5 minutes
   const NEW_MIN = 60;                 // stories younger than this get a NEW tag
@@ -373,24 +388,53 @@
   document.getElementById("picker").onclick = (e) => {
     const b = e.target.closest("button"); if (!b) return;
     selected = b.dataset.t; save("team", selected); togglePicker(false); render();
+    VIEWS[activeTab]?.teamChanged();
+  };
+
+  /* ---- Tabs ----
+     News is this file; Scores, Standings and Rosters live in scores.js, standings.js and team.js.
+     Each keeps its own "Updated" text for the corner. */
+  const VIEWS = { scores: Scores, standings: Standings, rosters: Rosters };
+  const updatedText = {};
+  let activeTab = "news";
+  function setUpdated(tab, text) {
+    updatedText[tab] = text;
+    if (tab === activeTab) document.getElementById("updated").textContent = text;
+  }
+  function setTab(t) {
+    if (!["news", "scores", "standings", "rosters"].includes(t)) t = "news";
+    if (activeTab !== t) VIEWS[activeTab]?.hide();
+    activeTab = t; save("tab", t);
+    document.querySelectorAll("nav .tab").forEach((el) => el.classList.toggle("on", el.dataset.tab === t));
+    document.querySelectorAll(".view").forEach((el) => el.classList.toggle("on", el.id === `view-${t}`));
+    document.getElementById("ctx").innerHTML = "";
+    document.getElementById("updated").textContent = updatedText[t] || "";
+    togglePicker(false);
+    if (t === "news") layout(); else VIEWS[t].show();
+  }
+  document.querySelector("nav").onclick = (e) => {
+    const el = e.target.closest("[data-tab]"); if (!el) return;
+    if (Sheet.isOpen()) Sheet.close();
+    setTab(el.dataset.tab);
   };
 
   async function refresh() {
     try {
       const data = await (await fetch(`news.json?t=${Date.now()}`, { cache: "no-store" })).json();
-      document.getElementById("updated").textContent =
-        `Updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+      setUpdated("news", `Updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`);
       // Only rebuild the row when the stories changed, so a refresh doesn't yank the user back to the start.
       const key = (data.articles || []).map((a) => a.link).join("|");
       articles = data.articles || [];
       if (key !== lastKey) { lastKey = key; render(); }
       else document.querySelectorAll(".age[data-d]").forEach((el) => { el.textContent = ago(el.dataset.d); });
     } catch (e) {
-      document.getElementById("updated").textContent = "Couldn't load news";
+      setUpdated("news", "Couldn't load news");
     }
   }
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
+  Sheet.init(); Scores.init(); Standings.init(); Rosters.init();
+  setTab(load("tab") || "news");
 </script>
 </body>
 </html>
