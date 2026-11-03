@@ -113,13 +113,29 @@ const Bar = (() => {
 
   // ---------- the bar ----------
   let shown = "";
+  let slideAt = Date.now(), dwell = 8000;   // how long the current news slide stays (carousel)
   function swap(html, animate) {
     const box = document.getElementById("content");
     if (html === shown) return;
     shown = html;
-    if (!animate || !box.firstElementChild) { box.innerHTML = `<div class="slide">${html}</div>`; return; }
+    if (!animate || !box.firstElementChild) { box.innerHTML = `<div class="slide">${html}</div>`; marquee(box); return; }
     const old = box.firstElementChild; old.classList.add("out"); setTimeout(() => old.remove(), 400);
+    slideAt = Date.now(); dwell = 8000;
     const n = document.createElement("div"); n.className = "slide in"; n.innerHTML = html; box.appendChild(n);
+    marquee(n);
+  }
+  // A headline too long for the bar scrolls slowly to its end and back, so it can be read in full.
+  function marquee(root) {
+    (document.fonts?.ready || Promise.resolve()).then(() => root.querySelectorAll(".hd").forEach((hd) => {
+      const m = hd.querySelector(".mq"); if (!m) return;
+      const over = m.scrollWidth - hd.clientWidth;
+      if (over <= 4) return;
+      const move = over / 32;                      // seconds at 32 px/s
+      hd.classList.add("long");
+      dwell = Math.max(8000, (move * 2 + 5) * 1000);
+      m.style.setProperty("--mq", `${-over - 10}px`);
+      m.style.animationDuration = `${(move * 2 + 5).toFixed(1)}s`;
+    }));
   }
   function scorebug() {
     const g = pickGame();
@@ -152,7 +168,9 @@ const Bar = (() => {
   function newsSlide(a) {
     if (!a) return `<div class="nw"><div class="tx"><span class="hd">No stories yet</span></div></div>`;
     const t = byAbbr[(a.teams || [])[0]];
-    return `<div class="nw"><div class="tx"><span class="hd">${esc(a.title)}</span><span class="mt">${t ? logo(t) + esc(t.name) + " · " : ""}${ago(a.date)}</span></div></div>`;
+    // First sentence of the story, so the bar says what it's about, not just the headline.
+    const gist = String(a.body || "").replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s/)[0] || "";
+    return `<div class="nw"><div class="tx"><span class="hd"><span class="mq">${esc(a.title)}</span></span><span class="mt">${t ? logo(t) + `<b>${esc(t.name)}</b>` : ""}<i>${ago(a.date)}</i>${gist ? `<em>${esc(gist)}</em>` : ""}</span></div></div>`;
   }
   function drawBar(animate) {
     const m = effectiveMode();
@@ -162,7 +180,11 @@ const Bar = (() => {
     const dots = m === "carousel" && list.length > 1 ? `<span class="dots">${list.map((_, i) => `<i class="${i === newsIdx ? "on" : ""}"></i>`).join("")}</span>` : "";
     swap(newsSlide(list[newsIdx]) + dots, animate);
   }
-  setInterval(() => { if (effectiveMode() === "carousel" && !document.body.classList.contains("open")) { newsIdx++; drawBar(true); } }, 8000);
+  // Carousel: 8 s per story, or long enough for a scrolling headline to run once.
+  setInterval(() => {
+    if (effectiveMode() !== "carousel" || document.body.classList.contains("open") || Date.now() - slideAt < dwell) return;
+    newsIdx++; drawBar(true);
+  }, 1000);
 
   // ---------- the panel ----------
   let view = "game", storyAt = 0;
@@ -323,11 +345,13 @@ const Bar = (() => {
   tick();
 
   // Self-update: reload when a new version of the site is out (only while collapsed)
-  setInterval(async () => {
+  async function checkVersion() {
     if (typeof BUILD !== "string" || BUILD.startsWith("__") || document.body.classList.contains("open")) return;
     try { const v = await (await fetch(`${SITE}version.json?t=${Date.now()}`, { cache: "no-store" })).json();
-      if (v.build && v.build !== BUILD) location.replace(`${location.pathname}?${qs.toString()}`); } catch (e) {}
-  }, 10 * 60e3);
+      if (v.build && v.build !== BUILD) { qs.set("v", v.build); location.replace(`${location.pathname}?${qs.toString()}`); } } catch (e) {}
+  }
+  setTimeout(checkVersion, 15e3);
+  setInterval(checkVersion, 5 * 60e3);
 
   // A browser tab (not the widget) shows the bar on a dark strip so it can be previewed
   if (qs.get("bg") === "solid") document.body.classList.add("solid");
