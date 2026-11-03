@@ -1,7 +1,7 @@
 // Shared team table for the page and the fetcher.
 // id = MLB Stats API team id (also used for logos), slugs = MLBTR category feed slugs to try in order,
 // match = words that identify the team in an MLBTR <category>.
-// color = primary team color, bright = a vivid team color that stays visible on black (used for borders, glows, text).
+// color = primary team color, bright = a vivid team color that stays visible on black (used for the accent tick and team-mode wash).
 const TEAMS = [
   { abbr: "ARI", name: "Diamondbacks", id: 109, color: "#A71930", bright: "#E03A3E", slugs: ["arizona-diamondbacks"], match: ["Diamondbacks"] },
   { abbr: "ATH", name: "Athletics", id: 133, color: "#003831", bright: "#EFB21E", slugs: ["athletics", "sacramento-athletics", "las-vegas-athletics", "oakland-athletics"], match: ["Athletics"] },

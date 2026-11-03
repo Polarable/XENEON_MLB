@@ -6,56 +6,50 @@
 <title>Baseball News</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   /* Design tokens: shared by every tab (news now, scores and standings later). */
   :root {
     --bg: #000;
-    --surface: #141414;
-    --surface-2: #1e1e1e;
+    --surface: #111;
+    --surface-2: #1c1c1c;
+    --line: rgba(255,255,255,.10);
+    --line-2: rgba(255,255,255,.14);
     --text: #fff;
-    --text-2: rgba(255,255,255,.6);
-    --text-3: rgba(255,255,255,.38);
-    --league: #c8102e;
-    --radius: 24px;
-    --radius-sm: 16px;
+    --text-2: rgba(255,255,255,.62);
+    --text-3: rgba(255,255,255,.40);
+    --text-4: rgba(255,255,255,.28);
+    --radius: 14px;
     --ease: cubic-bezier(.2,.7,.2,1);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; background: var(--bg); color: var(--text); overflow: hidden;
-    font-family: "Archivo", system-ui, sans-serif; -webkit-font-smoothing: antialiased; user-select: none; }
+    font-family: "Inter Tight", "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; user-select: none; }
 
   /* Fixed 2560x720 stage, scaled to whatever space iCUE gives us. */
-  #stage { position: absolute; top: 0; left: 0; width: 2560px; height: 720px; transform-origin: 0 0; overflow: hidden;
-    background: #000; }
+  #stage { position: absolute; top: 0; left: 0; width: 2560px; height: 720px; transform-origin: 0 0; overflow: hidden; background: var(--bg); }
 
-  /* Ambient background: a faint glow, tinted with the selected team's color in team mode. */
-  #glow { position: absolute; inset: 0; pointer-events: none; transition: background .6s var(--ease);
-    background: radial-gradient(ellipse 1400px 700px at 0% 0%, rgba(255,255,255,.07), transparent 70%); }
-  #stage.team #glow { background:
-    radial-gradient(ellipse 1500px 760px at 0% 0%, rgba(var(--team-rgb), .30), transparent 70%),
-    radial-gradient(ellipse 1200px 500px at 100% 100%, rgba(var(--team-rgb), .10), transparent 70%); }
-  #watermark { position: absolute; right: -40px; top: -150px; width: 760px; height: 760px; opacity: 0; pointer-events: none;
-    transition: opacity .6s var(--ease); }
-  #stage.team #watermark { opacity: .05; }
+  /* Team mode: a very faint wash of the selected team's color from the top-left. */
+  #glow { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .6s var(--ease);
+    background: radial-gradient(ellipse 1800px 600px at 0% 0%, rgba(var(--team-rgb, 0,0,0), .10), transparent 70%); }
+  #stage.team #glow { opacity: 1; }
 
   /* Header: tab words, team picker, source line. */
-  header { position: absolute; top: 32px; left: 40px; right: 40px; height: 64px; display: flex; align-items: center; gap: 40px; }
-  nav { display: flex; align-items: baseline; gap: 40px; }
-  nav .tab { font-size: 56px; font-weight: 900; font-stretch: 125%; letter-spacing: -0.5px; line-height: 1; color: var(--text-3); }
+  header { position: absolute; top: 36px; left: 40px; right: 40px; height: 56px; display: flex; align-items: center; gap: 44px; }
+  nav { display: flex; align-items: baseline; gap: 32px; }
+  nav .tab { font-size: 44px; font-weight: 600; letter-spacing: -1px; line-height: 1; color: var(--text-4); }
   nav .tab.on { color: var(--text); }
-  #picker-btn { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 20px 0 16px; border-radius: var(--radius-sm);
-    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); color: var(--text);
-    font: 800 24px "Archivo", sans-serif; font-stretch: 110%; letter-spacing: .5px; cursor: pointer;
-    transition: background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease); }
-  #picker-btn.team { background: var(--team-color); border-color: rgba(255,255,255,.35); color: var(--team-ink); }
-  #picker-btn img { width: 34px; height: 34px; filter: drop-shadow(0 1px 3px rgba(0,0,0,.5)); }
-  #picker-btn .chev { width: 14px; height: 14px; border-right: 3px solid currentColor; border-bottom: 3px solid currentColor;
-    transform: translateY(-4px) rotate(45deg); margin-left: 4px; opacity: .8; }
-  #updated { margin-left: auto; font-size: 20px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-3); }
+  #picker-btn { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 22px 0 16px; border-radius: 999px;
+    background: rgba(255,255,255,.06); border: 1px solid var(--line-2); color: var(--text);
+    font: 500 20px "Inter Tight", sans-serif; cursor: pointer; }
+  #picker-label { display: flex; align-items: center; gap: 10px; }
+  #picker-btn img { width: 26px; height: 26px; }
+  #picker-btn .chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+    transform: translateY(-3px) rotate(45deg); margin-left: 2px; opacity: .6; }
+  #updated { margin-left: auto; font-size: 18px; font-weight: 500; color: var(--text-3); }
 
   /* Card row */
-  #row { position: absolute; top: 100px; left: 0; right: 0; height: 568px; display: flex; gap: 40px;
+  #row { position: absolute; top: 100px; left: 0; right: 0; height: 568px; display: flex; gap: 24px;
     padding: 24px 40px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding: 0 40px; scrollbar-width: none;
     touch-action: pan-x;
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 240px)), transparent 100%);
@@ -63,60 +57,50 @@
   #row::-webkit-scrollbar { display: none; }
 
   .card { position: relative; flex: 0 0 520px; height: 520px; border-radius: var(--radius); scroll-snap-align: start;
-    border: 3px solid var(--tc); color: inherit; text-decoration: none; overflow: hidden; isolation: isolate;
-    background: var(--surface);
-    box-shadow: 0 0 36px rgba(var(--tc-rgb), .32), 0 14px 40px rgba(0,0,0,.7);
+    border: 1px solid var(--line); color: inherit; text-decoration: none; overflow: hidden; isolation: isolate; background: var(--surface);
     opacity: 0; animation: card-in .5s var(--ease) forwards; animation-delay: var(--delay, 0ms);
     transition: transform .15s var(--ease); }
-  .card.hero { flex-basis: 1080px; }
+  .card.hero { flex-basis: 1064px; }
   .card:active { transform: scale(.98); }
-  @keyframes card-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
-  /* Designed fallback: always underneath, so loading and missing photos look intentional. */
+  /* Fallback sits under the photo, so loading and missing photos still look intentional. */
   .card .fallback { position: absolute; inset: 0; z-index: -2; display: flex; align-items: center; justify-content: center;
-    background: radial-gradient(ellipse at 30% 20%, rgba(var(--tc-rgb), .55), transparent 65%),
-                linear-gradient(160deg, var(--primary) 0%, #050505 90%); }
-  .card .fallback img { width: 46%; max-width: 300px; opacity: .9; filter: drop-shadow(0 8px 24px rgba(0,0,0,.5)); transform: translateY(-50px); }
-  .card .fallback .word { font-size: 64px; font-weight: 900; font-stretch: 125%; line-height: .95; text-align: center;
-    letter-spacing: -1px; color: rgba(255,255,255,.14); transform: translateY(-60px); }
+    background: linear-gradient(160deg, #1a1a1a, #0b0b0b); }
+  .card .fallback img { width: 96px; opacity: .5; transform: translateY(-70px); }
   .card .photo { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover;
-    filter: saturate(.85) contrast(1.08) brightness(.95); opacity: 0; transition: opacity .6s var(--ease); }
+    filter: saturate(.92) contrast(1.04); opacity: 0; transition: opacity .6s var(--ease); }
   .card .photo.on { opacity: 1; }
-  .card .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top,
-    rgba(0,0,0,.96) 0%, rgba(0,0,0,.82) 28%, rgba(var(--tc-rgb), .18) 58%, rgba(0,0,0,0) 78%); }
+  .card .shade { position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.7) 34%, rgba(0,0,0,0) 70%); }
 
-  .card .text { position: absolute; left: 28px; right: 28px; bottom: 26px; }
-  .card .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; height: 40px;
-    font-size: 22px; font-weight: 700; font-stretch: 110%; letter-spacing: 1.5px; text-transform: uppercase; color: var(--tc); }
-  .card .kicker img { width: 40px; height: 40px; filter: drop-shadow(0 2px 6px rgba(0,0,0,.6)); }
-  .card .kicker .age { color: var(--text-2); }
-  .card .kicker .sep { width: 6px; height: 6px; border-radius: 50%; background: var(--text-3); }
-  .card .new { display: flex; align-items: center; gap: 8px; padding: 4px 10px 4px 8px; border-radius: 8px;
-    background: rgba(var(--tc-rgb), .18); color: var(--tc); font-size: 18px; letter-spacing: 2px; }
-  .card .new::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--tc);
-    box-shadow: 0 0 0 0 rgba(var(--tc-rgb), .7); animation: pulse 1.6s ease-out .6s 2; }
-  @keyframes pulse { to { box-shadow: 0 0 0 14px rgba(var(--tc-rgb), 0); } }
-  .card h2 { font-size: 40px; font-weight: 800; font-stretch: 92%; line-height: 1.06; letter-spacing: -0.3px;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-    text-shadow: 0 2px 12px rgba(0,0,0,.6); }
-  .card.hero h2 { font-size: 58px; line-height: 1.02; max-width: 960px; }
-  .card.hero .kicker { font-size: 24px; }
+  .card .text { position: absolute; left: 32px; right: 32px; bottom: 30px; }
+  .card .kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 19px; font-weight: 500; color: var(--text-2); }
+  .card .kicker::before { content: ""; width: 4px; height: 20px; border-radius: 2px; background: var(--tc); }
+  .card .kicker .team { color: var(--text); font-weight: 600; }
+  .card .kicker .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--text-3); }
+  .card .new { padding: 2px 8px; border-radius: 6px; background: rgba(255,255,255,.12); color: var(--text);
+    font-size: 14px; font-weight: 600; letter-spacing: 1px; }
+  .card h2 { font-size: 36px; font-weight: 600; line-height: 1.14; letter-spacing: -0.6px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card.hero h2 { font-size: 54px; line-height: 1.06; letter-spacing: -1.2px; max-width: 900px; }
+  .card.hero .kicker { font-size: 20px; }
 
   .empty { margin: auto; display: flex; flex-direction: column; align-items: center; gap: 20px; transform: translateY(-20px); }
-  .empty img { width: 120px; height: 120px; opacity: .8; }
-  .empty div { font-size: 34px; font-weight: 800; font-stretch: 110%; color: var(--text-2); }
+  .empty img { width: 96px; height: 96px; opacity: .6; }
+  .empty div { font-size: 30px; font-weight: 500; color: var(--text-3); }
 
   /* Team picker popover */
-  #picker { position: absolute; top: 108px; left: 40px; display: none; padding: 20px; border-radius: 20px; z-index: 10;
-    background: rgba(18,18,18,.97); border: 1px solid rgba(255,255,255,.12); box-shadow: 0 24px 80px rgba(0,0,0,.85);
+  #picker { position: absolute; top: 108px; left: 40px; display: none; padding: 20px; border-radius: 16px; z-index: 10;
+    background: rgba(18,18,18,.97); border: 1px solid var(--line-2); box-shadow: 0 24px 80px rgba(0,0,0,.85);
     grid-template-columns: repeat(11, 140px); gap: 10px; }
   #picker.open { display: grid; animation: pop .18s var(--ease); }
   @keyframes pop { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
-  #picker button { height: 88px; border: 2px solid transparent; border-radius: 14px; background: var(--surface-2); color: #fff;
-    font: 800 20px "Archivo", sans-serif; font-stretch: 110%; letter-spacing: .5px; display: flex; flex-direction: column;
+  #picker button { height: 88px; border: 1px solid transparent; border-radius: 10px; background: var(--surface-2); color: var(--text);
+    font: 600 18px "Inter Tight", sans-serif; display: flex; flex-direction: column;
     align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
   #picker button img { width: 40px; height: 40px; }
-  #picker button.on { border-color: var(--tc, #fff); background: rgba(var(--tc-rgb, 255,255,255), .16); }
+  #picker button.on { background: #262626; border-color: rgba(255,255,255,.4); }
   #scrim { position: absolute; inset: 0; display: none; z-index: 9; }
   #scrim.open { display: block; }
 </style>
@@ -124,14 +108,13 @@
 <body>
 <div id="stage">
   <div id="glow"></div>
-  <img id="watermark" alt="">
   <header>
     <nav>
-      <span class="tab on">NEWS</span>
-      <span class="tab" title="Coming soon">SCORES</span>
-      <span class="tab" title="Coming soon">STANDINGS</span>
+      <span class="tab on">News</span>
+      <span class="tab" title="Coming soon">Scores</span>
+      <span class="tab" title="Coming soon">Standings</span>
     </nav>
-    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">ALL TEAMS</span><span class="chev"></span></button>
+    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button>
     <div id="updated"></div>
   </header>
   <div id="row"></div>
@@ -160,10 +143,7 @@
   function save(k, v) { try { localStorage.setItem(k, v); } catch {} }
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return `${n >> 16 & 255}, ${n >> 8 & 255}, ${n & 255}`; };
-  // Black or white text, whichever reads better on the given color.
-  const ink = (hex) => { const [r, g, b] = rgb(hex).split(",").map((v) => +v / 255);
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.55 ? "#000" : "#fff"; };
-  const vars = (t) => `--tc:${t.bright};--tc-rgb:${rgb(t.bright)};--primary:${t.color}`;
+  const vars = (t) => `--tc:${t.bright};--tc-rgb:${rgb(t.bright)}`;
 
   // Scale the 2560x720 stage to fit the iframe.
   function fit() {
@@ -195,32 +175,21 @@
 
   function applyTeamMode(team) {
     const stage = document.getElementById("stage");
-    const btn = document.getElementById("picker-btn");
     stage.classList.toggle("team", !!team);
-    btn.classList.toggle("team", !!team);
-    const wm = document.getElementById("watermark");
-    if (team) {
-      stage.style.setProperty("--team-rgb", rgb(team.bright));
-      btn.style.setProperty("--team-color", team.color);
-      btn.style.setProperty("--team-ink", ink(team.color));
-      wm.dataset.tried = ""; wm.dataset.fb = logoFallback(team); wm.onerror = () => fb(wm);
-      if (!wm.isConnected) stage.insertBefore(wm, stage.children[1]);
-      wm.src = logo(team);
-    }
-    document.getElementById("picker-label").innerHTML = team ? `${logoImg(team)} ${esc(team.name.toUpperCase())}` : "ALL TEAMS";
+    if (team) stage.style.setProperty("--team-rgb", rgb(team.bright));
+    document.getElementById("picker-label").innerHTML = team ? `${logoImg(team)} ${esc(team.name)}` : "All teams";
   }
 
   function card(a, t, i) {
     const hero = i === 0;
     const isNew = minutes(a.date) < NEW_MIN;
-    const fallback = t.id ? logoImg(t) : `<div class="word">MLB<br>TRADE<br>RUMORS</div>`;
     return `<a class="card${hero ? " hero" : ""}" href="${esc(a.link)}" target="_blank" rel="noopener"
         style="${vars(t)};--delay:${Math.min(i, 8) * 40}ms">
-      <div class="fallback">${fallback}</div>
+      <div class="fallback">${logoImg(t)}</div>
       ${a.image ? `<img class="photo" src="${esc(a.image)}" alt="" onload="this.classList.add('on')" onerror="this.remove()">` : ""}
       <div class="shade"></div>
       <div class="text">
-        <div class="kicker">${logoImg(t)}<span>${esc(t.name)}</span><span class="sep"></span><span class="age" data-d="${esc(a.date)}">${ago(a.date)}</span>${isNew ? `<span class="new">NEW</span>` : ""}</div>
+        <div class="kicker"><span class="team">${esc(t.name)}</span><span class="sep"></span><span class="age" data-d="${esc(a.date)}">${ago(a.date)}</span>${isNew ? `<span class="new">NEW</span>` : ""}</div>
         <h2>${esc(a.title)}</h2>
       </div></a>`;
   }
@@ -241,7 +210,7 @@
   function buildPicker() {
     const opts = [{ abbr: "ALL" }, ...[...TEAMS].sort((a, b) => a.abbr.localeCompare(b.abbr))];
     document.getElementById("picker").innerHTML = opts.map((t) =>
-      `<button data-t="${t.abbr}" style="${t.id ? vars(t) : ""}">${t.id ? logoImg(t) : `<span style="font-size:30px">⚾</span>`}${t.abbr}</button>`).join("");
+      `<button data-t="${t.abbr}" >${t.id ? logoImg(t) : `<span style="font-size:30px">⚾</span>`}${t.abbr}</button>`).join("");
   }
   function togglePicker(open) {
     document.getElementById("picker").classList.toggle("open", open);
@@ -258,7 +227,7 @@
     try {
       const data = await (await fetch(`news.json?t=${Date.now()}`, { cache: "no-store" })).json();
       document.getElementById("updated").textContent =
-        `MLB Trade Rumors · Updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+        `MLB Trade Rumors · updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
       // Only rebuild the row when the stories changed, so a refresh doesn't yank the user back to the start.
       const key = (data.articles || []).map((a) => a.link).join("|");
       articles = data.articles || [];
