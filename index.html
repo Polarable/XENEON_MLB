@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="views.css" rel="stylesheet">
+<link href="views.css?v=__BUILD__" rel="stylesheet">
 <style>
   /* Design tokens: shared by every tab (news now, scores and standings later). */
   :root {
@@ -185,16 +185,16 @@
   <div id="picker" role="menu"></div>
 </div>
 
-<script src="teams.js"></script>
-<script src="mlb.js"></script>
-<script src="sheet.js"></script>
-<script src="settings.js"></script>
-<script src="scores.js"></script>
-<script src="standings.js"></script>
-<script src="team.js"></script>
-<script src="player.js"></script>
-<script src="gameday.js"></script>
-<script src="game.js"></script>
+<script src="teams.js?v=__BUILD__"></script>
+<script src="mlb.js?v=__BUILD__"></script>
+<script src="sheet.js?v=__BUILD__"></script>
+<script src="settings.js?v=__BUILD__"></script>
+<script src="scores.js?v=__BUILD__"></script>
+<script src="standings.js?v=__BUILD__"></script>
+<script src="team.js?v=__BUILD__"></script>
+<script src="player.js?v=__BUILD__"></script>
+<script src="gameday.js?v=__BUILD__"></script>
+<script src="game.js?v=__BUILD__"></script>
 <script>
   const REFRESH_MS = 5 * 60 * 1000;   // re-read news.json every 5 minutes
   const NEW_MIN = 60;                 // stories younger than this get a NEW tag
@@ -438,6 +438,18 @@
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
   Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init();
   setTab(load("tab") || "news");
+
+  /* Self-update: iCUE's web view holds on to old copies of the page, so a deploy could go unseen for days.
+     The deploy stamps BUILD into this page and writes version.json; when they differ, reload. */
+  const BUILD = "__BUILD__";
+  async function checkVersion() {
+    if (BUILD.startsWith("__")) return;   // local copy, not a deploy
+    try {
+      const v = await (await fetch(`version.json?t=${Date.now()}`, { cache: "no-store" })).json();
+      if (v.build && v.build !== BUILD && !Sheet.isOpen()) location.replace(`${location.pathname}?v=${v.build}${location.hash}`);
+    } catch (e) {}
+  }
+  setInterval(checkVersion, 60 * 1000);
 </script>
 </body>
 </html>
