@@ -20,6 +20,8 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50   # the build id needs history to skip news-only commits
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -31,6 +33,12 @@ jobs:
           git config user.email "news-bot@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || (git commit -m "Update news [skip ci]" && git push)
+      - name: Stamp build id (busts iCUE's cache; not committed)
+        run: |
+          BUILD=$(git log -1 --format=%h -- . ':!news.json' ':!img' ':!logos')
+          sed -i "s/__BUILD__/$BUILD/g" index.html
+          echo "{\"build\":\"$BUILD\"}" > version.json
+          cat version.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
