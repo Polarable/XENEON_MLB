@@ -85,6 +85,7 @@ Width, the gap from the left edge, the height of the open view and your team can
 #include <string>
 #include <functional>
 #include <atomic>
+#include <algorithm>
 
 // ---------------------------------------------------------------------------------------------
 // The slice of WebView2.h (SDK 1.0.2903.40) this mod uses, copied exactly so the vtables match.
@@ -514,9 +515,9 @@ static void LoadSettings() {
     WCHAR buf[MAX_PATH * 2];
     ExpandEnvironmentStringsW(StrSetting(L"loaderPath").c_str(), buf, ARRAYSIZE(buf));
     g_set.loaderPath = buf;
-    g_set.width = max(200, min(1600, Wh_GetIntSetting(L"width")));
-    g_set.offset = max(0, min(2000, Wh_GetIntSetting(L"offset")));
-    g_set.panelHeight = max(300, min(900, Wh_GetIntSetting(L"panelHeight")));
+    g_set.width = std::max(200, std::min(1600, Wh_GetIntSetting(L"width")));
+    g_set.offset = std::max(0, std::min(2000, Wh_GetIntSetting(L"offset")));
+    g_set.panelHeight = std::max(300, std::min(900, Wh_GetIntSetting(L"panelHeight")));
     g_set.hideFullscreen = Wh_GetIntSetting(L"hideFullscreen") != 0;
     if (g_set.url.empty()) g_set.url = L"https://polarable.github.io/XENEON_MLB/bar/";
     if (g_set.team.empty()) g_set.team = L"HOU";
@@ -606,7 +607,7 @@ static void Place() {
         g_hiddenForFullscreen = true;
         return;
     }
-    int cssBar = max(32, (int)(barH / scale + 0.5));
+    int cssBar = std::max(32, (int)(barH / scale + 0.5));
     if (cssBar != g_cssBar || dpi != g_lastDpi) {
         g_cssBar = cssBar; g_lastDpi = dpi;
         PostMessageW(g_hwnd, WM_APP_RELOAD, 0, 0);
@@ -905,7 +906,7 @@ static DWORD WINAPI WidgetThread(LPVOID) {
     wc.lpfnWndProc = WndProc;
     wc.hInstance = GetModuleHandleW(nullptr);
     wc.lpszClassName = L"ShutoutTaskbarWidget";
-    wc.hCursor = LoadCursorW(nullptr, IDC_ARROW);
+    wc.hCursor = LoadCursorW(nullptr, MAKEINTRESOURCEW(32512) /* IDC_ARROW */);
     RegisterClassW(&wc);
     g_hwnd = CreateWindowExW(WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE, wc.lpszClassName, L"SHUTOUT",
                              WS_POPUP | WS_CLIPCHILDREN, 0, 0, 100, 48, tb /* owned by the taskbar: stays above it */, nullptr, wc.hInstance, nullptr);
