@@ -25,6 +25,9 @@ Sheet.register("game", async (root, { pk }, alive) => {
     const teams = gd.teams || {};
     const dec = ld.decisions || {};
     const dateYmd = gd.datetime?.officialDate;
+    // ABS challenges left, as two small dots by the record (only in games that have them).
+    const absPips = (a) => a && gd.absChallenges?.hasChallenges && phase === "live"
+      ? `<em class="abs-pips" title="ABS challenges left">${Array.from({ length: Math.max(2, a.remaining ?? 0) }, (_, i) => `<i class="${i < (a.remaining ?? 0) ? "on" : ""}"></i>`).join("")}</em>` : "";
     const side = (k) => {
       const t = teamMeta(teams[k]);
       const runs = ls.teams?.[k]?.runs;
@@ -33,7 +36,7 @@ Sheet.register("game", async (root, { pk }, alive) => {
       const rec = teams[k]?.record?.leagueRecord || teams[k]?.record;
       return `<div class="g-team ${lose ? "lose" : ""}" data-team="${t.id}" role="button">
         ${logoImg(t)}<div class="g-name"><div>${esc(fullTeamName(teams[k]) || t.name)}</div>
-        <span>${rec && rec.wins != null ? `${rec.wins}-${rec.losses}` : ""}</span></div>
+        <span>${rec && rec.wins != null ? `${rec.wins}-${rec.losses}` : ""}${absPips(gd.absChallenges?.[k])}</span></div>
         <div class="g-runs">${phase === "preview" || phase === "off" ? "" : num(runs)}</div></div>`;
     };
 

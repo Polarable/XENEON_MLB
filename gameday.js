@@ -551,8 +551,8 @@ const Gameday = (pk) => {
   fieldEl.className = "g-field";
   fieldEl.innerHTML = `<div class="fd"><i class="fb b3"></i><i class="fb b2"></i><i class="fb b1"></i></div>
     <div class="bso">${[["B", 4, "ball"], ["S", 3, "strike"], ["O", 3, "out"]].map(([l, n, c]) => `<div data-k="${c}"><b>${l}</b>${"<i></i>".repeat(n)}</div>`).join("")}</div>
-    <div class="g-next"></div><div class="g-chal"></div>`;
-  const BASE_POS = { first: [192, 130], second: [126, 64], third: [60, 130], home: [126, 196] };
+    <div class="g-next"></div>`;
+  const BASE_POS = { first: [134, 88], second: [88, 42], third: [42, 88], home: [88, 134] };
   const runnerEls = new Map();   // player id -> element
   let lastRuns = null;
   function updateField(f) {
@@ -588,23 +588,24 @@ const Gameday = (pk) => {
     });
     const counts = { ball: ls.balls ?? 0, strike: ls.strikes ?? 0, out: ls.outs ?? 0 };
     fieldEl.querySelectorAll(".bso [data-k]").forEach((row) => row.querySelectorAll("i").forEach((d, i) => d.classList.toggle("on", i < counts[row.dataset.k])));
-    // On deck and in the hole, side by side.
+    // On deck and in the hole, side by side: today's line and the season slash line.
     const box = f.liveData?.boxscore?.teams || {};
-    const avg = (id) => (box.away?.players?.[`ID${id}`] || box.home?.players?.[`ID${id}`])?.seasonStats?.batting?.avg || "";
-    const nx = (pp, lbl) => pp ? `<div class="nx lnk" data-player="${pp.id}"><img src="${headshot(pp.id, 100)}" alt="" onerror="this.style.visibility='hidden'">
-      <div><span>${lbl}</span><b>${esc(short(pp.fullName))}</b><em>${esc(avg(pp.id))}</em></div></div>` : "";
+    const bp = (id) => box.away?.players?.[`ID${id}`] || box.home?.players?.[`ID${id}`];
+    const nx = (pp, lbl) => {
+      if (!pp) return "";
+      const p = bp(pp.id) || {}, ss = p.seasonStats?.batting || {}, t = p.stats?.batting || {};
+      const today = t.atBats != null || t.baseOnBalls ? [`${t.hits ?? 0}-${t.atBats ?? 0}`, t.homeRuns && `${t.homeRuns > 1 ? t.homeRuns : ""}HR`, t.rbi && `${t.rbi} RBI`, t.baseOnBalls && `${t.baseOnBalls} BB`, t.strikeOuts && `${t.strikeOuts} K`].filter(Boolean).join(", ") : "";
+      const pos = p.position?.abbreviation || "";
+      const bats = p.person?.batSide?.code || "";
+      return `<div class="nx lnk" data-player="${pp.id}">
+        <div class="nx-top"><img src="${headshot(pp.id, 120)}" alt="" onerror="this.style.visibility='hidden'">
+          <div><span>${lbl}</span><b>${esc(pp.fullName)}</b><em>${esc([pos, today && `${today} today`].filter(Boolean).join(" · "))}</em></div></div>
+        <div class="nx-stats">${[["AVG", ss.avg], ["OBP", ss.obp], ["SLG", ss.slg], ["HR", ss.homeRuns], ["RBI", ss.rbi]].map(([k, v]) => `<div><small>${k}</small>${esc(v ?? "–")}</div>`).join("")}</div>
+      </div>`;
+    };
     const nextHtml = `${nx(o.onDeck, "On deck")}${nx(o.inHole, "In the hole")}`;
     const nextEl = fieldEl.querySelector(".g-next");
     if (nextEl.dataset.h !== nextHtml) { nextEl.dataset.h = nextHtml; nextEl.innerHTML = nextHtml; nextEl.classList.remove("swap"); nextEl.getBoundingClientRect(); nextEl.classList.add("swap"); }
-    // Challenges left: ABS (players) and replay (manager).
-    const gd = f.gameData || {};
-    const pips = (n, max) => Array.from({ length: max }, (_, i) => `<i class="${i < n ? "on" : ""}"></i>`).join("");
-    const row = (k) => {
-      const abs = gd.absChallenges?.[k], rv = gd.review?.[k];
-      if (!abs && !rv) return "";
-      return `<div><b>${esc(teamMeta(gd.teams[k]).abbr)}</b>${abs ? `<span>ABS</span>${pips(abs.remaining ?? 0, Math.max(2, abs.remaining ?? 0))}` : ""}${rv ? `<span>Review</span>${pips(rv.remaining ?? 0, Math.max(1, (rv.used ?? 0) + (rv.remaining ?? 0)))}` : ""}</div>`;
-    };
-    fieldEl.querySelector(".g-chal").innerHTML = gd.absChallenges?.hasChallenges || gd.review?.hasChallenges ? `${row("away")}${row("home")}` : "";
   }
 
   return {
