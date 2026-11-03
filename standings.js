@@ -87,6 +87,7 @@ const Standings = (() => {
   }
 
   function ctx() {
+    if (activeTab !== "standings") return;   // My team reads standings from other tabs
     document.getElementById("ctx").innerHTML = `<div class="seg">
       <button data-m="div" class="${mode === "div" ? "on" : ""}">Divisions</button>
       <button data-m="wc" class="${mode === "wc" ? "on" : ""}">Wild card</button>

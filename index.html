@@ -165,12 +165,13 @@
   <div id="glow"></div>
   <header>
     <nav>
+      <span class="tab" data-tab="myteam" role="button"><span class="mt-tab-l">My team</span></span>
       <span class="tab on" data-tab="news" role="button">News</span>
       <span class="tab" data-tab="scores" role="button">Scores</span>
       <span class="tab" data-tab="standings" role="button">Standings</span>
       <span class="tab" data-tab="rosters" role="button">Rosters</span>
     </nav>
-    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button>
+    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button><button id="picker-clear" aria-label="Show all teams">×</button>
     <div id="ctx"></div>
     <div id="brand">
       <img src="brand/shutout-logo.png" alt="">
@@ -180,6 +181,7 @@
       <button id="settings-btn" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg></button>
     </div>
   </header>
+  <div class="view" id="view-myteam"><div id="myteam-body"></div></div>
   <div class="view on" id="view-news"><div id="row"></div></div>
   <div class="view" id="view-scores"><div id="scores-row"></div></div>
   <div class="view" id="view-standings"><div id="standings-body"></div></div>
@@ -213,6 +215,7 @@
 <script src="player.js?v=__BUILD__"></script>
 <script src="gameday.js?v=__BUILD__"></script>
 <script src="game.js?v=__BUILD__"></script>
+<script src="myteam.js?v=__BUILD__"></script>
 <script src="idle.js?v=__BUILD__"></script>
 <script>
   const REFRESH_MS = 5 * 60 * 1000;   // re-read news.json every 5 minutes
@@ -273,6 +276,7 @@
     stage.classList.toggle("team", !!team);
     if (team) stage.style.setProperty("--team-rgb", rgb(team.bright));
     document.getElementById("picker-label").innerHTML = team ? `${logoImg(team)} ${esc(team.name)}` : "All teams";
+    document.getElementById("picker-clear").classList.toggle("on", !!team);
   }
 
   const kicker = (a, t) => `${logoImg(t)}<span class="team">${esc(t.name)}</span><span class="sep"></span>` +
@@ -449,9 +453,11 @@
   }
 
   function buildPicker() {
-    const opts = [{ abbr: "ALL" }, ...[...TEAMS].sort((a, b) => a.abbr.localeCompare(b.abbr))];
+    const f = Settings.fav();
+    // All teams, then the favorite, then everyone else A-Z.
+    const opts = [{ abbr: "ALL" }, ...(f ? [f] : []), ...[...TEAMS].filter((t) => t !== f).sort((a, b) => a.abbr.localeCompare(b.abbr))];
     document.getElementById("picker").innerHTML = opts.map((t) =>
-      `<button data-t="${t.abbr}" >${t.id ? logoImg(t) : `<span style="font-size:30px">⚾</span>`}${t.abbr}</button>`).join("");
+      `<button data-t="${t.abbr}" class="${t === f ? "fav" : ""}">${t.id ? logoImg(t) : `<span style="font-size:30px">⚾</span>`}${t.abbr}</button>`).join("");
   }
   function togglePicker(open) {
     document.getElementById("picker").classList.toggle("open", open);
@@ -459,6 +465,10 @@
   }
   document.getElementById("picker-btn").onclick = () => togglePicker(!document.getElementById("picker").classList.contains("open"));
   document.getElementById("scrim").onclick = () => togglePicker(false);
+  document.getElementById("picker-clear").onclick = () => {
+    selected = "ALL"; save("team", selected); render(); VIEWS[activeTab]?.teamChanged();
+  };
+  document.addEventListener("favchange", () => { buildPicker(); render(); });
   document.getElementById("picker").onclick = (e) => {
     const b = e.target.closest("button"); if (!b) return;
     selected = b.dataset.t; save("team", selected); togglePicker(false); render();
@@ -468,7 +478,7 @@
   /* ---- Tabs ----
      News is this file; Scores, Standings and Rosters live in scores.js, standings.js and team.js.
      Each keeps its own "Updated" text for the corner. */
-  const VIEWS = { scores: Scores, standings: Standings, rosters: Rosters };
+  const VIEWS = { myteam: MyTeam, scores: Scores, standings: Standings, rosters: Rosters };
   const updatedText = {};
   let activeTab = "news";
   function setUpdated(tab, text) {
@@ -476,7 +486,7 @@
     if (tab === activeTab) document.getElementById("updated").textContent = text;
   }
   function setTab(t) {
-    if (!["news", "scores", "standings", "rosters"].includes(t)) t = "news";
+    if (!["myteam", "news", "scores", "standings", "rosters"].includes(t)) t = "news";
     if (activeTab !== t) VIEWS[activeTab]?.hide();
     activeTab = t; save("tab", t);
     document.querySelectorAll("nav .tab").forEach((el) => el.classList.toggle("on", el.dataset.tab === t));
@@ -507,7 +517,7 @@
   }
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
-  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); Idle.init();
+  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); Idle.init();
   setTab(load("tab") || "news");
 
   /* Self-update: iCUE's web view holds on to old copies of the page, so a deploy could go unseen for days.

@@ -27,18 +27,20 @@
   <div id="glow"></div>
   <header id="m-top">
     <div class="m-brand"><img src="brand/shutout-logo.png" alt=""><span class="name">SHUTOUT</span></div>
-    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button>
+    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">All teams</span><span class="chev"></span></button><button id="picker-clear" aria-label="Show all teams">×</button>
     <button id="settings-btn" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg></button>
   </header>
   <div id="m-head"><h1 id="m-title">News</h1><span id="updated"></span></div>
   <div id="ctx"></div>
   <main id="m-main">
+    <div class="view" id="view-myteam"><div id="myteam-body"></div></div>
     <div class="view on" id="view-news"><div id="m-news"></div></div>
     <div class="view" id="view-scores"><div id="scores-row"></div></div>
     <div class="view" id="view-standings"><div id="standings-body"></div></div>
     <div class="view" id="view-rosters"><div id="rosters-body"></div></div>
   </main>
   <nav id="m-tabs">
+    <button class="tab" data-tab="myteam"><span class="mt-tab-logo"></span><span class="mt-tab-l">My team</span></button>
     <button class="tab on" data-tab="news"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M7.5 9h9M7.5 12.5h9M7.5 16h5"/></svg>News</button>
     <button class="tab" data-tab="scores"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M7.2 5.6c1.6 1.8 2.4 4 2.4 6.4s-.8 4.6-2.4 6.4M16.8 5.6c-1.6 1.8-2.4 4-2.4 6.4s.8 4.6 2.4 6.4"/></svg>Scores</button>
     <button class="tab" data-tab="standings"><svg viewBox="0 0 24 24"><path d="M5 19.5V11M12 19.5V5M19 19.5v-6"/></svg>Standings</button>
@@ -78,6 +80,7 @@
 <script src="player.js?v=__BUILD__"></script>
 <script src="gameday.js?v=__BUILD__"></script>
 <script src="game.js?v=__BUILD__"></script>
+<script src="myteam.js?v=__BUILD__"></script>
 <script>
   /* Phone version of the widget. The tabs and pages are the same scripts the Xeneon page runs
      (scores.js, game.js, gameday.js ...); this file only supplies the shell they expect (tabs, team picker,
@@ -124,6 +127,7 @@
     stage.classList.toggle("team", !!team);
     if (team) stage.style.setProperty("--team-rgb", rgb(team.bright));
     document.getElementById("picker-label").innerHTML = team ? `${logoImg(team)} ${esc(team.name)}` : "All teams";
+    document.getElementById("picker-clear").classList.toggle("on", !!team);
   }
 
   const kicker = (a, t) => `${logoImg(t)}<span class="team">${esc(t.name)}</span><span class="sep"></span>` +
@@ -230,9 +234,11 @@
 
   /* ---- Team picker ---- */
   function buildPicker() {
-    const opts = [{ abbr: "ALL" }, ...[...TEAMS].sort((a, b) => a.abbr.localeCompare(b.abbr))];
+    const f = Settings.fav();
+    // All teams, then the favorite, then everyone else A-Z.
+    const opts = [{ abbr: "ALL" }, ...(f ? [f] : []), ...[...TEAMS].filter((t) => t !== f).sort((a, b) => a.abbr.localeCompare(b.abbr))];
     document.getElementById("picker").innerHTML = opts.map((t) =>
-      `<button data-t="${t.abbr}">${t.id ? logoImg(t) : `<span class="all">⚾</span>`}${t.id ? t.abbr : "All"}</button>`).join("");
+      `<button data-t="${t.abbr}" class="${t === f ? "fav" : ""}">${t.id ? logoImg(t) : `<span class="all">⚾</span>`}${t.id ? t.abbr : "All"}</button>`).join("");
   }
   function togglePicker(open) {
     document.getElementById("picker").classList.toggle("open", open);
@@ -240,6 +246,10 @@
   }
   document.getElementById("picker-btn").onclick = () => togglePicker(!document.getElementById("picker").classList.contains("open"));
   document.getElementById("scrim").onclick = () => togglePicker(false);
+  document.getElementById("picker-clear").onclick = () => {
+    selected = "ALL"; save("team", selected); render(); VIEWS[activeTab]?.teamChanged();
+  };
+  document.addEventListener("favchange", () => { buildPicker(); render(); });
   document.getElementById("picker").onclick = (e) => {
     const b = e.target.closest("button"); if (!b) return;
     selected = b.dataset.t; save("team", selected); togglePicker(false); render();
@@ -247,8 +257,8 @@
   };
 
   /* ---- Tabs ---- */
-  const VIEWS = { scores: Scores, standings: Standings, rosters: Rosters };
-  const TITLES = { news: "News", scores: "Scores", standings: "Standings", rosters: "Rosters" };
+  const VIEWS = { myteam: MyTeam, scores: Scores, standings: Standings, rosters: Rosters };
+  const TITLES = { myteam: "My team", news: "News", scores: "Scores", standings: "Standings", rosters: "Rosters" };
   const updatedText = {};
   let activeTab = "news";
   function setUpdated(tab, text) {
@@ -262,7 +272,7 @@
     activeTab = t; save("tab", t);
     document.querySelectorAll("#m-tabs .tab").forEach((el) => el.classList.toggle("on", el.dataset.tab === t));
     document.querySelectorAll(".view").forEach((el) => el.classList.toggle("on", el.id === `view-${t}`));
-    document.getElementById("m-title").textContent = TITLES[t];
+    document.getElementById("m-title").textContent = t === "myteam" ? (Settings.fav()?.name || "My team") : TITLES[t];
     document.getElementById("ctx").innerHTML = "";
     document.getElementById("updated").textContent = updatedText[t] || "";
     togglePicker(false); Settings.close();
@@ -360,7 +370,7 @@
   })();
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
-  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init();
+  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init();
   setTab(load("tab") || "news");
 
   // Coming back to the app after a while: refresh news right away.

@@ -306,3 +306,38 @@ table.standings th, table.standings td { padding: 0 8px; }
 #ptr svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
 #ptr.spin svg { animation: ptr-spin .8s linear infinite; }
 @keyframes ptr-spin { to { transform: rotate(360deg); } }
+
+/* Team filter clear button */
+#picker-clear { display: none; width: 30px; height: 30px; margin-left: -4px; flex: none; border-radius: 50%; border: 1px solid var(--line-2);
+  background: rgba(255,255,255,.06); color: var(--text-2); font: 400 20px/1 "Inter Tight", sans-serif; }
+#picker-clear.on { display: block; }
+
+/* My team: one column */
+#view-myteam { zoom: 1; }
+#myteam-body { position: static; overflow: visible; }
+.mt { flex-direction: column; gap: 12px; height: auto; padding: 4px 12px 24px; }
+.mt-c1 { flex: none; }
+.mt-col { gap: 12px; flex: none; }
+.mt-panel { padding: 16px 16px; }
+.mt-h { font-size: 14px; margin-bottom: 8px; }
+.mt-game { padding: 16px 16px 12px; }
+.mt-game.live { padding: 14px 14px 10px; }
+.mt-k { font-size: 14px; margin-bottom: 6px; }
+.mt-tr { height: 48px; gap: 12px; } .mt-tr img { width: 34px; height: 34px; } .mt-tr .nm { font-size: 24px; } .mt-tr .sc { font-size: 34px; }
+.mt-opp img { width: 56px; height: 56px; } .mt-opp b { font-size: 30px; } .mt-opp em { font-size: 15px; }
+.mt-big { font-size: 22px; }
+.mt-foot { height: 36px; padding-top: 8px; font-size: 14px; gap: 8px; }
+.mt-foot .bases { width: 34px; height: 26px; }
+.mt-last { height: 56px; padding: 0 14px; gap: 10px; font-size: 15px; }
+.mt-last .wl { width: 28px; height: 28px; font-size: 14px; }
+.mt-ls { font-size: 20px; } .mt-ld { font-size: 13px; } .mt-lo img { width: 22px; height: 22px; }
+.mt-form { padding: 12px 14px; gap: 10px; font-size: 14px; flex-wrap: wrap; }
+.mt-form .chip { width: 24px; height: 24px; font-size: 12px; border-radius: 6px; }
+.mt-form .chips { gap: 4px; }
+table.mt-div { font-size: 15px; } table.mt-div th { font-size: 12px; padding-bottom: 6px; }
+table.mt-div td, table.mt-div td.tm { height: 46px; padding: 0 5px; } table.mt-div td.tm img { width: 24px; height: 24px; }
+.mt-lead { height: 46px; font-size: 15px; gap: 10px; } .mt-lead img { width: 34px; height: 34px; } .mt-lead .lb { width: 36px; font-size: 12px; }
+.mt-story img, .mt-story .ph { width: 96px; height: 64px; } .mt-story b { font-size: 15px; } .mt-story .muted { font-size: 12px; }
+#m-tabs .mt-tab-logo { display: flex; width: 25px; height: 25px; } #m-tabs .mt-tab-logo img { width: 25px; height: 25px; }
+#m-tabs .mt-tab-logo:empty { display: none; }
+#m-tabs .mt-tab-l { max-width: 64px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
