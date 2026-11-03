@@ -2,9 +2,9 @@
 
 A 2560×720 page for the iCUE iFrame widget on the Corsair Xeneon Edge.
 
-- `index.html`: the news page, with a team picker next to the title. It scales to fit the iFrame and remembers the team you pick.
+- `index.html`: the news page. Swipe the row and whichever story is leftmost grows into the double-wide headliner with a text preview; tap any story to read its opening paragraphs. It scales to fit the iFrame and remembers the team you pick.
 - `teams.js`: the 30 teams (MLB ids, colors, MLB Trade Rumors feed names).
-- `scripts/fetch-news.js`: pulls the newest MLB Trade Rumors articles (league-wide plus each team's feed), adds each article's thumbnail (its og:image), and writes `news.json`.
+- `scripts/fetch-news.js`: pulls the newest MLB Trade Rumors articles (league-wide plus each team's feed), adds each article's thumbnail (its og:image) and opening paragraphs from the feed, and writes `news.json`.
 - `scripts/fetch-logos.js`: downloads each team's MLB logo into `logos/`, using MLB's dark-background ("on dark") versions where they exist.
 - `.github/workflows/news.yml`: runs both scripts every 15 minutes on GitHub, saves `news.json` and new logos to the repo, and publishes the site to GitHub Pages.
 

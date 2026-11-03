@@ -33,6 +33,19 @@ const tag = (xml, name) => {
   return m ? decode(m[1]) : "";
 };
 
+// Turn an article's HTML into plain paragraphs for the in-widget preview.
+function paragraphs(html) {
+  return html.split(/<\/p>|<br\s*\/?>\s*<br\s*\/?>/i)
+    .map((p) => decode(p.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim())
+    .filter((p) => p.length > 30 && !/^(photo courtesy|image courtesy|the post .* appeared first on)/i.test(p));
+}
+const MAX_BODY = 1600;    // characters of article text kept per story
+function clip(paras) {
+  const out = []; let n = 0;
+  for (const p of paras) { if (n + p.length > MAX_BODY && out.length) break; out.push(p); n += p.length; }
+  return out;
+}
+
 function parseFeed(xml) {
   return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(([, it]) => {
     const categories = [...it.matchAll(/<category>([\s\S]*?)<\/category>/g)].map((m) => decode(m[1]));
@@ -41,6 +54,7 @@ function parseFeed(xml) {
       link: tag(it, "link"),
       date: (new Date(tag(it, "pubDate")).getTime() ? new Date(tag(it, "pubDate")) : new Date(0)).toISOString(),
       categories,
+      body: clip(paragraphs(tag(it, "content:encoded") || tag(it, "description"))),
     };
   });
 }
@@ -82,7 +96,8 @@ async function ogImage(link) {
     const prev = byLink.get(item.link);
     const teams = [...new Set([...(fromTeam ? [fromTeam] : []), ...teamsFor(item.categories)])];
     if (prev) prev.teams = [...new Set([...prev.teams, ...teams])];
-    else byLink.set(item.link, { title: item.title, link: item.link, date: item.date, teams });
+    else byLink.set(item.link, { title: item.title, link: item.link, date: item.date, teams, body: item.body });
+    if (prev && !prev.body?.length) prev.body = item.body;
   };
 
   (await get(`${BASE}/feed`).then(parseFeed).catch(() => [])).slice(0, LEAGUE).forEach((i) => add(i));
