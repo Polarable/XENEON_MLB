@@ -44,7 +44,7 @@ const Gameday = (pk) => {
   const savant = (id) => `https://baseballsavant.mlb.com/sporty-videos?playId=${encodeURIComponent(id)}`;
   const lastPitchId = (p) => { const ps = pitchesOf(p); for (let i = ps.length - 1; i >= 0; i--) if (ps[i].playId) return ps[i].playId; return null; };
   const PLAY_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>`;
-  const vidLink = (id, inner, cls = "") => `<a class="${cls}" href="${savant(id)}" target="_blank" rel="noopener" data-savant>${inner}</a>`;
+  const vidLink = (id, inner, cls = "") => `<a class="${cls}" href="${savant(id)}" target="_blank" rel="noopener" data-savant data-pid="${esc(id)}">${inner}</a>`;
 
   /* ================= Strike zone, pitcher's view ================= */
   // A telephoto camera far behind the mound (like the TV center-field shot): little perspective, real paths.
@@ -366,7 +366,7 @@ const Gameday = (pk) => {
         else state = "Upheld";
       }
       const tag = e.playId ? "a" : "div";
-      rows.push(`<${tag} class="pr"${e.playId ? ` href="${savant(e.playId)}" target="_blank" rel="noopener" data-savant` : ""}><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(call)}${state ? ` <em class="abs ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">– ${state}</em>` : ""}</b>
+      rows.push(`<${tag} class="pr"${e.playId ? ` href="${savant(e.playId)}" target="_blank" rel="noopener" data-savant data-pid="${esc(e.playId)}"` : ""}><i style="background:${COLOR[callOf(d)]}">${i + 1}</i><div><b>${esc(call)}${state ? ` <em class="abs ${rv.inProgress ? "wait" : rv.overturned ? "won" : "lost"}">– ${state}</em>` : ""}</b>
         <span>${esc(d.type?.description || "")}${pd.startSpeed ? ` · ${pd.startSpeed.toFixed(1)} mph` : ""}</span></div>${e.playId ? `<span class="pv">${PLAY_ICON}</span>` : ""}</${tag}>`);
     });
     return rows.reverse().slice(0, limit).join("");
@@ -455,6 +455,7 @@ const Gameday = (pk) => {
     });
     if (cardCache.size > 600) cardCache.clear();
     box.replaceChildren(...nodes);
+    if (typeof Savant !== "undefined") Savant.directLinks(box);
     firstPaint.add(mode);
   }
 
@@ -515,6 +516,7 @@ const Gameday = (pk) => {
     feed = f;
     drawNow(f);
     renderCards($(".gd-feed"), f, "gameday");
+    if (typeof Savant !== "undefined") Savant.directLinks($(".gd-seq"));
   }
 
   // Taps on cards (here or in the Scoring / All plays tabs) and the Follow live button.

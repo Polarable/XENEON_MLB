@@ -75,7 +75,7 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     const box = root.querySelector(".p-hl");
     if (!box) return;
     const season = currentSeason();
-    const list = await Savant.highlights(id, isPitcher, season).catch(() => []);
+    const list = await Savant.highlights(id, { full: p.fullName, last: p.lastName || lastName(p.fullName || ""), isPitcher, season }).catch(() => []);
     if (!alive() || !box.isConnected) return;
     box.innerHTML = list.length ? `<div class="p-news-h">Highlights <span class="muted">${season}</span></div>
       <div class="p-hl-list vscroll">${list.slice(0, 12).map((h, i) => `<a class="p-hl-row" href="${esc(h.url)}" target="_blank" rel="noopener" style="animation-delay:${i * 40}ms">

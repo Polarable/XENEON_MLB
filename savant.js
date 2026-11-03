@@ -168,7 +168,7 @@ const Savant = (() => {
   // Editorial packages (gamePk -1, like "best moments of 2025") only exist on MLB.com.
   const GQL = "https://fastball-gateway.mlb.com/graphql";
   async function search(q, limit) {
-    const query = `query { search(query: ${JSON.stringify(q)}, limit: ${limit}) { plays { id gamePk mediaPlayback { slug title date } } } }`;
+    const query = `query { search(query: ${JSON.stringify(q)}, limit: ${limit}) { plays { id gamePk mediaPlayback { slug title date feeds { playbacks { name url } } } } } }`;
     const r = await fetch(GQL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query }) });
     const d = await r.json();
     return d.data?.search?.plays || [];
@@ -182,23 +182,81 @@ const Savant = (() => {
     [/\b(4\d\d|5\d\d)-?(ft|foot)\b/i, 6], [/\b1[12]\d(\.\d)? ?mph\b/i, 5],
   ];
   const score = (title, date) => WOW.reduce((a, [rx, w]) => a + (rx.test(title) ? w : 0), 0) - (Date.now() - Date.parse(date || 0)) / (30 * 864e5);
-  async function highlights(id, isPitcher, season) {
-    const role = isPitcher ? "PitcherId" : "BatterId";
-    const qs = [
-      search(`PlayerId = [${id}] AND Season = [${season}] Order By Timestamp DESC`, 40),
-      isPitcher ? Promise.resolve([]) : search(`${role} = [${id}] AND Season = [${season}] Order By ExitVelocity DESC`, 8),
-    ];
+  // Only his own moments: MLB titles a clip after whoever did the thing ("Valdez strikes out...",
+  // "Altuve's two-run homer"), so a clip must start with his name. That drops homers hit off a pitcher,
+  // defense behind him, and a hitter's strikeouts (titled after the pitcher). Reels about him stay.
+  const fold = (t) => (t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  function isHis(title, gamePk, full, last) {
+    const t = fold(title).trim(), f = fold(full), l = fold(last);
+    if (gamePk <= 0) return t.includes(l);
+    if (!(t.startsWith(f) || t.startsWith(l))) return false;
+    return !/\b(allows|gives up|surrenders|serves up)\b/.test(t);
+  }
+  const PITCH_WOW = /strikes? out|fans|strikeouts?|\d+ ?k'?s?\b|immaculate|scoreless|escapes|whiff|punchout|perfect|no-hit|shutout|complete game|1\d\d ?mph/i;
+  async function highlights(id, { full, last, isPitcher, season }) {
+    const qs = [search(`PlayerId = [${id}] AND Season = [${season}] Order By Timestamp DESC`, isPitcher ? 100 : 60)];
+    if (!isPitcher) qs.push(search(`BatterId = [${id}] AND Season = [${season}] Order By ExitVelocity DESC`, 10));
     const lists = await Promise.all(qs.map((p) => p.catch(() => [])));
     const seen = new Set(), out = [];
     lists.flat().forEach((pl) => {
       const m = (pl.mediaPlayback || [])[0];
-      if (!m || seen.has(pl.id)) return;
+      if (!m || seen.has(pl.id) || !isHis(m.title, pl.gamePk, full, last)) return;
       seen.add(pl.id);
-      const url = pl.gamePk > 0 ? `${BASE}/sporty-videos?playId=${encodeURIComponent(pl.id)}` : `https://www.mlb.com/video/${encodeURIComponent(m.slug)}`;
-      out.push({ id: pl.id, title: (m.title || "").trim(), date: m.date || "", url, score: score(m.title || "", m.date) });
+      out.push({ id: pl.id, title: (m.title || "").trim(), date: m.date || "", url: clipUrl(pl, m),
+        score: score(m.title || "", m.date) + (isPitcher && PITCH_WOW.test(m.title || "") ? 6 : 0) });
     });
     return out.sort((a, b) => b.score - a.score);
   }
+  // The MP4 itself, so the browser just plays the video; the Savant / MLB.com page if there isn't one.
+  function clipUrl(pl, m) {
+    const pbs = (m.feeds || []).flatMap((f) => f.playbacks || []);
+    const mp4 = (pbs.find((x) => x.name === "mp4Avc") || pbs.find((x) => /\.mp4$/i.test(x.url || "") && !/trickplay/i.test(x.name || "")) || {}).url;
+    if (mp4) return mp4;
+    return pl.gamePk > 0 ? `${BASE}/sporty-videos?playId=${encodeURIComponent(pl.id)}` : `https://www.mlb.com/video/${encodeURIComponent(m.slug)}`;
+  }
 
-  return { render, percentiles, pitches, parseCsv, highlights };
+  /* ---------- Direct video files for pitch links ---------- */
+  // Film Room has a clip for every pitch, found by its Statcast playId, with a plain MP4
+  // (fastball-clips.mlb.com/<game>/<feed>/<playId>.mp4). A link to the MP4 makes the browser just
+  // play the video. Links start out pointing at Savant's page and switch to the MP4 once it's known.
+  const mp4ByPlay = new Map();     // playId -> mp4 url, or "" if Film Room has none
+  async function resolveClips(ids) {
+    const want = [...new Set(ids)].filter((id) => !mp4ByPlay.has(id));
+    for (let i = 0; i < want.length; i += 25) {
+      const chunk = want.slice(i, i + 25);
+      chunk.forEach((id) => mp4ByPlay.set(id, ""));
+      try {
+        const plays = await search(`PlayId = [${chunk.map((x) => JSON.stringify(x)).join(", ")}]`, chunk.length);
+        plays.forEach((pl) => {
+          const pbs = (pl.mediaPlayback?.[0]?.feeds || []).flatMap((f) => f.playbacks || []);
+          const mp4 = (pbs.find((x) => x.name === "mp4Avc") || pbs.find((x) => /\.mp4$/i.test(x.url || "")) || {}).url;
+          if (mp4) mp4ByPlay.set(pl.id, mp4);
+        });
+      } catch { chunk.forEach((id) => mp4ByPlay.delete(id)); }
+    }
+  }
+  // Watch a container: links with data-pid that scroll into view get their MP4 looked up in batches.
+  function directLinks(rootEl) {
+    if (rootEl.__direct) { rootEl.__direct(); return; }
+    let queue = new Set(), timer = 0;
+    const apply = () => document.querySelectorAll("a[data-pid]").forEach((a) => { const u = mp4ByPlay.get(a.dataset.pid); if (u) a.href = u; });
+    const flush = async () => { timer = 0; const ids = [...queue]; queue = new Set(); await resolveClips(ids); apply(); };
+    const io = typeof IntersectionObserver === "function" ? new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { const id = e.target.dataset.pid; if (!mp4ByPlay.has(id)) queue.add(id); io.unobserve(e.target); } });
+      if (queue.size && !timer) timer = setTimeout(flush, 250);
+    }) : null;
+    const scan = () => {
+      apply();
+      rootEl.querySelectorAll("a[data-pid]:not([data-seen])").forEach((a) => {
+        a.dataset.seen = "1";
+        if (mp4ByPlay.has(a.dataset.pid)) return;
+        if (io) io.observe(a); else queue.add(a.dataset.pid);
+      });
+      if (!io && queue.size && !timer) timer = setTimeout(flush, 250);
+    };
+    rootEl.__direct = scan;
+    scan();
+  }
+
+  return { render, percentiles, pitches, parseCsv, highlights, directLinks };
 })();
