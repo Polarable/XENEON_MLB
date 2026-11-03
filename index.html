@@ -48,16 +48,14 @@
     transform: translateY(-3px) rotate(45deg); margin-left: 2px; opacity: .6; }
   #updated { margin-left: auto; font-size: 18px; font-weight: 500; color: var(--text-3); }
 
-  /* Card row */
-  #row { position: absolute; top: 100px; left: 0; right: 0; height: 568px; display: flex; gap: 24px;
-    padding: 24px 40px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding: 0 40px; scrollbar-width: none;
-    touch-action: pan-x;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 240px)), transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 240px)), transparent 100%); }
-  #row::-webkit-scrollbar { display: none; }
+  /* Card row: cards are laid out by script so the leftmost one can grow into the headliner as you scroll. */
+  #row { position: absolute; top: 100px; left: 0; right: 0; height: 568px; overflow: hidden; touch-action: none; cursor: grab;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%);
+            mask-image: linear-gradient(to right, #000 calc(100% - var(--fade-r, 240px)), transparent 100%); }
+  #row.dragging { cursor: grabbing; }
 
-  .card { position: relative; flex: 0 0 520px; height: 520px; border-radius: var(--radius); scroll-snap-align: start;
-    color: inherit; text-decoration: none; overflow: hidden; isolation: isolate;
+  .card { position: absolute; top: 24px; left: 0; width: 520px; height: 520px; border-radius: var(--radius); --w: 0;
+    color: inherit; overflow: hidden; isolation: isolate; cursor: pointer;
     opacity: 0;
     transition: transform .15s var(--ease); }
   /* Team-color ring: a slowly turning gradient border with a soft glow in the same color. */
@@ -68,7 +66,6 @@
     box-shadow: 0 0 36px rgba(var(--tc-rgb), .32), 0 14px 40px rgba(0,0,0,.6);
     animation: card-in .5s var(--ease) forwards var(--delay, 0ms), ring 14s linear infinite; }
   @keyframes ring { to { --ring: 360deg; } }
-  .card.hero { flex-basis: 1064px; }
   .card:active { transform: scale(.98); }
   @keyframes card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
@@ -87,14 +84,42 @@
   .card .kicker img { width: 30px; height: 30px; display: block; filter: drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
   .card .kicker .team { color: var(--text); font-weight: 600; }
   .card .kicker .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--text-3); }
-  .card .new { padding: 2px 8px; border-radius: 6px; background: rgba(255,255,255,.12); color: var(--text);
+  .new { padding: 2px 8px; border-radius: 6px; background: rgba(255,255,255,.12); color: var(--text);
     font-size: 14px; font-weight: 600; letter-spacing: 1px; }
-  .card h2 { font-size: 36px; font-weight: 600; line-height: 1.14; letter-spacing: -0.6px;
+  /* --w runs 0 (regular card) to 1 (headliner) and scales the headline and the preview text in between. */
+  .card h2 { font-size: calc(36px + 18px * var(--w)); font-weight: 600; line-height: calc(1.14 - .08 * var(--w));
+    letter-spacing: calc(-0.6px - 0.6px * var(--w)); max-width: 940px;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-  .card.hero h2 { font-size: 54px; line-height: 1.06; letter-spacing: -1.2px; max-width: 900px; }
-  .card.hero .kicker { font-size: 20px; }
+  .card .preview { max-width: 900px; margin-top: calc(16px * var(--w)); max-height: calc(100px * var(--w)); opacity: calc(var(--w) * 1.4 - .4);
+    font-size: 22px; line-height: 1.45; color: var(--text-2); overflow: hidden;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+  .card .read { margin-left: auto; color: var(--text-3); font-size: 17px; opacity: var(--w); }
 
-  .empty { margin: auto; display: flex; flex-direction: column; align-items: center; gap: 20px; transform: translateY(-20px); }
+  /* Reader: tap a card to read its preview without leaving the widget. */
+  #reader { position: absolute; inset: 0; z-index: 20; display: none; background: #000; }
+  #reader.open { display: flex; animation: pop .22s var(--ease); }
+  #reader .r-photo { position: relative; flex: 0 0 900px; height: 720px; background: var(--surface) center/cover no-repeat; }
+  #reader .r-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, transparent 55%, #000); }
+  #reader .r-photo img.logo { position: absolute; left: 50%; top: 50%; width: 140px; transform: translate(-50%, -50%); opacity: .5; }
+  #reader .r-main { flex: 1; min-width: 0; padding: 56px 120px 48px 64px; display: flex; flex-direction: column; }
+  #reader .kicker { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 500; color: var(--text-2); }
+  #reader .kicker img { width: 32px; height: 32px; }
+  #reader .kicker .team { color: var(--text); font-weight: 600; }
+  #reader .kicker .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--text-3); }
+  #reader h2 { margin-top: 18px; font-size: 52px; font-weight: 600; line-height: 1.06; letter-spacing: -1.2px; max-width: 1400px; }
+  #reader .r-body { flex: 1; min-height: 0; margin-top: 28px; column-width: 520px; column-gap: 56px; column-fill: auto;
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none; touch-action: pan-x;
+    font-size: 23px; line-height: 1.5; color: rgba(255,255,255,.82); }
+  #reader .r-body::-webkit-scrollbar { display: none; }
+  #reader .r-body p { margin-bottom: 18px; break-inside: avoid-column; }
+  #reader .r-foot { display: flex; align-items: center; gap: 20px; margin-top: 20px; }
+  #reader .r-link { display: flex; align-items: center; height: 56px; padding: 0 26px; border-radius: 999px; background: #fff; color: #000;
+    font-size: 20px; font-weight: 600; text-decoration: none; }
+  #reader .r-note { font-size: 17px; color: var(--text-3); }
+  #reader .r-close { position: absolute; top: 40px; right: 40px; width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--line-2);
+    background: rgba(255,255,255,.06); color: #fff; font: 400 34px/1 "Inter Tight", sans-serif; cursor: pointer; }
+
+  .empty { position: absolute; inset: 0; display: flex; justify-content: center; flex-direction: column; align-items: center; gap: 20px; transform: translateY(-20px); }
   .empty img { width: 96px; height: 96px; opacity: .6; }
   .empty div { font-size: 30px; font-weight: 500; color: var(--text-3); }
 
@@ -127,6 +152,16 @@
   </header>
   <div id="row"></div>
   <div id="scrim"></div>
+  <div id="reader">
+    <div class="r-photo"></div>
+    <div class="r-main">
+      <div class="kicker"></div>
+      <h2></h2>
+      <div class="r-body"></div>
+      <div class="r-foot"><a class="r-link" target="_blank" rel="noopener">Read on MLB Trade Rumors</a><span class="r-note"></span></div>
+    </div>
+    <button class="r-close" aria-label="Close">×</button>
+  </div>
   <div id="picker" role="menu"></div>
 </div>
 
@@ -154,8 +189,9 @@
   const vars = (t) => `--tc:${t.bright};--tc-rgb:${rgb(t.bright)};--primary:${t.color}`;
 
   // Scale the 2560x720 stage to fit the iframe.
+  let scale = 1;
   function fit() {
-    const s = Math.min(innerWidth / 2560, innerHeight / 720);
+    const s = scale = Math.min(innerWidth / 2560, innerHeight / 720);
     const stage = document.getElementById("stage");
     stage.style.transform = `scale(${s})`;
     stage.style.left = `${(innerWidth - 2560 * s) / 2}px`;
@@ -172,15 +208,6 @@
     return `${Math.round(m / 1440)}d ago`;
   }
 
-  // Soft edges on the row: fade the right edge while there's more to scroll, the left once scrolled.
-  function edges() {
-    const row = document.getElementById("row");
-    const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 4;
-    row.style.setProperty("--fade-r", atEnd ? "0px" : "240px");
-    row.style.setProperty("--fade-l", row.scrollLeft > 4 ? "120px" : "0px");
-  }
-  document.getElementById("row").addEventListener("scroll", edges, { passive: true });
-
   function applyTeamMode(team) {
     const stage = document.getElementById("stage");
     stage.classList.toggle("team", !!team);
@@ -188,30 +215,136 @@
     document.getElementById("picker-label").innerHTML = team ? `${logoImg(team)} ${esc(team.name)}` : "All teams";
   }
 
+  const kicker = (a, t) => `${logoImg(t)}<span class="team">${esc(t.name)}</span><span class="sep"></span>` +
+    `<span class="age" data-d="${esc(a.date)}">${ago(a.date)}</span>${minutes(a.date) < NEW_MIN ? `<span class="new">NEW</span>` : ""}`;
+
   function card(a, t, i) {
-    const hero = i === 0;
-    const isNew = minutes(a.date) < NEW_MIN;
-    return `<a class="card${hero ? " hero" : ""}" href="${esc(a.link)}" target="_blank" rel="noopener"
-        style="${vars(t)};--delay:${Math.min(i, 8) * 40}ms">
+    const preview = (a.body || [])[0] || "";
+    return `<div class="card" data-i="${i}" role="button" style="${vars(t)};--delay:${Math.min(i, 8) * 40}ms">
       <div class="fallback">${logoImg(t)}</div>
-      ${a.image ? `<img class="photo" src="${esc(a.image)}" alt="" onload="this.classList.add('on')" onerror="this.remove()">` : ""}
+      ${a.image ? `<img class="photo" src="${esc(a.image)}" alt="" draggable="false" onload="this.classList.add('on')" onerror="this.remove()">` : ""}
       <div class="shade"></div>
       <div class="text">
-        <div class="kicker">${logoImg(t)}<span class="team">${esc(t.name)}</span><span class="sep"></span><span class="age" data-d="${esc(a.date)}">${ago(a.date)}</span>${isNew ? `<span class="new">NEW</span>` : ""}</div>
+        <div class="kicker">${kicker(a, t)}<span class="read">Tap to read</span></div>
         <h2>${esc(a.title)}</h2>
-      </div></a>`;
+        ${preview ? `<div class="preview">${esc(preview)}</div>` : ""}
+      </div></div>`;
   }
+
+  /* ---- Continuous scroll ----
+     pos is a fractional card index: 0 = first story is the headliner, 1.5 = halfway between the 2nd and 3rd.
+     The card at floor(pos) shrinks from double width as the next one grows, so whatever is leftmost is the headliner. */
+  const LEFT = 40, GAP = 24, BASE = 520, HERO = 1064, PX_PER_CARD = 620;
+  let list = [], cardEls = [], pos = 0, vel = 0, raf = 0, drag = null, moved = 0;
+  const clampPos = (p) => Math.max(0, Math.min(Math.max(0, list.length - 1), p));
+
+  function layout() {
+    const n = Math.floor(pos), f = pos - n;
+    const w = cardEls.map((_, i) => BASE + (HERO - BASE) * (i === n ? 1 - f : i === n + 1 ? f : 0));
+    const x = [];
+    if (cardEls.length) x[n] = LEFT - f * (w[n] + GAP);
+    for (let i = n + 1; i < cardEls.length; i++) x[i] = x[i - 1] + w[i - 1] + GAP;
+    for (let i = n - 1; i >= 0; i--) x[i] = x[i + 1] - GAP - w[i];
+    cardEls.forEach((el, i) => {
+      const off = x[i] + w[i] < -60 || x[i] > 2620;
+      el.style.visibility = off ? "hidden" : "";
+      if (off) return;
+      el.style.left = `${x[i]}px`;
+      el.style.width = `${w[i]}px`;
+      el.style.setProperty("--w", ((w[i] - BASE) / (HERO - BASE)).toFixed(3));
+    });
+    const last = cardEls.length - 1;
+    document.getElementById("row").style.setProperty("--fade-r", last >= 0 && x[last] + w[last] > 2500 ? "240px" : "0px");
+  }
+
+  // Momentum after a swipe, then a gentle settle onto the nearest card.
+  function tick(t0) {
+    cancelAnimationFrame(raf);
+    let prev = t0;
+    const step = (t) => {
+      const dt = Math.min(48, t - prev); prev = t;
+      if (Math.abs(vel) > 0.0004) {
+        pos = clampPos(pos + vel * dt);
+        vel *= Math.pow(0.94, dt / 16);
+        if (pos === 0 || pos === list.length - 1) vel = 0;
+      } else {
+        vel = 0;
+        const target = Math.round(pos), d = target - pos;
+        if (Math.abs(d) < 0.001) { pos = target; layout(); return; }
+        pos += d * Math.min(1, dt / 90);
+      }
+      layout();
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+  }
+
+  const row = document.getElementById("row");
+  row.addEventListener("pointerdown", (e) => {
+    cancelAnimationFrame(raf);
+    drag = { x: e.clientX, pos, lastX: e.clientX, lastT: e.timeStamp, id: e.pointerId };
+    moved = 0; vel = 0;
+  });
+  addEventListener("pointermove", (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = (e.clientX - drag.x) / scale;
+    moved = Math.max(moved, Math.abs(dx));
+    if (moved > 8 && !row.classList.contains("dragging")) { row.classList.add("dragging"); row.setPointerCapture?.(e.pointerId); }
+    pos = clampPos(drag.pos - dx / PX_PER_CARD);
+    const dt = e.timeStamp - drag.lastT;
+    if (dt > 0) vel = vel * 0.6 + 0.4 * (-(e.clientX - drag.lastX) / scale / PX_PER_CARD / dt);
+    drag.lastX = e.clientX; drag.lastT = e.timeStamp;
+    layout();
+  });
+  const endDrag = (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    if (moved <= 8 || e.timeStamp - drag.lastT > 80) vel = 0;   // a tap, or the finger stopped before lifting
+    drag = null; row.classList.remove("dragging");
+    tick(performance.now());
+  };
+  addEventListener("pointerup", endDrag);
+  addEventListener("pointercancel", endDrag);
+  row.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    pos = clampPos(pos + (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY) / PX_PER_CARD);
+    vel = 0; layout(); tick(performance.now());
+  }, { passive: false });
+  row.addEventListener("click", (e) => {
+    const c = e.target.closest(".card");
+    if (c && moved <= 8) openReader(list[+c.dataset.i]);
+  });
+
+  // ---- Reader ----
+  function openReader(a) {
+    if (!a) return;
+    const t = byAbbr[selected] || byAbbr[a.teams[0]] || LEAGUE;
+    const r = document.getElementById("reader");
+    const photo = r.querySelector(".r-photo");
+    photo.style.backgroundImage = a.image ? `url("${a.image.replace(/"/g, "%22")}")` : "";
+    photo.innerHTML = a.image ? "" : logoImg(t, "logo");
+    r.querySelector(".kicker").innerHTML = kicker(a, t);
+    r.querySelector("h2").textContent = a.title;
+    const body = a.body || [];
+    r.querySelector(".r-body").innerHTML = body.length
+      ? body.map((p) => `<p>${esc(p)}</p>`).join("")
+      : `<p style="color:var(--text-3)">No preview for this story yet. It will appear after the next news update.</p>`;
+    r.querySelector(".r-body").scrollLeft = 0;
+    r.querySelector(".r-link").href = a.link;
+    r.querySelector(".r-note").textContent = body.length ? "Opening paragraphs shown. Swipe sideways if the text runs on." : "";
+    r.classList.add("open");
+  }
+  document.querySelector("#reader .r-close").onclick = () => document.getElementById("reader").classList.remove("open");
 
   function render() {
     const team = byAbbr[selected];
     applyTeamMode(team);
-    const list = (team ? articles.filter((a) => a.teams.includes(team.abbr)) : articles).slice(0, 20);
-    const row = document.getElementById("row");
+    list = (team ? articles.filter((a) => a.teams.includes(team.abbr)) : articles).slice(0, 20);
     row.innerHTML = list.length
       ? list.map((a, i) => card(a, team || byAbbr[a.teams[0]] || LEAGUE, i)).join("")
       : `<div class="empty">${team ? logoImg(team) : ""}<div>No recent news${team ? ` for the ${esc(team.name)}` : ""}</div></div>`;
-    row.scrollLeft = 0;
-    edges();
+    cardEls = [...row.querySelectorAll(".card")];
+    pos = 0; vel = 0; cancelAnimationFrame(raf);
+    layout();
     document.querySelectorAll("#picker button").forEach((b) => b.classList.toggle("on", b.dataset.t === selected));
   }
 
