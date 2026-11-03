@@ -498,3 +498,8 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
 .t-season button { width: 46px; height: 46px; border: 0; border-radius: 50%; background: none; color: var(--text); font: inherit; font-size: 30px; line-height: 1; cursor: pointer; }
 .t-season button:active { background: rgba(255,255,255,.12); }
 .t-season button:disabled { color: var(--text-4); opacity: .5; cursor: default; }
+
+/* Display check in Settings */
+.set-diag { display: flex; align-items: center; gap: 14px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text-3); }
+.set-stripes { width: 60px; height: 30px; flex: none; image-rendering: pixelated;
+  background: repeating-linear-gradient(90deg, #fff 0 var(--px, 1px), #000 var(--px, 1px) calc(var(--px, 1px) * 2)); }
