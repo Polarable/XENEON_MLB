@@ -7,8 +7,9 @@ const { TEAMS } = require("../teams.js");
 
 const DIR = path.join(__dirname, "..", "logos");
 const force = process.argv.includes("--force");
-// Hand-edited for the black background (user's picks): Astros star and Cubs "C" without the roundel,
-// Mets and Marlins with a white fill instead of navy/black. Never overwrite these.
+// Picked by hand (user's choice), never overwritten: Astros star-H and Cubs "C" cap insignias
+// (Wikimedia Commons, background square removed), Mets orange NY (MLB team-cap-on-light), Marlins
+// (MLB default). Each is cropped to the same ~77% fill as the others.
 const CUSTOM = new Set(["HOU", "CHC", "NYM", "MIA"]);
 const variants = (id) => [
   `https://www.mlbstatic.com/team-logos/team-cap-on-dark/${id}.svg`,
