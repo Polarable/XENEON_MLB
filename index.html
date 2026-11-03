@@ -162,6 +162,7 @@
       <span class="name">SHUTOUT</span>
       <span class="sep"></span>
       <span id="updated"></span>
+      <button id="settings-btn" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg></button>
     </div>
   </header>
   <div class="view on" id="view-news"><div id="row"></div></div>
@@ -187,6 +188,7 @@
 <script src="teams.js"></script>
 <script src="mlb.js"></script>
 <script src="sheet.js"></script>
+<script src="settings.js"></script>
 <script src="scores.js"></script>
 <script src="standings.js"></script>
 <script src="team.js"></script>
@@ -434,7 +436,7 @@
   }
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
-  Sheet.init(); Scores.init(); Standings.init(); Rosters.init();
+  Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init();
   setTab(load("tab") || "news");
 </script>
 </body>

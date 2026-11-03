@@ -3,6 +3,12 @@
 const Scores = (() => {
   const HYDRATE = "linescore,decisions,probablePitcher,seriesStatus";
   let day = null;            // ymd shown in league mode
+  let autoDay = "";          // the ET date on which `day` was picked automatically ("" once the user picks one)
+  let dates = [];            // every date with games this season, sorted
+  let dateSet = new Set();
+  let favSet = new Set();    // dates the favorite team plays
+  let datesAt = 0, favKey = "";
+  let calMonth = "";         // "yyyy-mm" shown in the calendar
   let games = [];
   let timer = 0;
   let lastKey = "";
@@ -47,21 +53,59 @@ const Scores = (() => {
     return dir < 0 ? dates[dates.length - 1] : dates[0];
   }
 
-  // Opening day: today if there are games, otherwise the most recent game day (or the next one in spring).
+  // The season's game days (for the calendar and the day buttons), plus the favorite team's.
+  // Only the current season counts, so in the offseason nothing after the World Series is pickable
+  // until next spring training begins and Season moves on by itself.
+  const datesUrl = (a, b, extra = "") => `/api/v1/schedule?sportId=1&startDate=${a}&endDate=${b}${extra}&fields=dates,date,totalGames`;
+  async function ensureDates() {
+    const fav = Settings.fav();
+    const fresh = Date.now() - datesAt < 6 * 3600_000;
+    if (fresh && favKey === (fav?.abbr || "")) return dates;
+    const info = await Season.load().catch(() => null) || Season.info;
+    const today = etYmd();
+    const a = info?.start || shiftYmd(today, -330);
+    const b = info?.end || shiftYmd(today, 30);
+    try {
+      if (!fresh || !dates.length) {
+        const data = await api(datesUrl(a, b), { ttl: 3600_000 });
+        dates = (data.dates || []).filter((d) => d.totalGames > 0).map((d) => d.date).sort();
+        dateSet = new Set(dates);
+        datesAt = Date.now();
+      }
+      favSet = new Set();
+      if (fav) {
+        const data = await api(datesUrl(a, b, `&teamId=${fav.id}`), { ttl: 3600_000 });
+        favSet = new Set((data.dates || []).filter((d) => d.totalGames > 0).map((d) => d.date));
+      }
+      favKey = fav?.abbr || "";
+    } catch (e) { console.warn(e); }
+    return dates;
+  }
+  const prevDay = (ymd) => { for (let i = dates.length - 1; i >= 0; i--) if (dates[i] < ymd) return dates[i]; return null; };
+  const nextDay = (ymd) => dates.find((d) => d > ymd) || null;
+
+  // Opening day: today if there are games, otherwise the most recent game day (or the next one if it's
+  // only a few days off). In the offseason that's the last game of the World Series.
   async function pickDefaultDay() {
     const today = etYmd();
-    const todays = await loadDay(today);
-    if (todays.length) return { ymd: today, games: todays };
-    const prev = await findGameDay(today, -1).catch(() => null);
-    const next = await findGameDay(today, 1, 45).catch(() => null);
-    const soon = next && next > today && Date.parse(next) - Date.parse(today) < 4 * 864e5;
-    const ymd = soon || !prev ? next || prev || today : prev;
-    return { ymd, games: ymd === today ? [] : await loadDay(ymd) };
+    await ensureDates();
+    let prev, next;
+    if (dates.length) {
+      if (dateSet.has(today)) return today;
+      prev = prevDay(today); next = nextDay(today);
+    } else {
+      const todays = await loadDay(today);
+      if (todays.length) return today;
+      prev = await findGameDay(today, -1).catch(() => null);
+      next = await findGameDay(today, 1, 45).catch(() => null);
+    }
+    const soon = next && Date.parse(next) - Date.parse(today) < 4 * 864e5;
+    return soon || !prev ? next || prev || today : prev;
   }
 
   async function loadTeamSeason(team) {
     const season = currentSeason();
-    const base = `/api/v1/schedule?sportId=1&teamId=${team.id}&season=${season}&gameType=R,F,D,L,W`;
+    const base = `/api/v1/schedule?sportId=1&teamId=${team.id}&season=${season}&gameType=${Season.info?.phase === "spring" ? "S," : ""}R,F,D,L,W`;
     const data = await apiTry([`${base}&hydrate=decisions,linescore,probablePitcher,seriesStatus`, base], { ttl: 30_000 });
     return (data.dates || []).flatMap((d) => d.games || []).map(norm);
   }
@@ -124,11 +168,14 @@ const Scores = (() => {
     return g.status.reason ? esc(g.status.reason) : "";
   }
 
+  const isFav = (g) => { const f = Settings.fav(); return !!f && (g.away.t.id === f.id || g.home.t.id === f.id); };
+
   function card(g, i, teamMode) {
     const t = g.home.t;
     const note = seriesNote(g, teamMode);
-    return `<div class="gcard ${g.phase}" data-pk="${g.pk}" role="button"
-      style="${vars(t)};--delay:${Math.min(i, 12) * 25}ms">
+    const fav = !teamMode && isFav(g) ? Settings.fav() : null;
+    return `<div class="gcard ${g.phase}${fav ? " fav" : ""}" data-pk="${g.pk}" role="button"
+      style="${vars(t)};${fav ? `--fav-rgb:${rgb(fav.bright)};` : ""}--delay:${Math.min(i, 12) * 25}ms">
       <div class="top">${statusLine(g)}<span class="note">${note}</span></div>
       ${teamRow(g.away, g)}${teamRow(g.home, g)}
       <div class="foot">${footLine(g)}</div></div>`;
@@ -139,13 +186,14 @@ const Scores = (() => {
     const rank = { live: 0, preview: 1, off: 2, final: 3 };
     // On a finished day just keep start-time order; on a live day float live games first.
     const anyLive = list.some((g) => g.phase === "live" || g.phase === "preview");
-    return [...list].sort((a, b) => (anyLive ? rank[a.phase] - rank[b.phase] : 0) || String(a.start).localeCompare(String(b.start)));
+    // The favorite team's games always lead.
+    return [...list].sort((a, b) => isFav(b) - isFav(a) || (anyLive ? rank[a.phase] - rank[b.phase] : 0) || String(a.start).localeCompare(String(b.start)));
   }
 
   const prevScores = {};
   function draw(list, teamMode) {
     const box = el();
-    const ctxKey = teamMode ? `team:${selected}` : `day:${day}`;
+    const ctxKey = teamMode ? `team:${selected}` : `day:${day}:${Settings.fav()?.abbr || ""}`;
     const o = (g) => `${+!!g.offense.first}${+!!g.offense.second}${+!!g.offense.third}`;
     const key = ctxKey + list.map((g) => `${g.pk}:${g.phase}:${g.away.score}:${g.home.score}:${g.half}${g.inning}:${g.outs}:${g.balls}${g.strikes}:${o(g)}`).join("|");
     if (key === lastKey) return;
@@ -183,10 +231,75 @@ const Scores = (() => {
       c.innerHTML = `<span class="ctx-label">${currentSeason()} season</span>`;
       return;
     }
-    c.innerHTML = `<div class="datebar">
-      <button class="arrow" data-d="-1" aria-label="Previous game day">‹</button>
-      <button class="date" data-d="0">${day ? esc(relDay(day)) : "…"}</button>
-      <button class="arrow" data-d="1" aria-label="Next game day">›</button></div>`;
+    const today = etYmd();
+    const rel = [["Yesterday", shiftYmd(today, -1)], ["Today", today], ["Tomorrow", shiftYmd(today, 1)]];
+    const known = dates.length > 0;
+    const can = (ymd) => !known || dateSet.has(ymd);
+    const yr = day && day.slice(0, 4) !== today.slice(0, 4);
+    const label = day ? ymdLabel(day, { weekday: "short", month: "short", day: "numeric", ...(yr ? { year: "numeric" } : {}) }) : "…";
+    c.innerHTML = `<div class="seg daypick">${rel.map(([n, ymd]) =>
+        `<button data-ymd="${ymd}" class="${ymd === day ? "on" : ""}" ${can(ymd) ? "" : "disabled"}>${n}</button>`).join("")}</div>
+      <div class="datebar">
+        <button class="arrow" data-d="-1" aria-label="Previous game day" ${known && day && !prevDay(day) ? "disabled" : ""}>‹</button>
+        <button class="date" data-cal aria-haspopup="true"><svg class="cal-ic" viewBox="0 0 20 20"><rect x="2.5" y="4" width="15" height="13.5" rx="2.5"/><path d="M2.5 8.5h15M6.5 2v4M13.5 2v4"/></svg>${esc(label)}</button>
+        <button class="arrow" data-d="1" aria-label="Next game day" ${known && day && !nextDay(day) ? "disabled" : ""}>›</button></div>
+      ${Season.info ? `<span class="ctx-label">${esc(Season.label())}</span>` : ""}`;
+  }
+
+  // ---- Calendar ----
+  // One month at a time, with a chip per month of the season. Only days with games can be tapped;
+  // a small dot marks the favorite team's games.
+  const calEl = () => document.getElementById("cal");
+  const monthsOfSeason = () => [...new Set(dates.map((d) => d.slice(0, 7)))];
+  function drawCal() {
+    const box = calEl();
+    const months = monthsOfSeason();
+    if (!months.includes(calMonth)) calMonth = months[months.length - 1] || etYmd().slice(0, 7);
+    const [y, m] = calMonth.split("-").map(Number);
+    const first = new Date(Date.UTC(y, m - 1, 1));
+    const daysIn = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    const today = etYmd();
+    const fav = Settings.fav();
+    let cells = "";
+    for (let i = 0; i < first.getUTCDay(); i++) cells += `<span class="cd blank"></span>`;
+    for (let d = 1; d <= daysIn; d++) {
+      const ymd = `${calMonth}-${String(d).padStart(2, "0")}`;
+      const g = dateSet.has(ymd);
+      const cls = ["cd", g ? "g" : "", ymd === day ? "sel" : "", ymd === today ? "today" : ""].filter(Boolean).join(" ");
+      cells += g
+        ? `<button class="${cls}" data-ymd="${ymd}">${d}${favSet.has(ymd) ? `<i></i>` : ""}</button>`
+        : `<span class="${cls}">${d}</span>`;
+    }
+    const i = Season.info;
+    const note = i?.phase === "offseason"
+      ? (i.nextStart ? `Spring training opens ${ymdLabel(i.nextStart, { month: "short", day: "numeric" })}` : "See you in spring")
+      : "";
+    box.innerHTML = `<div class="cal-head"><span class="cal-title">${ymdLabel(`${calMonth}-01`, { month: "long", year: "numeric" })}</span>
+        <span class="cal-phase">${esc([i ? `${i.season} ${Season.label().toLowerCase()}` : "", note].filter(Boolean).join(" · "))}</span></div>
+      ${months.length > 1 ? `<div class="cal-months">${months.map((mo) =>
+        `<button data-mo="${mo}" class="${mo === calMonth ? "on" : ""}">${ymdLabel(`${mo}-01`, { month: "short" })}</button>`).join("")}</div>` : ""}
+      <div class="cal-wk">${["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((w) => `<span>${w}</span>`).join("")}</div>
+      <div class="cal-grid">${cells}</div>
+      ${fav && favSet.size ? `<div class="cal-foot" style="--fav-rgb:${rgb(fav.bright)}"><i></i>${esc(fav.name)} games</div>` : ""}`;
+  }
+  function openCal(open) {
+    const box = calEl();
+    if (!open) { box.classList.remove("open"); return; }
+    if (!dates.length) return;
+    calMonth = (day || "").slice(0, 7);
+    drawCal();
+    // Drop the calendar under the date button.
+    const btn = document.querySelector("#ctx .datebar");
+    const stage = document.getElementById("stage").getBoundingClientRect();
+    const s = typeof scale === "number" && scale > 0 ? scale : 1;
+    if (btn) box.style.left = `${Math.round((btn.getBoundingClientRect().left - stage.left) / s)}px`;
+    box.classList.add("open");
+  }
+  function goTo(ymd) {
+    if (!ymd || ymd === day) return;
+    day = ymd; autoDay = ""; lastKey = ""; ctx();
+    el().innerHTML = `<div class="empty"><div>Loading ${esc(ymdLabel(day))}…</div></div>`;
+    refresh();
   }
 
   async function refresh() {
@@ -194,8 +307,13 @@ const Scores = (() => {
     const team = byAbbr[selected];
     try {
       if (team) games = await loadTeamSeason(team);
-      else if (!day) { const r = await pickDefaultDay(); day = r.ymd; games = r.games; }
-      else games = await loadDay(day);
+      else {
+        await ensureDates();
+        // Follow the calendar by itself (midnight, and the jump from offseason to spring training)
+        // unless the user picked a day.
+        if (!day || (autoDay && autoDay !== etYmd())) { day = await pickDefaultDay(); autoDay = etYmd(); lastKey = ""; }
+        games = await loadDay(day);
+      }
       ctx();
       draw(team ? games : order(games), !!team);
       setUpdated("scores", games.some((g) => g.phase === "live") ? "Live" : `Updated ${timeLabel(new Date())}`);
@@ -216,12 +334,9 @@ const Scores = (() => {
   }
 
   async function step(dir) {
-    if (dir === 0) { day = null; lastKey = ""; return refresh(); }
-    const to = await findGameDay(day || etYmd(), dir).catch(() => null);
-    if (!to) return;
-    day = to; lastKey = ""; ctx();
-    el().innerHTML = `<div class="empty"><div>Loading ${esc(ymdLabel(day))}…</div></div>`;
-    refresh();
+    if (!day) return;
+    const to = dates.length ? (dir < 0 ? prevDay(day) : nextDay(day)) : await findGameDay(day, dir).catch(() => null);
+    goTo(to);
   }
 
   function init() {
@@ -232,14 +347,30 @@ const Scores = (() => {
     });
     document.getElementById("ctx").addEventListener("click", (e) => {
       if (activeTab !== "scores") return;
-      const b = e.target.closest("[data-d]"); if (b) step(+b.dataset.d);
+      const b = e.target.closest("button"); if (!b || b.disabled) return;
+      if (b.dataset.ymd) goTo(b.dataset.ymd);
+      else if (b.dataset.d) step(+b.dataset.d);
+      else if ("cal" in b.dataset) openCal(!calEl().classList.contains("open"));
+    });
+    const cal = document.createElement("div");
+    cal.id = "cal"; cal.className = "pop";
+    document.getElementById("stage").appendChild(cal);
+    cal.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      if (b.dataset.mo) { calMonth = b.dataset.mo; drawCal(); }
+      else if (b.dataset.ymd) { openCal(false); goTo(b.dataset.ymd); }
+    });
+    // Tap anywhere else to close it.
+    document.addEventListener("pointerdown", (e) => {
+      if (cal.classList.contains("open") && !cal.contains(e.target) && !e.target.closest("#ctx [data-cal]")) openCal(false);
     });
   }
 
   return {
     init,
     show() { ctx(); lastKey = ""; refresh(); },
-    hide() { clearTimeout(timer); },
+    hide() { clearTimeout(timer); openCal(false); },
+    favChanged() { favKey = "?"; lastKey = ""; if (activeTab === "scores") refresh(); },
     teamChanged() { lastKey = ""; games = []; el().innerHTML = ""; refresh(); },
     bases, outsDots,
   };

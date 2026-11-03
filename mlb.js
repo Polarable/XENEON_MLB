@@ -49,11 +49,47 @@ function relDay(ymd) {
 }
 const timeLabel = (iso) => new Date(iso).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
-// The current season: until March, the most recent finished season is the interesting one.
+// The current season: the latest one whose spring training has started (see Season below).
+// Until Season has loaded, guess: before March, the most recent finished season is the interesting one.
 function currentSeason() {
+  if (Season.info) return Season.info.season;
   const [y, m] = etYmd().split("-").map(Number);
   return m >= 3 ? y : y - 1;
 }
+
+/* ---- Season phase ----
+   Read from MLB's own season dates, so the widget moves through spring training, the regular season,
+   the postseason and the offseason by itself. A season "starts" on its first spring training day;
+   until the next one does, the last season stays current (so the offseason shows the World Series). */
+const Season = {
+  info: null,
+  async load() {
+    const today = etYmd();
+    const y = +today.slice(0, 4);
+    const get = (yr) => api(`/api/v1/seasons/${yr}?sportId=1`, { ttl: 6 * 3600_000 })
+      .then((d) => (d.seasons || [])[0] || null).catch(() => null);
+    const [prev, cur, nxt] = await Promise.all([get(y - 1), get(y), get(y + 1)]);
+    const starts = (x) => x && (x.springStartDate || x.preSeasonStartDate || x.regularSeasonStartDate);
+    const begun = (x) => starts(x) && starts(x) <= today;
+    const s = begun(cur) ? cur : prev || cur;
+    if (!s) return null;
+    const next = s === cur ? nxt : cur;
+    const end = s.postSeasonEndDate || s.seasonEndDate || s.regularSeasonEndDate;
+    const phase = today < (s.regularSeasonStartDate || "") ? "spring"
+      : today <= (s.regularSeasonEndDate || "") ? "regular"
+      : today <= (end || "") ? "postseason" : "offseason";
+    this.info = {
+      season: +s.seasonId, phase, start: starts(s), end,
+      regStart: s.regularSeasonStartDate, regEnd: s.regularSeasonEndDate, postStart: s.postSeasonStartDate,
+      nextStart: next ? starts(next) : null,
+    };
+    return this.info;
+  },
+  label() {
+    const i = this.info; if (!i) return "";
+    return { spring: "Spring training", regular: "Regular season", postseason: "Postseason", offseason: "Offseason" }[i.phase];
+  },
+};
 
 // Game state from a schedule or live-feed status block.
 function phaseOf(status = {}) {
