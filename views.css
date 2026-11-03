@@ -503,3 +503,12 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
 .set-diag { display: flex; align-items: center; gap: 14px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text-3); }
 .set-stripes { width: 60px; height: 30px; flex: none; image-rendering: pixelated;
   background: repeating-linear-gradient(90deg, #fff 0 var(--px, 1px), #000 var(--px, 1px) calc(var(--px, 1px) * 2)); }
+
+/* Player highlights (converted Film Room clips) */
+.p-hl { display: flex; gap: 28px; align-items: flex-start; padding-top: 6px; }
+.p-hl .gd-video { flex: none; position: sticky; top: 0; }
+.p-hl-list { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px 16px; align-content: start; }
+.p-hl-list .dt { margin-top: 2px; font-size: 13px; }
+/* Player pages stay clean: no team-color ring or glow. */
+.p-hl .gd-video { animation: none; box-shadow: none; border: 0; background: #0b0b0b; }
+.p-hl .gd-clip.on .th { border-color: rgba(255,255,255,.8); box-shadow: none; }

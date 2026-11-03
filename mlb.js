@@ -249,3 +249,27 @@ function sortableTable(container, cols, rows, opts = {}) {
   };
   draw();
 }
+
+// Film Room clips converted to WebM by the GitHub Action (scripts/fetch-clips.js). iCUE's browser
+// can't play MLB's own H.264 files, so these are the only clips that play there.
+const Clips = (() => {
+  let at = 0, data = null, pending = null;
+  const probe = document.createElement("video");
+  const h264 = !!probe.canPlayType('video/mp4; codecs="avc1.42E01E"');
+  async function index() {
+    if (data && Date.now() - at < 60_000) return data;
+    if (!pending) pending = fetch(`clips/index.json?t=${Math.floor(Date.now() / 60_000)}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : { games: {} })).catch(() => data || { games: {} })
+      .then((d) => { data = d; at = Date.now(); pending = null; return d; });
+    return pending;
+  }
+  // Every converted clip that tags this player, newest first.
+  async function forPlayer(id) {
+    const d = await index();
+    const out = [];
+    for (const [pk, clips] of Object.entries(d.games || {}))
+      for (const [cid, c] of Object.entries(clips)) if ((c.p || []).includes(+id)) out.push({ id: cid, pk: +pk, title: c.t, date: c.d, dur: c.dur || "", thumb: c.th, url: c.f });
+    return out.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  }
+  return { h264, index, forPlayer };
+})();

@@ -20,7 +20,10 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   const groups = [];
   if (isPitcher || isTwoWay) { if (hasPit) groups.push("pitching"); if (hasBat) groups.push("hitting"); }
   else { if (hasBat) groups.push("hitting"); if (hasPit) groups.push("pitching"); }
-  let tab = state.tab && (state.tab === "log" || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
+  // Converted Film Room clips that tag this player (see scripts/fetch-clips.js); the tab only shows when there are some.
+  const clips = await Clips.forPlayer(id).catch(() => []);
+  if (!alive()) return;
+  let tab = state.tab && (state.tab === "log" || (state.tab === "clips" && clips.length) || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
 
   const team = p.currentTeam ? teamMeta(p.currentTeam) : null;
   root.setAttribute("style", team ? vars(team) : "");
@@ -141,10 +144,33 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     sortableTable(body, cols, rows, { cls: "glog" });
   }
 
+  // ---- Highlights: a player on the left, the clips as thumbnails on the right ----
+  let muted = true;
+  function highlights() {
+    body.innerHTML = `<div class="p-hl">
+      <div class="gd-video has"><video playsinline muted autoplay preload="auto"></video>
+        <div class="gd-vcap"><span class="t"></span></div><button class="gd-mute">${muted ? "Sound off" : "Sound on"}</button></div>
+      <div class="p-hl-list">${clips.map((c, i) => `<div class="gd-clip" data-hl="${i}" role="button">
+        <div class="th" style="background-image:url('${esc(c.thumb)}')"><span>${esc(c.dur.replace(/^00:/, ""))}</span></div>
+        <div class="tt">${esc(c.title)}</div><div class="dt muted">${c.date ? esc(ymdLabel(etYmd(new Date(c.date)), { month: "short", day: "numeric" })) : ""}</div></div>`).join("")}</div></div>`;
+    const v = body.querySelector("video");
+    const play = (i) => {
+      const c = clips[i]; if (!c) return;
+      v.src = c.url; v.poster = c.thumb; v.muted = muted; v.play().catch(() => {});
+      body.querySelector(".gd-vcap .t").textContent = c.title;
+      body.querySelectorAll(".gd-clip").forEach((el) => el.classList.toggle("on", +el.dataset.hl === i));
+      v.onended = () => play(i + 1);
+    };
+    body.querySelector(".p-hl-list").onclick = (e) => { const el = e.target.closest("[data-hl]"); if (el) play(+el.dataset.hl); };
+    body.querySelector(".gd-mute").onclick = (e) => { muted = !muted; v.muted = muted; e.target.textContent = muted ? "Sound off" : "Sound on"; };
+    play(0);
+  }
+
   function draw() {
-    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"]];
+    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"], ...(clips.length ? [["clips", "Highlights"]] : [])];
     root.querySelector(".p-tabs").innerHTML = seg(tabs, tab);
     body.scrollTop = 0;
+    if (tab === "clips") { highlights(); return; }
     if (tab === "log") { body.innerHTML = `<div class="s-loading">Loading…</div>`; gameLog().catch(() => { body.innerHTML = `<div class="s-loading">No game log available</div>`; }); return; }
     if (!groups.length) { body.innerHTML = `<div class="s-loading">No major league stats yet</div>`; return; }
     const rows = yearRows(tab);
