@@ -8,7 +8,7 @@
 // @homepage        https://polarable.github.io/XENEON_MLB/m/
 // @include         explorer.exe
 // @architecture    x86-64
-// @compilerOptions -lole32 -loleaut32 -lshlwapi -lshell32 -ldwmapi -luuid
+// @compilerOptions -lole32 -loleaut32 -lshlwapi -lshell32 -ldwmapi -luuid -lgdi32 -ladvapi32 -luser32
 // ==/WindhawkMod==
 
 // ==WindhawkModReadme==
