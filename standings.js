@@ -2,6 +2,7 @@
 // Tap any team to open its team page.
 const Standings = (() => {
   let mode = "div";
+  let ldLg = "mlb";      // leaders: mlb | al | nl
   let records = null;   // division id -> sorted team records
   let season = currentSeason();
   let timer = 0;
@@ -67,6 +68,13 @@ const Standings = (() => {
     if (!records) return;
     const box = el();
     if (mode !== "br") Bracket.stop();
+    if (mode === "ld") {
+      if (box.className !== "ldmode" || box.dataset.lg !== ldLg || box.dataset.yr !== String(season)) {
+        box.className = "ldmode"; box.dataset.lg = ldLg; box.dataset.yr = season;
+        Leaders.render(box, season, ldLg);
+      }
+      return;
+    }
     if (mode === "br") {
       box.className = "brmode";
       Bracket.render(box, season);
@@ -91,7 +99,9 @@ const Standings = (() => {
     document.getElementById("ctx").innerHTML = `<div class="seg">
       <button data-m="div" class="${mode === "div" ? "on" : ""}">Divisions</button>
       <button data-m="wc" class="${mode === "wc" ? "on" : ""}">Wild card</button>
-      <button data-m="br" class="${mode === "br" ? "on" : ""}">Bracket</button></div>
+      <button data-m="br" class="${mode === "br" ? "on" : ""}">Bracket</button>
+      <button data-m="ld" class="${mode === "ld" ? "on" : ""}">Leaders</button></div>
+      ${mode === "ld" ? `<div class="seg">${[["mlb", "MLB"], ["al", "AL"], ["nl", "NL"]].map(([v, l]) => `<button data-lg="${v}" class="${ldLg === v ? "on" : ""}">${l}</button>`).join("")}</div>` : ""}
       <span class="ctx-label">${season}</span>`;
   }
 
@@ -114,11 +124,14 @@ const Standings = (() => {
   function init() {
     mode = load("standings-mode") || "div";
     el().addEventListener("click", (e) => {
+      const pl = e.target.closest("[data-player]"); if (pl) return Sheet.open("player", { id: +pl.dataset.player });
       const tr = e.target.closest("tr[data-team]"); if (tr) Sheet.open("team", { id: +tr.dataset.team });
     });
     dragScroll(el(), "y");
     document.getElementById("ctx").addEventListener("click", (e) => {
       if (activeTab !== "standings") return;
+      const l = e.target.closest("[data-lg]");
+      if (l) { ldLg = l.dataset.lg; ctx(); draw(); return; }
       const b = e.target.closest("[data-m]"); if (!b) return;
       mode = b.dataset.m; save("standings-mode", mode); ctx(); draw();
     });
