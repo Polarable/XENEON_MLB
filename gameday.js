@@ -8,7 +8,7 @@
 // Tapping a card shows that at-bat on the left and plays its clip. Also renders the live field
 // (runners' photos on the bases, big ball/strike/out dots) for the game page's left panel.
 //
-// The batter silhouette (img/batter.png) is traced from a public-domain (CC0) Openclipart drawing.
+// The batter silhouette (img/batter.png) is cut from the reference image the user supplied (pitcher's view, right-handed stance).
 const BATTER_IMG = new Image();
 BATTER_IMG.src = "img/batter.png";
 
