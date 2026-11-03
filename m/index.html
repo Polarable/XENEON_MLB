@@ -245,7 +245,7 @@
     // All teams, then the favorite, then everyone else A-Z.
     const opts = [{ abbr: "ALL" }, ...(f ? [f] : []), ...[...TEAMS].filter((t) => t !== f).sort((a, b) => a.abbr.localeCompare(b.abbr))];
     document.getElementById("picker").innerHTML = opts.map((t) =>
-      `<button data-t="${t.abbr}" class="${t === f ? "fav" : ""}">${t.id ? logoImg(t) : `<span class="all">⚾</span>`}${t.id ? t.abbr : "All"}</button>`).join("");
+      `<button data-t="${t.abbr}" class="${t === f ? "fav" : ""}">${t.id ? logoImg(t) : `<svg class="all" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>`}${t.id ? t.abbr : "All"}</button>`).join("");
   }
   function togglePicker(open) {
     document.getElementById("picker").classList.toggle("open", open);

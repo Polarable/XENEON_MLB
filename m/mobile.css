@@ -153,7 +153,7 @@ button { font-family: inherit; color: inherit; }
 #picker button { height: 72px; border: 1px solid transparent; border-radius: 12px; background: var(--surface-2);
   font: 600 13px "Inter Tight", sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
 #picker button img { width: 32px; height: 32px; }
-#picker button .all { font-size: 24px; line-height: 32px; }
+#picker button svg.all { width: 28px; height: 28px; }
 #picker button.on { background: #262626; border-color: rgba(255,255,255,.4); }
 #scrim { position: fixed; inset: 0; z-index: 45; display: none; background: rgba(0,0,0,.45); }
 #scrim.open { display: block; }
@@ -486,3 +486,36 @@ body.compact .gcard:not(.live) .foot { display: none; }
 }
 .al-head { margin-top: 22px; }
 .al-status { margin-top: 8px; }
+
+/* ---------- Round 3 ---------- */
+/* Player hero: Career Builder style, banner photo with the name over its dark side */
+.page-player .p-left { padding-top: 0 !important; }
+.p-banner { height: 280px; }
+.p-banner img { object-position: 62% 25%; }
+.p-banner::after { background: linear-gradient(to right, rgba(0,0,0,.92) 0%, rgba(0,0,0,.6) 38%, rgba(0,0,0,.05) 75%),
+  linear-gradient(to bottom, rgba(0,0,0,0) 45%, #000 100%); }
+.page-player.has-banner .p-top { padding-top: 150px; }
+.page-player.has-banner .p-photo { display: block; width: 104px; height: 104px; border: 2px solid rgba(255,255,255,.14); background: rgba(28,28,28,.8); }
+.p-id h1 { line-height: 1.04; }
+.p-id h1 .fn { font-weight: 400; color: rgba(255,255,255,.86); }
+.p-id h1 .ln { font-weight: 700; }
+/* Game log cards */
+.yc.gl { cursor: pointer; }
+.gl-d { font-size: 22px !important; }
+.yc.gl .yc-tm > span { display: inline-flex; align-items: center; gap: 6px; color: var(--text); }
+.yc.gl .yc-tm i { font-weight: 700; }
+.yc.gl .yc-tm i.pos { color: #7fdc9f; } .yc.gl .yc-tm i.neg { color: #f06a6a; }
+.gl-line { margin-top: 8px; font-size: 20px; font-weight: 600; }
+/* Year by year as a compact stat chart */
+.ychart { overflow-x: auto; margin: 0 -22px; padding: 0 22px 20px; -webkit-overflow-scrolling: touch; }
+.ychart table { border-collapse: separate; border-spacing: 0; font-size: 17px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ychart th, .ychart td { padding: 0 11px; height: 46px; text-align: right; border-bottom: 1px solid var(--line); }
+.ychart thead td, .ychart thead th { height: 38px; font-size: 13px; font-weight: 600; color: var(--text-3); }
+.ychart th { position: sticky; left: 0; z-index: 1; background: #000; text-align: left; font-weight: 600; padding-left: 0; min-width: 62px; }
+.ychart td.tm { text-align: left; }
+.ychart td.tm .lnk { display: inline-flex; align-items: center; gap: 6px; }
+.ychart td.tm img { width: 22px; height: 22px; }
+.ychart tr.part td { color: var(--text-3); font-size: 15px; height: 38px; }
+.ychart tr.multi td.tm { color: var(--text-2); }
+.ychart tr.tot th, .ychart tr.tot td { font-weight: 700; background: #111; border-bottom: 1px solid var(--line-2); }
+.ychart tr.tot th { background: #111; }
