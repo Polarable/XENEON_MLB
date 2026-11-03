@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baseball News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000;
+    --text: #fff;
+    --muted: #9a9a9a;
+    --card-radius: 22px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--bg); color: var(--text); overflow: hidden;
+    font-family: "Archivo", system-ui, sans-serif; -webkit-font-smoothing: antialiased; user-select: none; }
+
+  /* Fixed 2560x720 stage, scaled to whatever space iCUE gives us. */
+  #stage { position: absolute; top: 0; left: 0; width: 2560px; height: 720px; transform-origin: 0 0;
+    background: radial-gradient(ellipse at 20% 0%, #161616 0%, #000 60%); }
+
+  header { position: absolute; top: 34px; left: 40px; right: 40px; display: flex; align-items: center; gap: 20px; }
+  h1 { font-size: 52px; font-weight: 900; letter-spacing: -0.5px; line-height: 1; }
+  #picker-btn { display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 16px 0 14px;
+    background: #fff; color: #000; border: 0; border-radius: 12px; font: 800 24px "Archivo", sans-serif; cursor: pointer; }
+  #picker-btn img { width: 26px; height: 26px; }
+  #picker-btn .chev { font-size: 16px; transform: translateY(1px); }
+  #updated { margin-left: auto; font-size: 20px; color: var(--muted); font-weight: 500; }
+
+  /* Card row */
+  #row { position: absolute; top: 120px; left: 0; right: 0; height: 560px; display: flex; gap: 44px;
+    padding: 20px 40px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding: 0 40px; scrollbar-width: none;
+    touch-action: pan-x; }
+  #row::-webkit-scrollbar { display: none; }
+  .card { position: relative; flex: 0 0 516px; height: 516px; border-radius: var(--card-radius); scroll-snap-align: start;
+    padding: 4px; background: linear-gradient(135deg, #fff 0%, #fff 35%, var(--team, #c8102e) 100%);
+    color: inherit; text-decoration: none; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
+  .card .inner { position: relative; width: 100%; height: 100%; border-radius: calc(var(--card-radius) - 4px); overflow: hidden;
+    background: #1b1b1b center/cover no-repeat; }
+  .card .inner.noimg { background: linear-gradient(160deg, var(--team, #333) 0%, #0a0a0a 85%); }
+  .card .shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,.92) 92%); }
+  .card .logo { position: absolute; top: 22px; left: 22px; width: 52px; height: 52px; filter: drop-shadow(0 2px 6px rgba(0,0,0,.6)); }
+  .card .age { position: absolute; top: 24px; right: 22px; padding: 6px 12px; border-radius: 10px; font-size: 20px; font-weight: 700;
+    background: rgba(0,0,0,.55); backdrop-filter: blur(6px); }
+  .card h2 { position: absolute; left: 24px; right: 24px; bottom: 22px; font-size: 38px; font-weight: 800; line-height: 1.06;
+    letter-spacing: -0.3px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+    text-shadow: 0 2px 10px rgba(0,0,0,.5); }
+  .card:active { transform: scale(.98); }
+  .empty { margin: auto; font-size: 32px; color: var(--muted); font-weight: 700; }
+
+  /* Team picker popover */
+  #picker { position: absolute; top: 96px; left: 40px; display: none; padding: 20px; border-radius: 20px; z-index: 10;
+    background: rgba(20,20,20,.97); border: 1px solid #333; box-shadow: 0 20px 60px rgba(0,0,0,.8);
+    grid-template-columns: repeat(11, 140px); gap: 10px; }
+  #picker.open { display: grid; }
+  #picker button { height: 88px; border: 2px solid transparent; border-radius: 14px; background: #262626; color: #fff;
+    font: 800 20px "Archivo", sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
+  #picker button img { width: 40px; height: 40px; }
+  #picker button.on { border-color: #fff; background: #3a3a3a; }
+  #scrim { position: absolute; inset: 0; display: none; z-index: 9; }
+  #scrim.open { display: block; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <header>
+    <h1>NEWS</h1>
+    <button id="picker-btn" aria-haspopup="true"><span id="picker-label">ALL</span><span class="chev">▼</span></button>
+    <div id="updated"></div>
+  </header>
+  <div id="row"></div>
+  <div id="scrim"></div>
+  <div id="picker" role="menu"></div>
+</div>
+
+<script src="teams.js"></script>
+<script>
+  const REFRESH_MS = 5 * 60 * 1000;   // re-read news.json every 5 minutes
+  // Logos live in logos/ (downloaded by scripts/fetch-logos.js); fall back to MLB's dark-background version online.
+  const logo = (t) => `logos/${t.abbr}.svg`;
+  const logoFallback = (t) => `https://www.mlbstatic.com/team-logos/team-cap-on-dark/${t.id}.svg`;
+  // Try the online logo if the local one is missing, then hide it.
+  function fb(img) { if (img.dataset.fb && !img.dataset.tried) { img.dataset.tried = 1; img.src = img.dataset.fb; } else img.remove(); }
+  const byAbbr = Object.fromEntries(TEAMS.map((t) => [t.abbr, t]));
+  let articles = [];
+  let selected = load("team") || "ALL";
+
+  function load(k) { try { return localStorage.getItem(k); } catch { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch {} }
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  // Scale the 2560x720 stage to fit the iframe.
+  function fit() {
+    const s = Math.min(innerWidth / 2560, innerHeight / 720);
+    const stage = document.getElementById("stage");
+    stage.style.transform = `scale(${s})`;
+    stage.style.left = `${(innerWidth - 2560 * s) / 2}px`;
+    stage.style.top = `${(innerHeight - 720 * s) / 2}px`;
+  }
+  addEventListener("resize", fit); fit();
+
+  function ago(iso) {
+    const m = Math.max(0, (Date.now() - new Date(iso)) / 60000);
+    if (m < 60) return `${Math.round(m)}m`;
+    if (m < 1440) return `${Math.round(m / 60)}h`;
+    return `${Math.round(m / 1440)}d`;
+  }
+
+  function render() {
+    const team = byAbbr[selected];
+    document.getElementById("picker-label").innerHTML = team
+      ? `<img src="${logo(team)}" data-fb="${logoFallback(team)}" alt="" onerror="fb(this)"> ${team.abbr}` : "ALL";
+    const list = (team ? articles.filter((a) => a.teams.includes(team.abbr)) : articles).slice(0, 20);
+    const row = document.getElementById("row");
+    row.innerHTML = list.length ? list.map((a) => {
+      const t = team || byAbbr[a.teams[0]];
+      return `<a class="card" href="${esc(a.link)}" target="_blank" rel="noopener" style="--team:${t ? t.color : "#c8102e"}">
+        <div class="inner${a.image ? "" : " noimg"}" ${a.image ? `style="background-image:url('${esc(a.image)}')"` : ""}>
+          <div class="shade"></div>
+          ${t ? `<img class="logo" src="${logo(t)}" data-fb="${logoFallback(t)}" alt="" onerror="fb(this)">` : ""}
+          <div class="age">${ago(a.date)}</div>
+          <h2>${esc(a.title)}</h2>
+        </div></a>`;
+    }).join("") : `<div class="empty">No recent articles${team ? ` for the ${team.name}` : ""}.</div>`;
+    row.scrollLeft = 0;
+    document.querySelectorAll("#picker button").forEach((b) => b.classList.toggle("on", b.dataset.t === selected));
+  }
+
+  function buildPicker() {
+    const opts = [{ abbr: "ALL" }, ...[...TEAMS].sort((a, b) => a.abbr.localeCompare(b.abbr))];
+    document.getElementById("picker").innerHTML = opts.map((t) =>
+      `<button data-t="${t.abbr}">${t.id ? `<img src="${logo(t)}" data-fb="${logoFallback(t)}" alt="" onerror="fb(this)">` : `<span style="font-size:30px">⚾</span>`}${t.abbr}</button>`).join("");
+  }
+  function togglePicker(open) {
+    document.getElementById("picker").classList.toggle("open", open);
+    document.getElementById("scrim").classList.toggle("open", open);
+  }
+  document.getElementById("picker-btn").onclick = () => togglePicker(!document.getElementById("picker").classList.contains("open"));
+  document.getElementById("scrim").onclick = () => togglePicker(false);
+  document.getElementById("picker").onclick = (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    selected = b.dataset.t; save("team", selected); togglePicker(false); render();
+  };
+
+  async function refresh() {
+    try {
+      const data = await (await fetch(`news.json?t=${Date.now()}`, { cache: "no-store" })).json();
+      articles = data.articles || [];
+      document.getElementById("updated").textContent =
+        `MLB Trade Rumors · updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+      render();
+    } catch (e) {
+      document.getElementById("updated").textContent = "Couldn't load news";
+    }
+  }
+
+  buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
+</script>
+</body>
+</html>
