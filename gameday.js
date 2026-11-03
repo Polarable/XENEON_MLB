@@ -42,7 +42,7 @@ const Gameday = (pk) => {
     <div class="gd-feed vscroll"></div>
     <div class="gd-vcol">
       <div class="gd-video"><video playsinline muted autoplay preload="auto"></video>
-        <div class="gd-vempty"><div class="fr">Film Room</div><div>Clips show up here as MLB posts them, usually a few minutes after the play.</div></div>
+        <div class="gd-vempty"><div class="fr">Video</div><div>Clips show up here a few minutes after MLB posts them. Older games may not have any.</div></div>
         <div class="gd-vcap"><span class="t"></span></div>
         <button class="gd-mute" aria-label="Sound">Sound off</button></div>
       <div class="gd-clips vscroll"></div>
@@ -73,13 +73,16 @@ const Gameday = (pk) => {
   }
   async function loadClips() {
     try {
-      const data = await api(`/api/v1/game/${pk}/content`, { ttl: 30_000 });
+      const [data, idx] = await Promise.all([api(`/api/v1/game/${pk}/content`, { ttl: 30_000 }), Clips.index()]);
       const items = data.highlights?.highlights?.items || [];
-      const next = items.filter((it) => (!it.type || it.type === "video") && sources(it).length)
+      const webm = idx.games?.[pk] || {};
+      // Our WebM copy first (it plays everywhere); MLB's own files only where the browser has H.264.
+      const urlsOf = (it) => { const w = webm[it.slug || it.id || it.title]?.f; return [...(w ? [w] : []), ...(Clips.h264 ? sources(it) : [])]; };
+      const next = items.filter((it) => (!it.type || it.type === "video") && urlsOf(it).length)
         .filter((it) => !/condensed game|game recap|postgame|press conference/i.test(`${it.title} ${it.headline}`))
         .map((it) => ({
           id: it.slug || it.id || it.title, title: it.title || it.headline || "Highlight",
-          urls: sources(it), thumb: pickThumb(it), date: it.date || "", dur: it.duration || "",
+          urls: urlsOf(it), thumb: pickThumb(it), date: it.date || "", dur: it.duration || "",
           players: (it.keywordsAll || []).filter((k) => /player_id/i.test(k.type || "")).map((k) => +k.value),
           // Statcast play ids this clip is tagged with (MLB uses the play id as the clip's guid).
           tags: [it.guid, it.mediaPlaybackId, ...(it.keywordsAll || []).filter((k) => /play_?id|sv_id/i.test(k.type || "")).map((k) => k.value)]
@@ -149,9 +152,7 @@ const Gameday = (pk) => {
     wantPlay = false;
     vbox.classList.remove("has"); vbox.classList.add("err");
     const h264 = video.canPlayType('video/mp4; codecs="avc1.42E01E"');
-    $(".gd-vempty").innerHTML = `<div class="fr">Video</div><div>${h264
-      ? "This clip won't load right now. Try another one."
-      : "This browser can't play MLB's video format (H.264), so clips can't play here."}</div>
+    $(".gd-vempty").innerHTML = `<div class="fr">Video</div><div>This clip won't load right now. Try another one.</div>
       <div class="muted" style="font-size:13px">error ${video.error?.code ?? "?"} · h264 ${h264 || "no"}</div>`;
   });
   video.addEventListener("ended", () => {
@@ -174,13 +175,13 @@ const Gameday = (pk) => {
     userPicked = true; wantPlay = false; playingId = null; playing = null;
     video.pause();
     vbox.classList.remove("has", "err"); vbox.classList.add("none");
-    $(".gd-vempty").innerHTML = `<div class="fr">Video</div><div>No clip for this play yet. MLB usually posts big plays a few minutes after they happen.</div>`;
+    $(".gd-vempty").innerHTML = `<div class="fr">Video</div><div>No clip for this play yet. Video shows up a few minutes after MLB posts it.</div>`;
     root.querySelectorAll(".gd-clip.on").forEach((el) => el.classList.remove("on"));
   }
   function drawClips() {
     $(".gd-clips").innerHTML = clips.slice().reverse().map((c) => `<div class="gd-clip ${c.id === playingId ? "on" : ""}" data-clip="${esc(c.id)}" role="button">
       <div class="th" style="background-image:url('${esc(c.thumb)}')"><span>${esc(c.dur.replace(/^00:/, ""))}</span></div><div class="tt">${esc(c.title)}</div></div>`).join("") ||
-      `<div class="gd-noclips muted">No Film Room clips for this game yet</div>`;
+      `<div class="gd-noclips muted">No video for this game yet</div>`;
   }
 
   /* ================= Strike zone, pitcher's view ================= */

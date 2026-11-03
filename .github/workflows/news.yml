@@ -27,6 +27,26 @@ jobs:
           node-version: 20
       - run: node scripts/fetch-logos.js
       - run: node scripts/fetch-news.js
+      # Film Room clips as WebM: iCUE's browser can't play MLB's H.264 files. Not committed;
+      # kept between runs in the Actions cache and published with the site.
+      - name: Restore converted clips
+        uses: actions/cache/restore@v4
+        with:
+          path: clips
+          key: clips-${{ github.run_id }}
+          restore-keys: clips-
+      - name: Convert new clips
+        id: clips
+        continue-on-error: true
+        run: |
+          command -v ffmpeg >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null)
+          node scripts/fetch-clips.js
+      - name: Keep converted clips for the next run
+        if: steps.clips.outputs.changed == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: clips
+          key: clips-${{ github.run_id }}
       - name: Save news and logos (keeps thumbnails cached between runs)
         run: |
           git config user.name "news-bot"
