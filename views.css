@@ -361,7 +361,7 @@ table.linescore.tight { font-size: 16px; }
 .pc-top .sc { display: flex; align-items: center; gap: 6px; color: var(--text); font-size: 15px; font-variant-numeric: tabular-nums; }
 .pc-top .sc img { width: 20px; height: 20px; }
 .pc-top .tag { padding: 2px 9px; border-radius: 999px; background: rgba(255,255,255,.09); color: var(--text); }
-.pc-top .film { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; color: #fff; }
+.pc-top .film { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; color: #fff; text-decoration: none; }
 .pc-top .film svg { width: 16px; height: 16px; fill: currentColor; }
 .pc-head { display: flex; gap: 14px; align-items: center; margin-top: 8px; min-width: 0; }
 .pc-pic { position: relative; flex: none; width: 64px; height: 64px; }
@@ -381,35 +381,27 @@ table.linescore.tight { font-size: 16px; }
 .pc-sep { margin: 8px 0 12px; font-size: 13px; font-weight: 600; color: var(--text-3); letter-spacing: .04em; display: flex; align-items: center; gap: 10px; }
 .pc-sep::after { content: ""; flex: 1; height: 1px; background: var(--line-2); }
 
-/* Film Room video */
+/* Video: every play, opening its Baseball Savant video in a browser tab */
 .gd-vcol { display: flex; flex-direction: column; min-height: 0; }
-.gd-video { position: relative; width: 640px; height: 360px; flex: none; border-radius: var(--radius); overflow: hidden;
-  border: 3px solid transparent;
-  background: linear-gradient(#0b0b0b, #0b0b0b) padding-box,
-              conic-gradient(from var(--ring), var(--tc, #888), rgba(var(--tc-rgb, 136,136,136), .25) 22%, var(--primary, #444) 40%, var(--tc, #888) 55%, rgba(var(--tc-rgb, 136,136,136), .25) 78%, var(--tc, #888)) border-box;
-  box-shadow: 0 0 30px rgba(var(--tc-rgb, 0,0,0), .3); animation: ring 14s linear infinite; }
-.gd-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; opacity: 0; transition: opacity .4s var(--ease); }
-.gd-video.has video { opacity: 1; }
-.gd-vempty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-  padding: 0 60px; text-align: center; font-size: 18px; line-height: 1.45; color: var(--text-3); }
-.gd-vempty .fr { font-size: 30px; font-weight: 600; color: var(--text-2); }
-.gd-video.has .gd-vempty { display: none; }
-.gd-vcap { position: absolute; left: 0; right: 0; bottom: 0; padding: 50px 22px 16px; pointer-events: none;
-  background: linear-gradient(to top, rgba(0,0,0,.85), transparent); font-size: 22px; font-weight: 600; opacity: 0; transition: opacity .3s; }
-.gd-video.has .gd-vcap { opacity: 1; }
-.gd-mute { position: absolute; top: 12px; right: 12px; height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-2);
-  background: rgba(0,0,0,.6); color: #fff; font: 500 15px "Inter Tight", sans-serif; cursor: pointer; display: none; }
-.gd-video.has .gd-mute { display: block; }
-.gd-clips { margin-top: 12px; flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; align-content: start; }
-.gd-clip { cursor: pointer; animation: fade .4s var(--ease); }
-.gd-clip .th { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; background: #151515 center/cover no-repeat; border: 2px solid transparent;
-  transition: border-color .25s var(--ease), transform .15s var(--ease); }
-.gd-clip:active .th { transform: scale(.97); }
-.gd-clip.on .th { border-color: var(--tc, #fff); box-shadow: 0 0 16px rgba(var(--tc-rgb, 255,255,255), .3); }
-.gd-clip .th span { position: absolute; right: 6px; bottom: 6px; padding: 1px 6px; border-radius: 5px; background: rgba(0,0,0,.75); font-size: 12px; font-weight: 600; }
-.gd-clip .tt { margin-top: 6px; font-size: 15px; line-height: 1.3; color: var(--text-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.gd-clip.on .tt { color: var(--text); }
+.gd-vhead { display: flex; align-items: baseline; gap: 12px; font-size: 22px; font-weight: 600; padding: 2px 2px 12px; }
+.gd-vhead span { font-size: 14px; font-weight: 500; color: var(--text-3); }
+.gd-vids { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; align-content: start; }
+.gd-vid { display: block; color: inherit; text-decoration: none; animation: fade .4s var(--ease); }
+.gd-vid .th { position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden;
+  background: linear-gradient(135deg, rgba(var(--tc-rgb, 80,80,80), .35), #141414 70%); transition: transform .15s var(--ease); }
+.gd-vid:active .th { transform: scale(.97); }
+.gd-vid .th img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.gd-vid .th img.hs { object-fit: contain; object-position: 50% 100%; }
+.gd-vid .ply { position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%;
+  background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; }
+.gd-vid .ply svg { width: 22px; height: 22px; fill: #fff; margin-left: 3px; }
+.gd-vid .inn { position: absolute; left: 6px; bottom: 6px; padding: 1px 7px; border-radius: 5px; background: rgba(0,0,0,.75); font-size: 12px; font-weight: 600; }
+.gd-vid .tt { margin-top: 6px; font-size: 15px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.gd-vid .st { margin-top: 2px; font-size: 13px; }
 .gd-noclips { font-size: 16px; padding-top: 6px; grid-column: 1 / -1; }
+.pr .pv { margin-left: auto; align-self: center; width: 30px; height: 30px; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-3); }
+.pr .pv svg { width: 15px; height: 15px; fill: currentColor; margin-left: 2px; }
+.pr .pv:active { background: rgba(255,255,255,.1); color: #fff; }
 
 /* Live field in the left panel, Real-style: three bases (a runner's photo fills his base), count dots beside,
    on deck and in the hole below, then challenges left. */
@@ -504,11 +496,3 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
 .set-stripes { width: 60px; height: 30px; flex: none; image-rendering: pixelated;
   background: repeating-linear-gradient(90deg, #fff 0 var(--px, 1px), #000 var(--px, 1px) calc(var(--px, 1px) * 2)); }
 
-/* Player highlights (converted Film Room clips) */
-.p-hl { display: flex; gap: 28px; align-items: flex-start; padding-top: 6px; }
-.p-hl .gd-video { flex: none; position: sticky; top: 0; }
-.p-hl-list { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px 16px; align-content: start; }
-.p-hl-list .dt { margin-top: 2px; font-size: 13px; }
-/* Player pages stay clean: no team-color ring or glow. */
-.p-hl .gd-video { animation: none; box-shadow: none; border: 0; background: #0b0b0b; }
-.p-hl .gd-clip.on .th { border-color: rgba(255,255,255,.8); box-shadow: none; }
