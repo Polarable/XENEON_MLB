@@ -36,7 +36,7 @@ const tag = (xml, name) => {
 // Turn an article's HTML into plain paragraphs for the in-widget preview.
 function paragraphs(html) {
   return html.split(/<\/p>|<br\s*\/?>\s*<br\s*\/?>/i)
-    .map((p) => decode(p.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim())
+    .map((p) => decode(p.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").replace(/\s+([,.;:!?)\]’”])/g, "$1").replace(/([(\[“‘])\s+/g, "$1").trim())
     .filter((p) => p.length > 30 && !/^(photo courtesy|image courtesy|the post .* appeared first on)/i.test(p));
 }
 const MAX_BODY = 1600;    // characters of article text kept per story
