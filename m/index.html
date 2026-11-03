@@ -316,6 +316,7 @@
   new MutationObserver(() => { document.querySelector("#sheet .s-body").scrollTop = 0; })
     .observe(document.querySelector("#sheet .s-body"), { attributes: true, attributeFilter: ["class"] });
 
+  let pendingStory = new URLSearchParams(location.search).get("story");
   async function refresh() {
     try {
       const data = await (await fetch(`news.json?t=${Date.now()}`, { cache: "no-store" })).json();
@@ -323,6 +324,7 @@
       const key = (data.articles || []).map((a) => a.link).join("|");
       articles = data.articles || [];
       if (key !== lastKey) { lastKey = key; render(); }
+      if (pendingStory) { const a = articles.find((x) => x.link === pendingStory); pendingStory = null; if (a) { setTab("news"); openReader(a); } }
       else document.querySelectorAll(".age[data-d]").forEach((el) => { el.textContent = ago(el.dataset.d); });
     } catch (e) {
       setUpdated("news", "Couldn't load news");
@@ -385,7 +387,7 @@
   if (+qs.get("game")) Sheet.open("game", { pk: +qs.get("game") });
   else if (+qs.get("player")) Sheet.open("player", { id: +qs.get("player") });
   else if (+qs.get("team")) Sheet.open("team", { id: +qs.get("team") });
-  if (/[?&](game|player|team|tab)=/.test(location.search)) history.replaceState(history.state, "", location.pathname);
+  if (/[?&](game|player|team|tab|story)=/.test(location.search)) history.replaceState(history.state, "", location.pathname);
 
   // The service worker makes the app installable and carries push alerts. It never caches pages,
   // so updates still arrive through the version check below.

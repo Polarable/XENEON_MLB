@@ -36,5 +36,12 @@
       "name": "Career Builder",
       "url": "../career/"
     }
-  ]
+  ],
+  "launch_handler": {
+    "client_mode": [
+      "navigate-existing",
+      "auto"
+    ]
+  },
+  "handle_links": "preferred"
 }
