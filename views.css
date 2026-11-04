@@ -292,6 +292,11 @@ table.linescore.tight { font-size: 16px; }
 .page-player .p-right { position: absolute; left: 700px; right: 0; top: 0; bottom: 0; padding: 36px 40px 0; display: flex; flex-direction: column; }
 .p-tabs { height: 64px; display: flex; align-items: center; margin-bottom: 14px; }
 .page-player .p-body { position: relative; flex: 1; min-height: 0; margin-bottom: 16px; }
+.p-tabs .p-lvl { margin-left: 16px; }
+.p-tabs .p-lvl:empty { display: none; }
+/* Minor / international tables carry a total per level, so the footer rows don't stick (they would stack). */
+.stats.lv tfoot td { position: static; }
+.stats.lv td.left img { width: 24px; height: 24px; }
 .page-player .stats th, .page-player .stats td { padding: 0 8px; }
 .page-player .stats td { font-size: 18px; height: 36px; }
 .page-player .stats th { font-size: 15px; }

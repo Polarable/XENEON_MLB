@@ -13,14 +13,23 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   const block = (type, group) => (sd.stats || []).find((s) => s.type?.displayName === type && s.group?.displayName === group)?.splits || [];
   const years = { hitting: block("yearByYear", "hitting").filter(mlbOnly), pitching: block("yearByYear", "pitching").filter(mlbOnly) };
   const career = { hitting: block("career", "hitting")[0]?.stat, pitching: block("career", "pitching")[0]?.stat };
+  // Minor league and international/winter league stats load alongside (Baseball Reference shows both).
+  const otherP = loadOtherLevels(id);
+  const mlbHas = (g) => g === "hitting" ? years.hitting.some((s) => s.stat.plateAppearances > 0) : years.pitching.some((s) => s.stat.battersFaced > 0 || parseFloat(s.stat.inningsPitched) > 0);
+  let other = null;
+  if (!mlbHas("hitting") && !mlbHas("pitching")) { other = await otherP; if (!alive()) return; }
   const isPitcher = p.primaryPosition?.abbreviation === "P";
   const isTwoWay = p.primaryPosition?.abbreviation === "TWP";
-  const hasBat = years.hitting.some((s) => s.stat.plateAppearances > 0) && (!isPitcher || years.hitting.reduce((a, s) => a + (s.stat.plateAppearances || 0), 0) > 50);
-  const hasPit = years.pitching.some((s) => s.stat.battersFaced > 0 || parseFloat(s.stat.inningsPitched) > 0);
+  const anyBat = (list) => list.some((s) => s.stat.plateAppearances > 0) && (!isPitcher || list.reduce((a, s) => a + (s.stat.plateAppearances || 0), 0) > 50);
+  const anyPit = (list) => list.some((s) => s.stat.battersFaced > 0 || parseFloat(s.stat.inningsPitched) > 0);
+  const mlbGroups = [mlbHas("hitting") && anyBat(years.hitting) && "hitting", mlbHas("pitching") && "pitching"].filter(Boolean);
+  const otherAll = (g) => other ? Object.values(other).flatMap((L) => L[g]) : [];
+  const hasBat = mlbGroups.includes("hitting") || anyBat(otherAll("hitting"));
+  const hasPit = mlbGroups.includes("pitching") || anyPit(otherAll("pitching"));
   const groups = [];
   if (isPitcher || isTwoWay) { if (hasPit) groups.push("pitching"); if (hasBat) groups.push("hitting"); }
   else { if (hasBat) groups.push("hitting"); if (hasPit) groups.push("pitching"); }
-  let tab = state.tab && (state.tab === "log" || state.tab === "highlights" || (state.tab === "savant" && groups.length) || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
+  let tab = state.tab && (state.tab === "log" || state.tab === "highlights" || (state.tab === "savant" && mlbGroups.length) || groups.includes(state.tab)) ? state.tab : groups[0] || "hitting";
 
   const team = p.currentTeam ? teamMeta(p.currentTeam) : null;
   root.setAttribute("style", team ? vars(team) : "");
@@ -101,6 +110,15 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   function statHero() {
     const g = groups[0];
     if (!g) return "";
+    if (!mlbGroups.includes(g)) {
+      // No major league line yet: show his latest minor (or other) league season, level by level.
+      const lv = levelsWith(g).filter((k) => k !== "mlb")[0];
+      const rs = lv ? otherRows(lv, g).filter((r) => r.__cls !== "part") : [];
+      const lastYr = rs.length ? rs[rs.length - 1].season : null;
+      const row = (r) => `<div class="ph-row"><span class="ph-l">${esc(`${r.season} ${r.lev}`)}</span>${HERO[g].map(([h, f]) =>
+        `<span class="ph-c"><em>${esc(typeof h === "function" ? h(r) : h)}</em><b>${f(r)}</b></span>`).join("")}</div>`;
+      return lastYr ? `<div class="p-hero">${rs.filter((r) => r.season === lastYr).slice(-2).reverse().map(row).join("")}</div>` : "";
+    }
     const ys = years[g];
     const last = ys.length ? ys[ys.length - 1].season : null;
     const seasonRows = ys.filter((x) => x.season === last);
@@ -131,7 +149,9 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
         <span><b>Career Builder</b><em>Build a career card for ${esc(p.fullName || "")}</em></span><i aria-hidden="true">›</i></a>` : ""}
       <div class="p-sum"></div>
     </div>
-    <div class="p-right"><div class="p-tabs"></div><div class="p-body vscroll"></div></div>`;
+    <div class="p-right"><div class="p-tabs"><div class="p-tabseg"></div><div class="p-lvl"></div></div><div class="p-body vscroll"></div></div>`;
+  // The phone has no room beside the tabs, so the level switch gets its own row under them.
+  if (typeof IS_MOBILE !== "undefined" && IS_MOBILE) root.querySelector(".p-tabs").after(root.querySelector(".p-lvl"));
   {
     const box = root.querySelector(".p-banner"), img = box.querySelector("img");
     const phone = typeof IS_MOBILE !== "undefined" && IS_MOBILE;
@@ -208,7 +228,8 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     const season = currentSeason();
     const groupsToShow = groups.length ? groups : ["hitting"];
     const g = groupsToShow[0];
-    const data = await api(`/api/v1/people/${id}/stats?stats=gameLog&group=${g}&season=${season}`, { ttl: 300_000 });
+    const sport = mlbGroups.includes(g) ? 1 : latestSport(g);
+    const data = await api(`/api/v1/people/${id}/stats?stats=gameLog&group=${g}&season=${season}${sport !== 1 ? `&sportId=${sport}` : ""}`, { ttl: 300_000 });
     if (!alive()) return;
     let splits = (data.stats?.[0]?.splits || []).slice().reverse();
     if (!splits.length) { body.innerHTML = `<div class="s-loading">No games in ${season}</div>`; return; }
@@ -247,23 +268,24 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     hitting: [["G", "gamesPlayed"], ["PA", "plateAppearances"], ["H", "hits"], ["HR", "homeRuns"], ["RBI", "rbi"], ["SB", "stolenBases"], ["BB", "baseOnBalls"], ["SO", "strikeOuts"], ["AVG", "avg", 1], ["OBP", "obp", 1], ["SLG", "slg", 1], ["OPS", "ops", 1]],
     pitching: [["W", "wins"], ["L", "losses"], ["ERA", "era", 1], ["G", (r) => r.gamesPitched ?? r.gamesPlayed], ["GS", "gamesStarted"], ["SV", "saves"], ["IP", "inningsPitched"], ["H", "hits"], ["BB", "baseOnBalls"], ["SO", "strikeOuts"], ["WHIP", "whip", 1], ["K/9", "strikeoutsPer9Inn"]],
   };
-  function yearChart(group, rows) {
+  function yearChart(group, rows, foot = null) {
     const cols = CHART[group];
     const cell = (r, [, k, isRate]) => { const v = val(r, k); return `<td>${isRate ? rate(v) : num(v)}</td>`; };
     const bySeason = {}; rows.forEach((r) => (bySeason[r.season] = bySeason[r.season] || []).push(r));
     const ordered = Object.keys(bySeason).sort().reverse().flatMap((y) => bySeason[y]);   // newest first, each season's total before its clubs
     const body = ordered.map((r) => `<tr class="${r.__cls || ""}">
         <th>${r.__cls === "part" ? "" : esc(r.season)}</th>
-        <td class="tm">${r.tmId ? `<span class="lnk" data-team="${r.tmId}">${logoImg(teamById[r.tmId] || {})}${esc(r.tm)}</span>` : esc(r.tm || "")}</td>
+        <td class="tm">${r.tmId ? `<span class="lnk" data-team="${r.tmId}">${logoImg(teamById[r.tmId] || {})}${esc(r.tm)}</span>` : `${r.oLogo || ""}${esc(r.tm || "")}`}${r.lev ? ` <i class="lev">${esc(r.lev)}${r.lg ? ` · ${esc(r.lg)}` : ""}</i>` : ""}</td>
         ${cols.map((c) => cell(r, c)).join("")}</tr>`).join("");
     const car = career[group];
-    const foot = car ? `<tr class="tot"><th>Career</th><td class="tm">${new Set(years[group].map((x) => x.season)).size} yrs</td>${cols.map((c) => cell(car, c)).join("")}</tr>` : "";
+    const footHtml = foot ? foot.map((f) => `<tr class="tot"><th>${esc(f.season)}</th><td class="tm">${esc(f.tm)}</td>${cols.map((c) => cell(f, c)).join("")}</tr>`).join("")
+      : car ? `<tr class="tot"><th>Career</th><td class="tm">${new Set(years[group].map((x) => x.season)).size} yrs</td>${cols.map((c) => cell(car, c)).join("")}</tr>` : "";
     return `<div class="ychart"><table><thead><tr><th>Year</th><td class="tm">Team</td>${cols.map(([h]) => `<td>${h}</td>`).join("")}</tr></thead>
-      <tbody>${foot}${body}</tbody></table></div>`;
+      <tbody>${footHtml}${body}</tbody></table></div>`;
   }
 
   // ---- Savant: percentile rankings, spray chart / pitch movement, year by year ----
-  const svTypes = groups.map((g) => (g === "pitching" ? "pitcher" : "batter"));
+  const svTypes = mlbGroups.map((g) => (g === "pitching" ? "pitcher" : "batter"));
   function savantTab() {
     const type = svTypes.includes(state.svType) ? state.svType : svTypes[0] || "batter";
     const ys = [...new Set(years[type === "pitcher" ? "pitching" : "hitting"].map((s) => +s.season))];
@@ -279,13 +301,16 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
   }
 
   function draw() {
-    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"], ...(groups.length ? [["savant", "Savant"]] : []), ["highlights", "Highlights"]];
-    root.querySelector(".p-tabs").innerHTML = seg(tabs, tab);
+    const tabs = [...groups.map((g) => [g, g === "hitting" ? "Batting" : "Pitching"]), ["log", "Game log"], ...(mlbGroups.length ? [["savant", "Savant"]] : []), ["highlights", "Highlights"]];
+    root.querySelector(".p-tabseg").innerHTML = seg(tabs, tab);
+    drawLevels();
     body.scrollTop = 0;
     if (tab === "highlights") { body.innerHTML = `<div class="s-loading">Loading…</div>`; drawHighlights(); return; }
     if (tab === "savant") { savantTab(); return; }
     if (tab === "log") { body.innerHTML = `<div class="s-loading">Loading…</div>`; gameLog().catch(() => { body.innerHTML = `<div class="s-loading">No game log available</div>`; }); return; }
     if (!groups.length) { body.innerHTML = `<div class="s-loading">No major league stats yet</div>`; return; }
+    const lv = curLevel();
+    if (lv !== "mlb") { drawOther(lv); return; }
     const rows = yearRows(tab);
     if (typeof IS_MOBILE !== "undefined" && IS_MOBILE) { body.innerHTML = yearChart(tab, rows); return; }
     const cols = [...lead, ...(tab === "hitting" ? BAT_COLS : PIT_COLS)];
@@ -294,11 +319,97 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
     // Show the most recent seasons.
     body.scrollTop = body.scrollHeight;
   }
-  root.querySelector(".p-tabs").onclick = (e) => {
+  root.querySelector(".p-tabseg").onclick = (e) => {
     const b = e.target.closest("[data-v]"); if (!b) return;
     tab = state.tab = b.dataset.v; draw();
   };
+  root.querySelector(".p-lvl").onclick = (e) => {
+    const b = e.target.closest("[data-lvl]"); if (!b || b.classList.contains("on")) return;
+    state.lvl = b.dataset.lvl; draw();
+  };
+
+  // ---- Levels (Baseball Reference style): Majors, Minors, and international / winter leagues ----
+  function levelsWith(g) {
+    const out = mlbGroups.includes(g) ? ["mlb"] : [];
+    if (other) for (const k of Object.keys(LEVELS)) if (other[k][g].length) out.push(k);
+    return out;
+  }
+  function curLevel() {
+    const lv = levelsWith(tab);
+    return lv.includes(state.lvl) ? state.lvl : lv[0] || "mlb";
+  }
+  function drawLevels() {
+    const box = root.querySelector(".p-lvl");
+    const lv = tab === "hitting" || tab === "pitching" ? levelsWith(tab) : [];
+    box.innerHTML = lv.length > 1 ? seg(lv.map((k) => [k, k === "mlb" ? "Majors" : LEVELS[k].label]), curLevel(), "data-lvl") : "";
+  }
+  function latestSport(g) {
+    const rs = other ? otherRows("minors", g).concat(otherRows("intl", g)) : [];
+    rs.sort((a, b) => a.season - b.season || a.rank - b.rank);
+    return rs.length ? rs[rs.length - 1].sportId : 1;
+  }
+  // One row per club per season, with a "2TM" line first when he played for two clubs at one level.
+  function otherRows(lv, g) {
+    const rows = [];
+    const by = {};
+    for (const s of other[lv][g]) (by[`${s.season}|${s.sportId}`] = by[`${s.season}|${s.sportId}`] || []).push(s);
+    const keys = Object.keys(by).sort((a, b) => {
+      const [ya, sa] = a.split("|"), [yb, sb] = b.split("|");
+      return ya - yb || levelRank(+sa) - levelRank(+sb);
+    });
+    for (const key of keys) {
+      const list = by[key];
+      const total = list.find((s) => !s.team);
+      const parts = list.filter((s) => s.team);
+      const s0 = list[0];
+      const base = { season: s0.season, age: seasonAge(p.birthDate, +s0.season), lev: LEV[s0.sportId] || s0.sportAbbr || "", sportId: s0.sportId, rank: levelRank(s0.sportId) };
+      if (total && parts.length > 1) rows.push({ ...total.stat, ...base, tm: `${parts.length}TM`, lg: new Set(parts.map(lgShort)).size === 1 ? lgShort(parts[0]) : "", aff: "", __cls: "multi" });
+      parts.forEach((s) => rows.push({ ...s.stat, ...base, tm: s.team.name || "", oId: s.team.id, oLogo: milbLogo(s.team.id),
+        lg: lgShort(s), aff: s.team.parentOrgId || affCache[`${s.season}|${s.team.id}`] || "", __cls: total && parts.length > 1 ? "part" : "" }));
+      if (!parts.length && total) rows.push({ ...total.stat, ...base, tm: "", lg: lgShort(total), aff: "" });
+    }
+    return rows;
+  }
+  function otherFoot(lv, g) {
+    return other[lv].careers[g].slice().sort((a, b) => levelRank(b.sportId) - levelRank(a.sportId)).map((c) => {
+      const n = new Set(other[lv][g].filter((s) => s.sportId === c.sportId).map((s) => s.season)).size;
+      return { ...c.stat, season: LEV[c.sportId] || c.sportAbbr || "", age: "", tm: `${n} ${n === 1 ? "season" : "seasons"}`, lg: "", lev: "", aff: "", __cls: "tot" };
+    });
+  }
+  function drawOther(lv) {
+    const rows = otherRows(lv, tab);
+    const foot = otherFoot(lv, tab);
+    if (typeof IS_MOBILE !== "undefined" && IS_MOBILE) { body.innerHTML = yearChart(tab, rows, foot); return; }
+    const affCol = lv === "minors" ? [{ h: "Aff", k: "aff", cls: "left", title: "Major league affiliate",
+      f: (r) => (r.aff && teamById[r.aff] ? `<span class="lnk tmc" data-team="${r.aff}">${logoImg(teamById[r.aff])}${esc(teamById[r.aff].abbr)}</span>` : "") }] : [];
+    const cols = [
+      { h: "Season", k: "season", asc: true, cls: "left" },
+      { h: "Age", k: "age", asc: true },
+      { h: "Tm", k: "tm", asc: true, cls: "left", f: (r) => `${r.oLogo || ""}${esc(r.tm || "")}` },
+      { h: "Lg", k: "lg", asc: true, cls: "left" },
+      { h: "Lev", k: "lev", asc: true, sv: (r) => r.rank, f: (r) => esc(r.lev || "") },
+      ...affCol,
+      ...(tab === "hitting" ? BAT_COLS : PIT_COLS),
+    ];
+    sortableTable(body, cols, rows, { cls: `${tab === "hitting" ? "bat" : "pit"} yby lv`, foot });
+    body.scrollTop = body.scrollHeight;
+    // Parent clubs come from each season's team list; fill the Aff column once they arrive.
+    if (lv === "minors" && rows.some((r) => r.oId && !r.aff)) {
+      loadAffiliates(rows.filter((r) => r.oId && !r.aff)).then((n) => {
+        if (n && alive() && state.lvl === lv && curLevel() === lv && (tab === "hitting" || tab === "pitching")) {
+          const keep = body.scrollTop; drawOther(lv); body.scrollTop = keep;
+        }
+      });
+    }
+  }
+
   draw();
+  // A big leaguer's other levels arrive after the page is up: add the switch then.
+  if (!other) otherP.then((o) => {
+    if (!alive()) return;
+    other = o;
+    if (curLevel() !== "mlb") draw(); else drawLevels();
+  });
 });
 
 // Only major league rows (the API sometimes includes other levels).
@@ -313,4 +424,59 @@ function draftLine(p) {
   const t = d.team ? teamMeta(d.team) : null;
   const round = /^\d+$/.test(d.pickRound) ? `${d.pickRound}${["th", "st", "nd", "rd"][(d.pickRound % 100 > 10 && d.pickRound % 100 < 14) ? 0 : d.pickRound % 10] || "th"} round` : `round ${d.pickRound}`;
   return `<b>Draft:</b> ${t ? `${esc(t.name)}, ` : ""}${round}${d.pickNumber ? `, pick ${d.pickNumber}` : ""}, ${d.year}${d.school?.name ? ` <span class="muted">from ${esc(d.school.name)}</span>` : ""}`;
+}
+
+// ---- Other levels: the Stats API keeps each level under its own sportId ----
+const LEVELS = {
+  minors: { label: "Minors", sports: [11, 12, 13, 14, 15, 5442, 16] },
+  intl: { label: "Intl & winter", sports: [17, 23, 51, 31, 32] },
+};
+const LEV = { 11: "AAA", 12: "AA", 13: "A+", 14: "A", 15: "A-", 5442: "Rk+", 16: "Rk", 17: "Winter", 23: "Ind", 51: "Intl", 31: "NPB", 32: "KBO" };
+// Low to high, so a season reads in the order he was promoted.
+const LEVEL_ORDER = [16, 5442, 15, 14, 13, 12, 11, 23, 17, 31, 32, 51];
+const levelRank = (sid) => { const i = LEVEL_ORDER.indexOf(sid); return i < 0 ? 99 : i; };
+async function loadOtherLevels(id) {
+  const one = async (sid) => {
+    const d = await api(`/api/v1/people/${id}/stats?stats=yearByYear,career&group=hitting,pitching&sportId=${sid}`, { ttl: 3600_000 }).catch(() => ({ stats: [] }));
+    const out = { hitting: [], pitching: [], careers: { hitting: [], pitching: [] } };
+    for (const blk of d.stats || []) {
+      const g = blk.group?.displayName, type = blk.type?.displayName;
+      if (g !== "hitting" && g !== "pitching") continue;
+      // Keep only this level's rows (the API can ignore sportId and hand back the majors).
+      const splits = (blk.splits || []).filter((s) => (s.sport ? s.sport.id === sid : true) && s.stat);
+      if (type === "yearByYear") out[g].push(...splits.map((s) => ({ ...s, sportId: sid, sportAbbr: s.sport?.abbreviation })));
+      else if (type === "career" && splits[0]) out.careers[g].push({ stat: splits[0].stat, sportId: sid, sportAbbr: splits[0].sport?.abbreviation });
+    }
+    // A career line with no season rows is noise.
+    for (const g of ["hitting", "pitching"]) if (!out[g].length) out.careers[g] = [];
+    return out;
+  };
+  const res = {};
+  await Promise.all(Object.entries(LEVELS).map(async ([k, L]) => {
+    const parts = await Promise.all(L.sports.map(one));
+    res[k] = {
+      hitting: parts.flatMap((x) => x.hitting).filter((s) => s.stat.plateAppearances > 0 || s.stat.gamesPlayed > 0),
+      pitching: parts.flatMap((x) => x.pitching).filter((s) => s.stat.battersFaced > 0 || parseFloat(s.stat.inningsPitched) > 0 || s.stat.gamesPitched > 0),
+      careers: { hitting: parts.flatMap((x) => x.careers.hitting), pitching: parts.flatMap((x) => x.careers.pitching) },
+    };
+  }));
+  return res;
+}
+// Minor league clubs' parent organizations, by season (affiliations change).
+const affCache = {};
+async function loadAffiliates(rows) {
+  const seasons = [...new Set(rows.map((r) => r.season))];
+  let n = 0;
+  await Promise.all(seasons.map(async (y) => {
+    const d = await apiTry([`/api/v1/teams?sportIds=11,12,13,14,15,16,5442&season=${y}&fields=teams,id,parentOrgId`,
+      `/api/v1/teams?sportIds=11,12,13,14,15,16,5442&season=${y}`], { ttl: 86_400_000 }).catch(() => ({ teams: [] }));
+    for (const t of d.teams || []) if (t.parentOrgId) { if (!affCache[`${y}|${t.id}`]) n++; affCache[`${y}|${t.id}`] = t.parentOrgId; }
+  }));
+  return n;
+}
+// MLB.com hosts minor league and many international club logos by team id.
+const milbLogo = (id) => (id ? `<img src="https://www.mlbstatic.com/team-logos/${id}.svg" alt="" onerror="this.remove()">` : "");
+function lgShort(s) {
+  const l = s.league || {};
+  return l.abbreviation || (l.name || "").replace(/\b(League|Baseball)\b/g, "").trim();
 }

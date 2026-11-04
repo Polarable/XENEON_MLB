@@ -653,3 +653,9 @@ body.compact .gcard.live, body.compact .gcard.fav { margin: 3px 0; }
   body.dash #ctx { padding-left: calc(32px / var(--mz)); padding-right: calc(32px / var(--mz)); }
 }
 @media (min-width: 1900px) { body.dash .lgrow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Player page level switch (Majors / Minors / Intl & winter) gets its own row under the tabs. */
+.page-player .p-lvl:empty { display: none; }
+.page-player .p-lvl { margin: -4px 0 14px; overflow-x: auto; }
+.page-player .p-lvl .seg { flex: none; }
+.ychart td.tm i.lev { font-style: normal; font-size: 13px; color: var(--text-3); margin-left: 4px; }
