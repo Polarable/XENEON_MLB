@@ -156,6 +156,26 @@
   #picker button.on { background: #262626; border-color: rgba(255,255,255,.4); }
   #scrim { position: absolute; inset: 0; display: none; z-index: 9; }
   #scrim.open { display: block; }
+
+  /* Header rhythm: tab words, then one row of controls that all share the same 48px pill, type and fill,
+     the way a native app's toolbar does. (The phone site has its own header in m/mobile.css.) */
+  header { height: 48px; gap: 28px; }
+  nav { height: 48px; gap: 26px; margin-right: 8px; }
+  nav .tab { font-size: 34px; letter-spacing: -.6px; line-height: 48px; }
+  #picker-btn, header .datebar, header .seg { height: 48px; border: 1px solid var(--line-2); background: rgba(255,255,255,.05); }
+  #picker-btn { padding: 0 18px 0 12px; gap: 10px; font: 500 18px "Inter Tight", sans-serif; }
+  #picker-btn img { width: 26px; height: 26px; }
+  #picker-clear { width: 40px; height: 40px; margin-left: -22px; font-size: 22px; }
+  header #ctx { height: 48px; gap: 16px; }
+  header .seg { padding: 3px; gap: 2px; }
+  header .seg button { height: 40px; padding: 0 18px; font: 500 18px "Inter Tight", sans-serif; }
+  header .datebar button { height: 46px; font: 500 18px "Inter Tight", sans-serif; }
+  header .datebar .arrow { width: 52px; font-size: 28px; }
+  header .ctx-label { font-size: 18px; }
+  #brand { height: 48px; }
+  #brand img { height: 34px; }
+  #brand .name { font-size: 18px; }
+  #updated { font-size: 17px; }
 </style>
 </head>
 <body>
