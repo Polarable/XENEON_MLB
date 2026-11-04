@@ -92,12 +92,12 @@ nav .tab:not(.on):active { color: var(--text-2); }
 .gcard:active { transform: scale(.98); }
 /* Favorite team: a quiet tint of its color on the border. */
 .gcard.fav:not(.live) { border-color: rgba(var(--fav-rgb), .5); background: #141414; }
-/* Live games get the same team-color ring as the news cards. */
-.gcard.live { border: 3px solid transparent; padding: 20px 24px 18px;
+/* Live games: a team-color hairline with one short brighter streak that slowly travels around it (the "comet").
+   It's the only moving border in the app, so motion means "live". */
+.gcard.live { border: 1px solid transparent;
   background: linear-gradient(var(--surface), var(--surface)) padding-box,
-              conic-gradient(from var(--ring), var(--tc), rgba(var(--tc-rgb), .25) 22%, var(--primary) 40%, var(--tc) 55%, rgba(var(--tc-rgb), .25) 78%, var(--tc)) border-box;
-  box-shadow: 0 0 30px rgba(var(--tc-rgb), .28);
-  animation: card-in .45s var(--ease) forwards var(--delay, 0ms), ring 14s linear infinite; }
+              conic-gradient(from var(--ring), rgba(var(--tc-rgb), .28) 0 70%, var(--tc) 86%, rgba(var(--tc-rgb), .28) 100%) border-box;
+  animation: card-in .45s var(--ease) forwards var(--delay, 0ms), ring 18s linear infinite; }
 .gcard .top { display: flex; align-items: center; justify-content: space-between; height: 26px; margin-bottom: 14px; font-size: 18px; }
 .gcard .st { font-weight: 600; color: var(--text-2); }
 .gcard .st.live { color: var(--text); }
@@ -450,7 +450,7 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
 .abs-pips i { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.3); transition: background .35s; }
 .abs-pips i.on { background: #fff; border-color: #fff; }
 .ggrid.settled .gcard { animation: none; opacity: 1; }
-.ggrid.settled .gcard.live { animation: ring 14s linear infinite; }
+.ggrid.settled .gcard.live { animation: ring 18s linear infinite; }
 
 /* Player photos are transparent cut-outs: one neutral disc behind them, head kept in frame, no ring or glow. */
 .pp img, .p-photo img, .nh-mu .who img, .pc-pic img:first-child, .nx-top img, .fr-run img {
@@ -621,10 +621,10 @@ svg.wp .ln { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scali
 .mt-panel { flex: 1; min-height: 0; overflow: hidden; padding: 22px 26px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
 .mt-h { margin-bottom: 14px; font-size: 18px; font-weight: 600; color: var(--text-3); }
 .mt-game { position: relative; padding: 22px 26px 18px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); cursor: pointer; }
-.mt-game.live { border: 3px solid transparent; padding: 20px 24px 16px;
+.mt-game.live { border: 1px solid transparent;
   background: linear-gradient(var(--surface), var(--surface)) padding-box,
-              conic-gradient(from var(--ring), var(--tc), rgba(var(--tc-rgb), .25) 22%, var(--primary) 40%, var(--tc) 55%, rgba(var(--tc-rgb), .25) 78%, var(--tc)) border-box;
-  box-shadow: 0 0 30px rgba(var(--tc-rgb), .28); animation: ring 14s linear infinite; }
+              conic-gradient(from var(--ring), rgba(var(--tc-rgb), .28) 0 70%, var(--tc) 86%, rgba(var(--tc-rgb), .28) 100%) border-box;
+  animation: ring 18s linear infinite; }
 .mt-game.empty { cursor: default; }
 .mt-game:active:not(.empty) { transform: scale(.99); }
 .mt-k { display: flex; align-items: center; justify-content: space-between; height: 26px; margin-bottom: 12px; font-size: 18px; font-weight: 600; color: var(--text-2); }

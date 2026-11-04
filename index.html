@@ -66,13 +66,11 @@
     color: inherit; overflow: hidden; isolation: isolate; cursor: pointer;
     opacity: 0;
     transition: transform .15s var(--ease); }
-  /* Team-color ring: a slowly turning gradient border with a soft glow in the same color. */
+  /* Team-color hairline: 1px, still, no glow. (Motion is kept for live games: see the comet in views.css.) */
   @property --ring { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
-  .card { border: 3px solid transparent;
-    background: linear-gradient(var(--surface), var(--surface)) padding-box,
-                conic-gradient(from var(--ring), var(--tc), rgba(var(--tc-rgb), .25) 22%, var(--primary) 40%, var(--tc) 55%, rgba(var(--tc-rgb), .25) 78%, var(--tc)) border-box;
-    box-shadow: 0 0 36px rgba(var(--tc-rgb), .32), 0 14px 40px rgba(0,0,0,.6);
-    animation: card-in .5s var(--ease) forwards var(--delay, 0ms), ring 14s linear infinite; }
+  .card { border: 1px solid rgba(var(--tc-rgb), .45); background: var(--surface);
+    box-shadow: 0 14px 40px rgba(0,0,0,.6);
+    animation: card-in .5s var(--ease) forwards var(--delay, 0ms); }
   @keyframes ring { to { --ring: 360deg; } }
   .card:active { transform: scale(.98); }
   @keyframes card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
