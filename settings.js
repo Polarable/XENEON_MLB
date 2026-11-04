@@ -33,7 +33,8 @@ const Settings = (() => {
         ${MOBILE ? "" : toggle("diag", "Show display info", "Pixel check for sharpness")}
       </div>
       ${MOBILE && typeof Alerts !== "undefined" ? Alerts.html() : ""}
-      ${MOBILE ? `<a class="set-link" href="career/"><b>Career Builder</b><em>Build and edit any player's career line, export as an image</em></a>` : ""}
+      ${MOBILE ? `<a class="set-link" href="career/"><b>Career Builder</b><em>Build and edit any player's career line, export as an image</em></a>
+      <a class="set-link" href="graphic/"><b>Graphic Builder</b><em>Make a shareable stat graphic for any player</em></a>` : ""}
       ${opt("diag") && !MOBILE ? `<div class="set-diag"><div class="set-stripes" style="--px:${1 / ((typeof scale === "number" && scale > 0 ? scale : 1) * (window.devicePixelRatio || 1))}px" title="1-pixel stripes: crisp lines here mean the screen shows the page pixel for pixel"></div>
         <div>${diag()}</div></div>` : ""}`;
   }

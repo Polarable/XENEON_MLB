@@ -146,7 +146,9 @@ Sheet.register("player", async (root, { id }, alive, state = {}) => {
       ${statHero()}
       <div class="p-bio">${bio.map((b) => `<div>${b}</div>`).join("")}</div>
       ${typeof IS_MOBILE !== "undefined" && IS_MOBILE ? `<a class="p-cb" href="career/?mlbam=${id}&name=${encodeURIComponent(p.fullName || "")}&type=${groups[0] === "pitching" ? "pitcher" : "batter"}">
-        <span><b>Career Builder</b><em>Build a career card for ${esc(p.fullName || "")}</em></span><i aria-hidden="true">›</i></a>` : ""}
+        <span><b>Career Builder</b><em>Build a career card for ${esc(p.fullName || "")}</em></span><i aria-hidden="true">›</i></a>
+      <a class="p-cb" href="graphic/?id=${id}&g=${groups[0] || "hitting"}">
+        <span><b>Graphic Builder</b><em>Make a shareable stat graphic for ${esc(p.fullName || "")}</em></span><i aria-hidden="true">›</i></a>` : ""}
       <div class="p-sum"></div>
     </div>
     <div class="p-right"><div class="p-tabs"><div class="p-tabseg"></div><div class="p-lvl"></div></div><div class="p-body vscroll"></div></div>`;
