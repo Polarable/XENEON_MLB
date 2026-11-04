@@ -93,6 +93,7 @@
 <script src="livebar.js?v=__BUILD__"></script>
 <script src="search.js?v=__BUILD__"></script>
 <script src="hotstove.js?v=__BUILD__"></script>
+<script src="dash.js?v=__BUILD__"></script>
 <script>
   /* Phone version of the widget. The tabs and pages are the same scripts the Xeneon page runs
      (scores.js, game.js, gameday.js ...); this file only supplies the shell they expect (tabs, team picker,
@@ -386,6 +387,8 @@
 
   buildPicker(); render(); refresh(); setInterval(refresh, REFRESH_MS);
   Sheet.init(); Settings.init(); Scores.init(); Standings.init(); Rosters.init(); MyTeam.init(); LiveBar.init(); Search.init(); HotStove.init();
+  window.closeReaderFromDash = () => { if (document.getElementById("reader").classList.contains("open")) hideReader(); };
+  Dash.init();
   // Deep links from the taskbar widget, notifications and shortcuts: ?tab=scores, ?game=PK, ?player=ID, ?team=ID
   const qs = new URLSearchParams(location.search);
   setTab(["myteam", "news", "scores", "standings", "rosters"].includes(qs.get("tab")) ? qs.get("tab") : load("tab") || "news");
