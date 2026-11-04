@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T16:40:43.785Z",
+ "updated": "2026-11-04T16:50:34.064Z",
  "articles": [
   {
    "title": "Athletics To Hire Brewers’ Cam Castro As General Manager",
@@ -11,10 +11,36 @@
    ],
    "body": [
     "The Athletics are hiring Brewers senior vice president of player development and performance Cam Castro as their new general manager, reports Ken Rosenthal of The Athletic. He’ll serve as the No. 2 executive under newly hired president of baseball operations Taylor Smith.",
-    "Castro, who’d been with the Brewers organization since 2019, has an extensive background in pitching development. He worked at Driveline more than a decade ago and was the head baseball coach for Division-II Lake Erie College before being hired by Milwaukee as a minor league pitching coach. He quickly climbed the ladder in the Brewers organization, ascending to minor league pitching coordinator, then director of pitching development and eventually vice president of player development, before being promoted to his most recent title following the 2024 season."
+    "Castro, who’d been with the Brewers organization since 2019, has an extensive background in pitching development. He worked at Driveline more than a decade ago and was the head baseball coach for Division-II Lake Erie College before being hired by Milwaukee as a minor league pitching coach. He quickly climbed the ladder in the Brewers organization, ascending to minor league pitching coordinator, then director of pitching development and eventually vice president of player development, before being promoted to his most recent title following the 2024 season.",
+    "Pitching development has been an Achilles heel for the A’s for more than a decade. They’ve cultivated an impressive core of largely homegrown bats; Nick Kurtz, Tyler Soderstrom, Jacob Wilson, Henry Bolte and Zack Gelof were all Athletics draftees. Catcher Shea Langeliers was a Braves pick but was traded to the A’s before ever making his big league debut. It’s a strong group of bats that give the soon-to-be Las Vegas A’s a nice foundation."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/athletics-logo-sutter-health-park-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Nick Kurtz",
+     701762
+    ],
+    [
+     "Tyler Soderstrom",
+     691016
+    ],
+    [
+     "Jacob Wilson",
+     805779
+    ],
+    [
+     "Henry Bolte",
+     703607
+    ],
+    [
+     "Zack Gelof",
+     680869
+    ],
+    [
+     "Shea Langeliers",
+     669127
+    ]
+   ]
   },
   {
    "title": "Cardinals To Hire Joel McKeithan As Hitting Coach",
