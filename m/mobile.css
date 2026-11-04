@@ -91,11 +91,9 @@ button { font-family: inherit; color: inherit; }
 #m-news { display: flex; flex-direction: column; gap: 12px; padding: 2px 16px 0; }
 #m-news .empty { padding: 80px 0; }
 #m-news .empty div { font-size: 18px; }
-.mcard { position: relative; overflow: hidden; isolation: isolate; cursor: pointer; border-radius: 16px; border: 2px solid transparent;
-  background: linear-gradient(var(--surface), var(--surface)) padding-box,
-              conic-gradient(from var(--ring), var(--tc), rgba(var(--tc-rgb), .25) 22%, var(--primary) 40%, var(--tc) 55%, rgba(var(--tc-rgb), .25) 78%, var(--tc)) border-box;
-  box-shadow: 0 0 22px rgba(var(--tc-rgb), .22), 0 10px 30px rgba(0,0,0,.5);
-  opacity: 0; animation: card-in .45s var(--ease) forwards var(--delay, 0ms), ring 14s linear infinite;
+.mcard { position: relative; overflow: hidden; isolation: isolate; cursor: pointer; border-radius: 16px; border: 1px solid rgba(var(--tc-rgb), .45);
+  background: var(--surface); box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  opacity: 0; animation: card-in .45s var(--ease) forwards var(--delay, 0ms);
   transition: transform .15s var(--ease); }
 .mcard:active { transform: scale(.98); }
 .mcard .fallback { position: absolute; inset: 0; z-index: -2; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, #1a1a1a, #0b0b0b); }
@@ -107,7 +105,7 @@ button { font-family: inherit; color: inherit; }
 .mcard .kicker img { width: 20px; height: 20px; display: block; flex: none; }
 .mcard .kicker .team { color: var(--text); font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
 .kicker .sep { width: 3px; height: 3px; flex: none; border-radius: 50%; background: var(--text-3); }
-.mcard.hero { aspect-ratio: 1 / 1.08; max-height: 70vh; border-width: 3px; box-shadow: 0 0 34px rgba(var(--tc-rgb), .3), 0 14px 40px rgba(0,0,0,.6); }
+.mcard.hero { aspect-ratio: 1 / 1.08; max-height: 70vh; box-shadow: 0 14px 40px rgba(0,0,0,.6); }
 .mcard.hero .fallback img { transform: translateY(-50px); }
 .mcard.hero .shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(0,0,0,.94) 0%, rgba(0,0,0,.72) 38%, rgba(0,0,0,0) 72%); }
 .mcard.hero .text { position: absolute; left: 18px; right: 18px; bottom: 18px; }
@@ -321,7 +319,6 @@ table.standings th, table.standings td { padding: 0 8px; }
 .mt-panel { padding: 16px 16px; }
 .mt-h { font-size: 14px; margin-bottom: 8px; }
 .mt-game { padding: 16px 16px 12px; }
-.mt-game.live { padding: 14px 14px 10px; }
 .mt-k { font-size: 14px; margin-bottom: 6px; }
 .mt-tr { height: 48px; gap: 12px; } .mt-tr img { width: 34px; height: 34px; } .mt-tr .nm { font-size: 24px; } .mt-tr .sc { font-size: 34px; }
 .mt-opp img { width: 56px; height: 56px; } .mt-opp b { font-size: 30px; } .mt-opp em { font-size: 15px; }

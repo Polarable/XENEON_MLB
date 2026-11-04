@@ -66,13 +66,11 @@
     color: inherit; overflow: hidden; isolation: isolate; cursor: pointer;
     opacity: 0;
     transition: transform .15s var(--ease); }
-  /* Team-color ring: a slowly turning gradient border with a soft glow in the same color. */
+  /* Team-color hairline: 1px, still, no glow. (Motion is kept for live games: see the comet in views.css.) */
   @property --ring { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
-  .card { border: 3px solid transparent;
-    background: linear-gradient(var(--surface), var(--surface)) padding-box,
-                conic-gradient(from var(--ring), var(--tc), rgba(var(--tc-rgb), .25) 22%, var(--primary) 40%, var(--tc) 55%, rgba(var(--tc-rgb), .25) 78%, var(--tc)) border-box;
-    box-shadow: 0 0 36px rgba(var(--tc-rgb), .32), 0 14px 40px rgba(0,0,0,.6);
-    animation: card-in .5s var(--ease) forwards var(--delay, 0ms), ring 14s linear infinite; }
+  .card { border: 1px solid rgba(var(--tc-rgb), .45); background: var(--surface);
+    box-shadow: 0 14px 40px rgba(0,0,0,.6);
+    animation: card-in .5s var(--ease) forwards var(--delay, 0ms); }
   @keyframes ring { to { --ring: 360deg; } }
   .card:active { transform: scale(.98); }
   @keyframes card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
@@ -158,6 +156,26 @@
   #picker button.on { background: #262626; border-color: rgba(255,255,255,.4); }
   #scrim { position: absolute; inset: 0; display: none; z-index: 9; }
   #scrim.open { display: block; }
+
+  /* Header rhythm: tab words, then one row of controls that all share the same 48px pill, type and fill,
+     the way a native app's toolbar does. (The phone site has its own header in m/mobile.css.) */
+  header { height: 48px; gap: 28px; }
+  nav { height: 48px; gap: 26px; margin-right: 8px; }
+  nav .tab { font-size: 34px; letter-spacing: -.6px; line-height: 48px; }
+  #picker-btn, header .datebar, header .seg { height: 48px; border: 1px solid var(--line-2); background: rgba(255,255,255,.05); }
+  #picker-btn { padding: 0 18px 0 12px; gap: 10px; font: 500 18px "Inter Tight", sans-serif; }
+  #picker-btn img { width: 26px; height: 26px; }
+  #picker-clear { width: 40px; height: 40px; margin-left: -22px; font-size: 22px; }
+  header #ctx { height: 48px; gap: 16px; }
+  header .seg { padding: 3px; gap: 2px; }
+  header .seg button { height: 40px; padding: 0 18px; font: 500 18px "Inter Tight", sans-serif; }
+  header .datebar button { height: 46px; font: 500 18px "Inter Tight", sans-serif; }
+  header .datebar .arrow { width: 52px; font-size: 28px; }
+  header .ctx-label { font-size: 18px; }
+  #brand { height: 48px; }
+  #brand img { height: 34px; }
+  #brand .name { font-size: 18px; }
+  #updated { font-size: 17px; }
 </style>
 </head>
 <body>
@@ -349,7 +367,7 @@
 
   const row = document.getElementById("row");
   row.addEventListener("pointerdown", (e) => {
-    cancelAnimationFrame(raf);
+    cancelAnimationFrame(raf); cancelAnimationFrame(glideRaf);
     drag = { x: e.clientX, pos, lastX: e.clientX, lastT: e.timeStamp, id: e.pointerId };
     moved = 0; vel = 0;
   });
@@ -373,7 +391,7 @@
   addEventListener("pointerup", endDrag);
   addEventListener("pointercancel", endDrag);
   row.addEventListener("wheel", (e) => {
-    e.preventDefault();
+    e.preventDefault(); cancelAnimationFrame(glideRaf);
     pos = clampPos(pos + (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY) / PX_PER_CARD);
     vel = 0; layout(); tick(performance.now());
   }, { passive: false });
@@ -451,9 +469,94 @@
       ? list.map((a, i) => card(a, team || byAbbr[a.teams[0]] || LEAGUE, i)).join("")
       : `<div class="empty">${team ? logoImg(team) : ""}<div>No recent news${team ? ` for the ${esc(team.name)}` : ""}</div></div>`;
     cardEls = [...row.querySelectorAll(".card")];
-    pos = 0; vel = 0; cancelAnimationFrame(raf);
+    pos = 0; vel = 0; cancelAnimationFrame(raf); cancelAnimationFrame(glideRaf);
     layout();
     document.querySelectorAll("#picker button").forEach((b) => b.classList.toggle("on", b.dataset.t === selected));
+  }
+
+  /* ---- Smooth refresh ----
+     When new stories arrive, keep the cards already on screen (no re-fade, no photo reload) and add the new ones
+     off to the left. If the strip is resting on the first story (or nobody is touching it), it then glides back
+     so the new stories slide in as the headliner; otherwise it stays exactly where the user left it. */
+  let glideRaf = 0;
+  const preload = (src) => new Promise((ok) => {
+    if (!src) return ok();
+    const im = new Image(); const t = setTimeout(ok, 4000);
+    im.onload = im.onerror = () => { clearTimeout(t); ok(); };
+    im.src = src;
+  });
+  function refreshAges() {
+    document.querySelectorAll(".age[data-d]").forEach((el) => {
+      el.textContent = ago(el.dataset.d);
+      const tag = el.parentNode.querySelector(".new");
+      if (tag && minutes(el.dataset.d) >= NEW_MIN) tag.remove();
+    });
+  }
+  async function merge() {
+    const team = byAbbr[selected];
+    const next = (team ? articles.filter((a) => a.teams.includes(team.abbr)) : articles).slice(0, 20);
+    // Nothing to diff against, or nothing to show: a plain rebuild is fine.
+    if (!cardEls.length || !next.length) return render();
+    const before = cardEls;
+    const old = new Map(list.map((a, i) => [a.link, cardEls[i]]));
+    const fresh = next.filter((a) => !old.has(a.link));
+    // Let new photos load first so they don't pop in mid-slide.
+    await Promise.all(fresh.slice(0, 6).map((a) => preload(a.image)));
+    if (cardEls !== before) return;   // the row was rebuilt (team change) while photos loaded
+    // Which story is the user looking at, and how far between cards are they?
+    const n = Math.floor(pos), anchor = list[n]?.link, frac = pos - n;
+    const atStart = pos < 0.5 && !drag;
+    const els = next.map((a, i) => {
+      let el = old.get(a.link);
+      if (el) {
+        old.delete(a.link);
+        el.dataset.i = i;
+        // Stories can gain a body or a better headline between updates.
+        const h = el.querySelector("h2"); if (h.textContent !== a.title) h.textContent = a.title;
+      } else {
+        const tmp = document.createElement("div");
+        tmp.innerHTML = card(a, team || byAbbr[a.teams[0]] || LEAGUE, i);
+        el = tmp.firstElementChild;
+        el.style.setProperty("--delay", "0ms");
+        row.appendChild(el);
+      }
+      return el;
+    });
+    // Cards are placed by layout(), so DOM order doesn't matter: kept cards are never moved, because
+    // re-inserting a node restarts its CSS animations (the fade-in would replay).
+    old.forEach((el) => el.remove());                // stories that aged out of the list
+    const wasReading = readerIdx >= 0 ? list[readerIdx]?.link : null;
+    list = next; cardEls = els;
+    if (wasReading) {
+      readerIdx = list.findIndex((a) => a.link === wasReading);
+      const r = document.getElementById("reader");
+      r.querySelector(".r-pos").textContent = readerIdx >= 0 ? `${readerIdx + 1} of ${list.length}` : "";
+      r.querySelectorAll("[data-step]").forEach((b) => { b.disabled = readerIdx < 0 || !list[readerIdx + +b.dataset.step]; });
+    }
+    // Keep the same story in the same spot...
+    const ai = anchor ? list.findIndex((a) => a.link === anchor) : -1;
+    if (!drag) { cancelAnimationFrame(raf); vel = 0; }
+    const was = pos;
+    pos = clampPos(ai >= 0 ? ai + frac : Math.min(pos, list.length - 1));
+    if (drag) drag.pos += pos - was;                // keep a finger that's down from jumping
+    layout();
+    // ...then, if they were at the front, glide back so the new stories slide in.
+    if ((atStart || (Idle.isIdle() && !drag)) && pos > 0.001) glideTo(0);
+  }
+  function glideTo(target) {
+    cancelAnimationFrame(glideRaf); cancelAnimationFrame(raf);
+    const from = pos, dist = Math.abs(from - target);
+    const dur = Math.min(2200, 900 + 260 * dist);
+    const ease = (t) => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const t0 = performance.now();
+    const step = (t) => {
+      if (drag) return;                                // a touch takes over
+      const k = Math.min(1, (t - t0) / dur);
+      pos = from + (target - from) * ease(k);
+      layout();
+      if (k < 1) glideRaf = requestAnimationFrame(step);
+    };
+    glideRaf = requestAnimationFrame(step);
   }
 
   function buildPicker() {
@@ -513,9 +616,10 @@
       setUpdated("news", `Updated ${new Date(data.updated).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`);
       // Only rebuild the row when the stories changed, so a refresh doesn't yank the user back to the start.
       const key = (data.articles || []).map((a) => a.link).join("|");
+      const first = !lastKey;
       articles = data.articles || [];
-      if (key !== lastKey) { lastKey = key; render(); }
-      else document.querySelectorAll(".age[data-d]").forEach((el) => { el.textContent = ago(el.dataset.d); });
+      if (key !== lastKey) { lastKey = key; if (first) render(); else await merge(); }
+      refreshAges();
     } catch (e) {
       setUpdated("news", "Couldn't load news");
     }
