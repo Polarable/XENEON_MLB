@@ -1,19 +1,51 @@
 {
- "updated": "2026-11-04T21:20:30.604Z",
+ "updated": "2026-11-04T21:30:34.294Z",
  "articles": [
+  {
+   "title": "Astros To Interview Albert Pujols, Morgan Ensberg For Managerial Job",
+   "link": "https://www.mlbtraderumors.com/2026/11/astros-to-interview-albert-pujols-morgan-ensberg-for-managerial-job.html",
+   "date": "2026-11-04T21:23:27.000Z",
+   "teams": [
+    "HOU"
+   ],
+   "body": [
+    "The Astros’ search for a new manager has two more candidates. Cardinals legend Albert Pujols will receive an interview this week, as first reported by Mike Rodriguez of Rompiendo Sports. Former Astro Morgan Ensberg will also get an interview this week, per Brian McTaggart of MLB.com.",
+    "Both Pujols and Ensberg have connections to new Astros GM Randy Flores. Pujols and Flores overlapped for five seasons in St. Louis. Ensberg played with Flores in college at USC. Houston is also interviewing Rangers’ bench coach Luis Urueta and Yankees bench coach Brad Ausmus for the manager gig.",
+    "Pujols was frequently in the conversation for manager openings last winter. He seemed to have the Angels job in hand before talks broke down between the two sides. Pujols has previous experience managing in the Dominican League and most recently with the Dominican Republic national team. He was the club’s skipper for the 2026 World Baseball Classic. Team DR reached the semifinals, but came up short against Team USA.",
+    "Houston fans would have to adjust their attitude toward the former Cardinal if he gets the gig. Pujols was a nemesis of the Astros as a player when both teams were in the NL Central. He slugged 62 home runs against Houston, more than any other opponent. Pujols delivered an all-time playoff moment against the Astros in Game 5 of the NLCS with a three-run blast off closer Brad Lidge."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AlbertPujols-1024x683.jpg",
+   "players": []
+  },
   {
    "title": "Reds Announce Joe Torres As Pitching Coach",
    "link": "https://www.mlbtraderumors.com/2026/11/reds-announce-joe-torres-as-pitching-coach.html",
-   "date": "2026-11-04T21:06:32.000Z",
+   "date": "2026-11-04T21:20:32.000Z",
    "teams": [
     "CIN",
     "CLE"
    ],
    "body": [
-    "The Reds announced that Joe Torres has been hired as their new pitching coach. He has previously been serving as the assistant pitching coach with the Guardians. He will replace Derek Johnson, who was the previous pitching coach in Cincinnati."
+    "The Reds announced that Joe Torres has been hired as their new pitching coach. He has previously been serving as the assistant pitching coach with the Guardians. He will replace Derek Johnson, who was the previous pitching coach in Cincinnati.",
+    "Cincinnati hired Johnson in October of 2018 and he was still officially on the job in 2026. However, he took a personal leave of absence in June and was away from the club for the final months of the season. The Reds announced last month that Johnson would not be returning.",
+    "Reds manager Terry Francona was hired in October of 2024 and inherited Johnson. To fill the vacancy, Francona has turned to his old staff. Francona was the skipper in Cleveland from 2013 to 2023. Torres was in the organization for much of that span. He joined the big league staff as assistant pitching coach in January of 2022, replacing Ruben Niebla, who left to become pitching coach in San Diego. Torres was working in Cleveland’s minor league system for five years prior to that, so he and Francona surely crossed paths often.",
+    "It always tough to connect a club’s on-field results to one specific coach but the Guardians organization is one with a strong reputation for pitching development. In 2026, Gavin Williams seemingly emerged as a true ace. Parker Messick is a Rookie of the Year finalist after his breakout season. Cade Smith’s first year as a full-time closer resulted in 41 saves and a 1.95 earned run average."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Joe_Torres_Guardians-scaled-e1793826335184-1024x602.jpg",
-   "players": []
+   "players": [
+    [
+     "Gavin Williams",
+     668909
+    ],
+    [
+     "Parker Messick",
+     800048
+    ],
+    [
+     "Cade Smith",
+     671922
+    ]
+   ]
   },
   {
    "title": "Nationals Release Zak Kent",
@@ -4855,29 +4887,6 @@
     [
      "Mitchell Parker",
      680730
-    ]
-   ]
-  },
-  {
-   "title": "Astros Release Nelson Velazquez",
-   "link": "https://www.mlbtraderumors.com/2026/10/astros-release-nelson-velazquez.html",
-   "date": "2026-10-27T17:23:33.000Z",
-   "teams": [
-    "HOU"
-   ],
-   "body": [
-    "The Astros have moved on from veteran outfielder Nelson Velazquez, relays Brian McTaggart of MLB.com. He plans to pursue opportunities in Asia.",
-    "The 27-year-old Velazquez opened the 2026 campaign in the Cardinals system. He had his contract selected in late May. Velazquez compiled a.722 OPS across 34 games in St. Louis. He showed solid power but also struck out more than 30% of the time.",
-    "The Cardinals designated Velazquez for assignment in early August. Houston added him via waiver claim. Velazquez went 3-for-27 with 13 strikeouts in his brief time as an Astro. Two of his three hits were home runs. Houston DFAed Velazquez after a week and a half on the roster. He cleared waivers and elected free agency, then re-upped with the organization on a minor league deal.",
-    "Velazquez, a former prospect of note in the Cubs system, has put up strong slugging numbers at each major league stop. He has 37 homers and a.221 ISO in 728 MLB plate appearances. Making consistent contact has been the main drawback. Velazquez has a career 29.5% strikeout rate supported by a massive 16.1% swinging-strike rate.",
-    "The Cubs tried Velazquez in center field when he first debuted. He struggled there and has resided in the corner outfield spots since then. He’s mostly been a subpar defender in left and right field as well. Velazquez posted -4 Defensive Runs Saved in 151 1/3 innings on the grass this past season.",
-    "Velazquez will head overseas in search of consistent playing time. The reports of his release didn’t mention specific intentions, but there’s a good chance he already has his next team lined up."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/NelsonVelasquez-1024x683.jpg",
-   "players": [
-    [
-     "Nelson Velazquez",
-     676369
     ]
    ]
   },
