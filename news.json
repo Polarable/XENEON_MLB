@@ -1,6 +1,23 @@
 {
- "updated": "2026-11-05T17:20:32.549Z",
+ "updated": "2026-11-05T17:30:32.905Z",
  "articles": [
+  {
+   "title": "Red Sox Adding Shelley Duncan To Coaching Staff",
+   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-hire-yankees-triple-a-manager-shelley-duncan-coach.html",
+   "date": "2026-11-05T17:20:56.000Z",
+   "teams": [
+    "BOS",
+    "NYY"
+   ],
+   "body": [
+    "The Red Sox are adding former big leaguer Shelley Duncan to their major league coaching staff, Chris Cotillo and Sean McAdam of MassLive.com report. As with Boston’s previously agreed-upon hiring of Jason Bell (who’d been with the Astros), a specific title has yet to be settled upon.",
+    "Duncan, 47, played in parts of seven big league seasons from 2007-13, totaling 330 games and 997 plate appearances as a first baseman and corner outfielder. He’s had a long coaching career in the more than decade that has passed since he called it quits as a player.",
+    "The Diamondbacks hired Duncan as a manager in the low levels of their system back in 2015. He spent a few seasons there before the Blue Jays hired him as their field coordinator ahead of the 2019 season. Duncan has also worked with the White Sox organization as their analytics coordinator and was most recently with the Yankees as the manager for their Triple-A affiliate in Scranton/Wilkes-Barre, where he was named the 2025 International League Manager of the Year.",
+    "Boston cleaned house on its coaching staff back in April, firing then-manager Alex Cora and five members of his staff on the heels of a terrible start to the season. Their own Triple-A skipper, Chad Tracy, was elevated to the big league manager’s role on an interim basis. After the Red Sox embarked on a remarkable turnaround under Tracy and made the postseason, Tracy was signed to a three-year contract as the Red Sox’ new skipper, shedding the “interim” label."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/shelley-duncan-coach-1024x682.jpg",
+   "players": []
+  },
   {
    "title": "Blue Jays, Rudy Martin Jr. Agree To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-re-sign-rudy-martin-jr-outfielder.html",
@@ -6968,46 +6985,6 @@
     [
      "William Contreras",
      661388
-    ]
-   ]
-  },
-  {
-   "title": "On The Yankees’ Third Base Dilemma",
-   "link": "https://www.mlbtraderumors.com/2026/10/on-the-yankees-third-base-dilemma.html",
-   "date": "2026-10-18T00:09:38.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "The Yankees had a strong season overall but still clearly need to upgrade following a three-game ALDS sweep at the hands of the Rays. The bullpen is going to see some turnover with the injured Fernando Cruz being a non-tender candidate, as well as Paul Blackburn and closer David Bednar entering free agency. Jazz Chisholm Jr. is also a free agent and may end up elsewhere, as much as he wants to stay in New York. Current reports predict that the Yankees will issue a qualifying offer to Bednar. Meanwhile, they’ve given some thought to playing Luis Garcia Jr. at the keystone in place of Chisholm.",
-    "Another spot to upgrade is at the hot corner, where Ryan McMahon is coming off an objectively disappointing year, let alone for a playoff team. In 124 games, the now 31-year-old batted just.213/.279/.357 with a wRC+ of 78, or 22% worse than league average. His 29.4% strikeout rate ranked in the ninth percentile according to Statcast, and unfortunately, it was right in line with his career average of 29.3%.",
-    "McMahon’s once strong walk rate dropped to a career-worst 7.8% this year, resulting in a mediocre.279 on-base percentage. He also saw a loss of power. After hitting at least 20 home runs in six of the last seven seasons (the only exception being the pandemic-shortened 2020), McMahon only went yard 11 times this year. His.143 isolated power was below the.156 league average and marked another career low."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/ryan-mcmahon-yanks-2026-1024x683.jpg",
-   "players": [
-    [
-     "Fernando Cruz",
-     518585
-    ],
-    [
-     "Paul Blackburn",
-     621112
-    ],
-    [
-     "David Bednar",
-     670280
-    ],
-    [
-     "Jazz Chisholm Jr.",
-     665862
-    ],
-    [
-     "Luis Garcia Jr.",
-     671277
-    ],
-    [
-     "Ryan McMahon",
-     641857
     ]
    ]
   },
