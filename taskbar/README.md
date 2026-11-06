@@ -20,5 +20,8 @@ https://polarable.github.io/XENEON_MLB/bar/.
 The mod starts a thread inside explorer.exe. That thread creates a small window owned by the taskbar, so the
 window always stays above it, and hosts WebView2 inside it. The page tells the mod how tall to be: the
 taskbar's height while collapsed, or the open view's height. The window grows upward from the taskbar. A
-one-second timer keeps the window lined up with the taskbar, and hides it while the taskbar is auto-hidden
-or while a fullscreen app or game is running.
+quarter-second timer keeps the window lined up with the taskbar, and hides it while the taskbar is
+auto-hidden or while a fullscreen app or game is running. On a centered taskbar the Start button moves left
+as apps open, so the timer also watches where Start is (through UI Automation) and slides the bar narrower
+or wider to match, with a short ease-out. When there isn't room for at least 160 px it tucks away entirely
+and slides back once apps close.
