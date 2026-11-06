@@ -1,6 +1,29 @@
 {
- "updated": "2026-11-06T19:50:32.818Z",
+ "updated": "2026-11-06T20:00:37.497Z",
  "articles": [
+  {
+   "title": "Guardians Claim José Tena",
+   "link": "https://www.mlbtraderumors.com/2026/11/guardians-claim-jose-tena.html",
+   "date": "2026-11-06T19:55:04.000Z",
+   "teams": [
+    "CLE",
+    "WSH"
+   ],
+   "body": [
+    "The Guardians have claimed infielder José Tena off waivers from the Nationals, per a team announcement. He’d been designated for assignment earlier in the week. Tena was originally a Cleveland signee as an amateur out of the Dominican Republic but was traded to the Nats back in the 2024 deadline deal that brought outfielder Lane Thomas to the Guardians."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/jose-tena-nationals-1024x683.jpg",
+   "players": [
+    [
+     "José Tena",
+     677588
+    ],
+    [
+     "Lane Thomas",
+     657041
+    ]
+   ]
+  },
   {
    "title": "Nationals Designate Kyle Nicolas For Assignment",
    "link": "https://www.mlbtraderumors.com/2026/11/nationals-dfa-kyle-nicolas-reliever.html",
@@ -8322,44 +8345,6 @@
    ]
   },
   {
-   "title": "Poll: Should The Nationals Trade Keibert Ruiz?",
-   "link": "https://www.mlbtraderumors.com/2026/10/poll-should-the-nationals-trade-keibert-ruiz.html",
-   "date": "2026-10-13T20:05:11.000Z",
-   "teams": [
-    "WSH"
-   ],
-   "body": [
-    "The Nationals won the World Series in 2019 but their fortunes faded after that and they pivoted into rebuild mode. At the 2021 deadline, they sent Max Scherzer and Trea Turner to the Dodgers for four prospects. One of those four was catcher Keibert Ruiz.",
-    "The Nats felt they had a long-term answer behind the plate. After one full season in Washington, Ruiz was signed to an extension going into the 2023 campaign. It was an eight-year deal with a $50MM guarantee and two club options. The deal locked him up for his age-24 to age-31 seasons. With the club options, the Nats controlled him through age-33.",
-    "That 2023 season was fine enough but the deal went south after that. Ruiz stepped to the plate 752 times over the 2024 and 2025 seasons. He was tough to strike out, only going down on strikes in 10.6% of his plate appearances, but that’s where the positives ended.",
-    "202 players made at least 750 plate appearances in that time frame. Ruiz’s 3.2% walk rate was literally the worst out of all of them. He hit just 15 home runs and slashed.235/.266/.345 for a wRC+ of 67. Of that same set of 202 players, only Orlando Arcia and Ke’Bryan Hayes had a lower wRC+.",
-    "Subpar offense from a catcher can sometimes be acceptable if the player is doing good work while wearing pads but that wasn’t the case with Ruiz. Defensive Runs Saved put him slightly above average but he got awful framing marks from every publicly available metric. Fielding Run Value gave him a grade of minus-18 for the 2024-25 seasons, the worst of any catcher in the big leagues."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Keibert_Ruiz_Nationals-copy-1024x683.jpg",
-   "players": [
-    [
-     "Keibert Ruiz",
-     660688
-    ],
-    [
-     "Max Scherzer",
-     453286
-    ],
-    [
-     "Trea Turner",
-     607208
-    ],
-    [
-     "Orlando Arcia",
-     606115
-    ],
-    [
-     "Ke’Bryan Hayes",
-     663647
-    ]
-   ]
-  },
-  {
    "title": "Offseason Outlook: Arizona Diamondbacks",
    "link": "https://www.mlbtraderumors.com/2026/10/offseason-outlook-arizona-diamondbacks-16.html",
    "date": "2026-10-13T18:10:04.000Z",
@@ -9356,24 +9341,6 @@
      642528
     ]
    ]
-  },
-  {
-   "title": "Sam McDowell Passes Away",
-   "link": "https://www.mlbtraderumors.com/2026/10/sam-mcdowell-passes-away.html",
-   "date": "2026-10-06T16:56:33.000Z",
-   "teams": [
-    "CLE"
-   ],
-   "body": [
-    "Former Cleveland left-hander Sam McDowell passed away on Monday, the team announced. He was 84 years old.",
-    "McDowell’s decorated career spanned 15 seasons, 11 of which were spent in Cleveland. He also pitched for the Giants, Yankees, and Pirates. McDowell was a six-time All-Star. He won the American League ERA crown in 1965.",
-    "“The Cleveland Guardians family is deeply saddened by the loss of one of the great pitchers in baseball history, Sam McDowell,” Guardians SVP/Public Affairs Bob DiBiasio said in a statement. “Sam spent eleven of his fifteen seasons in a Cleveland uniform as one of the game’s most feared hurlers. A strikeout king. He was a cherished member of our Alumni Ambassador program and loved sharing stories with our fans when he visited Progressive Field.”",
-    "Cleveland signed McDowell out of high school. He debuted with the club as an 18-year-old in 1961. The lefty would be a semi-regular member of the rotation over the next two seasons. He would soon blossom into an ace.",
-    "McDowell posted a 1.18 ERA over nine starts at Triple-A in 1964. It would be the last time he pitched in the minors. He delivered 173 1/3 innings of a 2.70 ERA with the big-league club that season. McDowell truly broke out the following year, tossing 273 innings with a league-leading 2.18 ERA. He earned his first All-Star selection that season, along with some down-ballot MVP votes.",
-    "The stellar 1965 campaign began a stretch of dominance for McDowell. He paced the American League in strikeouts in five of the next six seasons. The lefty led all pitchers in punchouts from 1968 through 1970."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/SamMcDowell.jpg",
-   "players": []
   },
   {
    "title": "Offseason Outlook: Toronto Blue Jays",
