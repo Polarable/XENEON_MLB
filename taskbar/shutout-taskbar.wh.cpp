@@ -2,7 +2,7 @@
 // @id              shutout-taskbar
 // @name            SHUTOUT taskbar scorebug
 // @description     Live MLB scorebug with big-play callouts and baseball news at the left end of the taskbar, where the weather sits
-// @version         1.3.0
+// @version         1.4.0
 // @author          polarable
 // @github          https://github.com/Polarable
 // @homepage        https://polarable.github.io/XENEON_MLB/m/
@@ -49,7 +49,7 @@ Width, the gap from the left edge, the height of the open view and your team can
   $description: Team abbreviation (HOU, NYY, LAD...) the widget follows at first. You can change it in the widget too.
 - width: 440
   $name: Maximum width
-  $description: Widest the bar gets, in pixels at 100% scale. It also stops on its own just short of the Start button and search box.
+  $description: Widest the bar gets, in pixels at 100% scale. It also stops on its own just short of the Start button and search box, and slides narrower as apps fill the taskbar.
 - offset: 12
   $name: Gap from the left edge
   $description: Pixels between the left end of the taskbar and the bar. Raise it if your taskbar icons are left aligned.
@@ -529,7 +529,9 @@ static void LoadSettings() {
 // State
 // ---------------------------------------------------------------------------------------------
 constexpr UINT WM_APP_RELOAD = WM_APP + 1;
-constexpr UINT_PTR TIMER_POS = 1, TIMER_CLICK = 2;
+constexpr UINT_PTR TIMER_POS = 1, TIMER_CLICK = 2, TIMER_ANIM = 3;
+constexpr UINT POS_MS = 250;     // how often the taskbar is checked for room
+constexpr DWORD ANIM_MS = 280;   // how long the bar takes to slide to a new width
 static HANDLE g_thread = nullptr;
 static DWORD g_threadId = 0;
 static HWND g_hwnd = nullptr;
@@ -543,6 +545,14 @@ static UINT g_lastDpi = 0;
 static bool g_hiddenForFullscreen = false;
 static std::wstring g_loadedUrl;
 static int g_lastCssBarW = -1;   // bar width last sent to the page
+// The bar's width animates whenever the room next to the Start button changes.
+static int g_barW = 0;           // width on screen right now, px (0 = tucked away)
+static int g_barTarget = 0;      // width it's heading to
+static int g_animFrom = 0;
+static DWORD g_animAt = 0;
+static bool g_animating = false;
+static bool g_needSnap = true;   // the next placement jumps straight to the width (first show, DPI change)
+static struct { int x = 0, bottom = 0, barH = 48; double scale = 1; } g_geo;
 
 static IID MakeIid(PCWSTR s) { IID iid{}; IIDFromString(s, &iid); return iid; }
 static const IID IID_Controller2 = MakeIid(L"{c979903e-d4ca-4228-92eb-47ee3fa96eab}");
@@ -592,40 +602,107 @@ static bool FullscreenAppRunning() {
 }
 
 // Left edge of the Start button (and the search box after it), found with UI Automation, so the bar
-// never covers them. Checked again every few seconds; 0 when it can't be found.
+// never covers them. The elements are found once and kept, so reading where they are now is cheap enough to
+// do several times a second: on a centered taskbar the Start button moves left every time an app opens.
+// 0 when they can't be found.
 static IUIAutomation* g_uia = nullptr;
+static IUIAutomationElement* g_startEls[3] = {};
 static int g_startLeft = 0;
-static DWORD g_startCheckedAt = 0;
-static int StartButtonLeft(HWND tb, bool force) {
-    if (!force && g_startCheckedAt && GetTickCount() - g_startCheckedAt < 5000) return g_startLeft;
-    g_startCheckedAt = GetTickCount();
-    if (!g_uia && FAILED(CoCreateInstance(CLSID_CUIAutomation, nullptr, CLSCTX_INPROC_SERVER, IID_IUIAutomation, (void**)&g_uia))) return g_startLeft = 0;
+static DWORD g_startFoundAt = 0;
+static void ReleaseStartEls() {
+    for (auto& e : g_startEls) if (e) { e->Release(); e = nullptr; }
+}
+static bool FindStartEls(HWND tb) {
+    ReleaseStartEls();
+    if (!g_uia && FAILED(CoCreateInstance(CLSID_CUIAutomation, nullptr, CLSCTX_INPROC_SERVER, IID_IUIAutomation, (void**)&g_uia))) return false;
     IUIAutomationElement* root = nullptr;
-    if (FAILED(g_uia->ElementFromHandle(tb, &root)) || !root) return g_startLeft = 0;
-    int left = 0;
+    if (FAILED(g_uia->ElementFromHandle(tb, &root)) || !root) return false;
     const wchar_t* ids[] = {L"StartButton", L"SearchButton", L"SearchBoxButton"};
-    for (auto id : ids) {
-        VARIANT v; v.vt = VT_BSTR; v.bstrVal = SysAllocString(id);
+    bool any = false;
+    for (int i = 0; i < 3; i++) {
+        VARIANT v; v.vt = VT_BSTR; v.bstrVal = SysAllocString(ids[i]);
         IUIAutomationCondition* cond = nullptr;
-        IUIAutomationElement* el = nullptr;
         if (SUCCEEDED(g_uia->CreatePropertyCondition(UIA_AutomationIdPropertyId, v, &cond)) && cond) {
-            if (SUCCEEDED(root->FindFirst(TreeScope_Descendants, cond, &el)) && el) {
-                RECT r{};
-                if (SUCCEEDED(el->get_CurrentBoundingRectangle(&r)) && r.right > r.left && (!left || r.left < left)) left = r.left;
-                el->Release();
-            }
+            if (SUCCEEDED(root->FindFirst(TreeScope_Descendants, cond, &g_startEls[i])) && g_startEls[i]) any = true;
             cond->Release();
         }
         VariantClear(&v);
     }
     root->Release();
-    return g_startLeft = left;
+    return any;
+}
+static int StartButtonLeft(HWND tb, bool refind) {
+    bool have = false;
+    for (auto e : g_startEls) if (e) have = true;
+    if (refind || !have) {
+        // Searching the whole taskbar is the slow part: at most every 5 seconds unless the taskbar itself moved.
+        if (!refind && g_startFoundAt && GetTickCount() - g_startFoundAt < 5000) return g_startLeft;
+        g_startFoundAt = GetTickCount();
+        if (!FindStartEls(tb)) return g_startLeft = 0;
+    }
+    int left = 0;
+    bool stale = false;
+    for (auto e : g_startEls) {
+        if (!e) continue;
+        RECT r{};
+        if (FAILED(e->get_CurrentBoundingRectangle(&r))) { stale = true; continue; }
+        if (r.right > r.left && (!left || r.left < left)) left = r.left;
+    }
+    if (stale) { ReleaseStartEls(); g_startFoundAt = 0; }   // the taskbar was rebuilt: find them again next time
+    return g_startLeft = left ? left : (stale ? g_startLeft : 0);
 }
 
 static void ResizeWebView() {
     if (!g_controller || !g_hwnd) return;
     RECT rc; GetClientRect(g_hwnd, &rc);
     g_controller->put_Bounds(rc);
+}
+
+// Puts the window where the current (possibly mid-animation) bar width says.
+static void ApplyGeometry() {
+    if (!g_hwnd) return;
+    const double scale = g_geo.scale;
+    int barW = g_barW;
+    if (g_expanded) barW = std::max(barW, (int)(160 * scale));        // keep something to click while the view is open
+    if (barW < (int)(24 * scale)) {                                    // no room left: tucked away until there is
+        if (IsWindowVisible(g_hwnd)) ShowWindow(g_hwnd, SW_HIDE);
+        return;
+    }
+    int w = barW;
+    if (g_expanded) w = std::max(w, (int)(440 * scale));             // the open view above the taskbar can be wider
+    int h = g_expanded ? (int)(g_cssWant * scale + 0.5) : g_geo.barH;
+    int y = g_geo.bottom - h;
+    // Tell the page how wide the bar is, so it stays clear of the Start button while the view is open.
+    int cssBarW = (int)(barW / scale + 0.5);
+    if (g_webview && cssBarW != g_lastCssBarW) {
+        g_lastCssBarW = cssBarW;
+        g_webview->ExecuteScript((L"window.Bar && Bar.setBarWidth(" + std::to_wstring(cssBarW) + L")").c_str(), nullptr);
+    }
+    SetWindowPos(g_hwnd, HWND_TOPMOST, g_geo.x, y, w, h, SWP_NOACTIVATE | SWP_SHOWWINDOW);
+    // While open, the window is only the panel plus the bar, so the Start button next to the bar keeps working.
+    if (g_expanded && w > barW) {
+        HRGN rgn = CreateRectRgn(0, 0, w, h - g_geo.barH);
+        HRGN bar = CreateRectRgn(0, h - g_geo.barH, barW, h);
+        CombineRgn(rgn, rgn, bar, RGN_OR);
+        DeleteObject(bar);
+        SetWindowRgn(g_hwnd, rgn, TRUE);   // the system owns rgn now
+    } else {
+        SetWindowRgn(g_hwnd, nullptr, TRUE);
+    }
+    ResizeWebView();
+}
+
+static void AnimStep() {
+    DWORD el = GetTickCount() - g_animAt;
+    double t = std::min(1.0, el / (double)ANIM_MS);
+    double e = 1 - (1 - t) * (1 - t) * (1 - t);                        // ease out
+    g_barW = g_animFrom + (int)((g_barTarget - g_animFrom) * e + (g_barTarget > g_animFrom ? 0.5 : -0.5));
+    if (t >= 1) {
+        g_barW = g_barTarget;
+        g_animating = false;
+        KillTimer(g_hwnd, TIMER_ANIM);
+    }
+    ApplyGeometry();
 }
 
 static void Place() {
@@ -639,42 +716,40 @@ static void Place() {
     if (hide) {
         if (IsWindowVisible(g_hwnd)) ShowWindow(g_hwnd, SW_HIDE);
         g_hiddenForFullscreen = true;
+        g_needSnap = true;
         return;
     }
     int cssBar = std::max(32, (int)(barH / scale + 0.5));
     if (cssBar != g_cssBar || dpi != g_lastDpi) {
+        if (dpi != g_lastDpi) g_needSnap = true;
         g_cssBar = cssBar; g_lastDpi = dpi;
         PostMessageW(g_hwnd, WM_APP_RELOAD, 0, 0);
     }
-    int x = r.left + (int)(g_set.offset * scale + 0.5);
-    int w = (int)(g_set.width * scale + 0.5);
-    int start = StartButtonLeft(tb, !EqualRect(&r, &g_lastTaskbar));
-    if (start > x) w = std::min(w, start - x - (int)(12 * scale));   // stop short of Start / search
-    w = std::max(w, (int)(200 * scale));
-    int barW = w;                                                    // the bar itself never passes Start
-    if (g_expanded) w = std::max(w, (int)(440 * scale));             // the open view above the taskbar can be wider
-    int h = g_expanded ? (int)(g_cssWant * scale + 0.5) : barH;
-    int y = r.bottom - h;
-    // Tell the page how wide the bar is, so it stays clear of the Start button while the view is open.
-    int cssBarW = (int)(barW / scale + 0.5);
-    if (g_webview && cssBarW != g_lastCssBarW) {
-        g_lastCssBarW = cssBarW;
-        g_webview->ExecuteScript((L"window.Bar && Bar.setBarWidth(" + std::to_wstring(cssBarW) + L")").c_str(), nullptr);
-    }
-    SetWindowPos(g_hwnd, HWND_TOPMOST, x, y, w, h, SWP_NOACTIVATE | SWP_SHOWWINDOW);
-    // While open, the window is only the panel plus the bar, so the Start button next to the bar keeps working.
-    if (g_expanded && w > barW) {
-        HRGN rgn = CreateRectRgn(0, 0, w, h - barH);
-        HRGN bar = CreateRectRgn(0, h - barH, barW, h);
-        CombineRgn(rgn, rgn, bar, RGN_OR);
-        DeleteObject(bar);
-        SetWindowRgn(g_hwnd, rgn, TRUE);   // the system owns rgn now
-    } else {
-        SetWindowRgn(g_hwnd, nullptr, TRUE);
-    }
+    bool moved = !EqualRect(&r, &g_lastTaskbar);
+    g_geo.x = r.left + (int)(g_set.offset * scale + 0.5);
+    g_geo.bottom = r.bottom;
+    g_geo.barH = barH;
+    g_geo.scale = scale;
+    int want = (int)(g_set.width * scale + 0.5);
+    int start = StartButtonLeft(tb, moved);
+    if (start > g_geo.x) want = std::min(want, start - g_geo.x - (int)(12 * scale));   // stop short of Start / search
+    if (want < (int)(160 * scale)) want = 0;                                          // too tight to be useful: slide away
     g_lastTaskbar = r;
     g_hiddenForFullscreen = false;
-    ResizeWebView();
+    if (g_needSnap || moved) {
+        g_needSnap = false;
+        g_barW = g_barTarget = want;
+        if (g_animating) { g_animating = false; KillTimer(g_hwnd, TIMER_ANIM); }
+    } else if (want != g_barTarget) {
+        // Slide from wherever the bar is now, even if it's partway through another slide.
+        g_barTarget = want;
+        g_animFrom = g_barW;
+        g_animAt = GetTickCount();
+        if (!g_animating) { g_animating = true; SetTimer(g_hwnd, TIMER_ANIM, 10, nullptr); }
+        AnimStep();
+        return;
+    }
+    ApplyGeometry();
 }
 
 static std::wstring PageUrl() {
@@ -915,10 +990,15 @@ static LRESULT CALLBACK WndProc(HWND h, UINT msg, WPARAM wp, LPARAM lp) {
         if (wp == TIMER_POS) {
             HWND tb = Taskbar();
             RECT r{}; if (tb) GetWindowRect(tb, &r);
+            // Apps opening or closing move the Start button on a centered taskbar without the taskbar itself
+            // changing, so its position is checked every tick too.
+            int startWas = g_startLeft;
             if (!EqualRect(&r, &g_lastTaskbar) || g_hiddenForFullscreen || (g_set.hideFullscreen && FullscreenAppRunning()) ||
-                (tb && TaskbarHidden(tb, r)) || !IsWindowVisible(h))
+                (tb && TaskbarHidden(tb, r)) || !IsWindowVisible(h) || (tb && StartButtonLeft(tb, false) != startWas))
                 Place();
             else SetWindowPos(h, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);  // stay above the taskbar
+        } else if (wp == TIMER_ANIM) {
+            if (g_animating) AnimStep(); else KillTimer(h, TIMER_ANIM);
         } else if (wp == TIMER_CLICK && g_expanded) {
             // A click anywhere outside the open view closes it.
             bool down = (GetAsyncKeyState(VK_LBUTTON) | GetAsyncKeyState(VK_RBUTTON)) & 0x8000;
@@ -938,11 +1018,11 @@ static LRESULT CALLBACK WndProc(HWND h, UINT msg, WPARAM wp, LPARAM lp) {
     case WM_SETTINGCHANGE:
     case WM_DPICHANGED:
     case WM_DISPLAYCHANGE:
-        ApplyBackdrop(h); Place();
+        ApplyBackdrop(h); g_needSnap = true; Place();
         return 0;
     case WM_CLOSE: DestroyWindow(h); return 0;
     case WM_DESTROY:
-        KillTimer(h, TIMER_POS); KillTimer(h, TIMER_CLICK);
+        KillTimer(h, TIMER_POS); KillTimer(h, TIMER_CLICK); KillTimer(h, TIMER_ANIM);
         DestroyWebView();
         g_hwnd = nullptr;
         PostQuitMessage(0);
@@ -977,10 +1057,11 @@ static DWORD WINAPI WidgetThread(LPVOID) {
     ApplyBackdrop(g_hwnd);
     Place();
     CreateWebView();
-    SetTimer(g_hwnd, TIMER_POS, 1000, nullptr);
+    SetTimer(g_hwnd, TIMER_POS, POS_MS, nullptr);
 
     MSG m;
     while (GetMessageW(&m, nullptr, 0, 0) > 0) { TranslateMessage(&m); DispatchMessageW(&m); }
+    ReleaseStartEls();
     if (g_uia) { g_uia->Release(); g_uia = nullptr; }
     UnregisterClassW(wc.lpszClassName, wc.hInstance);
     CoUninitialize();
