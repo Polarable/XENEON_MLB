@@ -116,27 +116,17 @@ const Bar = (() => {
   let slideAt = Date.now(), dwell = 8000;   // how long the current news slide stays (carousel)
   function swap(html, animate) {
     const box = document.getElementById("content");
-    if (html === shown) return progress();
+    if (html === shown) return;
     shown = html;
     const cur = box.querySelector(".slide:not(.out)");
     if (!animate || !cur) {
       box.querySelectorAll(".slide").forEach((e) => e.remove());
-      box.insertAdjacentHTML("beforeend", `<div class="slide">${html}</div>`); marquee(box); return progress();
+      box.insertAdjacentHTML("beforeend", `<div class="slide">${html}</div>`); marquee(box); return;
     }
     cur.classList.add("out"); setTimeout(() => cur.remove(), 400);
     slideAt = Date.now(); dwell = 8000;
     const n = document.createElement("div"); n.className = "slide in"; n.innerHTML = html; box.appendChild(n);
-    marquee(n); progress();
-  }
-  // Carousel position: a hairline along the bottom of the bar that fills while the story is up.
-  function progress() {
-    const p = document.getElementById("prog");
-    const on = effectiveMode() === "carousel" && newsList().length > 1;
-    p.classList.toggle("on", on);
-    p.getAnimations().forEach((a) => a.cancel());
-    if (!on) return;
-    const gone = Date.now() - slideAt, from = Math.min(1, gone / dwell);
-    p.animate([{ transform: `scaleX(${from})` }, { transform: "scaleX(1)" }], { duration: Math.max(0, dwell - gone), easing: "linear", fill: "forwards" });
+    marquee(n);
   }
   // A headline too long for the bar rests on its start, slides to its end, then fades back to the start.
   function marquee(root) {
@@ -159,7 +149,6 @@ const Bar = (() => {
         { transform: "none", opacity: 1, offset: 1 },
       ], { duration: total, iterations: Infinity });
       dwell = Math.max(8000, total);
-      progress();
     }));
   }
   // The mod slides the bar narrower or wider as the taskbar fills up: measure the headline again once it settles.
@@ -194,19 +183,21 @@ const Bar = (() => {
     return [d.winner && `W ${last(d.winner.fullName)}`, d.loser && `L ${last(d.loser.fullName)}`, d.save && `SV ${last(d.save.fullName)}`].filter(Boolean).join(" · ") || "";
   }
   function newsList() { const m = effectiveMode(); const t = teamStories(); return m === "team" ? (t.length ? t : articles) : m === "latest" ? articles.slice(0, 1) : articles.slice(0, 8); }
-  function newsSlide(a) {
+  function newsSlide(a, pos = "") {
     if (!a) return `<div class="nw"><div class="tx"><span class="hd">No stories yet</span></div></div>`;
     const t = byAbbr[(a.teams || [])[0]];
     // Team logo + name + age; league-wide stories get the MLB logo.
     const lg = t ? logo(t) + `<b>${esc(t.name)}</b>` : `<img src="https://www.mlbstatic.com/team-logos/league-on-dark/1.svg" alt="" onerror="this.remove()"><b>MLB</b>`;
-    return `<div class="nw"><div class="tx"><span class="hd"><span class="mq">${esc(a.title)}</span></span><span class="mt">${lg}<i>${ago(a.date)}</i></span></div></div>`;
+    return `<div class="nw"><div class="tx"><span class="hd"><span class="mq">${esc(a.title)}</span></span><span class="mt">${lg}<i>${ago(a.date)}</i>${pos}</span></div></div>`;
   }
   function drawBar(animate) {
     const m = effectiveMode();
     if (m === "game") return swap(scorebug(), animate);
     const list = newsList();
     if (newsIdx >= list.length) newsIdx = 0;
-    swap(newsSlide(list[newsIdx]), animate);
+    // Carousel position as a quiet "4/8" after the story's age.
+    const pos = m === "carousel" && list.length > 1 ? `<em class="pos tn">${newsIdx + 1}/${list.length}</em>` : "";
+    swap(newsSlide(list[newsIdx], pos), animate);
   }
   // Carousel: 8 s per story, or long enough for a scrolling headline to run once.
   setInterval(() => {
