@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Graphic Builder · SHUTOUT</title>
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="../m/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* SHUTOUT look: black, Inter Tight, quiet surfaces, white as the accent. Matches the Career Builder page. */
+  :root{
+    --bg:#000; --panel:#0c0c0c; --input:#141414; --border:rgba(255,255,255,.08); --border-hi:rgba(255,255,255,.4);
+    --text:rgba(255,255,255,.82); --bright:#fff; --dim:rgba(255,255,255,.5); --dimmer:rgba(255,255,255,.3);
+    --green:#7fdc9f; --font:"Inter Tight","Inter",system-ui,sans-serif; --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;-webkit-font-smoothing:antialiased;}
+  button,input,select{font-family:inherit;font-size:inherit;color:inherit;}
+  ::selection{background:rgba(255,255,255,.2);color:#fff;}
+
+  header{display:flex;align-items:center;gap:16px;height:72px;padding:0 32px;padding-top:env(safe-area-inset-top);border-bottom:1px solid var(--border);}
+  header .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;}
+  header .brand img{height:30px;width:auto;}
+  header .brand span{font-size:15px;font-weight:700;letter-spacing:.22em;}
+  header .title{margin-left:6px;padding-left:18px;border-left:1px solid var(--border);font-size:22px;font-weight:600;letter-spacing:-.3px;color:#fff;}
+  header .back{margin-left:auto;display:flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap;}
+  header .back:hover{color:#fff;background:rgba(255,255,255,.06);}
+
+  .app{display:grid;grid-template-columns:400px 1fr;min-height:calc(100vh - 72px);}
+  .ctl{border-right:1px solid var(--border);padding:22px 24px 48px;overflow-y:auto;max-height:calc(100vh - 72px);}
+  .stage{position:sticky;top:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:32px;max-height:calc(100vh - 72px);}
+  .stage canvas{display:block;max-width:100%;max-height:calc(100vh - 72px - 150px);width:auto;height:auto;border-radius:14px;border:1px solid var(--border);background:#0a0a0a;}
+  .empty{color:var(--dim);font-size:17px;text-align:center;line-height:1.5;}
+
+  /* Sections */
+  .sec{padding:18px 0;border-bottom:1px solid var(--border);}
+  .sec:last-child{border-bottom:0;}
+  .sec h2{display:flex;align-items:baseline;justify-content:space-between;font-size:13px;font-weight:600;color:var(--dim);margin-bottom:12px;}
+  .sec h2 em{font-style:normal;font-weight:500;color:var(--dimmer);}
+
+  /* Search */
+  .search{position:relative;}
+  .search svg{position:absolute;left:16px;top:50%;width:17px;height:17px;transform:translateY(-50%);color:var(--dim);pointer-events:none;}
+  .search input{width:100%;height:48px;padding:0 16px 0 44px;border-radius:999px;background:var(--input);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:16px;}
+  .search input:focus{outline:none;border-color:var(--border-hi);}
+  .search input::placeholder{color:var(--dimmer);}
+  .results{margin-top:8px;display:flex;flex-direction:column;}
+  .results button{display:flex;align-items:center;gap:12px;padding:8px 10px;border:0;background:none;border-radius:12px;text-align:left;cursor:pointer;}
+  .results button:hover,.results button:focus-visible{background:rgba(255,255,255,.06);outline:none;}
+  .results img{width:36px;height:36px;border-radius:50%;background:#1d1d1d;object-fit:cover;object-position:top;}
+  .results b{display:block;font-weight:600;color:#fff;}
+  .results em{font-style:normal;font-size:13px;color:var(--dim);}
+  .picked{display:flex;align-items:center;gap:12px;margin-top:12px;}
+  .picked img{width:44px;height:44px;border-radius:50%;background:#1d1d1d;object-fit:cover;object-position:top;}
+  .picked b{color:#fff;font-weight:600;font-size:17px;} .picked em{display:block;font-style:normal;font-size:13px;color:var(--dim);}
+
+  /* Segmented controls and chips */
+  .seg{display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--input);border:1px solid var(--border);}
+  .seg button{flex:1 1 auto;min-width:0;height:36px;font-size:14px;border:0;border-radius:999px;background:none;color:var(--dim);font-weight:500;cursor:pointer;white-space:nowrap;padding:0 10px;}
+  .seg button.on{background:rgba(255,255,255,.12);color:#fff;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{height:34px;padding:0 13px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:none;color:var(--text);font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:7px;}
+  .chip:hover{border-color:rgba(255,255,255,.3);}
+  .chip.on{background:#fff;color:#000;border-color:#fff;}
+  .chip i{font-style:normal;font-size:11px;font-weight:700;opacity:.55;}
+  .chip:disabled{opacity:.35;cursor:default;}
+  .grp{margin-top:12px;} .grp:first-of-type{margin-top:0;}
+  .grp > span{display:block;font-size:12px;color:var(--dimmer);margin-bottom:7px;}
+  .more{margin-top:8px;border:0;background:none;color:var(--dim);font-weight:500;cursor:pointer;padding:4px 0;}
+  .more:hover{color:#fff;}
+
+  /* Rows of settings */
+  .row{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:40px;}
+  .row + .row{margin-top:6px;}
+  .row label{color:var(--text);}
+  .row input[type=range]{width:170px;accent-color:#fff;}
+  .row input[type=text]{flex:1;max-width:220px;height:38px;padding:0 12px;border-radius:10px;background:var(--input);border:1px solid rgba(255,255,255,.12);color:#fff;}
+  .row input[type=text]:focus{outline:none;border-color:var(--border-hi);}
+  .tog{position:relative;width:46px;height:28px;flex:0 0 46px;border-radius:999px;background:#2a2a2a;border:0;cursor:pointer;transition:background .2s var(--ease);}
+  .tog::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .2s var(--ease);}
+  .tog.on{background:var(--green);} .tog.on::after{transform:translateX(18px);}
+  .upload{display:none;}
+
+  /* Actions */
+  .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+  .btn{height:46px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:none;color:#fff;font-weight:600;font-size:15px;cursor:pointer;}
+  .btn:hover{background:rgba(255,255,255,.06);}
+  .btn.primary{background:#fff;color:#000;border-color:#fff;}
+  .btn.primary:hover{background:#e6e6e6;}
+  .btn:disabled{opacity:.4;cursor:default;}
+  .note{min-height:20px;font-size:13px;color:var(--dim);text-align:center;max-width:640px;}
+
+  @media (max-width:900px){
+    header{padding-left:16px;padding-right:16px;height:auto;min-height:64px;}
+    header .brand span{display:none;}
+    header .title{font-size:19px;}
+    .app{display:flex;flex-direction:column;}
+    .stage{order:-1;position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 16px 10px;border-bottom:1px solid var(--border);max-height:none;gap:10px;}
+    .stage canvas{max-height:40vh;border-radius:10px;}
+    .btn{height:40px;padding:0 16px;font-size:14px;}
+    .ctl{border-right:0;max-height:none;overflow:visible;padding:4px 16px calc(40px + env(safe-area-inset-bottom));}
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="../m/" aria-label="SHUTOUT"><img src="../brand/shutout-logo.png" alt=""><span>SHUTOUT</span></a>
+  <span class="title">Graphic Builder</span>
+  <a class="back" id="back" href="../m/">Back to the app</a>
+</header>
+
+<div class="app">
+  <aside class="ctl" id="ctl">
+    <section class="sec">
+      <h2>Player</h2>
+      <div class="search">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input id="q" placeholder="Search any player" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      </div>
+      <div class="results" id="results"></div>
+      <div class="picked" id="picked"></div>
+    </section>
+    <div id="opts" hidden>
+      <section class="sec" id="sec-group"><h2>Stats for</h2><div class="seg" id="group"></div></section>
+      <section class="sec"><h2>Rows <em id="rows-n"></em></h2><div id="rows"></div></section>
+      <section class="sec"><h2>Stats <em id="cols-n"></em></h2><div class="chips" id="cols"></div></section>
+      <section class="sec">
+        <h2>Size</h2>
+        <div class="seg" id="size"></div>
+      </section>
+      <section class="sec">
+        <h2>Background</h2>
+        <div class="seg" id="bg"></div>
+        <input type="file" accept="image/*" class="upload" id="upload">
+        <div id="bg-tune" style="margin-top:12px">
+          <div class="row"><label for="dim">Darken</label><input type="range" id="dim" min="0" max="90" step="1"></div>
+          <div class="row"><label for="blur">Blur</label><input type="range" id="blur" min="0" max="30" step="1"></div>
+          <div class="row"><label for="focus">Photo position</label><input type="range" id="focus" min="0" max="100" step="1"></div>
+        </div>
+      </section>
+      <section class="sec">
+        <h2>Text</h2>
+        <div class="row"><label for="kicker">Label above name</label><input type="text" id="kicker" placeholder="e.g. 2025 season" maxlength="40"></div>
+        <div class="row"><label for="first">First name</label><input type="text" id="first" maxlength="30"></div>
+        <div class="row"><label for="last">Last name</label><input type="text" id="last" maxlength="30"></div>
+      </section>
+      <section class="sec">
+        <h2>Show</h2>
+        <div id="toggles"></div>
+      </section>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <canvas id="card" width="1080" height="1080" aria-label="Player stat graphic preview"></canvas>
+    <div class="empty" id="empty">Search for a player to start a graphic.</div>
+    <div class="actions">
+      <button class="btn primary" id="dl" disabled>Download PNG</button>
+      <button class="btn" id="copy" disabled hidden>Copy image</button>
+      <button class="btn" id="share" disabled hidden>Share</button>
+    </div>
+    <div class="note" id="note"></div>
+  </main>
+</div>
+
+<script>
+  // The shared scripts expect a few things the app shell normally provides.
+  const IS_MOBILE = false;
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // player.js registers the player page with the sheet stack; this page only needs its level helpers.
+  const Sheet = { register() {} };
+</script>
+<script src="../teams.js?v=__BUILD__"></script>
+<script src="../mlb.js?v=__BUILD__"></script>
+<script src="../player.js?v=__BUILD__"></script>
+<script src="graphic.js?v=__BUILD__"></script>
+</body>
+</html>
