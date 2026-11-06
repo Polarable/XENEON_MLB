@@ -1,15 +1,17 @@
 {
- "updated": "2026-11-06T23:10:30.536Z",
+ "updated": "2026-11-06T23:14:46.328Z",
  "articles": [
   {
    "title": "Corbin Carroll Undergoes Elbow Surgery; Expects Mostly Normal Offseason",
    "link": "https://www.mlbtraderumors.com/2026/11/corbin-carroll-undergoes-elbow-surgery-expects-mostly-normal-offseason.html",
-   "date": "2026-11-06T22:48:06.000Z",
+   "date": "2026-11-06T23:10:06.000Z",
    "teams": [
     "ARI"
    ],
    "body": [
-    "Diamondbacks outfielder Corbin Carroll tells Nick Piecoro of the Arizona Republic that he recently underwent elbow surgery to remove loose bodies from his right elbow. The procedure used the NanoNeedle, the same technology used in Tarik Skubal’s surgery earlier this year. Carroll planned to start swinging in November. That offseason work will now be delayed but only by two weeks."
+    "Diamondbacks outfielder Corbin Carroll tells Nick Piecoro of the Arizona Republic that he recently underwent elbow surgery to remove loose bodies from his right elbow. The procedure used the NanoNeedle, the same technology used in Tarik Skubal’s surgery earlier this year. Carroll planned to start swinging in November. That offseason work will now be delayed but only by two weeks.",
+    "Carroll tells Piecoro that he felt some discomfort in that right elbow, which is his non-throwing arm, during the season. That discomfort worsened lately, which eventually led to this surgery. The NanoNeedle is a fairly new technology. In essence, it’s smaller than other arthroscopes, which hopefully leads to smaller incision and therefore less pain, swelling and recovery time. In Skubal’s case, it seemed to work, as he returned in about six weeks from a procedure that would usually take a few months.",
+    "With Carroll, it should be even less significant. As mentioned, this surgery was performed on his non-throwing arm. Also, position players can usually return from elbow surgeries quicker than pitchers. Carroll’s offseason swinging program was set to start in November but will now be pushed by a few weeks into December. Apart from that, it will hopefully be a normal winter for Carroll."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Corbin_Carroll_Diamondbacks-copy-1024x688.jpg",
    "players": [
@@ -541,8 +543,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/mlbtr-podcast-offseason-preview.html",
    "date": "2026-11-05T05:59:41.000Z",
    "teams": [
-    "MIL",
     "BAL",
+    "MIL",
     "SF",
     "TB",
     "TEX"
@@ -1156,6 +1158,39 @@
    ]
   },
   {
+   "title": "Report: Orioles Open To Trade Offers On Majority Of Roster",
+   "link": "https://www.mlbtraderumors.com/2026/11/report-orioles-open-to-trade-offers-on-majority-of-roster.html",
+   "date": "2026-11-03T21:06:34.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles are going into the offseason with a very open mind, reports Andy Kostka of The Baltimore Banner. Per Kostka’s report, first baseman Pete Alonso is the only untouchable player on the roster. The O’s are open to offers on everyone else as they look to upgrade the rotation, the outfield and the catcher position.",
+    "It’s worth emphasizing that there’s a difference between actively trying to trade players and being open to offers, a distinction that Kostka clearly makes in his report. Still, it’s notable that the Baltimore front office is going into the offseason with the willingness to consider sweeping changes.",
+    "The openness is certainly understandable. The Orioles did a big tank job from 2018 to 2021, placing themselves as one of the worst clubs in baseball for that stretch in order to stockpile young talent. There was no draft lottery at that time, making that strategy more viable. They then won 101 games in 2023 with a young core featuring Gunnar Henderson, Kyle Bradish, Adley Rutschman and many others. It felt like a dynasty was brewing.",
+    "Instead, things have changed in more recent years, and not for the better. Many of the club’s planned core players have regressed or haven’t panned out. The team still snagged a Wild Card spot in 2024 but has finished below.500 in each of the past two seasons. After that slide, it seems the desire for change is there. Rutschman was surprisingly flipped to the Red Sox at the deadline. Perhaps more players who were once viewed as cornerstones in Baltimore will end up wearing different uniforms."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Gunnar_Henderson_Christian_Encarnacion_Strand_Coby_Mayo_Jackson_Holliday_Orioles-1024x683.jpg",
+   "players": [
+    [
+     "Pete Alonso",
+     624413
+    ],
+    [
+     "Gunnar Henderson",
+     683002
+    ],
+    [
+     "Kyle Bradish",
+     680694
+    ],
+    [
+     "Adley Rutschman",
+     668939
+    ]
+   ]
+  },
+  {
    "title": "Cubs Decline Javier Assad’s Option; Assad Remains Under Team Control",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-decline-option-javier-assad-retain-control-arbitration.html",
    "date": "2026-11-03T18:58:35.000Z",
@@ -1546,8 +1581,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/eight-players-receive-qualifying-offers.html",
    "date": "2026-11-02T23:25:23.000Z",
    "teams": [
-    "CHC",
     "BAL",
+    "CHC",
     "MIL",
     "MIN",
     "NYY",
@@ -1749,6 +1784,27 @@
     [
      "Marco Luciano",
      682617
+    ]
+   ]
+  },
+  {
+   "title": "Orioles Decline Club Option On Dietrich Enns",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-decline-club-option-on-dietrich-enns.html",
+   "date": "2026-11-02T22:28:15.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles announced that they have declined a $3.5MM club option on left-hander Dietrich Enns. He will receive a $125K buyout.",
+    "This was an obvious call for the Orioles, who received little contributions from Enns in 2026. After he missed almost all of April with a foot infection, he returned to make nine appearances in May. While Enns had a passable 3.94 ERA through his first 16 innings, it came with nearly as many walks (11) as strikeouts (13). The Orioles designated Enns for assignment and then outrighted him in late May, and they never summoned him back to their roster. He ended up throwing 54 1/3 innings of 5.80 ERA ball with Triple-A Norfolk.",
+    "Enns spent a year and change in the Baltimore organization, which acquired him from Detroit ahead of the 2025 trade deadline. He didn’t pitch well with the Tigers after returning from a three-year run in Asia, but he turned things around with the Orioles at first. In 28 2/3 frames down the stretch, Enns registered a 3.14 ERA with 34 strikeouts and 11 walks. The Orioles then kept him around last November for a guaranteed $2.625MM, but the 35-year-old is now back on the open market 12 months later.",
+    "Also a former Twin and Ray, Enns has notched a 3.86 ERA with decent strikeout (23.5%) and walk (8.7%) numbers in 88 2/3 major league innings. However, left-handed hitters have teed off on the southpaw for a.324/.374/.505 line. Enns has had far more success against righties, who have hit.223/.291/.341 against him."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/04/DietrichEnns-1024x683.jpg",
+   "players": [
+    [
+     "Dietrich Enns",
+     608650
     ]
    ]
   },
@@ -2182,8 +2238,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/orioles-leody-taveras-free-agent-four-waiver-claims.html",
    "date": "2026-11-02T21:10:48.000Z",
    "teams": [
-    "MIA",
     "BAL",
+    "MIA",
     "NYM",
     "SF",
     "STL"
@@ -2414,6 +2470,26 @@
    ]
   },
   {
+   "title": "Orioles Release Heston Kjerstad",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-release-heston-kjerstad.html",
+   "date": "2026-11-02T19:46:36.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "Orioles outfielder Heston Kjerstad is heading to the free agent market after clearing outright waivers, Andy Kostka of the Baltimore Banner reports. The team previously designated him for assignment, per Matt Weyrich of the Baltimore Sun.",
+    "This ends a bitterly disappointing Baltimore tenure for Kjerstad, who has fallen well short of expectations since the team took him second overall in the 2020 draft. Kjerstad missed the 2021 season with myocarditis, delaying his major league debut until 2023. Since then, the lefty-swinging Kjerstad has batted a meek.217/.280/.359 (80 wRC+) with 10 home runs and below-average strikeout and walk rates of 29.1% and 5.4%, respectively, in 333 plate appearances.",
+    "Now 27 years old, Kjerstad has yet to get an extended look in the bigs in any season. He set career highs in games (54) and PA (167) in 2025, but even then, he only played a third of the campaign. Kjerstad mustered a paltry 57 wRC+ that year, as he hit just.192/.240/.327 with four homers, a 26.9 strikeout percentage and a 3.6% walk rate."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/05/heston-kjerstad-orioles-1024x683.jpg",
+   "players": [
+    [
+     "Heston Kjerstad",
+     677008
+    ]
+   ]
+  },
+  {
    "title": "Marlins To Claim Cameron Weston",
    "link": "https://www.mlbtraderumors.com/2026/11/marlins-claim-cameron-weston-waivers-mets.html",
    "date": "2026-11-02T19:41:42.000Z",
@@ -2516,6 +2592,25 @@
     [
      "Jack Anderson",
      681252
+    ]
+   ]
+  },
+  {
+   "title": "Orioles To Turn Down Ryan Mountcastle’s Club Option",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-to-turn-down-ryan-mountcastles-club-option.html",
+   "date": "2026-11-02T18:45:22.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles are going to turn down the $7.5MM club option on first baseman Ryan Mountcastle, reports Matt Weyrich of The Baltimore Sun. Mountcastle will become a free agent for the first time in his career.",
+    "When Baltimore avoided arbitration with Mountcastle last winter, the sides agreed to add the club option for next year. But the Orioles are now moving on after the 29-year-old Mountcastle endured a lost season. He fractured his left foot in early April, and just as he was about to begin a Triple-A rehab assignment in late July, he suffered a serious oblique strain. Mountcastle didn’t play again, limiting him to eight games in what could go down as his final season with the Orioles. It was the second straight disappointing and injury-shortened year for Mountcastle, who hit.250/.286/.367 and registered a career-worst 82 wRC+ over 89 games and 357 plate appearances in 2025."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2025/11/USATSI_27138425-1024x683.jpg",
+   "players": [
+    [
+     "Ryan Mountcastle",
+     663624
     ]
    ]
   },
@@ -2944,6 +3039,47 @@
    ]
   },
   {
+   "title": "Orioles Make Multiple Roster Moves",
+   "link": "https://www.mlbtraderumors.com/2026/10/orioles-make-multiple-roster-moves.html",
+   "date": "2026-11-01T04:11:04.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles made several roster tweaks on Saturday. Right-handers Albert Suarez, Codi Heuer, and Colin Selby cleared waivers, per a team announcement. Suarez elected free agency. Heuer accepted an outright assignment to Triple-A. Selby was reinstated from the 60-day IL and sent to Norfolk with Heuer.",
+    "Suarez was a waiver wire mainstay this season. He was designated for assignment on five occasions. Each time, the veteran righty found his way back to the organization. Suarez was most recently selected to the big-league club during the final week of the regular season. He made one appearance, tossing four scoreless frames in relief to pick up a win over the Yankees.",
+    "Baltimore routinely leaned on Suarez whenever the club needed a fresh arm. He’d be added to the roster to save a tired bullpen, then bumped off whenever another player needed his spot. Suarez would inevitably pass through waivers and accept an outright assignment or re-up with the team on a new minor league deal. There’s a solid chance that happens again this time around. After spending five seasons in Asia, Suarez has been with the Orioles for the past three years.",
+    "Heuer came to Baltimore at the trade deadline. He was one of the final moves on deadline day, heading to the Orioles from Milwaukee in exchange for cash considerations. It was the second trade in two days for the righty. Heuer and Bo Naylor went to the Brewers in the deal that sent Blake Perkins and Craig Yoho to the Guardians."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/AlbertSuarez-1024x683.jpg",
+   "players": [
+    [
+     "Albert Suarez",
+     544150
+    ],
+    [
+     "Codi Heuer",
+     676051
+    ],
+    [
+     "Colin Selby",
+     681882
+    ],
+    [
+     "Bo Naylor",
+     666310
+    ],
+    [
+     "Blake Perkins",
+     663368
+    ],
+    [
+     "Craig Yoho",
+     684974
+    ]
+   ]
+  },
+  {
    "title": "Rays Finalize Yandy Diaz’s Contract",
    "link": "https://www.mlbtraderumors.com/2026/10/rays-finalize-yandy-diazs-contract.html",
    "date": "2026-11-01T03:16:50.000Z",
@@ -3045,6 +3181,32 @@
     [
      "Hagen Smith",
      696146
+    ]
+   ]
+  },
+  {
+   "title": "Orioles Decline Club Option On Luis Robert Jr.",
+   "link": "https://www.mlbtraderumors.com/2026/10/orioles-expected-to-decline-club-option-on-luis-robert-jr.html",
+   "date": "2026-10-31T21:58:07.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "OCTOBER 31: The Orioles have declined Robert’s option, according to Alden González of ESPN.",
+    "OCTOBER 29: The Orioles are expected to decline their $20MM club option on outfielder Luis Robert Jr., reports Francys Romero of BeisbolFR. Robert will become a free agent and collect a $2MM buyout on his way out the door.",
+    "Robert, now 29, signed an extension with the White Sox back in 2020. That deal ran through 2025, with $20MM club options for 2026 and 2027, both of which came with $2MM buyouts. Robert hadn’t yet made his major league debut at the time that deal was signed but he would go on to flash some All-Star upside in subsequent years.",
+    "That was especially the case in 2023. He got into 145 games that year, hit 38 home runs and stole 20 bases. He slashed.264/.315/.542 for a 129 wRC+. FanGraphs credited him with five wins above replacement. He finished 12th in American League Most Valuable Player voting. The rest of the deal looked good and the club options looked like bargains.",
+    "A lot has changed since then. Robert battled injuries in the final two guaranteed years of his deal. He got into a total of 210 games over the 2024 and 2025 campaigns and produced a lackluster.223/.288/.372 line and 85 wRC+ in the process. The Sox picked up his 2026 option but then traded him to the Mets for Luisangel Acuña and Truman Pauley."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/09/2026-09-04T022021Z_1565601483_MT1USATODAY29730878_RTRMADP_3_MLB-BOSTON-RED-SOX-AT-BALTIMORE-ORIOLES-1024x683.jpg",
+   "players": [
+    [
+     "Luis Robert Jr.",
+     673357
+    ],
+    [
+     "Luisangel Acuña",
+     682668
     ]
    ]
   },
@@ -3702,6 +3864,48 @@
     [
      "Joe Ryan",
      657746
+    ]
+   ]
+  },
+  {
+   "title": "Orioles Re-Sign Rece Hinds",
+   "link": "https://www.mlbtraderumors.com/2026/10/orioles-re-sign-rece-hinds.html",
+   "date": "2026-10-30T18:07:16.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles announced that outfielder Rece Hinds has been re-signed to a one-year Major League contract. The Baltimore Banner’s Andy Kostka reports that Hinds’ salary will be $4700 more than the next MLB minimum salary, which will be established when the next collective bargaining agreement is settled.",
+    "Hinds was first acquired by the O’s in a trade deadline deal with the Marlins in August, and was already under team control for 2027 and beyond. This new guaranteed deal locks in a place for Hinds on the 40-man roster for now, and Orioles president of baseball operations Mike Elias has often used this tactic in locking up players on the fringes of the roster.",
+    "With a guaranteed salary slightly beyond the league minimum, Hinds might be a little less appealing to teams looking to make a waiver claim if Baltimore designates him for assignment later this winter. This increases the chance that Hinds will clear waivers and then be outrighted off the 40-man roster. Hinds is out of minor league options, so the Orioles must first DFA the outfielder whenever they wish to remove him from the 40-man roster.",
+    "A second-round pick for the Reds in 2019, Hinds spent his whole career in Cincinnati’s organization until this past May, when he was designated for assignment by the Reds and then acquired by the Marlins for cash considerations. Hinds only appeared in one big league game during his two-plus months with Miami, in between 13 games with the Reds in 2026 and 12 games with Baltimore."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/ReceHinds-2026Orioles-1024x683.jpg",
+   "players": [
+    [
+     "Rece Hinds",
+     677956
+    ]
+   ]
+  },
+  {
+   "title": "Orioles Decline Mutual Option On Zach Eflin",
+   "link": "https://www.mlbtraderumors.com/2026/10/zach-eflin-becomes-free-agent.html",
+   "date": "2026-10-30T17:55:00.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "Right-hander Zach Eflin was listed in a batch of new free agents in a press release from the MLB Players Association. That indicates that Eflin’s 2027 mutual option was turned down. Ronald Blum of The Associated Press reports that Baltimore passed on their end of the provision.",
+    "It’s not a surprising development. It has been over a decade since a mutual option was picked up by both sides. They are mostly used as accounting measures. Putting a buyout on a mutual option allows a club to defer some of the player’s payment to the end of the season, as opposed to be being paid out during the campaign as salary.",
+    "The O’s re-signed Eflin last winter to a one-year deal with a $10MM guarantee. That was broken down as a $3MM signing bonus, $5MM salary and $2MM buyout on a huge $25MM mutual option. The fact that the mutual option price was more than twice the guarantee illustrates that it was never really intended to be picked up. It just allowed the O’s to delay paying the final $2MM until this week.",
+    "Eflin had some incentives baked into the buyout price. If he had made 15 starts, he would have added $1MM, then $1.5MM more at 20 starts and an additional $2.5MM at 25 starts. Those escalators quickly became moot. Eflin was pulled in the fourth inning of his first start of the season with elbow discomfort. He underwent Tommy John surgery in early April. He spent the remainder of the season on the 60-day injured list."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/03/USATSI_28630144-1024x683.jpg",
+   "players": [
+    [
+     "Zach Eflin",
+     621107
     ]
    ]
   },
@@ -4586,6 +4790,46 @@
    "players": []
   },
   {
+   "title": "Ryan Helsley To Exercise Player Option",
+   "link": "https://www.mlbtraderumors.com/2026/10/ryan-helsley-exercises-player-option-orioles.html",
+   "date": "2026-10-29T14:49:59.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "Orioles right-hander Ryan Helsley will exercise his $14MM player option and forgo a return to the open market, reports Andy Kostka of the Baltimore Banner. He’ll remain with the team through 2027 before becoming a free agent again next winter.",
+    "There was never any real doubt this would be the case. Helsley signed a two-year, $28MM deal with Baltimore last offseason on the heels of a poor finish to his 2025 season with the Mets. The second season of the contract was a player option. Injuries limited him to just 15 1/3 innings, and the longtime Cardinals closer finished out the 2026 season on the 60-day injured list due to discomfort in his right elbow.",
+    "From 2022-24, Helsley was one of the most dominant relievers in baseball. He saved 82 games and tallied nine holds with St. Louis across those three seasons, pitching to a collective 1.83 ERA with a 34.6% strikeout rate and 9.2% walk rate. The flamethrowing righty averaged better than 99 mph with his heater during that time and regularly popped triple-digit readings on radar guns. His 17.4% swinging-strike rate across those three years was eighth-best among 185 qualified relievers."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/ryan-helsley-orioles-1024x683.jpg",
+   "players": [
+    [
+     "Ryan Helsley",
+     664854
+    ]
+   ]
+  },
+  {
+   "title": "José Barrero Elects Free Agency",
+   "link": "https://www.mlbtraderumors.com/2026/10/jose-barrero-elects-free-agency.html",
+   "date": "2026-10-29T14:22:58.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "Orioles infielder/outfielder José Barrero was removed from the team’s 40-man roster and has elected free agency, reports Francys Romero of BeisbolFR.com. Presumably, that subtraction came by way of outright waivers. Barrero has been outrighted in the past and thus had the right to elect free agency upon clearing waivers.",
+    "The 28-year-old Barrero only appeared in two games with Baltimore this season. He went 1-for-6 with a single but spent the remainder of the year in Triple-A, where he batted.202/.305/.400 with 23 homers and 13 steals in 499 trips to the plate.",
+    "Barrero once ranked among the sport’s best prospects, climbing as high as No. 33 on Baseball America’s top-100 list ahead of the 2022 season. He was a high-profile signing out of his native Cuba, inking a $5MM signing bonus with the Reds back in 2017. He made his big league debut with Cincinnati in 2020 and has now appeared in parts of six big league seasons without any real production to show for it."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/jose-barrero-orioles-1024x683.jpg",
+   "players": [
+    [
+     "José Barrero",
+     676480
+    ]
+   ]
+  },
+  {
    "title": "Michael King Declines Player Option",
    "link": "https://www.mlbtraderumors.com/2026/10/michael-king-declines-player-option.html",
    "date": "2026-10-29T14:15:42.000Z",
@@ -4994,6 +5238,21 @@
      663687
     ]
    ]
+  },
+  {
+   "title": "Orioles Notes: Front Office, Rotation",
+   "link": "https://www.mlbtraderumors.com/2026/10/orioles-notes-front-office-rotation.html",
+   "date": "2026-10-27T23:40:31.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles’ offseason business is already well underway. The team announced last week that now-former Cubs assistant general manager Jared Banner has been named GM. He’ll work as the No. 2 executive under president of baseball operations Mike Elias, although Elias detailed to the team’s beat that they’ll have a pretty clear division of labor (link via Jake Rill of MLB.com).",
+    "While the two will collaborate overall, Banner will head up all things pertaining to the team’s in-house players, including “internal players, internal coaches, player development, performance, healthcare,” according to Elias. He added: “I think he’s better than I am in those areas.”",
+    "For his part, Elias will focus on scouting, player acquisition, contract negotiations and other big-picture aspects of the Orioles’ day-to-day operations. Elias didn’t tip his hand on what sort of personnel additions are still on the horizon, but the O’s will be open to further hires and Banner will spearhead those efforts. Banner noted that Orioles legend Cal Ripken Jr., who holds a minority stake in the ownership group and has been working with the team’s player development outfit, will continue to be “very involved” in the organization’s player development efforts (via Matt Weyrich of the Baltimore Sun)."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/MikeElias-1024x683.jpg",
+   "players": []
   },
   {
    "title": "Joe Espada, Jason Kanzler Reportedly Finalists For Mariners Managerial Job",
@@ -6670,6 +6929,28 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/josh-barfield-scaled-e1792526974687-1024x650.jpg",
    "players": []
+  },
+  {
+   "title": "Orioles Sign Jayvien Sandridge To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/10/orioles-sign-jayvien-sandridge-to-minor-league-deal.html",
+   "date": "2026-10-20T19:30:32.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles announced that they have signed left-hander Jayvien Sandridge to a minor league deal for the 2027 season. He was already in the Baltimore system but was eligible for minor league free agency.",
+    "Sandridge, 28 in February, began 2026 on the Yankees’ roster. He was designated for assignment in January and then flipped to the Angels for cash. The Halos designated him for assignment at the end of spring training. That led to another cash deal, this one sending him to Baltimore.",
+    "The O’s kept him in the minors and then passed him through waivers in mid-April. That allowed them to keep him in a non-roster capacity but he ended up spending most of 2026 on the minor league injured list. His final appearance of the year was on May 1. It’s unclear if he’ll be healthy to begin 2027.",
+    "Despite a mostly lost season, the Orioles want to keep the relationship going. Sandridge’s major league track record is tiny, consisting of one game for the 2025 Yankees. He tossed two thirds of an inning and allowed two earned runs. In the minors, he has flashed big strikeout stuff but with subpar control. From 2022 to 2025, he logged 201 1/3 innings on the farm with a 3.93 earned run average. He had a massive 17% walk rate but struck out 33.8% of batters who came to the plate.",
+    "The Orioles were intrigued enough to pick up Sandridge earlier this year. He was only able to make six Triple-A appearances with a 10.13 ERA before hitting the IL but the O’s weren’t dissuaded. They liked what they saw enough to bring him back as non-roster depth for next year."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2025/06/Jayvien_Sandridge_Yankees-scaled-e1750342485728-1024x622.jpg",
+   "players": [
+    [
+     "Jayvien Sandridge",
+     682144
+    ]
+   ]
   },
   {
    "title": "Aaron Boone To Return As Yankees’ Manager In 2027",
