@@ -1,6 +1,41 @@
 {
- "updated": "2026-11-07T17:30:34.161Z",
+ "updated": "2026-11-07T17:40:30.607Z",
  "articles": [
+  {
+   "title": "Details On Braves’ Rotation Search",
+   "link": "https://www.mlbtraderumors.com/2026/11/details-on-braves-rotation-search.html",
+   "date": "2026-11-07T17:33:27.000Z",
+   "teams": [
+    "ATL"
+   ],
+   "body": [
+    "The Braves’ rotation overcame several injuries to post very solid numbers for most of the season, though a lack of depth caught up to the team in the playoffs, as Chris Sale and deadline pickup Tyler Mahle were the only pitchers trusted to operate as true starters. With Mahle and Martin Perez now free agents and questions about health and consistency still swirling over several other Atlanta starters, it’s no surprise that the Braves are widely expected to seek out rotation help this winter.",
+    "Gabriel Burns of the Atlanta Journal-Constitution looks at the free agent market to see how many starters are plausible fits for the Braves, and adds a couple of interesting details about two potential targets. Nick Pivetta has drawn interest from the team “in [the] past, but there are currently concerns about his elbow,” Burns writes. The club is also wary of Casey Mize’s injury, which is part of the reason Atlanta held off making a full-fledged push for Mize this past summer. As Burns puts it, “t he Braves were prominently linked to Mize at the trade deadline, though that interest was overstated.”"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/NickPivetta-1024x683.jpg",
+   "players": [
+    [
+     "Chris Sale",
+     519242
+    ],
+    [
+     "Tyler Mahle",
+     641816
+    ],
+    [
+     "Martin Perez",
+     527048
+    ],
+    [
+     "Nick Pivetta",
+     601713
+    ],
+    [
+     "Casey Mize",
+     663554
+    ]
+   ]
+  },
   {
    "title": "Mets Sign Robert Stock To Major League Contract",
    "link": "https://www.mlbtraderumors.com/2026/11/mets-sign-robert-stock-to-major-league-contract.html",
@@ -8787,8 +8822,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/braves-werent-willing-to-include-didier-fuentes-in-skubal-trade-offer.html",
    "date": "2026-10-10T18:12:49.000Z",
    "teams": [
-    "ATL",
-    "DET"
+    "DET",
+    "ATL"
    ],
    "body": [
     "The Braves were one of the teams looking to acquire Tarik Skubal from the Tigers at the trade deadline, with The Athletic’s Ken Rosenthal writing a few days after the deadline that Atlanta “never got close to a deal for Skubal, even though they made virtually all of their young players available, including right-handers AJ Smith-Shawver and JR Ritchie.”",
