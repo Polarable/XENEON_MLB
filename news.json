@@ -1,6 +1,18 @@
 {
- "updated": "2026-11-09T18:40:31.367Z",
+ "updated": "2026-11-09T18:50:37.713Z",
  "articles": [
+  {
+   "title": "Trade Rumors Front Office Subscriber Chat, Today 2pm CT",
+   "link": "https://www.mlbtraderumors.com/2026/11/trade-rumors-front-office-subscriber-chat-today-2pm-ct-23.html",
+   "date": "2026-11-09T18:39:40.000Z",
+   "teams": [],
+   "body": [
+    "MLBTR’s Steve Adams is hosting a live chat today at 2pm CT, exclusively for Trade Rumors Front Office subscribers.",
+    "Unlock Subscriber-Exclusive Articles Like This One With a Trade Rumors Front Office Subscription BENEFITS Access weekly subscriber-only articles by Tim Dierkes, Steve Adams, and Anthony Franco. Join exclusive weekly live chats with Anthony. Remove ads and support our writers. Access GM-caliber tools like our MLB Contract Tracker"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2020/08/Trade-Rumors-Front-Office-1024x576.png",
+   "players": []
+  },
   {
    "title": "Marlins Interested In Adrian Morejon, Alex Vesia, Sean Newcomb",
    "link": "https://www.mlbtraderumors.com/2026/11/marlins-rumors-adrian-morejon-alex-vesia-free-agents.html",
@@ -857,8 +869,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/tarik-skubal-rumors-mets-dodgers-cubs.html",
    "date": "2026-11-06T05:43:31.000Z",
    "teams": [
-    "DET",
     "CHC",
+    "DET",
     "LAD",
     "NYM",
     "NYY"
@@ -1456,6 +1468,36 @@
    "players": []
   },
   {
+   "title": "Cubs Outright Tyler Austin",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-outright-tyler-austin.html",
+   "date": "2026-11-04T05:44:01.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs sent first baseman Tyler Austin outright off their 40-man roster this week, according to the MLB.com transaction log. Chicago’s offseason roster count drops to 34.",
+    "Austin signed a $1.25MM contract last December. The righty hitter had spent the previous six seasons with the Yokohama DeNA BayStars in Japan. Austin mashed in his final two NPB seasons and impressed Cubs evaluators enough to secure a big league deal. He was expected to compete for a platoon role to complement Michael Busch.",
+    "Those plans were unfortunately scuttled by a right knee injury. Austin required a debridement surgery to repair the patellar tendon in late February. He neither played in Spring Training nor during the regular season. Austin, who’s best known for his early-career stint with the Yankees, hasn’t appeared in an MLB game since 2019. He’s a.219/.292/.451 hitter with 33 homers in 583 big league plate appearances.",
+    "Austin remains in the organization for now. He has the right to elect free agency, and it’s unclear if he intends to give things another go with the Cubs or attempt to find a guaranteed contract back in Japan.",
+    "Busch handled left-handed pitching well in 2026 (.243/.348/.422 in 204 plate appearances) and wound up starting all but four games. The Cubs probably aren’t going to devote an active roster spot to a short side platoon first baseman/designated hitter. They have a couple utility players, Matt Shaw and Pedro Ramírez, who can pick up the scattered start at the position if they’re not traded for pitching this winter."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/02/tyler-austin-cubs-photo-day-scaled-e1772041099219-1024x614.jpg",
+   "players": [
+    [
+     "Michael Busch",
+     683737
+    ],
+    [
+     "Matt Shaw",
+     807713
+    ],
+    [
+     "Pedro Ramírez",
+     699393
+    ]
+   ]
+  },
+  {
    "title": "Neander: Rays Have “Every Intention Right Now” Of Holding Drew Rasmussen",
    "link": "https://www.mlbtraderumors.com/2026/11/neander-rays-have-every-intention-right-now-of-holding-drew-rasmussen.html",
    "date": "2026-11-04T04:41:11.000Z",
@@ -1666,6 +1708,27 @@
     [
      "Adley Rutschman",
      668939
+    ]
+   ]
+  },
+  {
+   "title": "Cubs Decline Javier Assad’s Option; Assad Remains Under Team Control",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-decline-option-javier-assad-retain-control-arbitration.html",
+   "date": "2026-11-03T18:58:35.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs declined their $3.3MM club option on righty Javier Assad yesterday, reports Jordan Bastian of MLB.com. He remains under club control as an arbitration-eligible player. The team didn’t formally announce the decision at any point.",
+    "Assad played the 2026 season on a one-year, $1.8MM deal that included a $3.3MM club option for 2027. He and the Cubs agreed to that deal last winter, buying out his first arb year and giving the team some cost certainty in the event that Assad had a big year. Instead, the righty split the season between Triple-A Iowa and Chicago, functioning primarily as a swingman when he was on the big league roster.",
+    "In 94 1/3 major league innings, Assad posted a 3.63 ERA. He did so with a 16.1% strikeout rate that was six percentage points shy of average but also a strong 7.1% walk rate. Assad picked up a pair of three-inning saves but otherwise didn’t log a save or hold. He was generally used as an opener and long reliever, operating most frequently in low- and medium-leverage settings.",
+    "The price tag on Assad’s club option came in well north of the $2.3MM figure he’s projected to earn in arbitration (via MLBTR contributor Matt Swartz). Given that discrepancy, it’s not a surprise to see the Cubs turn down that option. He’ll likely negotiate a new deal that locks in some money for 2027 but saves the Cubs $1MM or so, give or take. It’s a small bit of cost-savings but does have a compounding factor; since Assad’s 2027 salary will be lower, so too will any potential raise he’ll receive heading into the 2028 campaign — his final season of club control."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/javier-assad-chicago-cubs-1024x683.jpg",
+   "players": [
+    [
+     "Javier Assad",
+     665871
     ]
    ]
   },
@@ -2508,8 +2571,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-claim-eric-orze.html",
    "date": "2026-11-02T21:56:23.000Z",
    "teams": [
-    "MIN",
-    "CHC"
+    "CHC",
+    "MIN"
    ],
    "body": [
     "The Cubs announced that they have claimed reliever Eric Orze off waivers from the Twins. Chicago now has 35 players on its 40-man roster.",
@@ -2969,6 +3032,26 @@
    ]
   },
   {
+   "title": "Cubs To Re-Sign Jacob Webb",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-re-sign-jacob-webb.html",
+   "date": "2026-11-02T19:40:39.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs and right-hander Jacob Webb have agreed to a new contract, reports Robert Murray of FanSided. It’s a $2.5MM guarantee with a $2MM salary in 2027 and $4MM club option for 2028 which comes with a $500K buyout. Webb’s previous deal had a $2.5MM club option for 2027 with no buyout. The Cubs will bring him back and give him that same figure on the new deal while adding an extra year of potential club control. There are also incentives, per MLBTR’s Steve Adams. Webb will earn an extra $125K at 35, 45, 55 and 65 games pitched, giving him a chance to earn an extra $500K.",
+    "Webb, now 33, was a free agent last winter. The Cubs signed him to a one-year, $1.5MM deal with a $2.5MM club option and incentives. He went on to have a good season in the Chicago bullpen. He tossed 67 innings with a 3.36 earned run average. His 8.8% walk rate and 40.8% ground ball rate were both right around league-wide average while his 25.7% strikeout rate was a few ticks better than par. He racked up nine saves and nine holds in a volatile Cubs bullpen.",
+    "Despite pretty consistently solid results, the market has never been too excited about Webb. In 2024, he posted a 3.02 ERA for the Orioles and then was non-tendered despite MLBTR contributor Matt Swartz projecting a fairly modest $1.7MM salary for 2025. He signed with the Rangers for 2025 on a deal with a $1.25MM guarantee. He gave Texas 66 innings with a flat ERA of 3.00. His gift was another non-tender, despite a projected salary of just $2MM."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Jacob_Webb_Cubs-1024x707.jpg",
+   "players": [
+    [
+     "Jacob Webb",
+     657097
+    ]
+   ]
+  },
+  {
    "title": "Mariners To Claim Isaac Mattson",
    "link": "https://www.mlbtraderumors.com/2026/11/mariners-claim-isaac-mattson-waivers-pirates.html",
    "date": "2026-11-02T19:34:59.000Z",
@@ -3049,6 +3132,80 @@
     [
      "Ryan Mountcastle",
      663624
+    ]
+   ]
+  },
+  {
+   "title": "Clay Holmes Declines Player Option",
+   "link": "https://www.mlbtraderumors.com/2026/11/clay-holmes-declines-player-option.html",
+   "date": "2026-11-02T17:49:31.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "Right-hander Clay Holmes declined his $12MM player option with the Cubs, per an announcement from the MLBPA. He is now a free agent. Teammates Hunter Harvey and Caleb Thielbar also head to free agency after their mutual options weren’t exercised.",
+    "Chicago landed Holmes in a deadline deal that sent prospect Jefferson Rojas to the Mets. The Cubs also received outfielder Tyrone Taylor. Holmes was recovering from a fractured fibula at the time of the trade. He returned in early August and made nine starts down the stretch for Chicago. He pitched to a 4.25 ERA over 48 2/3 innings. Holmes did not appear in the Wild Card series.",
+    "The Mets signed Holmes to a three-year, $38MM deal heading into the 2025 season. He was making the transition back to the rotation after working as a reliever for the majority of his big-league career. Holmes delivered 165 2/3 innings of a mid-3.00s ERA in the first year of the contract. He faded down the stretch, which wasn’t overly surprising given the huge jump in innings.",
+    "Holmes entered 2026 as a firm member of what seemed to be a deep rotation. Injuries and poor performance quickly thinned out the group. Holmes had a stellar 1.86 ERA through eight starts before a Spencer Jones line drive broke his leg. He missed nearly three months with the injury, though it did impact his desirability at the trade deadline. Chicago added Holmes and Kevin Gausman to a rotation crushed by injuries all season. It was a worthwhile gamble, and Holmes was solid in August, but the wheels came off in September."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/ClayHolmes-1024x688.jpg",
+   "players": [
+    [
+     "Clay Holmes",
+     605280
+    ],
+    [
+     "Hunter Harvey",
+     640451
+    ],
+    [
+     "Caleb Thielbar",
+     573204
+    ],
+    [
+     "Tyrone Taylor",
+     621438
+    ],
+    [
+     "Spencer Jones",
+     682987
+    ],
+    [
+     "Kevin Gausman",
+     592332
+    ]
+   ]
+  },
+  {
+   "title": "Cubs To Decline Club Option On Colin Rea",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-decline-club-option-on-colin-rea.html",
+   "date": "2026-11-02T16:26:32.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs are not expected to pick up their option on right-hander Colin Rea, reports Jesse Rogers of ESPN. The veteran had a $7.5MM club option for 2027 with a $1MM buyout.",
+    "Rea put together a decent season in a swingman role. He compiled a 4.34 ERA across 137 innings. The righty made 19 starts and 15 relief appearances. Rea opened the year in a long relief role, but it didn’t last long. He was thrust into a starting gig by mid-April due to injuries in the rotation.",
+    "Chicago brought in reinforcements through the trade market over the summer. The additions of David Peterson, Kevin Gausman, and Clay Holmes eventually bumped Rea back to the bullpen. He served as a sparsely used long reliever over the final two months of the year. Rea made the Wild Card roster but did not pitch in the series.",
+    "The Cubs added Rea on a one-year, $5MM deal heading into the 2025 season. The agreement included a $6MM team option for 2026, with a $750K buyout. Instead of picking up the option for 2026, Chicago worked out a new deal with Rea that included a $5.5MM salary this past season plus the aforementioned 2027 option. That scenario could play out once again this time around, with the two sides coming up with a reworked agreement."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/ColinRea-1024x683.jpg",
+   "players": [
+    [
+     "Colin Rea",
+     607067
+    ],
+    [
+     "David Peterson",
+     656849
+    ],
+    [
+     "Kevin Gausman",
+     592332
+    ],
+    [
+     "Clay Holmes",
+     605280
     ]
    ]
   },
@@ -3636,6 +3793,22 @@
     "The Astros’ hiring of Brown was a rare case of a team making a front office change right after a World Series title, as former GM James Click was let go after the playoff run due to clashes with owner Jim Crane (who is known for playing a direct role in baseball operations). While Brown didn’t capture a championship during his time in Houston, he also had a much better record than most GMs who are shown the door. Houston made the ALCS in 2023 and won two AL West titles in Brown’s three full seasons as GM, and the Astros even ended up winning the division again this year, albeit with an 81-81 record."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/07/DanaBrown-Astros2026-1024x819.jpg",
+   "players": []
+  },
+  {
+   "title": "Cubs Re-Sign Gabe Klobosits To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/10/cubs-re-sign-gabe-klobosits-to-minor-league-deal.html",
+   "date": "2026-10-31T19:21:34.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs have signed right-hander Gabe Klobosits to a new minor league contract, 7 News’ Ari Alexander reports. Klobosits is back for his second year in the organization, after his minors deal last offseason resulted in a 3.51 ERA, 26.9% strikeout rate, and 13.8% walk rate over 33 1/3 innings with the Cubs’ Triple-A affiliate in Iowa.",
+    "This marked Klobosits’ first taste of affiliated baseball since 2023, as he spent the previous two years with independent league teams. The righty was a 36th-round pick for the Nationals in the 2017 draft, and he has pitched in parts of nine pro seasons with some notable interruptions — Klobosits missed most of 2018-19 due to Tommy John surgery, and he didn’t pitch at all in 2020 when the minor league season was canceled by the pandemic.",
+    "Klobosits’ tenure in Washington paid off with some playing time at the big league level, as the righty’s MLB resume consists of 11 1/3 innings of 5.56 ball for the Nats during the 2021 season. He then pitched in the minors with the A’s and Blue Jays over the next two years before turning to indy ball.",
+    "For his career, Klobosits has a 4.09 ERA, 23.18% strikeout rate, and 12.3% walk rate over 81 1/3 innings at the Triple-A level. He has worked almost exclusively as a reliever, apart from a few pseudo-starts as an opener. Klobosits’ shaky control and a two-month stint on the injured list in 2026 probably kept him from getting any looks even from a Chicago team desperate for healthy relievers, but the Cubs clearly liked enough of what they saw to bring the 31-year-old back into the fold."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2022/04/gabe-klobosits-nationals-1024x681.jpg",
    "players": []
   },
   {
@@ -4275,6 +4448,30 @@
     [
      "Robert Stephenson",
      596112
+    ]
+   ]
+  },
+  {
+   "title": "Matthew Boyd, Carson Kelly Decline Mutual Options",
+   "link": "https://www.mlbtraderumors.com/2026/10/matthew-boyd-carson-kelly-become-free-agents.html",
+   "date": "2026-10-30T17:25:53.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "Cubs lefty Matthew Boyd and catcher Carson Kelly are now free agents, the MLBPA announced Friday. Both players had mutual options — Boyd’s valued at $15MM and Kelly’s at $7.5MM. Boyd receives a $2MM buyout, while Kelly will receive a $1.5MM buyout. Ronald Blum of The Associated Press reports that both players declined their end of the mutual provisions. They’re now free agents who’ll be free to explore opportunities with other teams beginning early next week. In the meantime, they can talk with the Cubs about potentially re-signing in Chicago.",
+    "Boyd, 36 in February, missed a chunk of the 2026 season when he required arthroscopic surgery to fix a partial meniscus tear. He posted good results when healthy, logging 126 2/3 innings with a 3.91 ERA, 18.5% strikeout rate, 7.5% walk rate and 42.2% ground-ball rate.",
+    "Boyd managed only 202 2/3 innings from 2021-24 due to a series of injuries — most notably Tommy John surgery. He was healthy at the tail end of the’24 campaign, however, which prompted the Cubs to place a medium-scale (two years, $29MM) bet that he could bounce back to his typical midrotation form. That bet paid off, as Boyd wound up making 53 starts and pitching 306 1/3 frames with a 3.50 ERA, 20.2% strikeout rate and 6.5% walk rate."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/matthew-boyd-carson-kelly-cubs-1024x683.jpg",
+   "players": [
+    [
+     "Matthew Boyd",
+     571510
+    ],
+    [
+     "Carson Kelly",
+     608348
     ]
    ]
   },
@@ -5297,6 +5494,79 @@
    "players": []
   },
   {
+   "title": "Offseason Outlook: Chicago Cubs",
+   "link": "https://www.mlbtraderumors.com/2026/10/offseason-outlook-chicago-cubs-16.html",
+   "date": "2026-10-28T17:31:53.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs have arguably the best position player core in MLB. It’s no secret they’ll focus this offseason on building a pitching staff that can hold up its end of the bargain.",
+    "Alex Bregman, 3B: $140MM through 2030 ($70MM deferred between 2034-41) Nico Hoerner, 2B: $138.5MM through 2032 ($10MM deferred between 2040-47) Pete Crow-Armstrong, CF: $110MM through 2032 Dansby Swanson, SS: $78MM through 2029 Clay Holmes, RHP: $12MM player option (expected to opt out) Phil Maton, RHP: $9MM through 2027 (including buyout of’28 mutual option) Shelby Miller, RHP: $1.5MM through 2027 (including buyout of’28 club option) Option Decisions",
+    "RHP Clay Holmes holds $12MM option Team holds $7.5MM option on RHP Colin Rea ($1MM buyout) Team holds $2.5MM option on RHP Jacob Webb Team, LHP Matthew Boyd hold $15MM mutual option ($2MM buyout) Team, RHP Hunter Harvey hold $8MM mutual option ($1MM buyout) Team, C Carson Kelly hold $7.5MM mutual option ($1.5MM buyout) Team, LHP Caleb Thielbar hold $6MM mutual option ($500K buyout) Team holds $3.3MM option on RHP Javier Assad — remains eligible for arbitration even if option declined 2027 guarantees: $108.25MM ($10MM of Bregman’s salary deferred; assumes Holmes opt out) Total future commitments: $483MM (not including future deferrals; assumes Holmes opt out)",
+    "Arbitration-Eligible Players (service time in parentheses; projected salaries courtesy of MLBTR contributor Matt Swartz)"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-04-23T013803Z_1577296766_MT1USATODAY28787983_RTRMADP_3_MLB-PHILADELPHIA-PHILLIES-AT-CHICAGO-CUBS-1024x683.jpg",
+   "players": [
+    [
+     "Alex Bregman",
+     608324
+    ],
+    [
+     "Nico Hoerner",
+     663538
+    ],
+    [
+     "Pete Crow-Armstrong",
+     691718
+    ],
+    [
+     "Dansby Swanson",
+     621020
+    ],
+    [
+     "Clay Holmes",
+     605280
+    ],
+    [
+     "Phil Maton",
+     664208
+    ],
+    [
+     "Shelby Miller",
+     571946
+    ],
+    [
+     "Colin Rea",
+     607067
+    ],
+    [
+     "Jacob Webb",
+     657097
+    ],
+    [
+     "Matthew Boyd",
+     571510
+    ],
+    [
+     "Hunter Harvey",
+     640451
+    ],
+    [
+     "Carson Kelly",
+     608348
+    ],
+    [
+     "Caleb Thielbar",
+     573204
+    ],
+    [
+     "Javier Assad",
+     665871
+    ]
+   ]
+  },
+  {
    "title": "Tigers Re-Sign Carlos Perez To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/10/tigers-re-sign-carlos-perez-to-minor-league-deal.html",
    "date": "2026-10-28T15:30:54.000Z",
@@ -5489,8 +5759,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/joe-espada-jason-kanzler-reportedly-finalists-for-mariners-managerial-job.html",
    "date": "2026-10-27T21:57:13.000Z",
    "teams": [
-    "CWS",
     "CHC",
+    "CWS",
     "LAD",
     "SEA",
     "TB"
@@ -5737,6 +6007,23 @@
     "A first-round pick in 2021, Muncy has yet to establish himself in parts of two big league campaigns. He hit.214/.259/.379 as a rookie last year. Muncy’s numbers improved marginally in his sophomore season, as he batted.230/.296/.387 with nine homers across 284 plate appearances. He struck out at a concerning 32% clip while walking less than 8% of the time. Muncy has above-average bat speed but has yet to dial in a consistent enough approach against big league pitching. Twelve of his 18 career home runs have come against fastballs, and he’s struggled to make contact against any kind of secondary stuff."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-09-09T203429Z_1530743722_MT1USATODAY29774192_RTRMADP_3_MLB-TORONTO-BLUE-JAYS-AT-ATHLETICS-1024x683.jpg",
+   "players": []
+  },
+  {
+   "title": "Mets To Add Mariano Duncan To Coaching Staff",
+   "link": "https://www.mlbtraderumors.com/2026/10/mets-to-add-mariano-duncan-to-coaching-staff.html",
+   "date": "2026-10-26T22:51:32.000Z",
+   "teams": [
+    "CHC",
+    "NYM"
+   ],
+   "body": [
+    "The Mets are going to add Mariano Duncan to their major league coaching staff, reports Joel Sherman of The New York Post. Sherman doesn’t specify what title Duncan will have but says his duties will involve working with the position players in various facets. Separately, Mike Puma of The New York Post reports that Kevin Long is no longer under consideration for a role with the Mets. Chelsea Janes of SNY adds that Cubs assistant hitting coach John Mallee is also no longer in the mix.",
+    "Duncan, 63, spent over a decade in the big leagues as a player. From 1985 to 1997, he suited up for the Dodgers, Reds, Phillies, Yankees and Blue Jays. He was primarily a middle infielder but played every position on the diamond outside of the battery.",
+    "After his playing days ended, he pivoted to coaching. He has been in dugouts for more than 20 years now. He started in the early 2000s with some minor league work. He got his first major league coaching gig with the Dodgers in 2006 and held the first base coach job for that club through the 2010 season.",
+    "He then wound up back in the minors, serving as a hitting coach for farm clubs with various different franchises. He has been with the Mets recently. In 2019, he was hitting coach for the Rookie ball Kingsport Mets. After the minor leagues were cancelled in 2020, he served as bench coach for High-A Brooklyn in 2021. From 2022 to 2026, he was bench coach for Double-A Binghamton."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Mariano_Duncan_Dodgers-scaled-e1793038695167-1024x624.jpg",
    "players": []
   },
   {
@@ -6895,8 +7182,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/mariners-interested-in-jason-kanzler-for-managerial-vacancy.html",
    "date": "2026-10-21T21:02:16.000Z",
    "teams": [
-    "SEA",
-    "CHC"
+    "CHC",
+    "SEA"
    ],
    "body": [
     "The Mariners are looking for a new manager after parting ways with Dan Wilson last month. A report from Patrick Mooney, Chandler Rome and Ken Rosenthal of The Athletic says that Jason Kanzler, Joe Espada and Rocco Baldelli are three of the candidates. Those aren’t the only three candidates in the mix but the report characterizes the search as being in an advanced stage. Espada and Baldelli have been connected to the job in previous reporting.",
