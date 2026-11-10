@@ -1,6 +1,21 @@
 {
- "updated": "2026-11-10T05:10:29.924Z",
+ "updated": "2026-11-10T05:20:34.587Z",
  "articles": [
+  {
+   "title": "Angels To Begin Preliminary Meetings With GM Candidates",
+   "link": "https://www.mlbtraderumors.com/2026/11/angels-to-begin-preliminary-meetings-with-gm-candidates.html",
+   "date": "2026-11-10T05:15:37.000Z",
+   "teams": [
+    "LAA"
+   ],
+   "body": [
+    "Kroenke Sports & Entertainment, the Angels’ incoming ownership group, will conduct informal meetings with candidates for their general manager job at this week’s GM Meetings. Interim GM John Mozeliak relayed the update to Jeff Fletcher of The Orange County Register on Monday.",
+    "While this marks a preliminary start to the GM search, the organization remains in a holding pattern. They’re awaiting approval of the franchise sale from Arte Moreno to KSE from Major League Baseball. Mozeliak said last week that the Angels weren’t likely to hire a full-time GM until MLB approves the sale, which he reiterated this evening.",
+    "Mozeliak remains in charge of the front office until December. He could handle the team’s offseason business right up to the inevitable December 2 lockout. It’s an odd spot for the organization, as they’d surely prefer for their new ownership group and permanent front office to handle any significant moves. That could force them to miss out on free agent and trade opportunities over the next few weeks. The market is expected to move more quickly than usual as teams try to get business done before the transaction freeze."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2015/10/Angels-generic-1024x716.jpg",
+   "players": []
+  },
   {
    "title": "Best Fits For A Ketel Marte Trade",
    "link": "https://www.mlbtraderumors.com/2026/11/best-fits-for-a-ketel-marte-trade.html",
@@ -10353,11 +10368,11 @@
    "link": "https://www.mlbtraderumors.com/2026/09/kirby-yates-retires.html",
    "date": "2026-09-27T00:16:06.000Z",
    "teams": [
-    "LAA",
+    "PIT",
     "ATL",
+    "LAA",
     "LAD",
     "NYY",
-    "PIT",
     "SD",
     "TB",
     "TEX",
