@@ -1,28 +1,10 @@
 {
- "updated": "2026-11-10T01:00:39.428Z",
+ "updated": "2026-11-10T01:10:32.129Z",
  "articles": [
-  {
-   "title": "Sal Stewart Wins NL Rookie Of The Year, Earns PPI Pick For Reds",
-   "link": "https://www.mlbtraderumors.com/2026/11/sal-stewart-wins-nl-rookie-of-the-year-earns-ppi-pick-for-reds.html",
-   "date": "2026-11-10T00:57:35.000Z",
-   "teams": [
-    "CIN"
-   ],
-   "body": [
-    "Reds first baseman Sal Stewart was named the National League Rookie of the Year by the Baseball Writers Association of America. The win earns Cincinnati a pick after the first round of the 2027 draft via the Prospect Promotion Incentive."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-02T160738Z_1824732233_MT1USATODAY29718645_RTRMADP_3_MLB-SAN-DIEGO-PADRES-AT-CINCINNATI-REDS-1024x683.jpg",
-   "players": [
-    [
-     "Sal Stewart",
-     701398
-    ]
-   ]
-  },
   {
    "title": "Kevin McGonigle Wins AL Rookie Of The Year, Earns PPI Pick For Tigers",
    "link": "https://www.mlbtraderumors.com/2026/11/kevin-mcgonigle-wins-al-rookie-of-the-year-earns-ppi-pick-for-tigers.html",
-   "date": "2026-11-10T00:33:53.000Z",
+   "date": "2026-11-10T01:07:53.000Z",
    "teams": [
     "DET"
    ],
@@ -30,7 +12,7 @@
     "The Baseball Writers Association of America announced Monday evening that Tigers infielder Kevin McGonigle has won the AL Rookie of the Year award. McGonigle’s win earns Detroit a pick after the first round of the 2027 draft via the Prospect Promotion Incentive.",
     "McGonigle received 28 of 30 first-place votes. Guardians left-hander Parker Messick earned the other two first-place votes en route to the runner-up finish. Messick is also a top three finisher for the Cy Young award, which means he earned Cleveland a PPI pick in 2027. McGonigle finished second for the two voters who had Messick in the top spot. Messick received 25 second-place votes, placed third on two ballots, and landed fourth for one voter.",
     "Red Sox southpaw Payton Tolle led a crowded field for the third-place finish. Munetaka Murakami, Carter Jensen, Chase DeLauter, Kazuma Okamoto, Tristan Peters, Sam Antonacci, Travis Bazzana, Walbert Ureña, Dylan Beavers and Henry Bolte all appeared in the top five on at least one ballot.",
-    "McGonigle’s runaway doesn’t come as much surprise even in a very strong field. The 22-year-old infielder, who entered the season as the consensus #2 prospect in baseball behind Pittsburgh’s Konnor Griffin, hit the ground running. He had a four-hit performance in his debut and never really looked back. McGonigle batted.278/.376/.430 across 707 plate appearances, entrenching himself in the top third of A.J. Hinch’s lineup by the second week of the season. He walked at an excellent 13.4% clip against a modest 14.1% strikeout rate."
+    "McGonigle’s runaway win doesn’t come as much surprise even in a very strong field. The 22-year-old infielder, who entered the season as the consensus #2 prospect in baseball behind Pittsburgh’s Konnor Griffin, hit the ground running. He had a four-hit performance in his debut and never really looked back. McGonigle batted.278/.376/.430 across 707 plate appearances, entrenching himself in the top third of A.J. Hinch’s lineup by the second week of the season. He walked at an excellent 13.4% clip against a modest 14.1% strikeout rate."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-26T011610Z_692281634_MT1USATODAY29913572_RTRMADP_3_DETROIT-TIGERS-THIRD-BASEMAN-KEVIN-MCGONIGLE-7-BATS-1024x683.jpg",
    "players": [
@@ -89,6 +71,24 @@
     [
      "Konnor Griffin",
      804606
+    ]
+   ]
+  },
+  {
+   "title": "Sal Stewart Wins NL Rookie Of The Year, Earns PPI Pick For Reds",
+   "link": "https://www.mlbtraderumors.com/2026/11/sal-stewart-wins-nl-rookie-of-the-year-earns-ppi-pick-for-reds.html",
+   "date": "2026-11-10T00:57:35.000Z",
+   "teams": [
+    "CIN"
+   ],
+   "body": [
+    "Reds first baseman Sal Stewart was named the National League Rookie of the Year by the Baseball Writers Association of America. The win earns Cincinnati a pick after the first round of the 2027 draft via the Prospect Promotion Incentive."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-02T160738Z_1824732233_MT1USATODAY29718645_RTRMADP_3_MLB-SAN-DIEGO-PADRES-AT-CINCINNATI-REDS-1024x683.jpg",
+   "players": [
+    [
+     "Sal Stewart",
+     701398
     ]
    ]
   },
