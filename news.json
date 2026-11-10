@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T01:10:32.129Z",
+ "updated": "2026-11-10T01:20:32.393Z",
  "articles": [
   {
    "title": "Kevin McGonigle Wins AL Rookie Of The Year, Earns PPI Pick For Tigers",
@@ -82,13 +82,47 @@
     "CIN"
    ],
    "body": [
-    "Reds first baseman Sal Stewart was named the National League Rookie of the Year by the Baseball Writers Association of America. The win earns Cincinnati a pick after the first round of the 2027 draft via the Prospect Promotion Incentive."
+    "The Baseball Writers Association of America announced Monday evening that Reds first baseman Sal Stewart has won the National League Rookie of the Year award. The win earns Cincinnati a pick after the first round of the 2027 draft via the Prospect Promotion Incentive.",
+    "Stewart received 20 of 30 first-place votes and was the only player in the NL field to land in the top five on every ballot. He beat out Mets outfielder Carson Benge and Cardinals middle infielder JJ Wetherholt for the honors. Benge received seven first-place votes and was on all but two ballots overall, leading to the runner-up finish. Wetherholt, who finished in third, received the three other first-place votes.",
+    "Nolan McLean, TJ Rumfield, and Logan Henderson were the other players to receive one more votes in the top three. They respectively finished fourth, fifth and sixth in the voting. Bryce Eldridge, Didier Fuentes, and A.J. Ewing were the only other players to appear on ballots (no higher than fifth in their cases)."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-02T160738Z_1824732233_MT1USATODAY29718645_RTRMADP_3_MLB-SAN-DIEGO-PADRES-AT-CINCINNATI-REDS-1024x683.jpg",
    "players": [
     [
      "Sal Stewart",
      701398
+    ],
+    [
+     "Carson Benge",
+     701807
+    ],
+    [
+     "JJ Wetherholt",
+     802139
+    ],
+    [
+     "Nolan McLean",
+     690997
+    ],
+    [
+     "TJ Rumfield",
+     681198
+    ],
+    [
+     "Logan Henderson",
+     701656
+    ],
+    [
+     "Bryce Eldridge",
+     805811
+    ],
+    [
+     "Didier Fuentes",
+     800311
+    ],
+    [
+     "A.J. Ewing",
+     805999
     ]
    ]
   },
