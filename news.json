@@ -1,6 +1,68 @@
 {
- "updated": "2026-11-11T19:00:37.959Z",
+ "updated": "2026-11-11T19:10:33.677Z",
  "articles": [
+  {
+   "title": "Yankees Interested In Alec Bohm",
+   "link": "https://www.mlbtraderumors.com/2026/11/yankees-interested-in-alec-bohm.html",
+   "date": "2026-11-11T19:00:59.000Z",
+   "teams": [
+    "NYY"
+   ],
+   "body": [
+    "The Yankees have had a tough time finding a steady third baseman for multiple years. Addressing the hot corner will likely be a priority this offseason, and the club has been connected to one of the bigger names on the market. New York has interest in Alec Bohm, per Jon Heyman of the New York Post.",
+    "Bohm has spent his entire pro career with the Phillies. After several years as an above-average bat, he struggled on the verge of free agency. Bohm finished with a 90 wRC+ across 629 plate appearances. He hit 15 homers and drove in 88 runs.",
+    "It’s not an ideal offseason to be hunting for a third baseman. Bohm is arguably the only everyday regular available, unless you include utilityman Mauricio Dubon. NPB import Teruaki Sato is also a fringy inclusion given the uncertainty around his ability to handle the position as a big leaguer. The list also includes uninspiring veterans like Yoan Moncada, Luis Rengifo, Edmundo Sosa, and Ramon Urias.",
+    "After the failed Jazz Chisholm Jr. experiment, the Yankees went out and acquired Ryan McMahon to take over at third base midway through 2025. The former Rockie underwhelmed at the plate, but delivered 7 Defensive Runs Saved. McMahon was a well-below-league-average bat once again in 2026. More notably, he posted -3 DRS at third base.",
+    "The lack of production made it tough to keep McMahon in the lineup. New York trotted out Amed Rosario and Jose Caballero against left-handed pitching. Anthony Volpe also got a brief look at third base. The group combined for a.629 OPS, the fifth-worst mark in the league."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AlecBohm-1024x683.jpg",
+   "players": [
+    [
+     "Alec Bohm",
+     664761
+    ],
+    [
+     "Mauricio Dubon",
+     643289
+    ],
+    [
+     "Yoan Moncada",
+     660162
+    ],
+    [
+     "Luis Rengifo",
+     650859
+    ],
+    [
+     "Edmundo Sosa",
+     624641
+    ],
+    [
+     "Ramon Urias",
+     602104
+    ],
+    [
+     "Jazz Chisholm Jr.",
+     665862
+    ],
+    [
+     "Ryan McMahon",
+     641857
+    ],
+    [
+     "Amed Rosario",
+     642708
+    ],
+    [
+     "Jose Caballero",
+     676609
+    ],
+    [
+     "Anthony Volpe",
+     683011
+    ]
+   ]
+  },
   {
    "title": "Dodgers Reportedly Prefer Short-Term Deal In Skubal Bidding",
    "link": "https://www.mlbtraderumors.com/2026/11/dodgers-reportedly-prefer-short-term-deal-in-skubal-bidding.html",
@@ -7501,128 +7563,6 @@
     [
      "Ryan Weathers",
      677960
-    ]
-   ]
-  },
-  {
-   "title": "Offseason Outlook: New York Yankees",
-   "link": "https://www.mlbtraderumors.com/2026/10/offseason-outlook-new-york-yankees-15.html",
-   "date": "2026-10-24T04:55:23.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "After another postseason letdown, the Yankees will focus on rebuilding the bullpen and figuring out how to remake a one-dimensional offense.",
-    "Aaron Judge, OF: $200MM through 2031 Max Fried, SP: $174MM through 2032 Cody Bellinger, OF: $110MM through 2030 (can opt out after 2027 and 2028 seasons) Gerrit Cole, SP: $72MM through 2028 Carlos Rodon, SP: $54MM through 2028 Giancarlo Stanton, OF/DH: $35MM through 2027 (includes $10MM buyout of $25MM club option for 2028; Marlins covering $20MM of remaining salary) Ryan McMahon, 3B: $16MM through 2027 2027 guarantees: $205.5MM Total future commitments: $661MM",
-    "Arbitration-Eligible Players (service time in parentheses; projections from MLBTR contributor Matt Swartz)",
-    "Clarke Schmidt (5.148): $4.5MM Luis García Jr. (5.142): $11MM Ryan Weathers (4.066): $3.1MM Fernando Cruz (4.035): $2.3MM José Caballero (3.170): $3.7MM Anthony Volpe (3.142): $4MM Luis Gil (3.119): $2.3MM Heliot Ramos (3.103): $3.2MM Austin Wells (3.031): $2.6MM Non-tender candidates: Cruz, Ramos Free Agents",
-    "David Bednar, Jazz Chisholm Jr., Trent Grisham, Paul Goldschmidt, Paul Blackburn, Ryan Yarbrough, John Schreiber, Tim Hill, Amed Rosario, Michael Fulmer The 2025 season saw the Yankees win 94 games, defeat the Red Sox in the Wild Card Series, and lose to the AL East champion Blue Jays in the ALDS. 2026 was almost a case of deja vu, as this year’s Bronx Bombers won 93 games, again topped Boston in the ALWCS, and then lost to the AL East champion Rays in the ALDS."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-10-08T030011Z_1076564715_MT1USATODAY30025560_RTRMADP_3_MLB-ALDS-TAMPA-BAY-RAYS-AT-NEW-YORK-YANKEES-1024x674.jpg",
-   "players": [
-    [
-     "Aaron Judge",
-     592450
-    ],
-    [
-     "Max Fried",
-     608331
-    ],
-    [
-     "Cody Bellinger",
-     641355
-    ],
-    [
-     "Gerrit Cole",
-     543037
-    ],
-    [
-     "Carlos Rodon",
-     607074
-    ],
-    [
-     "Giancarlo Stanton",
-     519317
-    ],
-    [
-     "Ryan McMahon",
-     641857
-    ],
-    [
-     "Clarke Schmidt",
-     657376
-    ],
-    [
-     "Luis García Jr.",
-     671277
-    ],
-    [
-     "Ryan Weathers",
-     677960
-    ],
-    [
-     "Fernando Cruz",
-     518585
-    ],
-    [
-     "José Caballero",
-     676609
-    ],
-    [
-     "Anthony Volpe",
-     683011
-    ],
-    [
-     "Luis Gil",
-     661563
-    ],
-    [
-     "Heliot Ramos",
-     671218
-    ],
-    [
-     "Austin Wells",
-     669224
-    ],
-    [
-     "David Bednar",
-     670280
-    ],
-    [
-     "Jazz Chisholm Jr.",
-     665862
-    ],
-    [
-     "Trent Grisham",
-     663757
-    ],
-    [
-     "Paul Goldschmidt",
-     502671
-    ],
-    [
-     "Paul Blackburn",
-     621112
-    ],
-    [
-     "Ryan Yarbrough",
-     642232
-    ],
-    [
-     "John Schreiber",
-     670167
-    ],
-    [
-     "Tim Hill",
-     657612
-    ],
-    [
-     "Amed Rosario",
-     642708
-    ],
-    [
-     "Michael Fulmer",
-     605242
     ]
    ]
   },
