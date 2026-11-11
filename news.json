@@ -1,6 +1,33 @@
 {
- "updated": "2026-11-11T20:10:29.949Z",
+ "updated": "2026-11-11T21:04:38.995Z",
  "articles": [
+  {
+   "title": "Chris Martin Retires",
+   "link": "https://www.mlbtraderumors.com/2026/11/chris-martin-retires.html",
+   "date": "2026-11-11T20:33:12.000Z",
+   "teams": [
+    "ATL",
+    "BOS",
+    "CHC",
+    "COL",
+    "LAD",
+    "NYY",
+    "TEX"
+   ],
+   "body": [
+    "Veteran right-hander Chris Martin has retired as a player, per Robert Murray of FanSided. He pitched in 11 different MLB seasons for seven different clubs and also spent a couple of years in Japan’s Nippon Professional Baseball.",
+    "It’s not a shock that Martin is hanging up his spikes. Back in September of 2024, he said that he was 95% sure that 2025 would be his last season. In the end, the 5% won out, as Martin returned to the Rangers for the 2026 campaign. But he made multiple trips to the injured list this year due to a shoulder impingement and had poor results in the 16 games he did play. He was released in August.",
+    "Martin was born and played high school ball in Texas. The Tigers drafted him out of high school in 2004 but he didn’t sign and went to McLennan Community College. The Rockies drafted him in 2005 and went the draft-and-follow route, when that type of strategy was still allowed. Martin then required surgery on a torn labrum in shoulder. The Rockies opted not to sign him. He went undrafted in 2006 and then started his professional career in independent ball.",
+    "Due to continued shoulder troubles in indy ball, Martin thought his career was over. He took odd jobs for places like UPS, Lowe’s and an appliance warehouse. A game of catch behind that warehouse led to Martin discovering that his shoulder felt better, so he tried baseball again. After some time in indy ball, he was able to get a minor league deal with the Red Sox in 2011."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/06/Chris_Martin_Rangers-1024x683.jpg",
+   "players": [
+    [
+     "Chris Martin",
+     455119
+    ]
+   ]
+  },
   {
    "title": "Mets Eyeing Left-Handed Relievers",
    "link": "https://www.mlbtraderumors.com/2026/11/mets-rumors-alex-vesia-tim-hill-free-agents-left-handed-relief.html",
@@ -6695,22 +6722,6 @@
    ]
   },
   {
-   "title": "Red Sox Adding Jason Bell To Coaching Staff",
-   "link": "https://www.mlbtraderumors.com/2026/10/red-sox-hire-astros-outfield-coach-jason-bell.html",
-   "date": "2026-10-28T18:27:50.000Z",
-   "teams": [
-    "BOS",
-    "HOU"
-   ],
-   "body": [
-    "The Red Sox are hiring Astros major league field coordinator and outfield coach Jason Bell and adding him to their major league coaching staff, reports Brian McTaggart of MLB.com. Bell will serve as the outfield instructor, per Tim Healey of the Boston Globe, and the two parties are still sorting out the potential for additional responsibilities.",
-    "It’s the latest shuffling involving what should be a revamped Astros staff in 2027. Owner Jim Crane opted not to retain manager Joe Espada earlier this month and also dismissed five coaches while reassigning bench coach Omar Lopez to a new role within the organization. At the time, the Astros indicated that Bell was one of four coaches who’d be retained, joining pitching coach Josh Miller, hitting coach Victor Rodriguez and first base coach Dave Clark. Instead, it seems Bell was granted to interview for an opportunity in Boston and will now pack his bags for Fenway Park.",
-    "Bell, 36, joined the Astros organization as a development coach in 2017. He’s since managed in their minor league system, spent a half decade as the minor league field coordinator, and has now spent the past three seasons as a uniformed coach on the big league staff. The Astros were his first stop in pro ball, but he’s previously been the director of baseball operations for Ohio University and served as the pitching coach at the University of Maryland-Eastern Shore. McTaggart profiled Bell’s atypical path to a major league coaching staff back in 2024, when he was first hired."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/jason-bell-astros-coach-1024x683.jpg",
-   "players": []
-  },
-  {
    "title": "Offseason Outlook: Chicago Cubs",
    "link": "https://www.mlbtraderumors.com/2026/10/offseason-outlook-chicago-cubs-16.html",
    "date": "2026-10-28T17:31:53.000Z",
@@ -6976,8 +6987,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/joe-espada-jason-kanzler-reportedly-finalists-for-mariners-managerial-job.html",
    "date": "2026-10-27T21:57:13.000Z",
    "teams": [
-    "CHC",
     "CWS",
+    "CHC",
     "LAD",
     "SEA",
     "TB"
@@ -7567,43 +7578,6 @@
    "players": []
   },
   {
-   "title": "Yankees Extend Pitching Coach Matt Blake",
-   "link": "https://www.mlbtraderumors.com/2026/10/yankees-to-retain-pitching-coach-matt-blake.html",
-   "date": "2026-10-24T14:12:56.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "TODAY: Blake and the Yankees have agreed to a new contract covering the 2027-29 seasons, according to Jon Heyman of the New York Post.",
-    "OCTOBER 23: The Yankees are expected to work out a new contract with pitching coach Matt Blake, reports Joel Sherman of the New York Post. His deal was set to expire at the end of the year.",
-    "Blake has been New York’s pitching coach since 2020. He’d been with the organization previously as a scout, before joining the Guardians as a minor league pitching coordinator in 2016. Blake was bumped up to assistant director of player development in 2017, a role he held through the 2019 season. His work in the Guardians system led to a big-league gig with the Yankees.",
-    "New York had to navigate several major injuries in the rotation this season. Gerrit Cole began the year on the IL as he recovered from elbow surgery. The same goes for Clarke Schmidt and Carlos Rodon. Max Fried dealt with elbow issues multiple times during the regular season. The club added Ryan Weathers in an offseason trade with the Marlins. The lefty helped stabilize the back of the rotation until Cole and Rodon returned. Weathers was lost to a flexor strain near the end of August."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/MattBlake-1024x683.jpg",
-   "players": [
-    [
-     "Gerrit Cole",
-     543037
-    ],
-    [
-     "Clarke Schmidt",
-     657376
-    ],
-    [
-     "Carlos Rodon",
-     607074
-    ],
-    [
-     "Max Fried",
-     608331
-    ],
-    [
-     "Ryan Weathers",
-     677960
-    ]
-   ]
-  },
-  {
    "title": "Yankees Notes: Boone, Judge, Massey",
    "link": "https://www.mlbtraderumors.com/2026/10/yankees-notes-boone-judge-massey.html",
    "date": "2026-10-24T03:45:21.000Z",
@@ -8037,34 +8011,6 @@
     [
      "Mitch Garver",
      641598
-    ]
-   ]
-  },
-  {
-   "title": "Dalton Rushing To Undergo Elbow Surgery",
-   "link": "https://www.mlbtraderumors.com/2026/10/dalton-rushing-to-undergo-elbow-surgery.html",
-   "date": "2026-10-21T21:30:54.000Z",
-   "teams": [
-    "LAD"
-   ],
-   "body": [
-    "Dodgers catcher Dalton Rushing will undergo elbow surgery today, reports Maddie Lee of the L.A. Times. He’s expected to undergo an internal brace procedure to repair the ulnar collateral ligament in his right elbow. That surgery would come with an approximate nine-month recovery window before Rushing can return to catching, though he’d be cleared to resume hitting well before that.",
-    "A nine-month window would see Rushing unable to catch until next July. Given Shohei Ohtani’s presence as the team’s designated hitter on days when he’s not pitching, that doesn’t leave Rushing with much of a path to playing time in the interim. Rushing has experience at first base and in left field, but it’s doubtful he’d be cleared to play either spot when he’s first given the green light to resume hitting.",
-    "Rushing, 26 in February, is the backup to Will Smith and also saw occasional time at first base and designated hitter in 2026. He first landed on the injured list due to a ligament tear in his elbow on the day of the trade deadline. He spent a month on the shelf before briefly returning, but he logged only eight hitless plate appearances through the remainder of the season and wasn’t on L.A.’s roster for either the National League Division Series or the National League Championship Series."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/08/DaltonRushing-2026Dodgers-1024x682.jpg",
-   "players": [
-    [
-     "Dalton Rushing",
-     687221
-    ],
-    [
-     "Shohei Ohtani",
-     660271
-    ],
-    [
-     "Will Smith",
-     669257
     ]
    ]
   },
@@ -9607,34 +9553,6 @@
    ]
   },
   {
-   "title": "Alex Anthopoulos Discusses Braves’ Free Agents, Rotation, Profar",
-   "link": "https://www.mlbtraderumors.com/2026/10/alex-anthopoulos-discusses-braves-free-agents-rotation-profar.html",
-   "date": "2026-10-12T03:15:46.000Z",
-   "teams": [
-    "ATL"
-   ],
-   "body": [
-    "The NL East champion Braves saw their season ended on Wednesday when the Dodgers eliminated Atlanta from the NLDS in four games. The team’s wrap-up press conference took place today, as Braves president of baseball operations Alex Anthopoulos met with the media (including the Athletic’s Jesus Cano and MLB.com’s Mark Bowman) to touch on several topics.",
-    "Reuniting with some impending free agents is a possibility, with Anthopoulos saying that the team will speak with all of its free agents before the market officially opens five days after the World Series. Anthopoulos praised the work of Tyler Mahle and Mauricio Dubon in particular, and the PBO noted that he is “very comfortable with” Dubon as a shortstop.",
-    "This is notable given that shortstop is perhaps Atlanta’s most glaring area of need, as both Dubon and Ha-Seong Kim are free agents. Kim is unlikely to be re-signed given his extreme struggles in 2026, but Dubon (acquired in a trade with the Astros last November) ended up appearing in 153 games for the Braves, hitting.276/.321/.399 with 12 home runs over 619 plate appearances."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/MauricioDubon-2026Braves-1024x682.jpg",
-   "players": [
-    [
-     "Tyler Mahle",
-     641816
-    ],
-    [
-     "Mauricio Dubon",
-     643289
-    ],
-    [
-     "Ha-Seong Kim",
-     673490
-    ]
-   ]
-  },
-  {
    "title": "Vladimir Guerrero Jr. Undergoes Laser Eye Surgery",
    "link": "https://www.mlbtraderumors.com/2026/10/vladimir-guerrero-jr-undergoes-laser-eye-surgery.html",
    "date": "2026-10-11T14:45:39.000Z",
@@ -9711,27 +9629,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/04/Diamondbackslogo-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "Corey Seager Undergoes Elbow Surgery",
-   "link": "https://www.mlbtraderumors.com/2026/10/corey-seager-undergoes-elbow-surgery.html",
-   "date": "2026-10-09T20:29:05.000Z",
-   "teams": [
-    "TEX"
-   ],
-   "body": [
-    "Rangers president of baseball operations Chris Young told reporters last week that shortstop Corey Seager was dealing with a bone spur in his right elbow. Minor surgery was on the table, and it appears Seager went that route. Jeff Wilson of DLLS Sports first pointed out an Instagram post from Seager’s wife, Madisyn, mentioning the procedure. Kennedi Landry of MLB.com, among others, has since reported the surgery happened on Tuesday.",
-    "It’s unclear exactly how long Seager was playing through the elbow injury, though Young mentioned it was multiple months. Seager had two separate IL stints for back inflammation and also spent time on the seven-day concussion IL. He didn’t miss time specifically for the elbow.",
-    "Seager was available for the final two months of the regular season. He certainly didn’t let the elbow injury slow him down at the plate. The five-time All-Star slashed.269/.332/.472 with 10 homers after coming off the IL at the end of July. His strikeout rate, which had been unusually high in the first half, dropped to a more typical 20.3%.",
-    "Injuries have hindered Seager over the past few seasons. After reaching 663 plate appearances in his first year with the Rangers (2022), that number has gone down in each of the subsequent campaigns. Seager has played in 102 games in each of the past two years."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/CoreySeager-1024x588.jpg",
-   "players": [
-    [
-     "Corey Seager",
-     608369
-    ]
-   ]
   },
   {
    "title": "Reviewing The Athletics’ Young Hitters",
@@ -10678,34 +10575,6 @@
     [
      "Gabriel Hughes",
      687312
-    ]
-   ]
-  },
-  {
-   "title": "Rockies Outright Tyler Freeman",
-   "link": "https://www.mlbtraderumors.com/2026/09/rockies-outright-tyler-freeman.html",
-   "date": "2026-09-05T22:45:12.000Z",
-   "teams": [
-    "COL"
-   ],
-   "body": [
-    "The Rockies have officially announced Willi Castro’s placement on the 10-day IL and Vimael Machin’s contract selection, which were both reported earlier today. To create space for Machin on the 40-man roster, the Rox outrighted Tyler Freeman to Triple-A. It hadn’t been publicly known that Freeman had been designated for assignment, but he has now cleared waivers.",
-    "Because Freeman has more than three years of MLB service time, he has the right to reject this outright assignment in favor of free agency. The Rockies hold two more years of arbitration control over Freeman’s services, but this outright is probably the precursor to a non-tender this winter, so Freeman might prefer to enter free agency now instead of waiting several more weeks or months to hit the open market.",
-    "Freeman has hit.247/.317/.314 with three home runs over 288 plate appearances this season, translating to a dismal 67 wRC+. The Rockies used Freeman primarily as a second baseman, right fielder, and DH, but his lack of offensive production reduced his playing time. Back problems probably had something to do with these struggles, as Freeman had a pair of fairly minimal IL stints due to back-related issues. Freeman was activated from the second of these IL stints on August 23 and then optioned to Triple-A Albuquerque."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/09/TylerFreeman-2026Rockies-1024x683.jpg",
-   "players": [
-    [
-     "Tyler Freeman",
-     671289
-    ],
-    [
-     "Willi Castro",
-     650489
-    ],
-    [
-     "Vimael Machin",
-     605353
     ]
    ]
   }
