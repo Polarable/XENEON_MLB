@@ -550,6 +550,7 @@ body.compact .gcard.live, body.compact .gcard.fav { margin: 3px 0; }
 .p-cb span { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .p-cb b { font-size: 16px; font-weight: 600; } .p-cb em { font-style: normal; font-size: 13px; color: var(--text-3); }
 .p-cb i { font-style: normal; font-size: 24px; color: var(--text-3); }
+.p-cb + .p-cb { margin-top: 8px; }
 
 /* ================= Desktop dashboard (body.dash, built by dash.js at >= 1024px) =================
    Top bar with the tabs; scores rail left; the open tab in the middle; your team right (>= 1280px). */
