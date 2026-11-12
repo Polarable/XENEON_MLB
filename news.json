@@ -1,6 +1,36 @@
 {
- "updated": "2026-11-12T23:40:30.247Z",
+ "updated": "2026-11-12T23:50:32.102Z",
  "articles": [
+  {
+   "title": "Mets, Yankees Met With Alec Bohm At GM Meetings",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-yankees-met-with-alec-bohm-at-gm-meetings.html",
+   "date": "2026-11-12T23:40:14.000Z",
+   "teams": [
+    "NYM",
+    "NYY"
+   ],
+   "body": [
+    "Free agent infielder Alec Bohm met with both the Yankees and Mets at this week’s general managers’ meetings in Las Vegas, according to reporting from Ken Rosenthal and Will Sammon of The Athletic. The connection to the Yankees was previously reported.",
+    "Rosenthal and Sammon specify that the Mets would be interested in Bohm at first base, which makes a lot of sense. For one thing, the Mets already have a third baseman in Bo Bichette, whereas first base is more open.",
+    "Bohm has played both corner spots but his glovework at third has never been highly regarded. In almost 6,000 career innings at third base, he has a grade of minus-58 from Defensive Runs Saved. From 2020 to the present, that’s the worst DRS mark of any third baseman and tied for second-worst of any player at any position. Jose Altuve’s minus-73 mark at second base is the only person beyond Bohm in that regard. Bohm’s minus-15 grade from Outs Above Average and minus-16 from Fielding Run Value aren’t quite as extreme but still subpar.",
+    "Due to his poor work at third, he has spent more time at first as his career has gone on. His defensive grades at first are also subpar but aren’t as bad, especially when focusing on more recent seasons. Bohm has a grade of minus-4 DRS at first in his career but was above average in both 2025 and 2026. He has minus-8 OAA and minus-7 FRV for his career but has been close to par over the past three campaigns."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/05/AlecBohm-1024x683.jpg",
+   "players": [
+    [
+     "Alec Bohm",
+     664761
+    ],
+    [
+     "Bo Bichette",
+     666182
+    ],
+    [
+     "Jose Altuve",
+     514888
+    ]
+   ]
+  },
   {
    "title": "Giants Hire James Rowson As Offensive Coordinator",
    "link": "https://www.mlbtraderumors.com/2026/11/giants-to-hire-james-rowson-as-offensive-coordinator.html",
@@ -396,19 +426,6 @@
      676440
     ]
    ]
-  },
-  {
-   "title": "MLB Preparing For Possibility That MLBPA Opts For Disclaimer Of Interest During Lockout",
-   "link": "https://www.mlbtraderumors.com/2026/11/mlb-preparing-for-possibility-that-mlbpa-opts-for-disclaimer-of-interest-during-lockout.html",
-   "date": "2026-11-12T14:48:11.000Z",
-   "teams": [],
-   "body": [
-    "The current collective bargaining agreement expires in less than three weeks. There’s essentially no chance a new agreement will be reached before end of day on December 1. Major League Baseball will immediately implement a lockout to freeze all offseason activity.",
-    "The 2021-22 lockout lasted 99 days. The upcoming work stoppage is widely expected to be equally or more contested. MLB has conditioned all its offers on a salary cap, which was never under consideration during the previous lockout. The Players Association has reiterated its longstanding firm opposition. The parties have traded core economic proposals in recent months, but they’re essentially talking past one another so long as they’re working under completely different frameworks. Every MLB proposal to date has been conditioned on the cap; every union proposal has been conditioned on the absence of a cap.",
-    "As the sides brace for a lockout, Jared Diamond of The Wall Street Journal writes that MLB has begun to prepare for the possibility of one fairly extreme union action. Diamond suggests the league has planned for a scenario in which the MLBPA opts to file a disclaimer of interest during the lockout. That essentially means that the MLBPA would temporarily step down as an official union and sole bargaining unit on behalf of MLB players, instead operating as a trade association. (The players would surely recertify the MLBPA as an official union once there’s a new agreement in place.)"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/generic-mlb-1024x771.jpg",
-   "players": []
   },
   {
    "title": "Giants In Closing Market, Unlikely To Sign Qualified Free Agent",
@@ -5389,21 +5406,6 @@
      673513
     ]
    ]
-  },
-  {
-   "title": "Yankees Part Ways With Omar Minaya, Brian Sabean",
-   "link": "https://www.mlbtraderumors.com/2026/11/yankees-part-ways-with-omar-minaya-brian-sabean.html",
-   "date": "2026-11-01T17:04:47.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "The Yankees are not renewing the contracts of Omar Minaya and Brian Sabean, according to The New York Post’s Jon Heyman. Both were serving as advisors to general manager Brian Cashman. The two executives are now free to look for jobs in other clubs’ front offices.",
-    "Minaya and Sabean were both hired by the Yankees in January 2023. Minaya held the title of senior advisor to baseball operations, while Sabean was more of a general advisor to Cashman. The soon-to-be 68-year-old Minaya has worked in baseball front offices for over four decades. He most prominently served as the general manager of the Expos from 2002-04, then as the Mets’ general manager for the 2005-10 seasons. Some highlights from the latter tenure include signing Pedro Martinez and Carlos Beltran as free agents, acquiring Johan Santana via trade, and drafting Matt Harvey in 2010.",
-    "Minaya was fired as GM in October 2010. He spent the following years working in the Padres’ baseball operations department and with the Players Association as an advisor to then-executive director Tony Clark. Minaya returned to the Mets in special assistant and ambassador roles before a brief stint as a consultant for MLB and finally, his time with the Yankees. It’s been eight years since Minaya served as a GM in any capacity, being part of the Mets’ interim committee in 2018 when Sandy Alderson took a leave of absence. Nonetheless, he comes with plenty of experience and should garner interest in an advisory role."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2022/02/omar-minaya-1024x667.jpg",
-   "players": []
   },
   {
    "title": "Padres’ Wandy Peralta Exercises Player Option",
