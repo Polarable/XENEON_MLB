@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T00:20:34.383Z",
+ "updated": "2026-11-12T00:30:35.077Z",
  "articles": [
   {
    "title": "Cam Schlittler Wins AL Cy Young Award",
@@ -9,7 +9,8 @@
     "NYY"
    ],
    "body": [
-    "The Baseball Writers Association of America announced that Cam Schlittler has won the AL Cy Young award. The Yankees ace appeared at the top on all 30 ballots. Toronto’s Dylan Cease is runner-up, while Cleveland rookie Parker Messick finished in third place."
+    "The Baseball Writers Association of America announced that Cam Schlittler has won the AL Cy Young award. The Yankees ace appeared at the top on all 30 ballots. Toronto’s Dylan Cease is runner-up, while Cleveland rookie Parker Messick finished in third place.",
+    "To the extent there was any suspense about this result, it was only whether Schlittler’s win would be unanimous. The 6’6″ righty had a dominant first full season in the big leagues. Schlittler made 33 starts and fired 193 2/3 innings of 1.95 ERA ball. He was the only qualified pitcher in the AL with a sub-2.00 mark. Schlittler was second in the league behind Michael Wacha in innings and third — behind Gavin Williams and Cease — with 239 strikeouts. Only Williams had a higher difference between his strikeout and walk rates."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/09/CamSchlittler-1024x683.jpg",
    "players": [
@@ -24,6 +25,14 @@
     [
      "Parker Messick",
      800048
+    ],
+    [
+     "Michael Wacha",
+     608379
+    ],
+    [
+     "Gavin Williams",
+     668909
     ]
    ]
   },
@@ -7577,44 +7586,6 @@
     [
      "Hyeseong Kim",
      808975
-    ]
-   ]
-  },
-  {
-   "title": "Austin Wells’ Impact On The Yankees’ Offseason",
-   "link": "https://www.mlbtraderumors.com/2026/10/austin-wells-impact-on-the-yankees-offseason.html",
-   "date": "2026-10-24T23:49:15.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "The Yankees were connected to pretty much every vaguely available catcher last season. The rumblings stemmed from a need to improve an Aaron Judge -less lineup, along with the struggles of the in-house options.",
-    "Austin Wells was the key figure in the catching discussions. His brutal first half led the club to entertain finding an upgrade. It didn’t help that there wasn’t a suitable backup. J.C. Escarra was demoted in June. Journeyman Ali Sanchez was little more than a stopgap.",
-    "Parsing Wells’ 2026 season will dictate how New York handles the catcher position this offseason. He entered the All-Star break with a.504 OPS. Wells bounced back in a big way over the final two months of the season, slashing.229/.343/.441 with seven homers. He stayed hot in the playoffs, going 5-for-15 with four RBI. Wells trying to stretch a double into a triple in the eighth inning of Game 1 of the ALDS grabbed the headlines. It’s easy to forget that his big swing broke up a no-hitter on a night Drew Rasmussen was virtually untouchable.",
-    "[Related: New York Yankees Offseason Outlook]",
-    "Of course, the tale of two seasons is much more complicated. Wells hit the injured list in early June with what were described as cervical headaches. The backstop took multiple foul tips to the mask early in the season, but passed concussion tests at the time. Persistent headaches eventually landed him on the IL. He returned after two weeks. Wells didn’t immediately get going at the plate, but he clearly performed better after the time off."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/AustinWells-1024x684.jpg",
-   "players": [
-    [
-     "Austin Wells",
-     669224
-    ],
-    [
-     "Aaron Judge",
-     592450
-    ],
-    [
-     "J.C. Escarra",
-     641555
-    ],
-    [
-     "Ali Sanchez",
-     645305
-    ],
-    [
-     "Drew Rasmussen",
-     656876
     ]
    ]
   },
