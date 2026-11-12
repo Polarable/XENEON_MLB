@@ -1,6 +1,56 @@
 {
- "updated": "2026-11-12T02:40:32.699Z",
+ "updated": "2026-11-12T02:50:33.317Z",
  "articles": [
+  {
+   "title": "Latest On Yankees, Alec Bohm",
+   "link": "https://www.mlbtraderumors.com/2026/11/yankees-interested-in-alec-bohm.html",
+   "date": "2026-11-12T02:40:59.000Z",
+   "teams": [
+    "NYY"
+   ],
+   "body": [
+    "8:40pm: Brendan Kuty of The Athletic writes that a source suggested the Yankees have not shown much interest in Bohm to this point. Kuty leaves open the possibility that the club could show interest in the offseason.",
+    "1:00pm: The Yankees have had a tough time finding a steady third baseman for multiple years. Addressing the hot corner will likely be a priority this offseason, and the club has been connected to one of the bigger names on the market. New York has interest in Alec Bohm, per Jon Heyman of the New York Post.",
+    "Bohm has spent his entire pro career with the Phillies. After several years as an above-average bat, he struggled on the verge of free agency. Bohm finished with a 90 wRC+ across 629 plate appearances. He hit 15 homers and drove in 88 runs.",
+    "It’s not an ideal offseason to be hunting for a third baseman. Bohm is arguably the only everyday regular available, unless you include utilityman Mauricio Dubon. NPB import Teruaki Sato is also a fringy inclusion given the uncertainty around his ability to handle the position as a big leaguer. The list also includes uninspiring veterans like Yoan Moncada, Luis Rengifo, Edmundo Sosa, and Ramon Urias.",
+    "After the failed Jazz Chisholm Jr. experiment, the Yankees went out and acquired Ryan McMahon to take over at third base midway through 2025. The former Rockie underwhelmed at the plate, but delivered 7 Defensive Runs Saved. McMahon was a well-below-league-average bat once again in 2026. More notably, he posted -3 DRS at third base."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AlecBohm-1024x683.jpg",
+   "players": [
+    [
+     "Alec Bohm",
+     664761
+    ],
+    [
+     "Mauricio Dubon",
+     643289
+    ],
+    [
+     "Yoan Moncada",
+     660162
+    ],
+    [
+     "Luis Rengifo",
+     650859
+    ],
+    [
+     "Edmundo Sosa",
+     624641
+    ],
+    [
+     "Ramon Urias",
+     602104
+    ],
+    [
+     "Jazz Chisholm Jr.",
+     665862
+    ],
+    [
+     "Ryan McMahon",
+     641857
+    ]
+   ]
+  },
   {
    "title": "Mariners Notes: Donovan, Happ, Rotation",
    "link": "https://www.mlbtraderumors.com/2026/11/mariners-notes-donovan-happ-rotation.html",
@@ -316,68 +366,6 @@
     [
      "Emilio Pagán",
      641941
-    ]
-   ]
-  },
-  {
-   "title": "Yankees Interested In Alec Bohm",
-   "link": "https://www.mlbtraderumors.com/2026/11/yankees-interested-in-alec-bohm.html",
-   "date": "2026-11-11T19:00:59.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "The Yankees have had a tough time finding a steady third baseman for multiple years. Addressing the hot corner will likely be a priority this offseason, and the club has been connected to one of the bigger names on the market. New York has interest in Alec Bohm, per Jon Heyman of the New York Post.",
-    "Bohm has spent his entire pro career with the Phillies. After several years as an above-average bat, he struggled on the verge of free agency. Bohm finished with a 90 wRC+ across 629 plate appearances. He hit 15 homers and drove in 88 runs.",
-    "It’s not an ideal offseason to be hunting for a third baseman. Bohm is arguably the only everyday regular available, unless you include utilityman Mauricio Dubon. NPB import Teruaki Sato is also a fringy inclusion given the uncertainty around his ability to handle the position as a big leaguer. The list also includes uninspiring veterans like Yoan Moncada, Luis Rengifo, Edmundo Sosa, and Ramon Urias.",
-    "After the failed Jazz Chisholm Jr. experiment, the Yankees went out and acquired Ryan McMahon to take over at third base midway through 2025. The former Rockie underwhelmed at the plate, but delivered 7 Defensive Runs Saved. McMahon was a well-below-league-average bat once again in 2026. More notably, he posted -3 DRS at third base.",
-    "The lack of production made it tough to keep McMahon in the lineup. New York trotted out Amed Rosario and Jose Caballero against left-handed pitching. Anthony Volpe also got a brief look at third base. The group combined for a.629 OPS, the fifth-worst mark in the league."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AlecBohm-1024x683.jpg",
-   "players": [
-    [
-     "Alec Bohm",
-     664761
-    ],
-    [
-     "Mauricio Dubon",
-     643289
-    ],
-    [
-     "Yoan Moncada",
-     660162
-    ],
-    [
-     "Luis Rengifo",
-     650859
-    ],
-    [
-     "Edmundo Sosa",
-     624641
-    ],
-    [
-     "Ramon Urias",
-     602104
-    ],
-    [
-     "Jazz Chisholm Jr.",
-     665862
-    ],
-    [
-     "Ryan McMahon",
-     641857
-    ],
-    [
-     "Amed Rosario",
-     642708
-    ],
-    [
-     "Jose Caballero",
-     676609
-    ],
-    [
-     "Anthony Volpe",
-     683011
     ]
    ]
   },
