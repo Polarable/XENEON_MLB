@@ -1,6 +1,32 @@
 {
- "updated": "2026-11-12T00:50:33.089Z",
+ "updated": "2026-11-12T01:00:36.546Z",
  "articles": [
+  {
+   "title": "Jacob Misiorowski Wins NL Cy Young Award",
+   "link": "https://www.mlbtraderumors.com/2026/11/jacob-misiorowski-wins-nl-cy-young-award.html",
+   "date": "2026-11-12T00:54:55.000Z",
+   "teams": [
+    "MIL"
+   ],
+   "body": [
+    "The Baseball Writers Association of America announced Wednesday that Brewers ace Jacob Misiorowski won the NL Cy Young award. Philadelphia’s Cristopher Sánchez and Atlanta’s Chris Sale finished second and third, respectively."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-10-29T011951Z_342103335_MT1USATODAY30210674_RTRMADP_3_MLB-WORLD-SERIES-MILWAUKEE-BREWERS-AT-TAMPA-BAY-RAYS-1024x680.jpg",
+   "players": [
+    [
+     "Jacob Misiorowski",
+     694819
+    ],
+    [
+     "Cristopher Sánchez",
+     650911
+    ],
+    [
+     "Chris Sale",
+     519242
+    ]
+   ]
+  },
   {
    "title": "Cam Schlittler Wins AL Cy Young Award",
    "link": "https://www.mlbtraderumors.com/2026/11/cam-schlittler-wins-al-cy-young-award.html",
