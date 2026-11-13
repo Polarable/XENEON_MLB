@@ -1,6 +1,31 @@
 {
- "updated": "2026-11-13T20:20:30.810Z",
+ "updated": "2026-11-13T20:30:33.890Z",
  "articles": [
+  {
+   "title": "Blue Jays Rumors: Valenzuela, Clement, Smith, Schneider, Pitching",
+   "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-rumors-valenzuela-clement-smith-schneider-pitching.html",
+   "date": "2026-11-13T20:21:30.000Z",
+   "teams": [
+    "CIN",
+    "TOR"
+   ],
+   "body": [
+    "The hot stove is warming up. The Blue Jays haven’t made a big move yet but the buzz on them continues to be that they’re exploring just about everything. Mitch Bannon of The Athletic as well as Ben-Nicholson Smith and Shi Davidi of Sportsnet have details on some of the various things that are up in the air with the club.",
+    "Bannon notes that the Jays are getting some trade interest in catcher Brandon Valenzuela. Bannon doesn’t specify which clubs are calling but notes that the Reds have had previous interest. Valenzuela had an encouraging debut this year, getting into 91 games for the Jays. He made 271 plate appearances and hit.222/.307/.372. That translates to a 93 wRC+, indicating he was 7% worse than the league average hitter. Catchers are usually 10 to 12% below par, so that’s actually decent production, especially for a backup. Valenzuela also received strong grades for his glovework. FanGraphs credited him with 2.1 wins above replacement.",
+    "The Jays could certainly keep Valenzuela as backup to Alejandro Kirk. However, if some other club considers him to be a viable everyday catcher and is willing to pay for him accordingly in terms of a trade return, it could be worth Toronto’s while. In theory, the Jays could flip Valenzuela for a bat or an arm or a package of players and then turn to free agency to find a backup for Kirk."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Brandon_Valenzuela_Blue_Jays-1024x683.jpg",
+   "players": [
+    [
+     "Brandon Valenzuela",
+     678218
+    ],
+    [
+     "Alejandro Kirk",
+     672386
+    ]
+   ]
+  },
   {
    "title": "Cubs Notes: Ramirez, Kelly, Hoyer, Staffing",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-notes-ramirez-kelly-hoyer-staffing.html",
@@ -9567,25 +9592,6 @@
    ]
   },
   {
-   "title": "Vladimir Guerrero Jr. Undergoes Laser Eye Surgery",
-   "link": "https://www.mlbtraderumors.com/2026/10/vladimir-guerrero-jr-undergoes-laser-eye-surgery.html",
-   "date": "2026-10-11T14:45:39.000Z",
-   "teams": [
-    "TOR"
-   ],
-   "body": [
-    "Blue Jays first baseman Vladimir Guerrero Jr. recently underwent laser eye surgery, as announced on Instagram by the Laser Eye Center of Miami and confirmed by Sportsnet’s Ben Nicholson-Smith. It’s unclear exactly when the surgery occurred, as the Center’s post was made during a post-op visit, though in any case it shouldn’t affect Guerrero’s offseason work.",
-    "The 27-year-old Guerrero had a trying season this year, the first of his 14-year, $500MM extension which he signed in April 2025. In 144 games, Guerrero batted.260/.332/.356 with just nine home runs and a 95 wRC+, putting him a few points below league average. The most concerning trend was the drop in his power. Guerrero’s.356 slugging percentage and.096 ISO were both career lows. His hard-hit rate fell from 50.7% in 2025 to a (still above-average) 44.3% in 2026. The same was true of Guerrero’s average exit velocity, which sat at 92.0 mph last year and declined to 90.3 mph this year."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/vladdy-jr-2026-1024x683.jpg",
-   "players": [
-    [
-     "Vladimir Guerrero Jr.",
-     665489
-    ]
-   ]
-  },
-  {
    "title": "AL Central Notes: Vargas, Tigers Staff, Royals Ballpark",
    "link": "https://www.mlbtraderumors.com/2026/10/al-central-notes-vargas-tigers-staff-royals-ballpark.html",
    "date": "2026-10-10T21:50:54.000Z",
@@ -9803,39 +9809,6 @@
     [
      "Michael Toglia",
      669911
-    ]
-   ]
-  },
-  {
-   "title": "Reds Announce Coaching Updates",
-   "link": "https://www.mlbtraderumors.com/2026/10/reds-announce-coaching-updates.html",
-   "date": "2026-10-02T17:46:01.000Z",
-   "teams": [
-    "CIN"
-   ],
-   "body": [
-    "The Reds head into the offseason with multiple roles to fill on the coaching staff under manager Terry Francona. The club confirmed pitching coach Derek Johnson won’t be back next season. Cincinnati also dismissed assistant hitting coach Will Remillard, president of baseball operations Nick Krall and general manager Brad Meador told reporters, including Charlie Goldsmith of Fox 19 Now.",
-    "Remillard has been on the big-league staff for the past two seasons. He’d been a minor league coach in the Cubs’ organization since 2019 before joining the Reds. Remillard worked under hitting coach /director of hitting Chris Valaika in Cincinnati. Remillard, Valaika, and assistant hitting coach Alex Pelaez were all hired heading into the 2025 season with Francona taking over as skipper.",
-    "Elly De La Cruz put together his most complete offensive season in 2026. His costar, Sal Stewart, is a strong candidate to win NL Rookie of the Year. Outside of De La Cruz and Stewart, the Reds struggled mightily on offense. Cincinnati scored the 4th-fewest runs this season. The club ranked dead last in wRC+.",
-    "Meador said the organization is looking for a coach with more experience to help the offense. The lineup is projected to look largely the same next season, barring any major offseason additions. Third baseman Eugenio Suarez has a $16MM mutual option for 2027 that the Reds are unlikely to pick up. Catcher Tyler Stephenson is a free agent. Krall said they’d keep in touch with him. The rest of the group will return next year."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/WillRemillard-1024x683.jpg",
-   "players": [
-    [
-     "Elly De La Cruz",
-     682829
-    ],
-    [
-     "Sal Stewart",
-     701398
-    ],
-    [
-     "Eugenio Suarez",
-     553993
-    ],
-    [
-     "Tyler Stephenson",
-     663886
     ]
    ]
   },
