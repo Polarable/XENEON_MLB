@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T09:50:30.965Z",
+ "updated": "2026-11-13T10:00:41.745Z",
  "articles": [
   {
    "title": "Braves Sign Evan Phillips To Three-Year Deal",
@@ -1482,8 +1482,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/will-venable-pat-murphy-named-managers-of-the-year.html",
    "date": "2026-11-11T00:56:19.000Z",
    "teams": [
-    "MIL",
-    "CWS"
+    "CWS",
+    "MIL"
    ],
    "body": [
     "The Baseball Writers Association of America announced the results of Manager of the Year balloting on Tuesday. White Sox skipper Will Venable won the American League honors, while Milwaukee’s Pat Murphy takes home the National League award for a third straight year.",
@@ -1950,6 +1950,31 @@
     [
      "Jazz Chisholm Jr.",
      665862
+    ]
+   ]
+  },
+  {
+   "title": "Getz: Grant Taylor Moving Into Rotation; Adding Further Starting Pitching Is “Top Priority”",
+   "link": "https://www.mlbtraderumors.com/2026/11/getz-grant-taylor-moving-into-rotation-adding-further-starting-pitching-is-top-priority.html",
+   "date": "2026-11-10T16:24:32.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox enter the offseason with a clear need in the rotation, and it sounds as though they’ll plan to address it both internally and via some outside additions. General manager Chris Getz said in an appearance with MLB Network Radio on SiriusXM (audio link) that hard-throwing reliever Grant Taylor will move from the bullpen into the rotation. The Sox are planning to keep left-hander Hagen Smith in a relief role for now, however. Any further rotation additions will come from free agency or the trade market.",
+    "“We’re going to exhaust the starter market, both free agency — we’ll take a look — along with trades,” said Getz. “That is our top priority.”",
+    "Starting with the 24-year-old Taylor, a move to the rotation has been an oft-discussed topic in ChiSox circles for years. Taylor, selected with the No. 51 overall pick in 2023, has worked as a starter briefly in the minors but has spent the bulk of his professional career in relief. That’s not due to doubts in his ability but rather his recent health.",
+    "Taylor required Tommy John surgery while pitching at Louisiana State University. He was in the process of rehabbing in’23 when the Sox drafted him, and he didn’t formally make his professional debut until late in the 2024 campaign. He pitched 19 1/3 innings across five starts that season, posting a 2.33 ERA with dominant strikeout and walk rates in the low minors."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/grant-taylor-white-sox-1024x683.jpg",
+   "players": [
+    [
+     "Grant Taylor",
+     691799
+    ],
+    [
+     "Hagen Smith",
+     696146
     ]
    ]
   },
@@ -3208,6 +3233,22 @@
    "players": []
   },
   {
+   "title": "White Sox Sign Alec Marsh To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-sign-alec-marsh-to-minor-league-deal.html",
+   "date": "2026-11-05T19:15:16.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox have signed right-hander Alec Marsh to a minor league contract with an invite to major league camp in spring training. Scott Merkin of MLB.com was among those to report the deal.",
+    "It’s an injury bounceback flier for the Sox. Marsh, 29 in May, was once a prospect of note with the Royals. Kansas City selected him with the 70th overall pick in 2019. Baseball America then ranked him as the club’s #23 prospect in 2020, before having him in the 10-15 range from 2021 to 2023.",
+    "Marsh went to toss 203 1/3 innings for the Royals over the 2023 and 2024 campaigns, making 33 starts and ten relief appearances. He allowed 4.96 earned runs per nine. His 23.4% strikeout rate and 8.8% walk rate were around league average but he struggled with the long ball. He allowed 35 home runs in that time, a rate of 14.6% per fly ball. League average is usually 11-12% but Kauffman Stadium tends to be on the pitcher-friendly side.",
+    "He hasn’t pitched in the big leagues since then. Heading into the 2025 season, Marsh experienced some soreness in his throwing shoulder. He began the campaign on the injured list with a shoulder impingement. He hit setbacks in his attempts to ramp up. He required labrum surgery in November of 2025 and spent the entire 2026 season on the IL."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2025/11/USATSI_24359046-1024x683.jpg",
+   "players": []
+  },
+  {
    "title": "Red Sox Adding Shelley Duncan To Coaching Staff",
    "link": "https://www.mlbtraderumors.com/2026/11/red-sox-hire-yankees-triple-a-manager-shelley-duncan-coach.html",
    "date": "2026-11-05T17:20:56.000Z",
@@ -3640,8 +3681,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/cardinals-hire-joel-mckeithan-hitting-coach-white-sox.html",
    "date": "2026-11-04T16:25:42.000Z",
    "teams": [
-    "STL",
-    "CWS"
+    "CWS",
+    "STL"
    ],
    "body": [
     "The Cardinals are set to hire White Sox assistant hitting coach Joel McKeithan as their new hitting coach, Robert Murray of Fansided reports. He’ll take over for Brant Brown, who spent the past two seasons as hitting coach in St. Louis but was dismissed last month.",
@@ -5128,8 +5169,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/white-sox-claim-graham-pauley.html",
    "date": "2026-11-02T20:15:45.000Z",
    "teams": [
-    "MIA",
-    "CWS"
+    "CWS",
+    "MIA"
    ],
    "body": [
     "The White Sox announced that they have claimed infielder Graham Pauley off waivers from the Marlins. The Sox also outrighted left-hander Ky Bush and outfielder Junior Pérez to Triple-A Charlotte.",
@@ -5759,8 +5800,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/white-sox-to-hire-matt-roffe-as-scouting-director.html",
    "date": "2026-10-31T23:55:30.000Z",
    "teams": [
-    "MIL",
-    "CWS"
+    "CWS",
+    "MIL"
    ],
    "body": [
     "The White Sox are set to hire Matt Roffe as their scouting director, Katie Woo and Ken Rosenthal of The Athletic report. The team is not expected to announce the move until next week, per Scott Merkin of MLB.com.",
@@ -7538,9 +7579,9 @@
    "link": "https://www.mlbtraderumors.com/2026/10/joe-espada-jason-kanzler-reportedly-finalists-for-mariners-managerial-job.html",
    "date": "2026-10-27T21:57:13.000Z",
    "teams": [
-    "LAD",
-    "CHC",
     "CWS",
+    "CHC",
+    "LAD",
     "SEA",
     "TB"
    ],
@@ -7815,6 +7856,30 @@
     [
      "Jacob Latz",
      656641
+    ]
+   ]
+  },
+  {
+   "title": "Can Colson Montgomery Keep This Up?",
+   "link": "https://www.mlbtraderumors.com/2026/10/can-colson-montgomery-keep-this-up.html",
+   "date": "2026-10-25T16:22:38.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox surprised the league by winning 84 games this year and earning a Wild Card spot in the playoffs. They ultimately fell to the Guardians in a five-game Division Series, but they’ll be looking to win the division next year on the back of a strong position player group. One member of that group is shortstop Colson Montgomery. Putting it simply, he had a polarizing season in 2026.",
+    "The 24-year-old Montgomery played in 153 games and took 638 trips to the plate. Among the positives, he led American League shortstops with 31 home runs, 87 runs batted in, and a.206 isolated slugging percentage. The power was clearly present, and it was a key reason for Montgomery being an everyday player despite only posting a 91 wRC+. His glovework also helped out significantly. Montgomery was worth +10 Outs Above Average at shortstop and ranked in the 94th percentile by Fielding Run Value, according to Statcast.",
+    "Altogether, Montgomery was worth 2.8 wins above replacement in the eyes of FanGraphs. That landed in the middle of the pack for qualified shortstops, and on the surface, it makes him a quality regular. However, Montgomery achieved that value while struggling badly to make contact. He batted.197/.282/.403 overall and struck out at a staggering 35.6% rate. The latter was the highest in the league not just among shortstops, but qualified players at any position. Montgomery’s teammate Munetaka Murakami came in second with a 35.4% strikeout rate."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/colson-montgomery-2026-1024x683.jpg",
+   "players": [
+    [
+     "Colson Montgomery",
+     695657
+    ],
+    [
+     "Munetaka Murakami",
+     808959
     ]
    ]
   },
@@ -8445,9 +8510,9 @@
    "link": "https://www.mlbtraderumors.com/2026/10/astros-gm-rumors-josh-barfield-white-sox-randy-flores-cardinals.html",
    "date": "2026-10-20T21:25:08.000Z",
    "teams": [
-    "STL",
     "CWS",
-    "HOU"
+    "HOU",
+    "STL"
    ],
    "body": [
     "The Astros’ general manager search has been underway for two months but could soon draw to a close. Chandler Rome of The Athletic reports that Houston could hire a new general manager before the completion of the World Series. Rome lists White Sox assistant general manager Josh Barfield, Cardinals assistant general manager Randy Flores and (as already reported earlier today) Brewers assistant general manager Matt Kleine as three candidates still in the running. That’s not necessarily an exhaustive list; Rome notes that in-house assistant GM Connor Huff has a particularly good relationship with owner Jim Crane, for instance.",
@@ -8849,6 +8914,68 @@
    ]
   },
   {
+   "title": "Offseason Outlook: Chicago White Sox",
+   "link": "https://www.mlbtraderumors.com/2026/10/offseason-outlook-chicago-white-sox-16.html",
+   "date": "2026-10-16T04:59:06.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox became the first team ever to follow three consecutive 100-loss seasons with a playoff berth. They knocked out the Astros for their first series win in two decades in the Wild Card Series. It was an excellent season relative to expectations, though they surely feel they squandered an opportunity by failing to close out the Guardians after taking a 2-0 lead in the ALDS. How aggressive are ownership and the front office going to be to supplement a talented position player core?",
+    "Luis Castillo, RHP: $22.75MM through 2027 (deal includes’28 vesting option at 180 innings) Munetaka Murakami, 1B: $17MM through 2027 Andrew Benintendi, DH/LF: $14.5MM through 2027 Jordan Hicks, RHP: $12MM through 2027 Anthony Kay, LHP: $7MM through 2027 (including buyout of’28 mutual option) Option Decisions",
+    "None 2027 financial commitments: $71.25MM Total future commitments: $73.25MM",
+    "Arbitration-Eligible Players (service time in parentheses; projected salaries courtesy of MLBTR contributor Matt Swartz)",
+    "Joey Bart (5.020): $2.9MM Huascar Brazobán (3.170): $1.6MM Brenton Doyle (3.161): $3.6MM Miguel Vargas (3.101): $5.4MM Chris Murphy (3.055): $900K Jordan Leasure (2.161): $1MM Non-tender candidates: Bart, Murphy, Leasure"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2024-11-08T204709Z_2117463341_MT1USATODAY24708169_RTRMADP_3_MLB-CHICAGO-WHITE-SOX-PRESS-CONFERENCE-1024x683.jpg",
+   "players": [
+    [
+     "Luis Castillo",
+     622491
+    ],
+    [
+     "Munetaka Murakami",
+     808959
+    ],
+    [
+     "Andrew Benintendi",
+     643217
+    ],
+    [
+     "Jordan Hicks",
+     663855
+    ],
+    [
+     "Anthony Kay",
+     641743
+    ],
+    [
+     "Joey Bart",
+     663698
+    ],
+    [
+     "Huascar Brazobán",
+     623211
+    ],
+    [
+     "Brenton Doyle",
+     686668
+    ],
+    [
+     "Miguel Vargas",
+     678246
+    ],
+    [
+     "Chris Murphy",
+     669684
+    ],
+    [
+     "Jordan Leasure",
+     673929
+    ]
+   ]
+  },
+  {
    "title": "Miguel Rojas Announces Retirement",
    "link": "https://www.mlbtraderumors.com/2026/10/miguel-rojas-announces-retirement.html",
    "date": "2026-10-16T04:05:19.000Z",
@@ -8906,8 +9033,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/al-central-notes-caminero-melton-white-sox-holderman.html",
    "date": "2026-10-15T22:58:55.000Z",
    "teams": [
-    "CLE",
     "CWS",
+    "CLE",
     "DET",
     "TB"
    ],
@@ -8981,6 +9108,38 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/JoelPayamps-2026Braves-1024x683.jpg",
    "players": []
+  },
+  {
+   "title": "White Sox To Pursue Starting Pitching",
+   "link": "https://www.mlbtraderumors.com/2026/10/white-sox-to-pursue-starting-pitching.html",
+   "date": "2026-10-15T02:01:44.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "White Sox general manager Chris Getz spoke with members of the media today, including James Fegan of the Chicago Sun Times, after the club was recently eliminated by the Guardians. Looking ahead to 2027, Getz said the Sox will pursue starting pitching this offseason.",
+    "It’s not a surprising declaration. Though the Sox had a good season, the rotation was not a strength. The club’s starters logged a total of 674 2/3 innings, the fewest of the 30 teams in the league. Their 4.60 earned run average was better than just four other clubs. Chicago deployed a pitching chaos strategy in the postseason, with few traditional starts.",
+    "The use of openers clouds those splits a bit but the general overview lines up with a deeper dive. Sean Burke, Davis Martin, Anthony Kay and Erick Fedde were the club’s biggest innings eaters this year. Fedde is headed to free agency. Kay had a serviceable 4.44 ERA with a subpar 18.2% strikeout rate. Martin had a 3.95 ERA but in uneven fashion. His ERA was at 2.00 through the end of May but was 5.63 after that. Burke was similar but less extreme. He had a 2.99 ERA through his start on August 11 but a 4.66 ERA in his final seven outings."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/White_Sox_mascot_generic_Southpaw-1024x683.jpg",
+   "players": [
+    [
+     "Sean Burke",
+     680732
+    ],
+    [
+     "Davis Martin",
+     663436
+    ],
+    [
+     "Anthony Kay",
+     641743
+    ],
+    [
+     "Erick Fedde",
+     607200
+    ]
+   ]
   },
   {
    "title": "Offseason Outlook: Pittsburgh Pirates",
@@ -9061,6 +9220,34 @@
     [
      "Spencer Horwitz",
      687462
+    ]
+   ]
+  },
+  {
+   "title": "MLBTR Podcast: Playoff Storylines And The State Of The White Sox, Yankees, Padres, And Braves",
+   "link": "https://www.mlbtraderumors.com/2026/10/mlbtr-podcast-playoff-storylines-and-the-state-of-the-white-sox-yankees-padres-and-braves.html",
+   "date": "2026-10-14T18:09:50.000Z",
+   "teams": [
+    "CWS",
+    "ATL",
+    "CLE",
+    "LAD",
+    "MIL",
+    "NYY",
+    "SD",
+    "TB"
+   ],
+   "body": [
+    "The latest episode of the MLB Trade Rumors Podcast is now live on Spotify, Apple Podcasts, and wherever you get your podcasts! Make sure you subscribe as well! You can also use the player at this link to listen, if you don’t use Spotify or Apple for podcasts.",
+    "This week, host Darragh McDonald is joined by Steve Adams of MLB Trade Rumors to discuss…",
+    "The Dodgers, Brewers, Guardians and Rays still being alive in the playoffs (1:55) The White Sox going into offseason mode (17:15) The Yankees going into offseason mode (27:50) The Padres going into offseason mode (45:10) The Braves going into offseason mode (52:55) Check out our past episodes!",
+    "Diamondbacks Stories, Offseason Previews For Eliminated Playoff Teams, And Creative Pitching Usage – listen here Wild Card Rosters And What’s Next For The Rangers, Diamondbacks, and Pirates – listen here Free Agent Power Rankings, Cade Cavalli’s Extension, And Likely Playoff Matchups – listen here The podcast intro and outro song “So Long” is provided courtesy of the band Showoff. Check out their Facebook page here!"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/WilliamContreras-1024x682.jpg",
+   "players": [
+    [
+     "Cade Cavalli",
+     676917
     ]
    ]
   },
