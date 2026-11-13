@@ -1,15 +1,17 @@
 {
- "updated": "2026-11-13T22:40:32.652Z",
+ "updated": "2026-11-13T22:50:29.991Z",
  "articles": [
   {
    "title": "Angels, Tyler Heineman Avoid Arbitration",
    "link": "https://www.mlbtraderumors.com/2026/11/angels-tyler-heineman-avoid-arbitration.html",
-   "date": "2026-11-13T22:08:21.000Z",
+   "date": "2026-11-13T22:40:21.000Z",
    "teams": [
     "LAA"
    ],
    "body": [
-    "The Angels announced that they have signed catcher Tyler Heineman to a one-year deal for the 2027 season worth $1.2375MM. They also re-signed left-hander Sammy Peralta via a minor league contract with an invitation to spring training."
+    "The Angels announced that they have signed catcher Tyler Heineman to a one-year deal for the 2027 season worth $1.2375MM. They also re-signed left-hander Sammy Peralta via a minor league contract with an invitation to spring training.",
+    "Heineman, 36 in June, is a journeyman catcher. He has played for the Marlins, Giants, Blue Jays, Pirates, Red Sox and Angels in his career. He had a really nice season with the Jays in 2025, backing up Alejandro Kirk. Heineman hit.289/.361/.416 in 174 plate appearances. He also got strong grades for his work behind the plate. FanGraphs credited him with 2.1 wins above replacement. He got into a couple of postseason games as the Jays made a World Series run.",
+    "Though he was 34 years old, he qualified for arbitration for the first time after that season. The Jays tendered him a contract for his age-35 season and the two sides avoided a hearing by agreeing to a salary of $1.2375. Unfortunately, he couldn’t carry things over into 2026. While Kirk was on the injured list, the Jays called up Brandon Valenzuela to share the catching duties with Heineman. Valenzuela played well as Heineman struggled. Heineman is out of options so he was designated for assignment when Kirk came off the IL."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Tyler_Heineman_Angels-1024x683.jpg",
    "players": [
@@ -20,6 +22,14 @@
     [
      "Sammy Peralta",
      671111
+    ],
+    [
+     "Alejandro Kirk",
+     672386
+    ],
+    [
+     "Brandon Valenzuela",
+     678218
     ]
    ]
   },
