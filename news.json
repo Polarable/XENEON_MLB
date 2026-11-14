@@ -1,6 +1,45 @@
 {
- "updated": "2026-11-14T18:00:33.605Z",
+ "updated": "2026-11-14T18:10:30.435Z",
  "articles": [
+  {
+   "title": "AL Central Notes: White Sox, Twins, Burg, Guardians",
+   "link": "https://www.mlbtraderumors.com/2026/11/al-central-notes-white-sox-twins-burg-guardians.html",
+   "date": "2026-11-14T18:00:34.000Z",
+   "teams": [
+    "CWS",
+    "CLE",
+    "MIN",
+    "SF"
+   ],
+   "body": [
+    "The White Sox are focused on bolstering their rotation this winter, both with external additions and internal moves like moving Grant Taylor from the bullpen to a starting role. Even with Taylor leaving the relief mix, however, GM Chris Getz downplayed the idea of prioritizing the bullpen when speaking with the Chicago Sun-Times’ James Fegan and other reporters. Rather than invest heavily in relievers, the Sox could use any excess starters in bullpen roles, with perhaps a lower-cost veteran or two added later in the offseason for added depth.",
+    "Since the White Sox are so deep in infield prospects, it has been suggested that the club could trade from this depth to address other needs. Getz didn’t rule this possibility out in the future, but it is “not something that I would say we’re entertaining right now.” It’s a fair stance to take, as the Sox might not want to move any younger talent until they have a better idea of which of these infielders they view as true building blocks. Despite Chicago’s unexpected AL Central title, the Sox aren’t going to pivot entirely away from their rebuilding plan, and the current infield grouping of Miguel Vargas, Colson Montgomery, Chase Meidroth, and Munetaka Murakami all contributed heavily to the playoff run.",
+    "More from around the AL Central…"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/WhiteSoxhat-generic-1024x682.jpg",
+   "players": [
+    [
+     "Grant Taylor",
+     691799
+    ],
+    [
+     "Miguel Vargas",
+     678246
+    ],
+    [
+     "Colson Montgomery",
+     695657
+    ],
+    [
+     "Chase Meidroth",
+     805367
+    ],
+    [
+     "Munetaka Murakami",
+     808959
+    ]
+   ]
+  },
   {
    "title": "Latest On Ketel Marte",
    "link": "https://www.mlbtraderumors.com/2026/11/latest-on-ketel-marte.html",
@@ -430,32 +469,6 @@
     [
      "Kevin Alcantara",
      682634
-    ]
-   ]
-  },
-  {
-   "title": "Front Office Subscriber Chat Transcript",
-   "link": "https://www.mlbtraderumors.com/2026/11/front-office-subscriber-chat-with-anthony-franco-today-at-200pm-central-91.html",
-   "date": "2026-11-13T20:00:51.000Z",
-   "teams": [],
-   "body": [
-    "Good afternoon, hope all is well! Busy week for us so I’m going to keep this one close to an hour, let’s get it going MarlinsMan",
-    "I have a feeling the Marlins may reel someone in… what other dark horse FA could land there? Seems as if the Marlins are interested in a lot of people. Anthony Franco",
-    "They do seem to be in on LH relievers so I could see Vesia or Soto there, think there’s an argument for Ty France to push Stowers back to LF Carlton",
-    "Only three clubs have made significant signings with the GM meetings behind us. It doesn’t seem like the Skubal mega overpay sweepstakes should have any effect on the vast majority of the remaining clubs, so what’s the hold up? I thought the looming lockout would cause most teams to make preemptive moves. Anthony Franco",
-    "It’s just early. The biggest move in the last lockout year before the QO decision date was Andrew Heaney signing for $8.5M. We’ve already had three signings more significant than that with a much weaker FA class Please",
-    "Give me one good reason why I should think the lockout will end before the start of spring training Anthony Franco",
-    "Before Spring Training would usually start in mid-February? I’ve got nothing, don’t think it’s happening They’ll need some kind of warm-up period and eventually you get to a point where you can no longer dither while still leaving a three week window for camp and the rest of the offseason while still playing 162 And if you don’t get a deal done by then, everyone loses money and negotiations get more difficult because you also need to divide that lost revenue HitsLikeRays"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2015/06/MLBTR-image-325x325.png",
-   "players": [
-    [
-     "Ty France",
-     664034
-    ],
-    [
-     "Andrew Heaney",
-     571760
     ]
    ]
   },
@@ -8841,27 +8854,6 @@
    ]
   },
   {
-   "title": "Josh Bell Keeps Getting It Done",
-   "link": "https://www.mlbtraderumors.com/2026/10/josh-bell-keeps-getting-it-done.html",
-   "date": "2026-10-19T18:41:03.000Z",
-   "teams": [
-    "MIN"
-   ],
-   "body": [
-    "After spending his first five seasons in Pittsburgh, Josh Bell has played for six teams over the last half-dozen years. He’s been a frequent trade deadline mover since leaving the Pirates. He’ll never rank at the top of any free agent lists, but he’s come through with each new team.",
-    "The Twins signed Bell to a one-year, $7MM deal last winter. He was coming off a solid 22-homer season as the primary DH for the Nationals. Bell stepped into a similar role in Minnesota. He slashed.255/.319/.419 across 631 plate appearances. The switch-hitter drove in 96 runs, his highest mark since 2019. He ranked fifth in the American League in RBI.",
-    "Bell finished the 2026 campaign with a 106 wRC+. That’s exactly what he posted in 2025. He’s had a wRC+ between 102 and 106 in each of the past four seasons. The highs were certainly higher earlier in his career. Bell hit 37 homers and earned an All-Star nod in 2019. He won a Silver Slugger award at DH in 2022. But the consistency is admirable, especially in a market that hasn’t offered much reliability recently.",
-    "Aside from the offensive output, Bell has also been remarkably durable. He’s played 140+ games in every year of his career, excluding his 2016 rookie campaign (when he was promoted in July) and the shortened 2020 season. Bell hasn’t been on the injured list since 2021."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/JoshBell-1024x683.jpg",
-   "players": [
-    [
-     "Josh Bell",
-     605137
-    ]
-   ]
-  },
-  {
    "title": "Athletics Hire Taylor Smith As President Of Baseball Ops",
    "link": "https://www.mlbtraderumors.com/2026/10/athletics-hire-taylor-smith-as-president-of-baseball-ops.html",
    "date": "2026-10-19T14:12:16.000Z",
@@ -9337,38 +9329,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/JoelPayamps-2026Braves-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "White Sox To Pursue Starting Pitching",
-   "link": "https://www.mlbtraderumors.com/2026/10/white-sox-to-pursue-starting-pitching.html",
-   "date": "2026-10-15T02:01:44.000Z",
-   "teams": [
-    "CWS"
-   ],
-   "body": [
-    "White Sox general manager Chris Getz spoke with members of the media today, including James Fegan of the Chicago Sun Times, after the club was recently eliminated by the Guardians. Looking ahead to 2027, Getz said the Sox will pursue starting pitching this offseason.",
-    "It’s not a surprising declaration. Though the Sox had a good season, the rotation was not a strength. The club’s starters logged a total of 674 2/3 innings, the fewest of the 30 teams in the league. Their 4.60 earned run average was better than just four other clubs. Chicago deployed a pitching chaos strategy in the postseason, with few traditional starts.",
-    "The use of openers clouds those splits a bit but the general overview lines up with a deeper dive. Sean Burke, Davis Martin, Anthony Kay and Erick Fedde were the club’s biggest innings eaters this year. Fedde is headed to free agency. Kay had a serviceable 4.44 ERA with a subpar 18.2% strikeout rate. Martin had a 3.95 ERA but in uneven fashion. His ERA was at 2.00 through the end of May but was 5.63 after that. Burke was similar but less extreme. He had a 2.99 ERA through his start on August 11 but a 4.66 ERA in his final seven outings."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/White_Sox_mascot_generic_Southpaw-1024x683.jpg",
-   "players": [
-    [
-     "Sean Burke",
-     680732
-    ],
-    [
-     "Davis Martin",
-     663436
-    ],
-    [
-     "Anthony Kay",
-     641743
-    ],
-    [
-     "Erick Fedde",
-     607200
-    ]
-   ]
   },
   {
    "title": "Offseason Outlook: Pittsburgh Pirates",
