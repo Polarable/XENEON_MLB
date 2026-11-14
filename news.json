@@ -1,6 +1,42 @@
 {
- "updated": "2026-11-14T05:40:30.842Z",
+ "updated": "2026-11-14T05:50:31.336Z",
  "articles": [
+  {
+   "title": "Giants Notes: Rotation, Bullpen, Catcher",
+   "link": "https://www.mlbtraderumors.com/2026/11/giants-notes-rotation-bullpen-catcher.html",
+   "date": "2026-11-14T05:41:25.000Z",
+   "teams": [
+    "SF"
+   ],
+   "body": [
+    "The Giants have made no secret of their desire to add at least one starter. They’re not planning to make a run at Tarik Skubal and seem to be out on Trevor Rogers, who’s attached to draft compensation via the qualifying offer. San Francisco has been loosely linked to Freddy Peralta and to NPB righty Kaima Taira, though there’s a decent chance they look more to the middle tiers of the market.",
+    "Logan Webb and Landen Roupp are the only two starters locked into the season-opening rotation. President of baseball operations Buster Posey has implicitly suggested that next season might be something of a bridge year with most of their top prospect talent in the lower minors. However, USA Today’s Bob Nightengale writes that they’re continuing to rebuff teams who call about Webb.",
+    "That’s not surprising, as the Giants publicly shot down speculation about trading their ace early in deadline season. Webb is signed for two more seasons. There’s a reasonable argument for listening on him if the Giants aren’t going to make an all-in push next year, but the organization clearly doesn’t want to embark on a full rebuild either. If they were going to listen on Webb, it’d have made more sense to do it over the summer when they were en route to a 97-loss season."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-08-19T234250Z_313218880_MT1USATODAY29621371_RTRMADP_3_MLB-SAN-FRANCISCO-GIANTS-AT-CLEVELAND-GUARDIANS-1024x683.jpg",
+   "players": [
+    [
+     "Tarik Skubal",
+     669373
+    ],
+    [
+     "Trevor Rogers",
+     669432
+    ],
+    [
+     "Freddy Peralta",
+     642547
+    ],
+    [
+     "Logan Webb",
+     657277
+    ],
+    [
+     "Landen Roupp",
+     694738
+    ]
+   ]
+  },
   {
    "title": "Rays Rumors: DeLuca, McClanahan, Pepiot, Rasmussen",
    "link": "https://www.mlbtraderumors.com/2026/11/rays-rumors-deluca-mcclanahan-pepiot-rasmussen.html",
@@ -5893,8 +5929,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/nationals-acquire-nate-furman-from-giants.html",
    "date": "2026-11-02T01:58:30.000Z",
    "teams": [
-    "SF",
-    "WSH"
+    "WSH",
+    "SF"
    ],
    "body": [
     "The Nationals have acquired infielder Nate Furman from the Giants, ESPN’s Jeff Passan reports. Minor league left-hander Tony Neubeck is heading to San Francisco in return. The Nats announced that left-hander Richard Lovelady has been designated for assignment in the corresponding move.",
