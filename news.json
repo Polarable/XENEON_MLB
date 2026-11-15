@@ -1,6 +1,25 @@
 {
- "updated": "2026-11-15T23:20:33.906Z",
+ "updated": "2026-11-15T23:30:31.617Z",
  "articles": [
+  {
+   "title": "Brewers Acquire Ryan Walker",
+   "link": "https://www.mlbtraderumors.com/2026/11/brewers-acquire-ryan-walker.html",
+   "date": "2026-11-15T23:21:34.000Z",
+   "teams": [
+    "MIL",
+    "SF"
+   ],
+   "body": [
+    "The Brewers announced that right-hander Ryan Walker has been acquired in a trade with the Giants. Right-handed pitching prospects Blake Holub and Gavin Perry head to San Francisco as the return. Milwaukee has seven open spots on its 40-man roster, so no further moves were needed to accommodate Walker’s arrival."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/RyanWalker-2026Giants-1024x683.jpg",
+   "players": [
+    [
+     "Ryan Walker",
+     676254
+    ]
+   ]
+  },
   {
    "title": "Pablo Sandoval Announces Retirement",
    "link": "https://www.mlbtraderumors.com/2026/11/pablo-sandoval-announces-retirement.html",
@@ -6919,9 +6938,9 @@
    "link": "https://www.mlbtraderumors.com/2026/10/astros-hire-randy-flores-as-general-manager.html",
    "date": "2026-10-31T04:30:39.000Z",
    "teams": [
-    "MIL",
+    "STL",
     "HOU",
-    "STL"
+    "MIL"
    ],
    "body": [
     "The Astros have hired Cardinals assistant GM/scouting director Randy Flores as their new general manager. The team announced the move on Friday evening.",
