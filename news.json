@@ -1,6 +1,22 @@
 {
- "updated": "2026-11-15T01:10:30.079Z",
+ "updated": "2026-11-15T01:20:33.470Z",
  "articles": [
+  {
+   "title": "Astros AGM Connor Huff Resigns",
+   "link": "https://www.mlbtraderumors.com/2026/11/astros-agm-connor-huff-resigns.html",
+   "date": "2026-11-15T01:17:12.000Z",
+   "teams": [
+    "HOU"
+   ],
+   "body": [
+    "The Astros have made a pair of major staffing additions this offseason, hiring Randy Flores as general manager and Brad Ausmus as skipper. The club also had a subtraction this week, with Flores announcing that assistant general manager Connor Huff has left the organization.",
+    "Flores told reporters, including Chandler Rome of The Athletic, that Huff resigned to take a “new, exciting opportunity outside of baseball.” Huff had been with the team since 2022. He was promoted from vice president of business and baseball operations to AGM at the end of the 2025 season. Huff replaced former assistant GM Andrew Ball.",
+    "Houston still has two AGMs on staff, Gavin Dickey and Charles Cook. Both interviewed for the role that ultimately went to Flores. Houston had a vacancy in its top front office position after moving on from Dana Brown in August. Flores mentioned that he’d been given the go-ahead to hire a replacement for Huff, though he didn’t specify whether it would be for an AGM role or a different position.",
+    "The Astros are looking to rebound after an uneven year. Brown was fired with a month left in the regular season. Manager Joe Espada was retained at the time, but it was pretty clear he wouldn’t be with the club beyond 2026. Houston backed into a division title despite a.500 record and was quickly booted from the playoffs in a sweep by the White Sox."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AstrosLogo-1024x683.jpg",
+   "players": []
+  },
   {
    "title": "Pirates Want To Limit Ryan O’Hearn’s Outfield Reps",
    "link": "https://www.mlbtraderumors.com/2026/11/pirates-want-to-limit-ryan-ohearns-outfield-reps.html",
@@ -6751,8 +6767,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/astros-hire-randy-flores-as-general-manager.html",
    "date": "2026-10-31T04:30:39.000Z",
    "teams": [
-    "HOU",
     "MIL",
+    "HOU",
     "STL"
    ],
    "body": [
