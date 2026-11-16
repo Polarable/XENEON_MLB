@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-16T21:10:34.229Z",
+ "updated": "2026-11-16T21:20:44.825Z",
  "articles": [
+  {
+   "title": "Pirates, Chas McCormick Agree To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/pirates-chas-mccormick-agree-to-minor-league-deal.html",
+   "date": "2026-11-16T21:16:55.000Z",
+   "teams": [
+    "PIT"
+   ],
+   "body": [
+    "The Pirates and outfielder Chas McCormick have agreed to a minor league deal, reports Ari Alexander of 7News Boston. McCormick will also received an invite to big league camp in spring training."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Chas_McCormick_Cubs-1024x683.jpg",
+   "players": [
+    [
+     "Chas McCormick",
+     676801
+    ]
+   ]
+  },
   {
    "title": "Cubs Interested In Trevor Rogers",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-interested-in-trevor-rogers.html",
@@ -407,24 +425,6 @@
     [
      "Ryan Walker",
      676254
-    ]
-   ]
-  },
-  {
-   "title": "Carlos Santana Hoping To Play In 2027",
-   "link": "https://www.mlbtraderumors.com/2026/11/carlos-santana-hoping-to-play-in-2027.html",
-   "date": "2026-11-16T04:51:37.000Z",
-   "teams": [],
-   "body": [
-    "With 17 Major League seasons already on his resume, Carlos Santana is planning to play in 2027, as The Athletic’s Will Sammon, Ken Rosenthal, and Katie Woo reported earlier this week. Santana turns 41 in April, and he is playing in the Dominican Winter League for the first time since the 2013-14 offseason.",
-    "The Diamondbacks signed Santana to a one-year, $2MM contract last February, but he appeared in only eight games before a strained right adductor sent him to the 10-day injured list. He suffered another adductor strain during his minor league rehab assignment and was subsequently moved to the 60-day IL, and then was activated in the last week of June but subsequently designated for assignment and released. The Braves quickly signed Santana to a minors contract a few days later, and he hit.293/.389/.380 in 108 PA in Atlanta’s farm system before the first baseman was released again in mid-August.",
-    "The eight games marked Santana’s shortest MLB season since his 46-game rookie season in 2010. Beyond those two years and the pandemic-shortened 60-game 2020 season, Santana was a workhorse for the majority of his career, logging at least 150 games in 10 of his 17 seasons. As recently as 2024, Santana was still a productive bat, as he hit.238/.328/.420 with 23 homers in 594 plate appearances for the Twins."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/08/carlos-santana-dbacks-2026-1024x674.jpg",
-   "players": [
-    [
-     "Carlos Santana",
-     467793
     ]
    ]
   },
@@ -10000,46 +10000,6 @@
     [
      "Steven Wilson",
      621051
-    ]
-   ]
-  },
-  {
-   "title": "Kirby Yates Retires",
-   "link": "https://www.mlbtraderumors.com/2026/09/kirby-yates-retires.html",
-   "date": "2026-09-27T00:16:06.000Z",
-   "teams": [
-    "PIT",
-    "ATL",
-    "LAA",
-    "LAD",
-    "NYY",
-    "SD",
-    "TB",
-    "TEX",
-    "TOR"
-   ],
-   "body": [
-    "Veteran right-hander Kirby Yates announced his retirement this afternoon following the Pirates’ 4-3 walk-off loss to the Tigers in Detroit. In a game that featured Justin Verlander’s final career start for the Tigers, the Pirates opted for a bullpen game, and manager Don Kelly gave Yates the nod as the opener. It was the first “start” of his big league career after 517 appearances as a reliever. Yates recorded five outs, including a strikeout of Dillon Dingler, before being lifted for Yohan Ramírez.",
-    "“It was good, but this was it …” Yates told reporters after the game (link via SportsNet Pittsburgh). “I don’t have anything left. Let’s put it that way. I’ve been running on fumes for a while. I think it’s just time. It’s felt like it’s been time for a little while now. I think I’ve given this game everything I have, and in return, it’s given me more than I can ever thank it for or imagine.”",
-    "Yates signed with the Rays in 2009 as an undrafted free agent. He reached the Majors in 2014 as a 27-year-old and delivered a decent 3.75 earned run average in 36 innings, working off a low-90s fastball and a low-80s slider to strike out 26.9% of opponents. Yates struggled to a 6.13 ERA over the next two years with the Rays and Yankees but found something of a groove with the Padres in 2017. In 61 appearances for the Friars, the righty struck out a dominant 38.5% of opponents against an 8.4% walk rate and a 3.72 ERA. Around that time, Yates began to move away from his slider in favor of a mid-80s splitter, which would later become his signature pitch."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/09/kirby-yates-padres-2026-1024x677.jpg",
-   "players": [
-    [
-     "Kirby Yates",
-     489446
-    ],
-    [
-     "Justin Verlander",
-     434378
-    ],
-    [
-     "Dillon Dingler",
-     693307
-    ],
-    [
-     "Yohan Ramírez",
-     670990
     ]
    ]
   },
