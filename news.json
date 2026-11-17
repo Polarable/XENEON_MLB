@@ -1,28 +1,10 @@
 {
- "updated": "2026-11-17T21:30:33.252Z",
+ "updated": "2026-11-17T21:40:34.340Z",
  "articles": [
-  {
-   "title": "Royals Select Carson Roccaforte, Lucas Braun; Nick Mears Designated For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/11/royals-select-carson-roccaforte-lucas-braun-nick-mears-designated-for-assignment.html",
-   "date": "2026-11-17T21:20:43.000Z",
-   "teams": [
-    "KC"
-   ],
-   "body": [
-    "The Royals have selected the contracts of outfielder Carson Roccaforte and right-hander Lucas Braun, the team announced. In a corresponding move, the Royals designated righty Nick Mears for assignment. They now have a full 40-man roster."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2021/09/USATSI_16519653-1024x677.jpg",
-   "players": [
-    [
-     "Nick Mears",
-     683232
-    ]
-   ]
-  },
   {
    "title": "Five Players Reject Qualifying Offer",
    "link": "https://www.mlbtraderumors.com/2026/11/five-players-reject-qualifying-offer.html",
-   "date": "2026-11-17T21:16:09.000Z",
+   "date": "2026-11-17T21:35:09.000Z",
    "teams": [
     "BAL",
     "CHC",
@@ -30,7 +12,9 @@
     "SEA"
    ],
    "body": [
-    "The deadline for players to accept or reject the qualifying offer has now passed. Eight players received a QO. Ryan Jeffers and David Bednar accepted offers from the Twins and Yankees, respectively. Jake Bauers received a QO from the Brewers but already signed with the Red Sox. The other five players have declined, per Alden González of ESPN. Randy Arozarena rejected an offer from the Mariners, Seiya Suzuki from the Cubs, Trevor Rogers from the Orioles, Brandon Lowe from the Pirates and Adrián Morejón from the Padres. Morejón’s decision was previously reported."
+    "The deadline for players to accept or reject the qualifying offer has now passed. Eight players received a QO. Ryan Jeffers and David Bednar accepted offers from the Twins and Yankees, respectively. Jake Bauers received a QO from the Brewers but already signed with the Red Sox. The other five players have declined, per Alden González of ESPN. Randy Arozarena rejected an offer from the Mariners, Seiya Suzuki from the Cubs, Trevor Rogers from the Orioles, Brandon Lowe from the Pirates and Adrián Morejón from the Padres. Morejón’s decision was previously reported.",
+    "The value of the QO is set by averaging the salaries of the 125 highest paid players in the league. This year’s was set at $23.15MM. A team can issue a QO to any impending free agent who has never received one before and who spent the entirety of the most recent season with that club. If the player rejects and signs elsewhere, the team receives draft pick compensation. The signing team would be subject to penalties.",
+    "It’s not really a surprise that any of these players rejected. The five players are among the best at their respective positions. Rogers is clearly behind Tarik Skubal but is arguably the best starting pitcher available apart from that. Suzuki and Arozarena are the top two outfielders on the market. Lowe is arguably the top second baseman, depending on how one feels about Jazz Chisholm Jr. and/or Luis Arraez. Morejón is the top reliever."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/RandyArozarena-1-1024x709.jpg",
    "players": [
@@ -65,6 +49,36 @@
     [
      "Adrián Morejón",
      670970
+    ],
+    [
+     "Tarik Skubal",
+     669373
+    ],
+    [
+     "Jazz Chisholm Jr.",
+     665862
+    ],
+    [
+     "Luis Arraez",
+     650333
+    ]
+   ]
+  },
+  {
+   "title": "Royals Select Carson Roccaforte, Lucas Braun; Nick Mears Designated For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/royals-select-carson-roccaforte-lucas-braun-nick-mears-designated-for-assignment.html",
+   "date": "2026-11-17T21:20:43.000Z",
+   "teams": [
+    "KC"
+   ],
+   "body": [
+    "The Royals have selected the contracts of outfielder Carson Roccaforte and right-hander Lucas Braun, the team announced. In a corresponding move, the Royals designated righty Nick Mears for assignment. They now have a full 40-man roster."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2021/09/USATSI_16519653-1024x677.jpg",
+   "players": [
+    [
+     "Nick Mears",
+     683232
     ]
    ]
   },
@@ -107,7 +121,8 @@
     "Closer David Bednar is expected to accept the $23.15MM qualifying offer from the Yankees, as first reported by Tyler Kepner of The Athletic.",
     "It’s an unexpected development for Bednar, who was set to be one of the top available relievers on the market. He’ll skip the chance at a multi-year deal and return to New York. The Yankees have now retained their closer and one of their top lefties from last season after agreeing to a one-year deal with Tim Hill on Sunday.",
     "Bednar wasn’t the only player to accept the QO. Twins catcher Ryan Jeffers also accepted it. The other six players to receive the offer declined it. One of them, Jake Bauers, already signed with a new team (Red Sox).",
-    "By agreeing to the $23.15MM contract, Bednar becomes the highest-paid reliever ever in terms of annual value. Dodgers closer Edwin Diaz set the mark last season with his three-year, $69MM contract ($23MM AAV). It’s a small edge for Bednar, but a record nonetheless."
+    "By agreeing to the $23.15MM contract, Bednar becomes the highest-paid reliever ever in terms of annual value. Dodgers closer Edwin Diaz set the mark last season with his three-year, $69MM contract ($23MM AAV). It’s a small edge for Bednar, but a record nonetheless.",
+    "Bednar delivered a strong campaign on the verge of free agency. He posted a 2.47 ERA across a career-high 69 1/3 innings. The righty saved 35 games as the top ninth-inning option in one of the best bullpens in the league. Bednar saw his elite strikeout rate fall to an above-average level (27.1%), but he also pushed his walk rate down to 7.1%."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/DavidBednar-1024x683.jpg",
    "players": [
