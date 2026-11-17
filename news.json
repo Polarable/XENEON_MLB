@@ -1,6 +1,65 @@
 {
- "updated": "2026-11-17T21:00:39.306Z",
+ "updated": "2026-11-17T21:10:35.299Z",
  "articles": [
+  {
+   "title": "Ryan Jeffers To Accept Qualifying Offer",
+   "link": "https://www.mlbtraderumors.com/2026/11/ryan-jeffers-to-accept-qualifying-offer.html",
+   "date": "2026-11-17T21:07:29.000Z",
+   "teams": [
+    "MIN"
+   ],
+   "body": [
+    "Twins catcher Ryan Jeffers has opted to accept his $23.15MM qualifying offer, reports Tyler Kepner of The Athletic. It’ll immediately (and narrowly) establish a new AAV record for catchers, which had previously been held by J.T. Realmuto at $23.1MM. Jeffers, a Boras Corporation client, heads back to the Twins on a one-year deal. It’s an about-face for the slugging backstop, who as of last week was reportedly planning to decline in search of a longer-term deal."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/ryan-jeffers-catcher-twins-minnesota-1024x683.jpg",
+   "players": [
+    [
+     "Ryan Jeffers",
+     680777
+    ],
+    [
+     "J.T. Realmuto",
+     592663
+    ]
+   ]
+  },
+  {
+   "title": "David Bednar To Accept Qualifying Offer From Yankees",
+   "link": "https://www.mlbtraderumors.com/2026/11/david-bednar-to-accept-qualifying-offer-from-yankees.html",
+   "date": "2026-11-17T21:06:05.000Z",
+   "teams": [
+    "NYY"
+   ],
+   "body": [
+    "Closer David Bednar is expected to accept the $23.15MM qualifying offer from the Yankees, as first reported by Tyler Kepner of The Athletic."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/DavidBednar-1024x683.jpg",
+   "players": [
+    [
+     "David Bednar",
+     670280
+    ]
+   ]
+  },
+  {
+   "title": "Phillies Select Bryan Rincon",
+   "link": "https://www.mlbtraderumors.com/2026/11/phillies-select-bryan-rincon.html",
+   "date": "2026-11-17T21:02:12.000Z",
+   "teams": [
+    "PHI"
+   ],
+   "body": [
+    "The Phillies have selected shortstop prospect Bryan Rincon onto their 40-man roster, according to Francys Romero of BeisbolFR. The move protects Rincon from being taken in this year’s Rule 5 draft. Philadelphia’s 40-man roster now stands at 39 players, leaving one more spot to protect a prospect in advance of today’s 5:00 pm CT deadline.",
+    "Rincon is a Top 100 prospect in the sport and No. 4 in the Phillies’ system in the view of MLB Pipeline. The club took him in the late rounds of the 2022 draft, and he’s since worked his way through the lower levels of their farm system. This year was the switch-hitting Rincon’s first exposure to Double-A. In 534 plate appearances there, he announced himself with a.267/.410/.517 batting line and a 140 wRC+. Rincon put his plate discipline and speed on full display, walking at a 17.8% clip and stealing 30 bases. He also broke out as a power threat with 26 home runs, despite having combined to hit just 18 in the prior four seasons."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/bryan-rincon-phillies-2026-scaled-e1794945440175-1024x685.jpg",
+   "players": [
+    [
+     "Bryan Rincon",
+     804858
+    ]
+   ]
+  },
   {
    "title": "Free Agent Prediction Contest Leaderboard Now Available",
    "link": "https://www.mlbtraderumors.com/2026/11/free-agent-prediction-contest-leaderboard-now-available-7.html",
@@ -4812,8 +4871,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/mariners-to-hire-tanner-swanson-as-bench-coach.html",
    "date": "2026-11-06T22:37:45.000Z",
    "teams": [
-    "NYY",
-    "SEA"
+    "SEA",
+    "NYY"
    ],
    "body": [
     "The Mariners are hiring Tanner Swanson as their new bench coach, reports Joel Sherman of The New York Post. Swanson had previously been working for the Yankees as major league quality control coach and catching coordinator.",
@@ -8001,35 +8060,6 @@
    ]
   },
   {
-   "title": "Phillies To Designate Garrett Stubbs For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/10/phillies-to-designate-garrett-stubbs-for-assignment.html",
-   "date": "2026-10-30T00:39:17.000Z",
-   "teams": [
-    "PHI"
-   ],
-   "body": [
-    "The Phillies informed catcher Garrett Stubbs that he’s being designated for assignment, reports Scott Lauber of The Philadelphia Inquirer. They’ll have five days to trade him or place him on waivers once they officially announce the DFA.",
-    "The move ends Stubbs’ five-year tenure with the organization. Philadelphia acquired the lefty-hitting backstop from the Astros in a minor trade over the 2021-22 offseason. Stubbs operated as the backup catcher behind J.T. Realmuto for the next three seasons. He’s fallen to third on the catching depth chart in the last two years, as Rafael Marchán has held the reserve role.",
-    "Philadelphia ran the out-of-options Stubbs through waivers at the end of Spring Training. That came after they unsuccessfully tried to find a taker on the trade front. He came back up in mid-April when Realmuto landed on the injured list. Philadelphia operated with three catchers once Realmuto returned, using Stubbs as the last player off the bench. He missed a week and a half in July to left wrist inflammation but otherwise held a spot on the active roster for the final five months of the season.",
-    "Stubbs only made it into 35 games. He started 17 times behind the plate and once in left field, otherwise coming off the bench. The USC product batted.153 without a home run in 65 plate appearances. He finishes his Philly tenure with a.212/.292/.300 slash in 181 contests. The likely outcome is that Stubbs will clear outright waivers and opt for minor league free agency."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-08-20T134201Z_1611108486_MT1USATODAY29624829_RTRMADP_3_MLB-MIAMI-MARLINS-AT-PHILADELPHIA-PHILLIES-1024x683.jpg",
-   "players": [
-    [
-     "Garrett Stubbs",
-     596117
-    ],
-    [
-     "J.T. Realmuto",
-     592663
-    ],
-    [
-     "Rafael Marchán",
-     665561
-    ]
-   ]
-  },
-  {
    "title": "Mets Claim Kyren Paris From Angels",
    "link": "https://www.mlbtraderumors.com/2026/10/mets-claim-kyren-paris-from-angels.html",
    "date": "2026-10-29T23:05:47.000Z",
@@ -8728,33 +8758,6 @@
     [
      "Munetaka Murakami",
      808959
-    ]
-   ]
-  },
-  {
-   "title": "Pablo Lopez On Track In Tommy John Recovery",
-   "link": "https://www.mlbtraderumors.com/2026/10/pablo-lopez-on-track-in-tommy-john-recovery.html",
-   "date": "2026-10-24T21:35:55.000Z",
-   "teams": [
-    "MIN"
-   ],
-   "body": [
-    "Twins right-hander Pablo Lopez is working his way back from a February elbow procedure. He returned to playing catch in August and is targeting a return in Spring Training. His current outlook would make starting the year on the Opening Day roster a possibility.",
-    "Lopez didn’t need full Tommy John surgery. Instead, he had an internal brace procedure, which carries a shorter recovery timeline. A 12-month rehab process would put him back in a Twins uniform for spring action.",
-    "“In my case, chronologically speaking, I’m going to go straight into spring training, straight into the fire,” Lopez told Bobby Nightengale of the Minnesota Star Tribune.",
-    "The February surgery marked the second TJ for Lopez. His first go-round was all the way back in 2013, as a minor leaguer in Seattle’s system. That was a more standard recovery timeline, with the surgery coming at the end of the 2013 campaign and wiping out his 2014 season.",
-    "“I’m going to have to find ways to make sure that I’m listening to my body, make sure I’m keeping an eye on things that I didn’t have to experience with my first Tommy John because I was done with rehab, and I had a normal offseason where I had rest and recovered,” Lopez said.",
-    "The Lopez injury was part of a tumultuous winter for the Twins. The organization introduced new minority owners in December. Tom Pohlad took over as the team’s control person. Team president Derek Falvey departed in January. Then came the Lopez injury, followed by a Joe Ryan scare that ended up being just lower back inflammation."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/PabloLopez-1024x683.jpg",
-   "players": [
-    [
-     "Pablo Lopez",
-     641154
-    ],
-    [
-     "Joe Ryan",
-     657746
     ]
    ]
   },
