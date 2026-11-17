@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T23:40:34.738Z",
+ "updated": "2026-11-17T23:50:32.429Z",
  "articles": [
   {
    "title": "Dodgers Designate Jake Cousins, Christian Cairo For Assignment",
@@ -14,12 +14,20 @@
    "image": "https://cdn.mlbtraderumors.com/files/2025/06/jake-cousins-yankees-1024x683.jpg",
    "players": [
     [
-     "Jake Cousins",
-     664776
+     "Christian Zazueta",
+     800537
     ],
     [
-     "Christian Cairo",
-     686551
+     "Jackson Ferris",
+     701328
+    ],
+    [
+     "Adam Serwinowski",
+     703445
+    ],
+    [
+     "Luke Fox",
+     803183
     ]
    ]
   },
@@ -126,7 +134,9 @@
    ],
    "body": [
     "The Tigers announced they’ve designated four players for assignment: infielders Jace Jung and Trey Sweeney, outfielder Matt Vierling, and left-handed pitcher Jake Miller. That clears 40-man roster space for them to finalize the Emilio Pagán signing and select Josue Briceño, Max Anderson and Peyton Graham onto the roster. The three prospects would otherwise have been eligible for the Rule 5 draft.",
-    "Vierling was one of the league’s more obvious non-tender candidates. The 30-year-old was projected by MLBTR contributor Matt Swartz for a $3.7MM salary in his final year of arbitration eligibility. He’s coming off a second straight injury-wrecked season, as an adductor strain cost him the final two months. He didn’t perform well even when healthy, batting.207/.255/.335 across 291 plate appearances."
+    "Vierling was one of the league’s more obvious non-tender candidates. The 30-year-old was projected by MLBTR contributor Matt Swartz for a $3.7MM salary in his final year of arbitration eligibility. He’s coming off a second straight injury-wrecked season, as an adductor strain cost him the final two months. He didn’t perform well even when healthy, batting.207/.255/.335 across 291 plate appearances.",
+    "Jung, who turned 26 last month, was the 12th overall pick in 2022. He ranked among the organization’s top prospects for a while but has stalled out in the upper minors. He’s coming off a league average.227/.344/.421 batting line in Triple-A, albeit with 22 home runs. Jung only played six MLB games this year and has a.193/.319/.230 slash in 160 plate appearances at the highest level.",
+    "Detroit acquired Sweeney from the Dodgers in the 2024 Jack Flaherty deadline deal. He took over as their primary shortstop down the stretch, improving the infield defense but not providing much at the plate. Sweeney batted.202/.261/.313 across 445 big league plate appearances in 2024-25. He missed the entire’26 season to a right shoulder injury that required arthroscopic surgery in June."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-07-29T183803Z_1680851122_MT1USATODAY29473208_RTRMADP_3_MLB-BALTIMORE-ORIOLES-AT-DETROIT-TIGERS-1024x683.jpg",
    "players": [
@@ -157,6 +167,10 @@
     [
      "Peyton Graham",
      689931
+    ],
+    [
+     "Jack Flaherty",
+     656427
     ]
    ]
   },
@@ -168,7 +182,8 @@
     "CLE"
    ],
    "body": [
-    "The Guardians announced that right-hander Justin Campbell, catcher Kody Huff, and outfielder Jaison Chourio were selected to the 40-man roster."
+    "The Guardians announced that right-hander Justin Campbell, catcher Kody Huff, and outfielder Jaison Chourio were selected to the 40-man roster.",
+    "Chourio is the most well-regarded prospect of the group. MLB Pipeline had him at No. 5 in Cleveland’s system. Chourio slashed.274/.376/.408 in 114 games split between High-A and Double-A in 2026. He stole 40+ bases for the second time in the past three years."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/JaisonChourio-1024x683.jpg",
    "players": [
@@ -221,10 +236,36 @@
    ],
    "body": [
     "The Diamondbacks have selected six players to their 40-man roster, reports Nick Piecoro of The Arizona Republic. The six are infielders Demetrio Crisantes and Cristofer Torin, outfielder Druw Jones, left-hander Spencer Giesting, as well as right-handers Ashton Izzi and Wellington Aracena. Those players are now protected from being selected in the Rule 5 draft, if it takes place. Arizona had seven vacancies on the 40-man roster coming into today so no corresponding moves will be required.",
-    "It’s unclear if there will even be a Rule 5 draft this winter. It is scheduled for December 9, a week after the league is expected to lock out the players. Five years ago, the draft was held in limbo until the lockout ended, at which point it was canceled. It’s not a guarantee that the same thing will happen this offseason, so teams still have to give roster spots to any eligible players they don’t want to risk losing."
+    "It’s unclear if there will even be a Rule 5 draft this winter. It is scheduled for December 9, a week after the league is expected to lock out the players. Five years ago, the draft was held in limbo until the lockout ended, at which point it was canceled. It’s not a guarantee that the same thing will happen this offseason, so teams still have to give roster spots to any eligible players they don’t want to risk losing.",
+    "Jones is perhaps the most recognizable name in the bunch because he is the son of Hall-of-Famer Andruw Jones. The younger Jones was taken by the Snakes with the second overall pick in the 2022 draft. Prospect evaluators often compare him to his father, especially when it comes to his speed and defense. The big question with Jones what he can do from the batter’s box. Jones will take his walks but doesn’t have huge power and strikes out a decent amount."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Druw_Jones_Diamondbacks-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Demetrio Crisantes",
+     702679
+    ],
+    [
+     "Cristofer Torin",
+     800198
+    ],
+    [
+     "Druw Jones",
+     702258
+    ],
+    [
+     "Spencer Giesting",
+     801517
+    ],
+    [
+     "Ashton Izzi",
+     802416
+    ],
+    [
+     "Wellington Aracena",
+     800286
+    ]
+   ]
   },
   {
    "title": "Rays Select Xavier Isaac",
@@ -241,6 +282,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/03/Raymond_Rays_mascot_generic-1024x683.jpg",
    "players": [
+    [
+     "Xavier Isaac",
+     800060
+    ],
     [
      "Yandy Díaz",
      650490
@@ -631,6 +676,14 @@
     [
      "Cameron Foster",
      671382
+    ],
+    [
+     "Cedric De Grandpre",
+     678142
+    ],
+    [
+     "Davis Polo",
+     805175
     ]
    ]
   },
@@ -901,7 +954,16 @@
     "The 23-year-old Rodriguez has proven to be a nice find in the 19th round of the 2023 draft. He split the 2026 season between Double-A and Triple-A, slashing a combined.264/.374/.410 with 16 homers, 15 doubles, five triples and 36 steals (46 attempts). Rodriguez walked at a 14.3% clip at both levels and fanned in 21.3% of his overall plate appearances (with a slightly lower rate in Triple-A than in Double-A). He has more power than Rada and is an above-average runner. He doesn’t have quite the same speed or defensive chops as Rada but is experienced in all three outfield slots, with Baseball America’s latest scouting report calling him a late-bloomer with fourth-outfielder potential."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/nelson-rada-angels-prospect-1024x713.jpg",
-   "players": []
+   "players": [
+    [
+     "Nelson Rada",
+     703185
+    ],
+    [
+     "Raudi Rodriguez",
+     804558
+    ]
+   ]
   },
   {
    "title": "Rangers Receiving Trade Interest In MacKenzie Gore",
@@ -4734,10 +4796,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/ChristianCairo-1024x683.jpg",
    "players": [
-    [
-     "Christian Cairo",
-     686551
-    ],
     [
      "Ryan O’Hearn",
      656811
