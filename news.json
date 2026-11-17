@@ -1,6 +1,41 @@
 {
- "updated": "2026-11-17T23:30:38.634Z",
+ "updated": "2026-11-17T23:40:34.738Z",
  "articles": [
+  {
+   "title": "Dodgers Designate Jake Cousins, Christian Cairo For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/dodgers-designate-jake-cousins-christian-cairo-for-assignment.html",
+   "date": "2026-11-17T23:34:45.000Z",
+   "teams": [
+    "LAD"
+   ],
+   "body": [
+    "The Dodgers announced they’ve designated reliever Jake Cousins and infielder Christian Cairo for assignment. They needed to open two spots on the 40-man roster to select four pitchers: righty Christian Zazueta and left-handers Jackson Ferris, Adam Serwinowski and Luke Fox. The four prospects are kept out of the Rule 5 draft."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2025/06/jake-cousins-yankees-1024x683.jpg",
+   "players": [
+    [
+     "Jake Cousins",
+     664776
+    ],
+    [
+     "Christian Cairo",
+     686551
+    ]
+   ]
+  },
+  {
+   "title": "Brewers Select Six Players",
+   "link": "https://www.mlbtraderumors.com/2026/11/brewers-select-six-players.html",
+   "date": "2026-11-17T23:31:46.000Z",
+   "teams": [
+    "MIL"
+   ],
+   "body": [
+    "The Brewers announced that they have selected six players to the 40-man roster. They are infielders Luke Adams and Dylan O’Rae, catcher Matt Wood, left-hander Tate Kuehner, right-hander Cameron Wagoner and infielder/outfielder Jett Williams. Those players are now protected from being selected in the Rule 5 draft, if it even takes place this offseason. Milwaukee had multiple 40-man vacancies but the roster is now full. MLBTR covered the Williams move earlier today."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Luke_Adams_Brewers-1024x683.jpg",
+   "players": []
+  },
   {
    "title": "Cardinals Designate Max Rajcic For Assignment",
    "link": "https://www.mlbtraderumors.com/2026/11/cardinals-designate-max-rajcic-for-assignment.html",
@@ -10,7 +45,7 @@
    ],
    "body": [
     "The Cardinals announced they’ve designated right-hander Max Rajcic for assignment. They had one opening on the 40-man roster but needed a second to select infielder Jesús Báez and right-hander Jacob Odle, both of whom are now protected from the Rule 5 draft.",
-    "It’s a tough break for Rajcic, who was always going to have a difficult time holding his roster spot all winter. The righty made his MLB debut in July but blew out after six games and required Tommy John surgery. He’ll probably miss all of 2027. The Cardinals can keep him in DFA limbo until Friday and then decline to tender him a contract, which will send him directly to free agency without waivers. At that point, they can try to bring the 2022 sixth-round pick on a two-year minor league contract.",
+    "It’s a tough break for Rajcic, who was always going to have a difficult time holding his roster spot all winter. The righty made his MLB debut in July but blew out after six games and required Tommy John surgery. He’ll probably miss all of 2027. The Cardinals can keep him in DFA limbo until Friday and then decline to tender him a contract, which will send him directly to free agency without waivers. At that point, they can try to bring the 2022 sixth-round pick back on a two-year minor league contract.",
     "Báez was the team’s obvious choice to keep out of the Rule 5. Acquired from the Mets at the 2025 deadline in the Ryan Helsley trade, he raked at a.283/.328/.587 clip with 39 homers in his first full season in the St. Louis system. Báez ranks as the organization’s #6 prospect at Baseball America. He’ll need to improve his pitch recognition as he faces higher level pitching but clearly has huge power for a player who won’t turn 22 until February."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/07/USATSI_29310968-1024x683.jpg",
@@ -90,7 +125,8 @@
     "DET"
    ],
    "body": [
-    "The Tigers announced they’ve designated four players for assignment: infielders Jace Jung and Trey Sweeney, outfielder Matt Vierling, and left-handed pitcher Jake Miller. That clears 40-man roster space for them to finalize the Emilio Pagán signing and select Josue Briceño, Max Anderson and Peyton Graham onto the roster. The three prospects would otherwise have been eligible for the Rule 5 draft."
+    "The Tigers announced they’ve designated four players for assignment: infielders Jace Jung and Trey Sweeney, outfielder Matt Vierling, and left-handed pitcher Jake Miller. That clears 40-man roster space for them to finalize the Emilio Pagán signing and select Josue Briceño, Max Anderson and Peyton Graham onto the roster. The three prospects would otherwise have been eligible for the Rule 5 draft.",
+    "Vierling was one of the league’s more obvious non-tender candidates. The 30-year-old was projected by MLBTR contributor Matt Swartz for a $3.7MM salary in his final year of arbitration eligibility. He’s coming off a second straight injury-wrecked season, as an adductor strain cost him the final two months. He didn’t perform well even when healthy, batting.207/.255/.335 across 291 plate appearances."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-07-29T183803Z_1680851122_MT1USATODAY29473208_RTRMADP_3_MLB-BALTIMORE-ORIOLES-AT-DETROIT-TIGERS-1024x683.jpg",
    "players": [
@@ -6889,8 +6925,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/pirates-claim-akil-baddoo.html",
    "date": "2026-11-02T22:10:31.000Z",
    "teams": [
-    "MIL",
-    "PIT"
+    "PIT",
+    "MIL"
    ],
    "body": [
     "The Pirates have claimed outfielder Akil Baddoo off waivers from the Brewers, according to announcements from both clubs. The Bucs have 40-man space and don’t need to make a corresponding move.",
@@ -8966,26 +9002,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2025/06/USATSI_25971982-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "Trade Candidate: Teoscar Hernandez",
-   "link": "https://www.mlbtraderumors.com/2026/10/trade-candidate-teoscar-hernandez.html",
-   "date": "2026-10-25T22:41:27.000Z",
-   "teams": [
-    "LAD"
-   ],
-   "body": [
-    "Teoscar Hernandez’s shaky 2023 season with the Mariners didn’t establish much of a platform as the outfielder entered free agency for the first time, and the result was a one-year, $23.5MM deal with the Dodgers. Hernandez chose the shorter-term contract over some lengthier offers with the intent of hitting well in 2024 and putting himself in better position to command a more lucrative long-term pact.",
-    "The plan worked, as Hernandez hit.272/.339/.501 with 33 homers over 652 plate appearances. He earned an All-Star nod, Silver Slugger honors, and (most importantly for Hernandez) his first championship ring as Los Angeles captured the 2024 World Series. As one might expect, Hernandez’s first choice was to remain in Dodger Blue, and that ended up being the case when L.A. re-signed him to a three-year, $66MM guarantee. The contract also carries a $15MM club option for 2028 ($6.5MM buyout), and a conditional $15MM club option for 2029 if Hernandez spends 75 days on the injured list due to a surgery for a specific injury.",
-    "The Dodgers won another World Series in 2025 with Hernandez putting up decent numbers during that postseason run. Overall, however, the first two years of Hernandez’s contract have looked a lot more like his 2023 than his 2024. Since Opening Day 2025, Hernandez has hit.256/.308/.441 with 41 homers over 1037 PA, translating to a 105 wRC+. The 2026 campaign saw Hernandez increase his batting average and walk rate from 2025 (though his 8.6BB% was still below league average), but his power diminished."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/06/TeoscarHernandez-1024x683.jpg",
-   "players": [
-    [
-     "Teoscar Hernandez",
-     606192
-    ]
-   ]
   },
   {
    "title": "Astros Hire Conner Watson As Director Of Hitting",
