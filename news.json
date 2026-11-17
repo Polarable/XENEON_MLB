@@ -1,6 +1,23 @@
 {
- "updated": "2026-11-17T19:40:31.126Z",
+ "updated": "2026-11-17T19:50:40.849Z",
  "articles": [
+  {
+   "title": "Red Sox Trade Angel Bastardo To Royals",
+   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-trade-angel-bastardo-to-royals.html",
+   "date": "2026-11-17T19:47:41.000Z",
+   "teams": [
+    "BOS",
+    "KC"
+   ],
+   "body": [
+    "1:47pm: The Royals have confirmed the trade and announced that Bastardo has indeed been selected to the 40-man roster.",
+    "1:01pm: The Red Sox and Royals have lined up on a minor trade. Right-hander Angel Bastardo is heading to Kansas City, reports Francys Romero of BeisbolFR. Boston gets minor league infielder Jack Pineda in return, according to Alex Speier of the Boston Globe. The Royals may add Bastardo to their 40-man roster, according to Chris Cotillo of MassLive.",
+    "The 24-year-old Bastardo was selected by the Blue Jays in the 2024 Rule 5 Draft. He’d been working his way through the Red Sox’ system since signing as an amateur out of Venezuela in 2018. He reached Double-A in 2023 and repeated there in 2024, posting an earned run average over 5.00 in ten starts before undergoing Tommy John surgery that June. After the Rule 5 selection, Toronto stashed Bastardo on the 60-day IL while he continued his recovery. He was returned to Boston this past April after he didn’t make the Blue Jays’ roster out of camp.",
+    "In 2026, Bastardo worked as a full-time reliever for the Sox’ Triple-A affiliate in Worcester, posting a 4.64 ERA over 54 1/3 innings. His 31.6% strikeout rate was impressive, but both his 36.6% ground ball rate and especially his 14.3% walk rate were worse than par. Boston re-signed Bastardo to a minors pact a few weeks ago, though he’ll now work towards his major league debut with the Royals."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/03/AngelBastardo-BlueJays2026-1024x683.jpg",
+   "players": []
+  },
   {
    "title": "A’s Designate Braden Nett For Assignment",
    "link": "https://www.mlbtraderumors.com/2026/11/as-designate-braden-nett-for-assignment.html",
@@ -9,13 +26,19 @@
     "ATH"
    ],
    "body": [
-    "The Athletics finalized their acquisition of left-hander Raymond Burgos from the Red Sox this afternoon. In a corresponding 40-man roster move, the team designated right-hander Braden Nett for assignment."
+    "The Athletics finalized their acquisition of left-hander Raymond Burgos from the Red Sox this afternoon. In a corresponding 40-man roster move, the team designated right-hander Braden Nett for assignment.",
+    "Nett, 24, signed with the Padres as an undrafted free agent in 2022. Yet, he quickly showed promising stuff, and by 2025, both Baseball America and FanGraphs had him ranked among the top 10 prospects in the organization. That summer, he was one of four players the Padres sent to the A’s in the Mason Miller trade. While Leo De Vries was the centerpiece of the deal, Nett was more than a throw-in. Indeed, The Athletic’s Ken Rosenthal had reported earlier that summer that Nett was generating interest on the trade market.",
+    "At this time last year, the A’s selected Nett to their 40-man roster to protect him from the Rule 5 draft. Although he had not yet pitched above Double-A, it seemed like he had a realistic chance to make his big league debut at some point in 2026. Unfortunately, injuries plagued the righty throughout the year. He only threw 22 innings at Triple-A and another 14 2/3 at Double-A. While he struck out an impressive 45 batters in those 36 2/3 frames, he walked an unsightly 47 and gave up 36 runs on 41 hits."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-02-20T180710Z_1964284397_MT1USATODAY28292909_RTRMADP_3_MLB-ATHLETICS-MEDIA-DAY-scaled-e1794943322311-1024x684.jpg",
    "players": [
     [
      "Raymond Burgos",
      670103
+    ],
+    [
+     "Mason Miller",
+     695243
     ]
    ]
   },
@@ -89,22 +112,6 @@
      669022
     ]
    ]
-  },
-  {
-   "title": "Red Sox Trade Angel Bastardo To Royals",
-   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-trade-angel-bastardo-to-royals.html",
-   "date": "2026-11-17T19:01:41.000Z",
-   "teams": [
-    "BOS",
-    "KC"
-   ],
-   "body": [
-    "The Red Sox and Royals have lined up on a minor trade. Right-hander Angel Bastardo is heading to Kansas City, reports Francys Romero of BeisbolFR. Boston gets minor league infielder Jack Pineda in return, according to Alex Speier of the Boston Globe. The Royals may add Bastardo to their 40-man roster, according to Chris Cotillo of MassLive.",
-    "The 24-year-old Bastardo was selected by the Blue Jays in the 2024 Rule 5 Draft. He’d been working his way through the Red Sox’ system since signing as an amateur out of Venezuela in 2018. He reached Double-A in 2023 and repeated there in 2024, posting an earned run average over 5.00 in ten starts before undergoing Tommy John surgery that June. After the Rule 5 selection, Toronto stashed Bastardo on the 60-day IL while he continued his recovery. He was returned to Boston this past April after he didn’t make the Blue Jays’ roster out of camp.",
-    "In 2026, Bastardo worked as a full-time reliever for the Sox’ Triple-A affiliate in Worcester, posting a 4.64 ERA over 54 1/3 innings. His 31.6% strikeout rate was impressive, but both his 36.6% ground ball rate and especially his 14.3% walk rate were worse than par. Boston re-signed Bastardo to a minors pact a few weeks ago, though he’ll now work towards his major league debut with the Royals."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/03/AngelBastardo-BlueJays2026-1024x683.jpg",
-   "players": []
   },
   {
    "title": "Astros Place Joey Loperfido On Outright Waivers",
