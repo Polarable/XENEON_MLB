@@ -1,6 +1,74 @@
 {
- "updated": "2026-11-17T23:20:32.380Z",
+ "updated": "2026-11-17T23:30:38.634Z",
  "articles": [
+  {
+   "title": "Cardinals Designate Max Rajcic For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/cardinals-designate-max-rajcic-for-assignment.html",
+   "date": "2026-11-17T23:29:14.000Z",
+   "teams": [
+    "STL"
+   ],
+   "body": [
+    "The Cardinals announced they’ve designated right-hander Max Rajcic for assignment. They had one opening on the 40-man roster but needed a second to select infielder Jesús Báez and right-hander Jacob Odle, both of whom are now protected from the Rule 5 draft.",
+    "It’s a tough break for Rajcic, who was always going to have a difficult time holding his roster spot all winter. The righty made his MLB debut in July but blew out after six games and required Tommy John surgery. He’ll probably miss all of 2027. The Cardinals can keep him in DFA limbo until Friday and then decline to tender him a contract, which will send him directly to free agency without waivers. At that point, they can try to bring the 2022 sixth-round pick on a two-year minor league contract.",
+    "Báez was the team’s obvious choice to keep out of the Rule 5. Acquired from the Mets at the 2025 deadline in the Ryan Helsley trade, he raked at a.283/.328/.587 clip with 39 homers in his first full season in the St. Louis system. Báez ranks as the organization’s #6 prospect at Baseball America. He’ll need to improve his pitch recognition as he faces higher level pitching but clearly has huge power for a player who won’t turn 22 until February."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/USATSI_29310968-1024x683.jpg",
+   "players": [
+    [
+     "Max Rajcic",
+     691008
+    ],
+    [
+     "Ryan Helsley",
+     664854
+    ]
+   ]
+  },
+  {
+   "title": "Rockies Select Three Players",
+   "link": "https://www.mlbtraderumors.com/2026/11/rockies-select-three-players.html",
+   "date": "2026-11-17T23:27:28.000Z",
+   "teams": [
+    "COL"
+   ],
+   "body": [
+    "The Rockies selected the contracts of catcher Bryant Betancourt and right-handers Jackson Cox and Jack Mahoney, per a team announcement. Colorado’s 40-man roster is now at 39 players."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/BryantBetancourt-1024x683.jpg",
+   "players": [
+    [
+     "Bryant Betancourt",
+     700164
+    ],
+    [
+     "Jackson Cox",
+     702484
+    ],
+    [
+     "Jack Mahoney",
+     694968
+    ]
+   ]
+  },
+  {
+   "title": "Reds Select Carter Graham",
+   "link": "https://www.mlbtraderumors.com/2026/11/reds-select-carter-graham.html",
+   "date": "2026-11-17T23:24:35.000Z",
+   "teams": [
+    "CIN"
+   ],
+   "body": [
+    "The Reds announced that infielder/outfielder Carter Graham has been selected to the 40-man roster. That protects him from being exposed in the Rule 5 draft, if it takes place this offseason. Cincinnati had multiple 40-man vacancies, so no corresponding move was required."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2024/11/Reds_logo_generic-1024x683.jpg",
+   "players": [
+    [
+     "Carter Graham",
+     807728
+    ]
+   ]
+  },
   {
    "title": "Marlins Select Four Players",
    "link": "https://www.mlbtraderumors.com/2026/11/marlins-select-four-players.html",
@@ -9620,38 +9688,6 @@
    ]
   },
   {
-   "title": "Will The Cardinals Trade A Catcher This Offseason?",
-   "link": "https://www.mlbtraderumors.com/2026/10/will-the-cardinals-trade-a-catcher-this-offseason.html",
-   "date": "2026-10-14T01:22:30.000Z",
-   "teams": [
-    "STL"
-   ],
-   "body": [
-    "The Cardinals’ catching depth has intrigued other teams for over a calendar year. Although St. Louis has yet to trade from that area of organizational strength, that’ll again surely be a point of discussion for the front office.",
-    "St. Louis has four catchers on the 40-man roster: Leo Bernal, Iván Herrera, Jimmy Crooks and Pedro Pagés. Top prospect Rainiel Rodriguez won’t need an offseason roster spot but has mashed his way to Double-A. There’s a chance he earns an MLB look next season at age 20. He’ll at the very least play his way to Triple-A and be on the radar for a 2028 promotion.",
-    "If Rodriguez were to make his debut next season, he’d likely be the second rookie catcher on the active roster. Bernal, who turns 23 in February, figures to break camp for the first time in his career. The Cardinals brought up the Panama native with September roster expansion. Bernal started 22 of the final 24 games, drawing 15 assignments behind the plate with seven more between first base and designated hitter. He made a strong first impression, batting.284 with five homers. Bernal scuffled a bit defensively, committing six errors, but most scouting reports feel he’ll be serviceable behind the plate."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-08-29T035848Z_1154472614_MT1USATODAY29686821_RTRMADP_3_MLB-PITTSBURGH-PIRATES-AT-ST-LOUIS-CARDINALS-1024x683.jpg",
-   "players": [
-    [
-     "Leo Bernal",
-     699024
-    ],
-    [
-     "Iván Herrera",
-     671056
-    ],
-    [
-     "Jimmy Crooks",
-     699625
-    ],
-    [
-     "Pedro Pagés",
-     686780
-    ]
-   ]
-  },
-  {
    "title": "Reviewing The Rays, Angels, And Reds Three-Team Trade",
    "link": "https://www.mlbtraderumors.com/2026/10/reviewing-the-rays-angels-and-reds-three-team-trade.html",
    "date": "2026-10-12T22:12:41.000Z",
@@ -9794,27 +9830,6 @@
    "players": []
   },
   {
-   "title": "Mariners Claim Michael Toglia",
-   "link": "https://www.mlbtraderumors.com/2026/10/mariners-claim-michael-toglia.html",
-   "date": "2026-10-02T18:49:32.000Z",
-   "teams": [
-    "CIN",
-    "SEA"
-   ],
-   "body": [
-    "The Mariners have claimed first baseman Michael Toglia off waivers from the Reds, per a team announcement. It wasn’t previously reported that Cincinnati had placed Toglia on waivers. He’d been on the 60-day IL since early September after dislocating his shoulder.",
-    "Cincinnati added Toglia on a minor league deal over the winter after Colorado dropped him from the 40-man roster. He had a nice season in Louisville, slashing.273/.373/.547 with 22 dingers in only 402 trips to the plate before being selected to the big league roster in mid-August. It was a short stay on the active roster, however, as Toglia appeared in only 10 games and took just 28 plate appearances before suffering his shoulder injury, which required season-ending surgery.",
-    "The 6’5″, 225-pound Toglia is a switch-hitting former first-round pick who was a well-regarded prospect in the Rockies organization but has never made enough contact to sustain a role in the majors. He did log a career-high 458 plate appearances and belt 25 homers back in 2024, but a 32.1% strikeout rate undercut that power and left him with a.218/.311/.456 batting line (99 wRC+). He followed that with a brutal.190/.258/.353 showing in 337 plate appearances the next season, during which his strikeout rate soared north of 39%. That led the Rockies to designate him for assignment and non-tender him last November."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/MichaelToglia-1024x683.jpg",
-   "players": [
-    [
-     "Michael Toglia",
-     669911
-    ]
-   ]
-  },
-  {
    "title": "12 Players Elect Free Agency",
    "link": "https://www.mlbtraderumors.com/2026/09/12-players-elect-free-agency-2.html",
    "date": "2026-09-30T04:26:03.000Z",
@@ -9921,89 +9936,6 @@
     [
      "Jose Quintana",
      500779
-    ]
-   ]
-  },
-  {
-   "title": "Offseason Outlook: Colorado Rockies",
-   "link": "https://www.mlbtraderumors.com/2026/09/offseason-outlook-colorado-rockies-17.html",
-   "date": "2026-09-22T04:58:13.000Z",
-   "teams": [
-    "COL"
-   ],
-   "body": [
-    "The Rockies have shown a bit of improvement but are still one of the worst teams in the league. They won’t be trying to compete in 2027. The big question of the offseason is how aggressively they will be shopping players from the major league roster.",
-    "Kris Bryant, 1B/OF: $52MM through 2028 Ezequiel Tovar, SS: $51.5MM through 2030 (includes buyout of 2031 club option) Mickey Moniak, OF: $16.25MM through 2028 Willi Castro, IF/OF: $6.8MM through 2027 Option Decisions",
-    "None 2027 guarantees: $48.05MM Total future commitments: $126.55MM",
-    "Arbitration-Eligible Players (service time in parentheses; projected salaries courtesy of MLBTR contributor Matt Swartz)",
-    "Jimmy Herget (5.069): $2.4MM Jake McCarthy (4.074): $4.6MM Ryan Feltner (4.071): $3.8MM Brennan Bernardino (3.153): $1.6MM Hunter Goodman (3.010): $6.2MM Jordan Beck (2.133): $1.2MM Non-tender candidates: Herget, Feltner, Beck",
-    "Kyle Freeland, Jose Quintana, Tomoyuki Sugano, Jordan Romano, Tyler Freeman (assuming his contract isn’t added back to the roster), Keegan Thompson (assuming his contract isn’t added back to the roster) It has been almost a year since the Rockies hired Paul DePodesta as president of baseball operations. The hope for many fans was that this would signal the start of a new way of doing business. For many prior years, the front office seemed to be loyal to its players to a fault, reluctant to trade them at peak value or when it made logical sense to do so."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/07/Hunter_Goodman_Rockies-1024x683.jpg",
-   "players": [
-    [
-     "Kris Bryant",
-     592178
-    ],
-    [
-     "Ezequiel Tovar",
-     678662
-    ],
-    [
-     "Mickey Moniak",
-     666160
-    ],
-    [
-     "Willi Castro",
-     650489
-    ],
-    [
-     "Jimmy Herget",
-     623474
-    ],
-    [
-     "Jake McCarthy",
-     664983
-    ],
-    [
-     "Ryan Feltner",
-     663372
-    ],
-    [
-     "Brennan Bernardino",
-     657514
-    ],
-    [
-     "Hunter Goodman",
-     696100
-    ],
-    [
-     "Jordan Beck",
-     687597
-    ],
-    [
-     "Kyle Freeland",
-     607536
-    ],
-    [
-     "Jose Quintana",
-     500779
-    ],
-    [
-     "Tomoyuki Sugano",
-     608372
-    ],
-    [
-     "Jordan Romano",
-     605447
-    ],
-    [
-     "Tyler Freeman",
-     671289
-    ],
-    [
-     "Keegan Thompson",
-     624522
     ]
    ]
   }
