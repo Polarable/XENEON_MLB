@@ -1,6 +1,113 @@
 {
- "updated": "2026-11-17T23:10:39.975Z",
+ "updated": "2026-11-17T23:20:32.380Z",
  "articles": [
+  {
+   "title": "Marlins Select Four Players",
+   "link": "https://www.mlbtraderumors.com/2026/11/marlins-select-four-players.html",
+   "date": "2026-11-17T23:19:16.000Z",
+   "teams": [
+    "MIA"
+   ],
+   "body": [
+    "The Marlins announced that they have selected right-handers Jace Beck, Eliazar Dishmey and Brandon White as well as infielder Juan Matheus to the 40-man roster. Those players are now protected from being selected in the Rule 5 draft, if it takes place this offseason. Miami had five 40-man vacancies and therefore doesn’t need to make any corresponding moves. Prior to the official announcement, Matheus and Dishmey were reported by Isaac Azout of Fish on First. White was first reported by Christina De Nicola of MLB.com."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Jace_Beck_Marlins-1024x683.jpg",
+   "players": []
+  },
+  {
+   "title": "Tigers Designate Four Players For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-designate-four-players-for-assignment.html",
+   "date": "2026-11-17T23:17:09.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers announced they’ve designated four players for assignment: infielders Jace Jung and Trey Sweeney, outfielder Matt Vierling, and left-handed pitcher Jake Miller. That clears 40-man roster space for them to finalize the Emilio Pagán signing and select Josue Briceño, Max Anderson and Peyton Graham onto the roster. The three prospects would otherwise have been eligible for the Rule 5 draft."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-07-29T183803Z_1680851122_MT1USATODAY29473208_RTRMADP_3_MLB-BALTIMORE-ORIOLES-AT-DETROIT-TIGERS-1024x683.jpg",
+   "players": [
+    [
+     "Jace Jung",
+     690291
+    ],
+    [
+     "Trey Sweeney",
+     700242
+    ],
+    [
+     "Matt Vierling",
+     663837
+    ],
+    [
+     "Emilio Pagán",
+     641941
+    ],
+    [
+     "Josue Briceño",
+     800522
+    ],
+    [
+     "Max Anderson",
+     801194
+    ],
+    [
+     "Peyton Graham",
+     689931
+    ]
+   ]
+  },
+  {
+   "title": "Guardians Make Multiple Roster Moves",
+   "link": "https://www.mlbtraderumors.com/2026/11/guardians-make-multiple-roster-moves.html",
+   "date": "2026-11-17T23:11:15.000Z",
+   "teams": [
+    "CLE"
+   ],
+   "body": [
+    "The Guardians announced that right-hander Justin Campbell, catcher Kody Huff, and outfielder Jaison Chourio were selected to the 40-man roster."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/JaisonChourio-1024x683.jpg",
+   "players": [
+    [
+     "Justin Campbell",
+     683235
+    ],
+    [
+     "Kody Huff",
+     687627
+    ],
+    [
+     "Jaison Chourio",
+     702693
+    ]
+   ]
+  },
+  {
+   "title": "Blue Jays Select Three Players",
+   "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-select-three-players.html",
+   "date": "2026-11-17T23:11:10.000Z",
+   "teams": [
+    "TOR"
+   ],
+   "body": [
+    "The Blue Jays announced that they selected outfielder RJ Schreck as well as right-handers Nolan Perry and Daniel Guerra to the 40-man roster. That protects those players from being selected in the Rule 5 draft, if it actually takes place this offseason. Toronto had three 40-man vacancies, so no corresponding moves were necessary."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/RJ_Schreck_Blue_Jays-1024x683.jpg",
+   "players": [
+    [
+     "RJ Schreck",
+     702302
+    ],
+    [
+     "Nolan Perry",
+     804526
+    ],
+    [
+     "Daniel Guerra",
+     806413
+    ]
+   ]
+  },
   {
    "title": "Diamondbacks Select Six Players",
    "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-select-six-players.html",
@@ -23,10 +130,22 @@
     "TB"
    ],
    "body": [
-    "The Rays selected first base prospect Xavier Isaac onto the 40-man roster. They already had a roster opening, so they won’t need any further moves if he’s the only player they’re protecting from the Rule 5 draft."
+    "The Rays selected first base prospect Xavier Isaac onto the 40-man roster. They already had a roster opening, so they won’t need any further moves if he’s the only player they’re protecting from the Rule 5 draft.",
+    "Isaac, 23 next month, was Tampa Bay’s first-round pick back in 2022. The lefty-hitting first baseman has top of the scale raw power but began to run into strikeout issues at the High-A level. He continued to walk at huge rates and hit for power, playing his way to Double-A. Isaac was limited to 41 games at that level in 2025 by what was initially an undisclosed injury.",
+    "Last offseason, Isaac announced that he’d required a life-saving brain surgery in July 2025. He made it back onto the field this year and had a monster season between the top two minor league levels. Isaac popped 27 homers while hitting.258/.402/.510. He walked at a huge 18.8% clip while striking out 28.4% of the time.",
+    "Isaac spent most of the season with Double-A Montgomery. He played his way to Triple-A at the end of August and continued to hit. While his short-term big league path is blocked by Yandy Díaz and Jonathan Aranda, he could be up next season if either player suffers an injury. Díaz is entering the final year of his contract, which would open a path to regular playing time by 2028."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/03/Raymond_Rays_mascot_generic-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Yandy Díaz",
+     650490
+    ],
+    [
+     "Jonathan Aranda",
+     666018
+    ]
+   ]
   },
   {
    "title": "Rays Exploring Nick Fortes Trade",
@@ -387,36 +506,6 @@
     [
      "Bryan Rincon",
      804858
-    ]
-   ]
-  },
-  {
-   "title": "Free Agent Prediction Contest Leaderboard Now Available",
-   "link": "https://www.mlbtraderumors.com/2026/11/free-agent-prediction-contest-leaderboard-now-available-7.html",
-   "date": "2026-11-17T20:58:39.000Z",
-   "teams": [],
-   "body": [
-    "Thousands of MLBTR readers entered our MLB Free Agent Prediction Contest prior to last week’s November 10th deadline. You can find a reminder of the rules here. It’s worth noting that Emilio Pagan is excluded from the contest because he reached an agreement with the Tigers prior to the deadline. Thus, contestants are competing to be correct on the remaining 49 players from MLBTR’s Top 50 Free Agents.",
-    "The contest leaderboard is now available; check it out here! So far, Evan Phillips, Jake Bauers, and Dustin May have signed. Four contestants have two of those correct.",
-    "This is the direct leaderboard link, but it’s permanently available in several places if you lose it. Our desktop users can find it under the Tools menu, and MLBTR Features on the sidebar. Mobile web users can also find the link under the flame menu in the upper left."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/MLBTR-Free-Agent-Prediction-Contest-3-of-MLBTR-s-Top-49-Free-Agents-Are-Signed-MLB-Trade-Rumors-11-17-2026_02_56_PM-1024x468.png",
-   "players": [
-    [
-     "Emilio Pagan",
-     641941
-    ],
-    [
-     "Evan Phillips",
-     623465
-    ],
-    [
-     "Jake Bauers",
-     641343
-    ],
-    [
-     "Dustin May",
-     669160
     ]
    ]
   },
@@ -6578,66 +6667,6 @@
    ]
   },
   {
-   "title": "Blue Jays Decline Option On Myles Straw",
-   "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-decline-option-on-myles-straw.html",
-   "date": "2026-11-02T22:37:31.000Z",
-   "teams": [
-    "TOR"
-   ],
-   "body": [
-    "The Blue Jays announced they’ve declined their $8MM club option on outfielder Myles Straw. He receives a $1.75MM buyout, which is paid by the Guardians as a condition of the 2025 trade that sent him to Toronto. Straw is now a free agent.",
-    "Toronto announced a few procedural moves as they got their 40-man roster in shape. José Berríos, Jake Bloss, Bowden Francis, Cody Ponce, Addison Barger, Anthony Santander and Jonatan Clase were all reinstated from the 60-day injured list. While the Jays didn’t officially announce an option decision regarding Berríos, it’s safe to assume he did not opt out of the final two years on his contract. Toronto outrighted right-hander CJ Van Eyk off their 40-man roster and announced that outfielder Rudy Martin Jr. elected free agency after being outrighted last week.",
-    "Straw has spent the last two seasons in Toronto. The Jays acquired him in what amounted to a salary dump, as the Guardians sent along international bonus pool space so Toronto could make a better offer to Roki Sasaki. The gambit didn’t work as hoped when Sasaki chose the Dodgers anyway, but Straw salvaged the deal from their perspective with a couple solid seasons as a depth outfielder. He batted.262/.313/.367 with stellar defensive grades for their pennant winning team in 2025. This past season wasn’t as productive, but Straw remained a viable fifth outfielder and a strong clubhouse presence."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-23T212510Z_687618592_MT1USATODAY29896228_RTRMADP_3_MLB-TORONTO-BLUE-JAYS-AT-BALTIMORE-ORIOLES-1024x683.jpg",
-   "players": [
-    [
-     "Myles Straw",
-     664702
-    ],
-    [
-     "José Berríos",
-     621244
-    ],
-    [
-     "Jake Bloss",
-     814005
-    ],
-    [
-     "Bowden Francis",
-     670102
-    ],
-    [
-     "Cody Ponce",
-     664074
-    ],
-    [
-     "Addison Barger",
-     680718
-    ],
-    [
-     "Anthony Santander",
-     623993
-    ],
-    [
-     "Jonatan Clase",
-     682729
-    ],
-    [
-     "CJ Van Eyk",
-     669310
-    ],
-    [
-     "Rudy Martin Jr.",
-     657675
-    ],
-    [
-     "Roki Sasaki",
-     808963
-    ]
-   ]
-  },
-  {
    "title": "Astros Exercise Club Option On Isaac Paredes",
    "link": "https://www.mlbtraderumors.com/2026/11/astros-exercise-club-option-on-isaac-paredes.html",
    "date": "2026-11-02T22:18:46.000Z",
@@ -9191,36 +9220,6 @@
    ]
   },
   {
-   "title": "Marlins Willing To Listen To Offers For Otto Lopez, Xavier Edwards",
-   "link": "https://www.mlbtraderumors.com/2026/10/marlins-willing-to-listen-to-offers-for-otto-lopez-xavier-edwards.html",
-   "date": "2026-10-23T02:28:03.000Z",
-   "teams": [
-    "MIA",
-    "NYY"
-   ],
-   "body": [
-    "Teams inquired about Marlins shortstop Otto Lopez and second baseman Xavier Edwards before the Aug. 3 trade deadline, but the double-play tandem stayed put. Edwards and Lopez could continue their partnership in 2027, though the Marlins are willing to listen offers for both players if teams offer “a lot” in exchange, Barry Jackson of the Miami Herald reports.",
-    "Edwards and Lopez are each on track to make the first of three potential trips through arbitration this winter, meaning they are controllable through 2029. MLBTR contributor Matt Swartz projects a $5.4MM salary for Lopez and a $3.5MM payday for Edwards.",
-    "Lopez, whom the Marlins stole off waivers from the Giants in 2024, has combined for 10.7 fWAR since he landed in Miami. The 28-year-old was a below-average offensive player from 2024-25, but he slashed a career-best.305/.349/.437 with a 122 wRC+ in 687 plate appearances this season. Although Lopez didn’t hit for much power (11 home runs,.132 ISO) or draw many walks (5.8%), he fanned just 13% of the time. Consistently putting the ball in play helped the speedster to the majors’ fifth-highest batting average and seventh-most stolen bases (34).",
-    "Adding in Lopez’s well-regarded work at short, where he accounted for 14 Outs Above Average, 12 Fielding Run Value and 6 Defensive Runs Saved, he was among the majors’ most valuable players this year. Lopez tied Brewers second baseman Brice Turang for fifth in fWAR (5.9) and finished seventh in bWAR (6.1)."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/07/xavier-edwards-otto-lopez-marlins-1024x683.jpg",
-   "players": [
-    [
-     "Otto Lopez",
-     672640
-    ],
-    [
-     "Xavier Edwards",
-     669364
-    ],
-    [
-     "Brice Turang",
-     668930
-    ]
-   ]
-  },
-  {
    "title": "Guardians’ Kahlil Watson Undergoes Core Muscle Surgery",
    "link": "https://www.mlbtraderumors.com/2026/10/guardians-kahlil-watson-core-muscle-surgery.html",
    "date": "2026-10-23T01:27:05.000Z",
@@ -9243,23 +9242,6 @@
      605137
     ]
    ]
-  },
-  {
-   "title": "Manager Stephen Vogt Staying With Guardians",
-   "link": "https://www.mlbtraderumors.com/2026/10/manager-stephen-vogt-staying-with-guardians.html",
-   "date": "2026-10-23T00:13:51.000Z",
-   "teams": [
-    "CLE",
-    "SEA"
-   ],
-   "body": [
-    "Although Guardians skipper Stephen Vogt has close ties to the state of Washington, he is not interested in the Mariners’ managerial vacancy. Vogt made it clear on Thursday that he is sticking with the Guardians.",
-    "“I’ll be in Cleveland,” Vogt told Tim Stebbins of MLB.com and other reporters. “I’m here. I’m coming back.”",
-    "Next season will be Vogt’s fourth in Cleveland, which won the American League Central in each of his first three years. After earning AL Manager of the Year honors from 2024-25, Vogt is a finalist again this fall. The former major league catcher guided the Guards to the ALCS for the second time in 2026, but the team is now in the early stages of the offseason after losing in six games to the Rays. While Cleveland took two of the first three, Tampa Bay then won three straight by a combined score of 17-7. It was a bitter ending for Cleveland, though it’s impressive that the club got that far after opening the season with a league-low payroll in the neighborhood of $75MM.",
-    "Teams in need of a manager would have coveted Vogt had he been a free agent this offseason, but he signed a multiyear extension after the 2025 campaign. While it’s unknown how many years are left on the contract, Guardians president of baseball operations Chris Antonetti told Zack Meisel of The Athletic he has “every expectation that Vogt is going to manage here for a really long time.”"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-10-19T224647Z_94985673_MT1USATODAY30132004_RTRMADP_3_MLB-ALCS-CLEVELAND-GUARDIANS-AT-TAMPA-BAY-RAYS-1024x683.jpg",
-   "players": []
   },
   {
    "title": "MLBTR Podcast: Brewers vs. Rays, Dodgers and Guardians Post-Mortem, And The A’s New Front Office Boss",
@@ -9403,27 +9385,6 @@
     [
      "Kyler Fedko",
      693459
-    ]
-   ]
-  },
-  {
-   "title": "Tigers Sign Nick Raquet To Minors Contract",
-   "link": "https://www.mlbtraderumors.com/2026/10/tigers-sign-nick-raquet-to-minors-contract.html",
-   "date": "2026-10-17T19:37:03.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers have signed left-hander Nick Raquet to a two-year minor league contract, according to 7 News’ Ari Alexander. Raquet became a free agent after he was released by the Orioles in early September.",
-    "The length of the deal reflects Raquet’s health situation, as Alexander reports that the southpaw recently underwent a Tommy John surgery. Raquet will therefore miss all of 2027 rehabbing from the procedure, so this two-year pact gives him some security to recuperate under a team’s umbrella, with the Tigers having an eye towards using Raquet when he’s healthy in 2028.",
-    "A third-round pick for the Nationals in the 2017 draft, Raquet stepped away from baseball entirely in 2020 once the minor league season was canceled by the pandemic. Raquet instead went back to college at William & Mary to complete a business degree, and even took a job as an enterprise risk consultant with Ernst & Young. He returned to play independent ball in 2023 and then signed a minors deal with the Cardinals prior to the 2024 season.",
-    "His two years in the St. Louis organization led to Raquet making his MLB debut in September 2025, as he tossed two scoreless innings over two appearances. The Cardinals designated Raquet for assignment last April and then dealt him to the Orioles, and the lefty had a 7.36 ERA over four games and 3 2/3 innings in a Baltimore uniform. Amidst the sporadic usage on the big league roster, Raquet spent most of his time at Triple-A Norfolk before his elbow problem both ended his season in August and led to this much longer absence."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/04/USATSI_27037062-1024x683.jpg",
-   "players": [
-    [
-     "Nick Raquet",
-     675919
     ]
    ]
   },
