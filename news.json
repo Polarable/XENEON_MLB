@@ -1,16 +1,37 @@
 {
- "updated": "2026-11-17T18:20:31.112Z",
+ "updated": "2026-11-17T18:30:36.202Z",
  "articles": [
   {
-   "title": "Red Sox Working On Raymond Burgos Trade",
-   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-working-on-raymond-burgos-trade.html",
-   "date": "2026-11-17T18:09:13.000Z",
+   "title": "Astros Outright Joey Loperfido",
+   "link": "https://www.mlbtraderumors.com/2026/11/astros-outright-joey-loperfido.html",
+   "date": "2026-11-17T18:27:08.000Z",
    "teams": [
+    "HOU"
+   ],
+   "body": [
+    "The Astros have placed outfielder Joey Loperfido on outright waivers, according to The Athletic’s Chandler Rome. Loperfido underwent hip surgery last month and is not expected to be ready for Spring Training. This move takes him off the Astros’ 40-man roster, which now stands at 38 players."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/04/JoeyLoperfido-1024x683.jpg",
+   "players": [
+    [
+     "Joey Loperfido",
+     694388
+    ]
+   ]
+  },
+  {
+   "title": "Red Sox Trade Raymond Burgos To Athletics",
+   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-working-on-raymond-burgos-trade.html",
+   "date": "2026-11-17T18:23:13.000Z",
+   "teams": [
+    "ATH",
     "BOS"
    ],
    "body": [
-    "The Red Sox are nearing a trade that would send left-hander Raymond Burgos to an unidentified team, Chris Cotillo of MassLive.com reports. Shipping out Burgos would clear a roster spot for newly signed first baseman Jake Bauers.",
-    "Cleveland took Burgos in the 18th round of the 2018 draft, but he never pitched in the majors with the organization. Burgos debuted in the bigs as a member of the Giants in 2024, though he made just one appearance and tossed a single inning with them. After spending 2025 in the minors with the Giants, Burgos began this past season in the Mexican League. He fared well enough with Guerreros de Oaxaca to land on Boston’s radar. The Red Sox brought Burgos in on a minor league pact in May and wound up summoning him to the majors in early August."
+    "12:23pm: Burgos is going to the Athletics for minor league right-hander Kenya Huggins, according to Alex Speier of the Boston Globe.",
+    "12:09pm: The Red Sox are nearing a trade that would send left-hander Raymond Burgos to an unidentified team, Chris Cotillo of MassLive.com reports. Shipping out Burgos would clear a roster spot for newly signed first baseman Jake Bauers.",
+    "Cleveland took Burgos in the 18th round of the 2018 draft, but he never pitched in the majors with the organization. Burgos debuted in the bigs as a member of the Giants in 2024, though he made just one appearance and tossed a single inning with them. After spending 2025 in the minors with the Giants, Burgos began this past season in the Mexican League. He fared well enough with Guerreros de Oaxaca to land on Boston’s radar. The Red Sox brought Burgos in on a minor league pact in May and wound up summoning him to the majors in early August.",
+    "Burgos entered 2026 with a full slate of options, which enabled the Red Sox to send him up and down depending on their need for a fresh arm. He made nine appearances with the club and threw at least two innings in eight of them. Overall, Burgos delivered a useful 4.22 ERA across 21 1/3 frames with the Red Sox."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-25T195604Z_1344377258_MT1USATODAY29911221_RTRMADP_3_MLB-GAME-ONE-CHICAGO-CUBS-AT-BOSTON-RED-SOX-1024x683.jpg",
    "players": [
@@ -7059,8 +7080,8 @@
    "link": "https://www.mlbtraderumors.com/2026/10/astros-to-acquire-evan-reifert.html",
    "date": "2026-11-01T02:05:48.000Z",
    "teams": [
-    "HOU",
-    "TB"
+    "TB",
+    "HOU"
    ],
    "body": [
     "9:05pm CT: The Rays will receive cash in the trade, per Marc Topkin of the Tampa Bay Times.",
@@ -9124,30 +9145,6 @@
     [
      "Tarik Skubal",
      669373
-    ]
-   ]
-  },
-  {
-   "title": "Trade Candidate: Shea Langeliers",
-   "link": "https://www.mlbtraderumors.com/2026/10/trade-candidate-shea-langeliers.html",
-   "date": "2026-10-18T18:55:24.000Z",
-   "teams": [
-    "ATH"
-   ],
-   "body": [
-    "It’s a little difficult to gauge what the Athletics will do this winter since the team has yet to hire a full-time president of baseball operations or general manager since David Forst was let go back on August 7. Beyond this front office uncertainty, the expectation that the A’s will continue to trade players as they get too expensive shouldn’t be written in stone, given how the team has been (in the last two years) spending money to extend core players and splurge on Luis Severino’s free agent deal.",
-    "With all of this in mind, it wouldn’t be a shock to see Shea Langeliers in another team’s uniform on Opening Day. Langeliers is projected to earn an $8.7MM salary in his second of three arbitration years, and he is on pace to hit free agency after the 2028 campaign. The Athletics discussed an extension with Langeliers last spring but talks didn’t appear to go anywhere, and it’s also worth wondering if a Scott Boras client like Langeliers is simply more likely than not to forego an extension and test the open market.",
-    "The two remaining years of control over Langeliers give the A’s plenty of potential time to work out a new deal, and decrease the urgency to trade Langeliers now (rather than next winter or even at next summer’s trade deadline). Langeliers missed a little under seven weeks of the 2026 season due to a torn right meniscus and was used only as a DH once he returned in September, so this might not be the sell-high peak of Langeliers’ trade value if some teams prefer to see him catch again before committing to a big trade package."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/07/2026-07-26T151501Z_412353537_MT1USATODAY29454239_RTRMADP_3_MLB-ATHLETICS-AT-ARIZONA-DIAMONDBACKS-1024x688.jpg",
-   "players": [
-    [
-     "Shea Langeliers",
-     669127
-    ],
-    [
-     "Luis Severino",
-     622663
     ]
    ]
   },
