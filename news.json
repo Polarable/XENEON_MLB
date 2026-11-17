@@ -1,6 +1,33 @@
 {
- "updated": "2026-11-17T19:50:40.849Z",
+ "updated": "2026-11-17T20:00:37.584Z",
  "articles": [
+  {
+   "title": "White Sox To Designate Joey Bart For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-dfa-joey-bart-catcher.html",
+   "date": "2026-11-17T19:51:56.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox will designate catcher Joey Bart for assignment, reports Robert Murray of FanSided. The former No. 2 overall draft pick was eligible for arbitration one final time this winter and was projected by MLBTR contributor Matt Swartz to earn $2.9MM in 2027.",
+    "Bart, 30 next month, came to the White Sox from Atlanta in a deadline deal. The Braves received righty Duncan Davitt, who’d been designated for assignment himself, in that swap. Bart suffered a fractured left hand just days after joining the South Siders, when he was plunked by a 98 mph heater from Erik Miller, his former Triple-A teammate with the Giants organization. Bart played in only three games and went hitless in nine trips to the plate. That brief stint brought his season line to.214/.305/.357 in 128 plate appearances between Pittsburgh, Atlanta and Chicago."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/joey-bart-white-sox-catcher-1024x683.jpg",
+   "players": [
+    [
+     "Joey Bart",
+     663698
+    ],
+    [
+     "Duncan Davitt",
+     701474
+    ],
+    [
+     "Erik Miller",
+     669062
+    ]
+   ]
+  },
   {
    "title": "Red Sox Trade Angel Bastardo To Royals",
    "link": "https://www.mlbtraderumors.com/2026/11/red-sox-trade-angel-bastardo-to-royals.html",
@@ -16,7 +43,12 @@
     "In 2026, Bastardo worked as a full-time reliever for the Sox’ Triple-A affiliate in Worcester, posting a 4.64 ERA over 54 1/3 innings. His 31.6% strikeout rate was impressive, but both his 36.6% ground ball rate and especially his 14.3% walk rate were worse than par. Boston re-signed Bastardo to a minors pact a few weeks ago, though he’ll now work towards his major league debut with the Royals."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/03/AngelBastardo-BlueJays2026-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Angel Bastardo",
+     682785
+    ]
+   ]
   },
   {
    "title": "A’s Designate Braden Nett For Assignment",
@@ -57,6 +89,18 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2025/01/USATSI_18227266-1024x683.jpg",
    "players": [
+    [
+     "Jarlin Susana",
+     703186
+    ],
+    [
+     "Travis Sykora",
+     805809
+    ],
+    [
+     "Alejandro Rosario",
+     691730
+    ],
     [
      "Philip Abner",
      691769
@@ -321,19 +365,6 @@
      669373
     ]
    ]
-  },
-  {
-   "title": "2026 Non-Tender Candidates",
-   "link": "https://www.mlbtraderumors.com/2026/11/2026-non-tender-candidates.html",
-   "date": "2026-11-17T05:58:00.000Z",
-   "teams": [],
-   "body": [
-    "This is a big week on the offseason calendar. There should be some early movement on the free agent and trade markets. Many of the top available players have meetings with individual teams after laying the groundwork in Las Vegas last week.",
-    "Tuesday afternoon is the deadline for qualifying offer decisions, though it’d be quite surprising if anyone accepts. Tomorrow’s bigger deadline involves Rule 5 protection. Teams must add any Rule 5 eligible prospects to their 40-man roster to keep them out of the draft.",
-    "There’s some uncertainty about the major league portion of the Rule 5, which is currently scheduled for December 9. That’s not going to happen, as there’ll inevitably be a lockout in place at that point. The league and MLB Players Association could agree to move the draft up to just before the expiration of the CBA or reschedule it coming out of the lockout to avoid cancelation altogether (which happened during the 2021-22 lockout). Maybe the labor uncertainty leads teams to leave some borderline candidates unprotected, but it’d be too risky for clubs to not add their top eligible prospects. That’ll necessitate some roster cutting, so there’ll be a number of players designated for assignment tomorrow."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-06T231732Z_756067906_MT1USATODAY29758453_RTRMADP_3_MLB-ST-LOUIS-CARDINALS-AT-COLORADO-ROCKIES-1024x677.jpg",
-   "players": []
   },
   {
    "title": "Red Sox, Michael Arias Agree To Minor League Deal",
@@ -2226,6 +2257,10 @@
     [
      "Robert Hassell III",
      690987
+    ],
+    [
+     "Jarlin Susana",
+     703186
     ]
    ]
   },
@@ -9067,9 +9102,9 @@
    "link": "https://www.mlbtraderumors.com/2026/10/astros-gm-rumors-josh-barfield-white-sox-randy-flores-cardinals.html",
    "date": "2026-10-20T21:25:08.000Z",
    "teams": [
+    "STL",
     "CWS",
-    "HOU",
-    "STL"
+    "HOU"
    ],
    "body": [
     "The Astros’ general manager search has been underway for two months but could soon draw to a close. Chandler Rome of The Athletic reports that Houston could hire a new general manager before the completion of the World Series. Rome lists White Sox assistant general manager Josh Barfield, Cardinals assistant general manager Randy Flores and (as already reported earlier today) Brewers assistant general manager Matt Kleine as three candidates still in the running. That’s not necessarily an exhaustive list; Rome notes that in-house assistant GM Connor Huff has a particularly good relationship with owner Jim Crane, for instance.",
