@@ -1,13 +1,34 @@
 {
- "updated": "2026-11-17T22:10:36.640Z",
+ "updated": "2026-11-17T22:20:36.936Z",
  "articles": [
+  {
+   "title": "Rays Working On Nick Fortes Trade",
+   "link": "https://www.mlbtraderumors.com/2026/11/rays-working-on-nick-fortes-trade.html",
+   "date": "2026-11-17T22:17:51.000Z",
+   "teams": [
+    "TB"
+   ],
+   "body": [
+    "The Rays are making progress on a trade with an unknown team involving backup catcher Nick Fortes, reports Marc Topkin of The Tampa Bay Times."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-10-28T042843Z_1486801739_MT1USATODAY30204106_RTRMADP_3_MLB-WORLD-SERIES-MILWAUKEE-BREWERS-AT-TAMPA-BAY-RAYS-1024x682.jpg",
+   "players": [
+    [
+     "Nick Fortes",
+     663743
+    ]
+   ]
+  },
   {
    "title": "Yankees To Select Carlos Lagrange",
    "link": "https://www.mlbtraderumors.com/2026/11/yankees-to-select-carlos-lagrange.html",
    "date": "2026-11-17T22:06:21.000Z",
-   "teams": [],
+   "teams": [
+    "NYY"
+   ],
    "body": [
-    "The Yankees are expected to select the contract of right-hander Carlos Lagrange, per Francys Romero of BeisbolFR. Adding Lagrange to the 40-man roster protects him from the upcoming Rule 5 Draft."
+    "The Yankees are expected to select the contract of right-hander Carlos Lagrange, per Francys Romero of BeisbolFR. Adding Lagrange to the 40-man roster protects him from the upcoming Rule 5 Draft.",
+    "The 23-year-old Lagrange is one of the top prospects in New York’s system. It comes as no surprise that the club made the move to protect him. Lagrange was rumored as an option for the bullpen this past season, but was never promoted. He’ll be looming once again in 2027."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/05/USATSI_28528955-1024x683.jpg",
    "players": []
@@ -4005,51 +4026,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2022-08-19T013032Z_695766781_MT1USATODAY18889764_RTRMADP_3_MLB-WASHINGTON-NATIONALS-AT-PHILADELPHIA-PHILLIES-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "Yankees To Promote Aaron Gershenfeld",
-   "link": "https://www.mlbtraderumors.com/2026/11/yankees-to-promote-aaron-gershenfeld.html",
-   "date": "2026-11-10T17:15:53.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "The Yankees are expected to promote Aaron Gershenfeld to a big-league position, per Robert Murray of FanSided. Gershenfeld will join manager Aaron Boone’s coaching staff after the club lost catching coach Tanner Swanson to the Mariners.",
-    "Gershenfeld has been the organization’s run prevention and catching coordinator in recent seasons. He’s worked with backstops in both the majors and minors. Gershenfeld has worked in defensive-related roles with New York since 2020.",
-    "Seattle hired Swanson to be their bench coach last week. He’s been credited with the strong defensive work of Yankees catchers in recent years. The list includes current players Austin Wells and J.C. Escarra and former catchers Kyle Higashioka and Jose Trevino. Wells has posted a double-digit Fielding Run Value for three straight seasons. He was a Gold Glove Award finalist this year, though Dillon Dingler earned the honor.",
-    "It’s unclear what Gershenfeld’s exact title will be, but it’s fair to assume he’ll step into the defensive duties vacated by Swanson. The Yankees ranked 15th in FanGraphs’ Defensive Runs Above Average metric in 2026. The club got tremendous efforts from Wells and Cody Bellinger, who won the Platinum Glove Award as the AL’s top defender. There were holes elsewhere on the diamond. The departure of Jazz Chisholm Jr., who posted -6 Defensive Runs Saved, could be addition by subtraction on the defensive side."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Yankeeslogo-1024x683.jpg",
-   "players": [
-    [
-     "Austin Wells",
-     669224
-    ],
-    [
-     "J.C. Escarra",
-     641555
-    ],
-    [
-     "Kyle Higashioka",
-     543309
-    ],
-    [
-     "Jose Trevino",
-     624431
-    ],
-    [
-     "Dillon Dingler",
-     693307
-    ],
-    [
-     "Cody Bellinger",
-     641355
-    ],
-    [
-     "Jazz Chisholm Jr.",
-     665862
-    ]
-   ]
   },
   {
    "title": "Getz: Grant Taylor Moving Into Rotation; Adding Further Starting Pitching Is “Top Priority”",
