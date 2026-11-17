@@ -1,22 +1,86 @@
 {
- "updated": "2026-11-17T20:20:33.940Z",
+ "updated": "2026-11-17T20:30:41.997Z",
  "articles": [
   {
    "title": "Braves Claim Cameron Foster",
    "link": "https://www.mlbtraderumors.com/2026/11/braves-claim-cameron-foster-waivers-orioles.html",
-   "date": "2026-11-17T20:09:37.000Z",
+   "date": "2026-11-17T20:25:37.000Z",
    "teams": [
     "ATL",
     "BAL"
    ],
    "body": [
-    "The Braves announced Tuesday that they’ve claimed righty Cameron Foster off waivers from the Orioles. Atlanta also selected right-hander Cedric De Grandpre and Davis Polo to the 40-man roster. Both are now protected from the Rule 5 Draft, if it happens. The 2021 Rule 5 Draft was canceled amid that winter’s 99-day lockout, and another lockout once the current collective bargaining agreement expires at 11:59pm ET on Dec. 1 is all but a foregone conclusion."
+    "The Braves announced Tuesday that they’ve claimed righty Cameron Foster off waivers from the Orioles. Atlanta also selected right-hander Cedric De Grandpre and Davis Polo to the 40-man roster. Both are now protected from the Rule 5 Draft, if it happens. The 2021 Rule 5 Draft was canceled amid that winter’s 99-day lockout, and another lockout once the current collective bargaining agreement expires at 11:59pm ET on Dec. 1 is all but a foregone conclusion. Atlanta’s 40-man roster is now full.",
+    "It was reported earlier today that Foster was outrighted off Baltimore’s roster but it appears he hadn’t cleared waivers yet. Atlanta has swooped in to grab him. Foster made his major league debut with the Orioles this year, allowing nine earned runs in nine innings. He also posted a 9.53 earned run average in the minors. Those are obviously not impressive numbers but they were posted in small samples as Foster spent a decent chunk of time on the minor league injured list this year.",
+    "Atlanta is presumably focused more on Foster’s 2025 numbers, when he logged 46 1/3 innings on the farm with a 3.11 ERA, 32.6% strikeout rate and 8.4% walk rate. That prompted Baltimore to give him a 40-man spot at this time last year, to keep him out of the Rule 5 draft. His struggles in 2026 bumped him to the waiver wire but Atlanta will give him a roster spot, at least for now. If he still has a spot when the next season begins, he is still optionable."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/cameron-foster-orioles-1024x683.jpg",
    "players": [
     [
      "Cameron Foster",
      671382
+    ]
+   ]
+  },
+  {
+   "title": "Red Sox Sign Jake Bauers",
+   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-sign-jake-bauers.html",
+   "date": "2026-11-17T20:25:18.000Z",
+   "teams": [
+    "BOS",
+    "MIL"
+   ],
+   "body": [
+    "Today: The Red Sox made things official with Bauers today, formally announcing his four-year deal. In a corresponding move, they traded left-hander Raymond Burgos to the Athletics.",
+    "November 13: The Red Sox and first baseman Jake Bauers are in agreement on a four-year, $58MM contract, reports ESPN’s Jeff Passan. The VC Sports Group client received a $23.15MM qualifying offer from the Brewers but will turn that down and head to Boston on a lucrative multi-year contract.",
+    "Due in no small part to his postseason heroics, Bauers’ story is well known by now. The 31-year-old former top prospect was on the cusp of retirement after seemingly flaming out in the majors. He’d called his agent and informed him of the decision but changed course just days later when his wife learned she was pregnant with their second child and wouldn’t be going back to work — and securing health insurance — as they’d planned. Bauers signed back with the Brewers on a minor league deal ahead of the 2025 season and made the club. Bauers struggled for much of the season and looked like a DFA or non-tender candidate until a massive September saved his roster spot."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/jake-bauers-1024x684.jpg",
+   "players": [
+    [
+     "Jake Bauers",
+     641343
+    ],
+    [
+     "Raymond Burgos",
+     670103
+    ]
+   ]
+  },
+  {
+   "title": "White Sox Designate Joey Bart, Add Two To 40-Man Roster",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-dfa-joey-bart-catcher.html",
+   "date": "2026-11-17T20:22:56.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "2:22pm: The Sox have now formally announced Bart’s DFA. Chicago also announced that infielder William Bergolla Jr. and lefty Jaden Woods have had their contracts selected. Both are now on the 40-man roster and protected from the Rule 5 Draft (if it happens).",
+    "1:51pm: The White Sox will designate catcher Joey Bart for assignment, reports Robert Murray of FanSided. The former No. 2 overall draft pick was eligible for arbitration one final time this winter and was projected by MLBTR contributor Matt Swartz to earn $2.9MM in 2027.",
+    "Bart, 30 next month, came to the White Sox from Atlanta in a deadline deal. The Braves received righty Duncan Davitt, who’d been designated for assignment himself, in that swap. Bart suffered a fractured left hand just days after joining the South Siders, when he was plunked by a 98 mph heater from Erik Miller, his former Triple-A teammate with the Giants organization. Bart played in only three games and went hitless in nine trips to the plate. That brief stint brought his season line to.214/.305/.357 in 128 plate appearances between Pittsburgh, Atlanta and Chicago.",
+    "Draft pedigree notwithstanding, Bart doesn’t bring much to the table offensively. He had a nice run with the Pirates from 2024-25, hitting.257/.347/.398 with 17 homers in a combined 614 plate appearances, but those are the only two occasions in seven seasons where he’s produced even average offense. On the whole, Bart is a lifetime.237/.319/.368 hitter."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/joey-bart-white-sox-catcher-1024x683.jpg",
+   "players": [
+    [
+     "Joey Bart",
+     663698
+    ],
+    [
+     "William Bergolla Jr.",
+     703151
+    ],
+    [
+     "Jaden Woods",
+     692243
+    ],
+    [
+     "Duncan Davitt",
+     701474
+    ],
+    [
+     "Erik Miller",
+     669062
     ]
    ]
   },
@@ -29,13 +93,19 @@
     "NYY"
    ],
    "body": [
-    "The Yankees announced this afternoon that they have claimed right-hander Chase Hampton off waivers from the Orioles. Hampton returns to his original organization after riding the waiver wire with the Nationals, Cardinals, and Orioles since mid-September. With this move, the Yankees’ 40-man roster stands at 34 players, leaving six spots with which to protect Rule 5 eligible players before today’s 5:00 pm CT deadline."
+    "The Yankees announced this afternoon that they have claimed right-hander Chase Hampton off waivers from the Orioles. Hampton returns to his original organization after riding the waiver wire with the Nationals, Cardinals, and Orioles since mid-September. With this move, the Yankees’ 40-man roster stands at 34 players, leaving six spots with which to protect Rule 5 eligible players before today’s 5:00 pm CT deadline.",
+    "The 25-year-old Hampton was the Yankees’ sixth-round draft pick in 2022 and a Top 100 prospect on MLB Pipeline just two years ago. He missed the entire 2025 season due to Tommy John surgery but was selected onto the 40-man roster for the first time after the season. Optioned to the minors, he made 17 starts across three levels and struggled mightily, delivering an earned run average over 8.00 while walking opponents at a 12.9% clip and allowing more than two home runs per nine innings.",
+    "When Aaron Judge returned from the 60-day IL in August, New York designated Hampton for assignment to clear the necessary 40-man roster space. The Nationals claimed, then optioned Hampton on September 12, though he only stuck around for two weeks and did not get into game action for Double-A Harrisburg. The Cardinals claimed Hampton on September 26, followed by the Orioles on November 2. In the end, the waiver carousel brings Hampton back home to New York."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/chase-hampton-yankees-2026-1024x1024.jpg",
    "players": [
     [
      "Chase Hampton",
      694633
+    ],
+    [
+     "Aaron Judge",
+     592450
     ]
    ]
   },
@@ -49,40 +119,15 @@
    ],
    "body": [
     "The Rangers have claimed Josh White off waivers from the Orioles, per a team announcement. Texas now has 38 players on its 40-man roster.",
-    "It’s the second waiver claim this month for White. He landed in Baltimore after getting squeezed out in Miami when 40-man rosters were trimmed in early November. White was a fifth-round pick by the Marlins in 2022. He debuted with the club this season, allowing five earned runs in his lone appearance."
+    "It’s the second waiver claim this month for White. He landed in Baltimore after getting squeezed out in Miami when 40-man rosters were trimmed in early November. White was a fifth-round pick by the Marlins in 2022. He debuted with the club this season, allowing five earned runs in his lone appearance.",
+    "White’s brutal debut obscured what was generally a solid campaign. He tossed 56 frames with a 2.41 ERA and a 27% strikeout rate at Triple-A. The righty certainly ran hot with a.233 BABIP, but he was probably a bit unlucky with a near-15% homer-per-nine rate. White’s 13.5% walk rate is a cause for concern, though he showed better control the previous two seasons.",
+    "The 25-year-old White has a relatively deep arsenal for a reliever. He flashed a four-pitch mix this season with Jacksonville. White led with a four-seamer around 94 mph, followed by a mid-80s slider that he threw nearly as often as the heater. He also threw a curveball 27.3% of the time. A splitter rounded out the repertoire."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/generic-mlb-1024x771.jpg",
    "players": [
     [
      "Josh White",
      687985
-    ]
-   ]
-  },
-  {
-   "title": "White Sox To Designate Joey Bart For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-dfa-joey-bart-catcher.html",
-   "date": "2026-11-17T19:51:56.000Z",
-   "teams": [
-    "CWS"
-   ],
-   "body": [
-    "The White Sox will designate catcher Joey Bart for assignment, reports Robert Murray of FanSided. The former No. 2 overall draft pick was eligible for arbitration one final time this winter and was projected by MLBTR contributor Matt Swartz to earn $2.9MM in 2027.",
-    "Bart, 30 next month, came to the White Sox from Atlanta in a deadline deal. The Braves received righty Duncan Davitt, who’d been designated for assignment himself, in that swap. Bart suffered a fractured left hand just days after joining the South Siders, when he was plunked by a 98 mph heater from Erik Miller, his former Triple-A teammate with the Giants organization. Bart played in only three games and went hitless in nine trips to the plate. That brief stint brought his season line to.214/.305/.357 in 128 plate appearances between Pittsburgh, Atlanta and Chicago."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/joey-bart-white-sox-catcher-1024x683.jpg",
-   "players": [
-    [
-     "Joey Bart",
-     663698
-    ],
-    [
-     "Duncan Davitt",
-     701474
-    ],
-    [
-     "Erik Miller",
-     669062
     ]
    ]
   },
@@ -1369,27 +1414,6 @@
     [
      "Kazuma Okamoto",
      672960
-    ]
-   ]
-  },
-  {
-   "title": "Red Sox To Sign Jake Bauers",
-   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-sign-jake-bauers.html",
-   "date": "2026-11-14T05:52:18.000Z",
-   "teams": [
-    "BOS",
-    "MIL"
-   ],
-   "body": [
-    "The Red Sox and first baseman Jake Bauers are in agreement on a four-year, $58MM contract, reports ESPN’s Jeff Passan. The VC Sports Group client received a $23.15MM qualifying offer from the Brewers but will turn that down and head to Boston on a lucrative multi-year contract.",
-    "Due in no small part to his postseason heroics, Bauers’ story is well known by now. The 31-year-old former top prospect was on the cusp of retirement after seemingly flaming out in the majors. He’d called his agent and informed him of the decision but changed course just days later when his wife learned she was pregnant with their second child and wouldn’t be going back to work — and securing health insurance — as they’d planned. Bauers signed back with the Brewers on a minor league deal ahead of the 2025 season and made the club. Bauers struggled for much of the season and looked like a DFA or non-tender candidate until a massive September saved his roster spot.",
-    "That September surge proved to be a portent for a full-fledged breakout. Bauers wasn’t just the Brewers’ best hitter and the eventual NLCS MVP in 2026 — he was one of the best hitters in the entire sport. Dating back to early September of 2025, Bauers has taken 631 regular season plate appearances and mashed at a.276/.396/.494 pace with 28 homers and a 16% walk rate. His 26.1% strikeout rate is too high, but for a player with this type of patience and power output, that’s a more than worthwhile trade-off."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/jake-bauers-1024x684.jpg",
-   "players": [
-    [
-     "Jake Bauers",
-     641343
     ]
    ]
   },
