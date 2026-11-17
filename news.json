@@ -1,6 +1,59 @@
 {
- "updated": "2026-11-17T19:20:36.142Z",
+ "updated": "2026-11-17T19:30:35.468Z",
  "articles": [
+  {
+   "title": "A’s Designate Braden Nett For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/as-designate-braden-nett-for-assignment.html",
+   "date": "2026-11-17T19:23:57.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The Athletics finalized their acquisition of left-hander Raymond Burgos from the Red Sox this afternoon. In a corresponding 40-man roster move, the team designated right-hander Braden Nett for assignment."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-02-20T180710Z_1964284397_MT1USATODAY28292909_RTRMADP_3_MLB-ATHLETICS-MEDIA-DAY-scaled-e1794943322311-1024x684.jpg",
+   "players": [
+    [
+     "Raymond Burgos",
+     670103
+    ]
+   ]
+  },
+  {
+   "title": "Nationals Announce Series Of Moves",
+   "link": "https://www.mlbtraderumors.com/2026/11/nationals-announce-series-of-moves.html",
+   "date": "2026-11-17T19:22:22.000Z",
+   "teams": [
+    "BAL",
+    "WSH"
+   ],
+   "body": [
+    "As part of a slew of roster moves on Tuesday, the Nationals selected the contracts of right-handers Jarlin Susana, Travis Sykora and Alejandro Rosario. They also claimed left-hander Philip Abner off waivers from the Orioles and designated four pitchers – righties Josiah Gray, Braxton Roxby and Gus Varland and lefty Carson Palmquist – for assignment."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2025/01/USATSI_18227266-1024x683.jpg",
+   "players": [
+    [
+     "Philip Abner",
+     691769
+    ],
+    [
+     "Josiah Gray",
+     680686
+    ],
+    [
+     "Braxton Roxby",
+     694820
+    ],
+    [
+     "Gus Varland",
+     681402
+    ],
+    [
+     "Carson Palmquist",
+     687223
+    ]
+   ]
+  },
   {
    "title": "Angels Select Nelson Rada, Raudi Rodriguez",
    "link": "https://www.mlbtraderumors.com/2026/11/angels-select-nelson-rada-raudi-rodriguez.html",
@@ -9,7 +62,9 @@
     "LAA"
    ],
    "body": [
-    "The Angels announced Tuesday that they’ve selected the contracts of outfield prospects Nelson Rada and Raudi Rodriguez. Both are now on the 40-man roster and protected from the Rule 5 Draft — if it happens. (The 2021 Rule 5 Draft was canceled as part of that offseason’s league-implemented lockout.)"
+    "The Angels announced Tuesday that they’ve selected the contracts of outfield prospects Nelson Rada and Raudi Rodriguez. Both are now on the 40-man roster and protected from the Rule 5 Draft — if it happens. (The 2021 Rule 5 Draft was canceled as part of that offseason’s league-implemented lockout.)",
+    "Neither selection comes as a major surprise. Rada, in particular, has ranked among the Halos’ top prospects since signing out of Venezuela as an amateur back in Jan. 2022. He’s a plus-running center fielder who’s light on power but makes lots of contact and draws plenty of walks. He reached Triple-A as a 19-year-old late in the 2025 season and spent the entire year there in 2026, batting.278/.376/.363 with three homers, 22 doubles, five triples, 43 steals (in 52 tries), a 12.3% walk rate and an 18.6% walk rate.",
+    "The 23-year-old Rodriguez has proven to be a nice find in the 19th round of the 2023 draft. He split the 2026 season between Double-A and Triple-A, slashing a combined.264/.374/.410 with 16 homers, 15 doubles, five triples and 36 steals (46 attempts). Rodriguez walked at a 14.3% clip at both levels and fanned in 21.3% of his overall plate appearances (with a slightly lower rate in Triple-A than in Double-A). He has more power than Rada and is an above-average runner. He doesn’t have quite the same speed or defensive chops as Rada but is experienced in all three outfield slots, with Baseball America’s latest scouting report calling him a late-bloomer with fourth-outfielder potential."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/nelson-rada-angels-prospect-1024x713.jpg",
    "players": []
@@ -42,7 +97,9 @@
     "KC"
    ],
    "body": [
-    "The Red Sox and Royals have lined up on a minor trade. Right-hander Angel Bastardo is heading to Kansas City for an unspecified return, reports Francys Romero of BeisbolFR. Bastardo had re-signed with the Sox on a minor league deal a few weeks ago."
+    "The Red Sox and Royals have lined up on a minor trade. Right-hander Angel Bastardo is heading to Kansas City, reports Francys Romero of BeisbolFR. Boston gets minor league infielder Jack Pineda in return, according to Alex Speier of the Boston Globe. The Royals may add Bastardo to their 40-man roster, according to Chris Cotillo of MassLive.",
+    "The 24-year-old Bastardo was selected by the Blue Jays in the 2024 Rule 5 Draft. He’d been working his way through the Red Sox’ system since signing as an amateur out of Venezuela in 2018. He reached Double-A in 2023 and repeated there in 2024, posting an earned run average over 5.00 in ten starts before undergoing Tommy John surgery that June. After the Rule 5 selection, Toronto stashed Bastardo on the 60-day IL while he continued his recovery. He was returned to Boston this past April after he didn’t make the Blue Jays’ roster out of camp.",
+    "In 2026, Bastardo worked as a full-time reliever for the Sox’ Triple-A affiliate in Worcester, posting a 4.64 ERA over 54 1/3 innings. His 31.6% strikeout rate was impressive, but both his 36.6% ground ball rate and especially his 14.3% walk rate were worse than par. Boston re-signed Bastardo to a minors pact a few weeks ago, though he’ll now work towards his major league debut with the Royals."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/03/AngelBastardo-BlueJays2026-1024x683.jpg",
    "players": []
@@ -267,21 +324,6 @@
     "There’s some uncertainty about the major league portion of the Rule 5, which is currently scheduled for December 9. That’s not going to happen, as there’ll inevitably be a lockout in place at that point. The league and MLB Players Association could agree to move the draft up to just before the expiration of the CBA or reschedule it coming out of the lockout to avoid cancelation altogether (which happened during the 2021-22 lockout). Maybe the labor uncertainty leads teams to leave some borderline candidates unprotected, but it’d be too risky for clubs to not add their top eligible prospects. That’ll necessitate some roster cutting, so there’ll be a number of players designated for assignment tomorrow."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-06T231732Z_756067906_MT1USATODAY29758453_RTRMADP_3_MLB-ST-LOUIS-CARDINALS-AT-COLORADO-ROCKIES-1024x677.jpg",
-   "players": []
-  },
-  {
-   "title": "Hall Of Fame Releases 2027 Ballot",
-   "link": "https://www.mlbtraderumors.com/2026/11/hall-of-fame-releases-2027-ballot.html",
-   "date": "2026-11-17T04:53:43.000Z",
-   "teams": [],
-   "body": [
-    "The Hall of Fame revealed the 2027 BBWAA ballot on Monday afternoon. Fourteen newcomers join the 13 holdovers who received between 5% and 75% of the vote share on the 2025-26 voting — excluding Manny Ramirez, who fell off last winter after 10 years on the ballot.",
-    "The 14 newcomers are as follows:",
-    "Jake Arrieta Jay Bruce Asdrúbal Cabrera Starlin Castro Wade Davis Brett Gardner Jon Lester Andrew Miller Buster Posey Pablo Sandoval (who only officially retired from professional baseball over the weekend) Ervin Santana Kyle Seager Joakim Soria Ryan Zimmerman As is the case every year, most of the first-timers will receive little to no actual Hall of Fame support and drop off the ballot. Everyone included had a lengthy and accomplished MLB career, however. Posey has a chance at first-ballot induction. That’s not the case for any of the other candidates, though Lester should at least cross the 5% threshold to remain on the ballot.",
-    "Last year, Cole Hamels was the only first-time eligible candidate who remained on the ballot after receiving a 23.8% vote share. This year’s group of first-timers isn’t especially strong either, but there’ll be a stronger class in 2028. Albert Pujols, Yadier Molina, David Price and Robinson Canó (whose candidacy will be clouded by his positive PED tests) are all slated to hit the ballot next winter.",
-    "Chase Utley is the only of the 13 returning candidates who topped the 50% mark last year, appearing on 59.1% of ballots in his third year under consideration. It’d require a significant but not inconceivable jump for him to get to 75% and earn induction."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2020/07/buster-posey-giants-1024x683.jpg",
    "players": []
   },
   {
@@ -7017,47 +7059,6 @@
    ]
   },
   {
-   "title": "Orioles Make Multiple Roster Moves",
-   "link": "https://www.mlbtraderumors.com/2026/10/orioles-make-multiple-roster-moves.html",
-   "date": "2026-11-01T04:11:04.000Z",
-   "teams": [
-    "BAL"
-   ],
-   "body": [
-    "The Orioles made several roster tweaks on Saturday. Right-handers Albert Suarez, Codi Heuer, and Colin Selby cleared waivers, per a team announcement. Suarez elected free agency. Heuer accepted an outright assignment to Triple-A. Selby was reinstated from the 60-day IL and sent to Norfolk with Heuer.",
-    "Suarez was a waiver wire mainstay this season. He was designated for assignment on five occasions. Each time, the veteran righty found his way back to the organization. Suarez was most recently selected to the big-league club during the final week of the regular season. He made one appearance, tossing four scoreless frames in relief to pick up a win over the Yankees.",
-    "Baltimore routinely leaned on Suarez whenever the club needed a fresh arm. He’d be added to the roster to save a tired bullpen, then bumped off whenever another player needed his spot. Suarez would inevitably pass through waivers and accept an outright assignment or re-up with the team on a new minor league deal. There’s a solid chance that happens again this time around. After spending five seasons in Asia, Suarez has been with the Orioles for the past three years.",
-    "Heuer came to Baltimore at the trade deadline. He was one of the final moves on deadline day, heading to the Orioles from Milwaukee in exchange for cash considerations. It was the second trade in two days for the righty. Heuer and Bo Naylor went to the Brewers in the deal that sent Blake Perkins and Craig Yoho to the Guardians."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/AlbertSuarez-1024x683.jpg",
-   "players": [
-    [
-     "Albert Suarez",
-     544150
-    ],
-    [
-     "Codi Heuer",
-     676051
-    ],
-    [
-     "Colin Selby",
-     681882
-    ],
-    [
-     "Bo Naylor",
-     666310
-    ],
-    [
-     "Blake Perkins",
-     663368
-    ],
-    [
-     "Craig Yoho",
-     684974
-    ]
-   ]
-  },
-  {
    "title": "Rays Finalize Yandy Diaz’s Contract",
    "link": "https://www.mlbtraderumors.com/2026/10/rays-finalize-yandy-diazs-contract.html",
    "date": "2026-11-01T03:16:50.000Z",
@@ -9088,22 +9089,6 @@
      606466
     ]
    ]
-  },
-  {
-   "title": "Athletics Hire Taylor Smith As President Of Baseball Ops",
-   "link": "https://www.mlbtraderumors.com/2026/10/athletics-hire-taylor-smith-as-president-of-baseball-ops.html",
-   "date": "2026-10-19T14:12:16.000Z",
-   "teams": [
-    "ATH"
-   ],
-   "body": [
-    "The Athletics have a new lead executive. Taylor Smith is taking over as president of baseball operations, per a team announcement. Smith most recently served as an assistant general manager with the Red Sox.",
-    "After a wide-ranging search, the A’s have found a replacement for longtime general manager David Forst. The club moved on from Forst in August. Phillies exec Sam Fuld and Cubs assistant GM Jared Banner were in the running for the role. Fuld ended up staying in Philly, while Banner just took the Orioles’ general manager job. The A’s were also connected to former Astros GM James Click and former Nationals POBO Mike Rizzo. Smith’s colleague, fellow Boston AGM Mike Groopman, also received an interview.",
-    "The 31-year-old Smith emerged as the favorite for the gig late last week. Cardinals assistant GM Rob Cerfolio was also one of the finalists. A’s assistant GM Dan Feinstein finished out the season in place of Forst, but was not among the candidates for the full-time position.",
-    "“I couldn’t be more excited about Taylor as our president of baseball operations,” owner John Fisher said in a statement, relayed by Martin Gallegos of MLB.com. “He is one of the brightest minds in the game today. We conducted a very thorough search for our new baseball leadership, and Taylor stood out for his acute understanding of the game, especially in the areas of measuring player performance and player development.”"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/AthleticsLogo-1024x683.jpg",
-   "players": []
   },
   {
    "title": "What Went Wrong For Framber Valdez?",
