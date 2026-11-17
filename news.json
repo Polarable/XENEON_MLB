@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T16:50:32.066Z",
+ "updated": "2026-11-17T17:00:40.994Z",
  "articles": [
   {
    "title": "Adrián Morejón Declines Qualifying Offer From Padres",
@@ -9,13 +9,18 @@
     "SD"
    ],
    "body": [
-    "Left-hander Adrián Morejón has declined the qualifying offer from the Padres, reports Mark Feinsand of MLB.com. He is now officially a free agent and stands as arguably the top reliever on the market."
+    "Left-hander Adrián Morejón has declined the qualifying offer from the Padres, reports Mark Feinsand of MLB.com. He is now officially a free agent and stands as the top reliever on the market.",
+    "Morejón and Yankees’ closer David Bednar were the two relievers among the eight players who received the QO. It’s rare that teams issue the QO to relievers, even those of Morejón’s caliber, but his rejection of the offer isn’t exactly surprising. MLBTR ranked him at No. 8 on our list of the Top 50 Free Agents, projecting him for a five-year, $80MM contract. Morejón has already been publicly linked to the Yankees and Marlins, and he will clearly have no shortage of suitors beyond those two."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/AdrianMorejon-1-1024x683.jpg",
    "players": [
     [
      "Adrián Morejón",
      670970
+    ],
+    [
+     "David Bednar",
+     670280
     ]
    ]
   },
@@ -929,6 +934,30 @@
    ]
   },
   {
+   "title": "A’s Receiving Trade Interest In Jacob Wilson",
+   "link": "https://www.mlbtraderumors.com/2026/11/as-receiving-trade-interest-in-jacob-wilson.html",
+   "date": "2026-11-14T21:19:23.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "Jacob Wilson’s All-Star rookie season was followed up by an injury-plagued 2026 campaign, as the Athletics’ shortstop hit only.266/.298/.388 over 337 plate appearances. Wilson sprained his left shoulder in May while diving for a Gunnar Henderson grounder, and while he missed only a month on the injured list, renewed shoulder discomfort sent him back to the IL for good in late August, and Wilson underwent a season-ending surgery on his troublesome shoulder in early September.",
+    "Despite this rough sophomore year and the $66MM remaining on Wilson’s contract, the shortstop has been drawing trade interest, according to USA Today’s Bob Nightengale. This could just be some due diligence from rival clubs, or explorations to see if the A’s would bite on a lowball offer. There isn’t any indication that the A’s are even considering moving Wilson, and a trade would be pretty surprising given that Wilson signed his long-term extension with the club just last January.",
+    "It should be noted that Wilson’s extension was signed under former GM David Forst, so new president of baseball operations Taylor Smith could have a different view of Wilson as a long-term cornerstone. There haven’t been any updates on Wilson’s recovery timeline, so if he will miss a decent chunk of the 2027 season, that also might impact the Athletics’ willingness to consider trade possibilities. That said, one would also imagine clubs wouldn’t be willing to trade for Wilson without a long look at his medicals in the wake of his surgery."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/05/JacobWilson2026-1024x683.jpg",
+   "players": [
+    [
+     "Jacob Wilson",
+     805779
+    ],
+    [
+     "Gunnar Henderson",
+     683002
+    ]
+   ]
+  },
+  {
    "title": "NL East Notes: Braves, Iglesias, Nationals, Thompson, Marlins",
    "link": "https://www.mlbtraderumors.com/2026/11/nl-east-notes-braves-iglesias-nationals-thompson-marlins.html",
    "date": "2026-11-14T20:33:38.000Z",
@@ -1545,8 +1574,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/mariners-notes-infield-needs-trade-candidates-sloan.html",
    "date": "2026-11-13T15:41:28.000Z",
    "teams": [
-    "BAL",
     "ATH",
+    "BAL",
     "CIN",
     "HOU",
     "LAA",
@@ -5146,8 +5175,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/athletics-hire-brewers-cam-castro-general-managers.html",
    "date": "2026-11-04T18:03:45.000Z",
    "teams": [
-    "MIL",
-    "ATH"
+    "ATH",
+    "MIL"
    ],
    "body": [
     "12:03 pm CT: The A’s have officially announced the hiring of Castro.",
@@ -7248,6 +7277,26 @@
    ]
   },
   {
+   "title": "Luis Severino To Exercise Player Option, Remain With A’s",
+   "link": "https://www.mlbtraderumors.com/2026/10/luis-severino-to-exercise-player-option-remain-with-as.html",
+   "date": "2026-10-31T13:27:28.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "Athletics right-hander Luis Severino will exercise his $22MM player option and forgo a return to the open market, as first reported by Mike Rodriguez of Rompiendo Sports. Severino will remain with the A’s in their final season in Sacramento before becoming a free agent in the 2027-28 offseason.",
+    "Although Severino previously expressed dissatisfaction with the facilities at Sutter Health Park, it’s no surprise that the veteran will stick around for the third and final year of his contract. Severino posted a 4.16 ERA over 12 starts and 62 2/3 innings before going on the 15-day injured list at the end of May with a strain of his shoulder capsule and subscapularis muscle. The injury proved to be season-ending, as Severino was able to resume throwing but didn’t get deep enough into his recovery process to even begin a minor league rehab assignment.",
+    "Between this shortened season and his so-so performance in 2025, Severino wouldn’t have made anywhere close to $22MM in free agency. Opting out of his deal also would’ve meant hitting the open market in offseason that is bound to be interrupted by a lockout, so it makes plenty of sense for Severino to take his guaranteed payday and focus entirely on returning to the mound in 2027 (Severino’s age-33 season)."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/05/LuisSeverino-2026-1024x683.jpg",
+   "players": [
+    [
+     "Luis Severino",
+     622663
+    ]
+   ]
+  },
+  {
    "title": "Astros Hire Randy Flores As General Manager",
    "link": "https://www.mlbtraderumors.com/2026/10/astros-hire-randy-flores-as-general-manager.html",
    "date": "2026-10-31T04:30:39.000Z",
@@ -7545,6 +7594,35 @@
     [
      "Joc Pederson",
      592626
+    ]
+   ]
+  },
+  {
+   "title": "Athletics Decline Club Options On Jeffrey Springs, Jeff McNeil",
+   "link": "https://www.mlbtraderumors.com/2026/10/athletics-decline-club-options-on-jeffrey-springs-jeff-mcneil.html",
+   "date": "2026-10-30T19:20:08.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The Athletics announced that they have declined club options on left-hander Jeffrey Springs and infielder/outfielder Jeff McNeil. Both players are now free agents.",
+    "Neither decision is too shocking. Both players are 34 years old and coming off disappointing seasons. The A’s acquired Springs from the Rays in December of 2024. At the time, their rotation was mostly young and inexperienced. The A’s signed Luis Severino and acquired Springs in the hopes of providing some veteran stability.",
+    "Springs was fine enough in his first season with the A’s. He logged 171 innings and posted a 4.11 earned run average. Considering that the club was playing in a hitter-friendly minor league park, that wasn’t too bad. His 19.4% strikeout rate was subpar but his 7.6% walk rate was good. He got a bit of help from a low.255 batting average on balls in play.",
+    "Just about everything went in the wrong direction in 2026. His BABIP ticked up closer to average, landing at.278. His strikeout rate dropped to 17.8% and his walk rate climbed to 9%. The dimensions at Sutter Health Park became a problem. He allowed 35 home runs on the year, 23 of those at home. The 35 number was seven more than the previous season despite pitching almost 30 fewer innings. The end result was a 6.18 ERA."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/USATSI_29303765-1024x683.jpg",
+   "players": [
+    [
+     "Jeffrey Springs",
+     605488
+    ],
+    [
+     "Jeff McNeil",
+     643446
+    ],
+    [
+     "Luis Severino",
+     622663
     ]
    ]
   },
@@ -7900,6 +7978,46 @@
    ]
   },
   {
+   "title": "Athletics Outright Six Players",
+   "link": "https://www.mlbtraderumors.com/2026/10/athletics-outright-six-players.html",
+   "date": "2026-10-29T21:36:20.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The Athletics announced that six players have been sent outright to Triple-A Las Vegas, indicating that they recently cleared waivers. They are right-handers Henry Baez, Joey Estes and Geoff Hartlieb, catcher Brian Serven, infielder Michael Stefanic and outfielder Johnathan Rodríguez.",
+    "As the offseason begins, many teams are facing roster crunches. Free agency begins today for eligible players, which opens some breathing room. But the injured list goes away five days after the World Series ends. Coming into today, RosterResource projected the A’s for a count of 46 for the offseason. Then they acquired Nate Eaton in a trade with the Red Sox. These six moves get the club down to 41.",
+    "Estes, 25, is one of the more experienced players in the group. He gave the A’s 127 2/3 innings back in 2024 with a 5.01 earned run average. Since then, he has mostly been kept in the minors as a depth arm, only making five big league appearances over the past two seasons. His Triple-A ERA was north of 5.50 in both of those campaigns. He exhausted his final option season and will be out of options going forward. He has at least seven years in the minors, meaning he’ll qualify for minor league free agency in the coming days."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Joey_Estes_Athletics-copy-2-1024x683.jpg",
+   "players": [
+    [
+     "Joey Estes",
+     683155
+    ],
+    [
+     "Geoff Hartlieb",
+     664129
+    ],
+    [
+     "Brian Serven",
+     661531
+    ],
+    [
+     "Michael Stefanic",
+     683021
+    ],
+    [
+     "Johnathan Rodríguez",
+     671286
+    ],
+    [
+     "Nate Eaton",
+     681987
+    ]
+   ]
+  },
+  {
    "title": "Royals Exercise Club Option On Tony Gonsolin, Decline Carlos Estévez",
    "link": "https://www.mlbtraderumors.com/2026/10/royals-exercise-club-option-on-tony-gonsolin-decline-carlos-estevez.html",
    "date": "2026-10-29T21:05:15.000Z",
@@ -8041,6 +8159,28 @@
     [
      "Victor Robles",
      645302
+    ]
+   ]
+  },
+  {
+   "title": "Athletics Acquire Nate Eaton From Red Sox",
+   "link": "https://www.mlbtraderumors.com/2026/10/athletics-acquire-nate-eaton-from-red-sox.html",
+   "date": "2026-10-29T18:15:29.000Z",
+   "teams": [
+    "ATH",
+    "BOS"
+   ],
+   "body": [
+    "The offseason trading has begun. The Athletics have acquired outfielder Nate Eaton from the Red Sox in exchange for minor league right-hander Jareth Rayo. Bob Nightengale of USA Today first reported that Eaton was traded to the A’s. Chris Cotillo of MassLive first reported the Sox would get a minor leaguer in return. Francys Romero of BeisbolFR first identified Rayo.",
+    "Eaton, 30 in December, was on the roster bubble in Boston. He served an up-and-down depth role this year, getting shuttled between Triple-A and the majors. He hit just.160/.300/.260 in the big leagues and exhausted his final option season. It was going to be hard for him to a hold a spot on the 40-man through the offseason.",
+    "Most teams are facing a crunch in the coming days. The injured list goes away on Monday, meaning several players on the 60-day IL will need to retake roster spots. Prior to this deal, RosterResource projected the Sox for a 40-man count of 44, factoring in players coming off the IL and those bound for free agency. They still have to open three spots but moving Eaton starts the process of alleviating the logjam.",
+    "It is perhaps not a coincidence that the A’s have a new front office leader who just departed Boston. General manager David Forst was dismissed in August. In October, the club hired Taylor Smith as president of baseball operations. Smith had previously been an assistant general manager with the Red Sox and should be familiar with Eaton."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Nate_Eaton_Red_Sox-1024x682.jpg",
+   "players": [
+    [
+     "Nate Eaton",
+     681987
     ]
    ]
   },
@@ -8241,6 +8381,68 @@
    ]
   },
   {
+   "title": "Offseason Outlook: Athletics",
+   "link": "https://www.mlbtraderumors.com/2026/10/offseason-outlook-athletics-3.html",
+   "date": "2026-10-28T00:40:46.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The A’s went from 76 wins in 2025 to a 64-98 record this year, as a swath of injuries and continued poor pitching threw a wrench into the rebuilding efforts. New president of baseball operations Taylor Smith is now tasked with getting the A’s back on track in their final year in Sacramento.",
+    "Tyler Soderstrom, LF: $84MM through 2032 (includes $2MM buyout of $27MM club option for 2033) Jacob Wilson, SS: $66MM through 2032 (includes $2MM buyout of $26MM club option for 2033) Lawrence Butler, OF: $58MM through 2031 (includes $4MM buyout of $20MM club option for 2032) Brent Rooker, OF/DH: $42MM through 2029 ($22MM club/vesting option for 2030) Luis Severino, SP: $22MM player option for 2027 Option Decisions",
+    "Luis Severino, SP: $22MM player option for 2027 Jeff McNeil, 2B/1B/OF: $15.75MM club option for 2027 ($2MM buyout, to be covered by the Mets) Jeffrey Springs, SP: $15MM club option for 2027 ($750K buyout) 2027 guarantees (assuming Severino stays, and McNeil/Springs are declined): $47.5MM Total future commitments (assuming Severino stays, and McNeil/Springs are declined): $272MM",
+    "Arbitration-Eligible Players (service time in parentheses)",
+    "Shea Langeliers (4.051): $8.7MM Luis Medina (3.146): $1.4MM Zack Gelof (3.050): $2.9MM Hogan Harris (2.146): $2.3MM Non-tender candidates: None Free Agents"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/AthleticsStomper-generic-1024x683.jpg",
+   "players": [
+    [
+     "Tyler Soderstrom",
+     691016
+    ],
+    [
+     "Jacob Wilson",
+     805779
+    ],
+    [
+     "Lawrence Butler",
+     671732
+    ],
+    [
+     "Brent Rooker",
+     667670
+    ],
+    [
+     "Luis Severino",
+     622663
+    ],
+    [
+     "Jeff McNeil",
+     643446
+    ],
+    [
+     "Jeffrey Springs",
+     605488
+    ],
+    [
+     "Shea Langeliers",
+     669127
+    ],
+    [
+     "Luis Medina",
+     665622
+    ],
+    [
+     "Zack Gelof",
+     680869
+    ],
+    [
+     "Hogan Harris",
+     663687
+    ]
+   ]
+  },
+  {
    "title": "Joe Espada, Jason Kanzler Reportedly Finalists For Mariners Managerial Job",
    "link": "https://www.mlbtraderumors.com/2026/10/joe-espada-jason-kanzler-reportedly-finalists-for-mariners-managerial-job.html",
    "date": "2026-10-27T21:57:13.000Z",
@@ -8287,6 +8489,21 @@
      621345
     ]
    ]
+  },
+  {
+   "title": "A’s Max Muncy Undergoes Knee Debridement",
+   "link": "https://www.mlbtraderumors.com/2026/10/as-max-muncy-undergoes-knee-debridement.html",
+   "date": "2026-10-27T04:12:05.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The Athletics announced that infielder Max Muncy underwent a debridement surgery to address cartilage damage in his left knee. He also received a platelet-rich plasma injection. Muncy is expected to be fully ready for the start of camp.",
+    "Muncy finished the season on the injured list, missing the final week with the cartilage issue. It evidently required a minor procedure but shouldn’t have much impact on his offseason. Muncy is entering what could be a make or break season. He’s down to one minor league option year remaining and will need to impress a front office led by newly-hired president of baseball operations Taylor Smith, who doesn’t have the same attachment to Muncy as did former GM David Forst.",
+    "A first-round pick in 2021, Muncy has yet to establish himself in parts of two big league campaigns. He hit.214/.259/.379 as a rookie last year. Muncy’s numbers improved marginally in his sophomore season, as he batted.230/.296/.387 with nine homers across 284 plate appearances. He struck out at a concerning 32% clip while walking less than 8% of the time. Muncy has above-average bat speed but has yet to dial in a consistent enough approach against big league pitching. Twelve of his 18 career home runs have come against fastballs, and he’s struggled to make contact against any kind of secondary stuff."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-09-09T203429Z_1530743722_MT1USATODAY29774192_RTRMADP_3_MLB-TORONTO-BLUE-JAYS-AT-ATHLETICS-1024x683.jpg",
+   "players": []
   },
   {
    "title": "Royals Release Jorge Alfaro",
@@ -8761,6 +8978,50 @@
    "players": []
   },
   {
+   "title": "MLBTR Podcast: Brewers vs. Rays, Dodgers and Guardians Post-Mortem, And The A’s New Front Office Boss",
+   "link": "https://www.mlbtraderumors.com/2026/10/mlbtr-podcast-brewers-vs-rays-dodgers-and-guardians-post-mortem-and-the-as-new-front-office-boss.html",
+   "date": "2026-10-22T04:50:03.000Z",
+   "teams": [
+    "ATH",
+    "CLE",
+    "HOU",
+    "LAD",
+    "MIA",
+    "MIL",
+    "PHI",
+    "TB"
+   ],
+   "body": [
+    "The latest episode of the MLB Trade Rumors Podcast is now live on Spotify, Apple Podcasts, and wherever you get your podcasts! Make sure you subscribe as well! You can also use the player at this link to listen, if you don’t use Spotify or Apple for podcasts.",
+    "This week, host Darragh McDonald is joined by Anthony Franco of MLB Trade Rumors to discuss…",
+    "The Brewers going to the World Series (2:00) The Dodgers coming up short of a three-peat (6:30) The Rays going to the World Series (14:40) The Guardians going into offseason mode (18:10) Three of the four LCS teams generally being defense-oriented (26:40) Three of the four LCS teams being low-payroll clubs and whether that impacts the CBA negotiations (35:25) The Athletics hiring Taylor Smith as president of baseball operations (48:05) The Phillies keeping Don Mattingly as manager while the Astros let Joe Espada depart (53:40) Plus, we answer your questions, including…",
+    "Will the Marlins be open to trading Otto Lopez this winter? (58:50) Will teams want to wait until a new collective bargaining agreement is finalized to sign large contracts? (1:03:25) Check out our past episodes!",
+    "Playoff Storylines And The State Of The White Sox, Yankees, Padres, And Braves – listen here Diamondbacks Stories, Offseason Previews For Eliminated Playoff Teams, And Creative Pitching Usage – listen here Wild Card Rosters And What’s Next For The Rangers, Diamondbacks, and Pirates – listen here The podcast intro and outro song “So Long” is provided courtesy of the band Showoff. Check out their Facebook page here!"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Pat_Murphy_Brewers_trophy_NLCS-1024x683.jpg",
+   "players": [
+    [
+     "Otto Lopez",
+     672640
+    ]
+   ]
+  },
+  {
+   "title": "A’s Considering Hiring GM Under Taylor Smith",
+   "link": "https://www.mlbtraderumors.com/2026/10/as-considering-hiring-gm-under-taylor-smith.html",
+   "date": "2026-10-22T03:10:58.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The Athletics finalized the hiring of their new president of baseball operations, Taylor Smith, on Monday. At Smith’s introductory press conference, owner John Fisher suggested they could also hire a general manager to work as the #2 front office executive (link via Martín Gallegos of MLB.com).",
+    "That’s an increasingly common front office structure around MLB. The A’s had gone that route when Billy Beane and David Forst were the top two in the hierarchy. That changed at the end of the 2022 season when Beane transitioned to an advisory role and turned baseball operations autonomy to his longtime lieutenant. Forst ran the front office for three and a half seasons. Fisher made a change at the beginning of August when it became clear they were en route to a fifth straight losing season.",
+    "While many GM changes presage a move in the manager’s office, that’s not going to be the case with the A’s. In February 2025, the team signed Mark Kotsay to an extension that runs through the’28 campaign with a club option for’29. Smith expressed his excitement about working with the sixth-year skipper, saying Kotsay “seems like someone who is hungry for all the information (the front office) can get him, and I think it’ll be a great partnership.”"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2021/07/athleticshat-generic-1024x683.jpg",
+   "players": []
+  },
+  {
    "title": "Ben Sestanovich, Scott Sharp Candidates For Astros’ GM Job",
    "link": "https://www.mlbtraderumors.com/2026/10/ben-sestanovich-scott-sharp-candidates-for-astros-gm-job.html",
    "date": "2026-10-21T01:59:44.000Z",
@@ -8817,6 +9078,22 @@
    ]
   },
   {
+   "title": "Athletics Hire Taylor Smith As President Of Baseball Ops",
+   "link": "https://www.mlbtraderumors.com/2026/10/athletics-hire-taylor-smith-as-president-of-baseball-ops.html",
+   "date": "2026-10-19T14:12:16.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The Athletics have a new lead executive. Taylor Smith is taking over as president of baseball operations, per a team announcement. Smith most recently served as an assistant general manager with the Red Sox.",
+    "After a wide-ranging search, the A’s have found a replacement for longtime general manager David Forst. The club moved on from Forst in August. Phillies exec Sam Fuld and Cubs assistant GM Jared Banner were in the running for the role. Fuld ended up staying in Philly, while Banner just took the Orioles’ general manager job. The A’s were also connected to former Astros GM James Click and former Nationals POBO Mike Rizzo. Smith’s colleague, fellow Boston AGM Mike Groopman, also received an interview.",
+    "The 31-year-old Smith emerged as the favorite for the gig late last week. Cardinals assistant GM Rob Cerfolio was also one of the finalists. A’s assistant GM Dan Feinstein finished out the season in place of Forst, but was not among the candidates for the full-time position.",
+    "“I couldn’t be more excited about Taylor as our president of baseball operations,” owner John Fisher said in a statement, relayed by Martin Gallegos of MLB.com. “He is one of the brightest minds in the game today. We conducted a very thorough search for our new baseball leadership, and Taylor stood out for his acute understanding of the game, especially in the areas of measuring player performance and player development.”"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/AthleticsLogo-1024x683.jpg",
+   "players": []
+  },
+  {
    "title": "What Went Wrong For Framber Valdez?",
    "link": "https://www.mlbtraderumors.com/2026/10/what-went-wrong-for-framber-valdez.html",
    "date": "2026-10-19T00:27:16.000Z",
@@ -8838,6 +9115,30 @@
     [
      "Tarik Skubal",
      669373
+    ]
+   ]
+  },
+  {
+   "title": "Trade Candidate: Shea Langeliers",
+   "link": "https://www.mlbtraderumors.com/2026/10/trade-candidate-shea-langeliers.html",
+   "date": "2026-10-18T18:55:24.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "It’s a little difficult to gauge what the Athletics will do this winter since the team has yet to hire a full-time president of baseball operations or general manager since David Forst was let go back on August 7. Beyond this front office uncertainty, the expectation that the A’s will continue to trade players as they get too expensive shouldn’t be written in stone, given how the team has been (in the last two years) spending money to extend core players and splurge on Luis Severino’s free agent deal.",
+    "With all of this in mind, it wouldn’t be a shock to see Shea Langeliers in another team’s uniform on Opening Day. Langeliers is projected to earn an $8.7MM salary in his second of three arbitration years, and he is on pace to hit free agency after the 2028 campaign. The Athletics discussed an extension with Langeliers last spring but talks didn’t appear to go anywhere, and it’s also worth wondering if a Scott Boras client like Langeliers is simply more likely than not to forego an extension and test the open market.",
+    "The two remaining years of control over Langeliers give the A’s plenty of potential time to work out a new deal, and decrease the urgency to trade Langeliers now (rather than next winter or even at next summer’s trade deadline). Langeliers missed a little under seven weeks of the 2026 season due to a torn right meniscus and was used only as a DH once he returned in September, so this might not be the sell-high peak of Langeliers’ trade value if some teams prefer to see him catch again before committing to a big trade package."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/2026-07-26T151501Z_412353537_MT1USATODAY29454239_RTRMADP_3_MLB-ATHLETICS-AT-ARIZONA-DIAMONDBACKS-1024x688.jpg",
+   "players": [
+    [
+     "Shea Langeliers",
+     669127
+    ],
+    [
+     "Luis Severino",
+     622663
     ]
    ]
   },
