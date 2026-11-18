@@ -1,6 +1,44 @@
 {
- "updated": "2026-11-18T23:10:30.192Z",
+ "updated": "2026-11-18T23:20:32.232Z",
  "articles": [
+  {
+   "title": "Orioles Sign Junior Pérez, Alex Carrillo To Minor League Deals",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-sign-junior-perez-alex-carrillo-to-minor-league-deals.html",
+   "date": "2026-11-18T23:19:33.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles announced that they have signed outfielder Junior Peérez and right-hander Alex Carrillo to minor league deals. Presumably, each player will receive an invite to big league camp in spring training, though that wasn’t specified in the announcement.",
+    "Pérez, 25, seemed to have a breakout in 2025. A minor leaguer with the Athletics at the time, he drew walks at a 14.8% clip, hit 26 home runs and stole 27 bases. His 28.1% strikeout rate was really high but that was actually an improvement for him, as he struck out at a 35.4% pace the year prior.",
+    "The A’s gave him a 40-man spot at this time a year ago to keep him out of the Rule 5 draft. Unfortunately, his strikeout problems returned in 2026. He was designated for assignment midseason and traded to the White Sox. He was outrighted off the Chicago roster at season’s end and elected free agency.",
+    "He got to make a brief major league debut with the Sox, making 36 plate appearances. He struck out in 14 of those, a 38.9% pace. On the farm, he slashed.219/.301/.420 while striking out in 35.4% of his trips to the plate but still managed to hit 13 home runs and steal 19 bases in just 87 games.",
+    "Pérez clearly has some tools, though he will have to get the punchouts under control. If he’s able to earn his way back onto the roster, he has options remaining and could be an up-and-down depth piece. Baltimore’s outfield group currently consists of Colton Cowser, Dylan Beavers, Tyler O’Neill and others but the offseason is young and the club will likely change that outlook with some transactions before the next season begins."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Junior_Perez_White_Sox-1024x683.jpg",
+   "players": [
+    [
+     "Junior Pérez",
+     678577
+    ],
+    [
+     "Alex Carrillo",
+     692024
+    ],
+    [
+     "Colton Cowser",
+     681297
+    ],
+    [
+     "Dylan Beavers",
+     687637
+    ],
+    [
+     "Tyler O’Neill",
+     641933
+    ]
+   ]
+  },
   {
    "title": "White Sox Designate Jordan Leasure For Assignment",
    "link": "https://www.mlbtraderumors.com/2026/11/white-sox-designate-jordan-leasure-for-assignment.html",
@@ -5781,26 +5819,6 @@
     [
      "Alex Bregman",
      608324
-    ]
-   ]
-  },
-  {
-   "title": "Luis Robert Jr. And The Risk Of Chasing Upside",
-   "link": "https://www.mlbtraderumors.com/2026/11/luis-robert-jr-and-the-risk-of-chasing-upside.html",
-   "date": "2026-11-08T18:52:42.000Z",
-   "teams": [
-    "BAL"
-   ],
-   "body": [
-    "Three years ago, Luis Robert Jr. had just wrapped up quite the breakout season for the White Sox. After showing flashes of his five-tool potential from 2020-22, Robert proceeded to bat.264/.315/.542 with a 129 wRC+ in 145 games for the Pale Hose. He contributed 38 home runs, which still stands a career best, and he also added 20 stolen bases along with +12 Outs Above Average in center field. FanGraphs valued his total contributions at 5.0 wins above replacement.",
-    "Robert had signed a six-year, $55MM contract in January 2020, before he’d even debuted in the Majors. The 2023 breakout left the remaining $27.5MM in salary for 2024-25 looking like a bargain. Unfortunately, as is well-known by now, Robert would regress badly at the plate while dealing with significant injuries. A right hip flexor strain limited him to 100 games in 2024. A pair of IL stints for left hamstring strains kept him to 110 games in 2025.",
-    "When he was healthy, Robert failed to match the heights he’d set in 2023. In 856 plate appearances from 2024-25, he batted.223 while posting an OPS of just.660 and an 85 wRC+, making him 15% worse than the average hitter. Robert did manage to hit 28 home runs and steal 56 bases in that stretch, but his low contact and on-base percentages kept him from achieving his full potential on the field. The 2025 season brought some improvement in his strikeout and walk numbers, though he was still worth only 1.3 fWAR."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/luis-robert-jr-orioles-2026-1024x683.jpg",
-   "players": [
-    [
-     "Luis Robert Jr.",
-     673357
     ]
    ]
   },
