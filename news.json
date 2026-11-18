@@ -1,6 +1,89 @@
 {
- "updated": "2026-11-18T00:00:38.213Z",
+ "updated": "2026-11-18T00:10:35.282Z",
  "articles": [
+  {
+   "title": "Giants Designate Christian Koss, Rowan Wick For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/giants-designate-christian-koss-rowan-wick-for-assignment.html",
+   "date": "2026-11-18T00:06:08.000Z",
+   "teams": [
+    "SF"
+   ],
+   "body": [
+    "The Giants announced that they have selected right-handers Marty Gair and Josh Bostick as well as left-hander Henry Lalane to the 40-man roster. That protects them from being selected in the Rule 5 draft, if it even takes place this offseason. The Giants opened one 40-man spot a few days ago by trading Ryan Walker to the Brewers. They opened two more today by designating infielder Christian Koss and right-hander Rowan Wick for assignment. Maria I. Guardado of MLB.com was among those to relay the news."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/06/USATSI_28922340-1024x683.jpg",
+   "players": [
+    [
+     "Christian Koss",
+     683766
+    ],
+    [
+     "Marty Gair",
+     700248
+    ],
+    [
+     "Josh Bostick",
+     701241
+    ],
+    [
+     "Henry Lalane",
+     700649
+    ],
+    [
+     "Ryan Walker",
+     676254
+    ]
+   ]
+  },
+  {
+   "title": "Tigers Designate Four Players For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-designate-four-players-for-assignment.html",
+   "date": "2026-11-18T00:04:09.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers announced they’ve designated four players for assignment: infielders Jace Jung and Trey Sweeney, outfielder Matt Vierling, and left-handed pitcher Jake Miller. That clears 40-man roster space for them to finalize the Emilio Pagán signing and select Josue Briceño, Max Anderson and Peyton Graham onto the roster. The three prospects would otherwise have been eligible for the Rule 5 draft.",
+    "Vierling was one of the league’s more obvious non-tender candidates. The 30-year-old was projected by MLBTR contributor Matt Swartz for a $3.7MM salary in his final year of arbitration eligibility. He’s coming off a second straight injury-wrecked season, as an adductor strain cost him the final two months. He didn’t perform well even when healthy, batting.207/.255/.335 across 291 plate appearances.",
+    "Jung, who turned 26 last month, was the 12th overall pick in 2022. He ranked among the organization’s top prospects for a while but has stalled out in the upper minors. He’s coming off a league average.227/.344/.421 batting line in Triple-A, albeit with 22 home runs. Jung only played six MLB games this year and has a.193/.319/.230 slash in 160 plate appearances at the highest level.",
+    "Detroit acquired Sweeney from the Dodgers in the 2024 Jack Flaherty deadline deal. He took over as their primary shortstop down the stretch, improving the infield defense but not providing much at the plate. Sweeney batted.202/.261/.313 across 445 big league plate appearances in 2024-25. He missed the entire’26 season to a right shoulder injury that required arthroscopic surgery in June."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-07-29T183803Z_1680851122_MT1USATODAY29473208_RTRMADP_3_MLB-BALTIMORE-ORIOLES-AT-DETROIT-TIGERS-1024x683.jpg",
+   "players": [
+    [
+     "Jace Jung",
+     690291
+    ],
+    [
+     "Trey Sweeney",
+     700242
+    ],
+    [
+     "Matt Vierling",
+     663837
+    ],
+    [
+     "Emilio Pagán",
+     641941
+    ],
+    [
+     "Josue Briceño",
+     800522
+    ],
+    [
+     "Max Anderson",
+     801194
+    ],
+    [
+     "Peyton Graham",
+     689931
+    ],
+    [
+     "Jack Flaherty",
+     656427
+    ]
+   ]
+  },
   {
    "title": "Cubs Select Jaxon Wiggins, Brody McCullough",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-select-jaxon-wiggins-brody-mccullough.html",
@@ -13,6 +96,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Jaxon_Wiggins_Cubs-1024x683.jpg",
    "players": [
+    [
+     "Jaxon Wiggins",
+     694393
+    ],
     [
      "Brody McCullough",
      805664
@@ -133,7 +220,28 @@
     "The Brewers announced that they have selected six players to the 40-man roster. They are infielders Luke Adams and Dylan O’Rae, catcher Matt Wood, left-hander Tate Kuehner, right-hander Cameron Wagoner and infielder/outfielder Jett Williams. Those players are now protected from being selected in the Rule 5 draft, if it even takes place this offseason. Milwaukee had multiple 40-man vacancies but the roster is now full. MLBTR covered the Williams move earlier today."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Luke_Adams_Brewers-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Luke Adams",
+     702726
+    ],
+    [
+     "Dylan O’Rae",
+     802506
+    ],
+    [
+     "Tate Kuehner",
+     804249
+    ],
+    [
+     "Cameron Wagoner",
+     687726
+    ],
+    [
+     "Jett Williams",
+     702518
+    ]
+   ]
   },
   {
    "title": "Cardinals Designate Max Rajcic For Assignment",
@@ -152,6 +260,14 @@
     [
      "Max Rajcic",
      691008
+    ],
+    [
+     "Jesús Báez",
+     800305
+    ],
+    [
+     "Jacob Odle",
+     813838
     ],
     [
      "Ryan Helsley",
@@ -214,54 +330,22 @@
     "The Marlins announced that they have selected right-handers Jace Beck, Eliazar Dishmey and Brandon White as well as infielder Juan Matheus to the 40-man roster. Those players are now protected from being selected in the Rule 5 draft, if it takes place this offseason. Miami had five 40-man vacancies and therefore doesn’t need to make any corresponding moves. Prior to the official announcement, Matheus and Dishmey were reported by Isaac Azout of Fish on First. White was first reported by Christina De Nicola of MLB.com."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Jace_Beck_Marlins-1024x683.jpg",
-   "players": []
-  },
-  {
-   "title": "Tigers Designate Four Players For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/11/tigers-designate-four-players-for-assignment.html",
-   "date": "2026-11-17T23:17:09.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers announced they’ve designated four players for assignment: infielders Jace Jung and Trey Sweeney, outfielder Matt Vierling, and left-handed pitcher Jake Miller. That clears 40-man roster space for them to finalize the Emilio Pagán signing and select Josue Briceño, Max Anderson and Peyton Graham onto the roster. The three prospects would otherwise have been eligible for the Rule 5 draft.",
-    "Vierling was one of the league’s more obvious non-tender candidates. The 30-year-old was projected by MLBTR contributor Matt Swartz for a $3.7MM salary in his final year of arbitration eligibility. He’s coming off a second straight injury-wrecked season, as an adductor strain cost him the final two months. He didn’t perform well even when healthy, batting.207/.255/.335 across 291 plate appearances.",
-    "Jung, who turned 26 last month, was the 12th overall pick in 2022. He ranked among the organization’s top prospects for a while but has stalled out in the upper minors. He’s coming off a league average.227/.344/.421 batting line in Triple-A, albeit with 22 home runs. Jung only played six MLB games this year and has a.193/.319/.230 slash in 160 plate appearances at the highest level.",
-    "Detroit acquired Sweeney from the Dodgers in the 2024 Jack Flaherty deadline deal. He took over as their primary shortstop down the stretch, improving the infield defense but not providing much at the plate. Sweeney batted.202/.261/.313 across 445 big league plate appearances in 2024-25. He missed the entire’26 season to a right shoulder injury that required arthroscopic surgery in June."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-07-29T183803Z_1680851122_MT1USATODAY29473208_RTRMADP_3_MLB-BALTIMORE-ORIOLES-AT-DETROIT-TIGERS-1024x683.jpg",
    "players": [
     [
-     "Jace Jung",
-     690291
+     "Jace Beck",
+     689476
     ],
     [
-     "Trey Sweeney",
-     700242
+     "Eliazar Dishmey",
+     803244
     ],
     [
-     "Matt Vierling",
-     663837
+     "Brandon White",
+     681449
     ],
     [
-     "Emilio Pagán",
-     641941
-    ],
-    [
-     "Josue Briceño",
-     800522
-    ],
-    [
-     "Max Anderson",
-     801194
-    ],
-    [
-     "Peyton Graham",
-     689931
-    ],
-    [
-     "Jack Flaherty",
-     656427
+     "Juan Matheus",
+     801276
     ]
    ]
   },
@@ -277,7 +361,8 @@
     "Chourio is the most well-regarded prospect of the group. MLB Pipeline had him at No. 5 in Cleveland’s system. Chourio slashed.274/.376/.408 in 114 games split between High-A and Double-A in 2026. He stole 40+ bases for the second time in the past three years.",
     "The 21-year-old is the younger brother of the Brewers’ Jackson Chourio. He hasn’t shown the power of his brother, but his speed and on-base skills have been strong in the minors. Chourio could factor into the Guardians’ underwhelming outfield mix as soon as 2027.",
     "Cleveland took Campbell with the 37th overall pick in the 2022 draft. Persistent injuries delayed his pro debut until this season. The righty moved quickly through the system this year, advancing to Triple-A by the end of the campaign. Campbell compiled a 2.48 ERA in 20 starts across three levels.",
-    "The 20 starts are a bit deceiving from a workload perspective. Campbell was limited to shorter outings and only tossed 69 innings. He completed five innings in just three appearances. Like Chourio, he’s a candidate to contribute for the big-league squad next year."
+    "The 20 starts are a bit deceiving from a workload perspective. Campbell was limited to shorter outings and only tossed 69 innings. He completed five innings in just three appearances. Like Chourio, he’s a candidate to contribute for the big-league squad next year.",
+    "The Guardians acquired Huff from the Rockies straight up for righty Cal Quantrill in November 2023. He’d been a middling producer in the minors until this past season. Huff broke out in 2026, posting a 132 wRC+ with 23 homers and 12 steals at Triple-A. He’d totaled 18 home runs in his previous four years as a pro."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/JaisonChourio-1024x683.jpg",
    "players": [
@@ -296,6 +381,10 @@
     [
      "Jackson Chourio",
      694192
+    ],
+    [
+     "Cal Quantrill",
+     615698
     ]
    ]
   },
@@ -553,6 +642,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/Jett_Williams_Brewers-1024x683.jpg",
    "players": [
+    [
+     "Jett Williams",
+     702518
+    ],
     [
      "Brandon Sproat",
      687075
@@ -6777,10 +6870,6 @@
     [
      "Reiver Sanmartin",
      665665
-    ],
-    [
-     "Rowan Wick",
-     592858
     ]
    ]
   },
