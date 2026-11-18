@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-18T20:41:47.922Z",
+ "updated": "2026-11-18T20:50:31.788Z",
  "articles": [
+  {
+   "title": "Royals Designate Kyle Isbel For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/royals-designate-kyle-isbel-for-assignment.html",
+   "date": "2026-11-18T20:42:50.000Z",
+   "teams": [
+    "KC"
+   ],
+   "body": [
+    "The Royals announced their six-player trade with the Mariners, which was reported earlier today. It was a three-for-three swap but all three players heading to Kansas City had 40-man roster spots, compared to just two of the players going to Seattle. The Royals therefore needed to open a 40-man spot and designated outfielder Kyle Isbel for assignment."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/06/kyle-isbel-royals-1024x682.jpg",
+   "players": [
+    [
+     "Kyle Isbel",
+     664728
+    ]
+   ]
+  },
   {
    "title": "Twins Sign Sonny Gray",
    "link": "https://www.mlbtraderumors.com/2026/11/twins-sign-sonny-gray.html",
@@ -9,7 +27,7 @@
     "MIN"
    ],
    "body": [
-    "Sonny Gray is headed back to Minnesota. The Twins announced Wednesday that they’ve signed the free-agent righty to a two-year contract. Jon Heyman of the New York Post reports that Gray will be paid a total of $55MM over the new two-year pact. Gray, a client of McKinnis Sports, starred for Minnesota in 2022-23 and finished second in American League Cy Young voting in the latter of those two seasons."
+    "Sonny Gray is headed back to Minnesota. The Twins announced Wednesday that they’ve signed the free-agent righty to a two-year contract. Jon Heyman of the New York Post reports that Gray will be paid a total of $55MM over the new two-year pact. There’s an opt-out after the first season, ESPN’s Jeff Passan adds. Gray, a client of McKinnis Sports, starred for Minnesota in 2022-23 and finished second in American League Cy Young voting in the latter of those two seasons."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/07/sonny-gray-boston-red-sox-1024x682.jpg",
    "players": [
@@ -439,65 +457,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2016/02/USATSI_7965719-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "Frankie Montas Throws Showcase After Missed 2026 Season",
-   "link": "https://www.mlbtraderumors.com/2026/11/frankie-montas-throws-showcase-after-missed-2026-season.html",
-   "date": "2026-11-18T02:30:41.000Z",
-   "teams": [],
-   "body": [
-    "Frankie Montas is back on the free agent radar. Will Sammon and Dennis Lin of The Athletic report that the right-hander threw a showcase on Tuesday. More than two-thirds of the league had an evaluator in attendance, according to the report, some as high as the general manager level.",
-    "Sammon and Lin report that there was enough buzz about Montas’ form that he might command a major league contract. That’s somewhat surprising on the surface, as he missed the entire 2026 season rehabbing UCL surgery from the prior August. Montas posted a 6.28 ERA across 38 2/3 innings for the Mets in 2025 and allowed just under five earned runs per nine over 30 starts in 2024.",
-    "The market has continually shown up for Montas, however. The Mets guaranteed him $34MM (plus an opt-out clause) after that pedestrian’24 season. They released him last winter, but only because he’d already been ruled out for 2026 and there was no point in having him burn a 40-man roster spot during the offseason. Montas showed a mid-rotation ceiling back in 2022 and has continued to intrigue teams with mid-90s velocity.",
-    "Just this morning, the White Sox guaranteed Dustin May three years and $52.5MM as a bet on his velocity and flashes of mid-rotation ability. Montas isn’t going to come anywhere close to that kind of money, but it’s instructive of teams’ willingness to chase perceived upside in the middle to lower tiers of the free agent market."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2025/02/frankie-montas-mets-1024x683.jpg",
-   "players": [
-    [
-     "Frankie Montas",
-     593423
-    ],
-    [
-     "Dustin May",
-     669160
-    ]
-   ]
-  },
-  {
-   "title": "Giants Designate Christian Koss, Rowan Wick For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/11/giants-designate-christian-koss-rowan-wick-for-assignment.html",
-   "date": "2026-11-18T01:06:08.000Z",
-   "teams": [
-    "SF"
-   ],
-   "body": [
-    "The Giants added three pitching prospects to their 40-man roster on Rule 5 protection day: righties Marty Gair and Josh Bostick plus southpaw Henry Lalane. San Francisco designated reliever Rowan Wick and infielder Christian Koss for assignment in corresponding moves. They already had one opening on the 40-man roster after trading former closer Ryan Walker to Milwaukee over the weekend.",
-    "Koss has played in 144 games for San Francisco over the last two seasons. He was close to a league average hitter as a rookie but couldn’t maintain that in 2026. Koss is coming off a.217/.257/.305 slash line with four homers over 221 plate appearances. Even with solid defensive grades around the infield, the bat was light enough to squeeze him off the roster.",
-    "The Giants signed Wick to a free agent contract last winter. The righty was coming off a productive run in Japan but was slated to miss the entire 2026 season rehabbing from Tommy John surgery. The Giants took a year to gauge his recovery and determine if they wanted to devote a bullpen spot next season. It was pretty clear they were leaning against that when they declined his $800K club option at the beginning of the offseason."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/06/USATSI_28922340-1024x683.jpg",
-   "players": [
-    [
-     "Christian Koss",
-     683766
-    ],
-    [
-     "Marty Gair",
-     700248
-    ],
-    [
-     "Josh Bostick",
-     701241
-    ],
-    [
-     "Henry Lalane",
-     700649
-    ],
-    [
-     "Ryan Walker",
-     676254
-    ]
-   ]
   },
   {
    "title": "Padres Select Tucker Musgrove, Ian Koenig",
@@ -2346,20 +2305,6 @@
    ]
   },
   {
-   "title": "Pablo Sandoval Announces Retirement",
-   "link": "https://www.mlbtraderumors.com/2026/11/pablo-sandoval-announces-retirement.html",
-   "date": "2026-11-15T22:15:49.000Z",
-   "teams": [
-    "SF"
-   ],
-   "body": [
-    "Pablo Sandoval has announced the end of his playing career, after 14 Major League seasons and parts of 21 total seasons in pro ball. The longtime third baseman is saying his farewell after a few more games with Navegantes del Magallanes, the Venezuelan winter league club Sandoval suited up for at the very start of his career (and at a couple of other points during his two-plus decades as a player). The Turcos faced Tiburones de La Guaira in a two-game series at loanDepot Park in Miami this weekend, and Sandoval marked the occasion by hitting a grand slam in his final game in a big league ballpark.",
-    "“The Kung Fu Panda” last played in a MLB game in 2021 as a member of the Braves. He played with two Mexican League teams in 2022 and a team in Dubai in 2023, then signed a minor league deal with the Giants during Spring Training 2024 but was released prior to Opening Day. Sandoval played for the Staten Island FerryHawks of the independent Atlantic League in both 2024 and 2025, and is now officially hanging up his cleats at age 40."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2014/11/USATSI_8172221-1024x689.jpg",
-   "players": []
-  },
-  {
    "title": "Latest On Brewers’ First Base Mix",
    "link": "https://www.mlbtraderumors.com/2026/11/latest-on-brewers-first-base-mix.html",
    "date": "2026-11-15T20:39:42.000Z",
@@ -2846,42 +2791,6 @@
     [
      "Kazuma Okamoto",
      672960
-    ]
-   ]
-  },
-  {
-   "title": "Giants Notes: Rotation, Bullpen, Catcher",
-   "link": "https://www.mlbtraderumors.com/2026/11/giants-notes-rotation-bullpen-catcher.html",
-   "date": "2026-11-14T05:41:25.000Z",
-   "teams": [
-    "SF"
-   ],
-   "body": [
-    "The Giants have made no secret of their desire to add at least one starter. They’re not planning to make a run at Tarik Skubal and seem to be out on Trevor Rogers, who’s attached to draft compensation via the qualifying offer. San Francisco has been loosely linked to Freddy Peralta and to NPB righty Kaima Taira, though there’s a decent chance they look more to the middle tiers of the market.",
-    "Logan Webb and Landen Roupp are the only two starters locked into the season-opening rotation. President of baseball operations Buster Posey has implicitly suggested that next season might be something of a bridge year with most of their top prospect talent in the lower minors. However, USA Today’s Bob Nightengale writes that they’re continuing to rebuff teams who call about Webb.",
-    "That’s not surprising, as the Giants publicly shot down speculation about trading their ace early in deadline season. Webb is signed for two more seasons. There’s a reasonable argument for listening on him if the Giants aren’t going to make an all-in push next year, but the organization clearly doesn’t want to embark on a full rebuild either. If they were going to listen on Webb, it’d have made more sense to do it over the summer when they were en route to a 97-loss season."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-08-19T234250Z_313218880_MT1USATODAY29621371_RTRMADP_3_MLB-SAN-FRANCISCO-GIANTS-AT-CLEVELAND-GUARDIANS-1024x683.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Trevor Rogers",
-     669432
-    ],
-    [
-     "Freddy Peralta",
-     642547
-    ],
-    [
-     "Logan Webb",
-     657277
-    ],
-    [
-     "Landen Roupp",
-     694738
     ]
    ]
   },
@@ -3567,23 +3476,6 @@
    ]
   },
   {
-   "title": "Giants Hire James Rowson As Offensive Coordinator",
-   "link": "https://www.mlbtraderumors.com/2026/11/giants-to-hire-james-rowson-as-offensive-coordinator.html",
-   "date": "2026-11-12T23:05:29.000Z",
-   "teams": [
-    "SF"
-   ],
-   "body": [
-    "5:05pm: The Giants have now officially announced Rowson’s hiring.",
-    "2:26pm: The Giants are expected to hire former Yankees hitting coach James Rowson to the big-league staff, as first reported by Robert Murray of FanSided. Rowson’s title will be offensive coordinator, per Jon Heyman of the New York Post.",
-    "It hadn’t been clear that Rowson was departing New York, but general manager Brian Cashman referred to him as a “free agent” this week. He lands in San Francisco after three seasons with the Yankees. The Giants lost hitting coach Hunter Mense this offseason. Mense took a gig with the Royals.",
-    "After a brief minor league career, Rowson got into coaching. He started in the Angels organization as a minor league hitting coach in 2002. He spent six years in the Yankees’ system in the same position. Rowson earned his first look in the majors with the Cubs midway through the 2012 season. He took over for Rudy Jaramillo, who was fired after a slow offensive start. Rowson ditched the interim tag and stayed aboard the following season.",
-    "Rowson had stops with the Twins, Marlins, and Tigers in various roles before joining manager Aaron Boone’s staff in 2024. The Yankees have been a strong offense in Rowson’s three years with the club. New York has ranked top 10 in scoring in each season, including a league-leading 849 runs in 2025."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/JamesRowson-1024x683.jpg",
-   "players": []
-  },
-  {
    "title": "Brewers To Have Fourth Option On Jeferson Quero",
    "link": "https://www.mlbtraderumors.com/2026/11/brewers-to-have-fourth-option-on-jeferson-quero.html",
    "date": "2026-11-12T22:36:36.000Z",
@@ -3890,38 +3782,6 @@
     [
      "Tanner Bibee",
      676440
-    ]
-   ]
-  },
-  {
-   "title": "Giants In Closing Market, Unlikely To Sign Qualified Free Agent",
-   "link": "https://www.mlbtraderumors.com/2026/11/giants-in-closing-market-unlikely-to-sign-qualified-free-agent.html",
-   "date": "2026-11-12T05:59:47.000Z",
-   "teams": [
-    "SF"
-   ],
-   "body": [
-    "Giants president of baseball operations Buster Posey provided some updates on the team’s offseason plans in talks with reporters at the GM Meetings this week. Andrew Baggarly of The Athletic and Shayna Rubin of The San Francisco Chronicle were among those to relay his quotes.",
-    "For the second straight offseason, Posey downplayed the idea that the Giants would play at the top of the free agent market. He suggested they were unlikely to surrender any draft capital by signing one of the eight players who rejected a qualifying offer, saying those moves would “be harder for us.” That alone wouldn’t rule them out on Tarik Skubal, Michael King or Freddy Peralta — none of whom were eligible for the QO. Trevor Rogers is the only starting pitcher who received a qualifying offer.",
-    "Rubin reports that the Giants have touched base with Peralta but appear focused on pitchers who’ll sign shorter-term contracts. Skubal prefers a long-term arrangement and would surely only go short term for a monster average annual value. Peralta seemed like a candidate for a pillow contract when he was struggling with the Mets, but his late-season turnaround in Tampa Bay might’ve been enough to put a five-plus year deal back on the table. King is entering his age-32 season and unlikely to exceed four years but could command $20-25MM on an annual basis."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-01T092736Z_1400307098_MT1USATODAY29708453_RTRMADP_3_MLB-GAME-TWO-ARIZONA-DIAMONDBACKS-AT-SAN-FRANCISCO-GIANTS-1024x683.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Michael King",
-     650633
-    ],
-    [
-     "Freddy Peralta",
-     642547
-    ],
-    [
-     "Trevor Rogers",
-     669432
     ]
    ]
   },
@@ -6222,8 +6082,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/giants-trade-reiver-sanmartin-nationals.html",
    "date": "2026-11-06T18:45:22.000Z",
    "teams": [
-    "SF",
-    "WSH"
+    "WSH",
+    "SF"
    ],
    "body": [
     "12:45pm: The two teams have announced the swap.",
@@ -7366,27 +7226,6 @@
     [
      "Daylen Lile",
      695734
-    ]
-   ]
-  },
-  {
-   "title": "Giants Designate Reiver Sanmartin, Decline Option On Rowan Wick",
-   "link": "https://www.mlbtraderumors.com/2026/11/giants-dfa-reiver-sanmartin-decline-option-rowan-wick.html",
-   "date": "2026-11-03T00:11:25.000Z",
-   "teams": [
-    "SF"
-   ],
-   "body": [
-    "The Giants announced Monday that they’ve designated left-handed reliever Reiver Sanmartin for assignment, dropping their 40-man roster to an even 40 players. San Francisco also declined its $800K option on righty Rowan Wick, who’ll receive a $100K buyout. Wick remains with the club for now as an arbitration-eligible player.",
-    "San Francisco acquired Sanmartin early last offseason, claiming him off waivers from Cincinnati. The southpaw suffered a hip injury in Spring Training and missed the first couple months. He was up and down from Triple-A the rest of the way, allowing a 4.22 ERA across 21 1/3 innings. He got ground-balls at a monster 63.8% clip but only managed a 17.2% strikeout rate.",
-    "As one might infer from those rate stats, Sanmartin leans most heavily on a sinker. He has a three-pitch mix but only sits around 92 mph with his fastball. Sanmartin had a career-low walk rate in 2026 (7.5%) yet struggled with his control during his time in Cincinnati. He’s also out of options and would need to break camp next year if he’s on a club’s 40-man roster. The Giants will trade or waive him in the next five days.",
-    "Wick, 34 later this week, missed the entire season rehabbing from Tommy John surgery. The Giants knew that’d be the case when they signed him to an $880K free agent deal last February. Wick hasn’t pitched in the majors since 2022. He worked 42 2/3 frames of 0.84 ERA ball with a 30.4% strikeout rate in Japan during the’25 season before his elbow gave out."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/reiver-sanmartin-giants-1024x683.jpg",
-   "players": [
-    [
-     "Reiver Sanmartin",
-     665665
     ]
    ]
   },
@@ -9553,39 +9392,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-10-08T023702Z_2094571054_MT1USATODAY30025196_RTRMADP_3_MLB-ALDS-TAMPA-BAY-RAYS-AT-NEW-YORK-YANKEES-1024x703.jpg",
    "players": []
-  },
-  {
-   "title": "Royals Outright Five Players",
-   "link": "https://www.mlbtraderumors.com/2026/10/royals-outright-five-players.html",
-   "date": "2026-10-24T02:01:14.000Z",
-   "teams": [
-    "KC"
-   ],
-   "body": [
-    "9:01pm: Marsh indeed elected free agency as well, according to the tracker.",
-    "3:35pm: The Royals have sent five right-handed pitchers outright to Triple-A Omaha, according to the MLB.com transactions tracker. They are Alex Lange, Mason Black, Connor Seabold, Alec Marsh and Easton McGee. This indicates the club put the five of them on waivers recently and they all went unclaimed. Seabold and McGee have elected free agency. Marsh and Lange are also eligible to choose the open market and will presumably do so.",
-    "This part of the calendar is a big time for roster moves of this nature. After the World Series, eligible players become free agents but also the injured list goes away. Most teams have a handful of players on the 60-day IL who either need to be reinstated to the 40-man or bumped off. Players eligible for the Rule 5 draft also need roster spots in November if the club wants to protect them from selection. With all those moving parts, many fringe players will be squeezed off roster spots in the coming weeks.",
-    "Seabold, 31 in January, was acquired from the Blue Jays in a June trade. That didn’t work out for the Royals. Seabold allowed five earned runs in five innings before hitting the IL with a lat strain. He started a rehab assignment in September but was still on the IL at season’s end. He has a previous career outright, which gave him the right to elect free agency this time."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Mason_Black_Royals-1024x683.jpg",
-   "players": [
-    [
-     "Alex Lange",
-     656638
-    ],
-    [
-     "Mason Black",
-     696131
-    ],
-    [
-     "Connor Seabold",
-     657756
-    ],
-    [
-     "Easton McGee",
-     668834
-    ]
-   ]
   },
   {
    "title": "Cardinals, Hitting Coach Brant Brown Part Ways",
