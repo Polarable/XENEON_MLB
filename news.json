@@ -1,6 +1,79 @@
 {
- "updated": "2026-11-19T03:00:37.026Z",
+ "updated": "2026-11-19T03:10:31.807Z",
  "articles": [
+  {
+   "title": "White Sox Seeking Another Notable Starter After May Signing",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-seeking-another-notable-starter-after-may-signing.html",
+   "date": "2026-11-19T03:08:23.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox made one of the biggest strikes in free agency thus far, finalizing their three-year deal with Dustin May this afternoon. That $52.5MM guarantee was already the organization’s biggest signing since Andrew Benintendi four years ago, but it may not be their most notable move of this offseason.",
+    "ESPN’s Jeff Passan wrote this morning that the White Sox remained in the market for starting pitching. James Fegan of The Chicago Sun-Times suggests they’re aiming for someone who’d at least slot into the middle of the staff, reporting that they’re pursuing a starter “of similar magnitude” to May.",
+    "There are plenty of mid-rotation starters on the open market. Chicago has shown interest in NPB starter Kaima Taira, for one. Foster Griffin, Michael Soroka, Clay Holmes, Tyler Mahle, Casey Mize, Shota Imanaga, and Nick Pivetta are all candidates for a contract similar to or slightly below the May guarantee. That’s also true of Kevin Gausman or Nick Martinez if they command two-year deals, though they might pull $20MM+ annually on shorter terms.",
+    "Trevor Rogers, Freddy Peralta and Michael King should all beat the May deal and would probably require the White Sox to go north of $75MM — which they’ve incredibly still never done for any player. Rogers would also come attached to draft compensation after rejecting a qualifying offer from the Orioles."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/USATSI_29261078-1024x683.jpg",
+   "players": [
+    [
+     "Dustin May",
+     669160
+    ],
+    [
+     "Andrew Benintendi",
+     643217
+    ],
+    [
+     "Foster Griffin",
+     656492
+    ],
+    [
+     "Michael Soroka",
+     647336
+    ],
+    [
+     "Clay Holmes",
+     605280
+    ],
+    [
+     "Tyler Mahle",
+     641816
+    ],
+    [
+     "Casey Mize",
+     663554
+    ],
+    [
+     "Shota Imanaga",
+     684007
+    ],
+    [
+     "Nick Pivetta",
+     601713
+    ],
+    [
+     "Kevin Gausman",
+     592332
+    ],
+    [
+     "Nick Martinez",
+     607259
+    ],
+    [
+     "Trevor Rogers",
+     669432
+    ],
+    [
+     "Freddy Peralta",
+     642547
+    ],
+    [
+     "Michael King",
+     650633
+    ]
+   ]
+  },
   {
    "title": "Twins Sign Sonny Gray",
    "link": "https://www.mlbtraderumors.com/2026/11/twins-sign-sonny-gray.html",
@@ -9376,9 +9449,9 @@
    "link": "https://www.mlbtraderumors.com/2026/10/joe-espada-jason-kanzler-reportedly-finalists-for-mariners-managerial-job.html",
    "date": "2026-10-27T21:57:13.000Z",
    "teams": [
-    "CWS",
-    "CHC",
     "LAD",
+    "CHC",
+    "CWS",
     "SEA",
     "TB"
    ],
