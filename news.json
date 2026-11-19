@@ -1,6 +1,80 @@
 {
- "updated": "2026-11-19T22:10:32.442Z",
+ "updated": "2026-11-19T22:20:39.403Z",
  "articles": [
+  {
+   "title": "Rays Release Jesse Scholtens To Pursue KBO Opportunity",
+   "link": "https://www.mlbtraderumors.com/2026/11/rays-release-jesse-scholtens-to-pursue-kbo-opportunity.html",
+   "date": "2026-11-19T22:18:13.000Z",
+   "teams": [
+    "TB"
+   ],
+   "body": [
+    "The Rays announced that right-hander Jesse Scholtens has been released to pursue an opportunity in the KBO League in South Korea. It’s unclear which KBO team is interested in Scholtens. Tampa’s 40-man roster count drops from 39 to 38."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Jesse_Scholtens_Rays-1024x683.jpg",
+   "players": [
+    [
+     "Jesse Scholtens",
+     669947
+    ]
+   ]
+  },
+  {
+   "title": "Twins Looking To Add To Bullpen, Lineup",
+   "link": "https://www.mlbtraderumors.com/2026/11/twins-looking-to-add-to-bullpen-lineup.html",
+   "date": "2026-11-19T22:12:21.000Z",
+   "teams": [
+    "MIN"
+   ],
+   "body": [
+    "The Twins made two big signings this week but they’re not done. Catcher Ryan Jeffers accepted the qualifying offer and right-hander Sonny Gray signed a two-year deal. Gray and general manager Jeremy Zoll met with reporters via Zoom today to re-introduce Gray to the media. Per Aaron Gleeman of AaronGleeman.com, Zoll said that adding to the bullpen and lineup remain priorities even after the Jeffers and Gray deals. “We’re working both paths right now,” Zoll said.",
+    "Those are sensible targets. The Twins opened the 2025 season with a respectable bullpen but they tore it down at that year’s deadline, sending out Jhoan Duran, Louis Varland, Griffin Jax, Brock Stewart and Danny Coulombe. That left the relief group in rough shape going into 2026, though they did pick up arms like Jeff Hoffman, Yoendrys Gómez and Tommy Nance midseason. Despite those pickups, Minnesota relievers still posted a collective 4.74 earned run average on the year, a mark that was better than just four other clubs.",
+    "Bolstering the bullpen for 2027 makes plenty of sense. It’s unclear at this point where the club wants to end up financially. MLBTR’s Payroll Tracker projects the Twins to spend $125MM on next year’s club, before accounting for Jeffers or Gray. The $55MM Gray deal is backloaded a bit, with just a $20MM salary next year. Between Gray and Jeffers, $43.15MM should be added onto that figure, minus a couple of league minimum salaries for players being bumped off."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/TC_Bear_Twins-1024x683.jpg",
+   "players": [
+    [
+     "Ryan Jeffers",
+     680777
+    ],
+    [
+     "Sonny Gray",
+     543243
+    ],
+    [
+     "Jhoan Duran",
+     661395
+    ],
+    [
+     "Louis Varland",
+     686973
+    ],
+    [
+     "Griffin Jax",
+     643377
+    ],
+    [
+     "Brock Stewart",
+     592779
+    ],
+    [
+     "Danny Coulombe",
+     543056
+    ],
+    [
+     "Jeff Hoffman",
+     656546
+    ],
+    [
+     "Yoendrys Gómez",
+     672782
+    ],
+    [
+     "Tommy Nance",
+     667297
+    ]
+   ]
+  },
   {
    "title": "Cubs Claim Chayce McDermott",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-claim-chayce-mcdermott.html",
@@ -506,49 +580,6 @@
     [
      "Lawrence Butler",
      671732
-    ]
-   ]
-  },
-  {
-   "title": "The Opener: Skubal Meetings, Mariners/Royals Trade, Gray",
-   "link": "https://www.mlbtraderumors.com/2026/11/the-opener-skubal-meetings-mariners-royals-trade-gray.html",
-   "date": "2026-11-19T14:42:09.000Z",
-   "teams": [],
-   "body": [
-    "The offseason is starting to pick up. We could see a sprint to the finish line with a potential lockout looming in December.",
-    "The Padres were scheduled to meet with Tarik Skubal yesterday (h/t Jon Heyman of the New York Post). That means four teams have now sat down with the top free agent on the market. San Diego joins the Mets, Dodgers, and Blue Jays as the clubs known to have met with Skubal. Two unnamed teams are believed to be in the mix as well. The Padres also met with free agent outfielder Seiya Suzuki this week, per Jeff Passan of ESPN.",
-    "2. Blockbuster Mariners/Royals trade",
-    "Seattle and Kansas City joined forces to give us one of the most fascinating moves of the offseason so far. The teams agreed to a six-player trade headlined by third baseman Maikel Garcia and right-hander Bryce Miller. That duo alone makes it an interesting swap, but the other names in the deal add to the intrigue. Lefty reliever Jose A. Ferrer heads to the Royals and could be their new closer. Logan Evans could factor into Kansas City’s rotation depending on his recovery from Tommy John surgery. James McArthur just feels like the next great reclamation project in Seattle."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/MaikelGarcia-1-1024x683.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Seiya Suzuki",
-     673548
-    ],
-    [
-     "Maikel Garcia",
-     672580
-    ],
-    [
-     "Bryce Miller",
-     682243
-    ],
-    [
-     "Jose A. Ferrer",
-     678606
-    ],
-    [
-     "Logan Evans",
-     688138
-    ],
-    [
-     "James McArthur",
-     663704
     ]
    ]
   },
@@ -8161,31 +8192,6 @@
    ]
   },
   {
-   "title": "Cubs Claim Eric Orze",
-   "link": "https://www.mlbtraderumors.com/2026/11/cubs-claim-eric-orze.html",
-   "date": "2026-11-02T21:56:23.000Z",
-   "teams": [
-    "MIN",
-    "CHC"
-   ],
-   "body": [
-    "The Cubs announced that they have claimed reliever Eric Orze off waivers from the Twins. Chicago now has 35 players on its 40-man roster.",
-    "Orze, whom the Mets drafted in the fifth round in 2020, had a two-appearance, 1 2/3-inning major league debut with the club in 2024 and then left in an offseason trade. After the Rays acquired Orze for outfielder Jose Siri, the right-hander emerged as an effective member of Tampa Bay’s bullpen in 2025. Across 41 2/3 innings, Orze pitched to an appealing 3.02 ERA. However, he did it despite pedestrian strikeout, walk and ground-ball numbers, and he benefited from an 81% strand rate.",
-    "Orze didn’t last long with the Rays, who dealt him to the Twins for pitching prospect Jacob Kisting last November. The move didn’t go as Minnesota hoped, evidenced by the fact that the team subjected Orze to waivers a year after acquiring him. Orze’s ERA skyrocketed to 5.66 ERA in 41 1/3 innings with the Twins, though an unusually low 59.7% strand rate didn’t help his cause. While the 29-year-old continued to post below-average strikeout, walk and grounder rates, ERA estimators such as FIP (3.34), xERA (4.13), SIERA (4.50) and xFIP (4.71) suggest he should have kept runs off the board at a more respectable clip."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Eric_Orze_Twins-1024x683.jpg",
-   "players": [
-    [
-     "Eric Orze",
-     679358
-    ],
-    [
-     "Jose Siri",
-     642350
-    ]
-   ]
-  },
-  {
    "title": "Rays Exercise Club Option On Taylor Walls, Announce Five Additional Moves",
    "link": "https://www.mlbtraderumors.com/2026/11/rays-exercise-option-taylor-walls-shortstop.html",
    "date": "2026-11-02T21:22:57.000Z",
@@ -8657,27 +8663,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/07/DanaBrown-Astros2026-1024x819.jpg",
    "players": []
-  },
-  {
-   "title": "Two Players Elect Free Agency",
-   "link": "https://www.mlbtraderumors.com/2026/10/two-players-elect-free-agency.html",
-   "date": "2026-10-31T17:28:51.000Z",
-   "teams": [
-    "TB",
-    "MIL"
-   ],
-   "body": [
-    "Two players who saw regular-season action for the two World Series teams have elected minor league agency, according to the official MiLB.com transactions page. To qualify for minor league free agency, players must be outrighted off their teams’ 40-man rosters during the course of the season without being added back, and they must have either three years of MLB service time or multiple outright assignments over the course of their careers.",
-    "Dunn signed a minor league deal with the White Sox last winter, and was traded to the Rays in May. He was quickly added to the active roster as infield depth when Ben Williamson was placed on the IL, and Dunn had a.258 OPS in 12 plate appearances over nine games, appearing mostly as a late-game substitute. Tampa optioned Dunn back to Triple-A after that nine-game stint, and outrighted him off the 40-man in September.",
-    "Dunn has now played in parts of the last three MLB seasons, and has hit.197/.253/.275 over 157 PA in the Show with the Brewers and Rays. He can play all over the infield (and has played left field in the minors) and has some good base-stealing ability, so Dunn will try to parlay that skillset into another minor league contract this offseason. Dunn is out of minor league options, which will complicate his chances of sticking on a 40-man roster."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/OliverDunn-Rays2026-1024x683.jpg",
-   "players": [
-    [
-     "Ben Williamson",
-     810938
-    ]
-   ]
   },
   {
    "title": "Offseason Outlook: Los Angeles Angels",
