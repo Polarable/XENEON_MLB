@@ -1,6 +1,31 @@
 {
- "updated": "2026-11-19T18:30:38.434Z",
+ "updated": "2026-11-19T18:40:31.726Z",
  "articles": [
+  {
+   "title": "Reds To Sign Dominic Fletcher To Minors Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/reds-to-sign-dominic-fletcher-to-minors-deal.html",
+   "date": "2026-11-19T18:31:43.000Z",
+   "teams": [
+    "CIN"
+   ],
+   "body": [
+    "Veteran outfielder Dominic Fletcher is sticking with the Reds on a minor league deal, per Mark Sheldon of MLB.com. The agreement includes an invitation to MLB Spring Training. Fletcher spent the final month of last season at Triple-A Louisville.",
+    "The 29-year-old Fletcher began the year in the Pirates’ system. He had a strong year at Triple-A Indianapolis, slashing.301/.386/.485 across 61 games. Fletcher didn’t earn a big-league promotion and exercised an opt-out clause in his deal in July. He wound up back with Indianapolis later in the month.",
+    "Pittsburgh released Fletcher again in mid-August. He latched on with the Reds in early September. Fletcher struggled in 14 games with Louisville and returned to minor league free agency. He’s decided to stay in the organization and will have a shot to earn a roster spot in the spring.",
+    "Fletcher last played in the majors in 2025. He appeared in 12 games with the White Sox. He was a league-average bat in Chicago across a small sample, but has generally underwhelmed in the big leagues. Fletcher has a 67 wRC+ in 377 MLB plate appearances. He debuted with the Diamondbacks in 2023. The White Sox acquired him straight up for minor league pitcher Cristian Mena in February 2024."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/DominicFletcher-1024x683.jpg",
+   "players": [
+    [
+     "Dominic Fletcher",
+     666150
+    ],
+    [
+     "Cristian Mena",
+     691441
+    ]
+   ]
+  },
   {
    "title": "White Sox Hire Kyle Wilson As Assistant Hitting Coach",
    "link": "https://www.mlbtraderumors.com/2026/11/white-sox-hire-kyle-wilson-as-assistant-hitting-coach.html",
@@ -10100,49 +10125,6 @@
     [
      "Spencer Horwitz",
      687462
-    ]
-   ]
-  },
-  {
-   "title": "Reviewing The Rays, Angels, And Reds Three-Team Trade",
-   "link": "https://www.mlbtraderumors.com/2026/10/reviewing-the-rays-angels-and-reds-three-team-trade.html",
-   "date": "2026-10-12T22:12:41.000Z",
-   "teams": [
-    "CIN",
-    "LAA",
-    "TB"
-   ],
-   "body": [
-    "The three-team deal that sent Josh Lowe to the Angels and Gavin Lux to the Rays over the winter was intriguing, if not season-altering. Los Angeles picked up an everyday outfielder to replace Taylor Ward, who was traded to the Orioles. Tampa Bay landed a Brandon Lowe replacement after sending the second baseman to Pittsburgh.",
-    "And then there’s Cincinnati. The Reds got off the $5.525MM owed to Lux in his final year of arbitration. They also picked up reliever Brock Burke from the Angels. It seemed like a fine bit of business, but not a move that would have a major impact on the season. The trade turned out to be a big win for Cincinnati, and pretty convincingly so.",
-    "Burke had a decent run with the Rangers after moving to the bullpen in 2022. He struggled in 2024 and was designated for assignment midway through the year. The Angels picked him up for the final six weeks of the season. Burke made the club in 2025 and put up a solid 3.36 ERA over 69 games. He had a year of team control remaining when he was sent to Cincinnati.",
-    "The 30-year-old Burke was tremendous in his lone season with the Reds. He delivered a 2.30 ERA across 74 1/3 innings. Burke’s 77 appearances led the National League. He was the club’s top left-handed option with Caleb Ferguson opening the year on the IL, and manager Terry Francona leaned on him early and often."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/BrockBurke-1024x683.jpg",
-   "players": [
-    [
-     "Josh Lowe",
-     666139
-    ],
-    [
-     "Gavin Lux",
-     666158
-    ],
-    [
-     "Taylor Ward",
-     621493
-    ],
-    [
-     "Brandon Lowe",
-     664040
-    ],
-    [
-     "Brock Burke",
-     656271
-    ],
-    [
-     "Caleb Ferguson",
-     657571
     ]
    ]
   },
