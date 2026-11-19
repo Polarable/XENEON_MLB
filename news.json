@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T19:00:44.237Z",
+ "updated": "2026-11-19T19:10:32.940Z",
  "articles": [
   {
    "title": "Yankees Notes: Garcia, Bohm, Hyde",
@@ -66,21 +66,31 @@
    ]
   },
   {
-   "title": "Orioles To Claim Braden Nett",
+   "title": "Orioles Claim Braden Nett, Carson Baumler Returned By Rangers",
    "link": "https://www.mlbtraderumors.com/2026/11/orioles-to-claim-braden-nett.html",
    "date": "2026-11-19T18:50:33.000Z",
    "teams": [
     "ATH",
-    "BAL"
+    "BAL",
+    "TEX"
    ],
    "body": [
-    "The Orioles have claimed righty Braden Nett off waivers from the Athletics, reports Andy Kostka of the Baltimore Banner. Nett was designated for assignment on Tuesday after the A’s acquired Raymond Burgos from the Red Sox."
+    "The Orioles have claimed righty Braden Nett off waivers from the Athletics, per a team announcement. Nett was designated for assignment on Tuesday after the A’s acquired Raymond Burgos from the Red Sox. Baltimore also announced that 2025 Rule 5 draft pick Carter Baumler was returned by the Rangers.",
+    "Nett’s stock plummeted quickly with the A’s. He came over from the Padres last offseason in the trade that sent Mason Miller to San Diego. The righty slotted in among the top pitching prospects in the A’s system. Nett struggled through a brutal 2026 campaign plagued by injuries and poor performance."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-02-20T180710Z_1964284397_MT1USATODAY28292909_RTRMADP_3_MLB-ATHLETICS-MEDIA-DAY-scaled-e1794943322311-1024x684.jpg",
    "players": [
     [
      "Raymond Burgos",
      670103
+    ],
+    [
+     "Carter Baumler",
+     691945
+    ],
+    [
+     "Mason Miller",
+     695243
     ]
    ]
   },
@@ -8296,36 +8306,6 @@
     [
      "Yohel Pozo",
      650968
-    ]
-   ]
-  },
-  {
-   "title": "Rangers Claim José Buttó, Outright Michael Helman",
-   "link": "https://www.mlbtraderumors.com/2026/11/rangers-claim-jose-butto-outright-michael-helman.html",
-   "date": "2026-11-02T21:04:28.000Z",
-   "teams": [
-    "TEX",
-    "SF"
-   ],
-   "body": [
-    "The Rangers claimed righty José Buttó off waivers from the Giants and assigned infielder/outfielder Michael Helman outright to Triple-A Round Rock after he went unclaimed on waivers, per a team announcement.",
-    "Buttó had been on the Giants’ 60-day injured list, but with the club facing an extreme roster crunch, it elected to move on in the wake of a lost year. After throwing just two innings, Buttó underwent surgery on a blood clot in his pitching arm in mid-April and did not return. However, he is expected to go through a normal offseason and return for Spring Training, per San Francisco’s injury tracker at MLB.com.",
-    "Buttó debuted with the Mets in 2022 and became a regular in their bullpen for a couple of years. In his best season, 2024, he fired 74 innings of 2.55 ERA ball with a strong 26.9% strikeout rate. Buttó’s ability to generate strikeouts helped him overcome a 12.9% walk rate, which is right in line with his career average. He hasn’t replicated that success since, however, and the Mets ended up trading Buttó to the Giants in the teams’ Tyler Rogers deal ahead of the 2025 deadline. The sinkerballer recorded a career-best 48.1% ground-ball rate in 67 innings between the Mets and Giants that year, but a much lower strikeout rate (20.4%) helped lead to a less impressive 3.90 ERA.",
-    "The 28-year-old Buttó is out of minor league options, meaning he will end up back in limbo if he is unable to hold a roster spot with Texas. For now, though, he represents a potential option for a team whose relievers finished 23rd in ERA and strikeout-walk percentage in 2026."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/jose-butto-reliever-giants-1024x683.jpg",
-   "players": [
-    [
-     "José Buttó",
-     676130
-    ],
-    [
-     "Michael Helman",
-     680737
-    ],
-    [
-     "Tyler Rogers",
-     643511
     ]
    ]
   },
