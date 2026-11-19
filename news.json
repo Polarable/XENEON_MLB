@@ -1,6 +1,26 @@
 {
- "updated": "2026-11-19T23:20:33.437Z",
+ "updated": "2026-11-19T23:30:36.088Z",
  "articles": [
+  {
+   "title": "Brewers Sign Braden Shewmake To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/brewers-sign-braden-shewmake-to-minor-league-deal.html",
+   "date": "2026-11-19T23:26:25.000Z",
+   "teams": [
+    "MIL"
+   ],
+   "body": [
+    "The Brewers have signed infielder Braden Shewmake to a minor league deal, per Todd Rosiak of the Milwaukee Journal Sentinel. Shewmake also receives an invite to big league camp in spring training.",
+    "It’s a birthday present for Shewmake, who turns 29 today. He has become a journeyman depth infielder at this point in his career. When the calendar flipped to 2026, he was on the Royals roster, but he went to the Yankees via waivers before the season began. He was traded to the Astros in April and spent a few months with that club before getting designated for assignment and traded to the Brewers. Milwaukee designated him for assignment less than two weeks later. He cleared waivers, elected free agency and returned to the Astros via a minor league deal.",
+    "Around all those moves, he got into 34 big league games and stepped to the plate 91 times, hitting.259/.270/.424 in those. That brought his career numbers to 65 games, 162 plate appearances and a.196/.206/.320 line. He doesn’t do much with the bat but he’s considered a competent defender at shortstop, second base and third base."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/Braden_Shewmake_Brewers-1024x680.jpg",
+   "players": [
+    [
+     "Braden Shewmake",
+     669699
+    ]
+   ]
+  },
   {
    "title": "MLB Mailbag: Mets, Holliday, Pirates, Braves, Guardians",
    "link": "https://www.mlbtraderumors.com/2026/11/mlb-mailbag-mets-holliday-pirates-braves-guardians.html",
@@ -8042,10 +8062,10 @@
    "link": "https://www.mlbtraderumors.com/2026/11/eight-players-receive-qualifying-offers.html",
    "date": "2026-11-02T23:25:23.000Z",
    "teams": [
-    "MIL",
+    "MIN",
     "BAL",
     "CHC",
-    "MIN",
+    "MIL",
     "NYY",
     "PIT",
     "SD",
