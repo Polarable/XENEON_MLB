@@ -1,6 +1,25 @@
 {
- "updated": "2026-11-19T21:20:32.978Z",
+ "updated": "2026-11-19T21:30:34.980Z",
  "articles": [
+  {
+   "title": "Cubs Claim Chayce McDermott",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-claim-chayce-mcdermott.html",
+   "date": "2026-11-19T21:20:08.000Z",
+   "teams": [
+    "CHC",
+    "NYM"
+   ],
+   "body": [
+    "The Cubs announced they have claimed right-hander Chayce McDermott off waivers from the Mets. Jon Heyman of The New York Post reported the claim prior to the official announcement. There wasn’t any previous indication that McDermott lost his roster spot with New York but they evidently tried to quietly pass him through waivers. The Cubs had multiple 40-man vacancies and won’t need to make a corresponding move. The Mets’ 40-man count drops to 39."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Chayce_McDermott_Mets-1024x683.jpg",
+   "players": [
+    [
+     "Chayce McDermott",
+     694646
+    ]
+   ]
+  },
   {
    "title": "Royals, Randy Dobnak Avoid Arbitration",
    "link": "https://www.mlbtraderumors.com/2026/11/royals-randy-dobnak-avoid-arbitration.html",
@@ -6465,27 +6484,6 @@
    ]
   },
   {
-   "title": "Eric Wagaman Elects Free Agency",
-   "link": "https://www.mlbtraderumors.com/2026/11/eric-wagaman-elects-free-agency.html",
-   "date": "2026-11-08T15:01:55.000Z",
-   "teams": [
-    "NYM"
-   ],
-   "body": [
-    "Infielder Eric Wagaman has elected free agency, according to his transactions log at MLB.com. That was the expected outcome after the Mets outrighted him off the 40-man roster a week ago. He’s now on the market as a low-cost, minor league depth option.",
-    "Wagaman debuted with the Angels in 2024 and elected free agency at the end of that year following a DFA. He signed with the Marlins for the 2025 season and went on to take 514 plate appearances in 2025, his largest big league sample to date. Unfortunately, Wagaman struggled mightily at the plate en route to replacement-level numbers.",
-    "While he struck out less than 20% of the time, Wagaman only batted.250/.296/.378 with an 85 wRC+ for Miami. An above-average 46.5% hard-hit rate was about the only positive on his profile, as his bottom-line numbers lagged far behind the league average output at his primary position of first base. Defensive Runs Saved and other metrics saw Wagaman’s glovework as passable, but he would have had to be a premium defender to make up for the lack of value at the plate. FanGraphs valued Wagaman at -0.4 wins above replacement in 2025.",
-    "This year was more of the same. Wagaman posted a 67 wRC+ in just 52 plate appearances with the Mets and played a handful of innings at the infield and outfield corners. He did have a 108 wRC+ for the team’s Triple-A affiliate in Syracuse, though that production came in just 148 plate appearances. Wagaman had struggled badly with the Twins’ top affiliate before the Mets claimed him off waivers at the end of April."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/eric-wagaman-mets-2026-1024x683.jpg",
-   "players": [
-    [
-     "Eric Wagaman",
-     676572
-    ]
-   ]
-  },
-  {
    "title": "“Multiple Teams” Showing Interest In Ty France",
    "link": "https://www.mlbtraderumors.com/2026/11/multiple-teams-showing-interest-in-ty-france.html",
    "date": "2026-11-08T04:59:25.000Z",
@@ -7624,27 +7622,6 @@
     [
      "Edwin Uceta",
      670955
-    ]
-   ]
-  },
-  {
-   "title": "Cubs Decline Javier Assad’s Option; Assad Remains Under Team Control",
-   "link": "https://www.mlbtraderumors.com/2026/11/cubs-decline-option-javier-assad-retain-control-arbitration.html",
-   "date": "2026-11-03T18:58:35.000Z",
-   "teams": [
-    "CHC"
-   ],
-   "body": [
-    "The Cubs declined their $3.3MM club option on righty Javier Assad yesterday, reports Jordan Bastian of MLB.com. He remains under club control as an arbitration-eligible player. The team didn’t formally announce the decision at any point.",
-    "Assad played the 2026 season on a one-year, $1.8MM deal that included a $3.3MM club option for 2027. He and the Cubs agreed to that deal last winter, buying out his first arb year and giving the team some cost certainty in the event that Assad had a big year. Instead, the righty split the season between Triple-A Iowa and Chicago, functioning primarily as a swingman when he was on the big league roster.",
-    "In 94 1/3 major league innings, Assad posted a 3.63 ERA. He did so with a 16.1% strikeout rate that was six percentage points shy of average but also a strong 7.1% walk rate. Assad picked up a pair of three-inning saves but otherwise didn’t log a save or hold. He was generally used as an opener and long reliever, operating most frequently in low- and medium-leverage settings.",
-    "The price tag on Assad’s club option came in well north of the $2.3MM figure he’s projected to earn in arbitration (via MLBTR contributor Matt Swartz). Given that discrepancy, it’s not a surprise to see the Cubs turn down that option. He’ll likely negotiate a new deal that locks in some money for 2027 but saves the Cubs $1MM or so, give or take. It’s a small bit of cost-savings but does have a compounding factor; since Assad’s 2027 salary will be lower, so too will any potential raise he’ll receive heading into the 2028 campaign — his final season of club control."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/javier-assad-chicago-cubs-1024x683.jpg",
-   "players": [
-    [
-     "Javier Assad",
-     665871
     ]
    ]
   },
