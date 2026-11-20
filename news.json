@@ -1,6 +1,44 @@
 {
- "updated": "2026-11-20T23:00:37.834Z",
+ "updated": "2026-11-20T23:10:31.513Z",
  "articles": [
+  {
+   "title": "Diamondbacks To Acquire Johan Oviedo",
+   "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-to-acquire-johan-oviedo.html",
+   "date": "2026-11-20T23:07:33.000Z",
+   "teams": [
+    "ARI",
+    "BOS"
+   ],
+   "body": [
+    "The Diamondbacks have acquired right-hander Johan Oviedo from the Red Sox, reports Robert Murray of FanSided. Boston’s return in the trade hasn’t yet been reported."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/04/johan-oviedo-red-sox-1024x681.jpg",
+   "players": [
+    [
+     "Johan Oviedo",
+     670912
+    ]
+   ]
+  },
+  {
+   "title": "Rays Acquire Christian Koss",
+   "link": "https://www.mlbtraderumors.com/2026/11/rays-acquire-christian-koss.html",
+   "date": "2026-11-20T23:04:41.000Z",
+   "teams": [
+    "SF",
+    "TB"
+   ],
+   "body": [
+    "The Giants announced that they have traded infielder Christian Koss to the Rays in exchange for right-hander Cole Stokes. Koss was designated for assignment by San Francisco earlier this week. The Rays had 40-man space and don’t need to make a corresponding move."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/06/USATSI_28922340-1024x683.jpg",
+   "players": [
+    [
+     "Christian Koss",
+     683766
+    ]
+   ]
+  },
   {
    "title": "Twins, Dodgers Swap Royce Lewis For Bobby Miller",
    "link": "https://www.mlbtraderumors.com/2026/11/dodgers-acquire-royce-lewis.html",
@@ -11,7 +49,9 @@
    ],
    "body": [
     "4:48pm: Right-hander and former top prospect Bobby Miller is also headed to Minnesota in the deal, reports Robert Murray of FanSided.",
-    "4:27pm: The Dodgers have acquired infielder Royce Lewis from the Twins, reports Jon Heyman of The New York Post. Los Angeles has open 40-man spots and won’t need to make a corresponding move. The Twins receive minor league catcher Francisco Espinoza in return, per Heyman."
+    "4:27pm: The Dodgers have acquired infielder Royce Lewis from the Twins, reports Jon Heyman of The New York Post. Los Angeles has open 40-man spots and won’t need to make a corresponding move. The Twins receive minor league catcher Francisco Espinoza in return, per Heyman.",
+    "Lewis, 27, was the No. 1 overall pick in the 2017 draft and at one point ranked among the game’s very best prospects. He climbed through the Twins’ system as a shortstop but largely settled in at third base. At various points early on in his career, the righty-swinging slugger looked primed for stardom. Lewis was an absolute monster during the Twins’ playoff push in 2023, hitting.309/.372/.548 with 15 homers in 239 plate appearances that were scattered around multiple IL stints. He went 5-for-22 with four home runs, including a grand slam, during Minnesota’s ALDS run that year.",
+    "Unfortunately, that injury caveat has been far, far too prominent a concern in Lewis’ career. He’s amassed nearly five full years of major league service time but has only 1517 plate appearances. Lewis has twice torn the ACL in his right knee, and he’s been on the major league injured list a whopping 11 times due almost entirely to various leg injuries — most of them hamstring and quadriceps strains of varying degrees."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/06/royce-lewis-may-2026-twins-1024x683.jpg",
    "players": [
@@ -144,7 +184,8 @@
     "NYY",
     "SEA",
     "TEX",
-    "TOR"
+    "TOR",
+    "TB"
    ],
    "body": [
     "The deadline to tender a contract to arbitration-eligible players was 4pm CT this afternoon. Below is a comprehensive list of players on American League teams who have been non-tendered today. It’ll be updated as more names filter in now that the deadline is behind us. MLBTR contributor Matt Swartz projected 2027 salaries for all arbitration-eligible players last month. Non-tendered players immediately enter free agency without needing to pass through waivers and can then be signed by any of the league’s 30 teams."
@@ -297,40 +338,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2025-03-20T000259Z_800610066_MT1USATODAY25714297_RTRMADP_3_MLB-SPRING-TRAINING-ATLANTA-BRAVES-AT-NEW-YORK-YANKEES-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "Front Office Subscriber Chat Transcript",
-   "link": "https://www.mlbtraderumors.com/2026/11/front-office-subscriber-chat-with-anthony-franco-today-at-200pm-central-92.html",
-   "date": "2026-11-20T20:00:13.000Z",
-   "teams": [],
-   "body": [
-    "Good afternoon, hope all is well! Busy day for us today, let’s get rolling Blake",
-    "Would it make more sense for Seager to be traded for prospects or MLB ready players? Anthony Franco",
-    "Ideally you’ll get at least some kind of big league relief help back but ultimately, can’t afford to be too choosy. They’re already going to need to eat some of the deal, very limited number of teams that’d be involved at all The primary focus on trading him is to get out from under as much of the money as possible and reallocate it while opening SS for Walcott. The return itself is secondary MikeD",
-    "I’m guessing the expected non-tender of Trevor Larnach is based on the expected arbitration award of $6.3 million. What do you think he’ll get and who are the likely landing spots? Anthony Franco",
-    "Yeah I was surprised they couldn’t find a trade partner. Still think he’ll find something close to that in FA, Padres make the most sense to me I know they love Gavin Sheets as a clubhouse guy but Larnach’s a better player cmac1973",
-    "I’m a Red Sox fan who’s seemingly in the minority about Jarren Duran. I hope they keep him. Why do so many others want him gone, especially when Roman Anthony hasn’t proven he can make it through a full season? Anthony Franco",
-    "His season was terrible and paying $11M+ for a guy who’s a fourth OF if everyone’s healthy doesn’t seem advisable. I’m with the majority that it’s time to move on Brewer Fan"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2015/06/MLBTR-image-325x325.png",
-   "players": [
-    [
-     "Trevor Larnach",
-     663616
-    ],
-    [
-     "Gavin Sheets",
-     657757
-    ],
-    [
-     "Jarren Duran",
-     680776
-    ],
-    [
-     "Roman Anthony",
-     701350
-    ]
-   ]
   },
   {
    "title": "Athletics Sign Brian Serven, Wilkin Ramos To Minor League Deals",
@@ -6233,26 +6240,6 @@
    ]
   },
   {
-   "title": "Red Sox Notes: Story, Arias, Casas",
-   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-notes-story-arias-casas.html",
-   "date": "2026-11-10T21:01:56.000Z",
-   "teams": [
-    "BOS"
-   ],
-   "body": [
-    "A big question for the Red Sox is who their primary shortstop will be in 2027. Chief baseball officer Craig Breslow spoke to members of the media at the general managers’ meetings in Las Vegas this week and wouldn’t commit to Trevor Story having the job next year. Peter Abraham and Alex Speier of The Boston Globe and Jen McCaffrey of The Athletic were among those to report on Breslow’s comments.",
-    "“We know what Trevor is capable of doing when he’s healthy and performing,” Breslow said. “This year was disruptive for a number of reasons — with injury, some struggles at times. I think we’re always evaluating these things. We still have a ton of confidence in Trevor, but any decisions like that are going to take place between Trevor and me far before I speak to anything publicly.”",
-    "Story was signed to a six-year, $140MM contract shortly after the last lockout ended in March of 2022. Five years in, that deal hasn’t worked out especially well for the Sox. Story has occasionally had runs of strong production but they have often been interrupted by injuries. In the first five years of the pact, he only played more than 94 games once."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/09/TrevorStory-1-1024x683.jpg",
-   "players": [
-    [
-     "Trevor Story",
-     596115
-    ]
-   ]
-  },
-  {
    "title": "Padres Interested In Seiya Suzuki, Teruaki Sato, Shota Imanaga",
    "link": "https://www.mlbtraderumors.com/2026/11/padres-interested-in-seiya-suzuki-teruaki-sato-shota-imanaga.html",
    "date": "2026-11-10T19:36:44.000Z",
@@ -8532,51 +8519,6 @@
    ]
   },
   {
-   "title": "Rays Finalize Yandy Diaz’s Contract",
-   "link": "https://www.mlbtraderumors.com/2026/10/rays-finalize-yandy-diazs-contract.html",
-   "date": "2026-11-01T03:16:50.000Z",
-   "teams": [
-    "TB"
-   ],
-   "body": [
-    "The Rays have completed Yandy Diaz’s contract for 2027, per Marc Topkin of the Tampa Bay Times. The slugger had a $10MM club option for next season that turned into a guaranteed $13MM deal if he reached 500 plate appearances. Diaz comfortably reached that threshold, but needed to finish the season healthy to finalize the deal.",
-    "The 35-year-old Diaz provided another productive season atop Tampa Bay’s lineup. He hit.293 with 22 homers as the club’s primary DH. He led the AL with 180 hits. Diaz was at least 20% better than league average at the plate for the fifth consecutive season.",
-    "Diaz was a solid contributor on a Rays squad that represented the AL in the World Series. He recorded a.742 OPS across 59 playoff at-bats. Diaz was particularly important in the ALCS against the Guardians, hitting.333 with two home runs. His two-run shot in the eighth inning of Game 6 helped seal Tampa Bay’s series-clinching win.",
-    "The three-year, $24MM extension Diaz signed with the Rays heading into the 2023 season has worked out swimmingly for Tampa Bay. The cost has risen, and Diaz is in his mid-30s, but the numbers have been there. The Rays preemptively exercised their 2026 club option on Diaz before the 2025 season. The organization also tacked on the 2027 option at that time. Diaz made $12MM this past season. He’ll do one better on that figure for next year after reaching the vesting threshold."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/YandyDiaz-1-1024x682.jpg",
-   "players": [
-    [
-     "Yandy Diaz",
-     650490
-    ]
-   ]
-  },
-  {
-   "title": "Astros To Acquire Evan Reifert",
-   "link": "https://www.mlbtraderumors.com/2026/10/astros-to-acquire-evan-reifert.html",
-   "date": "2026-11-01T02:05:48.000Z",
-   "teams": [
-    "TB",
-    "HOU"
-   ],
-   "body": [
-    "9:05pm CT: The Rays will receive cash in the trade, per Marc Topkin of the Tampa Bay Times.",
-    "8:39pm CT: The Astros have acquired right-hander Evan Reifert in a deal with the Rays, per Robert Murray of FanSided.",
-    "Reifert is coming off a solid year at Triple-A, recording a 2.48 ERA across 46 appearances with Durham. He’ll now head to Houston in search of his first chance in the majors.",
-    "The 27-year-old Reifert has spent the majority of his pro career with the Rays. He was signed as an undrafted free agent by the Brewers in 2020. Milwaukee sent him to Tampa Bay after one season in a deal that netted infielder Mike Brosseau.",
-    "Reifert has routinely put up massive strikeout numbers in the minors, but it’s almost always come with an untenable walk rate. He did manage a 9.9% walk rate in 35 games at Double-A in 2024, to go with an excellent 40.4% strikeout rate. That was enough for the Nationals to select him with the fifth pick in the Rule 5 Draft. Reifert walked 12 in seven Spring Training games. Washington returned him to the Rays shortly before Opening Day.",
-    "Tampa Bay bumped Reifert to Triple-A for the first time in 2025. He recorded a 2.48 ERA over 29 innings. He’s posted nearly identical stat lines the past two years with the Bulls, including a strikeout rate around 39% and a walk rate just over 14%. The fact that he’s still missing bats at the highest minor league level is an encouraging sign. The control remains the issue and is likely what has held him back from getting a big-league look up to this point."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/EvanReifert-1024x683.jpg",
-   "players": [
-    [
-     "Evan Reifert",
-     682126
-    ]
-   ]
-  },
-  {
    "title": "Reds Decline Mutual Options For Eugenio Suárez, Pierce Johnson",
    "link": "https://www.mlbtraderumors.com/2026/10/reds-decline-mutual-options-for-eugenio-suarez-pierce-johnson.html",
    "date": "2026-10-31T21:57:06.000Z",
@@ -9124,26 +9066,6 @@
     [
      "Michael Soroka",
      647336
-    ]
-   ]
-  },
-  {
-   "title": "Diamondbacks Considering First Base Work For Nolan Arenado",
-   "link": "https://www.mlbtraderumors.com/2026/10/diamondbacks-considering-first-base-work-for-nolan-arenado.html",
-   "date": "2026-10-29T16:52:53.000Z",
-   "teams": [
-    "ARI"
-   ],
-   "body": [
-    "The Diamondbacks and third baseman Nolan Arenado are thinking about him playing first base next year, reports Steve Gilbert of MLB.com. This wouldn’t be about moving Arenado off the hot corner, but the extra versatility could help the club’s offseason pursuits while also keeping him healthier.",
-    "Arenado just wrapped up his age-35 season and he will turn 36 in April. His third base defense is no longer at the elite levels of earlier in his career but remains passable, depending on your metric of choice. Defensive Runs Saved was the most bearish on his 2026 work, giving him a grade of minus-four. On the other end of the spectrum, Outs Above Average and Fielding Run Value had him in positive territory, with both of those metrics giving Arenado a grade of two above par.",
-    "Though he has never played any other position, it’s understandable that the Diamondbacks would want to contemplate making him viable at first. First base is generally considered a less taxing position than third base, something the Snakes are thinking about as Arenado is squarely in his mid-30s. “I think it’s taken a toll on him physically a little bit,” general manager Mike Hazen said. “So we’re trying to be mindful of that.”"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Nolan_Arenado_Diamondbacks-1024x683.jpg",
-   "players": [
-    [
-     "Nolan Arenado",
-     571448
     ]
    ]
   },
