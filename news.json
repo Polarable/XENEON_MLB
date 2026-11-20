@@ -1,16 +1,18 @@
 {
- "updated": "2026-11-20T00:40:32.412Z",
+ "updated": "2026-11-20T00:50:29.523Z",
  "articles": [
   {
    "title": "White Sox To Trade Davis Martin, Luis Castillo To Rockies",
    "link": "https://www.mlbtraderumors.com/2026/11/white-sox-to-trade-davis-martin-luis-castillo-to-rockies.html",
-   "date": "2026-11-20T00:37:48.000Z",
+   "date": "2026-11-20T00:41:48.000Z",
    "teams": [
     "CWS",
     "COL"
    ],
    "body": [
-    "The White Sox are trading starting pitchers Davis Martin and Luis Castillo to the Rockies, reports Jeff Passan of ESPN. Colorado is sending two prospects the other way."
+    "6:41pm: Rookie southpaw Sean Sullivan is one of the players going to Chicago, reports Mark Feinsand of MLB.com. Francys Romero reports that teenage catcher Douglas Veliz is also going to Chicago.",
+    "6:37pm: The White Sox are trading starting pitchers Davis Martin and Luis Castillo to the Rockies, reports Jeff Passan of ESPN. Colorado is sending two prospects the other way. The Rox are absorbing Castillo’s $22.75MM salary for the upcoming season as a means of enticing Chicago to part with Martin.",
+    "It’s a big investment for a Colorado team starved for starting pitching. Martin is the centerpiece of the deal from their perspective. The Texas Tech product has had an inconsistent career but pitched at a roughly league average level over the last couple seasons. Martin has made 55 appearances over the last two years, pitching to a 4.02 earned run average across 288 2/3 innings."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/08/Davis_Martin_White_Sox-copy-1024x683.jpg",
    "players": [
@@ -21,6 +23,10 @@
     [
      "Luis Castillo",
      622491
+    ],
+    [
+     "Sean Sullivan",
+     807743
     ]
    ]
   },
