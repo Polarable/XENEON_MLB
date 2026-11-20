@@ -1,6 +1,26 @@
 {
- "updated": "2026-11-20T22:40:33.528Z",
+ "updated": "2026-11-20T22:50:31.989Z",
  "articles": [
+  {
+   "title": "Tigers, Troy Melton Agree To Six-Year Extension",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-troy-melton-agree-to-six-year-extension.html",
+   "date": "2026-11-20T22:47:41.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers are locking right-hander Troy Melton into their rotation for the foreseeable future. The two parties have reportedly agreed to a six-year, $46.5MM contract extension. The deal includes a club option for 2033 and can max out at $98MM with incentives. Melton would have reached free agency after the 2031 season, so the extension gives Detroit an extra two years’ worth of control over him. Melton is a client of Paragon Sports International.",
+    "The 25-year-old Melton earns a nice payday after a breakout season for Detroit. After starting the year on the 60-day IL for elbow inflammation, he made his season debut on May 24 and started 20 games the rest of the way. The righty held opponents to a 2.76 earned run average with a 20.0% strikeout rate and a 7.9% walk rate that checked in better than average. Melton also induced grounders at a 42.9% clip and generally kept the ball in the park.",
+    "Melton’s first 16 starts were particularly sharp. He carried a 1.86 ERA through the end of August and averaged just over six innings per start with a 7.3% walk rate. He fell off a bit once the calendar flipped to September. In four starts that month, Melton allowed 15 earned runs in 17 1/3 innings along with 22 hits and nine walks. In hindsight, some of that fall-off can be chalked up to forearm tightness, which caused Melton to end the year on the 15-day IL. He had no structural damage and is expected to have a normal offseason."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-14T235946Z_797885536_MT1USATODAY29822696_RTRMADP_3_MLB-DETROIT-TIGERS-AT-TORONTO-BLUE-JAYS-1024x683.jpg",
+   "players": [
+    [
+     "Troy Melton",
+     675512
+    ]
+   ]
+  },
   {
    "title": "White Sox Trade Jordan Leasure To Phillies",
    "link": "https://www.mlbtraderumors.com/2026/11/white-sox-trade-jordan-leasure-to-phillies.html",
@@ -10,13 +30,20 @@
     "PHI"
    ],
    "body": [
-    "The White Sox have traded reliever Jordan Leasure to the Phillies for minor league pitcher Christian Coppola, according to announcements from both clubs. Philadelphia immediately agreed to a deal with Leasure to avoid arbitration."
+    "The White Sox have traded reliever Jordan Leasure to the Phillies for minor league pitcher Christian Coppola, according to announcements from both clubs. Philadelphia immediately agreed to a deal with Leasure to avoid arbitration.",
+    "Leasure was designated for assignment earlier in the week when Chicago signed Dustin May. He’s a couple removed from undergoing UCL surgery that’ll likely cost him all of 2027. The Phils need to carry him on their offseason 40-man roster but can place him on the 60-day injured list at the beginning of Spring Training.",
+    "The 28-year-old Leasure had a productive 2025 season. He tossed 64 1/3 innings of 3.92 ERA ball and led White Sox relievers with 80 strikeouts in 2025. He worked his way into leverage spots and picked up seven saves. Leasure wasn’t nearly as effective this year, allowing 14 runs across 18 2/3 innings and spending a couple weeks on optional assignment to Triple-A. He’s likely making around the league minimum salary — MLBTR contributor Matt Swartz had projected him at $1MM — and has three additional years of arbitration control.",
+    "Philadelphia takes a reclamation flier, parting with their 12th round pick from this year’s draft. Coppola, who stands 6’5″, is a local product whom the Phils nabbed out of St. Joseph’s University. He hasn’t pitched professionally but recorded 69 strikeouts across 37 1/3 innings against small-school competition as a senior. Baseball America rated him the #326 player in this year’s draft, praising the movement he generates on his sweeping slider."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-05-06T050258Z_1218210356_MT1USATODAY28888809_RTRMADP_3_MLB-LOS-ANGELES-ANGELS-AT-CHICAGO-WHITE-SOX-1024x683.jpg",
    "players": [
     [
      "Jordan Leasure",
      673929
+    ],
+    [
+     "Dustin May",
+     669160
     ]
    ]
   },
@@ -40,7 +67,7 @@
    ]
   },
   {
-   "title": "Dodgers Acquire Royce Lewis",
+   "title": "Twins, Dodgers Swap Royce Lewis For Bobby Miller",
    "link": "https://www.mlbtraderumors.com/2026/11/dodgers-acquire-royce-lewis.html",
    "date": "2026-11-20T22:27:00.000Z",
    "teams": [
@@ -48,13 +75,18 @@
     "MIN"
    ],
    "body": [
-    "The Dodgers have acquired infielder Royce Lewis from the Dodgers, reports Jon Heyman of The New York Post. Los Angeles has open 40-man spots and won’t need to make a corresponding move. The Twins receive minor league catcher Francisco Espinoza in return, per Heyman."
+    "4:47pm: Right-hander and former top prospect Bobby Miller is also headed to Minnesota in the deal, reports Robert Murray of FanSided.",
+    "4:27pm: The Dodgers have acquired infielder Royce Lewis from the Dodgers, reports Jon Heyman of The New York Post. Los Angeles has open 40-man spots and won’t need to make a corresponding move. The Twins receive minor league catcher Francisco Espinoza in return, per Heyman."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/06/royce-lewis-may-2026-twins-1024x683.jpg",
    "players": [
     [
      "Royce Lewis",
      668904
+    ],
+    [
+     "Bobby Miller",
+     676272
     ]
    ]
   },
@@ -65,6 +97,7 @@
    "teams": [
     "ATL",
     "NYM",
+    "PHI",
     "STL"
    ],
    "body": [
@@ -86,6 +119,8 @@
     "HOU",
     "LAD",
     "MIA",
+    "MIL",
+    "NYM",
     "PHI",
     "TEX"
    ],
@@ -124,9 +159,9 @@
     "NYY"
    ],
    "body": [
-    "The Yankees announced they’ve non-tendered reliever Fernando Cruz and former Rookie of the Year Luis Gil. Both pitchers had been projected by MLBTR contributor Matt Swartz for $2.3MM salaries. Those are believed to be New York’s only non-tenders this year.",
+    "The Yankees announced they’ve non-tendered reliever Fernando Cruz and former Rookie of the Year Luis Gil. Both pitchers had been projected by MLBTR contributor Matt Swartz for $2.3MM salaries. Those are New York’s only non-tenders this year.",
     "Cruz was Aaron Boone’s top right-handed setup man for the majority of the season. He fired 54 2/3 innings of 3.13 ERA ball, striking out 28.6% of batters faced. Cruz collected 19 holds in front of closer David Bednar and was slated to enter the postseason as a key leverage piece. That changed in August, as the 36-year-old sustained a partial tear of the UCL in his throwing elbow. It ended his season and raises the possibility of surgery.",
-    "The health outlook is clouded enough that the Yankees elected to move on despite Cruz’s fairly modest projected salary. They evidently didn’t want to risk a couple million dollars with the possibility that he’ll require an operation that costs him all of next season. Cruz has between four and five years of service time and would’ve been eligible for arbitration again after 2027, barring a change to the service structure in the collective bargaining agreement."
+    "The health outlook is clouded enough that the Yankees elected to move on despite Cruz’s fairly modest projected salary. They evidently didn’t want to risk a couple million dollars with the possibility that he’ll require an operation that costs him all of next season. Cruz has between four and five years of service time and will be eligible for arbitration again after 2027, barring a change to the service structure in the collective bargaining agreement."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-08-13T204725Z_1616387368_MT1USATODAY29576463_RTRMADP_3_MLB-SEATTLE-MARINERS-AT-NEW-YORK-YANKEES-1024x683.jpg",
    "players": [
@@ -165,26 +200,6 @@
     [
      "José Caballero",
      676609
-    ]
-   ]
-  },
-  {
-   "title": "Tigers, Troy Melton Agree To Six-Year Extension",
-   "link": "https://www.mlbtraderumors.com/2026/11/tigers-troy-melton-agree-to-six-year-extension.html",
-   "date": "2026-11-20T21:24:41.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers and right-hander Troy Melton have agreed to a six-year, $46.5MM contract extension, per ESPN’s Jeff Passan. The deal includes a club option for 2033 and can max out at $98MM with incentives, according to Melton’s agent at Paragon Sports International. Melton would have reached free agency after the 2031 season, so the extension gives Detroit an extra two years’ worth of control over him.",
-    "The 25-year-old Melton earns a nice payday after a breakout season for Detroit. After starting the year on the 60-day IL for elbow inflammation, he made his season debut on May 24 and started 20 games the rest of the way. The righty held opponents to a 2.76 earned run average with a 20.0% strikeout rate and a 7.9% walk rate that checked in better than average. Melton also induced grounders at a 42.9% clip and generally kept the ball in the park.",
-    "Melton’s first 16 starts were particularly sharp. He carried a 1.86 ERA through the end of August and averaged just over six innings per start with a 7.3% walk rate. He fell off a bit once the calendar flipped to September. In four starts that month, Melton allowed 15 earned runs in 17 1/3 innings along with 22 hits and nine walks. In hindsight, some of that fall-off can be chalked up to forearm tightness, which caused Melton to end the year on the 15-day IL. He had no structural damage and is expected to have a normal offseason."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-14T235946Z_797885536_MT1USATODAY29822696_RTRMADP_3_MLB-DETROIT-TIGERS-AT-TORONTO-BLUE-JAYS-1024x683.jpg",
-   "players": [
-    [
-     "Troy Melton",
-     675512
     ]
    ]
   },
@@ -6074,30 +6089,6 @@
     [
      "Daylen Lile",
      695734
-    ]
-   ]
-  },
-  {
-   "title": "Mets Focused On First Base, Pitching Upgrades",
-   "link": "https://www.mlbtraderumors.com/2026/11/mets-rumors-first-base-priority-not-second-base-kodai-senga-trade.html",
-   "date": "2026-11-11T02:46:24.000Z",
-   "teams": [
-    "NYM"
-   ],
-   "body": [
-    "There are myriad holes for the Mets to try to fill this winter, but president of baseball operations David Stearns suggested Tuesday at the GM Meetings that second base isn’t one of them (via Anthony DiComo of MLB.com and Chelsea Janes of SNY). Stearns noted that with Marcus Semien, Brett Baty and several prospects on the cusp of MLB readiness, they’re confident in their second base group. First base and the pitching staff are the primary areas of focus at this time.",
-    "Semien and Baty are both coming off poor seasons. The former batted just.215/.280/.340 and saw his typically elite defensive grades plummet to below average in his age-35 season. He’s being paid $25MM per season through 2028, however, leaving the Mets little choice but to hope for a rebound. Baty, a former top prospect at third base, had a breakout 2025 showing while splitting time between multiple positions. His 2026 follow-up, however, saw him slash only.238/.311/.374.",
-    "While neither player’s season-long numbers look like much, Baty did pull himself up with a big second half. Over his final 190 plate appearances — from July 1 onward — he hit.279/.337/.488. It’s a small sample that came with plenty of platooning, but that finish, coupled with his quality showing in’25, likely gives the Mets some confidence that he can play a prominent role in 2027."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/jared-young-mets-first-base-1024x683.jpg",
-   "players": [
-    [
-     "Marcus Semien",
-     543760
-    ],
-    [
-     "Brett Baty",
-     683146
     ]
    ]
   },
