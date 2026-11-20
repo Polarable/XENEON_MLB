@@ -1,6 +1,51 @@
 {
- "updated": "2026-11-20T05:20:40.237Z",
+ "updated": "2026-11-20T05:30:34.714Z",
  "articles": [
+  {
+   "title": "Royals Re-Sign Vince Velasquez To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/royals-re-sign-vince-velasquez-to-minor-league-deal.html",
+   "date": "2026-11-20T05:22:26.000Z",
+   "teams": [
+    "KC"
+   ],
+   "body": [
+    "The Royals are in agreement with veteran righty Vince Velasquez on a new minor league contract, reports Robert Murray of FanSided. He’ll be back in MLB camp as a non-roster invitee.",
+    "Velasquez spent the second half of the 2026 season in the K.C. system. He signed a minor league deal around the All-Star Break after being waived by the Cubs. Velasquez started 10 of 12 outings with Triple-A Omaha, struggling to a 6.36 earned run average over 52 1/3 frames. He also logged 33 2/3 innings at the top minor league level in the Cubs’ system, combining for a 6.28 ERA. He fanned a league average 22.1% of opponents against an elevated 12.5% walk rate.",
+    "The 34-year-old Velasquez made a brief return to the big leagues with Chicago earlier in the season. He made a couple mop-up relief appearances, tossing 3 1/3 scoreless innings. That was first MLB action since 2023. He averaged 92.2 mph on his fastball while throwing a knuckle-curve and cutter.",
+    "Kansas City’s rotation depth took a number of injury hits this year. Cole Ragans, Luinder Avila, Ryan Bergert and Stephen Kolek are all going to miss a notable chunk of 2027 rehabbing elbow surgeries. Logan Evans, acquired from Seattle as the third piece of the Maikel Garcia trade, may also need a little more time to work back from January’s internal brace procedure."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2023/06/USATSI_20594411-1024x683.jpg",
+   "players": [
+    [
+     "Vince Velasquez",
+     592826
+    ],
+    [
+     "Cole Ragans",
+     666142
+    ],
+    [
+     "Luinder Avila",
+     679883
+    ],
+    [
+     "Ryan Bergert",
+     686701
+    ],
+    [
+     "Stephen Kolek",
+     663568
+    ],
+    [
+     "Logan Evans",
+     688138
+    ],
+    [
+     "Maikel Garcia",
+     672580
+    ]
+   ]
+  },
   {
    "title": "Orioles Notes: May, Goodman, Rotation",
    "link": "https://www.mlbtraderumors.com/2026/11/orioles-notes-may-goodman-rotation.html",
@@ -9334,31 +9379,6 @@
     [
      "Nate Eaton",
      681987
-    ]
-   ]
-  },
-  {
-   "title": "Royals Exercise Club Option On Tony Gonsolin, Decline Carlos Estévez",
-   "link": "https://www.mlbtraderumors.com/2026/10/royals-exercise-club-option-on-tony-gonsolin-decline-carlos-estevez.html",
-   "date": "2026-10-29T21:05:15.000Z",
-   "teams": [
-    "KC"
-   ],
-   "body": [
-    "The Royals announced that they have exercised a 2027 club option on right-hander Tony Gonsolin. He will make $2.5MM next year. Right-hander Carlos Estévez has had his $13MM club option turned down. He becomes a free agent and collects a $2MM buyout.",
-    "Gonsolin is a relatively low-cost wild card for next year’s staff. From 2019 to 2023, he tossed 375 2/3 innings for the Dodgers, allowing 3.19 earned runs per nine. He had a 23.1% strikeout rate, 8.7% walk rate and 38.8% ground ball rate.",
-    "He hasn’t been much of a factor since then. He required Tommy John surgery in August of 2023, wiping out the end of that season and his 2024 campaign. In 2025, he suffered a back injury while lifting weights. He began the season on the injured list. He came off the IL in April, made seven starts with an ERA of 5.00, then returned to the IL with elbow discomfort. He would eventually require internal brace surgery in August.",
-    "He was bumped from the Dodgers roster after the season. He was still recovering from his surgery when the 2026 campaign began. He didn’t sign until August. The Royals gave him a prorated $1MM salary and a $2.5MM club option for 2027. He made four minor league rehab appearances before joining the big league club. He made one appearance in the majors, allowing five earned runs in 2 2/3 innings, before an allergic reaction put him back on the IL in late September."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2025/11/tony-gonsolin-pitcher-dodgers-1024x683.jpg",
-   "players": [
-    [
-     "Tony Gonsolin",
-     664062
-    ],
-    [
-     "Carlos Estévez",
-     608032
     ]
    ]
   },
