@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T23:11:34.026Z",
+ "updated": "2026-11-20T23:20:36.602Z",
  "articles": [
   {
    "title": "Diamondbacks To Acquire Johan Oviedo",
@@ -10,7 +10,7 @@
     "BOS"
    ],
    "body": [
-    "The Diamondbacks have acquired right-hander Johan Oviedo from the Red Sox, reports Robert Murray of FanSided. Boston’s return in the trade hasn’t yet been reported."
+    "The Diamondbacks have acquired right-hander Johan Oviedo from the Red Sox, reports Robert Murray of FanSided. The Red Sox will receive minor league left-hander Luke Dotson and a player to be named later, reports Nick Piecoro of the Arizona Republic. Arizona has 40-man space and doesn’t need to make a corresponding move."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/04/johan-oviedo-red-sox-1024x681.jpg",
    "players": [
@@ -120,13 +120,19 @@
     "WSH"
    ],
    "body": [
-    "The Mets have claimed right-handed reliever Gus Varland off waivers from the Nationals, Spencer Nusbaum of The Athletic reports."
+    "The Mets have claimed right-handed reliever Gus Varland off waivers from the NL East rival Nationals, Spencer Nusbaum of The Athletic reports. The Nats designated Varland for assignment on Tuesday.",
+    "Unlike his brother, Blue Jays All-Star closer Louis Varland, Gus Varland has struggled to keep runs off the board in the majors. Since debuting in 2023, he has put up a 5.54 ERA over a combined 79 2/3 innings with the Brewers, Dodgers, White Sox and Nationals. Both right- and left-handed hitters have given Varland difficulty. While relying on a fastball-slider mix, he has yielded an.845 OPS against righties and a.939 mark versus lefties.",
+    "Over a career-high 33 frames with Washington in 2026, Varland posted a 6.55 ERA with discouraging underlying numbers. While metrics such as FIP (5.28), xFIP (4.90) and SIERA (4.37) suggest he deserved a better fate, he still checked in below average in those categories. Despite averaging a little north of 95 mph on his fastball, Varland struck out just 20.6% of hitters this past season. While the 30-year-old’s 9.7% walk rate hovered around average, his 28.6 ground-ball percentage ranked 309th among 328 relievers who tossed at least 20 innings."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-06-26T021227Z_1499213049_MT1USATODAY29273483_RTRMADP_3_MLB-PHILADELPHIA-PHILLIES-AT-WASHINGTON-NATIONALS-1024x683.jpg",
    "players": [
     [
      "Gus Varland",
      681402
+    ],
+    [
+     "Louis Varland",
+     686973
     ]
    ]
   },
@@ -135,6 +141,7 @@
    "link": "https://www.mlbtraderumors.com/2026/11/2026-non-tenders-national-league.html",
    "date": "2026-11-20T22:17:08.000Z",
    "teams": [
+    "ARI",
     "ATL",
     "NYM",
     "PHI",
@@ -9005,48 +9012,6 @@
     [
      "Willi Castro",
      650489
-    ]
-   ]
-  },
-  {
-   "title": "Corbin Burnes Will Not Opt Out Of Diamondbacks Deal",
-   "link": "https://www.mlbtraderumors.com/2026/10/corbin-burnes-will-not-opt-out-of-diamondbacks-deal.html",
-   "date": "2026-10-29T19:25:00.000Z",
-   "teams": [
-    "ARI"
-   ],
-   "body": [
-    "Right-hander Corbin Burnes will not take the opt-out chance in his contract with the Diamondbacks, reports Bob Nightengale of USA Today. He will make $35MM annually through the 2030 season, though $11MM is deferred annually.",
-    "There wasn’t any suspense with this decision. Burnes and the Snakes agreed to a six-year, $210MM deal in December of 2024. His agent Scott Boras would later suggest that he turned down larger offers from other clubs because his family has a home in Scottsdale.",
-    "The first two years of the agreement have mostly been wasted. Burnes made 11 starts in 2025 before requiring Tommy John surgery. He was hoping to make it back around the 2026 All-Star break but suffered a teres major strain in June, delaying his timeline. He came off the injured list in September but made just three starts, with a 7.84 earned run average, before shoulder inflammation put him back on the shelf.",
-    "Burnes is very talented and has a Cy Young trophy on his mantel but it would have been unwise to turn down $140MM with that kind of platform. The family/geography considerations made it even less likely.",
-    "He will return to the Arizona rotation in 2027 and hope for better results going forward. It’s possible he may face workload restrictions after missing most of the past two years. Time will tell on that. On paper, he’s in the rotation next to Eduardo Rodríguez, Brandon Pfaadt, Merrill Kelly and Ryne Nelson. The Snakes and Michael Soroka have mutual interest in a reunion. Even if Soroka doesn’t come back, they will likely bring in someone else to bolster the group."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/09/Corbin_Burnes_Diamondbacks-copy-1024x683.jpg",
-   "players": [
-    [
-     "Corbin Burnes",
-     669203
-    ],
-    [
-     "Eduardo Rodríguez",
-     593958
-    ],
-    [
-     "Brandon Pfaadt",
-     694297
-    ],
-    [
-     "Merrill Kelly",
-     518876
-    ],
-    [
-     "Ryne Nelson",
-     669194
-    ],
-    [
-     "Michael Soroka",
-     647336
     ]
    ]
   },
