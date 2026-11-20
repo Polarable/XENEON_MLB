@@ -1,6 +1,36 @@
 {
- "updated": "2026-11-20T06:00:35.061Z",
+ "updated": "2026-11-20T06:10:28.697Z",
  "articles": [
+  {
+   "title": "White Sox Trade Davis Martin, Luis Castillo To Rockies",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-to-trade-davis-martin-luis-castillo-to-rockies.html",
+   "date": "2026-11-20T05:59:48.000Z",
+   "teams": [
+    "CWS",
+    "COL"
+   ],
+   "body": [
+    "The White Sox and Rockies announced a surprise trade on Thursday. Colorado acquires a pair of veteran starters, Davis Martin and Luis Castillo, in exchange for rookie left-hander Sean Sullivan and minor league catcher Douglas Veliz. The Rockies assume Castillo’s $22.75MM salary as a means of enticing Chicago to part with Martin.",
+    "It’s a big investment for a Colorado team starved for starting pitching. Martin is the centerpiece of the deal from their perspective. The Texas Tech product has had an inconsistent career but pitched at a roughly league average level over the last couple seasons. Martin has made 55 appearances over the last two years, pitching to a 4.02 earned run average across 288 2/3 innings.",
+    "A 14th-round pick in 2018, Martin debuted four years later. He was up and down from Triple-A as a rookie and then underwent Tommy John surgery, preventing him from establishing himself until 2025. Martin performed at a back-end level that year, posting a 4.10 ERA with a modest 17.3% strikeout rate over 26 games. He missed a month midseason with a forearm strain.",
+    "Martin won a camp battle to secure a spot in Will Venable’s season-opening rotation in 2026. He was one of the biggest early-season stories in the American League, pitching at an ace level through the end of May. Martin reeled off 67 2/3 innings with a flat 2.00 ERA while striking out 27% of opponents over his first 11 starts. He seemed ticketed for an All-Star berth and was in some early conversations as a dark horse Cy Young candidate."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/08/Davis_Martin_White_Sox-copy-1024x683.jpg",
+   "players": [
+    [
+     "Davis Martin",
+     663436
+    ],
+    [
+     "Luis Castillo",
+     622491
+    ],
+    [
+     "Sean Sullivan",
+     807743
+    ]
+   ]
+  },
   {
    "title": "Mets, Darwinzon Hernández Agree To Three-Year Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/mets-darwinzon-hernandez-agree-to-three-year-deal.html",
@@ -135,36 +165,6 @@
     [
      "Hunter Goodman",
      696100
-    ]
-   ]
-  },
-  {
-   "title": "White Sox Trade Davis Martin, Luis Castillo To Rockies",
-   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-to-trade-davis-martin-luis-castillo-to-rockies.html",
-   "date": "2026-11-20T02:10:48.000Z",
-   "teams": [
-    "CWS",
-    "COL"
-   ],
-   "body": [
-    "The White Sox and Rockies announced a surprise trade on Thursday. Colorado acquires a pair of veteran starters, Davis Martin and Luis Castillo, in exchange for rookie left-hander Sean Sullivan and minor league catcher Douglas Veliz. The Rockies assume Castillo’s $22.75MM salary as a means of enticing Chicago to part with Martin.",
-    "It’s a big investment for a Colorado team starved for starting pitching. Martin is the centerpiece of the deal from their perspective. The Texas Tech product has had an inconsistent career but pitched at a roughly league average level over the last couple seasons. Martin has made 55 appearances over the last two years, pitching to a 4.02 earned run average across 288 2/3 innings.",
-    "A 14th-round pick in 2018, Martin debuted four years later. He was up and down from Triple-A as a rookie and then underwent Tommy John surgery, preventing him from establishing himself until 2025. Martin performed at a back-end level that year, posting a 4.10 ERA with a modest 17.3% strikeout rate over 26 games. He missed a month midseason with a forearm strain.",
-    "Martin won a camp battle to secure a spot in Will Venable’s season-opening rotation in 2026. He was one of the biggest early-season stories in the American League, pitching at an ace level through the end of May. Martin reeled off 67 2/3 innings with a flat 2.00 ERA while striking out 27% of opponents over his first 11 starts. He seemed ticketed for an All-Star berth and was in some early conversations as a dark horse Cy Young candidate."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/08/Davis_Martin_White_Sox-copy-1024x683.jpg",
-   "players": [
-    [
-     "Davis Martin",
-     663436
-    ],
-    [
-     "Luis Castillo",
-     622491
-    ],
-    [
-     "Sean Sullivan",
-     807743
     ]
    ]
   },
