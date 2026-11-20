@@ -1,6 +1,47 @@
 {
- "updated": "2026-11-20T22:00:41.599Z",
+ "updated": "2026-11-20T22:10:33.346Z",
  "articles": [
+  {
+   "title": "Yankees To Non-Tender Fernando Cruz, Luis Gil",
+   "link": "https://www.mlbtraderumors.com/2026/11/yankees-to-non-tender-fernando-cruz.html",
+   "date": "2026-11-20T22:09:32.000Z",
+   "teams": [
+    "NYY"
+   ],
+   "body": [
+    "4:09pm: New York is also dropping former Rookie of the Year Luis Gil, reports The Athletic’s Chris Kirschner.",
+    "4:08pm: The Yankees aren’t tendering a contract to reliever Fernando Cruz, reports Brendan Kuty of The Athletic. He’ll hit free agency in lieu of a projected $2.3MM salary."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-08-13T204725Z_1616387368_MT1USATODAY29576463_RTRMADP_3_MLB-SEATTLE-MARINERS-AT-NEW-YORK-YANKEES-1024x683.jpg",
+   "players": [
+    [
+     "Fernando Cruz",
+     518585
+    ],
+    [
+     "Luis Gil",
+     661563
+    ]
+   ]
+  },
+  {
+   "title": "Mariners Non-Tender Luke Raley",
+   "link": "https://www.mlbtraderumors.com/2026/11/mariners-non-tender-luke-raley.html",
+   "date": "2026-11-20T22:07:42.000Z",
+   "teams": [
+    "SEA"
+   ],
+   "body": [
+    "The Mariners have non-tendered outfielder/first baseman Luke Raley, according to Robert Murray of FanSided. Raley is now a free agent."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/08/luke-raley-seattle-mariners-1024x683.jpg",
+   "players": [
+    [
+     "Luke Raley",
+     670042
+    ]
+   ]
+  },
   {
    "title": "Tigers, Troy Melton Agree To Six-Year Extension",
    "link": "https://www.mlbtraderumors.com/2026/11/tigers-troy-melton-agree-to-six-year-extension.html",
@@ -9,8 +50,8 @@
     "DET"
    ],
    "body": [
-    "The Tigers and right-hander Troy Melton have agreed to a six-year, $46.5MM contract extension, per ESPN’s Jeff Passan. The deal includes a club option for 2033 and can max out at $80MM with incentives. Melton would have reached free agency after the 2031 season, so the extension gives Detroit an extra two years’ worth of control over him. Melton is a client of Paragon Sports International.",
-    "The 25-year-old Melton earns a nice payday after a breakout season for Detroit. After starting the year on the 60-day IL for elbow inflammation, he made his season debut on May 24 and started 20 games the rest of the way. The righty held opponents to a 2.76 earned run average with a 20.0% strikeout rate and a 7.9% walk rate that checked in better than average. Melton also induced grounders at a 42.9% clip and generally kept the ball in the park.",
+    "The Tigers and right-hander Troy Melton have agreed to a six-year, $46.5MM contract extension, per ESPN’s Jeff Passan. The deal includes a club option for 2033 and can max out at $98MM with incentives, according to Melton’s agent at Paragon Sports International. Melton would have reached free agency after the 2031 season, so the extension gives Detroit an extra two years’ worth of control over him.",
+    "The 25-year-old Melton earns a nice payday after a breakout season for Detroit. After starting the year on the 60-day IL for elbow inflammation, he made his season debut on May 24 and started 20 games the rest of the way. The righty held opponents to a 2.76 earned run average with a 20.0% strikeout rate and a 7.9% walk rate that checked in better than average. Melton also induced grounders at a 42.9% clip and generally kept the ball in the park. He ended the season on the 15-day IL for a forearm issue, but it’s not expected to impact his offseason.",
     "The resulting 1.6 fWAR season was a nice build up from Melton’s debut campaign in 2025. He worked 45 2/3 innings last year in a swingman capacity and posted a matching 2.76 ERA and 20.0% strikeout rate. To be fair, opponents batted just.198 on balls in play off Melton in 2025, and he also got help from an 86.0% strand rate. Both of those metrics were closer to normal in 2026, giving more legitimacy to Melton’s breakout."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-14T235946Z_797885536_MT1USATODAY29822696_RTRMADP_3_MLB-DETROIT-TIGERS-AT-TORONTO-BLUE-JAYS-1024x683.jpg",
@@ -5479,42 +5520,6 @@
     [
      "Mason Miller",
      695243
-    ]
-   ]
-  },
-  {
-   "title": "Cam Schlittler Wins AL Cy Young Award",
-   "link": "https://www.mlbtraderumors.com/2026/11/cam-schlittler-wins-al-cy-young-award.html",
-   "date": "2026-11-12T00:19:59.000Z",
-   "teams": [
-    "NYY"
-   ],
-   "body": [
-    "The Baseball Writers Association of America announced that Cam Schlittler has won the AL Cy Young award. The Yankees ace appeared at the top on all 30 ballots. Toronto’s Dylan Cease is runner-up, while Cleveland rookie Parker Messick finished in third place.",
-    "To the extent there was any suspense about this result, it was only whether Schlittler’s win would be unanimous. The 6’6″ righty had a dominant first full season in the big leagues. Schlittler made 33 starts and fired 193 2/3 innings of 1.95 ERA ball. He was the only qualified pitcher in the AL with a sub-2.00 mark. Schlittler was second in the league behind Michael Wacha in innings and third — behind Gavin Williams and Cease — with 239 strikeouts. Only Williams had a higher difference between his strikeout and walk rates.",
-    "Schlittler finished with a 14-6 record; the Yankees went 21-12 in his starts overall. He led AL pitchers in Wins Above Replacement at both FanGraphs (6.2) and Baseball Reference (7.0). It’s a convincing case in terms of both traditional and advanced metrics that left little doubt that Schlittler would earn his first Cy Young honors. He also earned his first All-Star selection over the summer."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/09/CamSchlittler-1024x683.jpg",
-   "players": [
-    [
-     "Cam Schlittler",
-     693645
-    ],
-    [
-     "Dylan Cease",
-     656302
-    ],
-    [
-     "Parker Messick",
-     800048
-    ],
-    [
-     "Michael Wacha",
-     608379
-    ],
-    [
-     "Gavin Williams",
-     668909
     ]
    ]
   },
