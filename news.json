@@ -1,6 +1,26 @@
 {
- "updated": "2026-11-20T16:50:36.106Z",
+ "updated": "2026-11-20T17:00:38.442Z",
  "articles": [
+  {
+   "title": "Twins To Non-Tender Bailey Ober",
+   "link": "https://www.mlbtraderumors.com/2026/11/twins-non-tender-bailey-ober.html",
+   "date": "2026-11-20T16:55:25.000Z",
+   "teams": [
+    "MIN"
+   ],
+   "body": [
+    "The Twins are expected to non-tender right-hander Bailey Ober today, reports Darren Wolfson of 5 Eyewitness News and SKOR North Radio. He’ll immediately become a free agent when the move becomes official.",
+    "Ober, 31, has been a mainstay in Minnesota’s rotation over the past four years and has seen big league action in each of the past six. He’s been a largely steady performer, totaling 748 2/3 innings of 4.15 ERA ball with a 22.7% strikeout rate and 5.5% walk rate in his career overall. The past two seasons, however, have seen Ober’s results back up against a notable velocity dip.",
+    "The towering 6’8″ Ober was tagged for a 5.10 ERA in 27 starts during the 2025 campaign, though most of his struggles were confined to the month of June, and he pitched well upon returning from an IL stint that followed said rough patch. He logged a 4.47 ERA in 2026 but fanned a career-low 17.1% of his opponents while averaging just 88 mph on his four-seamer — a drop of 2.2 mph from 2025 and a huge 4.3 mph slower than his rookie season back in 2022. MLBTR contributor Matt Swartz had projected Ober for a $6.9MM salary in 2027."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/bailey-ober-minnesota-twins-1024x683.jpg",
+   "players": [
+    [
+     "Bailey Ober",
+     641927
+    ]
+   ]
+  },
   {
    "title": "Dodgers To Sign Tink Hence To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/dodgers-to-sign-tink-hence-to-minor-league-deal.html",
@@ -8277,12 +8297,12 @@
    "link": "https://www.mlbtraderumors.com/2026/11/eight-players-receive-qualifying-offers.html",
    "date": "2026-11-02T23:25:23.000Z",
    "teams": [
-    "MIN",
+    "PIT",
     "BAL",
     "CHC",
     "MIL",
+    "MIN",
     "NYY",
-    "PIT",
     "SD",
     "SEA"
    ],
