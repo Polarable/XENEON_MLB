@@ -1,6 +1,27 @@
 {
- "updated": "2026-11-20T20:40:33.320Z",
+ "updated": "2026-11-20T20:50:35.497Z",
  "articles": [
+  {
+   "title": "Padres Sign Cal Stevenson To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/padres-sign-cal-stevenson-to-minor-league-deal.html",
+   "date": "2026-11-20T20:41:02.000Z",
+   "teams": [
+    "SD"
+   ],
+   "body": [
+    "The Padres have signed outfielder Cal Stevenson to a minor league deal, according to his transactions log at MiLB.com. Stevenson, who last appeared in the Majors in 2025 with the Phillies, will ride out the offseason with Triple-A El Paso.",
+    "Stevenson, 30, was a tenth-round draft pick by the Blue Jays back in 2018. He spent time in four clubs’ minor league systems before eventually debuting with the Athletics in 2022. Over 118 plate appearances from 2022-25, Stevenson has a line of.178/.276/.238 with a 26.3% strikeout rate, 11.9% walk rate, and a 52 wRC+. Defensively, he’s been worth -2 Defensive Runs Saved and +2 by Outs Above Average and Fielding Run Value.",
+    "Stevenson did not appear in the Majors this year, instead spending it with the Tigers’ top affiliate in Toledo. In 330 plate appearances for the Mud Hens, the journeyman slashed.264/.410/.456 with a 137 wRC+ and a well-above-average walk rate of 19.4%. A.353 average on balls in play certainly helped Stevenson out. He outperformed his expected batting average by 49 points and his expected slugging percentage by more than 100.",
+    "Plate discipline and speed are a couple factors working in Stevenson’s favor. The lowest walk rate he’s posted in the upper minors was 13.5% for the Athletics’ top affiliate in 2022. Dating back to 2023, he’s stolen 77 bases at Triple-A. The walks and steals make Stevenson an okay depth piece, though obviously he’s yet to translate that into major league production."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/cal-stevenson-phillies-2025-1024x683.jpg",
+   "players": [
+    [
+     "Cal Stevenson",
+     670276
+    ]
+   ]
+  },
   {
    "title": "Padres, Gavin Sheets Agree To Three-Year Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/padres-gavin-sheets-agree-to-three-year-deal.html",
@@ -10,7 +31,8 @@
    ],
    "body": [
     "The Padres and first baseman Gavin Sheets have agreed to a three-year, $11MM contract, reports Robert Murray of FanSided. ESPN’s Jeff Passan adds that Sheets will get a $500K signing bonus and $2.5MM salary for the upcoming season. The 2028 and 2029 seasons are player options valued at $4MM apiece.",
-    "Sheets, a client of Covenant Sports Group, was projected by MLBTR contributor Matt Swartz to receive a $6.5MM salary in his final trip through arbitration. This new arrangement guarantees him some extra money while also providing multiple chances to test free agency if he performs at a high level."
+    "Sheets, a client of Covenant Sports Group, was projected by MLBTR contributor Matt Swartz to receive a $6.5MM salary in his final trip through arbitration. This new arrangement guarantees him some extra money while also providing multiple chances to test free agency if he performs at a high level.",
+    "The extension is a three-year deal in name only. If Sheets performs well this coming season, he’ll almost certainly opt out and test free agency in search of a larger deal. Presumably, there’s a buyout on the player options that’d further boost Sheets’ earnings if he takes one of his opt-out opportunities. The deal spares the Padres on Sheets’ luxury tax hit by presenting a somewhat artificially low annual value while affording both player and team some protection in the event that Sheets suffers an injury or simply performs poorly this coming season."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/gavin-sheets-padres-1024x683.jpg",
    "players": [
@@ -112,7 +134,7 @@
    "body": [
     "The Cardinals will not tender infielder Nolan Gorman a contract before the 4 p.m. CT deadline on Friday, Joel Sherman of the New York Post reports. Gorman will hit free agency once the move becomes official.",
     "Although the Cardinals could have controlled Gorman via arbitration through 2028, they will move on early after his production nosedived over the past three years. MLBTR contributor Matt Swartz projected a $3.4MM salary in 2027 for Gorman, but the Cardinals deemed it too rich for a player they demoted to the minors for a large chunk of last season. With Gorman’s stock down, the Cardinals came up short in their attempts to find a trade partner for the 26-year-old.",
-    "Gorman’s tenure with the Cardinals will come to an end eight years after they chose him 19th overall in the 2018 draft. Thanks in part to his prodigious power, Gorman was considered a top-end prospect when he debuted in St. Louis in May 2022. There were questions about Gorman’s high strikeout totals then, though, and the lefty hitter has done nothing to allay those concerns since. In 1,883 plate appearances with the Cardinals, Gorman logged a 33.8% strikeout rate. Only six qualified hitters have fared worse in that category since 2022. While Gorman has drawn walks at a respectable 10.4% clip in the bigs, it hasn’t been enough to overcome his swing-and-miss issues. He’ll leave St. Louis with a below-average.212/.295/.402 line (94 wRC+)."
+    "Gorman’s tenure with the Cardinals will come to an end eight years after they chose him 19th overall in the 2018 draft. Thanks in part to his prodigious power, Gorman was considered a top-end prospect when he debuted in St. Louis in May 2022. There were questions about Gorman’s high strikeout totals then, though, and the lefty hitter has done nothing to allay those concerns since. In 1,883 plate appearances with the Cardinals, Gorman logged a 33.8% strikeout rate. Only six qualified hitters have fared worse in that category since 2022. While Gorman has drawn walks at a respectable 10.4% clip in the bigs, it hasn’t been enough to overcome his swing-and-miss issues. He’ll leave St. Louis with a below-average.212/.295/.402 line (94 wRC+) and 83 home runs."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-06T231732Z_756067906_MT1USATODAY29758453_RTRMADP_3_MLB-ST-LOUIS-CARDINALS-AT-COLORADO-ROCKIES-1024x677.jpg",
    "players": [
@@ -6977,26 +6999,6 @@
     [
      "Kirby Yates",
      489446
-    ]
-   ]
-  },
-  {
-   "title": "“Multiple Teams” Showing Interest In Ty France",
-   "link": "https://www.mlbtraderumors.com/2026/11/multiple-teams-showing-interest-in-ty-france.html",
-   "date": "2026-11-08T04:59:25.000Z",
-   "teams": [
-    "SD"
-   ],
-   "body": [
-    "Coming off an unexpectedly productive season with the Padres, it isn’t a surprise that Ty France is a hot commodity on the free agent market. “Multiple teams are already expressing interest in the 32-year-old France,” The Athletic’s Will Sammon writes, and “the first baseman could find a deal quickly.”",
-    "It is fair to assume that France would be open to signing a contract in relatively short order. The lockout will begin once the collective bargaining agreement expires on December 1, adding some urgency to the proceedings for many teams and free agents over the next 24 days. France didn’t sign his last two contracts until February in each of the last two offseasons (joining the Padres in 2026 and the Twins in 2025), so while he is used to long waits, it’s quite another matter to head into the uncertainty of a lockout without a contract already in hand.",
-    "The Padres’ minor league deal with France ended up being one of the best value signings of the 2026 season. France made San Diego’s Opening Day roster and never looked back, hitting.295/.363/.502 with 21 homers over an even 500 plate appearances. France’s 141 wRC+, 3.6 fWAR, 47.4% hard-hit ball rate, and 7.4% walk rate were all career highs, and he followed up his AL Gold Glove in 2025 with another excellent defensive performance (+15 Defensive Runs Saved, +7 Outs Above Average) at first base."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/TyFrance-2026Padres-1024x683.jpg",
-   "players": [
-    [
-     "Ty France",
-     664034
     ]
    ]
   },
