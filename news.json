@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T23:10:31.513Z",
+ "updated": "2026-11-20T23:11:34.026Z",
  "articles": [
   {
    "title": "Diamondbacks To Acquire Johan Oviedo",
@@ -158,11 +158,13 @@
     "BOS",
     "CLE",
     "HOU",
+    "LAA",
     "LAD",
     "MIA",
     "MIL",
     "NYM",
     "PHI",
+    "SF",
     "TEX"
    ],
    "body": [
@@ -183,9 +185,9 @@
     "HOU",
     "NYY",
     "SEA",
+    "TB",
     "TEX",
-    "TOR",
-    "TB"
+    "TOR"
    ],
    "body": [
     "The deadline to tender a contract to arbitration-eligible players was 4pm CT this afternoon. Below is a comprehensive list of players on American League teams who have been non-tendered today. It’ll be updated as more names filter in now that the deadline is behind us. MLBTR contributor Matt Swartz projected 2027 salaries for all arbitration-eligible players last month. Non-tendered players immediately enter free agency without needing to pass through waivers and can then be signed by any of the league’s 30 teams."
@@ -8864,27 +8866,6 @@
     [
      "Luis Severino",
      622663
-    ]
-   ]
-  },
-  {
-   "title": "Angels Decline Club Option On Robert Stephenson",
-   "link": "https://www.mlbtraderumors.com/2026/10/angels-decline-club-option-on-robert-stephenson.html",
-   "date": "2026-10-30T17:26:39.000Z",
-   "teams": [
-    "LAA"
-   ],
-   "body": [
-    "The MLBPA announced that Robert Stephenson is now a free agent, indicating that the Angels declined their $2.5MM club option on his services for 2027. Stephenson’s tenure in Los Angeles will now end with only 10 innings pitched over three seasons.",
-    "A trade from the Pirates to the Rays in June 2023 suddenly turned Stephenson in a dominant bullpen weapon, as he posted a 2.35 ERA, 5.7% walk rate, and a stunning 42.9% strikeout rate over 38 1/3 innings in a Tampa Bay uniform. Though his overall numbers over eight MLB seasons had been much less consistent, the Angels believed that Stephenson’s breakout was legit, and he was signed to a three-year, $33MM free agent deal in January 2024.",
-    "Unfortunately for Stephenson and the Halos, he barely got a chance to prove himself on the mound. He missed all of 2024 and some of 2025 recovering from Tommy John surgery, and also battled biceps and elbow inflammation that limited him to just the 10 frames in 2025. More elbow problems emerged last spring, and Stephenson underwent a ligament and flexor repair procedure in April that kept him on the shelf for all of 2026.",
-    "The TJ procedure unlocked a clause in Stephenson’s contract that gave the Angels this extra club option year for 2027. Though $2.5MM isn’t a large sum, the team might have further concerns about Stephenson’s health, or the Angels just want to move on entirely from this failed signing. Former GM Perry Minasian signed Stephenson under the approval of owner Arte Moreno, though Minasian was fired last season and Moreno has now sold the team to Stan Kroenke’s ownership group."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2025/09/USATSI_27122386-1024x683.jpg",
-   "players": [
-    [
-     "Robert Stephenson",
-     596112
     ]
    ]
   },
