@@ -1,6 +1,31 @@
 {
- "updated": "2026-11-20T19:50:31.149Z",
+ "updated": "2026-11-20T20:00:39.828Z",
  "articles": [
+  {
+   "title": "Athletics Sign Brian Serven, Wilkin Ramos To Minor League Deals",
+   "link": "https://www.mlbtraderumors.com/2026/11/athletics-sign-brian-serven-wilkin-ramos-to-minor-league-deals.html",
+   "date": "2026-11-20T19:54:44.000Z",
+   "teams": [
+    "ATH"
+   ],
+   "body": [
+    "The A’s have reunited with catcher Brian Serven on a minor league deal, according to his transactions page at MiLB.com. He returns to their Triple-A affiliate in Las Vegas after electing free agency in lieu of an outright assignment a few weeks ago. The A’s also signed right-hander Wilkin Ramos to a minor league deal a few days ago and assigned him to Las Vegas, per his transactions tracker.",
+    "Serven, 31, signed his first minor league deal with the A’s in December 2025 after electing free agency out of the Tigers organization the month before. The A’s selected him onto the big league roster on July 4, then optioned and recalled him twice in the next few weeks. Serven tallied just 85 plate appearances on the season. In that small sample, he batted.175/.224/.375 with a meager 55 wRC+, although he chipped in five home runs.",
+    "Serven had better results with Las Vegas. He took 262 plate appearances there and slashed.308/.401/.538 with a 125 wRC+, including an 11.8% walk rate that’s more than double the 5.7% mark of Serven’s big league career. In the last few years, Serven has alternated between good and below-average output at the top level of the Rockies, Blue Jays, Tigers, and Athletics’ systems. He has just a 45 wRC+ in 384 big league plate appearances dating back to 2022.",
+    "The defensive metrics on Serven are mildly intriguing. He has been worth +8 Defensive Runs Saved behind the plate in his career. He drew decent marks for his framing early on, and this year, Statcast considered him an above-average blocker."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/brian-serven-athletics-2026-1024x683.jpg",
+   "players": [
+    [
+     "Brian Serven",
+     661531
+    ],
+    [
+     "Wilkin Ramos",
+     678576
+    ]
+   ]
+  },
   {
    "title": "Cardinals To Non-Tender Nolan Gorman",
    "link": "https://www.mlbtraderumors.com/2026/11/cardinals-to-non-tender-nolan-gorman.html",
@@ -9,7 +34,8 @@
     "STL"
    ],
    "body": [
-    "The Cardinals will not tender infielder Nolan Gorman a contract before the 4 p.m. CT deadline on Friday, Joel Sherman of the New York Post reports. Gorman will hit free agency once the move becomes official."
+    "The Cardinals will not tender infielder Nolan Gorman a contract before the 4 p.m. CT deadline on Friday, Joel Sherman of the New York Post reports. Gorman will hit free agency once the move becomes official.",
+    "Although the Cardinals could have controlled Gorman via arbitration through 2028, they will move on early after his production nosedived over the past three years. MLBTR contributor Matt Swartz projected a $3.4MM salary in 2027 for Gorman, but the Cardinals deemed it too rich for a player they demoted to the minors for a large chunk of last season. With Gorman’s stock down, the Cardinals came up short in their attempts to find a trade partner for the 26-year-old."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-06T231732Z_756067906_MT1USATODAY29758453_RTRMADP_3_MLB-ST-LOUIS-CARDINALS-AT-COLORADO-ROCKIES-1024x677.jpg",
    "players": [
@@ -297,43 +323,6 @@
     [
      "Davis Martin",
      663436
-    ]
-   ]
-  },
-  {
-   "title": "The Opener: Non-Tender Deadline, White Sox/Rockies Swap, Hernandez",
-   "link": "https://www.mlbtraderumors.com/2026/11/the-opener-non-tender-deadline-white-sox-rockies-swap-hernandez.html",
-   "date": "2026-11-20T15:31:49.000Z",
-   "teams": [],
-   "body": [
-    "A fifth team met with free agent Tarik Skubal on Wednesday, per Jon Heyman of the New York Post. It was a Zoom meeting, but an in-person conversation could follow. The mystery club joins the Mets, Dodgers, Blue Jays, and Padres as teams in the race for Skubal.",
-    "The deadline to tender contracts to arbitration-eligible players is at 4 pm CT today. Players who are non-tendered become free agents. We should get a whirlwind of transactions today, as the deadline tends to produce trades and other activity. Buckle up. To prep for the deadline, check out our Non-Tender Candidates post.",
-    "2. Rockies add pitching in swap with White Sox",
-    "We had another out-of-nowhere trade last night with the White Sox sending righties Luis Castillo and Davis Martin to the Rockies. Colorado improves its rotation with a pair of veteran starters. Chicago gets out of Castillo’s remaining money while adding rookie left-hander Sean Sullivan and a minor league catcher. It’s an interesting exchange for both sides, and one that could lead to additional moves. The White Sox were known to still be looking for pitching, even after signing Dustin May. They’ve now subtracted Castillo and Martin from the rotation.",
-    "3. Hernandez back in the majors",
-    "Speaking of surprising late-night moves, lefty Darwinzon Hernandez inked a three-year deal with the Mets yesterday. He hasn’t pitched in MLB since 2022 with the Red Sox. Hernandez departed for Japan in 2023. He’s been a solid reliever for the Fukuoka SoftBank Hawks in recent seasons. Hernandez put up a stellar 1.48 ERA with a 30.4% strikeout rate in 2026."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/JarrenDuran-1-1024x683.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Luis Castillo",
-     622491
-    ],
-    [
-     "Davis Martin",
-     663436
-    ],
-    [
-     "Sean Sullivan",
-     807743
-    ],
-    [
-     "Dustin May",
-     669160
     ]
    ]
   },
@@ -9444,46 +9433,6 @@
     [
      "Willi Castro",
      650489
-    ]
-   ]
-  },
-  {
-   "title": "Athletics Outright Six Players",
-   "link": "https://www.mlbtraderumors.com/2026/10/athletics-outright-six-players.html",
-   "date": "2026-10-29T21:36:20.000Z",
-   "teams": [
-    "ATH"
-   ],
-   "body": [
-    "The Athletics announced that six players have been sent outright to Triple-A Las Vegas, indicating that they recently cleared waivers. They are right-handers Henry Baez, Joey Estes and Geoff Hartlieb, catcher Brian Serven, infielder Michael Stefanic and outfielder Johnathan Rodríguez.",
-    "As the offseason begins, many teams are facing roster crunches. Free agency begins today for eligible players, which opens some breathing room. But the injured list goes away five days after the World Series ends. Coming into today, RosterResource projected the A’s for a count of 46 for the offseason. Then they acquired Nate Eaton in a trade with the Red Sox. These six moves get the club down to 41.",
-    "Estes, 25, is one of the more experienced players in the group. He gave the A’s 127 2/3 innings back in 2024 with a 5.01 earned run average. Since then, he has mostly been kept in the minors as a depth arm, only making five big league appearances over the past two seasons. His Triple-A ERA was north of 5.50 in both of those campaigns. He exhausted his final option season and will be out of options going forward. He has at least seven years in the minors, meaning he’ll qualify for minor league free agency in the coming days."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Joey_Estes_Athletics-copy-2-1024x683.jpg",
-   "players": [
-    [
-     "Joey Estes",
-     683155
-    ],
-    [
-     "Geoff Hartlieb",
-     664129
-    ],
-    [
-     "Brian Serven",
-     661531
-    ],
-    [
-     "Michael Stefanic",
-     683021
-    ],
-    [
-     "Johnathan Rodríguez",
-     671286
-    ],
-    [
-     "Nate Eaton",
-     681987
     ]
    ]
   },
