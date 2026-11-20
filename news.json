@@ -1,6 +1,44 @@
 {
- "updated": "2026-11-20T22:30:36.967Z",
+ "updated": "2026-11-20T22:40:33.528Z",
  "articles": [
+  {
+   "title": "White Sox Trade Jordan Leasure To Phillies",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-trade-jordan-leasure-to-phillies.html",
+   "date": "2026-11-20T22:34:35.000Z",
+   "teams": [
+    "CWS",
+    "PHI"
+   ],
+   "body": [
+    "The White Sox have traded reliever Jordan Leasure to the Phillies for minor league pitcher Christian Coppola, according to announcements from both clubs. Philadelphia immediately agreed to a deal with Leasure to avoid arbitration."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-05-06T050258Z_1218210356_MT1USATODAY28888809_RTRMADP_3_MLB-LOS-ANGELES-ANGELS-AT-CHICAGO-WHITE-SOX-1024x683.jpg",
+   "players": [
+    [
+     "Jordan Leasure",
+     673929
+    ]
+   ]
+  },
+  {
+   "title": "Mets Claim Gus Varland",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-claim-gus-varland.html",
+   "date": "2026-11-20T22:31:01.000Z",
+   "teams": [
+    "NYM",
+    "WSH"
+   ],
+   "body": [
+    "The Mets have claimed right-handed reliever Gus Varland off waivers from the Nationals, Spencer Nusbaum of The Athletic reports."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-06-26T021227Z_1499213049_MT1USATODAY29273483_RTRMADP_3_MLB-PHILADELPHIA-PHILLIES-AT-WASHINGTON-NATIONALS-1024x683.jpg",
+   "players": [
+    [
+     "Gus Varland",
+     681402
+    ]
+   ]
+  },
   {
    "title": "Dodgers Acquire Royce Lewis",
    "link": "https://www.mlbtraderumors.com/2026/11/dodgers-acquire-royce-lewis.html",
@@ -10,7 +48,7 @@
     "MIN"
    ],
    "body": [
-    "The Dodgers have acquired infielder Royce Lewis from the Dodgers, reports Jon Heyman of The New York Post. Los Angeles has open 40-man spots and won’t need to make a corresponding move."
+    "The Dodgers have acquired infielder Royce Lewis from the Dodgers, reports Jon Heyman of The New York Post. Los Angeles has open 40-man spots and won’t need to make a corresponding move. The Twins receive minor league catcher Francisco Espinoza in return, per Heyman."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/06/royce-lewis-may-2026-twins-1024x683.jpg",
    "players": [
@@ -26,6 +64,7 @@
    "date": "2026-11-20T22:17:08.000Z",
    "teams": [
     "ATL",
+    "NYM",
     "STL"
    ],
    "body": [
@@ -78,15 +117,14 @@
    "players": []
   },
   {
-   "title": "Yankees To Non-Tender Fernando Cruz, Luis Gil",
+   "title": "Yankees Non-Tender Fernando Cruz, Luis Gil",
    "link": "https://www.mlbtraderumors.com/2026/11/yankees-to-non-tender-fernando-cruz.html",
    "date": "2026-11-20T22:09:32.000Z",
    "teams": [
     "NYY"
    ],
    "body": [
-    "4:09pm: New York is also dropping former Rookie of the Year Luis Gil, reports The Athletic’s Chris Kirschner. He’d also been projected at $2.3MM.",
-    "4:08pm: The Yankees aren’t tendering a contract to reliever Fernando Cruz, reports Brendan Kuty of The Athletic. He’ll hit free agency in lieu of a projected $2.3MM salary.",
+    "The Yankees announced they’ve non-tendered reliever Fernando Cruz and former Rookie of the Year Luis Gil. Both pitchers had been projected by MLBTR contributor Matt Swartz for $2.3MM salaries. Those are believed to be New York’s only non-tenders this year.",
     "Cruz was Aaron Boone’s top right-handed setup man for the majority of the season. He fired 54 2/3 innings of 3.13 ERA ball, striking out 28.6% of batters faced. Cruz collected 19 holds in front of closer David Bednar and was slated to enter the postseason as a key leverage piece. That changed in August, as the 36-year-old sustained a partial tear of the UCL in his throwing elbow. It ended his season and raises the possibility of surgery.",
     "The health outlook is clouded enough that the Yankees elected to move on despite Cruz’s fairly modest projected salary. They evidently didn’t want to risk a couple million dollars with the possibility that he’ll require an operation that costs him all of next season. Cruz has between four and five years of service time and would’ve been eligible for arbitration again after 2027, barring a change to the service structure in the collective bargaining agreement."
    ],
@@ -6223,61 +6261,6 @@
    ]
   },
   {
-   "title": "Mets Meeting With Tarik Skubal",
-   "link": "https://www.mlbtraderumors.com/2026/11/mets-rumors-tarik-skubal-meeting-free-agent.html",
-   "date": "2026-11-10T20:42:56.000Z",
-   "teams": [
-    "NYM"
-   ],
-   "body": [
-    "The Mets have a meeting scheduled with the prize of this winter’s free agent crop, two-time AL Cy Young Award winner Tarik Skubal, per Jon Heyman of the New York Post. The two parties will sit down to chat next week. Heyman adds that Skubal is hopeful of getting a deal done before the league imposes a lockout and transaction freeze on Dec. 2 amid collective bargaining negotiations with the players union. Heyman’s colleague, Joel Sherman, wrote just a few minutes prior that rival agents and executives have framed the Mets as one of the more aggressive teams in the early stages of the offseason, both with regard to free agent pursuits and trade talks.",
-    "A fit between Skubal and the Mets is an obvious one. The Mets were probably the National League’s most disappointing team in 2026, floundering through a disastrous first half and eventually waving the white flag ahead of the trade deadline. President of baseball ops David Stearns traded nine players — David Peterson, Clay Holmes, A.J. Minter, Freddy Peralta, Tyrone Taylor, Huascar Brazoban, Luke Weaver, Brooks Raley and Ben Rortvedt — ahead of the Aug. 3 trade deadline."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/tarik-skubal-pitching-1024x683.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "David Peterson",
-     656849
-    ],
-    [
-     "Clay Holmes",
-     605280
-    ],
-    [
-     "A.J. Minter",
-     621345
-    ],
-    [
-     "Freddy Peralta",
-     642547
-    ],
-    [
-     "Tyrone Taylor",
-     621438
-    ],
-    [
-     "Huascar Brazoban",
-     623211
-    ],
-    [
-     "Luke Weaver",
-     596133
-    ],
-    [
-     "Brooks Raley",
-     548384
-    ],
-    [
-     "Ben Rortvedt",
-     666163
-    ]
-   ]
-  },
-  {
    "title": "Padres Interested In Seiya Suzuki, Teruaki Sato, Shota Imanaga",
    "link": "https://www.mlbtraderumors.com/2026/11/padres-interested-in-seiya-suzuki-teruaki-sato-shota-imanaga.html",
    "date": "2026-11-10T19:36:44.000Z",
@@ -6477,31 +6460,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2022-08-19T013032Z_695766781_MT1USATODAY18889764_RTRMADP_3_MLB-WASHINGTON-NATIONALS-AT-PHILADELPHIA-PHILLIES-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "Getz: Grant Taylor Moving Into Rotation; Adding Further Starting Pitching Is “Top Priority”",
-   "link": "https://www.mlbtraderumors.com/2026/11/getz-grant-taylor-moving-into-rotation-adding-further-starting-pitching-is-top-priority.html",
-   "date": "2026-11-10T16:24:32.000Z",
-   "teams": [
-    "CWS"
-   ],
-   "body": [
-    "The White Sox enter the offseason with a clear need in the rotation, and it sounds as though they’ll plan to address it both internally and via some outside additions. General manager Chris Getz said in an appearance with MLB Network Radio on SiriusXM (audio link) that hard-throwing reliever Grant Taylor will move from the bullpen into the rotation. The Sox are planning to keep left-hander Hagen Smith in a relief role for now, however. Any further rotation additions will come from free agency or the trade market.",
-    "“We’re going to exhaust the starter market, both free agency — we’ll take a look — along with trades,” said Getz. “That is our top priority.”",
-    "Starting with the 24-year-old Taylor, a move to the rotation has been an oft-discussed topic in ChiSox circles for years. Taylor, selected with the No. 51 overall pick in 2023, has worked as a starter briefly in the minors but has spent the bulk of his professional career in relief. That’s not due to doubts in his ability but rather his recent health.",
-    "Taylor required Tommy John surgery while pitching at Louisiana State University. He was in the process of rehabbing in’23 when the Sox drafted him, and he didn’t formally make his professional debut until late in the 2024 campaign. He pitched 19 1/3 innings across five starts that season, posting a 2.33 ERA with dominant strikeout and walk rates in the low minors."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/grant-taylor-white-sox-1024x683.jpg",
-   "players": [
-    [
-     "Grant Taylor",
-     691799
-    ],
-    [
-     "Hagen Smith",
-     696146
-    ]
-   ]
   },
   {
    "title": "Adrian Morejon Wants To Remain A Reliever",
@@ -6835,54 +6793,6 @@
     [
      "Emilio Pagán",
      641941
-    ]
-   ]
-  },
-  {
-   "title": "Phillies Interested In Ha-Seong Kim",
-   "link": "https://www.mlbtraderumors.com/2026/11/phillies-interested-in-ha-seong-kim.html",
-   "date": "2026-11-09T19:50:32.000Z",
-   "teams": [
-    "PHI"
-   ],
-   "body": [
-    "The Phillies have some work to do with their infield and are interested in free agent Ha-Seong Kim, reports Jim Salisbury of NBC Sports Philadelphia. Salisbury mentions Mauricio Dubón as another free agent who would fit into Philadelphia’s plans but says Dubón is looking for a multi-year deal. The Phils are targeting a one-year bounceback candidate, making Kim a more likely fit.",
-    "There are many moving pieces on the dirt in Philly. In the first months of 2026, the club mostly had Alec Bohm at third base, Trea Turner at shortstop, Bryson Stott at second and Bryce Harper at first. They acquired Luis Arraez at the deadline and shuffled things around because Arraez wanted to stay at the keystone. Stott moved to third, Bohm to first and Harper to right field. But at the end of the season, Arraez, Bohm and utility player Edmundo Sosa all became free agents.",
-    "On top of that, Turner’s future is up in the air. He is still under contract but president of baseball operations Dave Dombrowski has said that Turner needs to improve defensively in order to stay at that position. Advanced defensive metrics were not kind to him in 2026. Outs Above Average had him eight below par, Fielding Run Value nine below and Defensive Runs Saved 17 under. The latter number was the worst in the majors for the position. Turner is now 33 years old and will turn 34 in June, so it will be a challenge for him to reverse course with those numbers."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/07/Ha_Seong_Kim_Braves-1024x683.jpg",
-   "players": [
-    [
-     "Ha-Seong Kim",
-     673490
-    ],
-    [
-     "Mauricio Dubón",
-     643289
-    ],
-    [
-     "Alec Bohm",
-     664761
-    ],
-    [
-     "Trea Turner",
-     607208
-    ],
-    [
-     "Bryson Stott",
-     681082
-    ],
-    [
-     "Bryce Harper",
-     547180
-    ],
-    [
-     "Luis Arraez",
-     650333
-    ],
-    [
-     "Edmundo Sosa",
-     624641
     ]
    ]
   },
@@ -7356,31 +7266,6 @@
     [
      "Lane Thomas",
      657041
-    ]
-   ]
-  },
-  {
-   "title": "Nationals Designate Kyle Nicolas For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/11/nationals-dfa-kyle-nicolas-reliever.html",
-   "date": "2026-11-06T19:09:37.000Z",
-   "teams": [
-    "WSH"
-   ],
-   "body": [
-    "The Nationals have designated righty Kyle Nicolas for assignment, the team announced Friday. His spot on the 40-man roster goes to newly acquired left-handed reliever Reiver Sanmartin, who just came over in a trade with the Giants.",
-    "Nicolas, 27, was acquired from the Orioles in early July after they’d designated him for assignment themselves. He’s pitched a nearly identical number of big league innings (105 1/3) to the man to whom he’s losing his roster spot (105 2/3) but with shakier recent results. Nicolas had a nice showing with the 2024 Pirates, but the former No. 61 overall draft pick (2020) has been rocked for 27 runs in 45 1/3 innings (5.36 ERA) over the past two seasons.",
-    "Although Nicolas throws quite hard, sitting better than 97 mph and at times reaching triple digits, he doesn’t miss bats like one would expect for a pitcher with such high-end velocity. He’s fanned only 21.5% of his major league opponents, and most of the whiffs he garnered came in his rookie campaign back in 2023. He’s punched out just 19.6% of his opponents over the past two seasons — and he’s done so while walking a whopping 14.8% of the batters he’s faced.",
-    "Nicolas posted a 3.29 ERA and fanned 29.1% of his opponents in 27 1/3 innings with the Nationals’ Triple-A club in Rochester this season. That sounds good until also weighing the jarring 18.7% walk rate he issued. He’s pitched 138 2/3 career innings at the Triple-A level, missing plenty of bats but also doling out free passes at a 16.6% clip."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/kyle-nicolas-reliever-1024x683.jpg",
-   "players": [
-    [
-     "Kyle Nicolas",
-     693312
-    ],
-    [
-     "Reiver Sanmartin",
-     665665
     ]
    ]
   },
