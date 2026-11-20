@@ -1,6 +1,42 @@
 {
- "updated": "2026-11-20T21:00:39.104Z",
+ "updated": "2026-11-20T21:10:33.725Z",
  "articles": [
+  {
+   "title": "Rockies Acquire Chase Lee, Designate Jimmy Herget For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/rockies-to-acquire-chase-lee-designate-jimmy-herget-for-assignment.html",
+   "date": "2026-11-20T21:01:06.000Z",
+   "teams": [
+    "COL",
+    "TOR"
+   ],
+   "body": [
+    "The Rockies have traded for Blue Jays right-hander Chase Lee, per a team announcement. Cash is heading back to Toronto in the deal. Colorado is designating right-hander Jimmy Herget for assignment to clear a roster spot.",
+    "Lee was squeezed off the roster yesterday when the Blue Jays claimed infielder Christian Cairo off waivers from the Dodgers. The Rockies swooped in with a trade before he was put on waivers. It’s the second straight day with a pitching acquisition for Colorado. The club swung a trade with the White Sox for righties Davis Martin and Luis Castillo last night."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/ChaseLee-1024x683.jpg",
+   "players": [
+    [
+     "Chase Lee",
+     695445
+    ],
+    [
+     "Jimmy Herget",
+     623474
+    ],
+    [
+     "Christian Cairo",
+     686551
+    ],
+    [
+     "Davis Martin",
+     663436
+    ],
+    [
+     "Luis Castillo",
+     622491
+    ]
+   ]
+  },
   {
    "title": "Padres Sign Cal Stevenson To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/padres-sign-cal-stevenson-to-minor-league-deal.html",
@@ -7532,26 +7568,6 @@
    "players": []
   },
   {
-   "title": "Blue Jays, Rudy Martin Jr. Agree To Minor League Deal",
-   "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-re-sign-rudy-martin-jr-outfielder.html",
-   "date": "2026-11-05T15:09:23.000Z",
-   "teams": [
-    "TOR"
-   ],
-   "body": [
-    "The Blue Jays are bringing speedy outfielder Rudy Martin Jr. back on a minor league contract, Ari Alexander of 7News reports. He’ll be in big league camp as a non-roster invitee ahead of the 2027 season.",
-    "Toronto originally acquired Martin, 30, on waivers from the Orioles in August. He’d previously been with the Royals but gone to Baltimore in exchange for cash. The well-traveled minor league veteran made his big league debut with Toronto late in September but only tallied three plate appearances. He didn’t notch his first MLB hit but did draw a walk during those three trips. The Jays removed Martin from the 40-man roster last week, after which he elected free agency, but he’s now back with the organization as a depth option.",
-    "Martin spent the bulk of the 2026 season in Triple-A, tallying 369 minor league plate appearances between the Royals and Jays organizations. He posted a combined.274/.394/.421 (119 wRC+) between those two clubs. Martin homered 11 times and swiped 45 bags in 53 attempts (84.9% success rate). It’s been more than 12 years since the Royals drafted Martin in the 25th round out of Lewisburg High School in Missouri. He’s a career.252/.358/.387 hitter with 239 steals in nearly 2500 minor league plate appearances."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/rudy-martin-jr-blue-jays-1024x717.jpg",
-   "players": [
-    [
-     "Rudy Martin Jr.",
-     657675
-    ]
-   ]
-  },
-  {
    "title": "MLBTR Podcast: Offseason Preview",
    "link": "https://www.mlbtraderumors.com/2026/11/mlbtr-podcast-offseason-preview.html",
    "date": "2026-11-05T05:59:41.000Z",
@@ -9911,31 +9927,6 @@
     [
      "Kyler Fedko",
      693459
-    ]
-   ]
-  },
-  {
-   "title": "NL West Notes: Giants, Itoh, Taira, Vesia, Hernandez, R-Rod, Rockies",
-   "link": "https://www.mlbtraderumors.com/2026/10/nl-west-notes-giants-itoh-taira-vesia-hernandez-r-rod-rockies.html",
-   "date": "2026-10-17T16:14:17.000Z",
-   "teams": [
-    "COL",
-    "LAD",
-    "SF"
-   ],
-   "body": [
-    "The Giants are among the big league teams who have scouted Hiromi Itoh and Kaima Taira, Susan Slusser of the San Francisco Chronicle reports. The Japanese right-handers are expected to be posted for MLB clubs this offseason, even though the impending lockout will sure interrupt their 45-day posting window unless a deal is reached between the time of posting (potentially early November) and the lockout-induced transactions freeze on December 1.",
-    "At least 15 MLB teams were thought to be scouting Taira and Itoh is also drawing plenty of interest, so it isn’t surprising to see the Giants on this list. Either righty would make a good fit on a Giants team in need of rotation help, and while Taira doesn’t have a long track record as a starter, he could conceivably transition to a role in San Francisco’s leaky bullpen if things didn’t work out as a starting pitcher. Despite the team’s increased NPB scouting presence, Slusser notes that “the Giants haven’t fared well in their pursuit of Japanese players in recent years,” with such targets as Yoshinobu Yamamoto and Roki Sasaki ending up with the arch-rival Dodgers."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/HiromiItoh-2026WBC-1024x683.jpg",
-   "players": [
-    [
-     "Yoshinobu Yamamoto",
-     808967
-    ],
-    [
-     "Roki Sasaki",
-     808963
     ]
    ]
   },
