@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-20T21:20:32.391Z",
+ "updated": "2026-11-20T21:30:34.959Z",
  "articles": [
+  {
+   "title": "Tigers, Troy Melton Agree To Six-Year Extension",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-troy-melton-agree-to-six-year-extension.html",
+   "date": "2026-11-20T21:24:41.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers and right-hander Troy Melton have agreed to a six-year, $46.5MM contract extension, per ESPN’s Jeff Passan. The deal includes a club option for 2033 and can max out at $98MM with incentives. Melton is a client of Paragon Sports International."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-14T235946Z_797885536_MT1USATODAY29822696_RTRMADP_3_MLB-DETROIT-TIGERS-AT-TORONTO-BLUE-JAYS-1024x683.jpg",
+   "players": [
+    [
+     "Troy Melton",
+     675512
+    ]
+   ]
+  },
   {
    "title": "Rockies Acquire Chase Lee, Designate Jimmy Herget For Assignment",
    "link": "https://www.mlbtraderumors.com/2026/11/rockies-to-acquire-chase-lee-designate-jimmy-herget-for-assignment.html",
@@ -12,7 +30,9 @@
    "body": [
     "The Rockies have traded for Blue Jays right-hander Chase Lee, per a team announcement. Cash is heading back to Toronto in the deal. Colorado is designating right-hander Jimmy Herget for assignment to clear a roster spot.",
     "Lee was squeezed off the roster yesterday when the Blue Jays claimed infielder Christian Cairo off waivers from the Dodgers. The Rockies swooped in with a trade before he was put on waivers. It’s the second straight day with a pitching acquisition for Colorado. The club swung a trade with the White Sox for righties Davis Martin and Luis Castillo last night.",
-    "It’s now back-to-back offseasons on the move for Lee. The Tigers traded him to the Blue Jays for lefty Johan Simon last winter. Lee had multiple stints in Toronto this season, all of them brief. He posted a 6.52 ERA across eight appearances. Lee walked eight and struck out five in his 9 2/3 frames with the Blue Jays."
+    "It’s now back-to-back offseasons on the move for Lee. The Tigers traded him to the Blue Jays for lefty Johan Simon last winter. Lee had multiple stints in Toronto this season, all of them brief. He posted a 6.52 ERA across eight appearances. Lee walked eight and struck out five in his 9 2/3 frames with the Blue Jays.",
+    "While the MLB results were discouraging, Lee had a strong campaign at Triple-A Buffalo. He delivered 43 appearances of a 2.01 ERA. The 28-year-old got ground balls at a solid 47.9% clip and kept his walk rate under 10%. Lee picked up five saves out of the Bisons’ bullpen.",
+    "It seems fitting that Lee, a fellow sidearmer, replaces Herget in Colorado. The low-slot veteran has been a regular in the Rockies’ bullpen for the past two seasons. Herget was excellent in 2025, posting a mid-2.00s ERA as a multi-inning option. He couldn’t replicate that output this season. Herget scuffled to a 5.70 ERA in 51 appearances. His walk rate, which is typically a strength, ballooned to 11.0%."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/ChaseLee-1024x683.jpg",
    "players": [
@@ -9360,44 +9380,6 @@
     [
      "Ketel Marte",
      606466
-    ]
-   ]
-  },
-  {
-   "title": "Red Sox To Trade Tsung-Che Cheng To Tigers",
-   "link": "https://www.mlbtraderumors.com/2026/10/red-sox-to-trade-tsung-che-cheng-to-tigers.html",
-   "date": "2026-10-30T01:41:42.000Z",
-   "teams": [
-    "DET",
-    "BOS"
-   ],
-   "body": [
-    "The Red Sox are trading infielder Tsung-Che Cheng to the Tigers for cash, reports Andrew Parker of Sox Prospects. He’ll occupy a spot on Detroit’s 40-man roster, which is up to either 42 or 44 depending on their option decisions for Drew Anderson and Kenley Jansen.",
-    "Boston, which already cleared one spot by trading Nate Eaton to the Athletics this afternoon, will be at 42 once Sonny Gray declines his end of a mutual option and becomes a free agent. Both teams will need to drop down to 40 by Monday evening.",
-    "Cheng spent one season on the Sox’ roster. Boston claimed him off waivers from the Nationals in February. The Taiwanese infielder made a three-game debut with the Pirates last year and bounced around the waiver wire over the 2025-26 offseason. He played a minimal role in Boston, starting 13 games at shortstop amidst a monthlong stint on the MLB roster. He hit.256 with one extra-base hit, a double, in 44 plate appearances.",
-    "The 25-year-old Cheng spent the remainder of the season on optional assignment to Triple-A Worcester. He posted a league average.241/.345/.390 slash with eight home runs. Cheng rarely expanded the strike zone and walked at a strong 14% clip. He struck out at a slightly elevated 24% rate and didn’t hit the ball with much authority. Prospect evaluators have generally praised his plate discipline and solid defensive chops around the infield, projecting him as a utility piece. He’s out of minor league options and will battle for a bench job in Detroit if he holds his 40-man spot all offseason."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-07-21T010943Z_1423788475_MT1USATODAY29420101_RTRMADP_3_MLB-BALTIMORE-ORIOLES-AT-BOSTON-RED-SOX-1024x683.jpg",
-   "players": [
-    [
-     "Tsung-Che Cheng",
-     691907
-    ],
-    [
-     "Drew Anderson",
-     623454
-    ],
-    [
-     "Kenley Jansen",
-     445276
-    ],
-    [
-     "Nate Eaton",
-     681987
-    ],
-    [
-     "Sonny Gray",
-     543243
     ]
    ]
   },
