@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T18:50:32.190Z",
+ "updated": "2026-11-20T19:00:36.059Z",
  "articles": [
   {
    "title": "Players Avoiding Arbitration Prior To The 2026 Non-Tender Deadline",
@@ -27,13 +27,18 @@
     "MIN"
    ],
    "body": [
-    "The Twins are not expected to tender a contract to outfielder Trevor Larnach before the 4 p.m. CT deadline on Friday, Dan Hayes of The Athletic reports. Larnach will become a free agent when the move becomes official."
+    "The Twins are not expected to tender a contract to outfielder Trevor Larnach before the 4 p.m. CT deadline on Friday, Dan Hayes of The Athletic reports. Larnach will become a free agent when the move becomes official.",
+    "This is the second significant non-tender news of the day for Minnesota, which will also move on from right-hander Bailey Ober. Both Larnach and Ober have been Twins staples for several years, but the team will move on in lieu of giving the two raises in arbitration. MLBTR contributor Matt Swartz projected a $6.3MM salary for Larnach in 2027, which would have been his third and final year of arbitration with the club."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-13T211739Z_600775740_MT1USATODAY29814572_RTRMADP_3_MLB-CLEVELAND-GUARDIANS-AT-MINNESOTA-TWINS-1024x683.jpg",
    "players": [
     [
      "Trevor Larnach",
      663616
+    ],
+    [
+     "Bailey Ober",
+     641927
     ]
    ]
   },
@@ -65,7 +70,8 @@
    ],
    "body": [
     "Joey Bart is headed north. The Cubs have claimed the catcher off waivers from their crosstown rivals, according to Robert Murray of FanSided. The White Sox designated him for assignment earlier this week.",
-    "Once heralded as Buster Posey’s heir apparent, Bart never quite figured things out during his four seasons with San Francisco. From 2020-23, he played exactly 162 games, hitting.219 with a.623 OPS and a 77 wRC+. Yet, almost instantly after the Giants traded him to the Pirates in 2024, the change of scenery paid off. Bart played 80 games that year, hitting.265 with a.799 OPS and a 120 wRC+. Among catchers with at least 200 plate appearances, his wOBA and xwOBA both ranked in the top 10. His defense was still subpar, but not so much as to make him a liability, especially when he was hitting so well."
+    "Once heralded as Buster Posey’s heir apparent, Bart never quite figured things out during his four seasons with San Francisco. From 2020-23, he played exactly 162 games, hitting.219 with a.623 OPS and a 77 wRC+. Yet, almost instantly after the Giants traded him to the Pirates in 2024, the change of scenery paid off. Bart played 80 games that year, hitting.265 with a.799 OPS and a 120 wRC+. Among catchers with at least 200 plate appearances, his wOBA and xwOBA both ranked in the top 10. His defense was still subpar, but not so much as to make him a liability, especially when he was hitting so well.",
+    "That breakout performance earned Bart a $1.75MM salary from the Pirates in his first year of arbitration eligibility. He followed it up with another solid year in 2025. The backstop upped his walk rate and posted the highest on-base percentage of his career. He also set a new career high in plate appearances. However, that additional playing time meant he was exposed to right-handed pitching more often. While he still punished left-handers, he struggled when he didn’t have the platoon advantage. As a result, his overall offensive numbers were mediocre, though still above-average for a catcher: a.696 OPS and a 100 wRC+."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-08-04T225026Z_147842548_MT1USATODAY29514554_RTRMADP_3_MLB-CHICAGO-WHITE-SOX-AT-BOSTON-RED-SOX-1024x683.jpg",
    "players": [
@@ -7170,27 +7176,6 @@
     [
      "Jose Trevino",
      624431
-    ]
-   ]
-  },
-  {
-   "title": "Zack Kelly Clears Waivers, Will Become Free Agent",
-   "link": "https://www.mlbtraderumors.com/2026/11/red-sox-zack-kelly-clears-waivers-free-agent.html",
-   "date": "2026-11-06T21:30:15.000Z",
-   "teams": [
-    "BOS"
-   ],
-   "body": [
-    "Red Sox righty Zack Kelly went unclaimed on outright waivers following his recent DFA, reports Chris Cotillo of MassLive.com. He has more than three years of major league service and, as such, can now become a free agent.",
-    "Kelly, 32 next March, has a solid big league track record and pitched well in limited action with Boston this season before a fracture in his right elbow ended his season. He tossed 16 1/3 innings and recorded a 3.31 ERA with a 19.7% strikeout rate and 9.9% walk rate. Dating back to his 2022 major league debut, the former undrafted free agent has pitched 131 big league innings with a 4.04 earned run average, a 22.4% strikeout rate, a 10.2% walk rate and a 45.4% ground-ball rate.",
-    "Kelly averages about 96 mph on his four-seamer and sinker alike — the latter of which he only began throwing in 2025. He used to rely on a changeup as his go-to secondary pitch, but he’s more recently ramped up the usage of a new 90-91 mph cutter and paired that with an 81 mph slider to round out his repertoire.",
-    "It’s not yet clear exactly how long Kelly will be sidelined. His original IL placement came in late July and was first attributed to elbow inflammation, but follow-up testing eventually revealed the fracture. Wherever he signs next, he’ll be controllable for at least three more years if he’s added back to a major league roster. However, he’s also out of minor league options, which means he’ll have to stick in the majors or else be designated for assignment again."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/zack-kelly-red-sox-1024x726.jpg",
-   "players": [
-    [
-     "Zack Kelly",
-     677161
     ]
    ]
   },
