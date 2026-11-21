@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T23:50:41.270Z",
+ "updated": "2026-11-21T00:00:37.389Z",
  "articles": [
   {
    "title": "Twins, Dodgers Swap Royce Lewis For Bobby Miller",
@@ -42,6 +42,10 @@
     [
      "Johan Oviedo",
      670912
+    ],
+    [
+     "Luke Dotson",
+     806060
     ]
    ]
   },
@@ -55,7 +59,9 @@
    ],
    "body": [
     "The Giants announced that they have traded infielder Christian Koss to the Rays in exchange for right-hander Cole Stokes. Koss was designated for assignment by San Francisco earlier this week. The Rays had 40-man space and don’t need to make a corresponding move.",
-    "Koss, 28, came to San Francisco in a minor trade in 2024. He made the Giants out of camp the following year and batted.264/.309/.368 in 191 plate appearances. Koss rarely walked and struck out a bit more than average, and the resulting 92 wRC+ implied he was 8% worse less productive than the average hitter. Defensively, he spent most of his time at second base, earning +8 Defensive Runs Saved in 339 innings there. He also played a handful of innings at third base and shortstop."
+    "Koss, 28, came to San Francisco in a minor trade in 2024. He made the Giants out of camp the following year and batted.264/.309/.368 in 191 plate appearances. Koss rarely walked and struck out a bit more than average, and the resulting 92 wRC+ implied he was 8% worse less productive than the average hitter. Defensively, he spent most of his time at second base, earning +8 Defensive Runs Saved in 339 innings there. He also played a handful of innings at third base and shortstop and missed one month with a left hamstring strain.",
+    "The 2026 season was a struggle for Koss on multiple fronts. He only put up a 58 wRC+ in 221 plate appearances as his batting line fell to.217/.257/.305. Both his strikeout and walk rates trended in the wrong direction, and Koss simply did not hit the ball with much authority, as evidenced by his meager 84.1 mph average exit velocity.",
+    "Koss played more shortstop and third base this year and was passable at both spots, but the total lack of hitting kept him a replacement-level player. It also didn’t help that he missed the month of June with a fractured left wrist and still didn’t hit well upon returning in July. The Giants ultimately cut him loose on Tuesday as part of a series of moves to protect Rule 5 eligible pitching prospects."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/06/USATSI_28922340-1024x683.jpg",
    "players": [
@@ -143,6 +149,7 @@
    "teams": [
     "ARI",
     "ATL",
+    "CHC",
     "NYM",
     "PHI",
     "PIT",
@@ -7281,8 +7288,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/tarik-skubal-rumors-mets-dodgers-cubs.html",
    "date": "2026-11-06T05:43:31.000Z",
    "teams": [
-    "CHC",
     "DET",
+    "CHC",
     "LAD",
     "NYM",
     "NYY"
