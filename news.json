@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T00:00:37.389Z",
+ "updated": "2026-11-21T00:10:33.077Z",
  "articles": [
   {
    "title": "Twins, Dodgers Swap Royce Lewis For Bobby Miller",
@@ -150,6 +150,8 @@
     "ARI",
     "ATL",
     "CHC",
+    "CIN",
+    "COL",
     "NYM",
     "PHI",
     "PIT",
@@ -182,6 +184,7 @@
     "NYM",
     "PHI",
     "PIT",
+    "SD",
     "SF",
     "TEX"
    ],
@@ -6437,31 +6440,6 @@
    "players": []
   },
   {
-   "title": "Adrian Morejon Wants To Remain A Reliever",
-   "link": "https://www.mlbtraderumors.com/2026/11/adrian-morejon-wants-to-remain-a-reliever.html",
-   "date": "2026-11-10T15:51:12.000Z",
-   "teams": [
-    "SD"
-   ],
-   "body": [
-    "Left-hander Adrian Morejon is one of the top relievers on the free agent market, and he wants to keep it that way. Will Sammon, Ken Rosenthal, and Katie Woo of The Athletic report that Morejon prefers to stay in the bullpen, despite drawing interest as a starter.",
-    "The 27-year-old Morejon is coming off a dominant platform year setting up for closer Mason Miller. He posted a 2.83 ERA with a 30.4% strikeout rate across a career-high 86 innings. Morejon finished tied for fifth in the league with 28 holds. He also chipped in three saves.",
-    "Morejon has been a crucial part of an elite Padres bullpen for the past three seasons. He’s had a sub-3.00 ERA with solid strikeout numbers and good control while operating in a high-leverage gig. Morejon has piled up 60 holds, 25 wins, and eight saves since the start of 2024.",
-    "It’s been quite some time since Morejon operated as a starter. The Padres signed him as an international free agent in 2016. He worked strictly as a starter in the lower levels of the minors, but took on a swingman role when he first debuted with San Diego in 2019. Morejon pitched in parts of three seasons with the Padres, then needed Tommy John surgery in 2021. He’s been almost exclusively a reliever since then. Morejon has made one MLB start over the past five years, and it came as an extended opener in 2023."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AdrianMorejon-1024x683.jpg",
-   "players": [
-    [
-     "Adrian Morejon",
-     670970
-    ],
-    [
-     "Mason Miller",
-     695243
-    ]
-   ]
-  },
-  {
    "title": "Angels To Begin Preliminary Meetings With GM Candidates",
    "link": "https://www.mlbtraderumors.com/2026/11/angels-to-begin-preliminary-meetings-with-gm-candidates.html",
    "date": "2026-11-10T05:15:37.000Z",
@@ -9254,26 +9232,6 @@
     [
      "Kyler Fedko",
      693459
-    ]
-   ]
-  },
-  {
-   "title": "Reds Avoid Arbitration With Oswaldo Cabrera",
-   "link": "https://www.mlbtraderumors.com/2026/10/reds-avoid-arbitration-with-oswaldo-cabrera.html",
-   "date": "2026-10-15T18:38:06.000Z",
-   "teams": [
-    "CIN"
-   ],
-   "body": [
-    "The Reds announced that they have agreed to a one-year, Major League contract with utilityman Oswaldo Cabrera. The signing allows the two sides to avoid salary arbitration, and MLB.com’s Mark Sheldon reports that Cabrera will earn $1MM in guaranteed salary plus up to $200K in bonuses related to plate appearances.",
-    "There was some thought that Cabrera could be a non-tender candidate given his lack of career production at the big league level. However, the Reds only added Cabrera to the organization on a waiver claim on September 18, so Cincinnati might’ve always had an eye towards retaining the 27-year-old heading into the offseason. Cabrera’s modest salary is an easy fit even in the Reds’ limited budget, and the team now has some experienced depth in place.",
-    "As a rookie with the Yankees in 2022, Cabrera hit.247/.312/.429 in his first 171 plate appearances as a big leaguer, good for a 110 wRC+. This remains the high point of his offensive production, as Cabrera has since batted.230/.289/.326 over 803 PA with New York and Cincinnati. Working as a part-time bench piece in the Bronx, Cabrera’s career was interrupted in May 2025 by an ugly ankle injury that required a season-ending surgery. He made it back for the start of the 2026 minor league season and hit.288/.345/.444 over 524 PA for Scranton/Wilkes-Barre, and Cabrera also made it into seven total MLB games with the Yankees and Reds."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/OswaldoCabrera-2026Reds-1024x682.jpg",
-   "players": [
-    [
-     "Oswaldo Cabrera",
-     665828
     ]
    ]
   },
