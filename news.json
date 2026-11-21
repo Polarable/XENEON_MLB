@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T15:00:39.654Z",
+ "updated": "2026-11-21T15:10:33.300Z",
  "articles": [
   {
    "title": "The Opener: Lewis/Miller, Melton, Loaisiga",
@@ -857,8 +857,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/white-sox-to-trade-davis-martin-luis-castillo-to-rockies.html",
    "date": "2026-11-20T05:59:48.000Z",
    "teams": [
-    "COL",
-    "CWS"
+    "CWS",
+    "COL"
    ],
    "body": [
     "The White Sox and Rockies announced a surprise trade on Thursday. Colorado acquires a pair of veteran starters, Davis Martin and Luis Castillo, in exchange for rookie left-hander Sean Sullivan and minor league catcher Douglas Veliz. The Rockies assume Castillo’s $22.75MM salary as a means of enticing Chicago to part with Martin.",
@@ -1342,6 +1342,22 @@
    ]
   },
   {
+   "title": "White Sox Hire Kyle Wilson As Assistant Hitting Coach",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-hire-kyle-wilson-as-assistant-hitting-coach.html",
+   "date": "2026-11-19T17:55:40.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox are hiring Kyle Wilson as an assistant hitting coach, reports James Fegan of The Chicago Sun-Times. He’d been a hitting coordinator with the Rays.",
+    "Wilson replaces Joel McKeithan, who held the assistant HC role on the South Side for the last two seasons. McKeithan got the lead hitting coach job with the Cardinals a couple weeks ago, returning to the lead role he’d held in Cincinnati from 2023-24. This will be Wilson’s first job on a big league staff.",
+    "The 39-year-old Wilson (40 in February) played collegiately at North Carolina State. He was twice drafted but never appeared in a game as a professional player. Wilson worked as a volunteer assistant with his alma mater and spent a year coaching in the Seattle farm system before getting hired by the Rays in 2019. He’s worked with Tampa Bay prospects for the past seven years.",
+    "Derek Shomon is entering his second season as Chicago’s lead hitting voice. General manager Chris Getz said at the end of the year that he expected to bring back Will Venable’s entire staff. While McKeithan got a better opportunity in St. Louis, the assistant hitting coach role appears to be their only change."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/WhiteSoxhat-generic-1024x682.jpg",
+   "players": []
+  },
+  {
    "title": "Cubs Interested In Teruaki Sato, Jarren Duran",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-interested-in-teruaki-sato-jarren-duran.html",
    "date": "2026-11-19T17:28:21.000Z",
@@ -1640,6 +1656,79 @@
    ]
   },
   {
+   "title": "White Sox Seeking Another Notable Starter After May Signing",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-seeking-another-notable-starter-after-may-signing.html",
+   "date": "2026-11-19T03:08:23.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox made one of the biggest strikes in free agency thus far, finalizing their three-year deal with Dustin May this afternoon. That $52.5MM guarantee was already the organization’s biggest signing since Andrew Benintendi four years ago, but it may not be their most notable move of this offseason.",
+    "ESPN’s Jeff Passan wrote this morning that the White Sox remained in the market for starting pitching. James Fegan of The Chicago Sun-Times suggests they’re aiming for someone who’d at least slot into the middle of the staff, reporting that they’re pursuing a starter “of similar magnitude” to May.",
+    "There are plenty of mid-rotation starters on the open market. Chicago has shown interest in NPB starter Kaima Taira, for one. Foster Griffin, Michael Soroka, Clay Holmes, Tyler Mahle, Casey Mize, Shota Imanaga, and Nick Pivetta are all candidates for a contract similar to or slightly below the May guarantee. That’s also true of Kevin Gausman or Nick Martinez if they command two-year deals, though they might pull $20MM+ annually on shorter terms.",
+    "Trevor Rogers, Freddy Peralta and Michael King should all beat the May deal and would probably require the White Sox to go north of $75MM — which they’ve incredibly still never done for any player. Rogers would also come attached to draft compensation after rejecting a qualifying offer from the Orioles."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/USATSI_29261078-1024x683.jpg",
+   "players": [
+    [
+     "Dustin May",
+     669160
+    ],
+    [
+     "Andrew Benintendi",
+     643217
+    ],
+    [
+     "Foster Griffin",
+     656492
+    ],
+    [
+     "Michael Soroka",
+     647336
+    ],
+    [
+     "Clay Holmes",
+     605280
+    ],
+    [
+     "Tyler Mahle",
+     641816
+    ],
+    [
+     "Casey Mize",
+     663554
+    ],
+    [
+     "Shota Imanaga",
+     684007
+    ],
+    [
+     "Nick Pivetta",
+     601713
+    ],
+    [
+     "Kevin Gausman",
+     592332
+    ],
+    [
+     "Nick Martinez",
+     607259
+    ],
+    [
+     "Trevor Rogers",
+     669432
+    ],
+    [
+     "Freddy Peralta",
+     642547
+    ],
+    [
+     "Michael King",
+     650633
+    ]
+   ]
+  },
+  {
    "title": "Mets, Joel Kuhnel Agree To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/mets-joel-kuhnel-agree-to-minor-league-deal.html",
    "date": "2026-11-19T01:07:13.000Z",
@@ -1695,6 +1784,57 @@
     [
      "Tyler O’Neill",
      641933
+    ]
+   ]
+  },
+  {
+   "title": "White Sox Designate Jordan Leasure For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-designate-jordan-leasure-for-assignment.html",
+   "date": "2026-11-18T23:00:02.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox officially announced their signing of right-hander Dustin May. Fellow righty Jordan Leasure has been designated for assignment as the corresponding 40-man roster move. Leasure is expected to miss 2027 while recovering from surgery.",
+    "Leasure, now 28, seemed to have a breakout year in 2025. He gave the Sox 64 1/3 innings, allowing 3.92 earned runs per nine. His 11.2% walk rate was to the high side but he offset that by punching out 30.1% of batters faced. He was able to push into a leverage role with the rebuilding club, earning 14 holds and seven saves.",
+    "2026 was much more of a challenge for him. He got out to a rough start, getting optioned to the minors in May. He was recalled a couple of weeks later but then landed on the injured list with a flexor strain. He underwent surgery in August to repair a tear in his ulnar collateral ligament. The Sox announced that he was expected to be ready by spring training 2028, suggesting he would miss the entire 2027 campaign. He finished 2026 with a 6.27 ERA in 18 2/3 innings.",
+    "Leasure’s service time count is just under three years. He was going to qualify for arbitration as a Super Two player. MLBTR contributor Matt Swartz projected him for a $1MM salary next year. Friday is the non-tender deadline and it’s possible the Sox weren’t planning to tender him a contract."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-05-06T050258Z_1218210356_MT1USATODAY28888809_RTRMADP_3_MLB-LOS-ANGELES-ANGELS-AT-CHICAGO-WHITE-SOX-1024x683.jpg",
+   "players": [
+    [
+     "Jordan Leasure",
+     673929
+    ],
+    [
+     "Dustin May",
+     669160
+    ]
+   ]
+  },
+  {
+   "title": "White Sox Sign Dustin May",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-to-sign-dustin-may.html",
+   "date": "2026-11-18T22:45:48.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "November 18: The Sox made it official today.",
+    "November 17: The White Sox and right-hander Dustin May are in agreement on a three-year, $52.5MM contract. The team has yet to officially announce the deal. May is represented by Paragon Sports International.",
+    "It’s a surprisingly strong deal for the pitcher. The White Sox are placing a notable bet on the right-hander’s relative youth — he’ll pitch next season at 29 — and power arsenal, while looking past his lengthy injury history and middling bottom-line results when healthy in each of the past two seasons.",
+    "May played the 2026 season on a one-year, $12.5MM deal originally signed with the Cardinals, who traded him to the Brewers alongside reliever JoJo Romero at the deadline. He posted back-end results in St. Louis and was torched for a 5.65 ERA in 10 starts (36 2/3 innings) with Milwaukee before also struggling in the playoffs. May finished out the regular season with a 4.70 ERA in a career-high 145 2/3 innings (4.77 in 156 2/3 frames, including the playoffs).",
+    "Over the past two seasons, May has combined to toss 278 innings with a 4.82 ERA. He’s fanned a roughly average 22.2% of his opponents in that time with similarly average command (8.8% walk rate) and ground-ball tendencies (42%)."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/dustin-may-pitcher-1024x682.jpg",
+   "players": [
+    [
+     "Dustin May",
+     669160
+    ],
+    [
+     "JoJo Romero",
+     668941
     ]
    ]
   },
@@ -3109,6 +3249,43 @@
    ]
   },
   {
+   "title": "White Sox Designate Joey Bart, Add Two To 40-Man Roster",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-dfa-joey-bart-catcher.html",
+   "date": "2026-11-17T20:22:56.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "2:22pm: The Sox have now formally announced Bart’s DFA. Chicago also announced that infielder William Bergolla Jr. and lefty Jaden Woods have had their contracts selected. Both are now on the 40-man roster and protected from the Rule 5 Draft (if it happens).",
+    "1:51pm: The White Sox will designate catcher Joey Bart for assignment, reports Robert Murray of FanSided. The former No. 2 overall draft pick was eligible for arbitration one final time this winter and was projected by MLBTR contributor Matt Swartz to earn $2.9MM in 2027.",
+    "Bart, 30 next month, came to the White Sox from Atlanta in a deadline deal. The Braves received righty Duncan Davitt, who’d been designated for assignment himself, in that swap. Bart suffered a fractured left hand just days after joining the South Siders, when he was plunked by a 98 mph heater from Erik Miller, his former Triple-A teammate with the Giants organization. Bart played in only three games and went hitless in nine trips to the plate. That brief stint brought his season line to.214/.305/.357 in 128 plate appearances between Pittsburgh, Atlanta and Chicago.",
+    "Draft pedigree notwithstanding, Bart doesn’t bring much to the table offensively. He had a nice run with the Pirates from 2024-25, hitting.257/.347/.398 with 17 homers in a combined 614 plate appearances, but those are the only two occasions in seven seasons where he’s produced even average offense. On the whole, Bart is a lifetime.237/.319/.368 hitter."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/joey-bart-white-sox-catcher-1024x683.jpg",
+   "players": [
+    [
+     "Joey Bart",
+     663698
+    ],
+    [
+     "William Bergolla Jr.",
+     703151
+    ],
+    [
+     "Jaden Woods",
+     692243
+    ],
+    [
+     "Duncan Davitt",
+     701474
+    ],
+    [
+     "Erik Miller",
+     669062
+    ]
+   ]
+  },
+  {
    "title": "Yankees Claim Chase Hampton",
    "link": "https://www.mlbtraderumors.com/2026/11/yankees-claim-chase-hampton.html",
    "date": "2026-11-17T20:07:43.000Z",
@@ -3927,6 +4104,21 @@
    ]
   },
   {
+   "title": "White Sox Interested In Hiromi Itoh",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-interested-in-hiromi-itoh.html",
+   "date": "2026-11-15T19:07:16.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox are known to be seeking rotation upgrades this winter, and they’ve identified Japanese right-hander Hiromi Itoh as one of their targets. According to Francys Romero of BeisbolFR.com, the Sox sent scouts to watch Itoh and his countryman Kaima Taira in August and September, and they’re expected to be among Itoh’s suitors in free agency. Chicago’s interest in Taira was previously reported.",
+    "Itoh, Taira, and infielder Teruaki Sato were officially posted by their respective NPB teams on November 1. Ordinarily, they would have had 45 days to negotiate a contract with MLB clubs, but the looming lockout is throwing a wrench in those plans. The day after their postings, it was reported that their negotiating window would not pause in the event of a lockout, so their 45-day window is effectively reduced to just 30 days. Itoh, Taira, and Sato now have a little more than two weeks to sign with MLB clubs. If they do not, they’ll return to NPB for 2027.",
+    "Among the two starters in that trio, Itoh isn’t as flashy as Taira but should still procure a big league deal. He has a 2.91 earned run average and 902 career strikeouts in just over 1,000 innings for the Hokkaido Nippon-Ham Fighters. In 2025, he won the Sawamura Award, the NPB equivalent of the Cy Young award. Itoh has also shown excellent control, posting walk rates of 5.5% or lower in each of the last three seasons for the Fighters."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/hiromi-itoh-npb-2026-1024x683.jpg",
+   "players": []
+  },
+  {
    "title": "Phillies Sign Max Kranick To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/phillies-sign-max-kranick-to-minor-league-deal.html",
    "date": "2026-11-15T18:08:07.000Z",
@@ -4315,8 +4507,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/al-central-notes-white-sox-twins-burg-guardians.html",
    "date": "2026-11-14T18:00:34.000Z",
    "teams": [
-    "CLE",
     "CWS",
+    "CLE",
     "MIN",
     "SF"
    ],
@@ -5726,9 +5918,9 @@
    "link": "https://www.mlbtraderumors.com/2026/11/dodgers-reportedly-prefer-short-term-deal-in-skubal-bidding.html",
    "date": "2026-11-11T18:38:29.000Z",
    "teams": [
-    "LAD",
+    "CWS",
     "BOS",
-    "CWS"
+    "LAD"
    ],
    "body": [
     "The Dodgers are in the mix for free agent Tarik Skubal but the framework of his eventual deal could be very important. Katie Woo of The Athletic reports that their interest would be contingent on Skubal being open to a short-term deal. Jeff Passan of ESPN reports that Skubal has no interest in that kind of arrangement, which would seemingly work against the Dodgers in the bidding.",
@@ -6084,8 +6276,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/will-venable-pat-murphy-named-managers-of-the-year.html",
    "date": "2026-11-11T00:56:19.000Z",
    "teams": [
-    "MIL",
-    "CWS"
+    "CWS",
+    "MIL"
    ],
    "body": [
     "The Baseball Writers Association of America announced the results of Manager of the Year balloting on Tuesday. White Sox skipper Will Venable won the American League honors, while Milwaukee’s Pat Murphy takes home the National League award for a third straight year.",
