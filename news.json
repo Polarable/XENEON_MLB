@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T00:30:34.720Z",
+ "updated": "2026-11-21T00:40:34.525Z",
  "articles": [
   {
    "title": "Twins, Dodgers Swap Royce Lewis For Bobby Miller",
@@ -27,7 +27,7 @@
    ]
   },
   {
-   "title": "Diamondbacks Acquire Johan Oviedo",
+   "title": "Red Sox Trade Johan Oviedo To Diamondbacks",
    "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-to-acquire-johan-oviedo.html",
    "date": "2026-11-20T23:07:33.000Z",
    "teams": [
@@ -35,7 +35,10 @@
     "BOS"
    ],
    "body": [
-    "The Diamondbacks have acquired right-hander Johan Oviedo from the Red Sox, reports Robert Murray of FanSided. The Red Sox will receive minor league left-hander Luke Dotson and a player to be named later or cash considerations, reports Nick Piecoro of the Arizona Republic. Arizona has 40-man space and doesn’t need to make a corresponding move. Both clubs have now announced the swap."
+    "The Diamondbacks announced the acquisition of Johan Oviedo from the Red Sox for relief prospect Luke Dotson and a player to be named later or cash considerations. Arizona’s 40-man roster tally sits at 38.",
+    "Oviedo adds some depth to an Arizona rotation that lost Michael Soroka and Zac Gallen to free agency. The 6’6″ righty is coming off a lost season, as he only made one big league appearance. He allowed four runs across 3 2/3 innings and departed early with a flexor strain. It wound up ending his season aside from one Triple-A rehab start in the middle of September.",
+    "It’s obviously not the way the Red Sox envisioned his tenure when they acquired Oviedo from Pittsburgh for outfielder Jhostynxon Garcia last offseason. Oviedo has flashed back-end ability but hasn’t put together a healthy season since 2023. He underwent Tommy John surgery and missed the’24 campaign, then suffered a lat strain in Spring Training 2025. That limited him to nine starts late in the year, in which he pitched to a 3.57 ERA with an above-average strikeout rate (24.7%) and far too many walks.",
+    "The D-Backs will hope for Oviedo’s stuff to rebound with a healthy offseason. He sat at 95.5 mph after the lat injury in 2025. That was down to 93 mph in his lone appearance in Boston. He also features a curveball and slider but hasn’t developed a trustworthy changeup to this point. That’s contributed to an underwhelming strikeout and walk profile versus left-handed batters."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/04/johan-oviedo-red-sox-1024x681.jpg",
    "players": [
@@ -46,6 +49,18 @@
     [
      "Luke Dotson",
      806060
+    ],
+    [
+     "Michael Soroka",
+     647336
+    ],
+    [
+     "Zac Gallen",
+     668678
+    ],
+    [
+     "Jhostynxon Garcia",
+     691373
     ]
    ]
   },
