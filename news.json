@@ -1,6 +1,46 @@
 {
- "updated": "2026-11-22T18:10:33.439Z",
+ "updated": "2026-11-22T18:20:31.974Z",
  "articles": [
+  {
+   "title": "Jonathan Loaisiga Had Offers From Mets, Blue Jays",
+   "link": "https://www.mlbtraderumors.com/2026/11/jonathan-loaisiga-had-offers-from-mets-blue-jays.html",
+   "date": "2026-11-22T18:18:50.000Z",
+   "teams": [
+    "NYM",
+    "NYY",
+    "TOR"
+   ],
+   "body": [
+    "Right-hander Jonathan Loaisiga signed with the Yankees on Friday, bringing him back to New York after a season in Arizona. Loaisiga had other suitors, though, including another AL East squad and the other New York club.",
+    "Bob Nightengale of USA Today reports that Loaisiga had offers on the table from the Mets and Blue Jays. It’s unclear if those deals matched or exceeded the two-year, $18MM pact Loaisiga ultimately received from the Yankees.",
+    "Loaisiga had to take a minor league deal with the Diamondbacks last winter after multiple years of injuries and poor performance in the Bronx. It ended up being a huge win for Arizona, as Loaisiga emerged as one of the most important pieces in the bullpen. The veteran righty posted a 2.42 ERA with 10 holds and three saves as a member of the high-leverage group.",
+    "It’s no surprise Loaisiga attracted offers from multiple teams. Not only did he pitch well, but his fastball was up a tick in 2026. He seemed to be past the arm issues that plagued his final years with the Yankees. Loaisiga generated soft contact at an elite clip while keeping the ball on the ground at one of the highest rates in the league. It’s a repeatable approach, though the strikeouts are lower than a typical late-inning arm.",
+    "The Mets have multiple spots to fill in the bullpen after shipping out Luke Weaver and A.J. Minter at the trade deadline. Kodai Senga, who finished the year as the team’s closer, seems headed back toward a spot in the rotation. The Mets have some question marks behind Devin Williams, who is no sure bet himself."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/JonathanLoaisiga-1-1024x683.jpg",
+   "players": [
+    [
+     "Jonathan Loaisiga",
+     642528
+    ],
+    [
+     "Luke Weaver",
+     596133
+    ],
+    [
+     "A.J. Minter",
+     621345
+    ],
+    [
+     "Kodai Senga",
+     673540
+    ],
+    [
+     "Devin Williams",
+     642207
+    ]
+   ]
+  },
   {
    "title": "Cardinals, Alec Burleson Have Mutual Interest In Extension",
    "link": "https://www.mlbtraderumors.com/2026/11/cardinals-alec-burleson-have-mutual-interest-in-extension.html",
@@ -5593,8 +5633,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/mets-yankees-met-with-alec-bohm-at-gm-meetings.html",
    "date": "2026-11-12T23:40:14.000Z",
    "teams": [
-    "NYM",
-    "NYY"
+    "NYY",
+    "NYM"
    ],
    "body": [
     "Free agent infielder Alec Bohm met with both the Yankees and Mets at this week’s general managers’ meetings in Las Vegas, according to reporting from Ken Rosenthal and Will Sammon of The Athletic. The connection to the Yankees was previously reported.",
@@ -5661,8 +5701,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/yankees-notes-infield-catcher-bullpen.html",
    "date": "2026-11-12T21:35:23.000Z",
    "teams": [
-    "NYY",
-    "TEX"
+    "TEX",
+    "NYY"
    ],
    "body": [
     "The Yankees have been busy checking in on various offseason pursuits, reports Jon Heyman of The New York Post, but might also slow-play the market. Heyman says the Yankees have talked to the Rangers about Corey Seager and checked in with free agents Luis Arraez, Brandon Lowe and Carson Kelly. But broadly, Heyman frames it as possible that the Yankees play things cool in the pre-lockout period.",
@@ -7133,31 +7173,6 @@
     [
      "Ryan Pressly",
      519151
-    ]
-   ]
-  },
-  {
-   "title": "Max Scherzer Shares Offseason Plans",
-   "link": "https://www.mlbtraderumors.com/2026/11/max-scherzer-shares-offseason-plans.html",
-   "date": "2026-11-07T22:33:38.000Z",
-   "teams": [
-    "TOR"
-   ],
-   "body": [
-    "Veteran right-hander Max Scherzer isn’t done just yet. The future Hall of Famer will pitch in “lockout games” this offseason to gauge whether he’ll pitch in 2027, he told Jon Heyman of the New York Post.",
-    "Scherzer was noncommittal about his future before his final start with the Blue Jays. With his family in attendance, he fired seven innings of one-run ball with seven strikeouts against the Reds. It certainly had the feel of a sendoff performance, with an electric Toronto crowd backing Scherzer throughout the game.",
-    "That last outing came on short rest in a meaningless game for the standings. Part of the motivation for Scherzer seemed to be chasing down longtime rival Justin Verlander on the all-time strikeout leaderboard. He came up a bit short, with the seven punchouts getting him to 3,557, three behind Verlander. Moving from ninth to eighth on the list might not be enough to convince a normal player to keep pitching. Scherzer has proved to be a different level of competitor. It’s not out of the question that the idea of catching Verlander pushes him to play next season.",
-    "It won’t come as a shock that Scherzer dealt with several health issues in his age-41 season. He missed time with forearm, ankle, and back injuries. Scherzer ended up tossing 84 2/3 innings around the IL stints, nearly identical to his 2025 campaign with the Blue Jays."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/MaxScherzer-1024x683.jpg",
-   "players": [
-    [
-     "Max Scherzer",
-     453286
-    ],
-    [
-     "Justin Verlander",
-     434378
     ]
    ]
   },
