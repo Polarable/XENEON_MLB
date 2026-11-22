@@ -1,6 +1,40 @@
 {
- "updated": "2026-11-22T02:30:34.328Z",
+ "updated": "2026-11-22T02:40:30.456Z",
  "articles": [
+  {
+   "title": "Hiromi Itoh Reportedly Visited Chicago",
+   "link": "https://www.mlbtraderumors.com/2026/11/hiromi-itoh-reportedly-visited-chicago.html",
+   "date": "2026-11-22T02:31:18.000Z",
+   "teams": [
+    "CHC",
+    "CWS"
+   ],
+   "body": [
+    "Free agent right-hander Hiromi Itoh was in Chicago on Friday, reported Jesse Rogers and Jorge Castillo of ESPN. The report didn’t specify whether he visited the Cubs, White Sox, or both. The White Sox are known to be interested in Itoh. The Cubs haven’t been publicly connected to him, but they are in need of pitching.",
+    "The rumblings regarding Itoh haven’t been as prevalent as with his two NPB cohorts. Third baseman Teruaki Sato has been linked to more than a half dozen teams. Several clubs have been connected to right-hander Kaima Taira, including both the White Sox and Cubs. Outside of the White Sox and Giants, there haven’t been many clubs directly tied to Itoh. That doesn’t mean he isn’t generating the same level of buzz, though he is a bit older than Taira and doesn’t bring the same level of velocity.",
+    "The 29-year-old Itoh has been a reliable option for the Hokkaido Nippon-Ham Fighters since 2021. He’s put together a sub-3.00 ERA in four of his six NPB seasons. Itoh took home the Sawamura Award in 2025, which is Japan’s equivalent of the Cy Young Award. He ranked 36th on our Top 50 Free Agents list.",
+    "The White Sox have been one of the most active teams on the pitching front this offseason, both in terms of additions and subtractions. They landed Dustin May on a healthy three-year, $52.5MM deal. The club announced plans to move closer Grant Taylor into the rotation. The White Sox sent out Davis Martin and Luis Castillo in a trade with the Rockies."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/hiromi-itoh-npb-2026-1024x683.jpg",
+   "players": [
+    [
+     "Dustin May",
+     669160
+    ],
+    [
+     "Grant Taylor",
+     691799
+    ],
+    [
+     "Davis Martin",
+     663436
+    ],
+    [
+     "Luis Castillo",
+     622491
+    ]
+   ]
+  },
   {
    "title": "Blue Jays’ Nathan Lukes Receiving Trade Interest",
    "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-nathan-lukes-receiving-trade-interest.html",
@@ -384,20 +418,6 @@
      668901
     ]
    ]
-  },
-  {
-   "title": "MLBPA Makes Proposal Related To International Bonus Pool",
-   "link": "https://www.mlbtraderumors.com/2026/11/mlbpa-makes-proposal-related-to-international-bonus-pool.html",
-   "date": "2026-11-21T02:38:22.000Z",
-   "teams": [],
-   "body": [
-    "The Major League Baseball Players Association made a proposal on Friday afternoon concerning the signing of international amateur players. Ronald Blum of The Associated Press, Jorge Castillo of ESPN, and Evan Drellich of The Athletic were among those to cover the news.",
-    "Most notably, the MLBPA proposal did not include an international draft — a longstanding goal of the league. The union is instead seeking to maintain the bonus pool system and to allow teams more flexibility to exceed the pools (with taxes on overages and penalties on future years’ allotments). That’d be a step in the direction of a more flexible international system that was present under previous collective bargaining agreements.",
-    "International signing bonus pools are currently hard-capped. Teams can trade for additional bonus pool space but cannot pay more than their pool allotment, which they are permitted to do in the domestic draft — albeit with dramatic penalties for exceeding the pool by more than 5%.",
-    "MLB has proposed a hard-slotted international draft. The league also wants to raise the age of eligibility. Under the current system, players can sign at 16 so long as they turn 17 by September 1 of their signing year. The league wants draft eligibility to begin at 18 on Sept. 1 of their draft year. The current system is poorly regulated, leading most of the best prospects in every class to reach verbal agreements well in advance of their signing age. It’s not uncommon for players as young as 12 or 13 to have unofficial deals."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2020/03/spring-training-generic-1024x683.jpg",
-   "players": []
   },
   {
    "title": "Tigers Seeking Additional Relievers After Pagán Signing",
@@ -6584,57 +6604,6 @@
     [
      "Tarik Skubal",
      669373
-    ]
-   ]
-  },
-  {
-   "title": "Cubs’ Ben Brown Undergoes Neck Surgery",
-   "link": "https://www.mlbtraderumors.com/2026/11/cubs-ben-brown-neck-surgery.html",
-   "date": "2026-11-10T19:15:06.000Z",
-   "teams": [
-    "CHC"
-   ],
-   "body": [
-    "Cubs right-hander Ben Brown underwent cervical spine surgery yesterday, reports ESPN’s Jesse Rogers. He won’t be cleared to throw until early next year. The organization hopes that he can be ready at some point in the first half of the 2027 season. Cubs GM Carter Hawkins told Marquee Sports’ Elise Menaker that the team was “likely to move forward with the surgical option” for Brown earlier this morning, but it seems the procedure had already taken place at that point.",
-    "Brown’s surgery only makes the Cubs’ rotation need more acute. Chicago saw Matthew Boyd, Kevin Gausman, Clay Holmes, David Peterson, Shota Imanaga and Colin Rea all become free agents at season’s end. Top starter Justin Steele hasn’t pitched since April 2025 due to UCL surgery and some setbacks during his 2026 recovery. Cade Horton, the 2025 NL Rookie of the Year runner-up, underwent his own UCL surgery this past April and will likely be sidelined into the’27 campaign himself."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/ben-brown-chicago-cubs-pitcher-1024x683.jpg",
-   "players": [
-    [
-     "Ben Brown",
-     676962
-    ],
-    [
-     "Matthew Boyd",
-     571510
-    ],
-    [
-     "Kevin Gausman",
-     592332
-    ],
-    [
-     "Clay Holmes",
-     605280
-    ],
-    [
-     "David Peterson",
-     656849
-    ],
-    [
-     "Shota Imanaga",
-     684007
-    ],
-    [
-     "Colin Rea",
-     607067
-    ],
-    [
-     "Justin Steele",
-     657006
-    ],
-    [
-     "Cade Horton",
-     690990
     ]
    ]
   },
