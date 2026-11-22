@@ -1,13 +1,16 @@
 {
- "updated": "2026-11-22T20:30:34.383Z",
+ "updated": "2026-11-22T20:40:30.086Z",
  "articles": [
   {
    "title": "Tigers To Sign Luis Gil",
    "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-sign-luis-gil.html",
    "date": "2026-11-22T20:27:43.000Z",
-   "teams": [],
+   "teams": [
+    "DET"
+   ],
    "body": [
-    "The Tigers are adding free agent righty Luis Gil on a one-year deal, reports Jeff Passan of ESPN. The pact is worth $2.3MM, with another $2MM available in incentives."
+    "The Tigers are adding free agent righty Luis Gil on a one-year deal, reports Jeff Passan of ESPN. The pact is worth $2.3MM, with another $2MM available in incentives.",
+    "Gil was non-tendered by the Yankees on Friday. We had him projected to earn $2.3MM in arbitration. He’ll land that exact figure from Detroit. The performance bonuses haven’t been reported, but they will likely be tied to availability. Injuries have limited Gil to 20 appearances over the past two seasons."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/LuisGil-1-1024x683.jpg",
    "players": [
@@ -7543,31 +7546,6 @@
     [
      "José Soriano",
      667755
-    ]
-   ]
-  },
-  {
-   "title": "Tigers To Hire Kyle Hudson As First Base Coach",
-   "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-hire-kyle-hudson-as-first-base-coach.html",
-   "date": "2026-11-04T21:56:12.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers are expected to add Kyle Hudson as their first base coach, per WEEI’s Rob Bradford. Hudson was most recently with the Red Sox as third base coach.",
-    "Detroit moved on from first base coach Anthony Sanders at the end of this season. He was only with the club for one year. Third base coach Joey Cora was let go midway through the season. He was replaced by Billy Boyer.",
-    "Hudson spent parts of four seasons in Boston. He first came aboard as the first base coach in 2023. He moved across the diamond the following season. Hudson was part of the mass firings near the end of April. After a slow start to the season, the Red Sox moved on from manager Alex Cora and most of his coaching staff. Hudson was replaced by Chad Epperson.",
-    "The Tigers have been among the least-active teams on the basepaths in recent seasons. They’ve ranked 24th or worse in stolen bases for five straight years. Those rankings could certainly be personnel-related. The 2027 lineup could feature more speed with a full season of Max Clark. Kevin McGonigle was also more active as a base stealer in the minors than as a rookie last year, so perhaps he improves on his 12 steals."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/KyleHudson-1024x703.jpg",
-   "players": [
-    [
-     "Max Clark",
-     703601
-    ],
-    [
-     "Kevin McGonigle",
-     805808
     ]
    ]
   },
