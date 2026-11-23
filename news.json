@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T08:50:31.345Z",
+ "updated": "2026-11-23T09:00:37.836Z",
  "articles": [
   {
    "title": "Mets To Sign Tarik Skubal",
@@ -616,8 +616,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/latest-on-freddy-peralta.html",
    "date": "2026-11-21T15:34:43.000Z",
    "teams": [
-    "CWS",
     "CHC",
+    "CWS",
     "TB"
    ],
    "body": [
@@ -789,8 +789,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/nationals-trade-braxton-roxby-to-cubs.html",
    "date": "2026-11-21T00:44:47.000Z",
    "teams": [
-    "WSH",
-    "CHC"
+    "CHC",
+    "WSH"
    ],
    "body": [
     "The Nationals and Cubs announced a trade that sends reliever Braxton Roxby from Washington to Chicago in exchange for cash considerations. The Nats had designated Roxby for assignment on Tuesday. Chicago’s roster count sits at 37.",
@@ -1313,8 +1313,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-acquire-joey-bart.html",
    "date": "2026-11-20T18:28:25.000Z",
    "teams": [
-    "CWS",
-    "CHC"
+    "CHC",
+    "CWS"
    ],
    "body": [
     "Joey Bart is headed north. The Cubs have claimed the catcher off waivers from their crosstown rivals, according to Robert Murray of FanSided. The White Sox designated him for assignment earlier this week.",
@@ -1723,8 +1723,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-claim-chayce-mcdermott.html",
    "date": "2026-11-19T22:00:08.000Z",
    "teams": [
-    "NYM",
-    "CHC"
+    "CHC",
+    "NYM"
    ],
    "body": [
     "The Cubs announced they have claimed right-hander Chayce McDermott off waivers from the Mets. Jon Heyman of The New York Post reported the claim prior to the official announcement. There wasn’t any previous indication that McDermott lost his roster spot with New York but they evidently tried to quietly pass him through waivers. The Cubs had multiple 40-man vacancies and won’t need to make a corresponding move. The Mets’ 40-man count drops to 39.",
@@ -1959,6 +1959,68 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/WhiteSoxhat-generic-1024x682.jpg",
    "players": []
+  },
+  {
+   "title": "Cubs Interested In Teruaki Sato, Jarren Duran",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-interested-in-teruaki-sato-jarren-duran.html",
+   "date": "2026-11-19T17:28:21.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The league’s top offense is in the market for more bats this winter. Patrick Mooney of The Athletic reports that the Cubs have extensively scouted NPB import Teruaki Sato. The club has also evaluated Red Sox outfielder Jarren Duran, a popular trade candidate.",
+    "While the Cubs have clearer needs on the pitching side, there are holes to fill in the lineup. Longtime outfielders Ian Happ and Seiya Suzuki are both free agents. Reserve outfielders Michael Conforto and Tyrone Taylor are also on the open market, along with catcher Carson Kelly.",
+    "Sato is one of the most sought-after hitters available this offseason. He ranked behind only Suzuki and Randy Arozarena among bats in our Top 50 Free Agents list. Sato has racked up 79 home runs and 208 RBI with the Hanshin Tigers over the past two seasons. He won the NPB’s Triple Crown in 2026.",
+    "The defensive fit for Sato in Chicago isn’t ideal. He’s been almost exclusively a third baseman for the past four seasons. The Cubs obviously have Alex Bregman locked in at the hot corner for the foreseeable future. It’s a rock-solid group around the infield with Dansby Swanson, Nico Hoerner, and Michael Busch joining Bregman.",
+    "Sato does have experience in the outfield. He played mostly right field in 2021 and 2022 before moving to the infield on a near full-time basis. He’s mixed in on the grass in recent seasons, making 44 appearances in right field and one in left field over the past two years."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/JarrenDuran-1024x683.jpg",
+   "players": [
+    [
+     "Jarren Duran",
+     680776
+    ],
+    [
+     "Ian Happ",
+     664023
+    ],
+    [
+     "Seiya Suzuki",
+     673548
+    ],
+    [
+     "Michael Conforto",
+     624424
+    ],
+    [
+     "Tyrone Taylor",
+     621438
+    ],
+    [
+     "Carson Kelly",
+     608348
+    ],
+    [
+     "Randy Arozarena",
+     668227
+    ],
+    [
+     "Alex Bregman",
+     608324
+    ],
+    [
+     "Dansby Swanson",
+     621020
+    ],
+    [
+     "Nico Hoerner",
+     663538
+    ],
+    [
+     "Michael Busch",
+     683737
+    ]
+   ]
   },
   {
    "title": "Nationals Prefer Short-Term Deals In Search For Rotation Help",
@@ -2862,6 +2924,31 @@
     [
      "Jack Flaherty",
      656427
+    ]
+   ]
+  },
+  {
+   "title": "Cubs Select Jaxon Wiggins, Brody McCullough",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-select-jaxon-wiggins-brody-mccullough.html",
+   "date": "2026-11-17T23:58:57.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs announced that they have selected right-handers Jaxon Wiggins and Brody McCullough to the 40-man roster. Those players are now protected from the Rule 5 draft, if it even takes place this offseason. The club’s 40-man roster count is now at 36.",
+    "The 2021 Rule 5 draft was put on pause as part of the lockout that took place that offseason. It wasn’t clear what would eventually happen. Once the league and the players reached a new deal in March, the draft was scrapped.",
+    "This year’s draft is scheduled for December 9, one week after the league is expected to lock out the players again. It’s possible the draft will be banged once more but that’s not guaranteed, so clubs have to proceed as though it might still take place. Some borderline additions might be left unprotected but teams aren’t going to take chances with really notable prospects.",
+    "The decision was fairly straightforward with Wiggins, who is now 25 years old. Baseball America lists him as the #4 prospect in the Cubs’ system. He has big strikeout stuff but has had issues controlling it. BA notes that his fastball sits in the upper-90s. He also features a slider, changeup and curveball."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Jaxon_Wiggins_Cubs-1024x683.jpg",
+   "players": [
+    [
+     "Jaxon Wiggins",
+     694393
+    ],
+    [
+     "Brody McCullough",
+     805664
     ]
    ]
   },
@@ -4286,6 +4373,55 @@
    ]
   },
   {
+   "title": "Cubs Interested In Trevor Rogers",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-interested-in-trevor-rogers.html",
+   "date": "2026-11-16T20:35:20.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs are showing interest in free agent left-hander Trevor Rogers, reports Sahadev Sharma of The Athletic. Sharma adds that the club needs multiple arms and is touching base with almost every starter.",
+    "Rogers, 29, isn’t a household name but has somewhat quietly been one of the better starters in baseball lately. Dating back to the start of the 2025 season, he has made 48 starts and thrown 279 1/3 innings with a 3.16 earned run average. His 23.2% strikeout rate and 6.1% walk rate in that time were both better than average while his 41.1% ground ball rate was just shy of par. FanGraphs credited him with 7.3 wins above replacement over those two years. Only 16 pitchers were ahead of him in that regard.",
+    "The Orioles extended Rogers a $23.15MM qualifying offer at season’s end. MLBTR predicted that he could decline that offer and still secure a five-year deal worth $115MM. Rogers’ numbers leading up to free agency line up fairly well with Ranger Suarez, as Suarez had a 3.33 ERA, 23.2% strikeout rate, 6.2% walk rate and 49.3% ground ball rate in his two seasons prior to free agency. He then landed a five-year, $130MM deal with the Red Sox. We put our Rogers prediction a bit under Suarez because Ranger had the longer track record of success.",
+    "As Sharma mentioned, the Cubs need to be in touch with just about every available starter. Matthew Boyd, Kevin Gausman, Clay Holmes, David Peterson, Shota Imanaga and Colin Rea all became free agents a few weeks ago."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/TrevorRogers-1024x683.jpg",
+   "players": [
+    [
+     "Trevor Rogers",
+     669432
+    ],
+    [
+     "Ranger Suarez",
+     624133
+    ],
+    [
+     "Matthew Boyd",
+     571510
+    ],
+    [
+     "Kevin Gausman",
+     592332
+    ],
+    [
+     "Clay Holmes",
+     605280
+    ],
+    [
+     "David Peterson",
+     656849
+    ],
+    [
+     "Shota Imanaga",
+     684007
+    ],
+    [
+     "Colin Rea",
+     607067
+    ]
+   ]
+  },
+  {
    "title": "A’s To Re-Sign Ben Bowden On Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/athletics-re-sign-ben-bowden.html",
    "date": "2026-11-16T19:37:39.000Z",
@@ -5205,12 +5341,53 @@
    ]
   },
   {
+   "title": "Cubs Notes: Ramirez, Kelly, Hoyer, Staffing",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-notes-ramirez-kelly-hoyer-staffing.html",
+   "date": "2026-11-13T20:09:14.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs have two spots to fill in the outfield alongside newly minted NL MVP Pete Crow-Armstrong with Ian Happ and Seiya Suzuki heading to free agency. The internal replacements include Pedro Ramirez, Matt Shaw, and Kevin Alcantara. Ramirez could be the leader in the clubhouse based on recent comments from GM Carter Hawkins.",
+    "The lead exec praised Ramirez’ athleticism and work ethic, factors that could help him transition into a more versatile role, as relayed by Meghan Montemurro of the Chicago Tribune. The 22-year-old primarily played second and third base in the minors, but played some first base and left field after his big-league promotion.",
+    "“There’s a risk to going with some unproven guys, but that allows you maybe to get some more proven guys in other spots,” Hawkins said. “I don’t think there’s one path that we necessarily would cross out at this juncture.”",
+    "Ramirez forced his way to the majors by hitting.312 with nine homers and 19 steals in 43 games at Triple-A. He held his own in his first taste of the highest level, slashing.261/.321/.402 across 266 plate appearances. Ramirez added six homers and nine steals. The thefts have always been a part of his profile, but the power was a big addition in 2026. He’d totaled 25 homers in four pro seasons before popping 15 this year."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/PedroRamirez-1024x683.jpg",
+   "players": [
+    [
+     "Pete Crow-Armstrong",
+     691718
+    ],
+    [
+     "Ian Happ",
+     664023
+    ],
+    [
+     "Seiya Suzuki",
+     673548
+    ],
+    [
+     "Pedro Ramirez",
+     699393
+    ],
+    [
+     "Matt Shaw",
+     807713
+    ],
+    [
+     "Kevin Alcantara",
+     682634
+    ]
+   ]
+  },
+  {
    "title": "Cubs, White Sox, Padres Among Teams Interested In Kaima Taira",
    "link": "https://www.mlbtraderumors.com/2026/11/kaima-taira-rumors-cubs-white-sox-padres-giants-blue-jays.html",
    "date": "2026-11-13T19:03:29.000Z",
    "teams": [
-    "CWS",
     "CHC",
+    "CWS",
     "SD",
     "SF",
     "TOR"
@@ -5454,9 +5631,9 @@
    "link": "https://www.mlbtraderumors.com/2026/11/multiple-teams-interested-in-dustin-may.html",
    "date": "2026-11-13T01:35:27.000Z",
    "teams": [
-    "HOU",
     "CHC",
     "CWS",
+    "HOU",
     "MIA",
     "SD"
    ],
@@ -5496,6 +5673,42 @@
     [
      "JoJo Romero",
      668941
+    ]
+   ]
+  },
+  {
+   "title": "Pete Crow-Armstrong Wins NL MVP Award",
+   "link": "https://www.mlbtraderumors.com/2026/11/pete-crow-armstrong-wins-nl-mvp-award.html",
+   "date": "2026-11-13T00:53:52.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Baseball Writers Association of America announced Thursday that Cubs center fielder Pete Crow-Armstrong has been named the National League’s Most Valuable Player. Shohei Ohtani and Brice Turang placed second and third, respectively. Crow-Armstrong received all 30 first-place votes, giving us unanimous winners in both leagues.",
+    "Crow-Armstrong snaps Ohtani’s streak of three consecutive MVP wins behind a massive season on both sides of the ball. The 24-year-old outfielder was easily the best player in baseball this year. He tied Kyle Schwarber for the major league lead with 45 home runs, adding 31 doubles and eight triples. His 84 extra-base hits easily led the NL, nine clear of Matt Olson in second place. He added 41 steals in 48 attempts, making him the only player in the majors this year to go 40-40. It’s one of seven such seasons in baseball history.",
+    "The accolades don’t stop there. Crow-Armstrong led qualified National League hitters with a.570 slugging percentage and.943 OPS. He batted.280/.372/.570 across an NL-leading 726 plate appearances. He led the majors with 119 runs scored and was third in the NL with 107 RBI. He and Turang were the only NL hitters to both score and drive in 100 runs."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-24T191621Z_2040357912_MT1USATODAY29901751_RTRMADP_3_MLB-MIAMI-MARLINS-AT-CHICAGO-CUBS-1024x683.jpg",
+   "players": [
+    [
+     "Pete Crow-Armstrong",
+     691718
+    ],
+    [
+     "Shohei Ohtani",
+     660271
+    ],
+    [
+     "Brice Turang",
+     668930
+    ],
+    [
+     "Kyle Schwarber",
+     656941
+    ],
+    [
+     "Matt Olson",
+     621566
     ]
    ]
   },
