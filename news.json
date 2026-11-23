@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T01:40:32.386Z",
+ "updated": "2026-11-23T01:50:29.313Z",
  "articles": [
   {
    "title": "MLBTR Live Chat",
@@ -18,8 +18,7 @@
    "date": "2026-11-23T01:00:40.000Z",
    "teams": [
     "NYM",
-    "TOR",
-    "NYY"
+    "TOR"
    ],
    "body": [
     "The Mets outpaced the market in signing Tarik Skubal to a nine-year, $450MM agreement earlier today, setting a new record as the largest contract ever given to a pitcher. The Dodgers, Padres, and Blue Jays were the other suitors known to be in on Skubal, and The Athletic’s Mitch Bannon reports that Toronto also offered Skubal a nine-year pact worth a little more than $400MM.",
@@ -5747,6 +5746,36 @@
     [
      "Gabriel Moreno",
      672515
+    ]
+   ]
+  },
+  {
+   "title": "Mets, Yankees Met With Alec Bohm At GM Meetings",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-yankees-met-with-alec-bohm-at-gm-meetings.html",
+   "date": "2026-11-12T23:40:14.000Z",
+   "teams": [
+    "NYY",
+    "NYM"
+   ],
+   "body": [
+    "Free agent infielder Alec Bohm met with both the Yankees and Mets at this week’s general managers’ meetings in Las Vegas, according to reporting from Ken Rosenthal and Will Sammon of The Athletic. The connection to the Yankees was previously reported.",
+    "Rosenthal and Sammon specify that the Mets would be interested in Bohm at first base, which makes a lot of sense. For one thing, the Mets already have a third baseman in Bo Bichette, whereas first base is more open.",
+    "Bohm has played both corner spots but his glovework at third has never been highly regarded. In almost 6,000 career innings at third base, he has a grade of minus-58 from Defensive Runs Saved. From 2020 to the present, that’s the worst DRS mark of any third baseman and tied for second-worst of any player at any position. Jose Altuve’s minus-73 mark at second base is the only person beyond Bohm in that regard. Bohm’s minus-15 grade from Outs Above Average and minus-16 from Fielding Run Value aren’t quite as extreme but still subpar.",
+    "Due to his poor work at third, he has spent more time at first as his career has gone on. His defensive grades at first are also subpar but aren’t as bad, especially when focusing on more recent seasons. Bohm has a grade of minus-4 DRS at first in his career but was above average in both 2025 and 2026. He has minus-8 OAA and minus-7 FRV for his career but has been close to par over the past three campaigns."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/05/AlecBohm-1024x683.jpg",
+   "players": [
+    [
+     "Alec Bohm",
+     664761
+    ],
+    [
+     "Bo Bichette",
+     666182
+    ],
+    [
+     "Jose Altuve",
+     514888
     ]
    ]
   },
