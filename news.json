@@ -1,16 +1,24 @@
 {
- "updated": "2026-11-24T15:10:40.037Z",
+ "updated": "2026-11-24T15:20:37.852Z",
  "articles": [
   {
    "title": "Cubs To Sign Teruaki Sato",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-teruaki-sato.html",
    "date": "2026-11-24T15:08:59.000Z",
-   "teams": [],
+   "teams": [
+    "CHC"
+   ],
    "body": [
-    "The Cubs have agreed to a deal with third baseman Teruaki Sato, reports Jeff Passan of ESPN. It’s a six-year, $120MM pact."
+    "The Cubs have agreed to a deal with slugger Teruaki Sato, reports Jeff Passan of ESPN. It’s a six-year, $120MM pact. Michael Cerami of Bleacher Nation was the first to report that the two sides were nearing an agreement.",
+    "Chicago has dropped $240MM in the span of 12 hours on two massive additions. The club signed left-hander Trevor Rogers last night, and now locks up one of the top bats in the free agent market. Sato won the Triple Crown in NPB last season, slashing.306/.383/.609 with 39 home runs. The 27-year-old is expected to play corner outfield for the Cubs, notes Passan."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/TeruakiSato-1-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Trevor Rogers",
+     669432
+    ]
+   ]
   },
   {
    "title": "The Opener: Labor Proposal Schedule, Rogers, Skubal Bidding",
@@ -1201,8 +1209,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-to-acquire-johan-oviedo.html",
    "date": "2026-11-20T23:07:33.000Z",
    "teams": [
-    "BOS",
-    "ARI"
+    "ARI",
+    "BOS"
    ],
    "body": [
     "The Diamondbacks announced the acquisition of right-hander Johan Oviedo from the Red Sox for relief prospect Luke Dotson and a player to be named later or cash considerations. Arizona’s 40-man roster tally sits at 38.",
@@ -1313,8 +1321,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/2026-non-tenders-national-league.html",
    "date": "2026-11-20T22:17:08.000Z",
    "teams": [
-    "ATL",
     "ARI",
+    "ATL",
     "CHC",
     "CIN",
     "COL",
@@ -3703,6 +3711,46 @@
    ]
   },
   {
+   "title": "Diamondbacks Select Six Players",
+   "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-select-six-players.html",
+   "date": "2026-11-17T22:56:18.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "The Diamondbacks have selected six players to their 40-man roster, reports Nick Piecoro of The Arizona Republic. The six are infielders Demetrio Crisantes and Cristofer Torin, outfielder Druw Jones, left-hander Spencer Giesting, as well as right-handers Ashton Izzi and Wellington Aracena. Those players are now protected from being selected in the Rule 5 draft, if it takes place. Arizona had seven vacancies on the 40-man roster coming into today so no corresponding moves will be required.",
+    "It’s unclear if there will even be a Rule 5 draft this winter. It is scheduled for December 9, a week after the league is expected to lock out the players. Five years ago, the draft was held in limbo until the lockout ended, at which point it was canceled. It’s not a guarantee that the same thing will happen this offseason, so teams still have to give roster spots to any eligible players they don’t want to risk losing.",
+    "Jones is perhaps the most recognizable name in the bunch because he is the son of Hall-of-Famer Andruw Jones. The younger Jones was taken by the Snakes with the second overall pick in the 2022 draft. Prospect evaluators often compare him to his father, especially when it comes to his speed and defense. The big question with Jones what he can do from the batter’s box. Jones will take his walks but doesn’t have huge power and strikes out a decent amount."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Druw_Jones_Diamondbacks-1024x683.jpg",
+   "players": [
+    [
+     "Demetrio Crisantes",
+     702679
+    ],
+    [
+     "Cristofer Torin",
+     800198
+    ],
+    [
+     "Druw Jones",
+     702258
+    ],
+    [
+     "Spencer Giesting",
+     801517
+    ],
+    [
+     "Ashton Izzi",
+     802416
+    ],
+    [
+     "Wellington Aracena",
+     800286
+    ]
+   ]
+  },
+  {
    "title": "Rays Select Xavier Isaac",
    "link": "https://www.mlbtraderumors.com/2026/11/rays-select-xavier-isaac.html",
    "date": "2026-11-17T22:50:47.000Z",
@@ -4755,6 +4803,28 @@
    ]
   },
   {
+   "title": "Jordan Lawlar Underwent UCL Surgery",
+   "link": "https://www.mlbtraderumors.com/2026/11/jordan-lawlar-underwent-tommy-john-surgery.html",
+   "date": "2026-11-16T17:40:54.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "Diamondbacks outfielder Jordan Lawlar had UCL surgery this offseason, reports Steve Gilbert of MLB.com. There had been no previous indication that Lawlar was dealing with an elbow injury. He’s expected to be ready for the start of the 2027 season.",
+    "Lawlar has long been one of the top hitting prospects in Arizona’s system, but he’s been routinely hampered by injuries. He broke camp with the club this year but fractured his wrist a week into the season. Lawlar returned after a two-month absence, then went back on the IL a week later with a hamstring strain.",
+    "The Diamondbacks reinstated Lawlar in mid-August and he seemed to close the season healthy. He picked up semi-regular work in center field as the club pushed for a Wild Card spot. Arizona ultimately came up just short in chasing down Philadelphia. Lawlar delivered a.781 OPS in September, but was apparently playing through an elbow injury.",
+    "“He had some lingering issues with the elbow that he told us about during the year that didn’t really affect him playing or missing any time,” general manager Mike Hazen told Gilbert. “But after the down period at the end of the season when he started up, he kind of still felt it and didn’t really want to go into next season with that still nagging him.”",
+    "Gilbert referred to the procedure as “Tommy John brace surgery,” which would suggest it wasn’t a full reconstruction. That helps trim the recovery timeline. Position players typically come back sooner than pitchers anyway."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/JordanLawlar-1024x683.jpg",
+   "players": [
+    [
+     "Jordan Lawlar",
+     691783
+    ]
+   ]
+  },
+  {
    "title": "Mets Acquire International Bonus Money From Rangers",
    "link": "https://www.mlbtraderumors.com/2026/11/mets-acquire-international-bonus-money-from-rangers.html",
    "date": "2026-11-16T16:58:32.000Z",
@@ -4853,6 +4923,27 @@
     [
      "A.J. Minter",
      621345
+    ]
+   ]
+  },
+  {
+   "title": "Orioles Interested In Ketel Marte",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-interested-in-ketel-marte.html",
+   "date": "2026-11-16T00:04:35.000Z",
+   "teams": [
+    "ARI",
+    "BAL"
+   ],
+   "body": [
+    "The Orioles and Diamondbacks have had some talks about Ketel Marte, MLB.com’s Jake Rill reports. “No deal was imminent at the time,” Rill writes, and it isn’t known if the discussions were a due-diligence check-in on Baltimore’s part, or if the O’s have a keener interest in the three-time All-Star.",
+    "Marte’s availability is certainly the biggest storyline of the Diamondbacks’ offseason, yet the second baseman holds all the cards to a potential deal due to his no-trade rights as a 10-and-5 player. The relationship between Marte and the team may already in an awkward state due to his no-show of a game in Boston in August, which was the most public of a few instances of Marte reportedly skipping out of games in the last few years. If Marte himself wants out of Arizona, he hasn’t shared any details publicly or even with the D’Backs, as per recent reports.",
+    "To further complicate matters, Marte hit.249/.316/.432 with 22 homers over 624 plate appearances in 2026. This translated to a 103 wRC+, well below the 134 wRC+ Marte averaged in his previous seven seasons. It remains to be seen if this downturn could be health-related (Marte spent some time on the 10-day IL due to left knee inflammation following the Boston incident), some mental stress stemming from the clubhouse issues, or perhaps just the aging curve as Marte is set to enter his age-33 season."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/04/USATSI_28613856-1024x673.jpg",
+   "players": [
+    [
+     "Ketel Marte",
+     606466
     ]
    ]
   },
@@ -4974,6 +5065,26 @@
     [
      "Jonathan Loaisiga",
      642528
+    ]
+   ]
+  },
+  {
+   "title": "Latest On Ketel Marte",
+   "link": "https://www.mlbtraderumors.com/2026/11/latest-on-ketel-marte.html",
+   "date": "2026-11-15T05:05:39.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "Diamondbacks officials met with Ketel Marte’s agent Charisse Espinosa-Dash during the GM Meetings this week, but the D’Backs “but did not seem to come away with a clear idea about what teams to which Marte would be willing to approve a deal,” the Arizona Republic’s Nick Piecoro writes. Marte has full no-trade protection as a 10-and-5 player, so even though he is one of the offseason’s most prominent trade candidates, the possibility exists that Marte will remain in Arizona simply because he isn’t interested in changing teams.",
+    "It puts the D’Backs in something of an awkward position, especially since the impending lockout will interrupt all transactions activity for what could be months on end. If Marte isn’t dealt by 10:59pm CT on December 1 (when the current collective bargaining agreement expires and the league is expected to lock out the players), the uncertainty over his future will continue to linger over all of the Diamondbacks’ remaining offseason plans.",
+    "As Piecoro puts it, “the Diamondbacks seem to have little choice but to sort of blindly attempt to make the best deal possible without knowing whether Marte will approve it.” In terms of what that best deal might entail, Piecoro writes that the D’Backs have looked into all variety of trades in their early discussions about Marte — bringing in just prospects, swapping the second baseman for other established big league talents, or a trade package of both veteran and younger talent."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-08-17T235827Z_540634315_MT1USATODAY29606623_RTRMADP_3_MLB-COLORADO-ROCKIES-AT-ARIZONA-DIAMONDBACKS-1024x700.jpg",
+   "players": [
+    [
+     "Ketel Marte",
+     606466
     ]
    ]
   },
@@ -5905,42 +6016,6 @@
    ]
   },
   {
-   "title": "Pete Crow-Armstrong Wins NL MVP Award",
-   "link": "https://www.mlbtraderumors.com/2026/11/pete-crow-armstrong-wins-nl-mvp-award.html",
-   "date": "2026-11-13T00:53:52.000Z",
-   "teams": [
-    "CHC"
-   ],
-   "body": [
-    "The Baseball Writers Association of America announced Thursday that Cubs center fielder Pete Crow-Armstrong has been named the National League’s Most Valuable Player. Shohei Ohtani and Brice Turang placed second and third, respectively. Crow-Armstrong received all 30 first-place votes, giving us unanimous winners in both leagues.",
-    "Crow-Armstrong snaps Ohtani’s streak of three consecutive MVP wins behind a massive season on both sides of the ball. The 24-year-old outfielder was easily the best player in baseball this year. He tied Kyle Schwarber for the major league lead with 45 home runs, adding 31 doubles and eight triples. His 84 extra-base hits easily led the NL, nine clear of Matt Olson in second place. He added 41 steals in 48 attempts, making him the only player in the majors this year to go 40-40. It’s one of seven such seasons in baseball history.",
-    "The accolades don’t stop there. Crow-Armstrong led qualified National League hitters with a.570 slugging percentage and.943 OPS. He batted.280/.372/.570 across an NL-leading 726 plate appearances. He led the majors with 119 runs scored and was third in the NL with 107 RBI. He and Turang were the only NL hitters to both score and drive in 100 runs."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-24T191621Z_2040357912_MT1USATODAY29901751_RTRMADP_3_MLB-MIAMI-MARLINS-AT-CHICAGO-CUBS-1024x683.jpg",
-   "players": [
-    [
-     "Pete Crow-Armstrong",
-     691718
-    ],
-    [
-     "Shohei Ohtani",
-     660271
-    ],
-    [
-     "Brice Turang",
-     668930
-    ],
-    [
-     "Kyle Schwarber",
-     656941
-    ],
-    [
-     "Matt Olson",
-     621566
-    ]
-   ]
-  },
-  {
    "title": "Padres Have Received Interest In Freddy Fermin, Luis Campusano",
    "link": "https://www.mlbtraderumors.com/2026/11/padres-have-received-interest-in-freddy-fermin-luis-campusano.html",
    "date": "2026-11-13T00:48:49.000Z",
@@ -6207,8 +6282,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-notes-infield-outfield-rotation-bullpen-barger.html",
    "date": "2026-11-12T16:50:31.000Z",
    "teams": [
-    "HOU",
     "ARI",
+    "HOU",
     "LAA",
     "SF",
     "TOR",
@@ -6423,6 +6498,42 @@
     [
      "Bryce Harper",
      547180
+    ]
+   ]
+  },
+  {
+   "title": "Diamondbacks Notes: Sato, Rotation, Marte",
+   "link": "https://www.mlbtraderumors.com/2026/11/dbacks-trade-rumors-ketel-marte-starting-pitching-teruaki-sato.html",
+   "date": "2026-11-11T21:53:09.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "The Diamondbacks are known to be reducing payroll from 2026’s franchise-record levels as they head into the 2027 season, but they’re still keeping tabs on some big names. Ken Rosenthal, Will Sammon and Katie Woo of The Athletic report that Arizona has done its due diligence on Nippon Professional Baseball star Teruaki Sato, who is available to MLB clubs after being posted by NPB’s Hanshin Tigers.",
+    "Sato, 27, is the reigning Triple Crown winner in NPB. He belted 39 home runs this past season (and hit 40 in 2025) while slashing.303/.386/.609 in 614 plate appearances. It’s the most productive season of Sato’s career. He’s steadily improved throughout his 20s in NPB, debuting with a slightly better-than-average line as a 22-year-old rookie back in 2021 but emerging as one of Japan’s best offensive players over the past two seasons.",
+    "The D-backs have a known preference for left-handed bats. Sato has been a third baseman in Japan, though he’s dabbled in the outfield corners as well. Third base is spoken for by Nolan Arenado in Arizona — but there’s been talk of Arenado potentially playing some first base. Some scouts around the league feel Sato is athletic enough to shift to the outfield and become a better defender there than he is at the hot corner, however. Arizona has some uncertainty in the outfield, where inexperienced former top prospects Jordan Lawlar and Ryan Waldschmidt are set to take regular reps in conjunction with veterans Corbin Carroll and Lars Nootbaar."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/09/teruaki-sato-1024x683.jpg",
+   "players": [
+    [
+     "Nolan Arenado",
+     571448
+    ],
+    [
+     "Jordan Lawlar",
+     691783
+    ],
+    [
+     "Ryan Waldschmidt",
+     814439
+    ],
+    [
+     "Corbin Carroll",
+     682998
+    ],
+    [
+     "Lars Nootbaar",
+     663457
     ]
    ]
   },
@@ -6747,6 +6858,27 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2015/10/Angels-generic-1024x716.jpg",
    "players": []
+  },
+  {
+   "title": "Best Fits For A Ketel Marte Trade",
+   "link": "https://www.mlbtraderumors.com/2026/11/best-fits-for-a-ketel-marte-trade.html",
+   "date": "2026-11-10T03:02:29.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "Teams are expected to lay the foundation for their offseason trade talks as the GM Meetings get underway. Diamondbacks second baseman Ketel Marte is one of the biggest names available. The Snakes have more or less acknowledged that they’ll listen to offers on the three-time All-Star, who has clearly frustrated many within the organization by failing to show up for certain games over the years.",
+    "Marte has full control over his destiny, as he secured no-trade protection by reaching 10 years of service time (the last five of which have come in Arizona). He’s signed for another five years at a total of $87.5MM, covering ages 33-37. Marte is only making a $12MM salary next year, though, and $3MM of that is deferred.",
+    "That’s a fine salary even if he only repeats his league average.249/.316/.432 showing this year. If he bounces back some or all of the way to the player he was before, arguably the best second baseman in the sport, it’s a bargain for the on-field production. There’ll surely be teams that have trepidations about Marte’s work habits, and some might take him off their target list altogether, but the D-Backs should get some kind of interest given the star offensive upside he’s shown at his best.",
+    "Let’s run through the league to determine which teams should be most motivated to pull Marte from the desert."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-19T131359Z_1837706411_MT1USATODAY29856034_RTRMADP_3_MLB-NEW-YORK-YANKEES-AT-ARIZONA-DIAMONDBACKS-1024x684.jpg",
+   "players": [
+    [
+     "Ketel Marte",
+     606466
+    ]
+   ]
   },
   {
    "title": "Sal Stewart Wins NL Rookie Of The Year, Earns PPI Pick For Reds",
@@ -7191,6 +7323,30 @@
     [
      "Yilber Díaz",
      700270
+    ]
+   ]
+  },
+  {
+   "title": "Corbin Carroll Undergoes Elbow Surgery; Expects Mostly Normal Offseason",
+   "link": "https://www.mlbtraderumors.com/2026/11/corbin-carroll-undergoes-elbow-surgery-expects-mostly-normal-offseason.html",
+   "date": "2026-11-06T23:10:06.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "Diamondbacks outfielder Corbin Carroll tells Nick Piecoro of the Arizona Republic that he recently underwent elbow surgery to remove loose bodies from his right elbow. The procedure used the NanoNeedle, the same technology used in Tarik Skubal’s surgery earlier this year. Carroll planned to start swinging in November. That offseason work will now be delayed but only by two weeks.",
+    "Carroll tells Piecoro that he felt some discomfort in that right elbow, which is his non-throwing arm, during the season. That discomfort worsened lately, which eventually led to this surgery. The NanoNeedle is a fairly new technology. In essence, it’s smaller than other arthroscopes, which hopefully leads to smaller incision and therefore less pain, swelling and recovery time. In Skubal’s case, it seemed to work, as he returned in about six weeks from a procedure that would usually take a few months.",
+    "With Carroll, it should be even less significant. As mentioned, this surgery was performed on his non-throwing arm. Also, position players can usually return from elbow surgeries quicker than pitchers. Carroll’s offseason swinging program was set to start in November but will now be pushed by a few weeks into December. Apart from that, it will hopefully be a normal winter for Carroll."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Corbin_Carroll_Diamondbacks-copy-1024x688.jpg",
+   "players": [
+    [
+     "Corbin Carroll",
+     682998
+    ],
+    [
+     "Tarik Skubal",
+     669373
     ]
    ]
   },
@@ -7705,6 +7861,75 @@
     [
      "Eduardo Rivera",
      700842
+    ]
+   ]
+  },
+  {
+   "title": "Diamondbacks Outright Pavin Smith",
+   "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-outright-pavin-smith-2.html",
+   "date": "2026-11-03T05:36:46.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "The Diamondbacks sent first baseman Pavin Smith outright off the roster, according to the MiLB.com transaction tracker. That’ll drop their 40-man roster tally to 33.",
+    "Smith always seemed likely to lose his roster spot this offseason. Arizona already sent him through outright waivers around the All-Star Break. They called him back up in September in hope of finding a jolt against right-handed pitching. Smith managed a pinch-hit, walk-off home run to beat the Yankees on September 19 and had a big final two weeks. He had hit just.141/.236/.192 in 89 plate appearances before losing his MLB spot, though.",
+    "MLBTR contributor Matt Swartz projected Smith for a $2.5MM arbitration salary. This functions as an early non-tender of the former #7 overall pick. Smith will almost certainly file for free agency in the next day or two. He’ll take a league average.242/.325/.398 career slash line to the open market. Arizona will be in the market for left-handed bats and will need to acquire at least one player to slot at first base or designated hitter.",
+    "Jake Bauers is the top free agent first baseman but is attached to a qualifying offer and likely out of Arizona’s price range. Ty France, Alec Bohm, Josh Bell, Nathaniel Lowe, Joc Pederson, Eugenio Suárez and George Springer are available as free agent first base/DH types. The trade market could feature Andrew Vaughn (especially if Bauers accepts the QO to stay in Milwaukee), Spencer Torkelson, Royce Lewis and Jake Burger."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-25T084129Z_346562335_MT1USATODAY29907626_RTRMADP_3_MLB-NEW-YORK-YANKEES-AT-ARIZONA-DIAMONDBACKS-1024x683.jpg",
+   "players": [
+    [
+     "Pavin Smith",
+     656976
+    ],
+    [
+     "Jake Bauers",
+     641343
+    ],
+    [
+     "Ty France",
+     664034
+    ],
+    [
+     "Alec Bohm",
+     664761
+    ],
+    [
+     "Josh Bell",
+     605137
+    ],
+    [
+     "Nathaniel Lowe",
+     663993
+    ],
+    [
+     "Joc Pederson",
+     592626
+    ],
+    [
+     "Eugenio Suárez",
+     553993
+    ],
+    [
+     "George Springer",
+     543807
+    ],
+    [
+     "Andrew Vaughn",
+     683734
+    ],
+    [
+     "Spencer Torkelson",
+     679529
+    ],
+    [
+     "Royce Lewis",
+     668904
+    ],
+    [
+     "Jake Burger",
+     669394
     ]
    ]
   },
@@ -8389,6 +8614,31 @@
    "players": []
   },
   {
+   "title": "Michael Soroka Declines Mutual Option With D-Backs",
+   "link": "https://www.mlbtraderumors.com/2026/10/michael-soroka-declines-mutual-option-with-d-backs.html",
+   "date": "2026-10-31T00:04:34.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "Michael Soroka has officially declined his end of a $10MM mutual option with the Diamondbacks, reports Nick Piecoro of The Arizona Republic. He’ll be paid a $1MM buyout and return to free agency.",
+    "This was inevitable, as Soroka has put himself in position to do pretty well financially. The Diamondbacks picked him up on a $7.5MM deal last offseason. (He earned an additional $1.35MM in performance bonuses by starting 20 games.) He was initially slated to open the season in a swing role, but an Opening Day injured list stint for Merrill Kelly drew him into the starting five.",
+    "Soroka was one of Torey Lovullo’s more reliable starters and held a rotation spot all season. He pitched to a 3.41 earned run average across 116 innings. He led Arizona starters with a 24.1% strikeout rate while limiting his free passes to a 6% clip. Soroka tailed off a bit in the second half as he navigated injured list stints for a left glute strain and arm inflammation, yet it was mid-rotation production on a rate basis. This was also his highest workload since 2019.",
+    "The innings questions are going to keep Soroka from commanding a massive contract, but he’s very likely to secure a multi-year deal. He’s entering his age-29 season and has one of the better strikeout and walk profiles of the group of mid-tier free agent starters. Soroka has a chance at three years, with a two-year pact in the $10-12MM range feeling like a floor."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-09-27T193834Z_1461544772_MT1USATODAY29933814_RTRMADP_3_MLB-ARIZONA-DIAMONDBACKS-AT-SAN-DIEGO-PADRES-1024x683.jpg",
+   "players": [
+    [
+     "Michael Soroka",
+     647336
+    ],
+    [
+     "Merrill Kelly",
+     518876
+    ]
+   ]
+  },
+  {
    "title": "Guardians Select Milan Tolentino",
    "link": "https://www.mlbtraderumors.com/2026/10/guardians-select-milan-tolentino.html",
    "date": "2026-10-30T22:20:27.000Z",
@@ -8435,6 +8685,56 @@
    ]
   },
   {
+   "title": "Diamondbacks To Hire Ben Fritz As Pitching Coach",
+   "link": "https://www.mlbtraderumors.com/2026/10/diamondbacks-to-hire-ben-fritz-as-pitching-coach.html",
+   "date": "2026-10-30T21:10:32.000Z",
+   "teams": [
+    "ARI",
+    "COL",
+    "SD"
+   ],
+   "body": [
+    "The Diamondbacks have a new pitching coach. Dennis Lin of The Athletic reports that Arizona has snaked Ben Fritz away from the Padres. He has been working as the bullpen coach in San Diego. The Snakes parted ways with pitching coach Brian Kaplan earlier this month.",
+    "Fritz, 45, was a first-round pick of the Athletics back in 2002. He pitched in the minors through 2008 but never made it to the big leagues. He kept pitching in indy ball through 2010. The Padres gave him a minor league coaching job in 2015. He got the bullpen coach job at the big league level ahead of the 2020 season. He was briefly the pitching coach in 2021. Larry Rothschild was fired from that job in August of that year. Fritz held the job the rest of the way and then Ruben Niebla was hired in October.",
+    "For what it’s worth, the Padres have had good results in the pitching department in recent years. From 2020 to 2026, San Diego pitchers posted a collective 3.86 earned run average, behind just six other clubs. The Diamondbacks had a 4.55 ERA in that same time frame, better than just three teams.",
+    "It’s always tough to determine how much credit or blame to give to an individual coach, since he can only work with the players on the roster and is also just one member of a larger staff. But it seems Fritz has a good reputation in the league. He reportedly drew some interest from other clubs last year. Lin’s report from today notes that the Rockies were interested in him for their pitching coach vacancy but the Diamondbacks have managed to bring him aboard."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/Ben_Fritz_Padres-scaled-e1793392512724-1024x731.jpg",
+   "players": []
+  },
+  {
+   "title": "Diamondbacks Seeking Controllable Starting Pitching",
+   "link": "https://www.mlbtraderumors.com/2026/10/diamondbacks-seeking-controllable-starting-pitching.html",
+   "date": "2026-10-30T15:20:18.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "After deciding whether or not to trade Ketel Marte, a secondary item on the Diamondbacks’ to-do list will be adding to the rotation. General manager Mike Hazen tells Nick Piecoro of The Arizona Republic that he would like to acquire a controllable starter. That is more likely to happen via trade, as Hazen is unlikely to push hard for a starter in free agency given the team is planning to reduce payroll.",
+    "The D-backs had a middling 4.28 ERA out of their rotation this year. The group’s 9.6% K-BB rate bested only the lowly Rockies, as Arizona’s starters showed good control but struggled to strike opponents out. Eduardo Rodriguez was better than expected. He posted a 2.89 ERA over 32 starts despite middling peripherals and led the staff with 3.2 fWAR. Michael Soroka and Brandon Pfaadt were the next best performers after him. Both had ERAs below 3.40, with Soroka riding an above-average 24.1% strikeout rate and Pfaadt relying on ground balls and control.",
+    "The trouble is that Soroka will become a free agent once he declines his end of a $10MM mutual option. Both sides have expressed interest in a reunion, though it remains unclear how far Arizona will go to retain Soroka while also addressing the rest of their roster. The bullpen, first base, and left-handed hitting all need to be addressed, as MLBTR’s Anthony Franco wrote in our Offseason Outlook series."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/mike-hazen-dbacks-2026-2-1024x683.jpg",
+   "players": [
+    [
+     "Ketel Marte",
+     606466
+    ],
+    [
+     "Eduardo Rodriguez",
+     593958
+    ],
+    [
+     "Michael Soroka",
+     647336
+    ],
+    [
+     "Brandon Pfaadt",
+     694297
+    ]
+   ]
+  },
+  {
    "title": "Marlins Exercise Club Option On Sandy Alcantara",
    "link": "https://www.mlbtraderumors.com/2026/10/marlins-exercise-club-option-on-sandy-alcantara.html",
    "date": "2026-10-30T14:28:09.000Z",
@@ -8452,6 +8752,27 @@
     [
      "Sandy Alcantara",
      645261
+    ]
+   ]
+  },
+  {
+   "title": "Diamondbacks Expected To Field Interest On Ketel Marte",
+   "link": "https://www.mlbtraderumors.com/2026/10/diamondbacks-expected-to-field-interest-on-ketel-marte.html",
+   "date": "2026-10-30T04:32:23.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "The Diamondbacks’ biggest offseason question is whether they’ll line up a Ketel Marte trade. Arizona fielded interest in the star second baseman early last offseason, though it seemed mostly a matter of due diligence as they explored ways to add controllable starting pitching.",
+    "There’s a good chance the team will more aggressively shop Marte this offseason — albeit with various reasons why it may be more difficult to actually make a deal. Most notably, Marte can veto any trade after securing 10-and-5 rights (10 years of service time, the last five with one club) in April.",
+    "Reports from both John Gambadoro/Alex Weiner of Arizona Sports and Nick Piecoro of The Arizona Republic indicate that the Snakes will explore Marte trades yet again. Piecoro writes that they’ve received preliminary interest from other clubs, though it’s obviously very early in the process with the trade market just reopening this morning.",
+    "Marte features prominently on MLBTR’s list of the game’s top offseason trade candidates, slotting in at #6. That’s driven in large part by comments from team officials who’ve become increasingly frustrated with Marte no-showing for certain games over the years."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-08-16T191454Z_155381395_MT1USATODAY29597791_RTRMADP_3_MLB-ARIZONA-DIAMONDBACKS-AT-ATLANTA-BRAVES-1024x683.jpg",
+   "players": [
+    [
+     "Ketel Marte",
+     606466
     ]
    ]
   },
