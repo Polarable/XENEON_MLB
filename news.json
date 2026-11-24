@@ -1,6 +1,31 @@
 {
- "updated": "2026-11-24T17:20:36.712Z",
+ "updated": "2026-11-24T17:30:38.798Z",
  "articles": [
+  {
+   "title": "Orioles To Sign Freddy Peralta",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-sign-freddy-peralta.html",
+   "date": "2026-11-24T17:20:25.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles and free agent starter Freddy Peralta are reportedly in agreement on a five-year, $125MM contract. The deal, which is pending a physical, does not contain any deferred money or opt-outs. Peralta, an ACES client, was traded from the Mets to the Rays midseason and thus was ineligible to receive a qualifying offer. He won’t cost Baltimore any form of draft compensation.",
+    "Peralta lands in Baltimore one day after they watched Trevor Rogers depart for Chicago. The two pitchers end up in a similar place contractually, as Rogers also signed for five years at a slightly lower $120MM guarantee. The O’s picked up a compensatory draft choice after the first round next summer as a result of Rogers’ departure.",
+    "It turns out to be a fairly direct replacement for Baltimore president of baseball operations Mike Elias. It’s not necessarily the case that the O’s chose Peralta and the draft choice over Rogers — the players could have geographical or team fit preferences — but the similar contracts will make their career arcs an intriguing subplot over the next half-decade.",
+    "Peralta has had a wildly up-and-down last 12 months. He finished fifth in NL Cy Young balloting in 2025, posting a career-low 2.70 earned run average across 33 starts for Milwaukee. The Brewers, who were highly unlikely to sign him long term, traded him to the Mets last offseason. Spring Training extension talks didn’t progress, seemingly because of a hangup between the club and pitcher on contract length."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/freddy-peralta-pitching-1024x683.jpg",
+   "players": [
+    [
+     "Freddy Peralta",
+     642547
+    ],
+    [
+     "Trevor Rogers",
+     669432
+    ]
+   ]
+  },
   {
    "title": "Yankees Sign Brent Suter",
    "link": "https://www.mlbtraderumors.com/2026/11/yankees-to-sign-brent-suter.html",
@@ -69,31 +94,6 @@
     [
      "Troy Melton",
      675512
-    ]
-   ]
-  },
-  {
-   "title": "Orioles To Sign Freddy Peralta",
-   "link": "https://www.mlbtraderumors.com/2026/11/orioles-sign-freddy-peralta.html",
-   "date": "2026-11-24T15:53:25.000Z",
-   "teams": [
-    "BAL"
-   ],
-   "body": [
-    "The Orioles and free agent starter Freddy Peralta are reportedly in agreement on a five-year, $125MM contract. The deal, which is pending a physical, does not contain any deferred money or opt-outs. Peralta, an ACES client, was traded from the Mets to the Rays midseason and thus was ineligible to receive a qualifying offer. He won’t cost Baltimore any form of draft compensation.",
-    "Peralta lands in Baltimore one day after they watched Trevor Rogers depart for Chicago. The two pitchers end up in a similar place contractually, as Rogers also signed for five years at a slightly lower $120MM guarantee. The O’s picked up a compensatory draft choice after the first round next summer as a result of Rogers’ departure.",
-    "It turns out to be a fairly direct replacement for Baltimore president of baseball operations Mike Elias. It’s not necessarily the case that the O’s chose Peralta and the draft choice over Rogers — the players could have geographical or team fit preferences — but the similar contracts will make their career arcs an intriguing subplot over the next half-decade.",
-    "Peralta has had a wildly up-and-down last 12 months. He finished fifth in NL Cy Young balloting in 2025, posting a career-low 2.70 earned run average across 33 starts for Milwaukee. The Brewers, who were highly unlikely to sign him long term, traded him to the Mets last offseason. Spring Training extension talks with New York didn’t progress, seemingly because of a hangup between the club and pitcher on contract length."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/freddy-peralta-pitching-1024x683.jpg",
-   "players": [
-    [
-     "Freddy Peralta",
-     642547
-    ],
-    [
-     "Trevor Rogers",
-     669432
     ]
    ]
   },
