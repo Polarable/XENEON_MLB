@@ -1,6 +1,25 @@
 {
- "updated": "2026-11-24T22:40:34.100Z",
+ "updated": "2026-11-24T22:50:33.631Z",
  "articles": [
+  {
+   "title": "White Sox To Sign Tyrone Taylor",
+   "link": "https://www.mlbtraderumors.com/2026/11/white-sox-to-sign-tyrone-taylor.html",
+   "date": "2026-11-24T22:40:44.000Z",
+   "teams": [
+    "CWS"
+   ],
+   "body": [
+    "The White Sox are going to sign outfielder Tyrone Taylor, reports Jon Heyman of The New York Post. The client of THE·TEAM gets $17MM over two years, per Mark Feinsand of MLB.com. The Sox have an open 40-man spot at the moment and therefore won’t need a corresponding move to make this deal official.",
+    "Taylor, 33 in January, has a long track record as a strong defender. In over 4,000 innings on the grass, including time in all three slots, he has been credited with 42 Defensive Runs Saved, 22 Outs Above Average and a mark of 24 from Fielding Run Value. Isolating his work up the middle, it’s over 2,000 innings in center with 17 DRS, 10 OAA and 15 FRV."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Tyrone_Taylor_Cubs-1024x669.jpg",
+   "players": [
+    [
+     "Tyrone Taylor",
+     621438
+    ]
+   ]
+  },
   {
    "title": "Multiple Teams Showing Interest In Tyler Austin",
    "link": "https://www.mlbtraderumors.com/2026/11/multiple-teams-showing-interest-in-tyler-austin.html",
@@ -5902,9 +5921,9 @@
    "link": "https://www.mlbtraderumors.com/2026/11/kaima-taira-rumors-cubs-white-sox-padres-giants-blue-jays.html",
    "date": "2026-11-13T19:03:29.000Z",
    "teams": [
-    "CWS",
-    "CHC",
     "SD",
+    "CHC",
+    "CWS",
     "SF",
     "TOR"
    ],
