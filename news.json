@@ -1,6 +1,59 @@
 {
- "updated": "2026-11-24T18:10:37.887Z",
+ "updated": "2026-11-24T18:20:35.425Z",
  "articles": [
+  {
+   "title": "Tigers To Sign Ha-Seong Kim",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-sign-ha-seong-kim.html",
+   "date": "2026-11-24T18:17:41.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers and infielder Ha-Seong Kim have agreed to a one-year, $5MM deal, reports Jeff Passan of ESPN. Detroit has a full 40-man roster and will need to make a corresponding move once this becomes official."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/Ha_Seong_Kim_Braves-1024x683.jpg",
+   "players": [
+    [
+     "Ha-Seong Kim",
+     673490
+    ]
+   ]
+  },
+  {
+   "title": "Freddy Tarnok Re-Signs With NPB’s Hiroshima Carp",
+   "link": "https://www.mlbtraderumors.com/2026/11/freddy-tarnok-re-signs-npb-hiroshima-carp-japan.html",
+   "date": "2026-11-24T18:13:58.000Z",
+   "teams": [],
+   "body": [
+    "Former big league right-hander Freddy Tarnok has re-signed with the Hiroshima Carp of Japan’s Nippon Professional Baseball, MLBTR has learned. The Excel Sports Management client is re-upping on a one-year deal after a solid first season overseas.",
+    "Tarnok, a 2017 third-round pick by the Braves, previously ranked as one of the top arms in Atlanta’s system. He went from Atlanta to Oakland in the 2022 Sean Murphy trade. Tarnok pitched briefly in parts of three big league seasons between three different teams, suiting up for the Braves, A’s and Marlins before heading to Japan last winter. He’s pitched 22 2/3 innings in the big leagues and allowed 10 runs (3.97 ERA) on 13 hits and 15 walks with 25 strikeouts.",
+    "In Japan, Tarnok pitched in 24 games, eight of them starts, and logged 56 1/3 innings. His 3.97 ERA was an exact match for his career mark in that limited sample of MLB innings, but Tarnok showed better command than he has pitching with his three prior clubs in the States. He walked 9.2% of his opponents against a solid 22.1% strikeout rate and kept a gaudy 61.8% of batted balls against him on the ground.",
+    "The new agreement is a nice birthday gift for Tarnok, who turned 28 years old today. He still has youth and prospect pedigree on his side, so with a big year or two in Japan, he could follow the Foster Griffin / Anthony Kay / Cody Ponce path back to Major League Baseball in the future. He’ll need to stay healthy and continue to produce, but Tarnok is a name worth tracking in 2027 and filing away as a potential comeback candidate down the road."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/freddy-tarnok-pitcher-1024x683.jpg",
+   "players": [
+    [
+     "Freddy Tarnok",
+     676206
+    ],
+    [
+     "Sean Murphy",
+     669221
+    ],
+    [
+     "Foster Griffin",
+     656492
+    ],
+    [
+     "Anthony Kay",
+     641743
+    ],
+    [
+     "Cody Ponce",
+     664074
+    ]
+   ]
+  },
   {
    "title": "Cubs, Sam Moll Agree To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-sign-sam-moll-reliever-lefty-reds.html",
@@ -7482,58 +7535,6 @@
     [
      "Jake Bauers",
      641343
-    ]
-   ]
-  },
-  {
-   "title": "Tarik Skubal Rumors: Mets, Dodgers, Cubs",
-   "link": "https://www.mlbtraderumors.com/2026/11/tarik-skubal-rumors-mets-dodgers-cubs.html",
-   "date": "2026-11-06T05:43:31.000Z",
-   "teams": [
-    "DET",
-    "CHC",
-    "LAD",
-    "NYM",
-    "NYY"
-   ],
-   "body": [
-    "Free agency opened to all 30 teams on Monday evening, officially kicking off the bidding for Tarik Skubal. The first few days of the offseason have been characteristically slow throughout the entire market, but there’s been early speculation about the landing spot for the top free agent.",
-    "Much of the attention has unsurprisingly focused on the Mets and Dodgers, generally viewed as the two likeliest Skubal destinations. Jon Heyman of The New York Post wrote on Wednesday that the Mets are indeed interested in making a run, though he cautioned they haven’t yet determined how far they’re willing to go in the bidding two years into the record-setting Juan Soto contract.",
-    "New York also has needs at the back of the bullpen and around their infield. The Dodgers are more well set up for luxury buys. They’ll need to re-sign or replace a few leverage relievers (Evan Phillips, Alex Vesia, Blake Treinen and Kris Bubic) and could poke around the second base market for an upgrade on Tommy Edman and Alex Freeland. They’re much better positioned than the Mets in prioritizing a handful of targets rather than addressing various roster needs."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/08/Tarik_Skubal_Dodgers-1024x683.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Juan Soto",
-     665742
-    ],
-    [
-     "Evan Phillips",
-     623465
-    ],
-    [
-     "Alex Vesia",
-     681911
-    ],
-    [
-     "Blake Treinen",
-     595014
-    ],
-    [
-     "Kris Bubic",
-     663460
-    ],
-    [
-     "Tommy Edman",
-     669242
-    ],
-    [
-     "Alex Freeland",
-     690976
     ]
    ]
   },
