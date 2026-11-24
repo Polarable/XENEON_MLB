@@ -1,6 +1,52 @@
 {
- "updated": "2026-11-24T17:50:31.798Z",
+ "updated": "2026-11-24T18:00:39.594Z",
  "articles": [
+  {
+   "title": "Cubs, Sam Moll Agree To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-sign-sam-moll-reliever-lefty-reds.html",
+   "date": "2026-11-24T17:53:03.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs and free agent reliever Sam Moll are in agreement on a minor league contract with a spring training invitation, reports Jon Heyman of the New York Post. The 34-year-old lefty (35 in January) has spent parts of the past four seasons with the division-rival Reds.",
+    "Moll joined the Reds at the 2023 trade deadline, coming over from the A’s in a trade that sent hard-throwing but command-challenged righty Joe Boyle to the Athletics. He’d go on to pitch 137 innings over the next three-plus seasons, recording a 3.88 ERA, 23.5% strikeout rate, 11.1% walk rate and 48.1% ground-ball rate as a Red. Moll collected a save and 22 holds in that time.",
+    "Most of Moll’s success in Cincinnati came in 2023-24, however. He missed time in 2025 due to a shoulder impingement and was roughed up for a 6.38 ERA — while sitting at a career-low 92.1 mph with his average four-seamer — in 18 1/3 innings when healthy."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/sam-moll-relief-pitcher-1024x683.jpg",
+   "players": [
+    [
+     "Sam Moll",
+     594580
+    ],
+    [
+     "Joe Boyle",
+     671212
+    ]
+   ]
+  },
+  {
+   "title": "Nolan Arenado Working Out At First Base",
+   "link": "https://www.mlbtraderumors.com/2026/11/nolan-arenado-working-out-at-first-base.html",
+   "date": "2026-11-24T17:50:23.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "There was a report in late October about the Diamondbacks considering a shift from third to first base for Nolan Arenado. Steve Gilbert of MLB.com provided more details on the discussion last week.",
+    "The more recent report (both of which were from Gilbert) mentions Arenado approaching the team about making the move, with the caveat that the club finds another option at the hot corner. Arenado is expected to start taking ground balls at first base soon.",
+    "“If they can get a third baseman, somebody that moves maybe a little bit better than I did, I’m OK with it,” Arenado told Gilbert. “If it can help the team win, I’m down to do it.”",
+    "The 35-year-old Arenado had a stellar offensive season in Arizona, slugging 30 homers and posting a 120 wRC+. His all-world defense slipped, though. The 10-time Gold Glove Award winner recorded negative Defensive Runs Saved for the first time in his career. He rated positively by Statcast’s Outs Above Average, but still nowhere near the numbers he was putting up with the Rockies and at times with the Cardinals.",
+    "Arenado is entering the final year of his contract. St. Louis tacked on this season to the original extension he signed in Colorado. Arenado will make $15MM in 2027, with the Cardinals paying $9MM of that figure. Adding some positional versatility would be useful for Arenado if he’s on the open market next winter."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/NolanArenado-1024x676.jpg",
+   "players": [
+    [
+     "Nolan Arenado",
+     571448
+    ]
+   ]
+  },
   {
    "title": "Orioles To Sign Freddy Peralta",
    "link": "https://www.mlbtraderumors.com/2026/11/orioles-sign-freddy-peralta.html",
@@ -340,19 +386,6 @@
      681168
     ]
    ]
-  },
-  {
-   "title": "MLB Offers To Raise Minimum Salary To $1MM In Latest Cap Proposal",
-   "link": "https://www.mlbtraderumors.com/2026/11/mlb-offers-to-raise-minimum-salary-to-1mm-in-latest-cap-proposal.html",
-   "date": "2026-11-23T22:01:46.000Z",
-   "teams": [],
-   "body": [
-    "Major League Baseball made its latest proposal on core economics on Monday. The league offered to raise the minimum salary to $1MM for all players, a modest increase over their previous proposal of a $900K minimum for those with less than two years of service time (links via Bob Nightengale of USA TODAY, Alden González of ESPN, and Ronald Blum of The Associated Press). Of course, that’s yet again conditioned on the Players Association agreeing to a salary cap/floor system.",
-    "Under MLB’s proposal, pre-arbitration players who accrue a full year of service time and spent less than half the season on the injured list would receive an additional $100K. It’d be a $220K rise over this year’s $780K minimum salary. MLB also offered a 5% signing bonus for arbitration-eligible players who sign without a hearing, plus a $500K bonus for one veteran player per season who signs a one-year contract for $10MM or less.",
-    "As long as the sides remain divided on the overarching cap vs. luxury tax framework, all of their proposals amount to talking past one another. To that end, the MLBPA accepted the league’s previous offer for equal distribution of local media revenues — but conditional on the absence of the cap. Any “agreements” at this point are essentially meaningless."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2024/10/MLB_baseball_generic-scaled-e1730315649946-1024x681.jpg",
-   "players": []
   },
   {
    "title": "Guardians Sign Jairo Iriarte To Minor League Deal",
@@ -6010,9 +6043,9 @@
    "link": "https://www.mlbtraderumors.com/2026/11/multiple-teams-interested-in-dustin-may.html",
    "date": "2026-11-13T01:35:27.000Z",
    "teams": [
+    "HOU",
     "CHC",
     "CWS",
-    "HOU",
     "MIA",
     "SD"
    ],
@@ -8792,27 +8825,6 @@
     [
      "Sandy Alcantara",
      645261
-    ]
-   ]
-  },
-  {
-   "title": "Diamondbacks Expected To Field Interest On Ketel Marte",
-   "link": "https://www.mlbtraderumors.com/2026/10/diamondbacks-expected-to-field-interest-on-ketel-marte.html",
-   "date": "2026-10-30T04:32:23.000Z",
-   "teams": [
-    "ARI"
-   ],
-   "body": [
-    "The Diamondbacks’ biggest offseason question is whether they’ll line up a Ketel Marte trade. Arizona fielded interest in the star second baseman early last offseason, though it seemed mostly a matter of due diligence as they explored ways to add controllable starting pitching.",
-    "There’s a good chance the team will more aggressively shop Marte this offseason — albeit with various reasons why it may be more difficult to actually make a deal. Most notably, Marte can veto any trade after securing 10-and-5 rights (10 years of service time, the last five with one club) in April.",
-    "Reports from both John Gambadoro/Alex Weiner of Arizona Sports and Nick Piecoro of The Arizona Republic indicate that the Snakes will explore Marte trades yet again. Piecoro writes that they’ve received preliminary interest from other clubs, though it’s obviously very early in the process with the trade market just reopening this morning.",
-    "Marte features prominently on MLBTR’s list of the game’s top offseason trade candidates, slotting in at #6. That’s driven in large part by comments from team officials who’ve become increasingly frustrated with Marte no-showing for certain games over the years."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/08/2026-08-16T191454Z_155381395_MT1USATODAY29597791_RTRMADP_3_MLB-ARIZONA-DIAMONDBACKS-AT-ATLANTA-BRAVES-1024x683.jpg",
-   "players": [
-    [
-     "Ketel Marte",
-     606466
     ]
    ]
   },
