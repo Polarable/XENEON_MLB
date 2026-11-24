@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T09:10:31.209Z",
+ "updated": "2026-11-24T09:20:34.269Z",
  "articles": [
   {
    "title": "Cubs To Sign Trevor Rogers",
@@ -516,8 +516,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/astros-blue-jays-padres-interested-in-randy-arozarena.html",
    "date": "2026-11-23T05:02:32.000Z",
    "teams": [
-    "HOU",
     "SD",
+    "HOU",
     "TOR"
    ],
    "body": [
@@ -2171,8 +2171,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/astros-to-hire-bobby-wilson-as-bench-coach.html",
    "date": "2026-11-19T19:29:02.000Z",
    "teams": [
-    "HOU",
-    "WSH"
+    "WSH",
+    "HOU"
    ],
    "body": [
     "The Astros are going to hire Bobby Wilson as their bench coach, per a report from Chandler Rome and Ken Rosenthal of The Athletic. Wilson will work under new manager Brad Ausmus. He was previously working with the Nationals as catching coordinator.",
@@ -2412,22 +2412,6 @@
      663903
     ]
    ]
-  },
-  {
-   "title": "Astros To Hire Matt Bayer As Assistant GM",
-   "link": "https://www.mlbtraderumors.com/2026/11/astros-to-hire-matt-bayer-as-assistant-gm.html",
-   "date": "2026-11-19T15:45:21.000Z",
-   "teams": [
-    "HOU"
-   ],
-   "body": [
-    "The Astros are making another addition in the front office. Matt Bayer is expected to join general manager Randy Flores’ staff, reports Brian McTaggart of MLB.com. Bayer will serve as an assistant general manager, replacing Connor Huff.",
-    "Bayer has worked in baseball for nearly 15 years. His entire career has been spent in the Cardinals organization. Bayer first came aboard as a quantitative analyst heading into the 2012 season. He steadily worked his way up the ladder in the scouting and baseball development departments. Bayer earned the title of senior director of baseball development at the end of the 2024 season.",
-    "Huff resigned last week to take a job outside of baseball. He’d been with the organization for the past five seasons. Flores had the green light to hire a replacement, and he found a fit in his former organization. The newly installed GM had been in the Cardinals front office for more than a decade before getting the top gig in Houston. He overlapped for many years with Bayer.",
-    "The Astros are back up to three AGMs, with Bayer joining Gavin Dickey and Charles Cook. Dickey and Cook are holdovers from former general manager Dana Brown’s staff. It’s been an offseason of change in the organization, with Flores replacing Brown and Brad Ausmus taking over for former manager Joe Espada."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AstrosLogo-1-1024x683.jpg",
-   "players": []
   },
   {
    "title": "MLBTR Podcast: Jake Bauers, Ryan Jeffers, Dustin May, Reliever Deals, And More",
@@ -3833,31 +3817,6 @@
    ]
   },
   {
-   "title": "Astros Select Jackson Nezuh",
-   "link": "https://www.mlbtraderumors.com/2026/11/astros-select-jackson-nezuh.html",
-   "date": "2026-11-17T22:26:37.000Z",
-   "teams": [
-    "HOU"
-   ],
-   "body": [
-    "The Astros announced that they have selected right-hander Jackson Nezuh to the 40-man roster. That protects him from being selected in the Rule 5 draft, if it takes place this offseason. The club also announced that outfielder Joey Loperfido has been outrighted to Triple-A Sugar Land. It was reported earlier today that Loperfido was on outright waivers. Houston’s 40-man roster count is now at 39.",
-    "Nezuh, 25 in February, was a 14th-round pick in the 2023 draft. He has been working his way up the ladder since then as a multi-inning guy, sometimes as the official starter and sometimes entering games a bit later.",
-    "He tossed 103 1/3 innings this year split between Double-A and Triple-A, allowing 3.83 earned runs per nine. His 28.1% strikeout rate was quite strong but he also gave out free passes at a high rate of 11.3%. Baseball America lists Nezuh as Houston’s #18 prospect, noting that he has a five-pitch arsenal that includes a four-seamer, slider, sweeper, curveball and changeup.",
-    "It’s unclear whether the Rule 5 draft will take place this offseason. During the 2021-22 lockout, the draft was held in a limbo state but was eventually scrapped once the lockout ended. This year’s draft is scheduled for December 9, a week after the league is expected to lock out the players again. Teams can’t know for sure whether this offseason will follow the same script, so they still have to select players they don’t want plucked away."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2025/09/USATSI_26047308-1024x651.jpg",
-   "players": [
-    [
-     "Jackson Nezuh",
-     694545
-    ],
-    [
-     "Joey Loperfido",
-     694388
-    ]
-   ]
-  },
-  {
    "title": "Brewers To Select Jett Williams",
    "link": "https://www.mlbtraderumors.com/2026/11/brewers-to-select-jett-williams.html",
    "date": "2026-11-17T22:20:51.000Z",
@@ -4406,26 +4365,6 @@
     [
      "MacKenzie Gore",
      669022
-    ]
-   ]
-  },
-  {
-   "title": "Astros Place Joey Loperfido On Outright Waivers",
-   "link": "https://www.mlbtraderumors.com/2026/11/astros-outright-joey-loperfido.html",
-   "date": "2026-11-17T18:27:08.000Z",
-   "teams": [
-    "HOU"
-   ],
-   "body": [
-    "The Astros have placed outfielder Joey Loperfido on outright waivers, according to The Athletic’s Chandler Rome. Loperfido underwent hip surgery last month and is not expected to be ready for Spring Training. This move will take him off the Astros’ 40-man roster, which now stands at 38 players. Loperfido has never been outrighted before, so if he goes unclaimed, he’d need to accept an outright assignment to Triple-A Sugar Land.",
-    "Loperfido has taken 487 trips to the plate from 2024-26. In that sample, he’s batted.240/.300/.378 with a 92 wRC+ and an alarming 31.6% strikeout rate. He’s fared well in left field, earning +8 Defensive Runs Saved and +2 Outs Above Average in over 700 innings there, but his grades in the other two outfield spots are middling.",
-    "This year was more of the same for Loperfido at the plate. While he walked at an 11.6% clip in 121 plate appearances, his 26.4% strikeout rate was still high, and his 82 wRC+ cast him as 18% worse than the league average hitter. That stands in contrast to last year’s 148 wRC+, though that similarly came in a small sample and was inflated by a monster.431 average on balls in play. Loperfido batted.289/.381/.392 with a 112 wRC+ for Sugar Land this year, showing decent on-base ability but nothing in the way of power."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/04/JoeyLoperfido-1024x683.jpg",
-   "players": [
-    [
-     "Joey Loperfido",
-     694388
     ]
    ]
   },
@@ -5131,22 +5070,6 @@
      669373
     ]
    ]
-  },
-  {
-   "title": "Astros AGM Connor Huff Resigns",
-   "link": "https://www.mlbtraderumors.com/2026/11/astros-agm-connor-huff-resigns.html",
-   "date": "2026-11-15T01:17:12.000Z",
-   "teams": [
-    "HOU"
-   ],
-   "body": [
-    "The Astros have made a pair of major staffing additions this offseason, hiring Randy Flores as general manager and Brad Ausmus as skipper. The club also had a subtraction this week, with Flores announcing that assistant general manager Connor Huff has left the organization.",
-    "Flores told reporters, including Chandler Rome of The Athletic, that Huff resigned to take a “new, exciting opportunity outside of baseball.” Huff had been with the team since 2022. He was promoted from vice president of business and baseball operations to AGM at the end of the 2025 season. Huff replaced former assistant GM Andrew Ball.",
-    "Houston still has two AGMs on staff, Gavin Dickey and Charles Cook. Both interviewed for the role that ultimately went to Flores. Houston had a vacancy in its top front office position after moving on from Dana Brown in August. Flores mentioned that he’d been given the go-ahead to hire a replacement for Huff, though he didn’t specify whether it would be for an AGM role or a different position.",
-    "The Astros are looking to rebound after an uneven year. Brown was fired with a month left in the regular season. Manager Joe Espada was retained at the time, but it was pretty clear he wouldn’t be with the club beyond 2026. Houston backed into a division title despite a.500 record and was quickly booted from the playoffs in a sweep by the White Sox."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AstrosLogo-1024x683.jpg",
-   "players": []
   },
   {
    "title": "Pirates Want To Limit Ryan O’Hearn’s Outfield Reps",
@@ -6050,46 +5973,6 @@
    ]
   },
   {
-   "title": "Yordan Alvarez Wins AL MVP Award",
-   "link": "https://www.mlbtraderumors.com/2026/11/yordan-alvarez-wins-al-mvp-award.html",
-   "date": "2026-11-13T00:24:16.000Z",
-   "teams": [
-    "HOU"
-   ],
-   "body": [
-    "The Baseball Writers Association of America announced Thursday that Yordan Alvarez has been named the Most Valuable Player in the American League. Alvarez won the award unanimously, collecting all 30 first-place votes. Junior Caminero and Bobby Witt Jr. finished second and third, respectively.",
-    "Alvarez has been an elite hitter for the entirety of his career. He took his game to another level at age 29, topping 40 home runs for the first time. Alvarez was the best offensive player in the sport this year, leading qualified hitters in all three slash stats (as well as OPS, of course). He batted.316/.432/.601 with 42 longballs in a career-high 692 plate appearances. Alvarez walked almost as often as he struck out while remaining arguably the premier power threat in the American League.",
-    "Caminero and Alvarez tied for second in the AL and fourth in the majors with the 42 longballs. (Pete Alonso seized the AL home run crown with a two-homer game in the final weekend of the season, finishing the year at 43.) Alvarez scored 105 runs and drove in 106, a top three mark among AL hitters in both categories. He fairly comfortably beat out Chandler Simpson (.306) to win his first batting title and maintained a five-point edge on NL leader Gabriel Moreno in that regard."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-27T025950Z_778317488_MT1USATODAY29929237_RTRMADP_3_MLB-HOUSTON-ASTROS-AT-ATHLETICS-1024x683.jpg",
-   "players": [
-    [
-     "Yordan Alvarez",
-     670541
-    ],
-    [
-     "Junior Caminero",
-     691406
-    ],
-    [
-     "Bobby Witt Jr.",
-     677951
-    ],
-    [
-     "Pete Alonso",
-     624413
-    ],
-    [
-     "Chandler Simpson",
-     802415
-    ],
-    [
-     "Gabriel Moreno",
-     672515
-    ]
-   ]
-  },
-  {
    "title": "Giants Hire James Rowson As Offensive Coordinator",
    "link": "https://www.mlbtraderumors.com/2026/11/giants-to-hire-james-rowson-as-offensive-coordinator.html",
    "date": "2026-11-12T23:05:29.000Z",
@@ -6669,23 +6552,6 @@
      695505
     ]
    ]
-  },
-  {
-   "title": "Astros Name Brad Ausmus Manager",
-   "link": "https://www.mlbtraderumors.com/2026/11/astros-expected-to-name-brad-ausmus-manager.html",
-   "date": "2026-11-11T16:35:50.000Z",
-   "teams": [
-    "HOU",
-    "NYY"
-   ],
-   "body": [
-    "The Astros announced that Brad Ausmus has been hired as the club’s manager. Prior to the official announcement, John Granato of ESPN 97.5 Houston reported that Ausmus would be flying to Houston tomorrow to accept the gig, a report confirmed by Brian McTaggart of MLB.com.",
-    "The ties between Ausmus and the Astros go way back. During his playing days, he spent ten seasons as an Astro. He suited up for Houston in 1997 and 1998 and then again from 2001 to 2008. In his post-playing days, he has worked as a manager, coach and has done some front office work as well.",
-    "Those various post-playing jobs have come with the Padres, Tigers, Angels, Athletics and Yankees but there have been whispers connecting him to the Astros along the way. Astros owner Jim Crane bought the Astros in 2011, after Ausmus had retired, but Crane has a close relationship with Jeff Bagwell. Over the years, Bagwell has been a key advisor to Crane relating to club matters. Bagwell played for the Astros from 1991 to 2005 and therefore shared a clubhouse with Ausmus for many years.",
-    "Since Crane bought the team, the Astros have cycled through various managers, hiring Bo Porter, A.J. Hinch, Dusty Baker and Joe Espada. The Ausmus name would often come up when the job was open and he even got connected to the general manager position in Houston a few times but he continued to bounce around to other clubs."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/BradAusmus-2026Yankees-1024x683.jpg",
-   "players": []
   },
   {
    "title": "Pirates Notes: Keller, Pitching Pursuits, Lineup",
