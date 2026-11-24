@@ -1,6 +1,42 @@
 {
- "updated": "2026-11-24T15:40:42.549Z",
+ "updated": "2026-11-24T15:50:36.473Z",
  "articles": [
+  {
+   "title": "Orioles Nearing Deal With Freddy Peralta",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-sign-freddy-peralta.html",
+   "date": "2026-11-24T15:43:25.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles and free-agent right-hander Freddy Peralta are in closing in on a long-term agreement, reports Ben Nicholson-Smith of Sportsnet. Hector Gomez of Z101 reported last night that the two sides had a five-year deal in the works. Peralta, an ACES client, was traded from the Mets to the Rays midseason and thus was ineligible to receive a qualifying offer. He won’t cost Baltimore any form of draft compensation."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/freddy-peralta-pitching-1024x683.jpg",
+   "players": [
+    [
+     "Freddy Peralta",
+     642547
+    ]
+   ]
+  },
+  {
+   "title": "Guardians To Sign Kris Bubic",
+   "link": "https://www.mlbtraderumors.com/2026/11/guardians-sign-kris-bubic.html",
+   "date": "2026-11-24T15:41:00.000Z",
+   "teams": [
+    "CLE"
+   ],
+   "body": [
+    "The Guardians and free-agent lefty Kris Bubic are in agreement on a one-year contract, reports Ben Nicholson-Smith of Sportsnet. He’ll be guaranteed $17.5MM on the deal, ESPN’s Jeff Passan adds. Bubic is represented by Apex Baseball."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/kris-bubic-pitcher-1024x683.jpg",
+   "players": [
+    [
+     "Kris Bubic",
+     663460
+    ]
+   ]
+  },
   {
    "title": "Cubs To Sign Teruaki Sato",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-teruaki-sato.html",
@@ -350,44 +386,6 @@
     [
      "Tarik Skubal",
      669373
-    ]
-   ]
-  },
-  {
-   "title": "The Best Fits For Teruaki Sato",
-   "link": "https://www.mlbtraderumors.com/2026/11/the-best-fits-for-teruaki-sato.html",
-   "date": "2026-11-23T20:17:51.000Z",
-   "teams": [],
-   "body": [
-    "MLBTR continues to give subscribers detailed looks at the markets for top free agents. In this edition, we look at Teruaki Sato, who is almost certainly going to sign very shortly. His 45-day posting window technically goes into the middle of December but a lockout is expected to begin on December 2. Since the posting window will not be paused for the lockout, Sato and other players posted by NPB teams should reach agreements in the next week or so.",
-    "The team that grabs Sato will be betting on the bat. The lefty swinger hit 40 home runs for the Hanshin Tigers in 2025 and 39 this year. His slash line in 2026 was.306/.383/.609, which translated to a 196 wRC+.",
-    "His defensive fit is more of a question. He has mostly been a third baseman thus far, with a decent amount of corner outfield work also mixed in. His defense at the hot corner isn’t considered strong but some evaluators think he can be developed into a viable third baseman. Others think he should just be moved to the outfield or first base right away. The 30 MLB teams will have varying opinions about the best path forward but, in theory, he could fit with just about any club with a need in a corner or the designated hitter spot.",
-    "Turning back to the bat, though the power is real, there are also yellow flags. Somewhat akin to Munetaka Murakami last offseason, there are questions about the approach. Both players hit a lot of home runs in Japan but with lots of strikeouts. The overall quality of pitching in MLB is higher than that of NPB, so hitters usually strike out more when moving from Japan to North America."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/TeruakiSato-1024x683.jpg",
-   "players": [
-    [
-     "Munetaka Murakami",
-     808959
-    ]
-   ]
-  },
-  {
-   "title": "Trade Rumors Front Office Subscriber Chat Transcript",
-   "link": "https://www.mlbtraderumors.com/2026/11/trade-rumors-front-office-subscriber-chat-today-2pm-ct-24.html",
-   "date": "2026-11-23T19:59:11.000Z",
-   "teams": [],
-   "body": [
-    "Skubal off the board. Just over one week left on the lockout clock. Going to be a hectic few days! We’ll talk all things hot stove starting at 2pm CT, but feel free to send questions my way ahead of time! As we get underway, Jeff Passan reporting the Yankees are signing Brent Suter for a year and $4MM Would expect quite a few more transactions in the next eight days! Ha Let’s begin BhamBrave",
-    "If a free agent signs a deal before the lockout that includes a signing bonus, does he get it before the lockout? Steve Adams",
-    "Depends. Some bonuses are paid up front. Others are spread across several years and stipulated to be paid out on specific dates. Regardless, signing bonus money will go to the player in the event games are missed. Joe",
-    "Steve Cohen has pretty much thumbed his nose at a salary cap. If they do get one in the new CBA, how do you think they’ll handle the Mets being over it with no real way to drop below anytime soon? Steve Adams"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2020/08/Trade-Rumors-Front-Office-1024x576.png",
-   "players": [
-    [
-     "Brent Suter",
-     608718
     ]
    ]
   },
@@ -4374,8 +4372,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/nationals-announce-series-of-moves.html",
    "date": "2026-11-17T19:22:22.000Z",
    "teams": [
-    "BAL",
-    "WSH"
+    "WSH",
+    "BAL"
    ],
    "body": [
     "As part of a slew of roster moves on Tuesday, the Nationals selected the contracts of right-handers Jarlin Susana, Travis Sykora and Alejandro Rosario. They also claimed left-hander Philip Abner off waivers from the Orioles and designated four pitchers – righties Josiah Gray, Braxton Roxby and Gus Varland and lefty Carson Palmquist – for assignment.",
@@ -8945,43 +8943,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2021/08/USATSI_12469616-1024x683.jpg",
    "players": []
-  },
-  {
-   "title": "Guardians Notes: Kwan, Velazquez, Rotation",
-   "link": "https://www.mlbtraderumors.com/2026/10/guardians-notes-kwan-velazquez-rotation.html",
-   "date": "2026-10-24T19:41:30.000Z",
-   "teams": [
-    "CLE"
-   ],
-   "body": [
-    "The Guardians won the American League Central for the third straight year and reached the doorstep of the World Series in 2026, but their season ended with a six-game loss to the Rays in the ALCS. With their championship hopes dashed again, Guardians president of baseball operations Chris Antonetti, general manager Mike Chernoff and assistant GM Matt Forman met with the media on Thursday to wrap up 2026 and discuss the upcoming offseason.",
-    "[RELATED: Guardians Offseason Outlook]",
-    "The Guardians aren’t at risk of losing outfielder Steven Kwan to free agency this winter, but the two-time All-Star only has one year of control left. MLBTR contributor Matt Swartz projects an $11.3MM salary for Kwan in his third and final trip through arbitration. That’s an eminently reasonable salary for a player of his caliber, though it’s a pricey figure for a team that had the lowest payroll in baseball (around $75MM). The Guardians have a history of trading away productive veterans with dwindling team control, evidenced by deals in which they shipped out Josh Naylor, Francisco Lindor, Corey Kluber, Carlos Carrasco, Trevor Bauer and Mike Clevinger. With that in mind, Kwan could be an offseason trade candidate. However, if we’re to believe Guardians brass, he isn’t going anywhere.",
-    "“As we sit here today, we’re expecting Steven Kwan to be a big part of a contending team next year,” Antonetti said (link via Paul Hoynes of cleveland.com)."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-10-20T014655Z_1428892304_MT1USATODAY30133471_RTRMADP_3_MLB-ALCS-CLEVELAND-GUARDIANS-AT-TAMPA-BAY-RAYS-1024x682.jpg",
-   "players": [
-    [
-     "Steven Kwan",
-     680757
-    ],
-    [
-     "Josh Naylor",
-     647304
-    ],
-    [
-     "Francisco Lindor",
-     596019
-    ],
-    [
-     "Carlos Carrasco",
-     471911
-    ],
-    [
-     "Mike Clevinger",
-     605182
-    ]
-   ]
   },
   {
    "title": "Todd Benzinger Passes Away",
