@@ -1,6 +1,54 @@
 {
- "updated": "2026-11-25T16:10:37.173Z",
+ "updated": "2026-11-25T16:30:38.586Z",
  "articles": [
+  {
+   "title": "Orioles Interested In Ian Happ, Mauricio Dubón",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-rumors-ian-happ-mauricio-dubon-myles-straw.html",
+   "date": "2026-11-25T16:29:35.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles have solidified their rotation with the addition of right-hander Freddy Peralta, but they’re not finished with their offseason shopping yet. Ken Rosenthal and Will Sammon of The Athletic report that the Orioles are in the market for outfield help and have expressed interest in free agents Ian Happ, Mauricio Dubón and Myles Straw. They’ve also explored various options on the trade market.",
+    "Baltimore’s outfield is largely unsettled. Their 2024-25 offseason signing of Tyler O’Neill to a three-year, $49.5MM contract has been a flop due to persistent injuries, and top prospect Dylan Beavers posted poor numbers on both sides of the ball in his first full big league campaign in 2026. Colton Cowser had a rebound performance in center field but still can’t hit left-handed pitching. Utilityman Blaze Alexander played plenty of outfield in’26 and had a big year, but his.303/.358/.414 slash came in a relatively small sample (293 plate appearances) and was buoyed by a mammoth.385 average on balls in play that he’s not going to sustain.",
+    "Happ, 32, has the biggest track record of the Orioles’ reported three targets. He’s also a known commodity for new Baltimore general manager Jared Banner, who was hired out of the Cubs organization earlier this winter. The veteran switch-hitter, however, is coming off a down season."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/ian-happ-1024x683.jpg",
+   "players": [
+    [
+     "Ian Happ",
+     664023
+    ],
+    [
+     "Mauricio Dubón",
+     643289
+    ],
+    [
+     "Freddy Peralta",
+     642547
+    ],
+    [
+     "Myles Straw",
+     664702
+    ],
+    [
+     "Tyler O’Neill",
+     641933
+    ],
+    [
+     "Dylan Beavers",
+     687637
+    ],
+    [
+     "Colton Cowser",
+     681297
+    ],
+    [
+     "Blaze Alexander",
+     677942
+    ]
+   ]
+  },
   {
    "title": "MLBTR Podcast: Skubal’s Deal, Cubs Signings, Starting Pitcher Contracts, And Other Hot Stove Action",
    "link": "https://www.mlbtraderumors.com/2026/11/mlbtr-podcast-skubals-deal-cubs-signings-starting-pitcher-contracts-and-other-hot-stove-action.html",
@@ -4770,8 +4818,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/yankees-claim-chase-hampton.html",
    "date": "2026-11-17T20:07:43.000Z",
    "teams": [
-    "BAL",
-    "NYY"
+    "NYY",
+    "BAL"
    ],
    "body": [
     "The Yankees announced this afternoon that they have claimed right-hander Chase Hampton off waivers from the Orioles. Hampton returns to his original organization after riding the waiver wire with the Nationals, Cardinals, and Orioles since mid-September. With this move, the Yankees’ 40-man roster stands at 34 players, leaving six spots with which to protect Rule 5 eligible players before today’s 5:00 pm CT deadline.",
