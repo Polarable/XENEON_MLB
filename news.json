@@ -1,16 +1,113 @@
 {
- "updated": "2026-11-25T15:40:31.101Z",
+ "updated": "2026-11-25T16:00:39.205Z",
  "articles": [
+  {
+   "title": "MLBTR Podcast: Skubal’s Deal, Cubs Signings, Starting Pitcher Contracts, And Other Hot Stove Action",
+   "link": "https://www.mlbtraderumors.com/2026/11/mlbtr-podcast-skubals-deal-cubs-signings-starting-pitcher-contracts-and-other-hot-stove-action.html",
+   "date": "2026-11-25T15:42:24.000Z",
+   "teams": [
+    "BAL",
+    "CHC",
+    "CWS",
+    "CLE",
+    "COL",
+    "KC",
+    "MIN",
+    "NYM",
+    "SEA"
+   ],
+   "body": [
+    "The latest episode of the MLB Trade Rumors Podcast is now live on Spotify, Apple Podcasts, and wherever you get your podcasts! Make sure you subscribe as well! You can also use the player at this link to listen, if you don’t use Spotify or Apple for podcasts.",
+    "This week, host Darragh McDonald is joined by Anthony Franco of MLB Trade Rumors to discuss…",
+    "The Mets reaching an agreement with Tarik Skubal (1:30) The Mets signing Paul Goldschmidt (9:30) The Mets reaching an agreement with Darwinzon Hernández (10:45) Does the Skubal signing suggest the Mets don’t expect a salary cap in the next CBA? (15:20) The Mets extending A.J. Ewing (19:55) The Cubs reaching an agreement with Trevor Rogers (25:05) The Cubs reaching an agreement with Teruaki Sato (31:20) The Guardians reaching an agreement with Kris Bubic (37:10) The Orioles signing with Freddy Peralta (40:30) The Twins signing Sonny Gray (45:35) The Rockies acquiring Davis Martin and Luis Castillo from the White Sox (49:55) The Royals sending Maikel Garcia and others to the Mariners for Bryce Miller and others (recorded prior to the Royals agreeing to a deal with Alec Bohm) (56:05) Check out our past episodes!",
+    "Jake Bauers, Ryan Jeffers, Dustin May, Reliever Deals, And More – listen here The Nats Extend Jacob Young, Drew Rasmussen’s Future, The Angels’ GM Limbo, And More! – listen here Offseason Preview – listen here The podcast intro and outro song “So Long” is provided courtesy of the band Showoff. Check out their Facebook page here!"
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/TarikSkubal-1-1024x683.jpg",
+   "players": [
+    [
+     "Tarik Skubal",
+     669373
+    ],
+    [
+     "Paul Goldschmidt",
+     502671
+    ],
+    [
+     "A.J. Ewing",
+     805999
+    ],
+    [
+     "Trevor Rogers",
+     669432
+    ],
+    [
+     "Kris Bubic",
+     663460
+    ],
+    [
+     "Freddy Peralta",
+     642547
+    ],
+    [
+     "Sonny Gray",
+     543243
+    ],
+    [
+     "Davis Martin",
+     663436
+    ],
+    [
+     "Luis Castillo",
+     622491
+    ],
+    [
+     "Maikel Garcia",
+     672580
+    ],
+    [
+     "Bryce Miller",
+     682243
+    ],
+    [
+     "Alec Bohm",
+     664761
+    ],
+    [
+     "Jake Bauers",
+     641343
+    ],
+    [
+     "Ryan Jeffers",
+     680777
+    ],
+    [
+     "Dustin May",
+     669160
+    ],
+    [
+     "Jacob Young",
+     696285
+    ],
+    [
+     "Drew Rasmussen",
+     656876
+    ]
+   ]
+  },
   {
    "title": "Royals To Sign Alec Bohm",
    "link": "https://www.mlbtraderumors.com/2026/11/royals-to-sign-alec-bohm.html",
-   "date": "2026-11-25T15:26:56.000Z",
+   "date": "2026-11-25T15:39:56.000Z",
    "teams": [
     "KC"
    ],
    "body": [
-    "The Royals have reached a deal with free agent Alec Bohm, reports Jon Morosi of MLB Network. Bohm is represented by THE-TEAM company.",
-    "Kansas City shipped out everyday third baseman Maikel Garcia a week ago today. The club now fills that opening at the hot corner with Bohm. The veteran is coming off a down season in Philadelphia. The details of his pact with the Royals haven’t been reported, but it could be a short-term agreement that allows him to rebuild his value before another trip to free agency."
+    "9:39 am: It’s a two-year, $20MM deal, reports Ken Rosenthal of The Athletic. The agreement is pending a physical.",
+    "9:26 am: The Royals have reached a deal with free agent Alec Bohm, reports Jon Morosi of MLB Network. Bohm is represented by THE-TEAM company.",
+    "Kansas City shipped out everyday third baseman Maikel Garcia a week ago today. The club now fills that opening at the hot corner with Bohm. The veteran is coming off a down season in Philadelphia.",
+    "Bohm slashed.249/.315/.383 in 629 plate appearances this past season. He hit 15 homers and drove in 88 runs in the middle of Philadelphia’s lineup. Bohm spent the majority of the year at third base, then slid over to first base after the acquisition of Luis Arraez led to some defensive shuffling.",
+    "The 30-year-old Bohm struggled mightily in the first half, but bounced back over the final three months of the season. He carried a.627 OPS through June. Bohm had the seventh-lowest wRC+ among qualified hitters up to that point. From July on, he posted a.774 OPS. Bohm was 13% better than league-average at the plate to close the year. He was one of the few bright spots in the Wild Card round, going 4-for-12 with a double and a homer against the Braves.",
+    "The Royals were going to have a tough time replacing Garcia’s Gold Glove Award-winning defense at third base. Bohm will certainly be a downgrade in the infield. He recorded -10 Defensive Runs Saved at third base in 2026. Statcast’s Outs Above Average had him at -8. Bohm’s -11 OAA, which includes his work at first base, ranked in the second percentile."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/AlecBohm-1-1024x683.jpg",
    "players": [
@@ -21,6 +118,10 @@
     [
      "Maikel Garcia",
      672580
+    ],
+    [
+     "Luis Arraez",
+     650333
     ]
    ]
   },
@@ -4694,8 +4795,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/rangers-claim-josh-white.html",
    "date": "2026-11-17T20:05:10.000Z",
    "teams": [
-    "BAL",
-    "TEX"
+    "TEX",
+    "BAL"
    ],
    "body": [
     "The Rangers have claimed Josh White off waivers from the Orioles, per a team announcement. Texas now has 38 players on its 40-man roster.",
@@ -5740,8 +5841,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/al-central-notes-white-sox-twins-burg-guardians.html",
    "date": "2026-11-14T18:00:34.000Z",
    "teams": [
-    "CWS",
     "CLE",
+    "CWS",
     "MIN",
     "SF"
    ],
@@ -5880,50 +5981,6 @@
    ]
   },
   {
-   "title": "Royals In Market For Right-Handed Hitting Outfielder",
-   "link": "https://www.mlbtraderumors.com/2026/11/royals-in-market-for-right-handed-hitting-outfielder.html",
-   "date": "2026-11-14T01:36:24.000Z",
-   "teams": [
-    "KC"
-   ],
-   "body": [
-    "The Royals are looking for a right-handed hitting outfielder, general manager J.J. Picollo told reporters at the GM Meetings this week (link via ESPN’s Jesse Rogers). The GM added that an acquisition would ideally be capable of playing center field on at least a part-time basis.",
-    "That’s essentially the role Lane Thomas played for K.C. this year. They picked him up on a one-year, $5.25MM free agent contract last offseason. Thomas played reasonably well for a half-season, batting.232/.326/.393 across 97 games. He started 72 contests in the outfield, 52 of them up the middle. They traded him to Atlanta at the deadline for a pair of minor league pitchers and to dump what remained of Bailey Falter’s arbitration salary.",
-    "Thomas didn’t play particularly well for the Braves. He’s back on the market and might be available even more cheaply than he was a year ago if the Royals wanted to reengage. Tyrone Taylor, Myles Straw, Jake Meyers and Victor Robles are other possibilities as fourth/fifth outfield types. If the Royals wanted a potential everyday center fielder, Luis Robert Jr. is the top right-handed hitter on the free agent market."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-04-04T191155Z_116366941_MT1USATODAY28658320_RTRMADP_3_MLB-MILWAUKEE-BREWERS-AT-KANSAS-CITY-ROYALS-GAME-ONE-1024x683.jpg",
-   "players": [
-    [
-     "Lane Thomas",
-     657041
-    ],
-    [
-     "Bailey Falter",
-     663559
-    ],
-    [
-     "Tyrone Taylor",
-     621438
-    ],
-    [
-     "Myles Straw",
-     664702
-    ],
-    [
-     "Jake Meyers",
-     676694
-    ],
-    [
-     "Victor Robles",
-     645302
-    ],
-    [
-     "Luis Robert Jr.",
-     673357
-    ]
-   ]
-  },
-  {
    "title": "Angels, Tyler Heineman Avoid Arbitration",
    "link": "https://www.mlbtraderumors.com/2026/11/angels-tyler-heineman-avoid-arbitration.html",
    "date": "2026-11-13T22:50:21.000Z",
@@ -6038,47 +6095,6 @@
     [
      "Alejandro Kirk",
      672386
-    ]
-   ]
-  },
-  {
-   "title": "Cubs Notes: Ramirez, Kelly, Hoyer, Staffing",
-   "link": "https://www.mlbtraderumors.com/2026/11/cubs-notes-ramirez-kelly-hoyer-staffing.html",
-   "date": "2026-11-13T20:09:14.000Z",
-   "teams": [
-    "CHC"
-   ],
-   "body": [
-    "The Cubs have two spots to fill in the outfield alongside newly minted NL MVP Pete Crow-Armstrong with Ian Happ and Seiya Suzuki heading to free agency. The internal replacements include Pedro Ramirez, Matt Shaw, and Kevin Alcantara. Ramirez could be the leader in the clubhouse based on recent comments from GM Carter Hawkins.",
-    "The lead exec praised Ramirez’ athleticism and work ethic, factors that could help him transition into a more versatile role, as relayed by Meghan Montemurro of the Chicago Tribune. The 22-year-old primarily played second and third base in the minors, but played some first base and left field after his big-league promotion.",
-    "“There’s a risk to going with some unproven guys, but that allows you maybe to get some more proven guys in other spots,” Hawkins said. “I don’t think there’s one path that we necessarily would cross out at this juncture.”",
-    "Ramirez forced his way to the majors by hitting.312 with nine homers and 19 steals in 43 games at Triple-A. He held his own in his first taste of the highest level, slashing.261/.321/.402 across 266 plate appearances. Ramirez added six homers and nine steals. The thefts have always been a part of his profile, but the power was a big addition in 2026. He’d totaled 25 homers in four pro seasons before popping 15 this year."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/PedroRamirez-1024x683.jpg",
-   "players": [
-    [
-     "Pete Crow-Armstrong",
-     691718
-    ],
-    [
-     "Ian Happ",
-     664023
-    ],
-    [
-     "Seiya Suzuki",
-     673548
-    ],
-    [
-     "Pedro Ramirez",
-     699393
-    ],
-    [
-     "Matt Shaw",
-     807713
-    ],
-    [
-     "Kevin Alcantara",
-     682634
     ]
    ]
   },
@@ -6683,30 +6699,6 @@
    ]
   },
   {
-   "title": "Ryan Jeffers To Decline Qualifying Offer",
-   "link": "https://www.mlbtraderumors.com/2026/11/ryan-jeffers-to-decline-qualifying-offer.html",
-   "date": "2026-11-12T01:50:03.000Z",
-   "teams": [
-    "MIN"
-   ],
-   "body": [
-    "Twins catcher Ryan Jeffers is declining the qualifying offer, reports Bobby Nightengale of The Minnesota Star-Tribune. Minnesota’s front office certainly expected as much, and they have ongoing interest in bringing Jeffers back on a multi-year deal.",
-    "MLBTR predicted Jeffers to receive a four-year, $75MM contract in ranking him ninth on our Top 50 Free Agents list. That came with the assumption that Jeffers would reject the QO, as he’s the clear #1 option in the catching class. The righty hitter is coming off a.256/.353/.461 slash with 14 homers and career-best strikeout and walk numbers. Although he was limited to 368 plate appearances by a hamate fracture, Jeffers has a four-year track record of strong offense behind the dish (.254/.342/.440 in more than 1600 plate appearances).",
-    "Jeffers is entering his age-30 season. He’s a passable but hardly elite defender who could end up at first base toward the end of a three- or four-year contract. Jeffers has the bat to profile there and has a particularly strong career track record versus left-handed pitching. He’s fairly similar statistically to Willson Contreras when he commanded a five-year, $87.5MM deal from St. Louis. Jeffers doesn’t have the same pedigree — Contreras was a three-time All-Star who’d been the primary catcher on a World Series team — but should do well on the open market."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-26T022727Z_690727872_MT1USATODAY29914791_RTRMADP_3_MLB-TEXAS-RANGERS-AT-MINNESOTA-TWINS-1024x683.jpg",
-   "players": [
-    [
-     "Ryan Jeffers",
-     680777
-    ],
-    [
-     "Willson Contreras",
-     575929
-    ]
-   ]
-  },
-  {
    "title": "Jacob Misiorowski Wins NL Cy Young Award",
    "link": "https://www.mlbtraderumors.com/2026/11/jacob-misiorowski-wins-nl-cy-young-award.html",
    "date": "2026-11-12T00:54:55.000Z",
@@ -6998,34 +6990,6 @@
     [
      "Jasson Domínguez",
      691176
-    ]
-   ]
-  },
-  {
-   "title": "Mariners Interested In Seiya Suzuki, Not Likely To Re-Sign Randy Arozarena Or J.P. Crawford",
-   "link": "https://www.mlbtraderumors.com/2026/11/mariners-rumors-seiya-suzuki-wont-re-sign-randy-arozarena-jp-crawford.html",
-   "date": "2026-11-11T02:15:49.000Z",
-   "teams": [
-    "SEA"
-   ],
-   "body": [
-    "The Mariners appear to be in the process of shuffling up their offense this winter. They’ve already informed longstanding shortstop and clubhouse leader J.P. Crawford that they’re planning to move on, reports Adam Jude of the Seattle Times. Jude and colleague Ryan Divish further report that the M’s won’t pursue a long-term deal with Randy Arozarena but do have interest in fellow free-agent corner outfielder Seiya Suzuki. As is the case with Arozarena, Suzuki received a $23.15MM qualifying offer that he is expected to reject.",
-    "Starting with the outfielders, the disparity in interest might seem odd at first glance. Suzuki and Arozarena are both 32-year-old corner outfielders with plus power. They’re coming off similar seasons, and there’s expected to be a good bit of overlap in their markets.",
-    "However, while the two have similar track records and platform seasons, there are some underlying metrics that might cause a team to lean toward Suzuki. There’s no clear indication of the Mariners’ reasoning, but Suzuki is coming off the better defensive season and has the sort of plus arm that’s generally needed for a right fielder. Arozarena is more confined to left field; his arm strength on throws from the outfield ranked in just the 32nd percentile of big league outfielders, with an average velocity of 82.1 mph. Suzuki’s sat in the 85th percentile, with an average velocity of 89.9 mph."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/08/seiya-suzuki-chicago-cubs-1024x683.jpg",
-   "players": [
-    [
-     "Seiya Suzuki",
-     673548
-    ],
-    [
-     "Randy Arozarena",
-     668227
-    ],
-    [
-     "J.P. Crawford",
-     641487
     ]
    ]
   },
@@ -8330,28 +8294,6 @@
    ]
   },
   {
-   "title": "Mets Claim Pierson Ohl",
-   "link": "https://www.mlbtraderumors.com/2026/11/mets-claim-pierson-ohl.html",
-   "date": "2026-11-02T20:50:32.000Z",
-   "teams": [
-    "COL",
-    "NYM"
-   ],
-   "body": [
-    "The Mets have claimed right-hander Pierson Ohl off waivers from the Rockies, reports Chelsea Janes of SNY. Colorado has announced the move.",
-    "The Rockies cut Ohl from their 40-man roster less than a year after acquiring him in a January 2026 trade with the Twins. They didn’t end up getting any contributions from Ohl, who underwent Tommy John surgery in late February and missed the entire season. He began throwing in August in hopes of returning in 2027. If he does, it could be as a member of the Mets.",
-    "Now 27 years old, Ohl has spent most of his pro career with the Twins organization. They drafted him in the 14th round in 2021 and helped him develop into a decent prospect. When they selected Ohl’s contract in July 2025, he owned a microscopic 3.6% walk rate in the minors. He continued limiting walks during a 14-appearance, 30-inning major league debut that year, as he issued free passes at a 5.3% clip. While that accompanied an unspectacular strikeout rate (20.3%) and a high ERA (5.10), Ohl posted more encouraging underlying numbers. ERA estimators such as SIERA (3.87), xFIP (3.99), FIP (4.20) and xERA (4.78) all suggested he deserved a better fate.",
-    "After a lost year with Colorado, Ohl will attempt to establish himself with his third organization. He is joining the Mets with a full slate of options and a good track record at the lower levels, where he has typically leaned on a low-90s fastball and an 81 mph changeup. Most of Ohl’s minor league work has come in Double-A ball, where he has logged a 3.47 ERA in 228 innings."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/02/pierson-ohl-rockies-photo-day-scaled-e1771866312891-1024x707.jpg",
-   "players": [
-    [
-     "Pierson Ohl",
-     701487
-    ]
-   ]
-  },
-  {
    "title": "Reds Claim Duncan Davitt, Paxton Schultz",
    "link": "https://www.mlbtraderumors.com/2026/11/reds-claim-duncan-davitt-paxton-schultz.html",
    "date": "2026-11-02T20:19:49.000Z",
@@ -9002,23 +8944,6 @@
      656756
     ]
    ]
-  },
-  {
-   "title": "Astros Hire Conner Watson As Director Of Hitting",
-   "link": "https://www.mlbtraderumors.com/2026/10/astros-hire-connor-watson-as-director-of-hitting.html",
-   "date": "2026-10-25T20:46:53.000Z",
-   "teams": [
-    "CLE",
-    "HOU"
-   ],
-   "body": [
-    "The Astros have hired Conner Watson as their new director of hitting, The Athletic’s Chandler Rome reports. Watson heads to Houston after spending the last two seasons as the Guardians’ assistant director of hitting development.",
-    "The new hire continues an offseason of change for an Astros team that is looking for both a new GM and manager. In this case, Watson fills a role that has been open since August, when former director of hitting Dan Hennigan departed for a coaching job on the Wake Forest staff.",
-    "Spencer Medick was hired as Houston’s director of pitching earlier this week, so the Astros now have two division heads in place overseeing the entire organization’s pitching and hitting approaches. It is perhaps a little unusual that Medick and Watson were hired in advance of a general manager taking the wheel of baseball operations, though it perhaps tracks given how Astros owner Jim Crane is known for his active role in front office decisions.",
-    "Before joining the Guardians, Watson spent three years as a lead instructor at Driveline’s Arizona branch. He’ll now look to shake up and perhaps modernize the Astros’ hitting practices at both the major and minor league levels. While many of Houston’s coaches and manager Joe Espada won’t be returning in 2027, hitting coach Victor Rodriguez was expected to be retained, though this could potentially change depending on Watson’s plans."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2021/08/USATSI_12469616-1024x683.jpg",
-   "players": []
   },
   {
    "title": "Poll: Does Paul Skenes Just Need To Fix His Changeup?",
