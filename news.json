@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-25T23:00:38.016Z",
+ "updated": "2026-11-25T23:10:32.713Z",
  "articles": [
+  {
+   "title": "Orioles, Luis Robert Jr. Reportedly Finalizing Contract",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-luis-robert-jr-reportedly-finalizing-contract.html",
+   "date": "2026-11-25T23:01:41.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles and outfielder Luis Robert Jr. are reportedly finalizing a new contract, reports Francys Romero of BeisbolFR. The details of the agreement for the Boras Corporation client still haven’t been publicly revealed. Baltimore has a full 40-man roster and would need to make a corresponding move if this deal gets over the finish line."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/luis-robert-jr-orioles-2026-1024x683.jpg",
+   "players": [
+    [
+     "Luis Robert Jr.",
+     673357
+    ]
+   ]
+  },
   {
    "title": "Marlins To Sign Gary Sánchez",
    "link": "https://www.mlbtraderumors.com/2026/11/marlins-to-sign-gary-sanchez.html",
@@ -282,6 +300,10 @@
      672960
     ],
     [
+     "Teruaki Sato",
+     831664
+    ],
+    [
      "Randy Arozarena",
      668227
     ],
@@ -392,12 +414,20 @@
      502671
     ],
     [
+     "Darwinzon Hernández",
+     650382
+    ],
+    [
      "A.J. Ewing",
      805999
     ],
     [
      "Trevor Rogers",
      669432
+    ],
+    [
+     "Teruaki Sato",
+     831664
     ],
     [
      "Kris Bubic",
@@ -485,24 +515,6 @@
    ]
   },
   {
-   "title": "Surfshark: How Baseball Fans Can Protect Themselves From Online Scams (Sponsored)",
-   "link": "https://www.mlbtraderumors.com/2026/11/surfshark-how-baseball-fans-can-protect-themselves-from-online-scams-sponsored.html",
-   "date": "2026-11-25T15:09:08.000Z",
-   "teams": [],
-   "body": [
-    "You check Trade Rumors with your morning coffee. You buy the new jersey the minute it drops, and your tickets live in the stadium app. These days, a lot of being a fan happens on your phone.",
-    "Scammers have noticed. They know fans move fast on deals and share their data with teams, ticket sites, and stores — and they plan their scams around that. Here’s what to watch for, plus a few habits that make you a much harder target.",
-    "Ticket scams: when a “great deal” costs you the game",
-    "Prices for big games keep rising, so it makes sense to look for a cheaper seat. But that search is where many fans get burned.",
-    "A Surfshark survey found that 32% of Americans have bought an event ticket from someone other than the official seller. And more than one in four of those buyers ended up with a fake at least once. Sports tickets were faked more often than any other kind, at 35% of all fake ticket purchases.",
-    "Most victims lost between $50 and $250, usually because the seller or website “seemed legit.” That’s the thing about ticket scams: they’re made to look real.",
-    "Buy from the team, the league, or the official ticketing partner whenever you can Check the URL carefully on resale sites, and stick to platforms with buyer protection Skip sellers who ask you to pay by wire transfer, gift card, or apps with no purchase protection Verify your ticket with the venue or platform before game day If a deal does go wrong, report it. The same Surfshark survey found that 69% of victims who reported the scam got at least some of their money back.",
-    "A team’s data breach can affect you too"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Surfshark_Logo_Pos_150px.png",
-   "players": []
-  },
-  {
    "title": "Mets Sign Paul Goldschmidt",
    "link": "https://www.mlbtraderumors.com/2026/11/mets-sign-paul-goldschmidt.html",
    "date": "2026-11-25T13:47:50.000Z",
@@ -543,6 +555,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/TeruakiSato-1-1024x683.jpg",
    "players": [
+    [
+     "Teruaki Sato",
+     831664
+    ],
     [
      "Trevor Rogers",
      669432
@@ -834,6 +850,10 @@
     [
      "Jazz Chisholm Jr.",
      665862
+    ],
+    [
+     "Teruaki Sato",
+     831664
     ]
    ]
   },
@@ -1630,6 +1650,10 @@
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/hiromi-itoh-npb-2026-1024x683.jpg",
    "players": [
     [
+     "Teruaki Sato",
+     831664
+    ],
+    [
      "Dustin May",
      669160
     ],
@@ -2137,6 +2161,10 @@
      686973
     ],
     [
+     "Darwinzon Hernández",
+     650382
+    ],
+    [
      "Devin Williams",
      642207
     ]
@@ -2468,6 +2496,10 @@
     [
      "Yunior Tur",
      814305
+    ],
+    [
+     "Darwinzon Hernández",
+     650382
     ]
    ]
   },
@@ -2702,6 +2734,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2023-03-15T191948Z_1390556863_MT1USATODAY20235497_RTRMADP_3_BASEBALL-WORLD-BASEBALL-CLASSIC-ISRAEL-VS-VENEZUELA-1024x683.jpg",
    "players": [
+    [
+     "Darwinzon Hernández",
+     650382
+    ],
     [
      "Chayce McDermott",
      694646
@@ -3178,6 +3214,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/JarrenDuran-1024x683.jpg",
    "players": [
+    [
+     "Teruaki Sato",
+     831664
+    ],
     [
      "Jarren Duran",
      680776
@@ -4687,8 +4727,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/five-players-reject-qualifying-offer.html",
    "date": "2026-11-17T21:35:09.000Z",
    "teams": [
-    "BAL",
     "CHC",
+    "BAL",
     "PIT",
     "SEA"
    ],
@@ -5715,7 +5755,12 @@
     "Among the two starters in that trio, Itoh isn’t as flashy as Taira but should still procure a big league deal. He has a 2.91 earned run average and 902 career strikeouts in just over 1,000 innings for the Hokkaido Nippon-Ham Fighters. In 2025, he won the Sawamura Award, the NPB equivalent of the Cy Young award. Itoh has also shown excellent control, posting walk rates of 5.5% or lower in each of the last three seasons for the Fighters."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/hiromi-itoh-npb-2026-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Teruaki Sato",
+     831664
+    ]
+   ]
   },
   {
    "title": "Phillies Sign Max Kranick To Minor League Deal",
@@ -6288,7 +6333,12 @@
     "The Blue Jays were known to have scouted Taira extensively this past season and have carried their interest into the offseason, per Sportsnet’s Shi Davidi. Toronto has done “lots of background work” on Taira, per the report. Davidi adds that Taira isn’t traveling to North America to meet with interested clubs in person but is conducting frequent Zoom calls with teams major league clubs. That presumably includes Toronto, though it’s not clear whether the two parties have formally spoken or are still lining up a time to do so. The Giants also have some interest in Taira and have discussed him internally, according to John Shea of the San Francisco Standard."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/07/USATSI_29261078-1024x683.jpg",
-   "players": []
+   "players": [
+    [
+     "Teruaki Sato",
+     831664
+    ]
+   ]
   },
   {
    "title": "Tigers Interested In Shota Imanaga",
@@ -6487,6 +6537,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/TeruakiSato-1024x683.jpg",
    "players": [
+    [
+     "Teruaki Sato",
+     831664
+    ],
     [
      "Corey Seager",
      608369
@@ -6895,6 +6949,10 @@
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/TeruakiSato-1024x683.jpg",
    "players": [
     [
+     "Teruaki Sato",
+     831664
+    ],
+    [
      "Seiya Suzuki",
      673548
     ],
@@ -6946,6 +7004,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/09/teruaki-sato-1024x683.jpg",
    "players": [
+    [
+     "Teruaki Sato",
+     831664
+    ],
     [
      "Nolan Arenado",
      571448
@@ -7545,6 +7607,10 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/ShotaImanaga-2026-1024x683.jpg",
    "players": [
+    [
+     "Teruaki Sato",
+     831664
+    ],
     [
      "Shota Imanaga",
      684007
