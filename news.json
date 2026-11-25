@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T13:10:32.634Z",
+ "updated": "2026-11-25T13:20:35.588Z",
  "articles": [
   {
    "title": "Cubs To Sign Teruaki Sato",
@@ -740,8 +740,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-offered-tarik-skubal-nine-year-deal-in-400mm-range.html",
    "date": "2026-11-23T20:20:40.000Z",
    "teams": [
-    "TOR",
-    "NYM"
+    "NYM",
+    "TOR"
    ],
    "body": [
     "November 23: Jon Heyman of The New York Post reports that Toronto’s offer checked in at $420MM over nine years.",
@@ -864,6 +864,72 @@
    ]
   },
   {
+   "title": "Mets To Sign Paul Goldschmidt",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-sign-paul-goldschmidt.html",
+   "date": "2026-11-23T15:23:50.000Z",
+   "teams": [
+    "NYM"
+   ],
+   "body": [
+    "9:23am: Goldschmidt will sign a one-year, $8MM contract, reports Will Sammon of The Athletic. Since the Mets are perennial luxury payors who are well into the top tier of penalty, they’d be in line for a 110% tax on that sum under the existing luxury-tax system. Goldschmidt will cost them $16.8MM overall. That number could potentially climb higher, as Joel Sherman of the New York Post adds that the deal contains $2MM of incentives.",
+    "8:57am: The Mets and free agent first baseman Paul Goldschmidt are in agreement on a deal, reports Robert Murray of FanSided. Goldschmidt is a client of Excel Sports Management.",
+    "It’s a quick follow-up to yesterday’s record deal for two-time American League Cy Young Award winner Tarik Skubal. While the 39-year-old Goldschmidt certainly isn’t the marquee addition he would’ve been during his NL MVP-winning prime, the future Hall of Famer remains a productive role player who can handle at least a platoon timeshare at first base.",
+    "Goldschmidt was one of the top bats on the market in terms of production versus left-handed pitching, and the four-time Gold Glove winner still grades as a strong defender at first base, even if the limited role he now occupies in the late stages of his career means he’s unlikely to log enough innings to have a chance at a fifth.",
+    "Goldschmidt also spent the 2026 season in New York — but in pinstripes over in the Bronx. He appeared in 105 games and totaled 380 plate appearances, hitting.252/.343/.452 with 18 homers, 13 doubles, a triple, a 7.6% walk rate and a 22.6% strikeout rate."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/paul-goldschmidt-1024x683.jpg",
+   "players": [
+    [
+     "Paul Goldschmidt",
+     502671
+    ],
+    [
+     "Tarik Skubal",
+     669373
+    ]
+   ]
+  },
+  {
+   "title": "Mets To Sign Tarik Skubal",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-to-sign-tarik-skubal.html",
+   "date": "2026-11-23T05:24:27.000Z",
+   "teams": [
+    "NYM"
+   ],
+   "body": [
+    "The Mets have made another blockbuster addition, as the club has signed two-time AL Cy Young Award winner Tarik Skubal to a nine-year, $450MM contract. The deal is a straight nine-year pact with no opt-outs and a full no-trade clause. Skubal will get the first $45MM of his deal as a signing bonus, and $30MM of the southpaw’s future salary will be deferred. The contract will become official once Skubal passes a physical. Skubal is represented by the Boras Corporation.",
+    "As many expected heading into the offseason, Skubal has landed the largest contract ever given to a pitcher, with his $450MM payday far exceeding the $325MM Yoshinobu Yamamoto received from the Dodgers (over a 12-year term) in December 2023. Skubal’s contract is the fourth largest guaranteed salary given to any player, topped only by Juan Soto’s $765MM from the Mets two years ago, the $700MM Shohei Ohtani received from the Dodgers, and Vladimir Guerrero’s $500MM extension with the Blue Jays. Depending on how the deferrals are calculated, Skubal for now has the third-highest average annual value ever, behind Kyle Tucker and Soto.",
+    "MLB Trade Rumors naturally ranked Skubal in the top spot on our list of the offseason’s top 50 free agents, and his $450MM deal is even further north of our nine-year, $425MM projection. Steve Adams and Darragh McDonald each predicted Skubal would sign with the Mets, which was a logical choice given both New York’s severe need for starting pitching, and the fact that the Mets are one of the few teams willing and able to meet Skubal’s huge asking price."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/tarik-skubal-pitching-1024x683.jpg",
+   "players": [
+    [
+     "Tarik Skubal",
+     669373
+    ],
+    [
+     "Yoshinobu Yamamoto",
+     808967
+    ],
+    [
+     "Juan Soto",
+     665742
+    ],
+    [
+     "Shohei Ohtani",
+     660271
+    ],
+    [
+     "Vladimir Guerrero",
+     665489
+    ],
+    [
+     "Kyle Tucker",
+     663656
+    ]
+   ]
+  },
+  {
    "title": "Astros, Blue Jays, Padres Interested In Randy Arozarena",
    "link": "https://www.mlbtraderumors.com/2026/11/astros-blue-jays-padres-interested-in-randy-arozarena.html",
    "date": "2026-11-23T05:02:32.000Z",
@@ -959,8 +1025,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/jonathan-loaisiga-had-offers-from-mets-blue-jays.html",
    "date": "2026-11-22T18:18:50.000Z",
    "teams": [
-    "NYY",
     "NYM",
+    "NYY",
     "TOR"
    ],
    "body": [
@@ -1032,6 +1098,30 @@
     [
      "Jarren Duran",
      680776
+    ]
+   ]
+  },
+  {
+   "title": "Mets Extend A.J. Ewing",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-extend-a-j-ewing.html",
+   "date": "2026-11-22T04:59:49.000Z",
+   "teams": [
+    "NYM"
+   ],
+   "body": [
+    "The Mets and outfielder A.J. Ewing have agreed to an eight-year contract extension, SNY’s Chelsea Janes reports. The deal also contains a club option for a ninth season (the 2035 campaign), and The Athletic’s Will Sammon reports that the option year is worth $25MM. Sammon also says the extension will pay Ewing $95MM in guaranteed money. Ewing is represented by ACES.",
+    "Ewing’s deal is the eighth-largest guarantee given to a player with less than a year of big league service time, as well as the eighth-largest in terms of average annual value. It’s a huge commitment to a 22-year-old who just made his MLB debut back in May, and it marks the first true long-term commitment extension for the Mets since David Stearns became president of baseball operations in October 2023. Catcher Luis Torrens inked a two-year, $11.5MM extension last May, but Ewing’s deal represents a new frontier for the franchise’s investment in young talent.",
+    "Locking up young players to early-career extensions was a common tactic for Stearns when he ran the Brewers’ front office, and gaining cost certainty over a promising player is a logical move for both larger-market and smaller-market teams alike. The Mets have now covered all of Ewing’s pre-arbitration and arbitration-eligible years, and at least two of his free agent years."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AJEwing-2026-1024x683.jpg",
+   "players": [
+    [
+     "A.J. Ewing",
+     805999
+    ],
+    [
+     "Luis Torrens",
+     620443
     ]
    ]
   },
@@ -1396,6 +1486,27 @@
    ]
   },
   {
+   "title": "Mets Have Received Trade Interest In Mark Vientos",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-have-received-trade-interest-in-mark-vientos.html",
+   "date": "2026-11-21T04:10:47.000Z",
+   "teams": [
+    "NYM"
+   ],
+   "body": [
+    "The Mets tendered Mark Vientos an arbitration contract this afternoon. MLBTR contributor Matt Swartz projects him for a $2.4MM salary in his first year of eligibility. The decision came as a moderate surprise, as Vientos is out of minor league options and coming off a second consecutive poor season.",
+    "Although New York didn’t want to completely cut bait on Vientos, there’s no guarantee he remains on the roster into 2027. Will Sammon of The Athletic reports that the Mets have gotten trade calls on the first baseman, though no deal is believed to be imminent.",
+    "Tendering Vientos a contract merely ensures they can continue those conversations for the next couple weeks and again after the lockout. If Vientos and the Mets agree to a deal without an arbitration hearing, his salary would be fully guaranteed. If they can’t come to terms and go to a hearing, the Mets could release him for 30 or 45 days termination pay during Spring Training if they don’t feel he has a place on the roster.",
+    "Vientos looked like a potential offensive star a couple years ago. He slugged 27 home runs with a.266/.322/.516 slash line in only 111 regular season games in 2024. Vientos was one of the Mets’ best players in the postseason that year, batting.327 with a team-leading five longballs in 58 October plate appearances."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-19T011104Z_1374829030_MT1USATODAY29852078_RTRMADP_3_MLB-PHILADELPHIA-PHILLIES-AT-NEW-YORK-METS-1024x683.jpg",
+   "players": [
+    [
+     "Mark Vientos",
+     668901
+    ]
+   ]
+  },
+  {
    "title": "Tigers Seeking Additional Relievers After Pagán Signing",
    "link": "https://www.mlbtraderumors.com/2026/11/tigers-seeking-additional-relievers-after-pagan-signing.html",
    "date": "2026-11-21T01:34:41.000Z",
@@ -1548,8 +1659,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/mets-claim-gus-varland.html",
    "date": "2026-11-20T22:31:01.000Z",
    "teams": [
-    "WSH",
-    "NYM"
+    "NYM",
+    "WSH"
    ],
    "body": [
     "The Mets have claimed right-handed reliever Gus Varland off waivers from the NL East rival Nationals, Spencer Nusbaum of The Athletic reports. The Nats designated Varland for assignment on Tuesday.",
@@ -2137,6 +2248,27 @@
     [
      "Sean Sullivan",
      807743
+    ]
+   ]
+  },
+  {
+   "title": "Mets, Darwinzon Hernández Agree To Three-Year Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/mets-darwinzon-hernandez-agree-to-three-year-deal.html",
+   "date": "2026-11-20T05:41:32.000Z",
+   "teams": [
+    "NYM"
+   ],
+   "body": [
+    "The Mets are signing lefty reliever Darwinzon Hernández to a three-year, $12MM contract, reports José F. Rivera. The signing is still pending a physical. New York opened a spot on the 40-man roster by dropping Chayce McDermott on waivers this afternoon.",
+    "It’s a surprising contract length for a player who hasn’t pitched in the majors since 2022. Hernández has spent the last three and a half seasons with the Fukuoka SoftBank Hawks in Nippon Professional Baseball. He turned in a 2.46 earned run average across 131 2/3 innings against Japan’s top hitters. That includes a 1.48 mark over 42 2/3 frames this past season, his best year in NPB.",
+    "Hernández has been on the radar for a while but won’t celebrate his 30th birthday until December. The Venezuela native was one of the top prospects in the Red Sox’ farm system in the late 2010s. He came up through the minors as a starter with huge raw stuff but never developed the command to match. The Sox moved him to the bullpen before his big league debut in 2019.",
+    "The 6’2″, 255-pound southpaw pitched 85 1/3 innings across parts of four seasons in Boston. He allowed just over five earned runs per nine with too much wildness to even stick in a relief role. Hernández punched out 32.2% of big league hitters behind a mid-90s fastball and a pair of breaking pitches. He also walked almost 18% of batters faced, allowing a.388 on-base percentage in the process."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2023-03-15T191948Z_1390556863_MT1USATODAY20235497_RTRMADP_3_BASEBALL-WORLD-BASEBALL-CLASSIC-ISRAEL-VS-VENEZUELA-1024x683.jpg",
+   "players": [
+    [
+     "Chayce McDermott",
+     694646
     ]
    ]
   },
