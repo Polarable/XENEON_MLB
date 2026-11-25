@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-25T15:20:35.827Z",
+ "updated": "2026-11-25T15:30:34.235Z",
  "articles": [
+  {
+   "title": "Royals To Sign Alec Bohm",
+   "link": "https://www.mlbtraderumors.com/2026/11/royals-to-sign-alec-bohm.html",
+   "date": "2026-11-25T15:26:56.000Z",
+   "teams": [
+    "KC"
+   ],
+   "body": [
+    "The Royals have reached a deal with free agent Alec Bohm, reports Jon Morosi of MLB Network. Bohm is represented by THE-TEAM company."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/AlecBohm-1-1024x683.jpg",
+   "players": [
+    [
+     "Alec Bohm",
+     664761
+    ]
+   ]
+  },
   {
    "title": "Surfshark: How Baseball Fans Can Protect Themselves From Online Scams (Sponsored)",
    "link": "https://www.mlbtraderumors.com/2026/11/surfshark-how-baseball-fans-can-protect-themselves-from-online-scams-sponsored.html",
@@ -7065,8 +7083,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/bob-boone-passes-away.html",
    "date": "2026-11-10T17:50:36.000Z",
    "teams": [
-    "KC",
     "LAA",
+    "KC",
     "PHI"
    ],
    "body": [
