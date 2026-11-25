@@ -1,6 +1,28 @@
 {
- "updated": "2026-11-25T19:00:37.812Z",
+ "updated": "2026-11-25T19:10:32.563Z",
  "articles": [
+  {
+   "title": "Brewers Sign Antonio Senzatela",
+   "link": "https://www.mlbtraderumors.com/2026/11/brewers-sign-antonio-senzatela.html",
+   "date": "2026-11-25T19:04:17.000Z",
+   "teams": [
+    "MIL"
+   ],
+   "body": [
+    "The Brewers announced that they have signed right-hander Antonio Senzatela to a one-year contract. The financial terms of the deal for the Republik Sports client have not yet been reported. First baseman/outfielder Tyler Black has been designated for assignment to open a 40-man roster spot."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Antonio_Senzatela_Brewers-1024x683.jpg",
+   "players": [
+    [
+     "Antonio Senzatela",
+     622608
+    ],
+    [
+     "Tyler Black",
+     672012
+    ]
+   ]
+  },
   {
    "title": "Guardians Sign Kris Bubic",
    "link": "https://www.mlbtraderumors.com/2026/11/guardians-sign-kris-bubic.html",
@@ -7691,10 +7713,10 @@
    "link": "https://www.mlbtraderumors.com/2026/11/mlbtr-podcast-offseason-preview.html",
    "date": "2026-11-05T05:59:41.000Z",
    "teams": [
-    "MIL",
-    "BAL",
-    "SF",
     "TB",
+    "BAL",
+    "MIL",
+    "SF",
     "TEX"
    ],
    "body": [
