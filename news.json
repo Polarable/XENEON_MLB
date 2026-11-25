@@ -1,6 +1,31 @@
 {
- "updated": "2026-11-25T04:30:32.486Z",
+ "updated": "2026-11-25T04:40:29.423Z",
  "articles": [
+  {
+   "title": "D-Backs Have Gotten Calls On Eduardo Rodriguez, Merrill Kelly",
+   "link": "https://www.mlbtraderumors.com/2026/11/d-backs-have-gotten-calls-on-eduardo-rodriguez-merrill-kelly.html",
+   "date": "2026-11-25T04:30:59.000Z",
+   "teams": [
+    "ARI"
+   ],
+   "body": [
+    "The Diamondbacks have received trade calls on starters Eduardo Rodriguez and Merrill Kelly, report Ken Rosenthal and Will Sammon of The Athletic. It’s unclear how willing the Snakes are to part with one of their veteran pitchers.",
+    "Arizona would presumably be more inclined to listen on Kelly, who’s coming off a rough year. Rodriguez was the team’s best starter in 2026. It’d be easier for the Diamondbacks to find a taker for the lefty, yet that’d subtract from a rotation that already looks shaky. Both pitchers also have limited no-trade protection that’d allow them some say over their destination even if the Diamondbacks look to move them.",
+    "Rodriguez is slated to make a $19MM salary next season. He’s also guaranteed a $6MM buyout on an $18MM mutual option that would vest if he throws 110 1/3 innings (and climbs to $19MM if he reaches 160 1/3 frames). Kelly is owed a $21MM salary in the second season of his two-year contract. He’d lock in a $12MM salary for 2028 if he reaches 170 innings next season and would also be owed a $500K assignment bonus from his new team if he’s traded.",
+    "There’s probably some surplus value with Rodriguez even as he enters his age-34 season. The southpaw is coming off a seventh place finish in NL Cy Young balloting after turning in a 2.89 earned run average across 32 starts. Rodriguez only struck out 18.1% of opposing hitters with a modest 9.5% swinging strike rate, so it’s unlikely teams will view him as highly as the ERA would suggest. Estimators like FIP (3.89), xERA (4.27) and SIERA (4.62) put his 2026 performance closer to league average."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-17T021855Z_2094017887_MT1USATODAY29836782_RTRMADP_3_MLB-MIAMI-MARLINS-AT-ARIZONA-DIAMONDBACKS-1024x682.jpg",
+   "players": [
+    [
+     "Eduardo Rodriguez",
+     593958
+    ],
+    [
+     "Merrill Kelly",
+     518876
+    ]
+   ]
+  },
   {
    "title": "Mariners, Carlos Santana Agree To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/mariners-carlos-santana-agree-to-minor-league-deal.html",
@@ -9,7 +34,7 @@
     "SEA"
    ],
    "body": [
-    "The Mariners are in agreement with veteran first baseman Carlos Santana on a minor league contract, reports Will Sammon of The Athletic. The Octagon client will presumably get an invite to MLB Spring Training.",
+    "The Mariners are in agreement with veteran first baseman Carlos Santana on a minor league contract, reports Will Sammon of The Athletic. The Octagon client will get an invite to MLB Spring Training, writes Adam Jude of The Seattle Times.",
     "Santana’s career continues for his age-41 season. It’s his second stint in Seattle, as the switch-hitter spent the second half of the 2022 campaign in the Pacific Northwest. He clearly made a strong impression on the coaching staff and front office. The M’s showed interest in Santana as a free agent over the 2023-24 offseason and reportedly offered him a two-year contract the following winter. Santana declined to take a one-year deal back in Cleveland, where he began his career.",
     "The Mariners are one of nine teams for which Santana has suited up at the MLB level. His most recent big league work was an eight-game stint with the Diamondbacks this past April. Santana limped to a 2-24 start to the season before suffering a right adductor strain that sent him to the injured list for two months. The D-Backs released him once he was healthy rather than find a spot for him on the active roster."
    ],
@@ -8785,38 +8810,6 @@
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/10/Ben_Fritz_Padres-scaled-e1793392512724-1024x731.jpg",
    "players": []
-  },
-  {
-   "title": "Diamondbacks Seeking Controllable Starting Pitching",
-   "link": "https://www.mlbtraderumors.com/2026/10/diamondbacks-seeking-controllable-starting-pitching.html",
-   "date": "2026-10-30T15:20:18.000Z",
-   "teams": [
-    "ARI"
-   ],
-   "body": [
-    "After deciding whether or not to trade Ketel Marte, a secondary item on the Diamondbacks’ to-do list will be adding to the rotation. General manager Mike Hazen tells Nick Piecoro of The Arizona Republic that he would like to acquire a controllable starter. That is more likely to happen via trade, as Hazen is unlikely to push hard for a starter in free agency given the team is planning to reduce payroll.",
-    "The D-backs had a middling 4.28 ERA out of their rotation this year. The group’s 9.6% K-BB rate bested only the lowly Rockies, as Arizona’s starters showed good control but struggled to strike opponents out. Eduardo Rodriguez was better than expected. He posted a 2.89 ERA over 32 starts despite middling peripherals and led the staff with 3.2 fWAR. Michael Soroka and Brandon Pfaadt were the next best performers after him. Both had ERAs below 3.40, with Soroka riding an above-average 24.1% strikeout rate and Pfaadt relying on ground balls and control.",
-    "The trouble is that Soroka will become a free agent once he declines his end of a $10MM mutual option. Both sides have expressed interest in a reunion, though it remains unclear how far Arizona will go to retain Soroka while also addressing the rest of their roster. The bullpen, first base, and left-handed hitting all need to be addressed, as MLBTR’s Anthony Franco wrote in our Offseason Outlook series."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/mike-hazen-dbacks-2026-2-1024x683.jpg",
-   "players": [
-    [
-     "Ketel Marte",
-     606466
-    ],
-    [
-     "Eduardo Rodriguez",
-     593958
-    ],
-    [
-     "Michael Soroka",
-     647336
-    ],
-    [
-     "Brandon Pfaadt",
-     694297
-    ]
-   ]
   },
   {
    "title": "Marlins Exercise Club Option On Sandy Alcantara",
