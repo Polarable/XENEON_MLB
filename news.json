@@ -1,6 +1,30 @@
 {
- "updated": "2026-11-26T18:10:34.450Z",
+ "updated": "2026-11-26T18:20:34.236Z",
  "articles": [
+  {
+   "title": "Braves Agree To Minor League Deals With Michael Helman, Charlie Barnes",
+   "link": "https://www.mlbtraderumors.com/2026/11/braves-agree-to-minor-league-deals-with-michael-helman-charlie-barnes.html",
+   "date": "2026-11-26T18:16:52.000Z",
+   "teams": [
+    "ATL"
+   ],
+   "body": [
+    "According to Jon Heyman of the New York Post, the Braves have agreed to a minor league contract with left-hander Charlie Barnes. The agreement includes an invitation to spring training. Atlanta has also signed outfielder Michael Helman to a minor league deal, per his transaction log on MLB.com.",
+    "Barnes, 31, began his professional career with the Twins. Drafted in 2017, he made his MLB debut for Minnesota four years later, pitching 38 innings over nine games in 2021. He went 0-3 with a 5.92 ERA, striking out only 20 and walking 16.",
+    "After his disappointing rookie season, the Twins removed Barnes from their 40-man roster and later granted him his release to sign with the KBO’s Lotte Giants. He then played the next four seasons in Korea, where he pitched quite well. From 2022-25, he threw at 150 innings each year with an ERA in the mid-3.00s. Unfortunately, a shoulder injury marred his 2025 campaign, leading the Giants to release him, but that’s how he made his way back to North America. The southpaw signed a minor league contract with the Reds in August 2025 and spent the remainder of the season in their minor league system."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-05-31T210004Z_779534466_MT1USATODAY29104732_RTRMADP_3_MLB-KANSAS-CITY-ROYALS-AT-TEXAS-RANGERS-scaled-e1795714719671-1024x684.jpg",
+   "players": [
+    [
+     "Michael Helman",
+     680737
+    ],
+    [
+     "Charlie Barnes",
+     656212
+    ]
+   ]
+  },
   {
    "title": "Orioles Reportedly Willing To Trade Infielders For Starting Pitchers",
    "link": "https://www.mlbtraderumors.com/2026/11/orioles-reportedly-willing-to-trade-infielders-for-starting-pitchers.html",
@@ -9259,50 +9283,6 @@
     [
      "Willi Castro",
      650489
-    ]
-   ]
-  },
-  {
-   "title": "The Braves’ Other Middle Infield Question",
-   "link": "https://www.mlbtraderumors.com/2026/10/the-braves-other-middle-infield-question.html",
-   "date": "2026-10-29T01:13:19.000Z",
-   "teams": [
-    "ATL"
-   ],
-   "body": [
-    "The Braves have the most glaring shortstop need in MLB. Mauricio Dubón and Ha-Seong Kim are impending free agents, leaving Jim Jarvis as the top in-house option. There’s a decent chance they’ll re-sign Dubón on a two-year deal, but he’s ideally suited as a super-utility player.",
-    "If the Astros make Jeremy Peña available before his year of club control, the Braves should be heavily involved. They’ll also surely look into younger shortstops who might be expendable on their current team (e.g. Anthony Volpe, Brayan Rocchio). The focus on shortstop has potentially overshadowed that the Braves’ other middle infield position might also need a shakeup.",
-    "Ozzie Albies has started 1117 games at the keystone for the Braves over the past nine seasons. No one else has started more than 44. Albies has been a steady, durable lineup fixture for years. He has handily outperformed the $35MM contract extension he signed in April 2019 and was a legitimate star through the’23 campaign."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/2026-10-02T014937Z_2067072640_MT1USATODAY29969574_RTRMADP_3_MLB-WILDCARD-PHILADELPHIA-PHILLIES-AT-ATLANTA-BRAVES-1024x686.jpg",
-   "players": [
-    [
-     "Mauricio Dubón",
-     643289
-    ],
-    [
-     "Ha-Seong Kim",
-     673490
-    ],
-    [
-     "Jim Jarvis",
-     805347
-    ],
-    [
-     "Jeremy Peña",
-     665161
-    ],
-    [
-     "Anthony Volpe",
-     683011
-    ],
-    [
-     "Brayan Rocchio",
-     677587
-    ],
-    [
-     "Ozzie Albies",
-     645277
     ]
    ]
   },
