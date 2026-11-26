@@ -1,6 +1,47 @@
 {
- "updated": "2026-11-26T14:40:34.131Z",
+ "updated": "2026-11-26T14:50:31.443Z",
  "articles": [
+  {
+   "title": "The Opener: Gausman, Griffin, Rockies",
+   "link": "https://www.mlbtraderumors.com/2026/11/the-opener-gausman-griffin-rockies.html",
+   "date": "2026-11-26T14:45:40.000Z",
+   "teams": [],
+   "body": [
+    "Wednesday was another busy day on the free agent market. Now, we can only wait and see if things slow down for Thanksgiving or if the pressure of the impending lockout keeps front offices working through the holiday. Francys Romero reported yesterday that the Padres’ interest in outfielder Seiya Suzuki was “gaining momentum,” so that’s one pairing to keep an eye on while the turkey’s in the oven.",
+    "MLBTR’s top-ranked free agent to agree to a deal on Wednesday was Kevin Gausman. The right-hander is set to sign a one-year, $25MM contract with the Tigers. He’ll join a rotation that includes Framber Valdez, last year’s big free agent acquisition in Detroit, and the recently-extended Troy Melton. It’s slightly surprising that the durable veteran only landed a one-year deal, but a $25MM annual salary is nothing to sniff at, particularly for a pitcher entering his age-36 season. According to MLBTR’s Contract Tracker, since 2006, only three other pitchers have commanded an AAV of $25MM or more entering their age-36 (or older) season: Max Scherzer, Justin Verlander (twice), and Sonny Gray (just last week)."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-05T004657Z_1502593271_MT1USATODAY29738501_RTRMADP_3_MLB-GAME-TWO-DETROIT-TIGERS-AT-CLEVELAND-GUARDIANS-1024x683.jpg",
+   "players": [
+    [
+     "Seiya Suzuki",
+     673548
+    ],
+    [
+     "Kevin Gausman",
+     592332
+    ],
+    [
+     "Framber Valdez",
+     664285
+    ],
+    [
+     "Troy Melton",
+     675512
+    ],
+    [
+     "Max Scherzer",
+     453286
+    ],
+    [
+     "Justin Verlander",
+     434378
+    ],
+    [
+     "Sonny Gray",
+     543243
+    ]
+   ]
+  },
   {
    "title": "Tigers To Sign Kevin Gausman",
    "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-sign-kevin-gausman.html",
@@ -422,37 +463,6 @@
     [
      "William Contreras",
      661388
-    ]
-   ]
-  },
-  {
-   "title": "MLB Mailbag: Yankees, Mariners, Robert, Posting System",
-   "link": "https://www.mlbtraderumors.com/2026/11/mlb-mailbag-yankees-mariners-robert-posting-system.html",
-   "date": "2026-11-25T22:40:37.000Z",
-   "teams": [],
-   "body": [
-    "This week’s MLB Mailbag will take a look at the Yankees’ options for the hot corner, the Mariners’ free agent efforts and payroll outlook, Luis Robert Jr.’s 2027 outlook and some intricacies of the MLB/NPB posting system. (Note: questions are lightly edited for both brevity and clarity.)",
-    "What are the Yankees going to do at third base?",
-    "Third base is an obvious area of focus for the Yankees after Ryan McMahon hit.213/.279/.357 (78 wRC+) and saw his typically strong defense at the hot corner deteriorate. They owe him $16MM this season, and I’d be surprised if he’s on the roster next year. There aren’t many clearer change-of-scenery candidates. I imagine that’ll entail eating a significant portion of that $16MM or taking on an unwanted contract in return.",
-    "We know the Yankees talked to the Royals about Maikel Garcia before Kansas City traded him to Seattle, and the Yankees reportedly had at least some interest in Alec Bohm. I’m not sure how strong that interest was, but it clearly wasn’t as strong as a two-year, $20MM deal — because that’s the contract Bohm agreed to with those same Royals today. I would take a hard pass on that contract for Bohm, so while it technically removed one option from the board, I think Yankee fans should be pleased that this isn’t the route they chose."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/ryan-mcmahon-yankees-third-base-1024x682.jpg",
-   "players": [
-    [
-     "Luis Robert Jr.",
-     673357
-    ],
-    [
-     "Ryan McMahon",
-     641857
-    ],
-    [
-     "Maikel Garcia",
-     672580
-    ],
-    [
-     "Alec Bohm",
-     664761
     ]
    ]
   },
