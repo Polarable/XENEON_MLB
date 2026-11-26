@@ -1,31 +1,18 @@
 {
- "updated": "2026-11-26T04:20:33.412Z",
+ "updated": "2026-11-26T04:30:36.756Z",
  "articles": [
-  {
-   "title": "MLB Files Suit Against MLBPA",
-   "link": "https://www.mlbtraderumors.com/2026/11/mlb-files-suit-against-mlbpa.html",
-   "date": "2026-11-26T03:34:45.000Z",
-   "teams": [],
-   "body": [
-    "Major League Baseball has sued the MLB Players Association in federal court in an effort to prevent the union from disclaiming its status as the players’ sole bargaining representative, reports Jared Diamond of the Wall Street Journal. The league has reportedly been concerned that the union will temporarily disclaim, which would allow players to file a class-action suit alleging violations of antitrust law to enjoin the forthcoming lockout — a tactic that interim executive director Bruce Meyer has been associated with in labor negotiations for other professional sports leagues.",
-    "MLB is seeking a preemptive ruling that the lockout is legal, which would essentially eliminate the players’ leverage in potentially disclaiming. The league is not seeking any damages, instead pursuing a declaratory judgment on the lockout’s permissibility.",
-    "“Today’s filing is a defensive measure simply intended to keep the parties at the bargaining table to work towards a new collective bargaining agreement and a full 2027 season,” MLB spokesman Glen Caplin wrote in a statement today (via Evan Drellich of The Athletic). “…[O]ur objective is to protect the collective bargaining process so that we can remain at the table until we negotiate a new labor agreement.”",
-    "Major League Baseball is also accusing the union of failing to negotiate in good faith. The league is planning to file an unfair labor practice charge with the National Labor Relations Board, per Diamond’s report. Unsurprisingly, the union has swiftly rebuked the league’s efforts and issued pointed comments of its own."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2024/10/MLB_baseball_generic-scaled-e1730315649946-1024x681.jpg",
-   "players": []
-  },
   {
    "title": "Twins To Sign Kevin Ginkel",
    "link": "https://www.mlbtraderumors.com/2026/11/twins-to-sign-kevin-ginkel.html",
-   "date": "2026-11-26T03:23:50.000Z",
+   "date": "2026-11-26T04:23:50.000Z",
    "teams": [
     "MIN"
    ],
    "body": [
-    "The Twins are signing reliever Kevin Ginkel to a two-year deal that guarantees $18MM, reports Mark Feinsand of MLB.com. The deal is pending a physical for the Excel Sports Management client. Minnesota has multiple openings on the 40-man roster and can finalize the agreement without further moves.",
+    "The Twins are signing free agent reliever Kevin Ginkel to a two-year contract that guarantees $18MM, reports Mark Feinsand of MLB.com. The deal is pending a physical for the Excel Sports Management client. Minnesota has multiple openings on the 40-man roster and can finalize the agreement without further moves.",
     "Ginkel is another right-hander who can pitch in high-leverage spots alongside Jeff Hoffman and Yoendrys Gómez. Minnesota is also in the left-handed relief market but evidently didn’t want to pass up on the opportunity to add Ginkel on the heels of a solid season for the Diamondbacks.",
-    "The 32-year-old (33 in March) had a middling ERA but more encouraging secondary metrics. Ginkel allowed 4.12 earned runs per nine over 67 2/3 frames. He punched out 26.2% of opponents against a 6.2% walk rate while generating swinging strikes at an excellent 13.8% clip. Ginkel pitched in medium-leverage situations and ranked fourth on the D-Backs with 11 holds."
+    "The 32-year-old (33 in March) had a middling ERA but more encouraging secondary metrics. Ginkel allowed 4.12 earned runs per nine over 67 2/3 frames. He punched out 26.2% of opponents against a 6.2% walk rate while generating swinging strikes at an excellent 13.8% clip. Ginkel pitched in medium-leverage situations and ranked fourth on the D-Backs with 11 holds.",
+    "Among returning Twins’ relievers, only Hoffman and Tommy Nance had a higher strikeout rate (min. 20 innings). While he has had his share of ups and downs from a run prevention perspective, Ginkel typically posts quality strikeout and walk numbers. He combined for 135 1/3 innings of 2.86 ERA ball for the Snakes from 2023-24, also dominating in the’23 postseason to help Arizona to a World Series berth. Ginkel’s numbers collapsed in 2025 while he was hampered by shoulder issues. He avoided the injured list this past season."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-25T083841Z_348176145_MT1USATODAY29907598_RTRMADP_3_MLB-NEW-YORK-YANKEES-AT-ARIZONA-DIAMONDBACKS-1024x683.jpg",
    "players": [
@@ -40,8 +27,26 @@
     [
      "Yoendrys Gómez",
      672782
+    ],
+    [
+     "Tommy Nance",
+     667297
     ]
    ]
+  },
+  {
+   "title": "MLB Files Suit Against MLBPA",
+   "link": "https://www.mlbtraderumors.com/2026/11/mlb-files-suit-against-mlbpa.html",
+   "date": "2026-11-26T03:34:45.000Z",
+   "teams": [],
+   "body": [
+    "Major League Baseball has sued the MLB Players Association in federal court in an effort to prevent the union from disclaiming its status as the players’ sole bargaining representative, reports Jared Diamond of the Wall Street Journal. The league has reportedly been concerned that the union will temporarily disclaim, which would allow players to file a class-action suit alleging violations of antitrust law to enjoin the forthcoming lockout — a tactic that interim executive director Bruce Meyer has been associated with in labor negotiations for other professional sports leagues.",
+    "MLB is seeking a preemptive ruling that the lockout is legal, which would essentially eliminate the players’ leverage in potentially disclaiming. The league is not seeking any damages, instead pursuing a declaratory judgment on the lockout’s permissibility.",
+    "“Today’s filing is a defensive measure simply intended to keep the parties at the bargaining table to work towards a new collective bargaining agreement and a full 2027 season,” MLB spokesman Glen Caplin wrote in a statement today (via Evan Drellich of The Athletic). “…[O]ur objective is to protect the collective bargaining process so that we can remain at the table until we negotiate a new labor agreement.”",
+    "Major League Baseball is also accusing the union of failing to negotiate in good faith. The league is planning to file an unfair labor practice charge with the National Labor Relations Board, per Diamond’s report. Unsurprisingly, the union has swiftly rebuked the league’s efforts and issued pointed comments of its own."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2024/10/MLB_baseball_generic-scaled-e1730315649946-1024x681.jpg",
+   "players": []
   },
   {
    "title": "Rockies, Patrick Sandoval Agree To Three-Year Deal",
