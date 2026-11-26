@@ -1,6 +1,55 @@
 {
- "updated": "2026-11-26T06:00:37.281Z",
+ "updated": "2026-11-26T06:10:34.489Z",
  "articles": [
+  {
+   "title": "Tigers To Sign Kevin Gausman",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-sign-kevin-gausman.html",
+   "date": "2026-11-26T05:59:50.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers and right-hander Kevin Gausman have agreed to a one-year, $25MM contract, reports Jeff Passan of ESPN. The righty is represented by Tidal Sports Group. The Tigers have a full 40-man roster and also still need to make their deals with Luis Gil and Ha-Seong Kim official, so they need to open three spots.",
+    "Gausman, 36 in January, has been posting strong results in the majors for years but is coming off a bit of a down season. Going into 2022, the Blue Jays gave Gausman a five-year, $110MM deal after a couple of really strong campaigns for the Giants.",
+    "That deal turned into a big win for the Jays, particularly in the first four seasons. He made 125 starts from 2022 to 2025, logging 733 2/3 innings with a 3.48 earned run average. Logan Webb, Framber Valdez and Zac Gallen were the only three pitchers with greater workloads in that span. Gausman struck out 26.3% of batters faced and limited walks to a 6.3% clip. FanGraphs credited him with 17.8 wins above replacement, behind only Zack Wheeler, Webb and Tarik Skubal. Gausman also made eight postseason appearances for the Jays and was a big part of their World Series run last year.",
+    "As mentioned, the results weren’t quite as strong this year. The Jays fell out of the race and shipped Gausman to the Cubs at the trade deadline. Between those two teams, Gausman made 32 starts and finished the season with a 4.51 ERA. His fastball averaged 93.8 miles per hour, a drop from the 94.5 mph from the year prior and his lowest since 2018."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/kevin-gausman-toronto-blue-jays-1024x683.jpg",
+   "players": [
+    [
+     "Kevin Gausman",
+     592332
+    ],
+    [
+     "Luis Gil",
+     661563
+    ],
+    [
+     "Ha-Seong Kim",
+     673490
+    ],
+    [
+     "Logan Webb",
+     657277
+    ],
+    [
+     "Framber Valdez",
+     664285
+    ],
+    [
+     "Zac Gallen",
+     668678
+    ],
+    [
+     "Zack Wheeler",
+     554430
+    ],
+    [
+     "Tarik Skubal",
+     669373
+    ]
+   ]
+  },
   {
    "title": "Cardinals Have Checked In On Imanaga, Mize",
    "link": "https://www.mlbtraderumors.com/2026/11/cardinals-have-checked-in-on-imanaga-mize.html",
@@ -249,55 +298,6 @@
     [
      "David Peterson",
      656849
-    ]
-   ]
-  },
-  {
-   "title": "Tigers To Sign Kevin Gausman",
-   "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-sign-kevin-gausman.html",
-   "date": "2026-11-25T23:30:50.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers and right-hander Kevin Gausman have agreed to a one-year, $25MM contract, reports Jeff Passan of ESPN. The righty is represented by Tidal Sports Group. The Tigers have a full 40-man roster and also still need to make their deals with Luis Gil and Ha-Seong Kim official, so they need to open three spots.",
-    "Gausman, 36 in January, has been posting strong results in the majors for years but is coming off a bit of a down season. Going into 2022, the Blue Jays gave Gausman a five-year, $110MM deal after a couple of really strong campaigns for the Giants.",
-    "That deal turned into a big win for the Jays, particularly in the first four seasons. He made 125 starts from 2022 to 2025, logging 733 2/3 innings with a 3.48 earned run average. Logan Webb, Framber Valdez and Zac Gallen were the only three pitchers with greater workloads in that span. Gausman struck out 26.3% of batters faced and limited walks to a 6.3% clip. FanGraphs credited him with 17.8 wins above replacement, behind only Zack Wheeler, Webb and Tarik Skubal. Gausman also made eight postseason appearances for the Jays and was a big part of their World Series run last year.",
-    "As mentioned, the results weren’t quite as strong this year. The Jays fell out of the race and shipped Gausman to the Cubs at the trade deadline. Between those two teams, Gausman made 32 starts and finished the season with a 4.51 ERA. His fastball averaged 93.8 miles per hour, a drop from the 94.5 mph from the year prior and his lowest since 2018."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/07/kevin-gausman-toronto-blue-jays-1024x683.jpg",
-   "players": [
-    [
-     "Kevin Gausman",
-     592332
-    ],
-    [
-     "Luis Gil",
-     661563
-    ],
-    [
-     "Ha-Seong Kim",
-     673490
-    ],
-    [
-     "Logan Webb",
-     657277
-    ],
-    [
-     "Framber Valdez",
-     664285
-    ],
-    [
-     "Zac Gallen",
-     668678
-    ],
-    [
-     "Zack Wheeler",
-     554430
-    ],
-    [
-     "Tarik Skubal",
-     669373
     ]
    ]
   },
