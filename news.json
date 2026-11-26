@@ -1,6 +1,43 @@
 {
- "updated": "2026-11-26T05:10:32.392Z",
+ "updated": "2026-11-26T05:20:32.247Z",
  "articles": [
+  {
+   "title": "Cardinals Have Checked In On Imanaga, Mize",
+   "link": "https://www.mlbtraderumors.com/2026/11/cardinals-have-checked-in-on-imanaga-mize.html",
+   "date": "2026-11-26T05:13:32.000Z",
+   "teams": [
+    "STL"
+   ],
+   "body": [
+    "The Cardinals have yet to jump into a quick-moving free agent pitching market. St. Louis is looking for both another veteran starter and relief help. They aren’t looking to accelerate out of the retool with a huge offseason, so it’s not too surprising that they’ve played things slowly to this point.",
+    "Derrick Goold of The St. Louis Post-Dispatch writes that the Cardinals have touched base with a number of mid-tier starting pitchers. Goold lists Shota Imanaga, Casey Mize and Shane Bieber among the veteran arms with whom the Cards have been in touch. There’s no indication they’re specifically zeroing in on any of those players, to be clear, though there figures to be plenty more movement in the rotation market over the final five days until the lockout.",
+    "Imanaga has spent the last three seasons on the other side of the Cubs – Cardinals rivalry. The lefty is coming off a 3.77 earned run average over 32 starts for Chicago. Imanaga has pristine control and above-average strikeout stuff, mostly thanks to a wipeout splitter, but his fastball sits in the 91-92 mph range. He’s a fly-ball pitcher with middling velocity, naturally leading to trouble with the longball.",
+    "No pitcher has allowed more home runs than Imanaga’s 93 over the past three seasons. He’d be a strong fit in Busch Stadium, which has suppressed homers more than any other in that time (via Statcast’s Park Factors). An outfield defense that features Jordan Walker and Joshua Báez in the corners would be a little less ideal."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-27T195349Z_431160614_MT1USATODAY29933978_RTRMADP_3_MLB-CHICAGO-CUBS-AT-BOSTON-RED-SOX-1024x683.jpg",
+   "players": [
+    [
+     "Shota Imanaga",
+     684007
+    ],
+    [
+     "Casey Mize",
+     663554
+    ],
+    [
+     "Shane Bieber",
+     669456
+    ],
+    [
+     "Jordan Walker",
+     691023
+    ],
+    [
+     "Joshua Báez",
+     695491
+    ]
+   ]
+  },
   {
    "title": "Nationals To Sign A.J. Puk",
    "link": "https://www.mlbtraderumors.com/2026/11/nationals-to-sign-a-j-puk.html",
@@ -9127,39 +9164,6 @@
     [
      "Mitch Keller",
      656605
-    ]
-   ]
-  },
-  {
-   "title": "MLBTR Podcast: Angels’ Leadership In Flux, The Yankees Keep Boone And Cashman, And The Giants And Cardinals Offseasons",
-   "link": "https://www.mlbtraderumors.com/2026/10/mlbtr-podcast-angels-leadership-in-flux-the-yankees-keep-boone-and-cashman-and-the-giants-and-cardinals-offseasons.html",
-   "date": "2026-10-28T14:58:21.000Z",
-   "teams": [
-    "STL",
-    "LAA",
-    "NYY",
-    "SF"
-   ],
-   "body": [
-    "The latest episode of the MLB Trade Rumors Podcast is now live on Spotify, Apple Podcasts, and wherever you get your podcasts! Make sure you subscribe as well! You can also use the player at this link to listen, if you don’t use Spotify or Apple for podcasts.",
-    "This week, host Darragh McDonald is joined by Steve Adams of MLB Trade Rumors to discuss…",
-    "The Angels having no manager and no front office leader (3:00) The Yankees extending Brian Cashman and keeping Aaron Boone in lame-duck status (20:45) Plus, we answer your questions, including…",
-    "Would the Giants trade top prospects for starting pitching help? Any chance they take a swing at Tarik Skubal? Would they consider selling high on Landen Roupp? (32:35) What do the Cardinals need? What about Jordan Montgomery? (50:05) Why do the owners think they can get the players to agree to a CBA that pays them less money? (58:15) Check out our past episodes!",
-    "Brewers vs. Rays, Dodgers and Guardians Post-Mortem, And The A’s New Front Office Boss – listen here Playoff Storylines And The State Of The White Sox, Yankees, Padres, And Braves – listen here Diamondbacks Stories, Offseason Previews For Eliminated Playoff Teams, And Creative Pitching Usage – listen here The podcast intro and outro song “So Long” is provided courtesy of the band Showoff. Check out their Facebook page here!"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/09/2026-09-06T170044Z_1263323004_MT1USATODAY29756691_RTRMADP_3_MLB-LOS-ANGELES-ANGELS-AT-PITTSBURGH-PIRATES-1024x702.jpg",
-   "players": [
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Landen Roupp",
-     694738
-    ],
-    [
-     "Jordan Montgomery",
-     656756
     ]
    ]
   },
