@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-26T00:20:32.293Z",
+ "updated": "2026-11-26T00:30:34.566Z",
  "articles": [
+  {
+   "title": "Orioles To Sign Luis Robert Jr.",
+   "link": "https://www.mlbtraderumors.com/2026/11/orioles-luis-robert-jr-reportedly-finalizing-contract.html",
+   "date": "2026-11-26T00:25:41.000Z",
+   "teams": [
+    "BAL"
+   ],
+   "body": [
+    "The Orioles and outfielder Luis Robert Jr. have agreed to a one-year deal worth $12MM, reports Jon Heyman of The New York Post. Previously, Francys Romero of BeisbolFR reported the two sides were finalizing a deal. Robert is represented by the Boras Corporation. Baltimore has a full 40-man roster and would need to make a corresponding move to make this official."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/luis-robert-jr-orioles-2026-1024x683.jpg",
+   "players": [
+    [
+     "Luis Robert Jr.",
+     673357
+    ]
+   ]
+  },
   {
    "title": "Rockies To Sign David Peterson",
    "link": "https://www.mlbtraderumors.com/2026/11/rockies-to-sign-david-peterson.html",
@@ -11,7 +29,8 @@
    "body": [
     "The Rockies and left-hander David Peterson are in agreement on a two-year deal, reports Thomas Harding of MLB.com. It’s a $32MM guarantee for the CAA Sports client, reports Robert Murray of FanSided. Colorado has a full 40-man roster and will need to make a corresponding move to make this official.",
     "In reaching a deal with Peterson, Rockies president of baseball operations Paul DePodesta accomplishes a rare feat for Colorado. According to our MLB Contract Tracker, the Rockies haven’t signed a free agent starting pitcher to a multiyear deal since they re-upped Jorge de la Rosa nearly 16 years ago.",
-    "Peterson, a 31-year-old southpaw, was drafted 20th overall by the Mets out of the University of Oregon back in 2017. He was generally a functional mid-rotation starter for the Mets, peaking with a 2025 All-Star nod. Peterson broke camp in New York’s rotation this year, but was quickly demoted to a bulk relief/spot start role. By the time the Cubs traded first base prospect Cole Mathis for Peterson in late June, his ERA had ballooned to 6.09."
+    "Peterson, a 31-year-old southpaw, was drafted 20th overall by the Mets out of the University of Oregon back in 2017. He was generally a functional mid-rotation starter for the Mets, peaking with a 2025 All-Star nod. Peterson broke camp in New York’s rotation this year, but was quickly demoted to a bulk relief/spot start role. By the time the Cubs traded first base prospect Cole Mathis for Peterson in late June, his ERA had ballooned to 6.09.",
+    "The beneficiary of the North Siders’ stellar defense, Peterson’s.293 batting average on balls in play stood in stark contrast to the.350 mark he posted for the Mets. That, more than any real change in ability, led to Peterson’s solid 3.70 ERA for the Cubs. The lefty did alter his pitch mix for Chicago, most notably leaning on his fastball more."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/david-peterson-pitcher-1024x683.jpg",
    "players": [
@@ -56,8 +75,8 @@
    ],
    "body": [
     "The Guardians and left-hander Foster Griffin have agreed to a three-year, $48MM deal, reports Robert Murray of FanSided. Griffin is represented by Excel Sports Management. The Guards have a full 40-man roster and will need to make a corresponding move to make this official.",
-    "It’s Cleveland’s second significant free agent move in as many days. The Guards added Kris Bubic on a one-year, $17.5MM contract on Tuesday afternoon. That initially seemed like it’d signal the end of Griffin’s time in the organization, but they’ve doubled down with a rare free agent spending spree in the rotation.",
-    "This is Cleveland’s first three-year free agent deal for a pitcher in the MLBTR Contract Tracker era, which goes back to 2006. They’d only even gone to two years on a free agent once since the 2008-09 offseason — when they re-signed former Cy Young winner Shane Bieber to a $26MM contract midway through his rehab from elbow surgery.",
+    "It’s Cleveland’s second significant free agent move in as many days. The Guards added Kris Bubic on a one-year, $17.5MM contract on Tuesday afternoon. That initially seemed like it’d signal the end of Griffin’s time in the organization, but they’ve doubled down with a rare free agent spending spree.",
+    "This is Cleveland’s first three-year free agent deal for a pitcher in the MLBTR Contract Tracker era, which goes back to 2006. They’d only even gone to two years on a free agent pitcher once since the 2008-09 offseason — when they re-signed former Cy Young winner Shane Bieber to a $26MM contract midway through his rehab from elbow surgery.",
     "Within a two-day span, the Guardians have added somewhere between $30-35MM to next year’s payroll. The precise number depends on Griffin’s salary breakdown, though he’ll presumably make something close to the contract’s $16MM average annual value in year one. The two southpaws slot alongside Parker Messick, Gavin Williams and Tanner Bibee in what suddenly looks like one of the stronger rotations in the American League. That’ll probably push Slade Cecconi back to Triple-A and would leave the out-of-options Joey Cantillo and Logan Allen as trade or bullpen candidates if their front five is healthy."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/foster-griffin-guardians-1024x683.jpg",
@@ -219,24 +238,6 @@
     [
      "William Contreras",
      661388
-    ]
-   ]
-  },
-  {
-   "title": "Orioles, Luis Robert Jr. Reportedly Finalizing Contract",
-   "link": "https://www.mlbtraderumors.com/2026/11/orioles-luis-robert-jr-reportedly-finalizing-contract.html",
-   "date": "2026-11-25T23:01:41.000Z",
-   "teams": [
-    "BAL"
-   ],
-   "body": [
-    "The Orioles and outfielder Luis Robert Jr. are reportedly finalizing a new contract, reports Francys Romero of BeisbolFR. The details of the agreement for the Boras Corporation client still haven’t been publicly revealed. Baltimore has a full 40-man roster and would need to make a corresponding move if this deal gets over the finish line."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/luis-robert-jr-orioles-2026-1024x683.jpg",
-   "players": [
-    [
-     "Luis Robert Jr.",
-     673357
     ]
    ]
   },
