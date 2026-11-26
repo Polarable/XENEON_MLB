@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T04:00:34.135Z",
+ "updated": "2026-11-26T04:10:31.925Z",
  "articles": [
   {
    "title": "MLB Files Suit Against MLBPA",
@@ -23,13 +23,23 @@
     "MIN"
    ],
    "body": [
-    "The Twins are signing reliever Kevin Ginkel to a two-year deal that guarantees $18MM, reports Mark Feinsand of MLB.com."
+    "The Twins are signing reliever Kevin Ginkel to a two-year deal that guarantees $18MM, reports Mark Feinsand of MLB.com. The deal is pending a physical for the Excel Sports Management client. Minnesota has multiple openings on the 40-man roster and can finalize the agreement without further moves.",
+    "Ginkel is another right-hander who can pitch in high-leverage spots alongside Jeff Hoffman and Yoendrys Gómez. Minnesota is also in the left-handed relief market but evidently didn’t want to pass up on the opportunity to add Ginkel on the heels of a solid season for the Diamondbacks.",
+    "The 32-year-old (33 in March) had a middling ERA but more encouraging secondary metrics. Ginkel allowed 4.12 earned runs per nine over 67 2/3 frames. He punched out 26.2% of opponents against a 6.2% walk rate while generating swinging strikes at an excellent 13.8% clip. Ginkel pitched in medium-leverage situations and ranked fourth on the D-Backs with 11 holds."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-25T083841Z_348176145_MT1USATODAY29907598_RTRMADP_3_MLB-NEW-YORK-YANKEES-AT-ARIZONA-DIAMONDBACKS-1024x683.jpg",
    "players": [
     [
      "Kevin Ginkel",
      656464
+    ],
+    [
+     "Jeff Hoffman",
+     656546
+    ],
+    [
+     "Yoendrys Gómez",
+     672782
     ]
    ]
   },
