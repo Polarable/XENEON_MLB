@@ -1,6 +1,30 @@
 {
- "updated": "2026-11-27T17:10:35.856Z",
+ "updated": "2026-11-27T17:20:33.340Z",
  "articles": [
+  {
+   "title": "Phillies Re-Sign Brett Harris, Andrew Hoffmann, Moisés Chace On Minor League Deals",
+   "link": "https://www.mlbtraderumors.com/2026/11/phillies-re-sign-brett-harris-andrew-hoffmann-moises-chace-on-minor-league-deals.html",
+   "date": "2026-11-27T17:13:18.000Z",
+   "teams": [
+    "PHI"
+   ],
+   "body": [
+    "The Phillies have re-signed three players on new minor league contracts: infielder Brett Harris and right-handers Andrew Hoffmann and Moisés Chace. None of Harris, Hoffmann, or Chase appeared for Philadelphia in 2026, but they were on the 40-man roster when the deadline to tender contracts for 2027 rolled around. After being non-tendered, all three elected free agency, but it didn’t take long for them to rejoin the organization.",
+    "Harris, 28, began his career with the Athletics. They drafted him in 2021 and promoted him for his MLB debut three years later. After spending parts of three seasons with the A’s from 2024-26, the righty batter was designated for assignment this past summer. He then briefly played for the Red Sox and Giants before landing with the Phillies in November. In 89 career games, Harris has hit.186 with three home runs, one stolen base, and a.566 OPS. However, he has provided above-average offense at Triple-A over the last two years (111 wRC+) thanks to a nice blend of contact and discipline with a little bit of pop.",
+    "On defense, Harris primarily plays third base, where he’s compiled 3 DRS and 2 FRV in just over 500 big league innings. He also has professional experience at every other infield position. His glove is generally considered his strongest tool, though he’d have a much clearer path to major league playing time if he could handle shortstop in more than just a pinch."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2025-02-20T223823Z_1981353742_MT1USATODAY25465625_RTRMADP_3_MLB-PHILADELPHIA-PHILLIES-MEDIA-DAY-scaled-e1795789767952-1024x684.jpg",
+   "players": [
+    [
+     "Brett Harris",
+     695391
+    ],
+    [
+     "Andrew Hoffmann",
+     694851
+    ]
+   ]
+  },
   {
    "title": "Cubs Sign Trevor Rogers",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-trevor-rogers.html",
@@ -7616,62 +7640,6 @@
     [
      "Mason Miller",
      695243
-    ]
-   ]
-  },
-  {
-   "title": "Phillies Interested In Teruaki Sato, Seiya Suzuki, Randy Arozarena",
-   "link": "https://www.mlbtraderumors.com/2026/11/phillies-interested-in-teruaki-sato-seiya-suzuki-randy-arozarena.html",
-   "date": "2026-11-11T22:09:40.000Z",
-   "teams": [
-    "PHI"
-   ],
-   "body": [
-    "The Phillies are in the market for the top outfield free agents. Matt Gelb of The Athletic reports that the Phils have interest in Teruaki Sato, Randy Arozarena and Seiya Suzuki. Sato has mostly been a third baseman in his career in Japan but he has some right field experience and Gelb specifies the Phillies would be looking at him as a corner outfielder.",
-    "It’s not a surprise that the Phillies are looking for outfield help, as they have plenty of uncertainty on the grass. They started the 2026 season with Brandon Marsh, Justin Crawford and Adolis García as their regulars out there. García played poorly for 67 games and then required season-ending shoulder surgery. He is now a free agent. Crawford stole 17 bases but hit just.264/.309/.353 with poor defensive metrics to boot. Marsh hit 18 home runs but his 6% walk rate was subpar, leading to a.260/.304/.408 line and 90 wRC+. He finished on a down note, as he hit.301/.339/.490 in the first half and.184/.243/.259 in the second.",
-    "After the deadline, the Phillies shook thing up. They acquired Luis Arraez and put him at second base. That moved Bryson Stott to third base, bumping Alec Bohm to first base and Bryce Harper to right field. Harper’s glovework in right was graded poorly. With Arraez and Bohm now free agents, he projects to return to first base next year."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/TeruakiSato-1024x683.jpg",
-   "players": [
-    [
-     "Teruaki Sato",
-     831664
-    ],
-    [
-     "Seiya Suzuki",
-     673548
-    ],
-    [
-     "Randy Arozarena",
-     668227
-    ],
-    [
-     "Brandon Marsh",
-     669016
-    ],
-    [
-     "Justin Crawford",
-     702222
-    ],
-    [
-     "Adolis García",
-     666969
-    ],
-    [
-     "Luis Arraez",
-     650333
-    ],
-    [
-     "Bryson Stott",
-     681082
-    ],
-    [
-     "Alec Bohm",
-     664761
-    ],
-    [
-     "Bryce Harper",
-     547180
     ]
    ]
   },
