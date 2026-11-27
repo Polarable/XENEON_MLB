@@ -1,6 +1,36 @@
 {
- "updated": "2026-11-27T21:50:30.712Z",
+ "updated": "2026-11-27T22:00:42.381Z",
  "articles": [
+  {
+   "title": "Tigers Designate Beau Brieske, Tsung-Che Cheng For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-designate-beau-brieske-tsung-che-cheng-for-assignment.html",
+   "date": "2026-11-27T21:59:42.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers officially announced their deals with right-hander Luis Gil and infielder Ha-Seong Kim this afternoon. To make room for those two on the 40-man roster, right-hander Beau Brieske and Tsung-Che Cheng have been designated for assignment."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/tsung-che-cheng-redsox-2026-1024x683.jpg",
+   "players": [
+    [
+     "Beau Brieske",
+     689225
+    ],
+    [
+     "Tsung-Che Cheng",
+     691907
+    ],
+    [
+     "Luis Gil",
+     661563
+    ],
+    [
+     "Ha-Seong Kim",
+     673490
+    ]
+   ]
+  },
   {
    "title": "Diamondbacks To Sign Kona Takahashi",
    "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-to-sign-kona-takahashi.html",
@@ -7194,35 +7224,6 @@
     [
      "Teruaki Sato",
      831664
-    ]
-   ]
-  },
-  {
-   "title": "Tigers Interested In Shota Imanaga",
-   "link": "https://www.mlbtraderumors.com/2026/11/tigers-interested-in-shota-imanaga.html",
-   "date": "2026-11-13T18:44:59.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers entered the offseason in search of help in the rotation and the bullpen. They’ve already addressed the latter, adding former Reds closer Emilio Pagan this week. As far as starting pitching, Jon Morosi of MLB Network reports that left-hander Shota Imanaga is among the free agents the club is interested in.",
-    "Imanaga hit free agency last winter but ultimately stayed with the Cubs after accepting the qualifying offer. The 33-year-old is back on the market this offseason and won’t have the QO attached to him this time around. Imanaga put together 32 starts of a 3.77 ERA with nearly a strikeout per inning in 2026. He tossed a career-high 174 1/3 innings as basically the only Cubs starter to stay healthy all year.",
-    "Homers are the big issue for Imanaga. He’s a flyball pitcher with middling strikeout stuff. When the wind was blowing in at Wrigley Field, he was an elite starter. When it was blowing out, the long balls came in bunches. Only Phillies righty Aaron Nola (37) gave up more home runs than Imanaga (35) in 2026.",
-    "Comerica Park would be an upgrade for Imanaga. Statcast’s Park Factors ranked it 14th for home runs over the past three seasons. Wrigley Field comes in at No. 8 on the leaderboard. For right-handed power, there was basically no difference. Chicago ranked 11th and Detroit ranked 12th for righty homers."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/ShotaImanaga-1024x683.jpg",
-   "players": [
-    [
-     "Shota Imanaga",
-     684007
-    ],
-    [
-     "Emilio Pagan",
-     641941
-    ],
-    [
-     "Aaron Nola",
-     605400
     ]
    ]
   },
