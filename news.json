@@ -1,6 +1,39 @@
 {
- "updated": "2026-11-27T23:10:35.677Z",
+ "updated": "2026-11-27T23:20:30.225Z",
  "articles": [
+  {
+   "title": "Tigers Designate Beau Brieske, Tsung-Che Cheng For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-designate-beau-brieske-tsung-che-cheng-for-assignment.html",
+   "date": "2026-11-27T23:15:42.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers officially announced their deals with right-hander Luis Gil and infielder Ha-Seong Kim this afternoon. To make room for those two on the 40-man roster, right-hander Beau Brieske and Tsung-Che Cheng have been designated for assignment.",
+    "Brieske, 29 in April, has shown flashes of potential in his time with the Tigers but is coming off a couple of injury marred seasons. Over 2023 and 2024, he gave Detroit 102 2/3 innings, allowing 3.59 earned runs per nine. His 23% strikeout rate, 9.7% walk rate and 39.5% ground ball rate were all fairly close to league averages.",
+    "In 2025, he made trips to the injured list for right ankle inflammation and a right forearm strain. He did toss 22 big league innings but with a 6.55 ERA and severely diminished 15.5% strikeout rate. This year, an adductor strain put him on the IL for the first two months of the schedule. He came back and pitched 25 1/3 innings with solid strikeout, walk and ground ball numbers but home run issues. He allowed five homers in that small sample, a rate of 18.5% per fly ball. Average is usually in the 11-12% range. That all led to a 4.97 ERA.",
+    "With his struggles, the Tigers optioned Brieske to the minors in each of the past two years. That burned his final two options, so he is now out of options going forward, which would have made it harder for him to hold a roster spot. With their recent signings, the Tigers needed some spots and nudged Brieske off."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/tsung-che-cheng-redsox-2026-1024x683.jpg",
+   "players": [
+    [
+     "Beau Brieske",
+     689225
+    ],
+    [
+     "Tsung-Che Cheng",
+     691907
+    ],
+    [
+     "Luis Gil",
+     661563
+    ],
+    [
+     "Ha-Seong Kim",
+     673490
+    ]
+   ]
+  },
   {
    "title": "Blue Jays To Sign Jazz Chisholm Jr.",
    "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-nearing-deal-with-jazz-chisholm-jr.html",
@@ -30,36 +63,6 @@
    ]
   },
   {
-   "title": "Tigers Designate Beau Brieske, Tsung-Che Cheng For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/11/tigers-designate-beau-brieske-tsung-che-cheng-for-assignment.html",
-   "date": "2026-11-27T21:59:42.000Z",
-   "teams": [
-    "DET"
-   ],
-   "body": [
-    "The Tigers officially announced their deals with right-hander Luis Gil and infielder Ha-Seong Kim this afternoon. To make room for those two on the 40-man roster, right-hander Beau Brieske and Tsung-Che Cheng have been designated for assignment."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/tsung-che-cheng-redsox-2026-1024x683.jpg",
-   "players": [
-    [
-     "Beau Brieske",
-     689225
-    ],
-    [
-     "Tsung-Che Cheng",
-     691907
-    ],
-    [
-     "Luis Gil",
-     661563
-    ],
-    [
-     "Ha-Seong Kim",
-     673490
-    ]
-   ]
-  },
-  {
    "title": "Diamondbacks To Sign Kona Takahashi",
    "link": "https://www.mlbtraderumors.com/2026/11/diamondbacks-to-sign-kona-takahashi.html",
    "date": "2026-11-27T21:20:56.000Z",
@@ -68,7 +71,8 @@
    ],
    "body": [
     "The Diamondbacks are in agreement with right-hander Kona Takahashi on a contract, according to FanSided’s Robert Murray. It’s a one-year deal, per Will Sammon of The Athletic, and John Gambadoro of 98.7 FM Arizona Sports has the total guarantee at $3MM.",
-    "The 29-year-old Takahashi finally makes the jump to the Majors after over a decade with the Seibu Lions of Japan’s Nippon Professional Baseball. The 6’2″ righty was posted last offseason and reportedly got big league offers from three teams. They apparently weren’t to his liking, as Takahashi ultimately returned to the Lions for 2026. He now makes the move to MLB after a strong platform season. Takahashi had accrued nine years of service time at Japan’s top level, so he’s considered an international free agent. As a result, the D-backs will not owe the Lions a posting fee."
+    "The 29-year-old Takahashi finally makes the jump to the Majors after over a decade with the Seibu Lions of Japan’s Nippon Professional Baseball. The 6’2″ righty was posted last offseason and reportedly got big league offers from three teams. They apparently weren’t to his liking, as Takahashi ultimately returned to the Lions for 2026. He now makes the move to MLB after a strong platform season. Takahashi had accrued nine years of service time at Japan’s top level, so he’s considered an international free agent. As a result, the D-backs will not owe the Lions a posting fee.",
+    "Takahashi has thrown over 1,300 innings for the Lions since debuting as an 18-year-old in 2015. He has a 3.30 earned run average for his career, along with 984 strikeouts. His strikeout rate typically sits in the teens, but he peaked at 20.7% this year. Takahashi also does a good job of limiting walks and keeping the ball on the ground. His 58.5% ground ball rate this year was a career high and second-best among qualified NPB starters."
    ],
    "image": "https://cdn.mlbtraderumors.com/files/2021/04/baseball-generic-1024x683.jpg",
    "players": []
