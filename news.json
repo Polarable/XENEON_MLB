@@ -1,6 +1,36 @@
 {
- "updated": "2026-11-27T20:13:42.100Z",
+ "updated": "2026-11-27T20:20:32.037Z",
  "articles": [
+  {
+   "title": "Pirates Trade Henry Davis To Diamondbacks",
+   "link": "https://www.mlbtraderumors.com/2026/11/pirates-trade-henry-davis-to-diamondbacks.html",
+   "date": "2026-11-27T20:13:14.000Z",
+   "teams": [
+    "ARI",
+    "PIT"
+   ],
+   "body": [
+    "The Diamondbacks are acquiring catcher Henry Davis from the Pirates in a one-for-one swap for utilityman Tim Tawa. Both clubs have officially announced the deal.",
+    "It’s a change-of-scenery swap for the D-backs and Pirates. Between Davis and Tawa, Davis was the more highly touted prospect, having been the No. 1 overall draft pick in 2021. He hasn’t hit much in parts of four big league seasons, so he’ll now get a chance to turn things around in Arizona as a backup to starting catcher Gabriel Moreno. Tawa heads the other way, giving the Pirates a right-handed hitting option with experience everywhere except shortstop and catcher.",
+    "The Pirates gave Davis an under-slot $6.5MM bonus when they signed him. He reached the Majors in 2023 and came up to the plate 255 times, batting.213/.302/.351 with seven home runs and a 76 wRC+. It wasn’t the greatest debut, but there was obviously still time for Davis to develop and reach his potential from that No. 1 draft spot. Unfortunately, the 2023 season still stands as Davis’ most productive stretch of hitting in the big leagues.",
+    "Davis spent most of 2024 at Triple-A and put up a 150 wRC+ there, but he struggled badly in 122 big league plate appearances. His.144/.242/.212 slash line amounted to a wRC+ of just 30. Davis’ 36.9% strikeout rate certainly didn’t help, nor did his.233 batting average on balls in play, which was well below league norms. He also missed time that year due to a concussion in June and left hand inflammation in September."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/henry-davis-pirates-2026-1024x683.jpg",
+   "players": [
+    [
+     "Henry Davis",
+     680779
+    ],
+    [
+     "Tim Tawa",
+     694374
+    ],
+    [
+     "Gabriel Moreno",
+     672515
+    ]
+   ]
+  },
   {
    "title": "Blue Jays Sign Kaima Taira",
    "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-to-sign-kaima-taira.html",
@@ -19,36 +49,6 @@
     [
      "Kaima Taira",
      838343
-    ]
-   ]
-  },
-  {
-   "title": "Pirates Trade Henry Davis To Diamondbacks",
-   "link": "https://www.mlbtraderumors.com/2026/11/pirates-trade-henry-davis-to-diamondbacks.html",
-   "date": "2026-11-27T20:07:14.000Z",
-   "teams": [
-    "ARI",
-    "PIT"
-   ],
-   "body": [
-    "The Diamondbacks are acquiring catcher Henry Davis from the Pirates, reports ESPN’s Jeff Passan. Pittsburgh gets utilityman Tim Tawa in return.",
-    "It’s a change-of-scenery swap for the D-backs and Pirates. Between Davis and Tawa, Davis was the more highly touted prospect, having been the No. 1 overall draft pick in 2021. He hasn’t hit much in parts of four big league seasons, so he’ll now get a chance to turn things around in Arizona as a backup to starting catcher Gabriel Moreno. Tawa heads the other way, giving the Pirates a right-handed hitting option with experience everywhere except shortstop and catcher.",
-    "The Pirates gave Davis an under-slot $6.5MM bonus when they signed him. He reached the Majors in 2023 and came up to the plate 255 times, batting.213/.302/.351 with seven home runs and a 76 wRC+. It wasn’t the greatest debut, but there was obviously still time for Davis to develop and reach his potential from that No. 1 draft spot. Unfortunately, the 2023 season still stands as Davis’ most productive stretch of hitting in the big leagues.",
-    "Davis spent most of 2024 at Triple-A and put up a 150 wRC+ there, but he struggled badly in 122 big league plate appearances. His.144/.242/.212 slash line amounted to a wRC+ of just 30. Davis’ 36.9% strikeout rate certainly didn’t help, nor did his.233 batting average on balls in play, which was well below league norms. He also missed time that year due to a concussion in June and left hand inflammation in September."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/henry-davis-pirates-2026-1024x683.jpg",
-   "players": [
-    [
-     "Henry Davis",
-     680779
-    ],
-    [
-     "Tim Tawa",
-     694374
-    ],
-    [
-     "Gabriel Moreno",
-     672515
     ]
    ]
   },
