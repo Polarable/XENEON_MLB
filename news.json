@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-28T03:30:32.274Z",
+ "updated": "2026-11-28T03:40:30.683Z",
  "articles": [
+  {
+   "title": "Cubs To Sign Ryan Yarbrough",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-ryan-yarbrough.html",
+   "date": "2026-11-28T03:34:55.000Z",
+   "teams": [
+    "CHC"
+   ],
+   "body": [
+    "The Cubs and left-hander Ryan Yarbrough have agreed to a one-year deal, reports Robert Murray of FanSided. The salary for the Excel Sports Management client has not yet been reported."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Ryan_Yarbrough_Yankees-1024x682.jpg",
+   "players": [
+    [
+     "Ryan Yarbrough",
+     642232
+    ]
+   ]
+  },
   {
    "title": "Cubs To Sign Hiromi Itoh",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-hiromi-itoh.html",
@@ -347,19 +365,6 @@
      838343
     ]
    ]
-  },
-  {
-   "title": "Front Office Subscriber Chat Transcript",
-   "link": "https://www.mlbtraderumors.com/2026/11/front-office-subscriber-chat-with-darragh-mcdonald-today-at-100pm-central-2.html",
-   "date": "2026-11-27T18:59:06.000Z",
-   "teams": [],
-   "body": [
-    "Hello, everyone. Anthony is off for the holidays, so I’m taking over the Friday chat this week. Sorry for the downgrade. I will be back at 1pm Central but feel free to drop questions in the meantime. Okay, hello. I hope you’re enjoying your holidays if that’s what you’re doing this weekend. Lots of questions already in the queue, so let’s dive in. RoxTalks",
-    "Happy the Rockies finally addressed their pitching staff, but….. 3 years, $42 million for Sandoval is a big commitment. I have a feeling this won’t age well given his recent lack of success and going to Coors, but hopefully his changeup will play well at altitude. What do you think about their recent spending spree? Darragh McDonald",
-    "It’s certainly interesting. And I applaud the club for going out and trying to make the club more respectable. I felt similar things a year ago when they added Sugano, Quintana and Lorenzen. Those moves didn’t amount to much. The guys they’ve added this week should be better but I’ll remain skeptical. Figuring out how to pitch at Coors is such a challenge. I don’t know if there are easy answers. I’ll stay in “believe it when I see it” mode. But good for the pitchers getting paid. Good on the team for trying. Coach Wall"
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2015/06/MLBTR-image-325x325.png",
-   "players": []
   },
   {
    "title": "Cubs Sign Teruaki Sato",
@@ -5771,9 +5776,9 @@
    "link": "https://www.mlbtraderumors.com/2026/11/five-players-reject-qualifying-offer.html",
    "date": "2026-11-17T21:35:09.000Z",
    "teams": [
-    "CHC",
-    "BAL",
     "PIT",
+    "BAL",
+    "CHC",
     "SEA"
    ],
    "body": [
