@@ -1,6 +1,58 @@
 {
- "updated": "2026-11-28T00:50:33.872Z",
+ "updated": "2026-11-28T01:00:36.797Z",
  "articles": [
+  {
+   "title": "Twins To Sign Ryan Fitzgerald To Major League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/twins-to-sign-ryan-fitzgerald-to-major-league-deal.html",
+   "date": "2026-11-28T00:53:06.000Z",
+   "teams": [
+    "MIN"
+   ],
+   "body": [
+    "The Twins and utility player Ryan Fitzgerald are in agreement on a major league deal, reports Ken Rosenthal of The Athletic. The Twins have open 40-man spots and won’t need to make a corresponding move to add the Gaeta Sports Management client."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/01/Ryan_Fitzgerald_Twins-1024x683.jpg",
+   "players": [
+    [
+     "Ryan Fitzgerald",
+     680837
+    ]
+   ]
+  },
+  {
+   "title": "Twins Sign Kevin Ginkel",
+   "link": "https://www.mlbtraderumors.com/2026/11/twins-to-sign-kevin-ginkel.html",
+   "date": "2026-11-28T00:50:50.000Z",
+   "teams": [
+    "MIN"
+   ],
+   "body": [
+    "November 27: The Twins have officially announced their Ginkel signing.",
+    "November 25: The Twins are signing free agent reliever Kevin Ginkel to a two-year contract that guarantees $18MM, reports Mark Feinsand of MLB.com. The deal is pending a physical for the Excel Sports Management client. Minnesota has multiple openings on the 40-man roster and can finalize the agreement without further moves.",
+    "Ginkel is another right-hander who can pitch in high-leverage spots alongside Jeff Hoffman and Yoendrys Gómez. Minnesota is also in the left-handed relief market but evidently didn’t want to pass up on the opportunity to add Ginkel on the heels of a solid season for the Diamondbacks.",
+    "The 32-year-old (33 in March) had a middling ERA but more encouraging secondary metrics. Ginkel allowed 4.12 earned runs per nine over 67 2/3 frames. He punched out 26.2% of opponents against a 6.2% walk rate while generating swinging strikes at an excellent 13.8% clip. Ginkel pitched in medium-leverage situations and ranked fourth on the D-Backs with 11 holds.",
+    "Among returning Twins’ relievers, only Hoffman and Tommy Nance had a higher strikeout rate (min. 20 innings). While he has had his share of ups and downs from a run prevention perspective, Ginkel typically posts quality strikeout and walk numbers. He combined for 135 1/3 innings of 2.86 ERA ball for the Snakes from 2023-24, also dominating in the’23 postseason to help Arizona to a World Series berth. Ginkel’s numbers collapsed in 2025 while he was hampered by shoulder issues. He avoided the injured list this past season."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-25T083841Z_348176145_MT1USATODAY29907598_RTRMADP_3_MLB-NEW-YORK-YANKEES-AT-ARIZONA-DIAMONDBACKS-1024x683.jpg",
+   "players": [
+    [
+     "Kevin Ginkel",
+     656464
+    ],
+    [
+     "Jeff Hoffman",
+     656546
+    ],
+    [
+     "Yoendrys Gómez",
+     672782
+    ],
+    [
+     "Tommy Nance",
+     667297
+    ]
+   ]
+  },
   {
    "title": "Rockies Designate Hayden Harris For Assignment",
    "link": "https://www.mlbtraderumors.com/2026/11/rockies-designate-hayden-harris-for-assignment.html",
@@ -1148,39 +1200,6 @@
     [
      "Joshua Báez",
      695491
-    ]
-   ]
-  },
-  {
-   "title": "Twins To Sign Kevin Ginkel",
-   "link": "https://www.mlbtraderumors.com/2026/11/twins-to-sign-kevin-ginkel.html",
-   "date": "2026-11-26T04:23:50.000Z",
-   "teams": [
-    "MIN"
-   ],
-   "body": [
-    "The Twins are signing free agent reliever Kevin Ginkel to a two-year contract that guarantees $18MM, reports Mark Feinsand of MLB.com. The deal is pending a physical for the Excel Sports Management client. Minnesota has multiple openings on the 40-man roster and can finalize the agreement without further moves.",
-    "Ginkel is another right-hander who can pitch in high-leverage spots alongside Jeff Hoffman and Yoendrys Gómez. Minnesota is also in the left-handed relief market but evidently didn’t want to pass up on the opportunity to add Ginkel on the heels of a solid season for the Diamondbacks.",
-    "The 32-year-old (33 in March) had a middling ERA but more encouraging secondary metrics. Ginkel allowed 4.12 earned runs per nine over 67 2/3 frames. He punched out 26.2% of opponents against a 6.2% walk rate while generating swinging strikes at an excellent 13.8% clip. Ginkel pitched in medium-leverage situations and ranked fourth on the D-Backs with 11 holds.",
-    "Among returning Twins’ relievers, only Hoffman and Tommy Nance had a higher strikeout rate (min. 20 innings). While he has had his share of ups and downs from a run prevention perspective, Ginkel typically posts quality strikeout and walk numbers. He combined for 135 1/3 innings of 2.86 ERA ball for the Snakes from 2023-24, also dominating in the’23 postseason to help Arizona to a World Series berth. Ginkel’s numbers collapsed in 2025 while he was hampered by shoulder issues. He avoided the injured list this past season."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-25T083841Z_348176145_MT1USATODAY29907598_RTRMADP_3_MLB-NEW-YORK-YANKEES-AT-ARIZONA-DIAMONDBACKS-1024x683.jpg",
-   "players": [
-    [
-     "Kevin Ginkel",
-     656464
-    ],
-    [
-     "Jeff Hoffman",
-     656546
-    ],
-    [
-     "Yoendrys Gómez",
-     672782
-    ],
-    [
-     "Tommy Nance",
-     667297
     ]
    ]
   },
