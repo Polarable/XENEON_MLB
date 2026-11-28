@@ -1,6 +1,52 @@
 {
- "updated": "2026-11-28T04:30:34.278Z",
+ "updated": "2026-11-28T04:40:32.082Z",
  "articles": [
+  {
+   "title": "Blue Jays Sign Rhylan Thomas To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/blue-jays-sign-rhylan-thomas-to-minor-league-deal.html",
+   "date": "2026-11-28T04:33:16.000Z",
+   "teams": [
+    "TOR"
+   ],
+   "body": [
+    "The Blue Jays have signed outfielder Rhylan Thomas to a minor league deal, according to his transactions tracker at MLB.com. The PSI Sports Management client will presumably in big league camp in spring training but that hasn’t been specified.",
+    "Thomas, 27 in April, has a limited big league track record. He got into three games with the Mariners in 2025. He got one hit, a double, in eight at-bats. He was put on waivers in May of this year and was claimed by the Astros. Houston designated him for assignment in June. Thomas was injured in the minors at the time. Injured players can’t be placed on outright waivers, so Thomas was released instead. He finished the season with the Jays on a minor league deal. He became a minor league free agent at season’s end but has quickly returned to the Jays on a fresh pact.",
+    "At the plate, Thomas has a low-power, high-contact approach. He has stepped to the plate 1,786 times as a minor leaguer with just 18 home runs. His 8.3% walk rate is around average but his 7.8% strikeout rate is tiny. For reference, the major league strikeout rate is usually around 22% these days, so Thomas strikes out at barely a third of that rate. That approach has led to a.304/.356/.388 line and 96 wRC+ over the past three minor league seasons.",
+    "Thomas is a decent runner and defender, capable of playing all three spots on the grass. He stole 35 bases in 2025 and 21 the year prior but he only swiped eight this year as injuries limited him to just 60 games."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/06/USATSI_26076723-1024x683.jpg",
+   "players": [
+    [
+     "Rhylan Thomas",
+     689041
+    ]
+   ]
+  },
+  {
+   "title": "Cubs Sign Trevor Rogers",
+   "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-trevor-rogers.html",
+   "date": "2026-11-28T04:30:34.000Z",
+   "teams": [
+    "BAL",
+    "CHC"
+   ],
+   "body": [
+    "Nov. 27: The Cubs have officially announced the signing of Rogers. Per Jon Heyman of The New York Post, Rogers will make a salary of $17MM next year, followed by $23MM in the next three years, and then $24MM in the final season. $2.5MM is deferred annually in the final four years. There’s a 2032 mutual option worth $25MM, with a $10MM buyout. $5MM of the buyout will be deferred.",
+    "Nov. 23: The Cubs have made their first big move on the pitching front. Chicago is reportedly in agreement with starter Trevor Rogers on a five-year, $120MM contract. The deal, which is pending a physical, includes an escalator package and some deferrals that’ll bring down the net present value. Rogers is represented by PSI Sports Management. Chicago has three openings on the 40-man roster and can finalize the signing without any corresponding moves.",
+    "Rogers comes off the board one day after the Mets landed Tarik Skubal. Chicago seemingly never had interest in spending at the level to add Skubal, making Rogers a logical target. President of baseball operations Jed Hoyer opened the offseason by noting that starting pitching would be the priority."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/10/TrevorRogers-1024x683.jpg",
+   "players": [
+    [
+     "Trevor Rogers",
+     669432
+    ],
+    [
+     "Tarik Skubal",
+     669373
+    ]
+   ]
+  },
   {
    "title": "Cubs To Sign Ryan Yarbrough",
    "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-ryan-yarbrough.html",
@@ -465,40 +511,6 @@
     [
      "Andrew Hoffmann",
      694851
-    ]
-   ]
-  },
-  {
-   "title": "Cubs Sign Trevor Rogers",
-   "link": "https://www.mlbtraderumors.com/2026/11/cubs-to-sign-trevor-rogers.html",
-   "date": "2026-11-27T17:05:34.000Z",
-   "teams": [
-    "BAL",
-    "CHC"
-   ],
-   "body": [
-    "Nov. 27: The Cubs have officially announced the signing of Rogers.",
-    "Nov. 23: The Cubs have made their first big move on the pitching front. Chicago is reportedly in agreement with starter Trevor Rogers on a five-year, $120MM contract. The deal, which is pending a physical, includes an escalator package and some deferrals that’ll bring down the net present value. Rogers is represented by PSI Sports Management. Chicago has three openings on the 40-man roster and can finalize the signing without any corresponding moves.",
-    "Rogers comes off the board one day after the Mets landed Tarik Skubal. Chicago seemingly never had interest in spending at the level to add Skubal, making Rogers a logical target. President of baseball operations Jed Hoyer opened the offseason by noting that starting pitching would be the priority.",
-    "An All-Star and NL Rookie of the Year runner-up in 2021, Rogers looked like a potential top-of-the-rotation starter for the Marlins early in his career. He struggled in’22 and missed most of the following season to biceps and lat injuries. By the 2024 deadline, the Marlins were willing to move on. They dealt Rogers to Baltimore for outfielder Kyle Stowers and second baseman Connor Norby. It initially looked like a lopsided swap, as Rogers struggled so much early in his Baltimore tenure that he was up and down from Triple-A a few times."
-   ],
-   "image": "https://cdn.mlbtraderumors.com/files/2026/10/TrevorRogers-1024x683.jpg",
-   "players": [
-    [
-     "Trevor Rogers",
-     669432
-    ],
-    [
-     "Tarik Skubal",
-     669373
-    ],
-    [
-     "Kyle Stowers",
-     669065
-    ],
-    [
-     "Connor Norby",
-     681393
     ]
    ]
   },
