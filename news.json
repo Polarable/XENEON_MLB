@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:10:30.368Z",
+ "updated": "2026-11-28T12:20:35.902Z",
  "articles": [
   {
    "title": "Blue Jays To Sign Jazz Chisholm Jr.",
@@ -734,6 +734,59 @@
    ]
   },
   {
+   "title": "Tigers Re-Sign Trey Sweeney, Jake Miller To Minor League Deals",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-re-sign-trey-sweeney-jake-miller-to-minor-league-deals.html",
+   "date": "2026-11-26T21:23:18.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers have signed infielder Trey Sweeney and left-hander Jake Miller to minor league deals, according to the club’s transactions tracker at MLB.com. It’s possible that the two players will get invites to big league camp in spring training though that hasn’t been specified.",
+    "Both players were just non-tendered last week. Neither player had qualified for arbitration but the non-tender deadline is the one day of the year when a team can send a player to free agency without exposing him to waivers. By doing so, the Tigers gave the players the right to discuss contracts with all 30 teams but they were quickly able to bring them back to the organization via non-roster pacts.",
+    "Sweeney, 27 in April, was acquired from the Dodgers as part of the 2024 deadline deal sending Jack Flaherty to Los Angeles. He appeared in 154 games for the Tigers over that season and the 2025 campaign. He didn’t provide much at the plate, slashing.202/.261/.313. Defensively, he got good grades at shortstop in his debut season but the advanced metrics all soured on him last year. He missed the entire 2026 season due to a shoulder strain that eventually required surgery.",
+    "The Tigers agreed to a deal with Ha-Seong Kim this week. He will presumably share the shortstop duties with Kevin McGonigle. Detroit also has Javier Báez, Zach McKinstry, Tsung-Che Cheng, John Peck and Peyton Graham as shortstop-capable guys on the roster. It’s a steep chart for Sweeney to be looking up at but he’ll try to work his way back onto the roster. If he makes it, he still has options."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/Trey_Sweeney_Tigers-1024x683.jpg",
+   "players": [
+    [
+     "Trey Sweeney",
+     700242
+    ],
+    [
+     "Jack Flaherty",
+     656427
+    ],
+    [
+     "Ha-Seong Kim",
+     673490
+    ],
+    [
+     "Kevin McGonigle",
+     805808
+    ],
+    [
+     "Javier Báez",
+     595879
+    ],
+    [
+     "Zach McKinstry",
+     656716
+    ],
+    [
+     "Tsung-Che Cheng",
+     691907
+    ],
+    [
+     "John Peck",
+     807726
+    ],
+    [
+     "Peyton Graham",
+     689931
+    ]
+   ]
+  },
+  {
    "title": "Marlins, Blue Jays Reportedly Showed Interest In Luis Robert Jr.",
    "link": "https://www.mlbtraderumors.com/2026/11/marlins-blue-jays-reportedly-showed-interest-in-luis-robert-jr.html",
    "date": "2026-11-26T20:45:05.000Z",
@@ -1128,6 +1181,55 @@
     [
      "Rafael Devers",
      646240
+    ]
+   ]
+  },
+  {
+   "title": "Tigers To Sign Kevin Gausman",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-sign-kevin-gausman.html",
+   "date": "2026-11-26T05:59:50.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers and right-hander Kevin Gausman have agreed to a one-year, $25MM contract, reports Jeff Passan of ESPN. The righty is represented by Tidal Sports Group. The Tigers have a full 40-man roster and also still need to make their deals with Luis Gil and Ha-Seong Kim official, so they need to open three spots.",
+    "Gausman, 36 in January, has been posting strong results in the majors for years but is coming off a bit of a down season. Going into 2022, the Blue Jays gave Gausman a five-year, $110MM deal after a couple of really strong campaigns for the Giants.",
+    "That deal turned into a big win for the Jays, particularly in the first four seasons. He made 125 starts from 2022 to 2025, logging 733 2/3 innings with a 3.48 earned run average. Logan Webb, Framber Valdez and Zac Gallen were the only three pitchers with greater workloads in that span. Gausman struck out 26.3% of batters faced and limited walks to a 6.3% clip. FanGraphs credited him with 17.8 wins above replacement, behind only Zack Wheeler, Webb and Tarik Skubal. Gausman also made eight postseason appearances for the Jays and was a big part of their World Series run last year.",
+    "As mentioned, the results weren’t quite as strong this year. The Jays fell out of the race and shipped Gausman to the Cubs at the trade deadline. Between those two teams, Gausman made 32 starts and finished the season with a 4.51 ERA. His fastball averaged 93.8 miles per hour, a drop from the 94.5 mph from the year prior and his lowest since 2018."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/07/kevin-gausman-toronto-blue-jays-1024x683.jpg",
+   "players": [
+    [
+     "Kevin Gausman",
+     592332
+    ],
+    [
+     "Luis Gil",
+     661563
+    ],
+    [
+     "Ha-Seong Kim",
+     673490
+    ],
+    [
+     "Logan Webb",
+     657277
+    ],
+    [
+     "Framber Valdez",
+     664285
+    ],
+    [
+     "Zac Gallen",
+     668678
+    ],
+    [
+     "Zack Wheeler",
+     554430
+    ],
+    [
+     "Tarik Skubal",
+     669373
     ]
    ]
   },
@@ -2037,6 +2139,27 @@
    ]
   },
   {
+   "title": "Tigers Interested In Bryan Abreu",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-interested-in-bryan-abreu.html",
+   "date": "2026-11-24T21:51:23.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers are interested in free agent reliever Bryan Abreu, reports Evan Petzold, though Petzold notes that the two sides are currently at an impasse because Abreu is looking for a multi-year deal while the club would prefer to keep an arrangement to one year.",
+    "Abreu, 30 in April, has a very strong track record but is coming off a down year. From 2022 to 2025, he tossed 281 2/3 innings for the Astros with a 2.30 earned run average. His 10.4% walk rate in that time was a bit high but he punched out 34.3% of batters faced. Among MLB pitchers who logged at least 240 innings in that four-year window, Abreu’s strikeout rate was the very best. He earned 15 saves and 95 holds in that time.",
+    "But as mentioned, 2026 was a challenge for him. His 3.73 ERA wasn’t disastrous but he danced around some serious control issues. He walked 41 of the 268 batters he faced, an awful 15.3% clip. He also hit five batters, meaning 17.1% of opponents got a free trip to first base. He uncorked seven wild pitches to boot.",
+    "He did rein things in a bit after an atrocious start. Through 11 1/3 innings, he had walked 26.2% of batters faced. By the time he was up to 20 1/3 innings on the year, his walk rate was still all the way up at 23.5% and he had a 7.52 ERA. He then had a strong 1.91 ERA the rest of the way while walking 10.2% of opponents in his final 42 1/3 innings. That walk rate was above average but in line with Abreu’s dominant seasons."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/BryanAbreu-2026-1024x683.jpg",
+   "players": [
+    [
+     "Bryan Abreu",
+     650556
+    ]
+   ]
+  },
+  {
    "title": "Mets, Eddys Leonard Agree To Minor League Deal",
    "link": "https://www.mlbtraderumors.com/2026/11/mets-sign-infielder-eddys-leonard.html",
    "date": "2026-11-24T21:21:08.000Z",
@@ -2210,6 +2333,27 @@
     [
      "Brent Suter",
      608718
+    ]
+   ]
+  },
+  {
+   "title": "Tigers, Troy Melton Agree To Six-Year Extension",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-troy-melton-agree-to-six-year-extension.html",
+   "date": "2026-11-24T16:20:41.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "November 24: The Tigers have shared the full breakdown of the Melton extension. Melton will receive a $2MM signing bonus and a $1M salary in 2027. His salary will remain at $1MM in 2028, then go up to $4.5MM, $7.5MM, $11MM, and $18MM through 2032. That 2032 figure could reach $24MM based on performance bonuses.",
+    "The club option for 2033 is for $23MM with a $1.5MM buyout. Melton’s salary could go up to $29MM that year, again tied to performance bonuses.",
+    "November 20: The Tigers are locking right-hander Troy Melton into their rotation for the foreseeable future. The two parties have agreed to a six-year, $46.5MM contract extension. The deal includes a club option for 2033 and can max out at $80MM if the option is exercised and the pitcher hits all his performance bonuses. Melton would have reached free agency after the 2031 season, so the extension gives Detroit an extra two years’ worth of control over him. Melton is a client of Paragon Sports International.",
+    "The 25-year-old Melton earns a nice payday after a breakout season for Detroit. After starting the year on the 60-day IL for elbow inflammation, he made his season debut on May 24 and started 20 games the rest of the way. The righty held opponents to a 2.76 earned run average with a 20.0% strikeout rate and a 7.9% walk rate that checked in better than average. Melton also induced grounders at a 42.9% clip and generally kept the ball in the park."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-14T235946Z_797885536_MT1USATODAY29822696_RTRMADP_3_MLB-DETROIT-TIGERS-AT-TORONTO-BLUE-JAYS-1024x683.jpg",
+   "players": [
+    [
+     "Troy Melton",
+     675512
     ]
    ]
   },
@@ -3017,6 +3161,50 @@
     [
      "Mark Vientos",
      668901
+    ]
+   ]
+  },
+  {
+   "title": "Tigers Seeking Additional Relievers After Pagán Signing",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-seeking-additional-relievers-after-pagan-signing.html",
+   "date": "2026-11-21T01:34:41.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers made the first move on the free agent market by signing righty reliever Emilio Pagán to a one-year, $11.5MM deal. If president of baseball operations Scott Harris has his way, there will be more bullpen additions incoming. When asked on Tuesday if he expected to add more relievers on big league deals, Harris told The Athletic’s Cody Stavenhagen and others, “We do. … As soon as I get off this call, I’m going to be hard at work at trying to find ways to get better…” He later added, “My job is to fill our ‘pen with talented arms and let A.J. decide how to deploy them,” in reference to the Pagán signing.",
+    "Earlier this month, Detroit picked up their $10MM option on swingman Drew Anderson and declined a $12MM option on Kenley Jansen in favor of a $2MM buyout. Anderson will compete for a rotation spot. The subtraction of Jansen left the Tigers in need of a closer, though Pagán is now in line for that role. The club was reportedly interested in Raisel Iglesias even after the Pagán deal. He wouldn’t be cheap, though. MLBTR expects Iglesias to earn $17MM on a one-year deal.",
+    "Detroit is currently projected for a $149.2MM cash payroll in 2027, as documented in MLBTR’s Payroll Tracker (courtesy of contributor Ethan Hullihen). That goes up to around $160MM with the addition of Pagán. The non-tenders of Jake Miller, Trey Sweeney, and Matt Vierling this afternoon will save about $5.3MM. Right-hander Troy Melton’s 2027 salary isn’t yet known; his six-year extension may give him a modest bump over the minimum salary for 2027, once that’s sorted out in the new CBA."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2023/11/USATSI_21555741-1024x683.jpg",
+   "players": [
+    [
+     "Emilio Pagán",
+     641941
+    ],
+    [
+     "Drew Anderson",
+     623454
+    ],
+    [
+     "Kenley Jansen",
+     445276
+    ],
+    [
+     "Raisel Iglesias",
+     628452
+    ],
+    [
+     "Trey Sweeney",
+     700242
+    ],
+    [
+     "Matt Vierling",
+     663837
+    ],
+    [
+     "Troy Melton",
+     675512
     ]
    ]
   },
@@ -4829,8 +5017,8 @@
    "link": "https://www.mlbtraderumors.com/2026/11/tigers-trade-jace-jung-angels.html",
    "date": "2026-11-18T19:34:28.000Z",
    "teams": [
-    "LAA",
-    "DET"
+    "DET",
+    "LAA"
    ],
    "body": [
     "The Angels announced Wednesday that they’ve acquired infielder Jace Jung from the Tigers in exchange for cash. Detroit designated Jung, a former No. 12 overall pick (2022) and top prospect, for assignment yesterday.",
@@ -5042,6 +5230,55 @@
     [
      "Joe Musgrove",
      605397
+    ]
+   ]
+  },
+  {
+   "title": "Tigers Designate Four Players For Assignment",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-designate-four-players-for-assignment.html",
+   "date": "2026-11-18T00:04:09.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers announced they’ve designated four players for assignment: infielders Jace Jung and Trey Sweeney, outfielder Matt Vierling, and left-handed pitcher Jake Miller. That clears 40-man roster space for them to finalize the Emilio Pagán signing and select Josue Briceño, Max Anderson and Peyton Graham onto the roster. The three prospects would otherwise have been eligible for the Rule 5 draft.",
+    "Vierling was one of the league’s more obvious non-tender candidates. The 30-year-old was projected by MLBTR contributor Matt Swartz for a $3.7MM salary in his final year of arbitration eligibility. He’s coming off a second straight injury-wrecked season, as an adductor strain cost him the final two months. He didn’t perform well even when healthy, batting.207/.255/.335 across 291 plate appearances.",
+    "Jung, who turned 26 last month, was the 12th overall pick in 2022. He ranked among the organization’s top prospects for a while but has stalled out in the upper minors. He’s coming off a league average.227/.344/.421 batting line in Triple-A, albeit with 22 home runs. Jung only played six MLB games this year and has a.193/.319/.230 slash in 160 plate appearances at the highest level.",
+    "Detroit acquired Sweeney from the Dodgers in the 2024 Jack Flaherty deadline deal. He took over as their primary shortstop down the stretch, improving the infield defense but not providing much at the plate. Sweeney batted.202/.261/.313 across 445 big league plate appearances in 2024-25. He missed the entire’26 season to a right shoulder injury that required arthroscopic surgery in June."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-07-29T183803Z_1680851122_MT1USATODAY29473208_RTRMADP_3_MLB-BALTIMORE-ORIOLES-AT-DETROIT-TIGERS-1024x683.jpg",
+   "players": [
+    [
+     "Jace Jung",
+     690291
+    ],
+    [
+     "Trey Sweeney",
+     700242
+    ],
+    [
+     "Matt Vierling",
+     663837
+    ],
+    [
+     "Emilio Pagán",
+     641941
+    ],
+    [
+     "Josue Briceño",
+     800522
+    ],
+    [
+     "Max Anderson",
+     801194
+    ],
+    [
+     "Peyton Graham",
+     689931
+    ],
+    [
+     "Jack Flaherty",
+     656427
     ]
    ]
   },
@@ -5722,6 +5959,56 @@
     [
      "Davis Polo",
      805175
+    ]
+   ]
+  },
+  {
+   "title": "Tigers Sign Emilio Pagán",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-to-sign-emilio-pagan.html",
+   "date": "2026-11-17T20:30:46.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "November 17: The Tigers have officially announced the Pagán signing. They also included the details of the bonus clause. Pagán can earn an extra $200K for finishing 35 games, with additional thresholds going up by five (40, 45, 50, 55). In total, it’s another $1MM in incentives.",
+    "November 11: Pagán’s deal is for $11.5MM plus a bonus clause, reports Gordon Wittenmyer of the Cincinnati Enquirer.",
+    "November 10: The Tigers are in agreement with free agent reliever Emilio Pagán, reports Jon Heyman of The New York Post. It’s reportedly a one-year deal in the $11MM range for the Ballengee Group client. Detroit has a full 40-man roster and will need to make a corresponding move once the signing is official.",
+    "It’s this year’s first significant move on the free agent market. Pagán’s market moved quickly, as he finds a new landing spot within two weeks of declining a $10MM player option with Cincinnati. Pagán banks an extra million dollars and presumably will enter the season as A.J. Hinch’s primary closer.",
+    "The agreement comes together within hours of Detroit president of baseball operations Scott Harris telling reporters he was seeking a right-handed leverage reliever who could improve the team’s strikeout ability (links via Cody Stavenhagen of The Athletic and Jason Beck of MLB.com). Pagán fanned 25.9% of opponents this year and has a 28% strikeout rate for his career, which will make him one of the team’s better swing-and-miss arms."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2026/11/2026-09-06T195314Z_752605322_MT1USATODAY29757331_RTRMADP_3_MLB-MILWAUKEE-BREWERS-AT-CINCINNATI-REDS-1024x683.jpg",
+   "players": [
+    [
+     "Emilio Pagán",
+     641941
+    ]
+   ]
+  },
+  {
+   "title": "Tigers Agree To Minor League Deals With Sawyer Gipson-Long, Bailey Horn",
+   "link": "https://www.mlbtraderumors.com/2026/11/tigers-agree-to-minor-league-deals-with-sawyer-gipson-long-bailey-horn.html",
+   "date": "2026-11-17T20:29:41.000Z",
+   "teams": [
+    "DET"
+   ],
+   "body": [
+    "The Tigers released right-hander Sawyer Gipson-Long and lefty Bailey Horn two weeks ago, but they are now returning to the organization. Gipson-Long and Horn have agreed to minor league contracts with Detroit, Evan Woodbery of MLive.com reports.",
+    "The Twins drafted Gipson-Long in the sixth round in 2019, but they sent him to the AL Central rival Tigers for righty Michael Fulmer in August 2022. Gipson-Long made his major league debut a year later and pitched to a sterling 2.70 ERA with 26 strikeouts over a four-appearance, 20-inning stretch. However, elbow issues prevented him from building on that performance in 2024. Gipson-Long wound up missing the entire season after undergoing an internal brace procedure.",
+    "The 6-foot-4, 225-pound Gipson-Long returned to the majors in 2025 to throw 31 1/3 innings, though he could only muster a 7.18 ERA. That counts as Gipson-Long’s most recent action at the game’s highest level, as he didn’t make an appearance with Detroit this year. Gipson-Long made 26 starts and threw 108 innings with the Mud Hens, but he walked over 10% of hitters and gave up home runs on 16.7% of fly balls, leading to a bloated 5.58 ERA."
+   ],
+   "image": "https://cdn.mlbtraderumors.com/files/2025/01/USATSI_24446024-1024x683.jpg",
+   "players": [
+    [
+     "Sawyer Gipson-Long",
+     687830
+    ],
+    [
+     "Bailey Horn",
+     690544
+    ],
+    [
+     "Michael Fulmer",
+     605242
     ]
    ]
   },
